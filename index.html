@@ -276,6 +276,42 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
 .fr a{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s}
 .fr a:hover{color:rgba(139,189,210,.65)}
 
+/* FISH */
+#fish-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.fish{position:absolute;pointer-events:none;will-change:transform}
+.fish svg{display:block}
+
+/* CURSOR BUBBLES */
+#bubble-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.cbubble{position:absolute;border-radius:50%;border:1px solid rgba(200,228,240,.55);background:rgba(200,228,240,.08);pointer-events:none;animation:bubrise linear forwards}
+@keyframes bubrise{
+  0%  {opacity:0;transform:translateY(0) translateX(0) scale(1)}
+  10% {opacity:.9}
+  80% {opacity:.5}
+  100%{opacity:0;transform:translateY(var(--brise)) translateX(var(--bdrift)) scale(.6)}
+}
+
+/* MUSIC BUTTON */
+#music-btn{
+  position:fixed;bottom:2rem;right:2rem;z-index:850;
+  display:flex;align-items:center;gap:.5rem;
+  background:rgba(6,16,13,.75);
+  border:1px solid rgba(139,189,210,.18);
+  color:rgba(139,189,210,.65);
+  padding:.55rem 1rem .55rem .8rem;
+  border-radius:100px;cursor:none;
+  font-family:var(--sans);font-size:.6rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:background .3s,border-color .3s,color .3s;
+}
+#music-btn:hover{background:rgba(9,22,18,.9);border-color:rgba(139,189,210,.35);color:rgba(139,189,210,.9)}
+#music-btn.playing{border-color:rgba(157,191,154,.4);color:rgba(157,191,154,.8)}
+#music-btn.playing:hover{border-color:rgba(157,191,154,.6)}
+.mb-icon{font-size:.85rem;line-height:1;display:inline-block;transition:transform .4s var(--ease)}
+#music-btn.playing .mb-icon{animation:noteFloat 2s ease-in-out infinite}
+@keyframes noteFloat{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-3px) rotate(8deg)}}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .nlinks{display:none}.nbg{display:flex}.ncta{display:none}
@@ -307,6 +343,8 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <div id="rays"></div>
   <div class="plant-layer" id="plants"></div>
   <div id="particles"></div>
+  <div id="fish-layer"></div>
+  <div id="bubble-layer"></div>
 </div>
 
 <!-- NAV -->
@@ -321,6 +359,19 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <a href="https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion" class="ncta" target="_blank" rel="noopener">Talk with Rhyssa</a>
   <button class="nbg" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </nav>
+<!-- Music toggle button -->
+<button id="music-btn" aria-label="Toggle music" title="Toggle music">
+  <span class="mb-icon">♪</span>
+  <span class="mb-label">Music</span>
+</button>
+<!-- Hidden YouTube iframe for ambient music -->
+<div id="yt-wrap" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;bottom:0;right:0">
+  <iframe id="yt-frame"
+    src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&loop=1&playlist=jfKfPfyJRdk&controls=0&mute=0&enablejsapi=1"
+    allow="autoplay"
+    style="width:1px;height:1px">
+  </iframe>
+</div>
 <div class="nmob" id="nmob" aria-hidden="true">
   <ul>
     <li><a href="#" onclick="go('ara');cm();return false;">What is ARA</a></li>
@@ -562,47 +613,177 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
     rc.appendChild(e);
   });
 
-  /* Plants */
+  /* Plants — Amazon freshwater variety */
   var pc=document.getElementById('plants');
-  var pd=[
-    {l:'2%',w:38,h:155,sa:'-3deg',sb:'3deg',d:'6s',dl:'0s',c:'rgba(74,107,72,.58)',sw:2,lv:true},
-    {l:'8%',w:28,h:105,sa:'-4deg',sb:'4deg',d:'8s',dl:'1s',c:'rgba(55,88,52,.42)',sw:1.5,lv:false},
-    {l:'15%',w:48,h:195,sa:'-2.5deg',sb:'2.5deg',d:'7s',dl:'.4s',c:'rgba(74,107,72,.68)',sw:2.5,lv:true},
-    {l:'23%',w:30,h:125,sa:'-5deg',sb:'5deg',d:'9s',dl:'2s',c:'rgba(88,128,75,.38)',sw:1.5,lv:false},
-    {l:'31%',w:44,h:172,sa:'-3deg',sb:'3.5deg',d:'6.5s',dl:'.8s',c:'rgba(74,107,72,.52)',sw:2,lv:true},
-    {l:'40%',w:34,h:140,sa:'-4deg',sb:'3deg',d:'10s',dl:'3s',c:'rgba(55,88,52,.48)',sw:1.8,lv:false},
-    {l:'49%',w:54,h:215,sa:'-2deg',sb:'3deg',d:'7.5s',dl:'1.2s',c:'rgba(74,107,72,.62)',sw:3,lv:true},
-    {l:'59%',w:28,h:112,sa:'-5deg',sb:'4.5deg',d:'8.5s',dl:'2.5s',c:'rgba(55,88,52,.4)',sw:1.5,lv:false},
-    {l:'67%',w:42,h:165,sa:'-3deg',sb:'3deg',d:'6.8s',dl:'.6s',c:'rgba(74,107,72,.55)',sw:2,lv:true},
-    {l:'75%',w:26,h:98,sa:'-4deg',sb:'5deg',d:'9.5s',dl:'1.8s',c:'rgba(55,88,52,.36)',sw:1.5,lv:false},
-    {l:'83%',w:46,h:182,sa:'-2deg',sb:'2.5deg',d:'7s',dl:'.9s',c:'rgba(74,107,72,.6)',sw:2.2,lv:true},
-    {l:'91%',w:30,h:120,sa:'-4deg',sb:'4deg',d:'8s',dl:'3.5s',c:'rgba(55,88,52,.42)',sw:1.6,lv:false},
-    {l:'96%',w:24,h:92,sa:'-5deg',sb:'3.5deg',d:'11s',dl:'2s',c:'rgba(74,107,72,.38)',sw:1.4,lv:false}
+  var NS2='http://www.w3.org/2000/svg';
+
+  // plantTypes: each has a draw(svg, w, h) function
+  // All grow upward from bottom
+  var plantTypes=[
+
+    // TYPE A: Val / Vallisneria — long ribbon leaves
+    {name:'val', draw:function(svg,w,h,c){
+      var cx=w/2;
+      // 3–4 long ribbon blades, slightly different heights & curves
+      [[0,1,0.92],[-.18,.88,1],[ .14,.96,.78],[-.06,.82,.95]].forEach(function(r,i){
+        var bx=cx+r[0]*w*.3;
+        var bh=h*r[1];
+        var curve=(i%2===0)?1:-1;
+        var path=document.createElementNS(NS2,'path');
+        path.setAttribute('d','M'+bx+' '+h+' C'+(bx+curve*w*.35)+' '+(h*.6)+' '+(bx-curve*w*.2)+' '+(h*.3)+' '+(bx+curve*w*.1)+' '+bh);
+        path.setAttribute('stroke',c);path.setAttribute('stroke-width',r[2]*2.5);path.setAttribute('fill','none');path.setAttribute('stroke-linecap','round');
+        svg.appendChild(path);
+      });
+    }},
+
+    // TYPE B: Amazon Sword — broad oval leaves on stems
+    {name:'sword', draw:function(svg,w,h,c){
+      var cx=w/2;
+      var lc=c.replace(/[\d.]+\)$/,'0.35)');
+      // central stem
+      var stem=document.createElementNS(NS2,'path');
+      stem.setAttribute('d','M'+cx+' '+h+' C'+cx+' '+(h*.7)+' '+cx+' '+(h*.3)+' '+cx+' 0');
+      stem.setAttribute('stroke',c);stem.setAttribute('stroke-width',1.8);stem.setAttribute('fill','none');
+      svg.appendChild(stem);
+      // broad leaves at different heights
+      [[.75,-1,28,12],[.55,1,32,14],[.38,-1,26,11],[.22,1,20,9],[.1,-1,14,7]].forEach(function(lp){
+        var ly=h*lp[0],dir=lp[1],lw=lp[2],lh=lp[3];
+        var lx=cx+dir*lw*.15;
+        var leaf=document.createElementNS(NS2,'path');
+        leaf.setAttribute('d','M'+cx+' '+ly+' C'+(lx+dir*lw*.5)+' '+(ly-lh*.3)+' '+(lx+dir*lw)+' '+(ly-lh*.7)+' '+(lx+dir*lw*.8)+' '+(ly-lh)+' C'+(lx+dir*lw*.5)+' '+(ly-lh*1.1)+' '+(cx+dir*4)+' '+(ly-lh*.5)+' '+cx+' '+ly+'Z');
+        leaf.setAttribute('fill',c);leaf.setAttribute('opacity','0.75');
+        svg.appendChild(leaf);
+        // midrib
+        var rib=document.createElementNS(NS2,'path');
+        rib.setAttribute('d','M'+cx+' '+ly+' Q'+(lx+dir*lw*.5)+' '+(ly-lh*.6)+' '+(lx+dir*lw*.75)+' '+(ly-lh*.95));
+        rib.setAttribute('stroke',lc);rib.setAttribute('stroke-width',0.8);rib.setAttribute('fill','none');rib.setAttribute('opacity','0.6');
+        svg.appendChild(rib);
+      });
+    }},
+
+    // TYPE C: Cabomba / hornwort — feathery branching
+    {name:'cabomba', draw:function(svg,w,h,c){
+      var cx=w/2;
+      // main stem
+      var stem=document.createElementNS(NS2,'path');
+      stem.setAttribute('d','M'+cx+' '+h+' C'+(cx-w*.1)+' '+(h*.7)+' '+(cx+w*.08)+' '+(h*.4)+' '+cx+' 0');
+      stem.setAttribute('stroke',c);stem.setAttribute('stroke-width',1.5);stem.setAttribute('fill','none');
+      svg.appendChild(stem);
+      // feather whorls at intervals
+      [.82,.65,.5,.36,.22,.1].forEach(function(pos,i){
+        var y=h*pos, branches=3+i%2;
+        for(var b=-branches;b<=branches;b++){
+          if(b===0)continue;
+          var angle=b*(Math.PI/(branches*1.4));
+          var len=w*.28+Math.abs(b)*2;
+          var ex=cx+Math.sin(angle)*len;
+          var ey=y-Math.cos(angle)*len*.4;
+          var br=document.createElementNS(NS2,'path');
+          br.setAttribute('d','M'+cx+' '+y+' Q'+((cx+ex)/2+b*2)+' '+(y-len*.2)+' '+ex+' '+ey);
+          br.setAttribute('stroke',c);br.setAttribute('stroke-width',0.9);br.setAttribute('fill','none');br.setAttribute('opacity','0.7');
+          svg.appendChild(br);
+        }
+      });
+    }},
+
+    // TYPE D: Bacopa / stem plant — small round leaves alternating
+    {name:'bacopa', draw:function(svg,w,h,c){
+      var cx=w/2;
+      var stem=document.createElementNS(NS2,'path');
+      var wave='M'+cx+' '+h;
+      for(var yi=10;yi>0;yi--){wave+=' L'+(cx+(yi%2===0?w*.12:-w*.12))+' '+(h*yi/10);}
+      stem.setAttribute('d',wave);stem.setAttribute('stroke',c);stem.setAttribute('stroke-width',1.6);stem.setAttribute('fill','none');
+      svg.appendChild(stem);
+      // pairs of small oval leaves
+      for(var lyi=9;lyi>0;lyi-=1.5){
+        var ly=h*lyi/10;
+        var lx=cx+(lyi%3===0?w*.12:-w*.12);
+        [-1,1].forEach(function(dir){
+          var leaf=document.createElementNS(NS2,'ellipse');
+          leaf.setAttribute('cx',lx+dir*w*.22);leaf.setAttribute('cy',ly-4);
+          leaf.setAttribute('rx',w*.18);leaf.setAttribute('ry',5);
+          leaf.setAttribute('fill',c);leaf.setAttribute('opacity','0.7');
+          leaf.setAttribute('transform','rotate('+(dir*-28)+','+lx+','+ly+')');
+          svg.appendChild(leaf);
+        });
+      }
+    }},
+
+    // TYPE E: Moss / Java moss clump — low bushy
+    {name:'moss', draw:function(svg,w,h,c){
+      // many short tangled stems from base
+      for(var i=0;i<18;i++){
+        var angle=-Math.PI/2+(Math.random()-.5)*Math.PI*.9;
+        var len=h*(.35+Math.random()*.55);
+        var sx=w*.1+Math.random()*w*.8;
+        var ex=sx+Math.cos(angle)*len*.5+(Math.random()-.5)*w*.2;
+        var ey=h-Math.sin(-angle)*len;
+        var br2=document.createElementNS(NS2,'path');
+        br2.setAttribute('d','M'+sx+' '+h+' Q'+((sx+ex)/2+(Math.random()-.5)*w*.3)+' '+(h-len*.5)+' '+ex+' '+ey);
+        br2.setAttribute('stroke',c);br2.setAttribute('stroke-width',.8+Math.random()*.8);br2.setAttribute('fill','none');br2.setAttribute('opacity',(0.4+Math.random()*.35).toString());
+        svg.appendChild(br2);
+      }
+    }},
+
+    // TYPE F: Lotus / lily pad stem — broad floating leaves on tall stem
+    {name:'lotus', draw:function(svg,w,h,c){
+      var cx=w/2;
+      var stem=document.createElementNS(NS2,'path');
+      stem.setAttribute('d','M'+cx+' '+h+' C'+(cx+w*.08)+' '+(h*.6)+' '+(cx-w*.06)+' '+(h*.3)+' '+cx+' 10');
+      stem.setAttribute('stroke',c);stem.setAttribute('stroke-width',2.2);stem.setAttribute('fill','none');
+      svg.appendChild(stem);
+      // large leaf at top
+      var leaf=document.createElementNS(NS2,'path');
+      leaf.setAttribute('d','M'+cx+' 14 C'+(cx-w*.55)+' 2 '+(cx-w*.5)+' 8 '+cx+' 14 C'+(cx+w*.55)+' 2 '+(cx+w*.5)+' 8 '+cx+' 14Z');
+      leaf.setAttribute('fill',c);leaf.setAttribute('opacity','0.65');
+      svg.appendChild(leaf);
+      // veins
+      [-.45,-.2,0,.2,.45].forEach(function(v){
+        var vein=document.createElementNS(NS2,'line');
+        vein.setAttribute('x1',cx);vein.setAttribute('y1',14);
+        vein.setAttribute('x2',cx+v*w);vein.setAttribute('y2',4);
+        vein.setAttribute('stroke',c);vein.setAttribute('stroke-width','0.7');vein.setAttribute('opacity','0.5');
+        svg.appendChild(vein);
+      });
+      // smaller leaf mid-stem
+      var leaf2=document.createElementNS(NS2,'path');
+      var l2y=h*.45;
+      leaf2.setAttribute('d','M'+(cx+4)+' '+l2y+' C'+(cx+w*.4)+' '+(l2y-14)+' '+(cx+w*.35)+' '+(l2y-6)+' '+(cx+4)+' '+l2y+'Z');
+      leaf2.setAttribute('fill',c);leaf2.setAttribute('opacity','0.55');
+      svg.appendChild(leaf2);
+    }}
   ];
-  pd.forEach(function(p){
+
+  // Plant placement — varied types, heights, positions
+  var placements=[
+    {l:'1%',  t:'val',   w:32,h:145,sa:'-3deg',sb:'2.5deg',d:'6.5s',dl:'0s',   c:'rgba(68,105,62,.62)'},
+    {l:'5%',  t:'moss',  w:45,h:55, sa:'-2deg',sb:'2deg',  d:'9s',  dl:'.5s',  c:'rgba(55,90,45,.55)'},
+    {l:'10%', t:'sword', w:52,h:200,sa:'-2deg',sb:'2.5deg',d:'8s',  dl:'1s',   c:'rgba(72,110,60,.65)'},
+    {l:'17%', t:'bacopa',w:28,h:130,sa:'-4deg',sb:'4deg',  d:'7s',  dl:'2s',   c:'rgba(62,100,52,.55)'},
+    {l:'23%', t:'val',   w:26,h:165,sa:'-3deg',sb:'3deg',  d:'9.5s',dl:'.8s',  c:'rgba(58,95,48,.58)'},
+    {l:'29%', t:'cabomba',w:50,h:180,sa:'-2.5deg',sb:'2deg',d:'7.5s',dl:'1.5s',c:'rgba(78,120,65,.6)'},
+    {l:'37%', t:'moss',  w:55,h:60, sa:'-2deg',sb:'2.5deg',d:'10s', dl:'3s',   c:'rgba(50,85,40,.5)'},
+    {l:'43%', t:'lotus', w:58,h:220,sa:'-1.5deg',sb:'2deg',d:'12s', dl:'.3s',  c:'rgba(68,108,55,.68)'},
+    {l:'51%', t:'bacopa',w:30,h:115,sa:'-3.5deg',sb:'3.5deg',d:'8s', dl:'2.2s',c:'rgba(62,100,50,.52)'},
+    {l:'57%', t:'sword', w:46,h:185,sa:'-2deg',sb:'2.5deg',d:'7s',  dl:'1.1s', c:'rgba(70,112,58,.62)'},
+    {l:'64%', t:'val',   w:24,h:140,sa:'-3deg',sb:'3.5deg',d:'9s',  dl:'.6s',  c:'rgba(60,98,50,.56)'},
+    {l:'70%', t:'cabomba',w:44,h:170,sa:'-3deg',sb:'2.5deg',d:'8.5s',dl:'1.8s',c:'rgba(75,115,62,.6)'},
+    {l:'77%', t:'moss',  w:48,h:52, sa:'-2deg',sb:'2deg',  d:'11s', dl:'2.8s', c:'rgba(52,88,42,.5)'},
+    {l:'82%', t:'sword', w:50,h:195,sa:'-2deg',sb:'2deg',  d:'7.5s',dl:'.4s',  c:'rgba(72,110,60,.64)'},
+    {l:'88%', t:'val',   w:28,h:150,sa:'-3.5deg',sb:'3deg',d:'8s',  dl:'1.4s', c:'rgba(64,102,54,.58)'},
+    {l:'93%', t:'bacopa',w:26,h:120,sa:'-4deg',sb:'4deg',  d:'9.5s',dl:'2.5s', c:'rgba(60,96,48,.5)'},
+    {l:'97%', t:'moss',  w:42,h:48, sa:'-2deg',sb:'2.5deg',d:'10s', dl:'0s',   c:'rgba(55,88,44,.48)'}
+  ];
+
+  placements.forEach(function(pd){
+    var type=plantTypes.find(function(t){return t.name===pd.t;})||plantTypes[0];
     var wrap=document.createElement('div');
     wrap.className='plant';
-    wrap.style.cssText='left:'+p.l+';--sa:'+p.sa+';--sb:'+p.sb+';animation:psway '+p.d+' ease-in-out '+p.dl+' infinite';
-    var ns='http://www.w3.org/2000/svg';
-    var svg=document.createElementNS(ns,'svg');
-    svg.setAttribute('width',p.w);svg.setAttribute('height',p.h);
-    svg.setAttribute('viewBox','0 0 '+p.w+' '+p.h);svg.setAttribute('fill','none');
-    var cx=p.w/2,h=p.h;
-    var stem=document.createElementNS(ns,'path');
-    stem.setAttribute('d','M '+cx+' '+h+' C '+(cx-4)+' '+(h*.7)+' '+(cx+5)+' '+(h*.45)+' '+(cx-2)+' '+(h*.25)+' C '+(cx+4)+' '+(h*.1)+' '+cx+' 0');
-    stem.setAttribute('stroke',p.c);stem.setAttribute('stroke-width',p.sw);
-    stem.setAttribute('stroke-linecap','round');
-    svg.appendChild(stem);
-    if(p.lv){
-      [[.35,-1],[.55,1],[.72,-1]].forEach(function(lp){
-        var ly=h*lp[0],dir=lp[1];
-        var leaf=document.createElementNS(ns,'path');
-        leaf.setAttribute('d','M '+cx+' '+ly+' Q '+(cx+dir*18)+' '+(ly-9)+' '+(cx+dir*7)+' '+(ly-20));
-        leaf.setAttribute('stroke',p.c);leaf.setAttribute('stroke-width',p.sw*.65);
-        leaf.setAttribute('stroke-linecap','round');
-        svg.appendChild(leaf);
-      });
-    }
+    wrap.style.cssText='left:'+pd.l+';--sa:'+pd.sa+';--sb:'+pd.sb+';animation:psway '+pd.d+' ease-in-out '+pd.dl+' infinite';
+    var svg=document.createElementNS(NS2,'svg');
+    svg.setAttribute('width',pd.w);svg.setAttribute('height',pd.h);
+    svg.setAttribute('viewBox','0 0 '+pd.w+' '+pd.h);svg.setAttribute('fill','none');
+    type.draw(svg,pd.w,pd.h,pd.c);
     wrap.appendChild(svg);pc.appendChild(wrap);
   });
 
@@ -635,6 +816,398 @@ document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el)
   el.addEventListener('mouseenter',function(){document.body.classList.add('hov')});
   el.addEventListener('mouseleave',function(){document.body.classList.remove('hov')});
 });
+
+/* CURSOR BUBBLES */
+(function(){
+  var bl=document.getElementById('bubble-layer');
+  var lastX=-999,lastY=-999,lastT=0;
+  document.addEventListener('mousemove',function(e){
+    var now=Date.now();
+    var dist=Math.hypot(e.clientX-lastX,e.clientY-lastY);
+    if(dist<18||now-lastT<80)return;
+    lastX=e.clientX;lastY=e.clientY;lastT=now;
+    // spawn 1-2 bubbles
+    var count=Math.random()<.4?2:1;
+    for(var i=0;i<count;i++){
+      var b=document.createElement('div');
+      b.className='cbubble';
+      var sz=4+Math.random()*8;
+      var ox=(Math.random()-.5)*18;
+      var oy=(Math.random()-.5)*10;
+      var rise=-(60+Math.random()*120);
+      var drift=(Math.random()-.5)*40;
+      var dur=1.2+Math.random()*1.4;
+      b.style.cssText=[
+        'width:'+sz+'px','height:'+sz+'px',
+        'left:'+(e.clientX+ox-sz/2)+'px',
+        'top:'+(e.clientY+oy-sz/2)+'px',
+        'position:fixed',
+        '--brise:'+rise+'px','--bdrift:'+drift+'px',
+        'animation-duration:'+dur+'s',
+        'animation-delay:'+(i*.06)+'s'
+      ].join(';');
+      bl.appendChild(b);
+      setTimeout(function(el){el.parentNode&&el.parentNode.removeChild(el)},(dur+.2)*1000,b);
+    }
+  });
+})();
+
+/* ── FISH SYSTEM — Amazon Freshwater ── */
+(function(){
+  var fl=document.getElementById('fish-layer');
+  var W=window.innerWidth,H=window.innerHeight;
+  window.addEventListener('resize',function(){W=window.innerWidth;H=window.innerHeight},{passive:true});
+
+  /*
+    Each fish is built facing RIGHT in SVG space.
+    Head is on the RIGHT side, tail on the LEFT.
+    Eye is near the right side of the body.
+    When goRight=true  → no scaleX flip needed (fish faces right = swims right) ✓
+    When goRight=false → scaleX(-1) flip → fish faces left = swims left ✓
+    Eye stays on the correct side in both cases.
+  */
+  var NS='http://www.w3.org/2000/svg';
+
+  // buildFishSVG(type, opacity) — returns <svg> element
+  // All shapes face RIGHT. Head near x=W, tail near x=0.
+  function buildFishSVG(t, op){
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width',t.w); svg.setAttribute('height',t.h);
+    svg.setAttribute('viewBox','0 0 '+t.w+' '+t.h);
+    svg.setAttribute('style','opacity:'+op+';overflow:visible');
+
+    function p(d,fill,stroke,sw,extra){
+      var el=document.createElementNS(NS,'path');
+      el.setAttribute('d',d);
+      if(fill)el.setAttribute('fill',fill);
+      if(stroke){el.setAttribute('stroke',stroke);el.setAttribute('stroke-width',sw||1);}
+      if(!fill)el.setAttribute('fill','none');
+      if(extra)Object.keys(extra).forEach(function(k){el.setAttribute(k,extra[k]);});
+      return el;
+    }
+    function c(cx,cy,r,fill){
+      var el=document.createElementNS(NS,'circle');
+      el.setAttribute('cx',cx);el.setAttribute('cy',cy);el.setAttribute('r',r);
+      el.setAttribute('fill',fill);return el;
+    }
+
+    t.draw(svg,p,c);
+    return svg;
+  }
+
+  var fishTypes=[
+
+    // 1. Neon Tetra — slim, silver body, vivid blue stripe, red tail half
+    {w:48,h:18,draw:function(s,p,c){
+      var bc='rgba(160,185,155,.82)',sc='rgba(190,210,185,.5)';
+      // tail fork
+      s.appendChild(p('M0,5 Q5,9 0,13 L8,9Z',bc));
+      // body — elongated teardrop facing right
+      s.appendChild(p('M8,9 C8,3 20,1 36,4 C44,6 47,8 47,9 C47,10 44,12 36,14 C20,17 8,15 8,9Z',bc));
+      // blue neon stripe along top half
+      s.appendChild(p('M10,5 C18,3 30,3 40,5 C44,6 46,7 46,8 C44,7 30,5 10,7Z','rgba(80,160,220,.7)'));
+      // red on tail-body junction
+      s.appendChild(p('M8,6 C12,5 16,5 18,6 L18,12 C16,13 12,13 8,12Z','rgba(200,60,50,.55)'));
+      // dorsal fin
+      s.appendChild(p('M22,4 Q28,0 34,4','none','rgba(140,180,140,.5)',1));
+      // eye — right side of body
+      s.appendChild(c(40,8,2.2,'rgba(255,255,255,.9)'));
+      s.appendChild(c(40.5,8,1.1,'rgba(20,20,20,.9)'));
+    }},
+
+    // 2. Discus — tall round Amazon classic, warm amber/brown bands
+    {w:42,h:44,draw:function(s,p,c){
+      var bc='rgba(160,110,55,.78)';
+      // tail
+      s.appendChild(p('M0,14 Q6,22 0,30 L10,22Z',bc));
+      // round disc body
+      s.appendChild(p('M10,22 C10,6 18,1 24,1 C34,1 41,10 41,22 C41,34 34,43 24,43 C18,43 10,38 10,22Z',bc));
+      // vertical bands
+      ['M16,3 C14,8 14,36 16,41','M22,2 C20,8 20,36 22,42','M28,3 C26,8 26,36 28,41'].forEach(function(d){
+        s.appendChild(p(d,'none','rgba(100,65,25,.4)',1.2));
+      });
+      // belly highlight
+      s.appendChild(p('M12,28 C14,36 22,41 28,40 C34,38 38,32 38,28 C34,32 22,36 12,28Z','rgba(200,160,90,.2)'));
+      // dorsal & anal fins
+      s.appendChild(p('M18,2 Q28,-3 36,4','none','rgba(180,130,60,.5)',1.5));
+      s.appendChild(p('M18,42 Q28,47 36,40','none','rgba(180,130,60,.4)',1.5));
+      // eye
+      s.appendChild(c(32,14,3,'rgba(255,255,255,.85)'));
+      s.appendChild(c(32.5,14,1.5,'rgba(30,10,0,.9)'));
+    }},
+
+    // 3. Cardinal Tetra — vivid red lower half, blue upper stripe
+    {w:46,h:16,draw:function(s,p,c){
+      var bc='rgba(155,80,55,.8)';
+      s.appendChild(p('M0,4 Q5,8 0,12 L7,8Z',bc));
+      s.appendChild(p('M7,8 C7,2 18,0 32,3 C40,5 44,7 44,8 C44,9 40,11 32,13 C18,16 7,14 7,8Z',bc));
+      // vivid blue top stripe
+      s.appendChild(p('M9,3 C18,1 32,1 40,4 C42,5 43,6 43,7 C40,6 32,4 18,4 C14,4 10,4 9,5Z','rgba(60,140,210,.75)'));
+      // red lower body
+      s.appendChild(p('M9,9 C14,10 28,11 38,10 L38,13 C28,14 14,13 9,12Z','rgba(220,50,40,.6)'));
+      s.appendChild(p('M18,0 Q26,-2 32,2','none','rgba(100,160,100,.45)',1));
+      s.appendChild(c(38,6.5,2,'rgba(255,255,255,.88)'));
+      s.appendChild(c(38.5,6.5,1,'rgba(10,10,10,.9)'));
+    }},
+
+    // 4. Severum — chunky oval, olive green, faint banding
+    {w:52,h:40,draw:function(s,p,c){
+      var bc='rgba(90,118,72,.78)';
+      s.appendChild(p('M0,12 Q7,20 0,28 L11,20Z',bc));
+      s.appendChild(p('M11,20 C11,6 20,1 28,1 C40,1 50,9 50,20 C50,31 40,39 28,39 C20,39 11,34 11,20Z',bc));
+      // subtle vertical bands
+      ['M18,3 C16,8 16,32 18,37','M26,2 C24,7 24,33 26,38','M34,4 C32,9 32,31 34,36'].forEach(function(d){
+        s.appendChild(p(d,'none','rgba(55,78,38,.35)',1.5));
+      });
+      s.appendChild(p('M12,26 C16,34 26,38 32,37 C40,35 46,28 46,26 C40,30 28,34 12,26Z','rgba(140,180,100,.15)'));
+      s.appendChild(p('M20,2 Q30,-4 40,3','none','rgba(100,140,70,.45)',1.8));
+      s.appendChild(p('M20,38 Q30,44 40,37','none','rgba(100,140,70,.35)',1.5));
+      s.appendChild(c(40,13,3.5,'rgba(255,255,255,.82)'));
+      s.appendChild(c(40.5,13,1.8,'rgba(20,15,0,.9)'));
+    }},
+
+    // 5. Apistogramma — small, colorful dwarf cichlid, blue/yellow
+    {w:38,h:22,draw:function(s,p,c){
+      var bc='rgba(85,125,165,.8)';
+      s.appendChild(p('M0,6 Q5,11 0,16 L8,11Z',bc));
+      s.appendChild(p('M8,11 C8,4 16,1 24,1 C32,1 36,6 36,11 C36,16 32,21 24,21 C16,21 8,18 8,11Z',bc));
+      // yellow belly
+      s.appendChild(p('M10,14 C14,18 22,20 28,19 C32,18 34,16 34,14 C30,16 22,18 10,14Z','rgba(210,185,50,.6)'));
+      // iridescent lateral line
+      s.appendChild(p('M10,10 C16,9 26,9 34,11','none','rgba(180,230,255,.55)',1.2));
+      // spiny dorsal
+      s.appendChild(p('M14,1 L16,0 L18,1 L20,0 L22,1 L24,0 L26,1 L30,3 Q32,5 30,5 L14,5Z','rgba(100,150,200,.55)'));
+      s.appendChild(c(30,8,2,'rgba(255,255,255,.88)'));
+      s.appendChild(c(30.5,8,1,'rgba(15,10,0,.9)'));
+    }},
+
+    // 6. Altum Angelfish — very tall, silver with dark vertical bands
+    {w:32,h:58,draw:function(s,p,c){
+      var bc='rgba(170,185,175,.75)';
+      // long flowing tail
+      s.appendChild(p('M0,20 Q6,29 0,38 L10,29Z',bc));
+      // elongated tall body
+      s.appendChild(p('M10,29 C10,10 16,2 18,2 C22,2 28,10 28,29 C28,48 22,56 18,56 C16,56 10,48 10,29Z',bc));
+      // dark vertical bands
+      s.appendChild(p('M13,6 C12,14 12,44 13,52','none','rgba(50,55,48,.55)',2.5));
+      s.appendChild(p('M18,3 C17,10 17,48 18,55','none','rgba(50,55,48,.4)',1.5));
+      s.appendChild(p('M23,6 C22,14 22,44 23,52','none','rgba(50,55,48,.35)',1.5));
+      // long dorsal & ventral fins
+      s.appendChild(p('M14,3 Q18,-5 24,4','none','rgba(160,180,165,.5)',1.5));
+      s.appendChild(p('M14,55 Q18,63 24,54','none','rgba(160,180,165,.4)',1.5));
+      // eye — upper portion
+      s.appendChild(c(22,16,2.8,'rgba(255,255,255,.85)'));
+      s.appendChild(c(22.5,16,1.4,'rgba(20,20,10,.9)'));
+    }},
+
+    // 7. Corydoras — bottom-dweller, armoured, spotty
+    {w:44,h:22,draw:function(s,p,c){
+      var bc='rgba(130,115,88,.82)';
+      // tail
+      s.appendChild(p('M0,8 Q6,11 0,14 L9,11Z',bc));
+      // armoured body — slightly flat bottom
+      s.appendChild(p('M9,11 C9,4 18,1 28,1 C38,1 43,6 43,11 C43,16 38,21 28,21 C18,21 9,18 9,11Z',bc));
+      // flat belly
+      s.appendChild(p('M10,15 C18,20 30,20 40,16 L40,21 C30,22 18,22 10,19Z','rgba(185,170,130,.6)'));
+      // spots / pattern
+      ['M20,5 ','M26,4 ','M32,6 ','M18,13 ','M28,14 '].forEach(function(cx,i){
+        var el=document.createElementNS(NS,'circle');
+        var x=[20,26,32,18,28][i],y=[5,4,6,13,14][i];
+        el.setAttribute('cx',x);el.setAttribute('cy',y);el.setAttribute('r','2');
+        el.setAttribute('fill','rgba(80,65,40,.45)');s.appendChild(el);
+      });
+      // whiskers
+      s.appendChild(p('M40,12 Q44,10 47,11','none','rgba(160,140,100,.6)',1));
+      s.appendChild(p('M40,13 Q44,14 47,14','none','rgba(160,140,100,.5)',1));
+      // dorsal fin
+      s.appendChild(p('M22,1 Q28,-3 34,2','none','rgba(150,130,90,.5)',1.5));
+      s.appendChild(c(37,8,2,'rgba(255,255,255,.82)'));
+      s.appendChild(c(37.5,8,1,'rgba(20,15,5,.9)'));
+    }}
+  ];
+
+  var fishes=[];
+
+  function createFish(){
+    var type=fishTypes[Math.floor(Math.random()*fishTypes.length)];
+    var goRight=Math.random()>.5;
+    var depth=.15+Math.random()*.55;
+    var baseY=H*(depth*.75);
+    var speed=22+Math.random()*35;
+    var scale=.65+Math.random()*.5;
+    var wScaled=type.w*scale;
+    var startX=goRight?-wScaled-30:W+wScaled+30;
+    var op=(0.58+Math.random()*.32).toFixed(2);
+
+    var svg=buildFishSVG(type, op);
+
+    var wrap=document.createElement('div');
+    wrap.className='fish';
+    // Always build facing right in SVG. Flip with scaleX(-1) when going LEFT.
+    var flipX=goRight?1:-1;
+    wrap.style.cssText=[
+      'position:absolute',
+      'left:'+startX+'px',
+      'top:'+baseY+'px',
+      'transform:scaleX('+flipX+') scale('+scale+')',
+      'transform-origin:center center',
+      'will-change:transform',
+      'transition:opacity 1s'
+    ].join(';');
+    wrap.appendChild(svg);
+    fl.appendChild(wrap);
+
+    var fish={
+      el:wrap, x:startX, baseY:baseY,
+      goRight:goRight, speed:speed, scale:scale,
+      w:wScaled, flipX:flipX,
+      wob:2+Math.random()*3.5,
+      wobF:0.5+Math.random()*.7,
+      t:Math.random()*Math.PI*2,
+      alive:true
+    };
+    fishes.push(fish);
+    return fish;
+  }
+
+  // Stagger 6 fish
+  for(var i=0;i<6;i++){
+    (function(d){setTimeout(createFish,d)})(i*2000+Math.random()*1000);
+  }
+
+  var last=null;
+  function tick(ts){
+    if(!last)last=ts;
+    var dt=Math.min((ts-last)/1000,.05);
+    last=ts;
+    fishes=fishes.filter(function(f){
+      f.t+=dt;
+      f.x+=(f.goRight?1:-1)*f.speed*dt;
+      var y=f.baseY+Math.sin(f.t*f.wobF)*f.wob;
+      y=Math.max(H*.06,Math.min(H*.75,y));
+      f.el.style.left=Math.round(f.x)+'px';
+      f.el.style.top=Math.round(y)+'px';
+      var gone=f.goRight?f.x>W+f.w+60:f.x<-f.w-60;
+      if(gone){
+        var el=f.el;
+        el.style.opacity='0';
+        setTimeout(function(){el.parentNode&&el.parentNode.removeChild(el);createFish()},1000);
+        return false;
+      }
+      return true;
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+/* ── MUSIC — Organic River Ambience ── */
+(function(){
+  var btn=document.getElementById('music-btn');
+  var ctx=null, master=null, playing=false;
+
+  function init(){
+    ctx=new(window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();
+    master.gain.value=0;
+    master.connect(ctx.destination);
+
+    /* ── 1. Brown noise base — river/water rushing feel ── */
+    function makeNoise(type,bufLen){
+      var buf=ctx.createBuffer(1,bufLen||ctx.sampleRate*3,ctx.sampleRate);
+      var d=buf.getChannelData(0);
+      if(type==='brown'){
+        var last=0;
+        for(var i=0;i<d.length;i++){
+          var white=(Math.random()*2-1)*.08;
+          last=(last+white)/1.02;
+          d[i]=last*3.5;
+        }
+      } else {
+        for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      }
+      return buf;
+    }
+
+    // Brown noise through a low-pass — deep underwater ambience
+    var brownBuf=makeNoise('brown');
+    var brownSrc=ctx.createBufferSource();
+    brownSrc.buffer=brownBuf;brownSrc.loop=true;
+    var brownLP=ctx.createBiquadFilter();
+    brownLP.type='lowpass';brownLP.frequency.value=280;brownLP.Q.value=0.5;
+    var brownG=ctx.createGain();brownG.gain.value=0.55;
+    brownSrc.connect(brownLP);brownLP.connect(brownG);brownG.connect(master);
+    brownSrc.start();
+
+    /* ── 2. Mid-range water flow — band-passed white noise ── */
+    var whiteBuf=makeNoise('white',ctx.sampleRate*4);
+    var whiteSrc=ctx.createBufferSource();
+    whiteSrc.buffer=whiteBuf;whiteSrc.loop=true;
+    var wBP=ctx.createBiquadFilter();
+    wBP.type='bandpass';wBP.frequency.value=600;wBP.Q.value=0.4;
+    var wLP=ctx.createBiquadFilter();
+    wLP.type='lowpass';wLP.frequency.value=800;
+    var wG=ctx.createGain();wG.gain.value=0.12;
+    whiteSrc.connect(wBP);wBP.connect(wLP);wLP.connect(wG);wG.connect(master);
+    whiteSrc.start();
+
+    /* ── 3. Gentle LFO-modulated hum — deep water pressure ── */
+    var drone=ctx.createOscillator();
+    drone.type='sine';drone.frequency.value=48;
+    var droneG=ctx.createGain();droneG.gain.value=0.07;
+    var lfo=ctx.createOscillator();
+    lfo.type='sine';lfo.frequency.value=0.08;
+    var lfoG=ctx.createGain();lfoG.gain.value=0.018;
+    lfo.connect(lfoG);lfoG.connect(droneG.gain);
+    drone.connect(droneG);droneG.connect(master);
+    drone.start();lfo.start();
+
+    /* ── 4. Occasional soft water drip — organic micro-events ── */
+    function drip(){
+      if(!playing)return;
+      var t=ctx.currentTime;
+      var freq=280+Math.random()*320;
+      var dur=0.06+Math.random()*0.08;
+      var osc=ctx.createOscillator();
+      var env=ctx.createGain();
+      osc.type='sine';
+      osc.frequency.setValueAtTime(freq,t);
+      osc.frequency.exponentialRampToValueAtTime(freq*0.55,t+dur);
+      env.gain.setValueAtTime(0,t);
+      env.gain.linearRampToValueAtTime(0.04+Math.random()*0.03,t+0.008);
+      env.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      osc.connect(env);env.connect(master);
+      osc.start(t);osc.stop(t+dur+0.05);
+      setTimeout(drip, 800+Math.random()*3500);
+    }
+    setTimeout(drip,1200);
+
+    /* ── 5. Slow reverb shimmer — high filtered noise, very quiet ── */
+    var shimBuf=makeNoise('white',ctx.sampleRate*2);
+    var shimSrc=ctx.createBufferSource();
+    shimSrc.buffer=shimBuf;shimSrc.loop=true;
+    var shimHP=ctx.createBiquadFilter();
+    shimHP.type='highpass';shimHP.frequency.value=3800;
+    var shimG2=ctx.createGain();shimG2.gain.value=0.025;
+    shimSrc.connect(shimHP);shimHP.connect(shimG2);shimG2.connect(master);
+    shimSrc.start();
+  }
+
+  btn.addEventListener('click',function(){
+    if(!ctx){init();}
+    if(ctx.state==='suspended')ctx.resume();
+    playing=!playing;
+    btn.classList.toggle('playing',playing);
+    var now=ctx.currentTime;
+    master.gain.cancelScheduledValues(now);
+    master.gain.setValueAtTime(master.gain.value,now);
+    if(playing){
+      master.gain.linearRampToValueAtTime(0.75,now+3);
+    } else {
+      master.gain.linearRampToValueAtTime(0,now+2.5);
+    }
+  });
+})();
 
 /* MOBILE NAV */
 var bg=document.getElementById('burger'),nm=document.getElementById('nmob');
