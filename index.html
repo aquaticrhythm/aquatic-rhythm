@@ -25,44 +25,61 @@ body{font-family:var(--sans);background:var(--abyss);color:rgba(255,255,255,0.88
 
 /* CURSOR */
 #cd,#cr{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-#cd{width:5px;height:5px;background:rgba(139,189,210,0.9);transition:transform .15s var(--ease),background .3s}
-#cr{width:28px;height:28px;border:1px solid rgba(139,189,210,0.22);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s}
-body.hov #cd{transform:translate(-50%,-50%) scale(2.2);background:rgba(157,191,154,0.9)}
-body.hov #cr{width:48px;height:48px;border-color:rgba(157,191,154,0.15)}
+#cd{width:5px;height:5px;background:rgba(80,210,220,0.9);transition:transform .15s var(--ease),background .3s}
+#cr{width:28px;height:28px;border:1px solid rgba(80,210,220,0.28);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s}
+body.hov #cd{transform:translate(-50%,-50%) scale(2.2);background:rgba(100,230,180,0.9)}
+body.hov #cr{width:48px;height:48px;border-color:rgba(100,230,180,0.18)}
 
 /* ECOSYSTEM FIXED BG */
 #eco{position:fixed;inset:0;z-index:0;overflow:hidden}
-.wb{position:absolute;inset:0;background:linear-gradient(180deg,#0a1f18 0%,#0d2a1e 18%,#092218 38%,#071a14 58%,#050f0c 78%,#030a08 100%)}
-.cl{position:absolute;top:0;left:0;right:0;height:55%;background:radial-gradient(ellipse at 50% 0%,rgba(139,189,210,.07) 0%,rgba(58,110,140,.04) 35%,transparent 70%);animation:caustic 18s ease-in-out infinite}
-@keyframes caustic{0%,100%{transform:scaleX(1) translateX(0);opacity:.8}33%{transform:scaleX(1.15) translateX(3%);opacity:1}66%{transform:scaleX(.9) translateX(-2%);opacity:.7}}
-.sl{position:absolute;top:0;left:-20%;right:-20%;height:1px;background:linear-gradient(to right,transparent,rgba(200,228,240,.5),transparent);animation:surfsh 8s ease-in-out infinite}
-@keyframes surfsh{0%,100%{transform:translateX(-8%) scaleX(.8);opacity:.3}50%{transform:translateX(8%) scaleX(1.2);opacity:.8}}
-.df{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(3,10,8,.85),transparent)}
-.ray{position:absolute;top:0;transform-origin:top center;background:linear-gradient(180deg,rgba(170,220,235,.06) 0%,rgba(139,189,210,.03) 50%,transparent 100%);border-radius:50% 50% 80% 80%;animation:rayf ease-in-out infinite;filter:blur(1px)}
-@keyframes rayf{0%,100%{opacity:.5;transform:skewX(-4deg) scaleY(1)}50%{opacity:1;transform:skewX(4deg) scaleY(1.06)}}
+.wb{position:absolute;inset:0;background:linear-gradient(180deg,#052535 0%,#073040 18%,#062a38 38%,#041e28 58%,#030f18 78%,#020810 100%)}
+.cl{position:absolute;top:0;left:0;right:0;height:60%;background:radial-gradient(ellipse at 50% 0%,rgba(60,200,220,.14) 0%,rgba(20,140,180,.08) 38%,transparent 72%);animation:caustic 14s ease-in-out infinite}
+@keyframes caustic{
+  0%  {transform:scaleX(1) translateX(0);    opacity:.55}
+  20% {transform:scaleX(1.18) translateX(4%); opacity:1}
+  45% {transform:scaleX(.88) translateX(-3%); opacity:.38}
+  70% {transform:scaleX(1.12) translateX(2%); opacity:.9}
+  100%{transform:scaleX(1) translateX(0);    opacity:.55}
+}
+/* Second caustic layer for depth ripple effect */
+.cl2{position:absolute;top:0;left:-10%;right:-10%;height:45%;background:radial-gradient(ellipse at 40% 0%,rgba(40,180,200,.08) 0%,transparent 60%);animation:caustic2 19s ease-in-out infinite 3s}
+@keyframes caustic2{
+  0%  {opacity:.2;transform:translateX(0) scaleX(1)}
+  35% {opacity:.7;transform:translateX(8%) scaleX(1.2)}
+  65% {opacity:.15;transform:translateX(-5%) scaleX(.85)}
+  100%{opacity:.2;transform:translateX(0) scaleX(1)}
+}
+.sl{position:absolute;top:0;left:-20%;right:-20%;height:1px;background:linear-gradient(to right,transparent,rgba(80,220,235,.65),transparent);animation:surfsh 8s ease-in-out infinite}
+@keyframes surfsh{0%,100%{transform:translateX(-8%) scaleX(.8);opacity:.35}50%{transform:translateX(8%) scaleX(1.2);opacity:.9}}
+.df{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(2,8,16,.88),transparent)}
+.ray{position:absolute;top:0;transform-origin:top center;background:linear-gradient(180deg,rgba(80,220,235,.09) 0%,rgba(40,170,200,.04) 50%,transparent 100%);border-radius:50% 50% 80% 80%;animation:rayf ease-in-out infinite;filter:blur(1.5px)}
+@keyframes rayf{0%,100%{opacity:.4;transform:skewX(-4deg) scaleY(1)}50%{opacity:1;transform:skewX(4deg) scaleY(1.08)}}
 .plant-layer{position:absolute;bottom:0;left:0;right:0;height:70%;pointer-events:none}
 .plant{position:absolute;bottom:0;transform-origin:bottom center}
 @keyframes psway{0%,100%{transform:rotate(var(--sa))}50%{transform:rotate(var(--sb))}}
-.mote{position:absolute;border-radius:50%;background:rgba(200,228,240,.5);animation:mrise linear infinite;pointer-events:none}
+.mote{position:absolute;border-radius:50%;background:rgba(80,220,240,.55);animation:mrise linear infinite;pointer-events:none}
 @keyframes mrise{0%{opacity:0;transform:translateY(0) translateX(0)}5%{opacity:var(--mo)}90%{opacity:calc(var(--mo)*.4)}100%{opacity:0;transform:translateY(var(--mr)) translateX(var(--md))}}
-.spk{position:absolute;border-radius:50%;background:rgba(157,191,154,.3);animation:sdrift ease-in-out infinite alternate;pointer-events:none}
-@keyframes sdrift{from{transform:translate(0,0);opacity:.1}to{transform:translate(var(--sx),var(--sy));opacity:.5}}
+.spk{position:absolute;border-radius:50%;background:rgba(60,200,180,.35);animation:sdrift ease-in-out infinite alternate;pointer-events:none}
+@keyframes sdrift{from{transform:translate(0,0);opacity:.1}to{transform:translate(var(--sx),var(--sy));opacity:.55}}
+
+/* DRIFTWOOD */
+#driftwood-layer{position:absolute;bottom:0;left:0;right:0;height:55%;pointer-events:none}
 
 /* PAGE LAYER */
 #pl{position:relative;z-index:10}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4.5rem);background:linear-gradient(to bottom,rgba(6,16,13,.85),transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4.5rem);background:linear-gradient(to bottom,rgba(3,18,30,.88),transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .nl{font-family:var(--serif);font-size:1.05rem;font-weight:300;letter-spacing:.04em;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s}
 .nl:hover{color:rgba(255,255,255,.85)}
-.nl em{font-style:italic;color:rgba(139,189,210,.7)}
+.nl em{font-style:italic;color:rgba(60,210,225,.82)}
 .nlinks{display:flex;gap:2.6rem;list-style:none}
 .nlinks a{font-size:.63rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s;position:relative}
-.nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(139,189,210,.5);transition:width .35s var(--ease)}
-.nlinks a:hover{color:rgba(255,255,255,.65)}
+.nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(60,210,225,.6);transition:width .35s var(--ease)}
+.nlinks a:hover{color:rgba(255,255,255,.82)}
 .nlinks a:hover::after{width:100%}
-.ncta{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(139,189,210,.8);border:1px solid rgba(139,189,210,.2);padding:.52rem 1.25rem;border-radius:100px;text-decoration:none;transition:background .3s,border-color .3s,color .3s;backdrop-filter:blur(8px)}
-.ncta:hover{background:rgba(139,189,210,.1);border-color:rgba(139,189,210,.4);color:rgba(200,232,245,.95)}
+.ncta{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(60,210,225,.88);border:1px solid rgba(60,210,225,.25);padding:.52rem 1.25rem;border-radius:100px;text-decoration:none;transition:background .3s,border-color .3s,color .3s;backdrop-filter:blur(8px)}
+.ncta:hover{background:rgba(60,210,225,.12);border-color:rgba(60,210,225,.45);color:rgba(100,235,245,.98)}
 .nbg{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;cursor:none;padding:5px}
 .nbg span{display:block;height:1px;background:rgba(255,255,255,.4);transition:transform .36s var(--ease),opacity .22s,width .3s var(--ease);transform-origin:center}
 .nbg span:nth-child(1){width:18px}
@@ -98,12 +115,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .bt{font-size:1rem;font-weight:300;color:rgba(255,255,255,.62);line-height:1.95}
 .bt+.bt{margin-top:1rem}
 .btn{display:inline-block;text-decoration:none;cursor:none;font-family:var(--sans);font-size:.67rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;transition:all .32s var(--ease)}
-.bf{background:rgba(58,110,140,.7);color:rgba(255,255,255,.9);border:1px solid rgba(139,189,210,.25);padding:.9rem 2rem;backdrop-filter:blur(8px)}
-.bf:hover{background:rgba(90,148,178,.8);border-color:rgba(139,189,210,.4);transform:translateY(-2px);box-shadow:0 12px 32px rgba(58,110,140,.2)}
-.bg{background:transparent;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);padding:.9rem 2rem}
-.bg:hover{border-color:rgba(157,191,154,.3);color:rgba(157,191,154,.8)}
-.bl{background:transparent;color:rgba(139,189,210,.55);border-bottom:1px solid rgba(139,189,210,.2);border-radius:0;padding:0;font-size:.62rem}
-.bl:hover{color:rgba(139,189,210,.9);border-bottom-color:rgba(139,189,210,.5)}
+.bf{background:rgba(20,140,165,.75);color:rgba(255,255,255,.95);border:1px solid rgba(60,210,225,.3);padding:.9rem 2rem;backdrop-filter:blur(8px)}
+.bf:hover{background:rgba(30,170,195,.85);border-color:rgba(60,210,225,.55);transform:translateY(-2px);box-shadow:0 12px 32px rgba(30,170,195,.25)}
+.bg{background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.12);padding:.9rem 2rem}
+.bg:hover{border-color:rgba(60,210,225,.35);color:rgba(60,210,225,.85)}
+.bl{background:transparent;color:rgba(60,210,225,.65);border-bottom:1px solid rgba(60,210,225,.25);border-radius:0;padding:0;font-size:.62rem}
+.bl:hover{color:rgba(60,210,225,.95);border-bottom-color:rgba(60,210,225,.6)}
 
 /* HOME HERO */
 .hero{min-height:100svh;display:flex;align-items:center;padding:68px clamp(1.5rem,5vw,4.5rem) 0;position:relative}
@@ -142,7 +159,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .pc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.2),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .pc:hover{background:rgba(9,22,18,.75)}
 .pc:hover::before{transform:scaleX(1)}
-.pn{font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(139,189,210,.1);line-height:1;margin-bottom:1.4rem}
+.pn{font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(60,210,225,.28);line-height:1;margin-bottom:1.4rem}
 .pc h4{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:rgba(255,255,255,.88);margin-bottom:.5rem;line-height:1.3}
 .pc p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.85}
 
@@ -154,7 +171,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .ac:hover{background:rgba(9,22,18,.8)}
 .ac::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(157,191,154,.25),transparent);transform:scaleX(0);transform-origin:center;transition:transform .45s var(--ease)}
 .ac:hover::after{transform:scaleX(1)}
-.an{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:rgba(157,191,154,.1);line-height:1;margin-bottom:1.2rem}
+.an{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:rgba(60,210,225,.3);line-height:1;margin-bottom:1.2rem}
 .ac h4{font-family:var(--serif);font-size:1.02rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.3;margin-bottom:.5rem}
 .ac p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75}
 
@@ -192,7 +209,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .prins{padding:5rem clamp(1.5rem,5vw,4.5rem) 9rem}
 .pb{display:grid;grid-template-columns:60px 200px 1fr;gap:4.5rem;padding:4.5rem 0;align-items:start;border-bottom:1px solid rgba(255,255,255,.06)}
 .pb:last-child{border-bottom:none}
-.pnl{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(139,189,210,.12);line-height:1}
+.pnl{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(60,210,225,.35);line-height:1}
 .ptag{font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(157,191,154,.72);display:block;margin-bottom:.7rem}
 .ptit{font-family:var(--serif);font-size:clamp(1.3rem,1.9vw,1.85rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.28}
 .eg{margin-top:1.6rem;padding:1.2rem 1.5rem;border-left:1px solid rgba(139,189,210,.22);background:rgba(58,110,140,.07)}
@@ -234,7 +251,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .scn:last-child{border-bottom:none}
 .scn:nth-child(even) .scl{order:2}
 .scn:nth-child(even) .scr{order:1}
-.scnum{font-family:var(--serif);font-size:4.5rem;font-weight:300;color:rgba(139,189,210,.09);line-height:1;margin-bottom:.8rem}
+.scnum{font-family:var(--serif);font-size:4.5rem;font-weight:300;color:rgba(60,210,225,.28);line-height:1;margin-bottom:.8rem}
 .scty{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(157,191,154,.72);display:block;margin-bottom:.8rem}
 .sctit{font-family:var(--serif);font-size:clamp(1.3rem,1.9vw,1.75rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.3;margin-bottom:1.6rem}
 .scv{background:rgba(6,16,13,.6);border-left:1px solid rgba(255,255,255,.1);padding:1.3rem 1.7rem;margin-bottom:1.6rem}
@@ -339,9 +356,11 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
 <div id="eco">
   <div class="wb"></div>
   <div class="cl"></div>
+  <div class="cl2"></div>
   <div class="sl"></div>
   <div class="df"></div>
   <div id="rays"></div>
+  <div id="driftwood-layer"></div>
   <div class="plant-layer" id="plants"></div>
   <div id="particles"></div>
   <div id="fish-layer"></div>
@@ -830,242 +849,392 @@ document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el)
 })();
 
 /* ══════════════════════════════════════
-   FISH SYSTEM — Clean Amazon Freshwater
-   Rules:
-   - 3 solo fish (large, varied speed, infrequent)
-   - 1 school of 10 small tetras moving together
-   - SVG faces RIGHT, eye always near right/head end
-   - Direction: scaleX flip on wrapper only
+   DRIFTWOOD
+══════════════════════════════════════ */
+(function(){
+  var dl = document.getElementById('driftwood-layer');
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = window.innerWidth, H = window.innerHeight;
+
+  // Each piece: x%, bottomY%, width, svg path description
+  var pieces = [
+    // Left large piece — angled trunk with roots
+    { x:3, w:280, h:130, opacity:.52, draw: function(s,w,h){
+      // Main trunk angling right and up
+      s.appendChild(p(s,'M10,'+h+' C30,'+(h*.7)+' 80,'+(h*.45)+' 140,'+(h*.35)+' C200,'+(h*.28)+' 250,'+(h*.32)+' 275,'+(h*.38),
+        'none','rgba(60,38,18,.72)',8));
+      // Branch 1 up-right
+      s.appendChild(p(s,'M140,'+(h*.35)+' C160,'+(h*.18)+' 200,'+(h*.12)+' 230,'+(h*.08),
+        'none','rgba(55,34,15,.62)',5));
+      // Branch 2 down-right
+      s.appendChild(p(s,'M200,'+(h*.3)+' C220,'+(h*.42)+' 250,'+(h*.48)+' 278,'+(h*.52),
+        'none','rgba(50,30,12,.55)',4));
+      // Root left
+      s.appendChild(p(s,'M10,'+h+' C0,'+(h*.85)+' -5,'+(h*.7)+' 5,'+(h*.6),
+        'none','rgba(48,28,10,.58)',5));
+      // Root right
+      s.appendChild(p(s,'M30,'+h+' C20,'+(h*.88)+' 15,'+(h*.75)+' 25,'+(h*.65),
+        'none','rgba(48,28,10,.5)',4));
+      // Texture lines on trunk
+      ['M50,'+(h*.62)+' C70,'+(h*.58)+' 90,'+(h*.52)+' 110,'+(h*.48),
+       'M80,'+(h*.55)+' C100,'+(h*.5)+' 120,'+(h*.46)+' 140,'+(h*.44)].forEach(function(d){
+        s.appendChild(p(s,d,'none','rgba(30,18,5,.3)',1.5));
+      });
+    }},
+    // Right piece — submerged log
+    { x:62, w:260, h:80, opacity:.44, draw: function(s,w,h){
+      // Main log body — slightly curved
+      s.appendChild(p(s,'M0,'+(h*.6)+' C40,'+(h*.45)+' 100,'+(h*.38)+' 160,'+(h*.42)+' C210,'+(h*.46)+' 250,'+(h*.55)+' 258,'+(h*.65),
+        'none','rgba(55,33,12,.68)',12));
+      // Top highlight
+      s.appendChild(p(s,'M5,'+(h*.54)+' C50,'+(h*.39)+' 110,'+(h*.33)+' 160,'+(h*.37)+' C210,'+(h*.41)+' 248,'+(h*.5)+' 256,'+(h*.59),
+        'none','rgba(80,52,22,.35)',4));
+      // Branch stub
+      s.appendChild(p(s,'M100,'+(h*.38)+' C105,'+(h*.2)+' 120,'+(h*.12)+' 130,'+(h*.08),
+        'none','rgba(50,30,10,.55)',6));
+      // Texture
+      s.appendChild(p(s,'M40,'+(h*.5)+' C80,'+(h*.44)+' 120,'+(h*.42)+' 160,'+(h*.46),
+        'none','rgba(35,20,5,.25)',2));
+    }},
+    // Centre small piece — mossy rock/root
+    { x:34, w:140, h:60, opacity:.38, draw: function(s,w,h){
+      s.appendChild(p(s,'M5,'+h+' C20,'+(h*.55)+' 50,'+(h*.35)+' 80,'+(h*.3)+' C110,'+(h*.35)+' 132,'+(h*.55)+' 135,'+h,
+        'rgba(38,24,8,.55)','rgba(28,16,4,.4)',2));
+      // mossy texture bumps
+      [[25,h*.45,12,8],[50,h*.32,10,7],[75,h*.3,11,7],[100,h*.38,10,6]].forEach(function(r){
+        s.appendChild(el(s,'ellipse',{cx:r[0],cy:r[1],rx:r[2],ry:r[3],fill:'rgba(45,65,30,.35)'}));
+      });
+    }}
+  ];
+
+  function p(s,d,fill,stroke,sw){
+    var e=document.createElementNS(NS,'path');
+    e.setAttribute('d',d);
+    if(fill&&fill!=='none')e.setAttribute('fill',fill); else e.setAttribute('fill','none');
+    if(stroke){e.setAttribute('stroke',stroke);e.setAttribute('stroke-width',sw||2);}
+    e.setAttribute('stroke-linecap','round');
+    return e;
+  }
+  function el(s,tag,attrs){
+    var e=document.createElementNS(NS,tag);
+    Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});
+    return e;
+  }
+
+  pieces.forEach(function(pc){
+    var wrap=document.createElement('div');
+    wrap.style.cssText='position:absolute;left:'+pc.x+'%;bottom:0;opacity:'+pc.opacity;
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width',pc.w);svg.setAttribute('height',pc.h);
+    svg.setAttribute('viewBox','0 0 '+pc.w+' '+pc.h);
+    pc.draw(svg,pc.w,pc.h);
+    wrap.appendChild(svg);
+    dl.appendChild(wrap);
+  });
+})();
+
+/* ══════════════════════════════════════
+   FISH SYSTEM
+   - 3 solo cichlids (colorful, infrequent)
+   - Altum Angelfish school (4–6, very slow, spaced out)
+   - Cardinal Tetra school (22 fish, vivid)
+   - Congo Tetra school (18 fish, iridescent)
 ══════════════════════════════════════ */
 (function(){
   var fl = document.getElementById('fish-layer');
   var W = window.innerWidth, H = window.innerHeight;
-  window.addEventListener('resize', function(){ W=window.innerWidth; H=window.innerHeight; }, {passive:true});
+  window.addEventListener('resize',function(){W=window.innerWidth;H=window.innerHeight;},{passive:true});
   var NS = 'http://www.w3.org/2000/svg';
 
-  function el(tag, attrs){
-    var e = document.createElementNS(NS, tag);
-    Object.keys(attrs).forEach(function(k){ e.setAttribute(k, attrs[k]); });
+  function mk(tag,attrs){
+    var e=document.createElementNS(NS,tag);
+    Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});
     return e;
   }
 
-  /* ── FISH DEFINITIONS ──
-     All face RIGHT. Head = right side. Eye near x=W*0.75–0.85.
-     Tail = left side (low x). Body is a smooth horizontal fish shape. */
+  /* ──────────────────────────────────
+     ALTUM ANGELFISH — precise kite/diamond
+     ViewBox 0 0 54 82. Faces RIGHT.
+     Head = right point. Tail = left.
+     Dorsal spike = top. Ventral spike = bottom.
+  ────────────────────────────────── */
+  function buildAltum(svg){
+    // Body: true kite — four curved sides meeting at 4 tips
+    // Left tip (tail): 2,41  Top tip (dorsal): 27,2  Right tip (head): 52,41  Bottom tip (ventral): 27,80
+    svg.appendChild(mk('path',{
+      d:'M2,41 C8,30 18,12 27,2 C36,12 46,30 52,41 C46,52 36,70 27,80 C18,70 8,52 2,41Z',
+      fill:'rgba(178,198,185,.78)'
+    }));
+    // Three dark vertical bands — characteristic Altum markings
+    svg.appendChild(mk('path',{
+      d:'M18,8 C16,20 15,42 16,62 C18,68 20,72 22,74 C20,72 18,68 18,62 C17,42 18,20 20,8Z',
+      fill:'rgba(38,48,40,.55)'
+    }));
+    svg.appendChild(mk('path',{
+      d:'M27,3 C25,12 24,35 25,55 C26,68 27,76 27,80 C27,76 28,68 29,55 C30,35 29,12 27,3Z',
+      fill:'rgba(38,48,40,.42)'
+    }));
+    svg.appendChild(mk('path',{
+      d:'M36,8 C34,20 33,42 34,62 C36,68 34,72 32,74 C34,72 36,68 36,62 C35,42 36,20 38,8Z',
+      fill:'rgba(38,48,40,.38)'
+    }));
+    // Silver sheen highlights on body
+    svg.appendChild(mk('path',{
+      d:'M22,10 C26,8 30,8 34,10 C38,14 40,22 38,30 C34,26 26,26 22,30 C20,22 20,14 22,10Z',
+      fill:'rgba(225,238,228,.15)'
+    }));
+    // Tail fin — forked, flowing from left tip
+    svg.appendChild(mk('path',{
+      d:'M2,41 C-4,34 -8,26 -4,20 C0,26 4,32 8,36Z',
+      fill:'rgba(160,182,168,.62)'
+    }));
+    svg.appendChild(mk('path',{
+      d:'M2,41 C-4,48 -8,56 -4,62 C0,56 4,50 8,46Z',
+      fill:'rgba(160,182,168,.58)'
+    }));
+    // Long trailing dorsal fin from top tip
+    svg.appendChild(mk('path',{
+      d:'M27,2 C22,-3 16,-2 12,4 C16,2 20,4 22,8Z',
+      fill:'rgba(155,178,162,.5)'
+    }));
+    // Long trailing ventral fin from bottom tip
+    svg.appendChild(mk('path',{
+      d:'M27,80 C22,85 16,84 12,78 C16,80 20,78 22,74Z',
+      fill:'rgba(155,178,162,.45)'
+    }));
+    // Eye — near right/head tip
+    svg.appendChild(mk('circle',{cx:'42',cy:'37',r:'3',fill:'rgba(255,255,255,.88)'}));
+    svg.appendChild(mk('circle',{cx:'42.5',cy:'37',r:'1.5',fill:'rgba(8,12,8,.92)'}));
+  }
 
+  /* ──────────────────────────────────
+     CARDINAL TETRA — slim, vivid blue/red
+     ViewBox 0 0 44 14. Faces RIGHT.
+  ────────────────────────────────── */
+  function buildCardinal(svg){
+    // Tail
+    svg.appendChild(mk('path',{d:'M0,3 Q5,7 0,11 L7,7Z',fill:'rgba(130,60,45,.85)'}));
+    // Body — elongated, tapers to head-point right
+    svg.appendChild(mk('path',{d:'M7,7 C7,2 16,0 28,1 C36,2 42,4 43,7 C42,10 36,12 28,13 C16,14 7,12 7,7Z',fill:'rgba(138,65,48,.85)'}));
+    // Vivid electric blue top stripe
+    svg.appendChild(mk('path',{d:'M8,2 C16,0 28,0 38,3 C40,4 42,5 42,6 C40,5 28,2 16,3 C12,3 9,3 8,4Z',fill:'rgba(30,130,220,.82)'}));
+    // Red lower body (cardinal = full red belly)
+    svg.appendChild(mk('path',{d:'M8,9 C16,10 28,11 38,10 L38,13 C28,13 16,12 8,11Z',fill:'rgba(215,45,35,.68)'}));
+    // Dorsal fin
+    svg.appendChild(mk('path',{d:'M18,1 Q24,-2 30,1',stroke:'rgba(100,160,200,.45)',fill:'none','stroke-width':'1'}));
+    // Eye
+    svg.appendChild(mk('circle',{cx:'37',cy:'6',r:'2',fill:'rgba(255,255,255,.9)'}));
+    svg.appendChild(mk('circle',{cx:'37.3',cy:'6',r:'1',fill:'rgba(5,5,5,.92)'}));
+  }
+
+  /* ──────────────────────────────────
+     CONGO TETRA — larger, iridescent rainbow
+     ViewBox 0 0 50 18. Faces RIGHT.
+  ────────────────────────────────── */
+  function buildCongo(svg){
+    // Tail — forked, flowing
+    svg.appendChild(mk('path',{d:'M0,5 Q6,9 0,13 L9,9Z',fill:'rgba(80,110,85,.82)'}));
+    // Body — deeper, more oval
+    svg.appendChild(mk('path',{d:'M9,9 C9,3 20,0 32,1 C42,2 48,5 49,9 C48,13 42,16 32,17 C20,18 9,15 9,9Z',fill:'rgba(88,118,90,.82)'}));
+    // Iridescent lateral band — central rainbow shimmer
+    svg.appendChild(mk('path',{d:'M10,7 C20,5 32,5 44,8 C46,9 48,10 48,10 C46,9 32,7 20,8 C16,8 12,8 10,9Z',fill:'rgba(160,220,180,.55)'}));
+    // Blue/violet upper sheen
+    svg.appendChild(mk('path',{d:'M11,3 C20,1 32,1 42,4 C44,5 46,6 46,7 C42,5 28,3 20,4Z',fill:'rgba(80,140,200,.38)'}));
+    // Orange/gold lower sheen
+    svg.appendChild(mk('path',{d:'M11,12 C20,13 32,14 42,12 L42,15 C32,16 20,16 11,14Z',fill:'rgba(200,150,40,.3)'}));
+    // Dorsal fin — longer, flowing
+    svg.appendChild(mk('path',{d:'M20,1 Q28,-4 36,1',stroke:'rgba(140,200,160,.5)',fill:'none','stroke-width':'1.2'}));
+    // Eye
+    svg.appendChild(mk('circle',{cx:'43',cy:'8',r:'2.4',fill:'rgba(255,255,255,.88)'}));
+    svg.appendChild(mk('circle',{cx:'43.3',cy:'8',r:'1.2',fill:'rgba(5,5,5,.92)'}));
+  }
+
+  /* ──────────────────────────────────
+     SOLO CICHLIDS
+  ────────────────────────────────── */
   var soloFish = [
-
-    // 1. Discus — round, tall, amber with dark bands
-    {w:56, h:52, build: function(s){
-      // tail — left side fork
-      s.appendChild(el('path',{d:'M2,14 Q10,26 2,38 L14,26Z', fill:'rgba(148,100,45,.82)'}));
-      // round body
-      s.appendChild(el('path',{d:'M14,26 C14,8 24,2 32,2 C44,2 54,11 54,26 C54,41 44,50 32,50 C24,50 14,44 14,26Z', fill:'rgba(162,112,48,.82)'}));
-      // dark vertical bands
-      ['M22,4 C20,12 20,40 22,48','M30,3 C28,10 28,42 30,49','M38,5 C36,12 36,40 38,47'].forEach(function(d){
-        s.appendChild(el('path',{d:d, stroke:'rgba(80,52,18,.38)', 'stroke-width':'2.5', fill:'none'}));
+    // Geophagus — teal eartheater
+    {w:60,h:36,build:function(s){
+      s.appendChild(mk('path',{d:'M2,12 Q10,18 2,24 L14,18Z',fill:'rgba(38,140,130,.82)'}));
+      s.appendChild(mk('path',{d:'M14,18 C14,5 26,1 38,1 C52,1 58,8 58,18 C58,28 52,35 38,35 C26,35 14,31 14,18Z',fill:'rgba(42,155,140,.82)'}));
+      [[24,8,3],[32,6,2.5],[40,9,3],[28,14,2],[36,13,3.5],[44,11,2.5],[30,22,2],[38,20,3]].forEach(function(sp){
+        s.appendChild(mk('circle',{cx:sp[0],cy:sp[1],r:sp[2],fill:'rgba(80,220,200,.45)'}));
       });
-      // belly shimmer
-      s.appendChild(el('path',{d:'M16,34 C22,44 34,48 42,46 C48,44 52,38 52,34 C46,38 32,42 16,34Z', fill:'rgba(200,165,95,.18)'}));
-      // dorsal fin
-      s.appendChild(el('path',{d:'M24,3 Q34,-4 44,4', stroke:'rgba(185,135,60,.5)', 'stroke-width':'1.8', fill:'none'}));
-      // eye — right side of body
-      s.appendChild(el('circle',{cx:'44',cy:'16',r:'3.5',fill:'rgba(255,255,255,.88)'}));
-      s.appendChild(el('circle',{cx:'44.5',cy:'16',r:'1.7',fill:'rgba(15,8,0,.92)'}));
+      s.appendChild(mk('path',{d:'M16,6 Q30,-2 46,5',stroke:'rgba(100,230,210,.45)','stroke-width':'1.8',fill:'none'}));
+      s.appendChild(mk('path',{d:'M16,30 Q30,38 46,31',stroke:'rgba(100,230,210,.38)','stroke-width':'1.5',fill:'none'}));
+      s.appendChild(mk('circle',{cx:'48',cy:'10',r:'3.8',fill:'rgba(255,255,255,.88)'}));
+      s.appendChild(mk('circle',{cx:'48.5',cy:'10',r:'1.9',fill:'rgba(5,15,10,.92)'}));
     }},
-
-    // 2. Severum — chunky oval, olive green
-    {w:62, h:46, build: function(s){
-      s.appendChild(el('path',{d:'M2,16 Q10,23 2,30 L14,23Z', fill:'rgba(88,115,68,.78)'}));
-      s.appendChild(el('path',{d:'M14,23 C14,8 24,2 34,2 C48,2 60,10 60,23 C60,36 48,44 34,44 C24,44 14,38 14,23Z', fill:'rgba(96,125,74,.78)'}));
-      ['M22,4 C20,10 20,36 22,42','M32,3 C30,9 30,37 32,43','M42,5 C40,11 40,35 42,41'].forEach(function(d){
-        s.appendChild(el('path',{d:d, stroke:'rgba(52,72,34,.32)', 'stroke-width':'2', fill:'none'}));
-      });
-      s.appendChild(el('path',{d:'M16,30 C22,38 34,42 42,40 C50,38 56,32 56,30 C50,34 34,38 16,30Z', fill:'rgba(145,185,100,.15)'}));
-      s.appendChild(el('path',{d:'M22,3 Q34,-3 46,4', stroke:'rgba(110,148,80,.45)', 'stroke-width':'2', fill:'none'}));
-      s.appendChild(el('path',{d:'M22,43 Q34,49 46,42', stroke:'rgba(110,148,80,.38)', 'stroke-width':'1.6', fill:'none'}));
-      s.appendChild(el('circle',{cx:'50',cy:'14',r:'3.2',fill:'rgba(255,255,255,.85)'}));
-      s.appendChild(el('circle',{cx:'50.5',cy:'14',r:'1.5',fill:'rgba(10,8,0,.92)'}));
+    // Oscar — bold orange/black
+    {w:64,h:44,build:function(s){
+      s.appendChild(mk('path',{d:'M2,14 Q10,22 2,30 L14,22Z',fill:'rgba(180,80,20,.85)'}));
+      s.appendChild(mk('path',{d:'M14,22 C14,7 26,2 36,2 C50,2 62,10 62,22 C62,34 50,42 36,42 C26,42 14,37 14,22Z',fill:'rgba(190,88,22,.85)'}));
+      s.appendChild(mk('path',{d:'M22,4 C20,12 22,22 20,34',stroke:'rgba(20,8,2,.45)','stroke-width':'5',fill:'none'}));
+      s.appendChild(mk('path',{d:'M34,3 C32,14 34,24 32,38',stroke:'rgba(20,8,2,.4)','stroke-width':'4',fill:'none'}));
+      s.appendChild(mk('path',{d:'M46,6 C44,14 44,24 42,36',stroke:'rgba(20,8,2,.35)','stroke-width':'3.5',fill:'none'}));
+      s.appendChild(mk('circle',{cx:'18',cy:'22',r:'5',fill:'rgba(255,140,20,.5)'}));
+      s.appendChild(mk('circle',{cx:'18',cy:'22',r:'3',fill:'rgba(10,5,0,.6)'}));
+      s.appendChild(mk('path',{d:'M24,3 Q38,-4 52,5',stroke:'rgba(220,100,30,.45)','stroke-width':'2',fill:'none'}));
+      s.appendChild(mk('circle',{cx:'52',cy:'14',r:'4',fill:'rgba(255,255,255,.88)'}));
+      s.appendChild(mk('circle',{cx:'52.5',cy:'14',r:'2',fill:'rgba(10,5,0,.92)'}));
     }},
-
-    // 3. Altum Angelfish — very tall, silver, dark bands, long fins
-    {w:36, h:72, build: function(s){
-      s.appendChild(el('path',{d:'M2,24 Q8,36 2,48 L12,36Z', fill:'rgba(168,182,172,.75)'}));
-      s.appendChild(el('path',{d:'M12,36 C12,14 18,3 22,3 C28,3 34,14 34,36 C34,58 28,69 22,69 C18,69 12,58 12,36Z', fill:'rgba(175,190,178,.75)'}));
-      ['M16,6 C15,16 15,56 16,66','M22,4 C21,12 21,60 22,68','M28,6 C27,16 27,56 28,66'].forEach(function(d){
-        s.appendChild(el('path',{d:d, stroke:'rgba(48,55,45,.52)', 'stroke-width':'2.8', fill:'none'}));
+    // Flowerhorn — red/blue vivid
+    {w:58,h:42,build:function(s){
+      s.appendChild(mk('path',{d:'M36,1 C42,-2 52,0 56,6 L56,14 C52,8 42,5 36,8Z',fill:'rgba(200,50,60,.75)'}));
+      s.appendChild(mk('path',{d:'M2,16 Q10,21 2,26 L13,21Z',fill:'rgba(185,45,55,.82)'}));
+      s.appendChild(mk('path',{d:'M13,21 C13,7 24,2 34,2 C46,2 56,10 56,21 C56,32 46,40 34,40 C24,40 13,35 13,21Z',fill:'rgba(195,48,58,.82)'}));
+      [[20,10,6,4],[30,8,8,5],[40,12,7,4],[22,22,6,4],[32,20,8,5]].forEach(function(r){
+        s.appendChild(mk('ellipse',{cx:r[0],cy:r[1],rx:r[2],ry:r[3],fill:'rgba(40,160,220,.38)'}));
       });
-      // long flowing dorsal and ventral fins
-      s.appendChild(el('path',{d:'M16,4 Q22,-7 30,5', stroke:'rgba(155,172,158,.52)', 'stroke-width':'1.8', fill:'none'}));
-      s.appendChild(el('path',{d:'M16,68 Q22,79 30,67', stroke:'rgba(155,172,158,.42)', 'stroke-width':'1.5', fill:'none'}));
-      s.appendChild(el('circle',{cx:'28',cy:'18',r:'2.8',fill:'rgba(255,255,255,.88)'}));
-      s.appendChild(el('circle',{cx:'28.5',cy:'18',r:'1.4',fill:'rgba(15,15,8,.92)'}));
+      s.appendChild(mk('path',{d:'M15,20 C24,19 36,19 52,21',stroke:'rgba(80,10,15,.55)','stroke-width':'3',fill:'none'}));
+      s.appendChild(mk('path',{d:'M18,3 Q32,-3 46,4',stroke:'rgba(220,80,50,.45)','stroke-width':'2',fill:'none'}));
+      s.appendChild(mk('circle',{cx:'47',cy:'12',r:'3.8',fill:'rgba(255,255,255,.9)'}));
+      s.appendChild(mk('circle',{cx:'47.5',cy:'12',r:'1.9',fill:'rgba(10,2,2,.92)'}));
     }}
   ];
 
-  // School fish — Cardinal Tetra, tiny, 10 per school
-  function buildSchoolFish(s){
-    // slim tetra shape, 28×12
-    s.appendChild(el('path',{d:'M0,4 Q5,6 0,8 L7,6Z', fill:'rgba(140,70,50,.82)'}));
-    s.appendChild(el('path',{d:'M7,6 C7,2 14,0 20,1 C26,2 28,4 28,6 C28,8 26,10 20,11 C14,12 7,10 7,6Z', fill:'rgba(145,75,52,.82)'}));
-    // bright blue top stripe
-    s.appendChild(el('path',{d:'M8,2 C14,1 22,1 26,3 C27,4 27,5 26,5 C22,3 14,3 8,4Z', fill:'rgba(55,140,210,.78)'}));
-    // red lower stripe
-    s.appendChild(el('path',{d:'M8,7 C14,8 22,8 26,7 L26,10 C22,11 14,11 8,10Z', fill:'rgba(210,45,38,.62)'}));
-    // eye
-    s.appendChild(el('circle',{cx:'24',cy:'5',r:'1.8',fill:'rgba(255,255,255,.9)'}));
-    s.appendChild(el('circle',{cx:'24.3',cy:'5',r:'.9',fill:'rgba(5,5,5,.92)'}));
-  }
-
-  /* ── Create a solo fish ── */
-  function makeSolo(typeIdx){
-    var t = soloFish[typeIdx % soloFish.length];
-    var goRight = Math.random() > .5;
-    var depth = .12 + Math.random() * .52;
-    var baseY = H * depth;
-    var speed = 18 + Math.random() * 28; // slow–medium
-    var scale = .72 + Math.random() * .42;
-    var startX = goRight ? -t.w*scale - 40 : W + t.w*scale + 40;
-
-    var svg = document.createElementNS(NS,'svg');
-    svg.setAttribute('width', t.w); svg.setAttribute('height', t.h);
-    svg.setAttribute('viewBox','0 0 '+t.w+' '+t.h);
-    t.build(svg);
-
-    var wrap = document.createElement('div');
-    wrap.className = 'fish';
-    wrap.style.cssText = [
-      'position:absolute',
-      'left:'+Math.round(startX)+'px',
-      'top:'+Math.round(baseY)+'px',
-      'transform:scaleX('+(goRight?1:-1)+') scale('+scale+')',
-      'transform-origin:center center',
-      'will-change:left,top',
-      'transition:opacity 1.2s',
-      'opacity:0'
-    ].join(';');
-    wrap.appendChild(svg);
-    fl.appendChild(wrap);
-    setTimeout(function(){ wrap.style.opacity = (0.58+Math.random()*.3).toFixed(2); }, 120);
-
-    return {
-      el:wrap, x:startX, baseY:baseY,
-      goRight:goRight, speed:speed, scale:scale,
-      w:t.w*scale, wob:1.5+Math.random()*2.5, wobF:0.4+Math.random()*.5,
-      t:Math.random()*Math.PI*2, solo:true
-    };
-  }
-
-  /* ── Create a school ── */
-  function makeSchool(){
-    var goRight = Math.random() > .5;
-    var schoolY = H * (.15 + Math.random() * .42);
-    var speed = 32 + Math.random() * 25;
+  /* ── Generic school builder ── */
+  function makeSchool(cfg){
+    var goRight = Math.random()>.5;
+    var schoolY = H*(cfg.yMin + Math.random()*(cfg.yMax-cfg.yMin));
+    var speed = cfg.speedMin + Math.random()*(cfg.speedMax-cfg.speedMin);
     var members = [];
-    // Start school fully off screen
-    var schoolX = goRight ? -180 : W + 180;
+    var schoolX = goRight ? -(cfg.spreadX+80) : W+(cfg.spreadX+80);
+    var count = cfg.count;
 
-    for(var i=0; i<10; i++){
-      var ox = (Math.random() - .5) * 90;
-      var oy = (Math.random() - .5) * 44;
-      var sc = 0.52 + Math.random() * .28;
-
-      var svg2 = document.createElementNS(NS,'svg');
-      svg2.setAttribute('width','28'); svg2.setAttribute('height','12');
-      svg2.setAttribute('viewBox','0 0 28 12');
-      buildSchoolFish(svg2);
-
-      var wrap2 = document.createElement('div');
-      wrap2.className = 'fish';
-      var startX2 = schoolX + ox;
-      var startY2 = schoolY + oy;
-      wrap2.style.cssText = [
+    for(var i=0;i<count;i++){
+      var ox = (Math.random()-.5)*cfg.spreadX*2;
+      var oy = (Math.random()-.5)*cfg.spreadY*2;
+      var sc = cfg.scaleMin + Math.random()*(cfg.scaleMax-cfg.scaleMin);
+      var svg = document.createElementNS(NS,'svg');
+      svg.setAttribute('width',cfg.w); svg.setAttribute('height',cfg.h);
+      svg.setAttribute('viewBox','0 0 '+cfg.w+' '+cfg.h);
+      cfg.build(svg);
+      var wrap = document.createElement('div');
+      wrap.className='fish';
+      wrap.style.cssText=[
         'position:absolute',
-        'left:'+Math.round(startX2)+'px',
-        'top:'+Math.round(startY2)+'px',
+        'left:'+Math.round(schoolX+ox)+'px',
+        'top:'+Math.round(schoolY+oy)+'px',
         'transform:scaleX('+(goRight?1:-1)+') scale('+sc+')',
         'transform-origin:center center',
         'will-change:left,top',
         'transition:opacity 1s',
         'opacity:0'
       ].join(';');
-      wrap2.appendChild(svg2);
-      fl.appendChild(wrap2);
-
-      // Stagger fade-in
-      (function(w, delay){ setTimeout(function(){ w.style.opacity = (0.5+Math.random()*.35).toFixed(2); }, delay); })(wrap2, 200 + i*80);
-
-      members.push({ el:wrap2, ox:ox, oy:oy, wob:1+Math.random()*2.2, wobF:0.5+Math.random()*.4, t:Math.random()*Math.PI*2 });
+      wrap.appendChild(svg);
+      fl.appendChild(wrap);
+      (function(w,d){setTimeout(function(){w.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},d);})(wrap,200+i*50);
+      members.push({el:wrap,ox:ox,oy:oy,wob:cfg.wob*(0.7+Math.random()*.6),wobF:cfg.wobF*(0.8+Math.random()*.4),t:Math.random()*Math.PI*2});
     }
-    return { members:members, x:schoolX, baseY:schoolY, goRight:goRight, speed:speed, w:28*1.3, solo:false };
+    return {members:members,x:schoolX,baseY:schoolY,goRight:goRight,speed:speed,spreadX:cfg.spreadX,solo:false,respawnDelay:cfg.respawn,respawnFn:function(){return makeSchool(cfg);}};
   }
 
-  var entities = []; // solo fish + schools
+  /* ── Solo cichlid ── */
+  function makeSolo(idx){
+    var t=soloFish[idx%soloFish.length];
+    var goRight=Math.random()>.5;
+    var baseY=H*(.1+Math.random()*.5);
+    var speed=14+Math.random()*20;
+    var scale=.7+Math.random()*.42;
+    var startX=goRight?-t.w*scale-40:W+t.w*scale+40;
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width',t.w);svg.setAttribute('height',t.h);
+    svg.setAttribute('viewBox','0 0 '+t.w+' '+t.h);
+    t.build(svg);
+    var wrap=document.createElement('div');
+    wrap.className='fish';
+    wrap.style.cssText=['position:absolute','left:'+Math.round(startX)+'px','top:'+Math.round(baseY)+'px',
+      'transform:scaleX('+(goRight?1:-1)+') scale('+scale+')','transform-origin:center center',
+      'will-change:left,top','transition:opacity 1.2s','opacity:0'].join(';');
+    wrap.appendChild(svg);
+    fl.appendChild(wrap);
+    setTimeout(function(){wrap.style.opacity=(0.6+Math.random()*.28).toFixed(2);},150);
+    return{el:wrap,x:startX,baseY:baseY,goRight:goRight,speed:speed,scale:scale,
+      w:t.w*scale,wob:1.2+Math.random()*2,wobF:0.3+Math.random()*.4,t:Math.random()*Math.PI*2,solo:true};
+  }
 
-  // Spawn 3 solo fish with long delays between
-  var soloOrder = [0,1,2];
-  soloOrder.forEach(function(idx, i){
-    setTimeout(function(){
-      entities.push(makeSolo(idx));
-    }, i * 6000 + Math.random()*3000);
-  });
+  // School configs
+  var altumCfg={
+    w:54,h:82,build:buildAltum,
+    count:5,spreadX:160,spreadY:100,
+    speedMin:6,speedMax:10,        // very slow
+    yMin:.06,yMax:.45,
+    scaleMin:.5,scaleMax:.72,
+    opMin:.45,opMax:.72,
+    wob:1.2,wobF:0.28,
+    respawn:32000
+  };
+  var cardinalCfg={
+    w:44,h:14,build:buildCardinal,
+    count:22,spreadX:130,spreadY:65,
+    speedMin:28,speedMax:42,
+    yMin:.1,yMax:.62,
+    scaleMin:.62,scaleMax:.9,
+    opMin:.55,opMax:.82,
+    wob:1.8,wobF:0.55,
+    respawn:22000
+  };
+  var congoCfg={
+    w:50,h:18,build:buildCongo,
+    count:18,spreadX:120,spreadY:70,
+    speedMin:22,speedMax:34,
+    yMin:.12,yMax:.58,
+    scaleMin:.68,scaleMax:.95,
+    opMin:.52,opMax:.78,
+    wob:2,wobF:0.48,
+    respawn:26000
+  };
 
-  // Spawn 1 school after 4s
-  setTimeout(function(){
-    entities.push(makeSchool());
-  }, 4000);
+  var entities=[];
 
-  var last = null;
+  // Stagger spawns
+  setTimeout(function(){entities.push(makeSolo(0));},2000);
+  setTimeout(function(){entities.push(makeSolo(1));},8000);
+  setTimeout(function(){entities.push(makeSolo(2));},14000);
+  setTimeout(function(){entities.push(makeSchool(altumCfg));},3500);
+  setTimeout(function(){entities.push(makeSchool(cardinalCfg));},6000);
+  setTimeout(function(){entities.push(makeSchool(congoCfg));},11000);
+
+  var last=null;
   function tick(ts){
-    if(!last) last=ts;
-    var dt = Math.min((ts-last)/1000, .05);
-    last = ts;
-
-    entities = entities.filter(function(e){
+    if(!last)last=ts;
+    var dt=Math.min((ts-last)/1000,.05);
+    last=ts;
+    entities=entities.filter(function(e){
       if(e.solo){
-        // solo fish
-        e.t += dt;
-        e.x += (e.goRight?1:-1) * e.speed * dt;
-        var y = e.baseY + Math.sin(e.t * e.wobF) * e.wob;
-        y = Math.max(H*.06, Math.min(H*.76, y));
-        e.el.style.left = Math.round(e.x)+'px';
-        e.el.style.top  = Math.round(y)+'px';
-        var gone = e.goRight ? e.x > W+e.w+80 : e.x < -e.w-80;
+        e.t+=dt;
+        e.x+=(e.goRight?1:-1)*e.speed*dt;
+        var y=e.baseY+Math.sin(e.t*e.wobF)*e.wob;
+        y=Math.max(H*.05,Math.min(H*.78,y));
+        e.el.style.left=Math.round(e.x)+'px';
+        e.el.style.top=Math.round(y)+'px';
+        var gone=e.goRight?e.x>W+e.w+80:e.x<-e.w-80;
         if(gone){
-          var el2=e.el;
-          el2.style.opacity='0';
-          // long wait before respawn — 15-30s
-          var delay = 15000 + Math.random()*15000;
-          var typeIdx = soloFish.indexOf(soloFish[entities.indexOf(e) % soloFish.length]);
+          var el2=e.el;el2.style.opacity='0';
           setTimeout(function(){
-            el2.parentNode && el2.parentNode.removeChild(el2);
+            el2.parentNode&&el2.parentNode.removeChild(el2);
             entities.push(makeSolo(Math.floor(Math.random()*soloFish.length)));
-          }, delay);
+          },16000+Math.random()*16000);
           return false;
         }
         return true;
-
       } else {
-        // school — all members move together
-        e.x += (e.goRight ? 1 : -1) * e.speed * dt;
-
+        e.x+=(e.goRight?1:-1)*e.speed*dt;
         e.members.forEach(function(m){
-          m.t += dt;
-          var px = e.x + m.ox;
-          var py = e.baseY + m.oy + Math.sin(m.t * m.wobF) * m.wob;
-          m.el.style.left = Math.round(px) + 'px';
-          m.el.style.top  = Math.round(py) + 'px';
+          m.t+=dt;
+          m.el.style.left=Math.round(e.x+m.ox)+'px';
+          m.el.style.top=Math.round(e.baseY+m.oy+Math.sin(m.t*m.wobF)*m.wob)+'px';
         });
-
-        // Gone when school centre has fully crossed screen
-        var allGone = e.goRight ? e.x > W + 240 : e.x < -240;
-        if(allGone){
+        var edge=e.spreadX+80;
+        var gone2=e.goRight?e.x>W+edge:e.x<-edge;
+        if(gone2){
           e.members.forEach(function(m){
-            m.el.style.opacity = '0';
-            setTimeout(function(){ m.el.parentNode && m.el.parentNode.removeChild(m.el); }, 1200);
+            m.el.style.opacity='0';
+            setTimeout(function(){m.el.parentNode&&m.el.parentNode.removeChild(m.el);},1200);
           });
-          // Respawn school after 25–45 seconds
-          setTimeout(function(){ entities.push(makeSchool()); }, 25000 + Math.random()*20000);
+          var rfn=e.respawnFn;
+          setTimeout(function(){entities.push(rfn());},e.respawnDelay+Math.random()*15000);
           return false;
         }
         return true;
