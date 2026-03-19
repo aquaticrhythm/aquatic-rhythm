@@ -848,354 +848,482 @@ document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el)
   });
 })();
 
+
 /* ══════════════════════════════════════
-   DRIFTWOOD
+   DRIFTWOOD — SVG naturalistic pieces
 ══════════════════════════════════════ */
 (function(){
-  var dl = document.getElementById('driftwood-layer');
-  var NS = 'http://www.w3.org/2000/svg';
-  var W = window.innerWidth, H = window.innerHeight;
+  var dl=document.getElementById('driftwood-layer');
+  var NS='http://www.w3.org/2000/svg';
+  function mkEl(tag,attrs){var e=document.createElementNS(NS,tag);Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});return e;}
+  function path(d,fill,stroke,sw){var e=mkEl('path',{d:d});if(fill&&fill!=='none')e.setAttribute('fill',fill);else e.setAttribute('fill','none');if(stroke){e.setAttribute('stroke',stroke);e.setAttribute('stroke-width',sw||2);}e.setAttribute('stroke-linecap','round');return e;}
 
-  // Each piece: x%, bottomY%, width, svg path description
-  var pieces = [
-    // Left large piece — angled trunk with roots
-    { x:3, w:280, h:130, opacity:.52, draw: function(s,w,h){
-      // Main trunk angling right and up
-      s.appendChild(p(s,'M10,'+h+' C30,'+(h*.7)+' 80,'+(h*.45)+' 140,'+(h*.35)+' C200,'+(h*.28)+' 250,'+(h*.32)+' 275,'+(h*.38),
-        'none','rgba(60,38,18,.72)',8));
-      // Branch 1 up-right
-      s.appendChild(p(s,'M140,'+(h*.35)+' C160,'+(h*.18)+' 200,'+(h*.12)+' 230,'+(h*.08),
-        'none','rgba(55,34,15,.62)',5));
-      // Branch 2 down-right
-      s.appendChild(p(s,'M200,'+(h*.3)+' C220,'+(h*.42)+' 250,'+(h*.48)+' 278,'+(h*.52),
-        'none','rgba(50,30,12,.55)',4));
-      // Root left
-      s.appendChild(p(s,'M10,'+h+' C0,'+(h*.85)+' -5,'+(h*.7)+' 5,'+(h*.6),
-        'none','rgba(48,28,10,.58)',5));
-      // Root right
-      s.appendChild(p(s,'M30,'+h+' C20,'+(h*.88)+' 15,'+(h*.75)+' 25,'+(h*.65),
-        'none','rgba(48,28,10,.5)',4));
-      // Texture lines on trunk
-      ['M50,'+(h*.62)+' C70,'+(h*.58)+' 90,'+(h*.52)+' 110,'+(h*.48),
-       'M80,'+(h*.55)+' C100,'+(h*.5)+' 120,'+(h*.46)+' 140,'+(h*.44)].forEach(function(d){
-        s.appendChild(p(s,d,'none','rgba(30,18,5,.3)',1.5));
-      });
-    }},
-    // Right piece — submerged log
-    { x:62, w:260, h:80, opacity:.44, draw: function(s,w,h){
-      // Main log body — slightly curved
-      s.appendChild(p(s,'M0,'+(h*.6)+' C40,'+(h*.45)+' 100,'+(h*.38)+' 160,'+(h*.42)+' C210,'+(h*.46)+' 250,'+(h*.55)+' 258,'+(h*.65),
-        'none','rgba(55,33,12,.68)',12));
-      // Top highlight
-      s.appendChild(p(s,'M5,'+(h*.54)+' C50,'+(h*.39)+' 110,'+(h*.33)+' 160,'+(h*.37)+' C210,'+(h*.41)+' 248,'+(h*.5)+' 256,'+(h*.59),
-        'none','rgba(80,52,22,.35)',4));
-      // Branch stub
-      s.appendChild(p(s,'M100,'+(h*.38)+' C105,'+(h*.2)+' 120,'+(h*.12)+' 130,'+(h*.08),
-        'none','rgba(50,30,10,.55)',6));
-      // Texture
-      s.appendChild(p(s,'M40,'+(h*.5)+' C80,'+(h*.44)+' 120,'+(h*.42)+' 160,'+(h*.46),
-        'none','rgba(35,20,5,.25)',2));
-    }},
-    // Centre small piece — mossy rock/root
-    { x:34, w:140, h:60, opacity:.38, draw: function(s,w,h){
-      s.appendChild(p(s,'M5,'+h+' C20,'+(h*.55)+' 50,'+(h*.35)+' 80,'+(h*.3)+' C110,'+(h*.35)+' 132,'+(h*.55)+' 135,'+h,
-        'rgba(38,24,8,.55)','rgba(28,16,4,.4)',2));
-      // mossy texture bumps
-      [[25,h*.45,12,8],[50,h*.32,10,7],[75,h*.3,11,7],[100,h*.38,10,6]].forEach(function(r){
-        s.appendChild(el(s,'ellipse',{cx:r[0],cy:r[1],rx:r[2],ry:r[3],fill:'rgba(45,65,30,.35)'}));
-      });
-    }}
-  ];
-
-  function p(s,d,fill,stroke,sw){
-    var e=document.createElementNS(NS,'path');
-    e.setAttribute('d',d);
-    if(fill&&fill!=='none')e.setAttribute('fill',fill); else e.setAttribute('fill','none');
-    if(stroke){e.setAttribute('stroke',stroke);e.setAttribute('stroke-width',sw||2);}
-    e.setAttribute('stroke-linecap','round');
-    return e;
-  }
-  function el(s,tag,attrs){
-    var e=document.createElementNS(NS,tag);
-    Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});
-    return e;
-  }
-
-  pieces.forEach(function(pc){
+  // Piece 1 — large left branch with roots
+  (function(){
+    var w=300,h=140;
+    var svg=mkEl('svg',{width:w,height:h,viewBox:'0 0 '+w+' '+h});
+    svg.appendChild(path('M8,'+h+' C25,'+Math.round(h*.72)+' 70,'+Math.round(h*.48)+' 130,'+Math.round(h*.38)+' C185,'+Math.round(h*.3)+' 248,'+Math.round(h*.33)+' 292,'+Math.round(h*.4), 'none','rgba(52,32,12,.7)',9));
+    svg.appendChild(path('M130,'+Math.round(h*.38)+' C148,'+Math.round(h*.2)+' 188,'+Math.round(h*.1)+' 215,'+Math.round(h*.06), 'none','rgba(46,28,10,.58)',5.5));
+    svg.appendChild(path('M195,'+Math.round(h*.32)+' C215,'+Math.round(h*.44)+' 252,'+Math.round(h*.5)+' 294,'+Math.round(h*.54), 'none','rgba(44,26,8,.52)',4));
+    svg.appendChild(path('M8,'+h+' C-2,'+Math.round(h*.84)+' -4,'+Math.round(h*.68)+' 6,'+Math.round(h*.58), 'none','rgba(44,26,8,.55)',5));
+    svg.appendChild(path('M28,'+h+' C16,'+Math.round(h*.88)+' 12,'+Math.round(h*.74)+' 22,'+Math.round(h*.64), 'none','rgba(44,26,8,.48)',4));
+    // texture grain lines
+    ['M45,'+Math.round(h*.64)+' C62,'+Math.round(h*.6)+' 92,'+Math.round(h*.55)+' 118,'+Math.round(h*.52),
+     'M78,'+Math.round(h*.57)+' C98,'+Math.round(h*.52)+' 118,'+Math.round(h*.48)+' 138,'+Math.round(h*.46)].forEach(function(d){svg.appendChild(path(d,'none','rgba(28,16,4,.28)',1.4));});
+    // moss patches
+    [[30,h*.68,14,6],[55,h*.6,10,5],[80,h*.54,12,5]].forEach(function(r){svg.appendChild(mkEl('ellipse',{cx:r[0],cy:Math.round(r[1]),rx:r[2],ry:r[3],fill:'rgba(42,62,28,.38)'}));});
     var wrap=document.createElement('div');
-    wrap.style.cssText='position:absolute;left:'+pc.x+'%;bottom:0;opacity:'+pc.opacity;
-    var svg=document.createElementNS(NS,'svg');
-    svg.setAttribute('width',pc.w);svg.setAttribute('height',pc.h);
-    svg.setAttribute('viewBox','0 0 '+pc.w+' '+pc.h);
-    pc.draw(svg,pc.w,pc.h);
-    wrap.appendChild(svg);
-    dl.appendChild(wrap);
-  });
+    wrap.style.cssText='position:absolute;left:2%;bottom:0;opacity:.5';
+    wrap.appendChild(svg);dl.appendChild(wrap);
+  })();
+
+  // Piece 2 — right submerged log
+  (function(){
+    var w=270,h=88;
+    var svg=mkEl('svg',{width:w,height:h,viewBox:'0 0 '+w+' '+h});
+    svg.appendChild(path('M0,'+Math.round(h*.62)+' C38,'+Math.round(h*.46)+' 95,'+Math.round(h*.38)+' 158,'+Math.round(h*.42)+' C208,'+Math.round(h*.46)+' 255,'+Math.round(h*.56)+' 268,'+Math.round(h*.66), 'none','rgba(48,30,10,.65)',13));
+    svg.appendChild(path('M4,'+Math.round(h*.56)+' C42,'+Math.round(h*.4)+' 98,'+Math.round(h*.32)+' 158,'+Math.round(h*.37)+' C208,'+Math.round(h*.41)+' 252,'+Math.round(h*.5)+' 266,'+Math.round(h*.6), 'none','rgba(72,48,20,.32)',4));
+    svg.appendChild(path('M95,'+Math.round(h*.38)+' C100,'+Math.round(h*.2)+' 112,'+Math.round(h*.1)+' 120,'+Math.round(h*.06), 'none','rgba(44,26,8,.52)',6));
+    svg.appendChild(path('M38,'+Math.round(h*.5)+' C78,'+Math.round(h*.44)+' 118,'+Math.round(h*.42)+' 158,'+Math.round(h*.46), 'none','rgba(28,16,4,.22)',2));
+    [[60,h*.5,11,5],[95,h*.42,9,4],[130,h*.44,10,5]].forEach(function(r){svg.appendChild(mkEl('ellipse',{cx:r[0],cy:Math.round(r[1]),rx:r[2],ry:r[3],fill:'rgba(40,60,25,.34)'}));});
+    var wrap=document.createElement('div');
+    wrap.style.cssText='position:absolute;left:58%;bottom:0;opacity:.45';
+    wrap.appendChild(svg);dl.appendChild(wrap);
+  })();
+
+  // Piece 3 — small mossy rock/root centre
+  (function(){
+    var w=150,h=65;
+    var svg=mkEl('svg',{width:w,height:h,viewBox:'0 0 '+w+' '+h});
+    svg.appendChild(path('M5,'+h+' C18,'+Math.round(h*.55)+' 45,'+Math.round(h*.35)+' 75,'+Math.round(h*.3)+' C105,'+Math.round(h*.35)+' 132,'+Math.round(h*.55)+' 143,'+h,'rgba(35,22,7,.52)','rgba(25,14,3,.38)',2));
+    [[22,h*.48,13,7],[48,h*.33,11,6],[74,h*.3,12,6],[100,h*.36,11,6]].forEach(function(r){svg.appendChild(mkEl('ellipse',{cx:r[0],cy:Math.round(r[1]),rx:r[2],ry:r[3],fill:'rgba(42,65,28,.36)'}));});
+    var wrap=document.createElement('div');
+    wrap.style.cssText='position:absolute;left:32%;bottom:0;opacity:.4';
+    wrap.appendChild(svg);dl.appendChild(wrap);
+  })();
 })();
 
 /* ══════════════════════════════════════
-   FISH SYSTEM
-   - 3 solo cichlids (colorful, infrequent)
-   - Altum Angelfish school (4–6, very slow, spaced out)
-   - Cardinal Tetra school (22 fish, vivid)
-   - Congo Tetra school (18 fish, iridescent)
+   FAUNA SYSTEM
+   Hierarchy (largest→smallest):
+   Altum Angelfish — school 5, very slow, most space
+   Geophagus / Oscar cichlid — solo, infrequent
+   Congo Tetra — school 16, small, blue-violet iridescent
+   Cardinal Tetra — school 22, smallest tetra, vivid
+   Cherry Shrimp — 4–6 graze at bottom
+   Ramshorn Snail — 1–2 crawl slowly on driftwood/plants
 ══════════════════════════════════════ */
 (function(){
-  var fl = document.getElementById('fish-layer');
-  var W = window.innerWidth, H = window.innerHeight;
+  var fl=document.getElementById('fish-layer');
+  var W=window.innerWidth,H=window.innerHeight;
   window.addEventListener('resize',function(){W=window.innerWidth;H=window.innerHeight;},{passive:true});
-  var NS = 'http://www.w3.org/2000/svg';
+  var NS='http://www.w3.org/2000/svg';
 
-  function mk(tag,attrs){
-    var e=document.createElementNS(NS,tag);
-    Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});
-    return e;
+  function mk(tag,attrs){var e=document.createElementNS(NS,tag);Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});return e;}
+
+  /* ── ALTUM ANGELFISH — true diamond kite, largest ── */
+  function buildAltum(s){
+    // Kite: tail-left(2,38) top(24,2) head-right(48,38) bottom(24,74)
+    s.appendChild(mk('path',{d:'M2,38 C8,28 16,12 24,2 C32,12 42,28 48,38 C42,48 32,64 24,74 C16,64 8,48 2,38Z',fill:'rgba(182,200,188,.8)'}));
+    // Three dark vertical bands
+    s.appendChild(mk('path',{d:'M16,7 C14,18 14,40 15,58 C16,64 18,70 20,72 C18,70 16,64 16,58 C15,40 16,18 18,7Z',fill:'rgba(35,45,38,.58)'}));
+    s.appendChild(mk('path',{d:'M24,3 C22,12 22,36 23,56 C24,66 24,72 24,74 C24,72 24,66 25,56 C26,36 26,12 24,3Z',fill:'rgba(35,45,38,.44)'}));
+    s.appendChild(mk('path',{d:'M32,7 C30,18 30,40 31,58 C32,64 30,70 28,72 C30,70 32,64 32,58 C31,40 32,18 34,7Z',fill:'rgba(35,45,38,.38)'}));
+    // Silver body sheen
+    s.appendChild(mk('path',{d:'M20,10 C24,8 28,8 32,10 C36,16 36,24 32,30 C28,26 20,26 16,30 C14,24 16,16 20,10Z',fill:'rgba(228,240,232,.14)'}));
+    // Forked tail fins from left tip
+    s.appendChild(mk('path',{d:'M2,38 C-5,30 -9,22 -4,16 C0,22 4,30 8,34Z',fill:'rgba(162,184,170,.62)'}));
+    s.appendChild(mk('path',{d:'M2,38 C-5,46 -9,54 -4,60 C0,54 4,46 8,42Z',fill:'rgba(162,184,170,.58)'}));
+    // Long dorsal spike from top
+    s.appendChild(mk('path',{d:'M24,2 C20,-4 13,-3 10,4 C14,1 18,3 20,7Z',fill:'rgba(158,180,165,.52)'}));
+    // Long ventral spike from bottom
+    s.appendChild(mk('path',{d:'M24,74 C20,80 13,79 10,72 C14,75 18,73 20,69Z',fill:'rgba(158,180,165,.46)'}));
+    // Eye — near head (right)
+    s.appendChild(mk('circle',{cx:'40',cy:'34',r:'3.2',fill:'rgba(255,255,255,.9)'}));
+    s.appendChild(mk('circle',{cx:'40.4',cy:'34',r:'1.6',fill:'rgba(6,10,6,.92)'}));
   }
 
-  /* ──────────────────────────────────
-     ALTUM ANGELFISH — precise kite/diamond
-     ViewBox 0 0 54 82. Faces RIGHT.
-     Head = right point. Tail = left.
-     Dorsal spike = top. Ventral spike = bottom.
-  ────────────────────────────────── */
-  function buildAltum(svg){
-    // Body: true kite — four curved sides meeting at 4 tips
-    // Left tip (tail): 2,41  Top tip (dorsal): 27,2  Right tip (head): 52,41  Bottom tip (ventral): 27,80
-    svg.appendChild(mk('path',{
-      d:'M2,41 C8,30 18,12 27,2 C36,12 46,30 52,41 C46,52 36,70 27,80 C18,70 8,52 2,41Z',
-      fill:'rgba(178,198,185,.78)'
-    }));
-    // Three dark vertical bands — characteristic Altum markings
-    svg.appendChild(mk('path',{
-      d:'M18,8 C16,20 15,42 16,62 C18,68 20,72 22,74 C20,72 18,68 18,62 C17,42 18,20 20,8Z',
-      fill:'rgba(38,48,40,.55)'
-    }));
-    svg.appendChild(mk('path',{
-      d:'M27,3 C25,12 24,35 25,55 C26,68 27,76 27,80 C27,76 28,68 29,55 C30,35 29,12 27,3Z',
-      fill:'rgba(38,48,40,.42)'
-    }));
-    svg.appendChild(mk('path',{
-      d:'M36,8 C34,20 33,42 34,62 C36,68 34,72 32,74 C34,72 36,68 36,62 C35,42 36,20 38,8Z',
-      fill:'rgba(38,48,40,.38)'
-    }));
-    // Silver sheen highlights on body
-    svg.appendChild(mk('path',{
-      d:'M22,10 C26,8 30,8 34,10 C38,14 40,22 38,30 C34,26 26,26 22,30 C20,22 20,14 22,10Z',
-      fill:'rgba(225,238,228,.15)'
-    }));
-    // Tail fin — forked, flowing from left tip
-    svg.appendChild(mk('path',{
-      d:'M2,41 C-4,34 -8,26 -4,20 C0,26 4,32 8,36Z',
-      fill:'rgba(160,182,168,.62)'
-    }));
-    svg.appendChild(mk('path',{
-      d:'M2,41 C-4,48 -8,56 -4,62 C0,56 4,50 8,46Z',
-      fill:'rgba(160,182,168,.58)'
-    }));
-    // Long trailing dorsal fin from top tip
-    svg.appendChild(mk('path',{
-      d:'M27,2 C22,-3 16,-2 12,4 C16,2 20,4 22,8Z',
-      fill:'rgba(155,178,162,.5)'
-    }));
-    // Long trailing ventral fin from bottom tip
-    svg.appendChild(mk('path',{
-      d:'M27,80 C22,85 16,84 12,78 C16,80 20,78 22,74Z',
-      fill:'rgba(155,178,162,.45)'
-    }));
-    // Eye — near right/head tip
-    svg.appendChild(mk('circle',{cx:'42',cy:'37',r:'3',fill:'rgba(255,255,255,.88)'}));
-    svg.appendChild(mk('circle',{cx:'42.5',cy:'37',r:'1.5',fill:'rgba(8,12,8,.92)'}));
-  }
-
-  /* ──────────────────────────────────
-     CARDINAL TETRA — slim, vivid blue/red
-     ViewBox 0 0 44 14. Faces RIGHT.
-  ────────────────────────────────── */
-  function buildCardinal(svg){
-    // Tail
-    svg.appendChild(mk('path',{d:'M0,3 Q5,7 0,11 L7,7Z',fill:'rgba(130,60,45,.85)'}));
-    // Body — elongated, tapers to head-point right
-    svg.appendChild(mk('path',{d:'M7,7 C7,2 16,0 28,1 C36,2 42,4 43,7 C42,10 36,12 28,13 C16,14 7,12 7,7Z',fill:'rgba(138,65,48,.85)'}));
-    // Vivid electric blue top stripe
-    svg.appendChild(mk('path',{d:'M8,2 C16,0 28,0 38,3 C40,4 42,5 42,6 C40,5 28,2 16,3 C12,3 9,3 8,4Z',fill:'rgba(30,130,220,.82)'}));
-    // Red lower body (cardinal = full red belly)
-    svg.appendChild(mk('path',{d:'M8,9 C16,10 28,11 38,10 L38,13 C28,13 16,12 8,11Z',fill:'rgba(215,45,35,.68)'}));
+  /* ── CONGO TETRA — small, blue-violet iridescent ── */
+  function buildCongo(s){
+    // Tail forked
+    s.appendChild(mk('path',{d:'M0,5 Q5,8 0,11 L8,8Z',fill:'rgba(70,55,110,.8)'}));
+    // Body — slim, tapers to snout
+    s.appendChild(mk('path',{d:'M8,8 C8,3 17,0 27,1 C35,2 40,4 41,8 C40,12 35,14 27,15 C17,16 8,13 8,8Z',fill:'rgba(75,58,118,.82)'}));
+    // Blue-violet iridescent lateral stripe — centre shimmer
+    s.appendChild(mk('path',{d:'M9,6 C17,4 27,4 37,7 C39,8 40,9 40,9 C38,8 27,6 17,7 C13,7 10,7 9,8Z',fill:'rgba(110,90,200,.72)'}));
+    // Violet upper sheen
+    s.appendChild(mk('path',{d:'M10,3 C18,1 26,1 35,3 C37,4 39,5 39,6 C35,4 26,3 18,3Z',fill:'rgba(150,100,220,.45)'}));
+    // Blue-green lower glint
+    s.appendChild(mk('path',{d:'M10,11 C18,12 28,13 36,11 L36,14 C28,15 18,14 10,13Z',fill:'rgba(60,180,200,.3)'}));
     // Dorsal fin
-    svg.appendChild(mk('path',{d:'M18,1 Q24,-2 30,1',stroke:'rgba(100,160,200,.45)',fill:'none','stroke-width':'1'}));
+    s.appendChild(mk('path',{d:'M17,1 Q22,-3 28,1',stroke:'rgba(130,100,200,.48)',fill:'none','stroke-width':'1'}));
     // Eye
-    svg.appendChild(mk('circle',{cx:'37',cy:'6',r:'2',fill:'rgba(255,255,255,.9)'}));
-    svg.appendChild(mk('circle',{cx:'37.3',cy:'6',r:'1',fill:'rgba(5,5,5,.92)'}));
+    s.appendChild(mk('circle',{cx:'36',cy:'7',r:'2',fill:'rgba(255,255,255,.9)'}));
+    s.appendChild(mk('circle',{cx:'36.2',cy:'7',r:'1',fill:'rgba(5,4,8,.92)'}));
   }
 
-  /* ──────────────────────────────────
-     CONGO TETRA — larger, iridescent rainbow
-     ViewBox 0 0 50 18. Faces RIGHT.
-  ────────────────────────────────── */
-  function buildCongo(svg){
-    // Tail — forked, flowing
-    svg.appendChild(mk('path',{d:'M0,5 Q6,9 0,13 L9,9Z',fill:'rgba(80,110,85,.82)'}));
-    // Body — deeper, more oval
-    svg.appendChild(mk('path',{d:'M9,9 C9,3 20,0 32,1 C42,2 48,5 49,9 C48,13 42,16 32,17 C20,18 9,15 9,9Z',fill:'rgba(88,118,90,.82)'}));
-    // Iridescent lateral band — central rainbow shimmer
-    svg.appendChild(mk('path',{d:'M10,7 C20,5 32,5 44,8 C46,9 48,10 48,10 C46,9 32,7 20,8 C16,8 12,8 10,9Z',fill:'rgba(160,220,180,.55)'}));
-    // Blue/violet upper sheen
-    svg.appendChild(mk('path',{d:'M11,3 C20,1 32,1 42,4 C44,5 46,6 46,7 C42,5 28,3 20,4Z',fill:'rgba(80,140,200,.38)'}));
-    // Orange/gold lower sheen
-    svg.appendChild(mk('path',{d:'M11,12 C20,13 32,14 42,12 L42,15 C32,16 20,16 11,14Z',fill:'rgba(200,150,40,.3)'}));
-    // Dorsal fin — longer, flowing
-    svg.appendChild(mk('path',{d:'M20,1 Q28,-4 36,1',stroke:'rgba(140,200,160,.5)',fill:'none','stroke-width':'1.2'}));
-    // Eye
-    svg.appendChild(mk('circle',{cx:'43',cy:'8',r:'2.4',fill:'rgba(255,255,255,.88)'}));
-    svg.appendChild(mk('circle',{cx:'43.3',cy:'8',r:'1.2',fill:'rgba(5,5,5,.92)'}));
+  /* ── CARDINAL TETRA — smallest, vivid blue + red ── */
+  function buildCardinal(s){
+    s.appendChild(mk('path',{d:'M0,3 Q4,6 0,9 L6,6Z',fill:'rgba(125,55,42,.85)'}));
+    s.appendChild(mk('path',{d:'M6,6 C6,2 13,0 22,1 C29,2 34,4 35,6 C34,8 29,10 22,11 C13,12 6,10 6,6Z',fill:'rgba(132,58,44,.85)'}));
+    // Electric blue top stripe
+    s.appendChild(mk('path',{d:'M7,2 C13,0 22,0 30,3 C32,4 34,5 34,5 C32,4 22,2 13,2Z',fill:'rgba(25,120,215,.85)'}));
+    // Deep red lower
+    s.appendChild(mk('path',{d:'M7,8 C13,9 22,10 30,9 L30,11 C22,12 13,11 7,10Z',fill:'rgba(210,42,30,.7)'}));
+    s.appendChild(mk('path',{d:'M15,0 Q19,-2 24,1',stroke:'rgba(80,140,200,.4)',fill:'none','stroke-width':'.8'}));
+    s.appendChild(mk('circle',{cx:'30',cy:'5',r:'1.7',fill:'rgba(255,255,255,.9)'}));
+    s.appendChild(mk('circle',{cx:'30.2',cy:'5',r:'.85',fill:'rgba(4,4,4,.92)'}));
   }
 
-  /* ──────────────────────────────────
-     SOLO CICHLIDS
-  ────────────────────────────────── */
-  var soloFish = [
-    // Geophagus — teal eartheater
-    {w:60,h:36,build:function(s){
-      s.appendChild(mk('path',{d:'M2,12 Q10,18 2,24 L14,18Z',fill:'rgba(38,140,130,.82)'}));
-      s.appendChild(mk('path',{d:'M14,18 C14,5 26,1 38,1 C52,1 58,8 58,18 C58,28 52,35 38,35 C26,35 14,31 14,18Z',fill:'rgba(42,155,140,.82)'}));
-      [[24,8,3],[32,6,2.5],[40,9,3],[28,14,2],[36,13,3.5],[44,11,2.5],[30,22,2],[38,20,3]].forEach(function(sp){
-        s.appendChild(mk('circle',{cx:sp[0],cy:sp[1],r:sp[2],fill:'rgba(80,220,200,.45)'}));
-      });
-      s.appendChild(mk('path',{d:'M16,6 Q30,-2 46,5',stroke:'rgba(100,230,210,.45)','stroke-width':'1.8',fill:'none'}));
-      s.appendChild(mk('path',{d:'M16,30 Q30,38 46,31',stroke:'rgba(100,230,210,.38)','stroke-width':'1.5',fill:'none'}));
-      s.appendChild(mk('circle',{cx:'48',cy:'10',r:'3.8',fill:'rgba(255,255,255,.88)'}));
-      s.appendChild(mk('circle',{cx:'48.5',cy:'10',r:'1.9',fill:'rgba(5,15,10,.92)'}));
-    }},
-    // Oscar — bold orange/black
-    {w:64,h:44,build:function(s){
-      s.appendChild(mk('path',{d:'M2,14 Q10,22 2,30 L14,22Z',fill:'rgba(180,80,20,.85)'}));
-      s.appendChild(mk('path',{d:'M14,22 C14,7 26,2 36,2 C50,2 62,10 62,22 C62,34 50,42 36,42 C26,42 14,37 14,22Z',fill:'rgba(190,88,22,.85)'}));
-      s.appendChild(mk('path',{d:'M22,4 C20,12 22,22 20,34',stroke:'rgba(20,8,2,.45)','stroke-width':'5',fill:'none'}));
-      s.appendChild(mk('path',{d:'M34,3 C32,14 34,24 32,38',stroke:'rgba(20,8,2,.4)','stroke-width':'4',fill:'none'}));
-      s.appendChild(mk('path',{d:'M46,6 C44,14 44,24 42,36',stroke:'rgba(20,8,2,.35)','stroke-width':'3.5',fill:'none'}));
-      s.appendChild(mk('circle',{cx:'18',cy:'22',r:'5',fill:'rgba(255,140,20,.5)'}));
-      s.appendChild(mk('circle',{cx:'18',cy:'22',r:'3',fill:'rgba(10,5,0,.6)'}));
-      s.appendChild(mk('path',{d:'M24,3 Q38,-4 52,5',stroke:'rgba(220,100,30,.45)','stroke-width':'2',fill:'none'}));
-      s.appendChild(mk('circle',{cx:'52',cy:'14',r:'4',fill:'rgba(255,255,255,.88)'}));
-      s.appendChild(mk('circle',{cx:'52.5',cy:'14',r:'2',fill:'rgba(10,5,0,.92)'}));
-    }},
-    // Flowerhorn — red/blue vivid
-    {w:58,h:42,build:function(s){
-      s.appendChild(mk('path',{d:'M36,1 C42,-2 52,0 56,6 L56,14 C52,8 42,5 36,8Z',fill:'rgba(200,50,60,.75)'}));
-      s.appendChild(mk('path',{d:'M2,16 Q10,21 2,26 L13,21Z',fill:'rgba(185,45,55,.82)'}));
-      s.appendChild(mk('path',{d:'M13,21 C13,7 24,2 34,2 C46,2 56,10 56,21 C56,32 46,40 34,40 C24,40 13,35 13,21Z',fill:'rgba(195,48,58,.82)'}));
-      [[20,10,6,4],[30,8,8,5],[40,12,7,4],[22,22,6,4],[32,20,8,5]].forEach(function(r){
-        s.appendChild(mk('ellipse',{cx:r[0],cy:r[1],rx:r[2],ry:r[3],fill:'rgba(40,160,220,.38)'}));
-      });
-      s.appendChild(mk('path',{d:'M15,20 C24,19 36,19 52,21',stroke:'rgba(80,10,15,.55)','stroke-width':'3',fill:'none'}));
-      s.appendChild(mk('path',{d:'M18,3 Q32,-3 46,4',stroke:'rgba(220,80,50,.45)','stroke-width':'2',fill:'none'}));
-      s.appendChild(mk('circle',{cx:'47',cy:'12',r:'3.8',fill:'rgba(255,255,255,.9)'}));
-      s.appendChild(mk('circle',{cx:'47.5',cy:'12',r:'1.9',fill:'rgba(10,2,2,.92)'}));
-    }}
-  ];
+  /* ── GEOPHAGUS — teal eartheater cichlid ── */
+  function buildGeo(s){
+    s.appendChild(mk('path',{d:'M2,12 Q9,18 2,24 L13,18Z',fill:'rgba(38,140,130,.82)'}));
+    s.appendChild(mk('path',{d:'M13,18 C13,5 24,1 36,1 C50,1 58,8 58,18 C58,28 50,35 36,35 C24,35 13,31 13,18Z',fill:'rgba(42,155,140,.82)'}));
+    [[22,8,3],[30,6,2.5],[38,9,3],[26,14,2],[34,13,3.5],[42,11,2.5],[28,22,2],[36,20,3]].forEach(function(sp){
+      s.appendChild(mk('circle',{cx:sp[0],cy:sp[1],r:sp[2],fill:'rgba(80,220,200,.45)'}));
+    });
+    s.appendChild(mk('path',{d:'M15,6 Q28,-2 44,5',stroke:'rgba(100,230,210,.42)','stroke-width':'1.8',fill:'none'}));
+    s.appendChild(mk('path',{d:'M15,30 Q28,38 44,31',stroke:'rgba(100,230,210,.35)','stroke-width':'1.5',fill:'none'}));
+    s.appendChild(mk('circle',{cx:'48',cy:'10',r:'3.8',fill:'rgba(255,255,255,.88)'}));
+    s.appendChild(mk('circle',{cx:'48.5',cy:'10',r:'1.9',fill:'rgba(5,15,10,.92)'}));
+  }
 
-  /* ── Generic school builder ── */
+  /* ── OSCAR — orange/black cichlid ── */
+  function buildOscar(s){
+    s.appendChild(mk('path',{d:'M2,14 Q9,22 2,30 L13,22Z',fill:'rgba(175,78,18,.85)'}));
+    s.appendChild(mk('path',{d:'M13,22 C13,7 24,2 34,2 C48,2 60,10 60,22 C60,34 48,42 34,42 C24,42 13,37 13,22Z',fill:'rgba(185,85,20,.85)'}));
+    s.appendChild(mk('path',{d:'M20,4 C18,12 20,22 18,34',stroke:'rgba(18,6,1,.42)','stroke-width':'5',fill:'none'}));
+    s.appendChild(mk('path',{d:'M32,3 C30,13 32,23 30,37',stroke:'rgba(18,6,1,.38)','stroke-width':'4',fill:'none'}));
+    s.appendChild(mk('path',{d:'M44,6 C42,14 42,23 40,35',stroke:'rgba(18,6,1,.32)','stroke-width':'3.5',fill:'none'}));
+    s.appendChild(mk('circle',{cx:'17',cy:'22',r:'5',fill:'rgba(255,135,18,.5)'}));
+    s.appendChild(mk('circle',{cx:'17',cy:'22',r:'3',fill:'rgba(8,4,0,.6)'}));
+    s.appendChild(mk('path',{d:'M22,3 Q36,-4 50,5',stroke:'rgba(215,95,28,.42)','stroke-width':'2',fill:'none'}));
+    s.appendChild(mk('circle',{cx:'50',cy:'13',r:'4',fill:'rgba(255,255,255,.88)'}));
+    s.appendChild(mk('circle',{cx:'50.5',cy:'13',r:'2',fill:'rgba(8,4,0,.92)'}));
+  }
+
+  /* ── CHERRY SHRIMP — anatomically correct, curved body ──
+     ViewBox 0 0 40 26. Faces RIGHT.
+     Head = right. Tail fan = left.
+     Body arches upward (dorsal curve), legs below.
+  ── */
+  function buildShrimp(s){
+    // ── Carapace (head+thorax) — right side, larger dome
+    s.appendChild(mk('path',{
+      d:'M22,8 C26,5 32,5 36,8 C38,10 38,14 36,16 C33,18 28,18 24,16 C21,14 20,10 22,8Z',
+      fill:'rgba(210,68,55,.78)'
+    }));
+    // ── Abdomen — 5 arched segments curving LEFT and slightly upward
+    // Segment 1 (closest to carapace)
+    s.appendChild(mk('path',{
+      d:'M24,12 C22,10 19,9 16,10 C14,11 13,13 14,15 C16,16 20,16 23,15 C24,14 25,13 24,12Z',
+      fill:'rgba(205,65,52,.8)'
+    }));
+    // Segment 2
+    s.appendChild(mk('path',{
+      d:'M16,11 C14,9 11,9 9,10 C7,11 6,13 7,15 C9,16 13,16 15,15 C17,14 17,12 16,11Z',
+      fill:'rgba(200,62,50,.8)'
+    }));
+    // Segment 3
+    s.appendChild(mk('path',{
+      d:'M9,11 C7,9 5,9 3,11 C2,12 2,14 3,15 C5,16 8,16 10,15 C11,14 11,12 9,11Z',
+      fill:'rgba(195,60,48,.78)'
+    }));
+    // Segment 4 — narrowing toward tail
+    s.appendChild(mk('path',{
+      d:'M4,11 C3,10 1,10 0,12 C-1,13 0,15 2,15 C4,16 6,15 6,14 C7,13 6,12 4,11Z',
+      fill:'rgba(188,58,46,.75)'
+    }));
+    // ── Tail fan (uropods) — left end, splayed
+    s.appendChild(mk('path',{d:'M1,12 C-3,10 -5,8 -3,6 C-1,8 0,10 2,11Z',fill:'rgba(185,55,44,.68)'}));
+    s.appendChild(mk('path',{d:'M1,12 C-2,12 -4,13 -4,16 C-2,15 0,14 2,13Z',fill:'rgba(185,55,44,.62)'}));
+    s.appendChild(mk('path',{d:'M1,12 C-3,12 -5,14 -4,17 C-2,16 0,15 2,14Z',fill:'rgba(180,52,42,.58)'}));
+    // ── Rostrum — long spike forward from head (right)
+    s.appendChild(mk('path',{
+      d:'M34,8 L42,4',
+      stroke:'rgba(195,58,46,.7)','stroke-width':'1.2',fill:'none','stroke-linecap':'round'
+    }));
+    // ── Long antennae (2) from head
+    s.appendChild(mk('path',{d:'M35,8 C38,5 42,3 46,2',stroke:'rgba(180,50,40,.5)','stroke-width':'.8',fill:'none'}));
+    s.appendChild(mk('path',{d:'M35,9 C39,7 43,6 46,7',stroke:'rgba(180,50,40,.42)','stroke-width':'.7',fill:'none'}));
+    // ── Walking legs (pleopods) — below thorax, tiny lines
+    [[26,18],[29,18],[32,18],[35,18]].forEach(function(leg){
+      s.appendChild(mk('path',{d:'M'+leg[0]+','+leg[1]+' L'+(leg[0]-1)+','+(leg[1]+5),
+        stroke:'rgba(190,60,48,.45)','stroke-width':'.9',fill:'none'}));
+    });
+    // ── Swimmerets below abdomen
+    [[20,17],[16,17],[12,17],[8,17]].forEach(function(sw){
+      s.appendChild(mk('path',{d:'M'+sw[0]+','+sw[1]+' L'+(sw[0]-1)+','+(sw[1]+4),
+        stroke:'rgba(185,55,44,.35)','stroke-width':'.7',fill:'none'}));
+    });
+    // ── Translucent red stripe along dorsal
+    s.appendChild(mk('path',{
+      d:'M8,10 C12,8 18,8 24,9 C28,10 32,10 35,10',
+      stroke:'rgba(240,90,70,.4)','stroke-width':'1.5',fill:'none'
+    }));
+    // ── Eye — stalked, on right/head
+    s.appendChild(mk('circle',{cx:'36',cy:'8',r:'2',fill:'rgba(255,255,255,.88)'}));
+    s.appendChild(mk('circle',{cx:'36.3',cy:'8',r:'1',fill:'rgba(20,5,5,.92)'}));
+  }
+
+  /* ── RAMSHORN SNAIL — spiral shell ── */
+  function buildSnail(s){
+    // Shell — spiral coil
+    s.appendChild(mk('path',{d:'M14,10 C14,4 18,1 22,3 C26,5 28,10 26,15 C24,20 18,22 14,20 C10,18 8,13 10,9 C12,5 16,4 18,7 C20,10 18,14 15,14Z',
+      fill:'rgba(100,60,30,.72)',stroke:'rgba(70,40,18,.45)','stroke-width':'1'}));
+    // Shell highlight
+    s.appendChild(mk('path',{d:'M18,4 C21,5 23,8 22,12',stroke:'rgba(150,100,55,.35)','stroke-width':'.9',fill:'none'}));
+    // Body/foot
+    s.appendChild(mk('path',{d:'M8,18 C10,20 16,22 22,21 C28,20 32,18 30,16 C26,15 14,16 8,16Z',fill:'rgba(120,100,60,.58)'}));
+    // Tentacles
+    s.appendChild(mk('path',{d:'M22,16 C24,13 26,11 28,10',stroke:'rgba(110,88,48,.5)','stroke-width':'.9',fill:'none'}));
+    s.appendChild(mk('path',{d:'M20,16 C22,12 24,10 26,9',stroke:'rgba(110,88,48,.42)','stroke-width':'.8',fill:'none'}));
+    // Eye at tentacle tip
+    s.appendChild(mk('circle',{cx:'28',cy:'10',r:'1',fill:'rgba(30,20,5,.75)'}));
+  }
+
+  /* ══════════════════════════════════
+     SCHOOL builder — generic
+  ══════════════════════════════════ */
   function makeSchool(cfg){
-    var goRight = Math.random()>.5;
-    var schoolY = H*(cfg.yMin + Math.random()*(cfg.yMax-cfg.yMin));
-    var speed = cfg.speedMin + Math.random()*(cfg.speedMax-cfg.speedMin);
-    var members = [];
-    var schoolX = goRight ? -(cfg.spreadX+80) : W+(cfg.spreadX+80);
-    var count = cfg.count;
-
-    for(var i=0;i<count;i++){
-      var ox = (Math.random()-.5)*cfg.spreadX*2;
-      var oy = (Math.random()-.5)*cfg.spreadY*2;
-      var sc = cfg.scaleMin + Math.random()*(cfg.scaleMax-cfg.scaleMin);
-      var svg = document.createElementNS(NS,'svg');
-      svg.setAttribute('width',cfg.w); svg.setAttribute('height',cfg.h);
+    var goRight=Math.random()>.5;
+    var schoolY=H*(cfg.yMin+Math.random()*(cfg.yMax-cfg.yMin));
+    var speed=cfg.speedMin+Math.random()*(cfg.speedMax-cfg.speedMin);
+    var members=[];
+    var schoolX=goRight?-(cfg.spreadX+100):W+(cfg.spreadX+100);
+    for(var i=0;i<cfg.count;i++){
+      var ox=(Math.random()-.5)*cfg.spreadX*2;
+      var oy=(Math.random()-.5)*cfg.spreadY*2;
+      var sc=cfg.scaleMin+Math.random()*(cfg.scaleMax-cfg.scaleMin);
+      var svg=document.createElementNS(NS,'svg');
+      svg.setAttribute('width',cfg.w);svg.setAttribute('height',cfg.h);
       svg.setAttribute('viewBox','0 0 '+cfg.w+' '+cfg.h);
       cfg.build(svg);
-      var wrap = document.createElement('div');
+      var wrap=document.createElement('div');
       wrap.className='fish';
-      wrap.style.cssText=[
-        'position:absolute',
+      wrap.style.cssText=['position:absolute',
         'left:'+Math.round(schoolX+ox)+'px',
         'top:'+Math.round(schoolY+oy)+'px',
         'transform:scaleX('+(goRight?1:-1)+') scale('+sc+')',
         'transform-origin:center center',
-        'will-change:left,top',
-        'transition:opacity 1s',
-        'opacity:0'
-      ].join(';');
-      wrap.appendChild(svg);
-      fl.appendChild(wrap);
-      (function(w,d){setTimeout(function(){w.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},d);})(wrap,200+i*50);
+        'will-change:left,top','transition:opacity 1s','opacity:0'].join(';');
+      wrap.appendChild(svg);fl.appendChild(wrap);
+      (function(w,d){setTimeout(function(){w.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},d);})(wrap,250+i*55);
       members.push({el:wrap,ox:ox,oy:oy,wob:cfg.wob*(0.7+Math.random()*.6),wobF:cfg.wobF*(0.8+Math.random()*.4),t:Math.random()*Math.PI*2});
     }
-    return {members:members,x:schoolX,baseY:schoolY,goRight:goRight,speed:speed,spreadX:cfg.spreadX,solo:false,respawnDelay:cfg.respawn,respawnFn:function(){return makeSchool(cfg);}};
+    return{members:members,x:schoolX,baseY:schoolY,goRight:goRight,speed:speed,
+      spreadX:cfg.spreadX,solo:false,
+      respawnDelay:cfg.respawn,respawnFn:function(){return makeSchool(cfg);}};
   }
 
-  /* ── Solo cichlid ── */
-  function makeSolo(idx){
-    var t=soloFish[idx%soloFish.length];
+  /* ══════════════════════════════════
+     SOLO fish builder
+  ══════════════════════════════════ */
+  function makeSolo(cfg){
     var goRight=Math.random()>.5;
-    var baseY=H*(.1+Math.random()*.5);
-    var speed=14+Math.random()*20;
-    var scale=.7+Math.random()*.42;
-    var startX=goRight?-t.w*scale-40:W+t.w*scale+40;
+    var baseY=H*(cfg.yMin+Math.random()*(cfg.yMax-cfg.yMin));
+    var speed=cfg.speedMin+Math.random()*(cfg.speedMax-cfg.speedMin);
+    var sc=cfg.scaleMin+Math.random()*(cfg.scaleMax-cfg.scaleMin);
+    var startX=goRight?-cfg.w*sc-50:W+cfg.w*sc+50;
     var svg=document.createElementNS(NS,'svg');
-    svg.setAttribute('width',t.w);svg.setAttribute('height',t.h);
-    svg.setAttribute('viewBox','0 0 '+t.w+' '+t.h);
-    t.build(svg);
+    svg.setAttribute('width',cfg.w);svg.setAttribute('height',cfg.h);
+    svg.setAttribute('viewBox','0 0 '+cfg.w+' '+cfg.h);
+    cfg.build(svg);
     var wrap=document.createElement('div');
     wrap.className='fish';
-    wrap.style.cssText=['position:absolute','left:'+Math.round(startX)+'px','top:'+Math.round(baseY)+'px',
-      'transform:scaleX('+(goRight?1:-1)+') scale('+scale+')','transform-origin:center center',
+    wrap.style.cssText=['position:absolute',
+      'left:'+Math.round(startX)+'px',
+      'top:'+Math.round(baseY)+'px',
+      'transform:scaleX('+(goRight?1:-1)+') scale('+sc+')',
+      'transform-origin:center center',
       'will-change:left,top','transition:opacity 1.2s','opacity:0'].join(';');
-    wrap.appendChild(svg);
-    fl.appendChild(wrap);
-    setTimeout(function(){wrap.style.opacity=(0.6+Math.random()*.28).toFixed(2);},150);
-    return{el:wrap,x:startX,baseY:baseY,goRight:goRight,speed:speed,scale:scale,
-      w:t.w*scale,wob:1.2+Math.random()*2,wobF:0.3+Math.random()*.4,t:Math.random()*Math.PI*2,solo:true};
+    wrap.appendChild(svg);fl.appendChild(wrap);
+    setTimeout(function(){wrap.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},150);
+    return{el:wrap,x:startX,baseY:baseY,goRight:goRight,speed:speed,
+      w:cfg.w*sc,wob:cfg.wob*(0.8+Math.random()*.4),wobF:cfg.wobF*(0.8+Math.random()*.4),
+      t:Math.random()*Math.PI*2,solo:true,
+      respawnDelay:cfg.respawn,respawnFn:function(){return makeSolo(cfg);}};
   }
 
-  // School configs
+  /* ══════════════════════════════════
+     SHRIMP — grazes at bottom, tiny steps
+  ══════════════════════════════════ */
+  function makeShrimp(){
+    var x=Math.random()*W*.9+W*.05;
+    var baseY=H*(0.72+Math.random()*.14);
+    var sc=0.55+Math.random()*.3;
+    var goRight=Math.random()>.5;
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width','48');svg.setAttribute('height','26');
+    svg.setAttribute('viewBox','-6 0 54 26');
+    buildShrimp(svg);
+    var wrap=document.createElement('div');
+    wrap.className='fish';
+    wrap.style.cssText=['position:absolute',
+      'left:'+Math.round(x)+'px',
+      'top:'+Math.round(baseY)+'px',
+      'transform:scaleX('+(goRight?1:-1)+') scale('+sc+')',
+      'transform-origin:center center',
+      'transition:opacity 1s','opacity:0'].join(';');
+    wrap.appendChild(svg);fl.appendChild(wrap);
+    setTimeout(function(){wrap.style.opacity=(0.5+Math.random()*.28).toFixed(2);},200);
+    // Shrimp grazes: tiny random steps, stays near bottom
+    var sx=x, dir=goRight?1:-1, stepTimer=null;
+    function step(){
+      var pause=1800+Math.random()*3500;
+      stepTimer=setTimeout(function(){
+        if(!wrap.parentNode)return;
+        // small hop forward or tiny reverse
+        var move=(Math.random()<.75)?(dir*(4+Math.random()*12)):(dir*(-2-Math.random()*4));
+        sx+=move;
+        if(sx<20){sx=20;dir=1;}
+        if(sx>W-20){sx=W-20;dir=-1;}
+        var ny=baseY+(Math.random()-.5)*8;
+        wrap.style.left=Math.round(sx)+'px';
+        wrap.style.top=Math.round(ny)+'px';
+        wrap.style.transform='scaleX('+(dir>0?1:-1)+') scale('+sc+')';
+        step();
+      },pause);
+    }
+    step();
+    // Remove after 35–60s, respawn elsewhere
+    setTimeout(function(){
+      wrap.style.opacity='0';
+      setTimeout(function(){
+        if(stepTimer)clearTimeout(stepTimer);
+        wrap.parentNode&&wrap.parentNode.removeChild(wrap);
+        setTimeout(makeShrimp,5000+Math.random()*8000);
+      },1200);
+    },35000+Math.random()*25000);
+  }
+
+  /* ══════════════════════════════════
+     SNAIL — creeps very slowly along bottom
+  ══════════════════════════════════ */
+  function makeSnail(){
+    var x=(Math.random()<.5)?W*.05+Math.random()*W*.25:W*.55+Math.random()*W*.3;
+    var baseY=H*(0.74+Math.random()*.1);
+    var sc=0.7+Math.random()*.4;
+    var goRight=Math.random()>.5;
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width','34');svg.setAttribute('height','24');
+    svg.setAttribute('viewBox','0 0 34 24');
+    buildSnail(svg);
+    var wrap=document.createElement('div');
+    wrap.className='fish';
+    wrap.style.cssText=['position:absolute',
+      'left:'+Math.round(x)+'px',
+      'top:'+Math.round(baseY)+'px',
+      'transform:scaleX('+(goRight?1:-1)+') scale('+sc+')',
+      'transform-origin:center center',
+      'transition:left 4s ease-in-out, top 4s ease-in-out, opacity 1.5s',
+      'opacity:0'].join(';');
+    wrap.appendChild(svg);fl.appendChild(wrap);
+    setTimeout(function(){wrap.style.opacity=(0.45+Math.random()*.25).toFixed(2);},400);
+    // Crawl very slowly
+    var sx=x,dir=goRight?1:-1;
+    function crawl(){
+      var pause=3500+Math.random()*5000;
+      setTimeout(function(){
+        if(!wrap.parentNode)return;
+        sx+=dir*(1.5+Math.random()*3);
+        if(sx<10){sx=10;dir=1;}
+        if(sx>W-10){sx=W-10;dir=-1;}
+        var ny=baseY+(Math.random()-.5)*6;
+        wrap.style.left=Math.round(sx)+'px';
+        wrap.style.top=Math.round(ny)+'px';
+        crawl();
+      },pause);
+    }
+    crawl();
+    // Remove after 60–90s
+    setTimeout(function(){
+      wrap.style.opacity='0';
+      setTimeout(function(){
+        wrap.parentNode&&wrap.parentNode.removeChild(wrap);
+        setTimeout(makeSnail,20000+Math.random()*30000);
+      },2000);
+    },60000+Math.random()*30000);
+  }
+
+  /* ══════════════════════════════════
+     CONFIGS
+  ══════════════════════════════════ */
   var altumCfg={
     w:54,h:82,build:buildAltum,
-    count:5,spreadX:160,spreadY:100,
-    speedMin:6,speedMax:10,        // very slow
-    yMin:.06,yMax:.45,
-    scaleMin:.5,scaleMax:.72,
-    opMin:.45,opMax:.72,
-    wob:1.2,wobF:0.28,
-    respawn:32000
-  };
-  var cardinalCfg={
-    w:44,h:14,build:buildCardinal,
-    count:22,spreadX:130,spreadY:65,
-    speedMin:28,speedMax:42,
-    yMin:.1,yMax:.62,
-    scaleMin:.62,scaleMax:.9,
-    opMin:.55,opMax:.82,
-    wob:1.8,wobF:0.55,
-    respawn:22000
+    count:5,spreadX:200,spreadY:140,   // wide spread — not cramped
+    speedMin:5,speedMax:9,             // very slow, elegant
+    yMin:.06,yMax:.44,
+    scaleMin:.55,scaleMax:.78,
+    opMin:.44,opMax:.7,
+    wob:1.0,wobF:0.22,
+    respawn:38000
   };
   var congoCfg={
-    w:50,h:18,build:buildCongo,
-    count:18,spreadX:120,spreadY:70,
-    speedMin:22,speedMax:34,
-    yMin:.12,yMax:.58,
-    scaleMin:.68,scaleMax:.95,
+    w:42,h:16,build:buildCongo,        // smaller viewbox
+    count:16,spreadX:105,spreadY:55,
+    speedMin:24,speedMax:36,
+    yMin:.12,yMax:.6,
+    scaleMin:.58,scaleMax:.8,
     opMin:.52,opMax:.78,
-    wob:2,wobF:0.48,
+    wob:1.6,wobF:0.48,
+    respawn:24000
+  };
+  var cardinalCfg={
+    w:36,h:12,build:buildCardinal,     // smallest
+    count:22,spreadX:115,spreadY:58,
+    speedMin:30,speedMax:45,
+    yMin:.15,yMax:.65,
+    scaleMin:.55,scaleMax:.75,
+    opMin:.55,opMax:.82,
+    wob:1.4,wobF:0.55,
+    respawn:20000
+  };
+  var geoCfg={
+    w:60,h:36,build:buildGeo,
+    yMin:.1,yMax:.55,
+    speedMin:12,speedMax:20,
+    scaleMin:.7,scaleMax:.95,
+    opMin:.58,opMax:.8,
+    wob:1.2,wobF:0.32,
+    respawn:22000
+  };
+  var oscarCfg={
+    w:62,h:44,build:buildOscar,
+    yMin:.08,yMax:.5,
+    speedMin:10,speedMax:18,
+    scaleMin:.68,scaleMax:.9,
+    opMin:.55,opMax:.78,
+    wob:1.0,wobF:0.28,
     respawn:26000
   };
 
+  /* ══════════════════════════════════
+     STAGGERED SCHEDULE — avoid simultaneous entries
+     One thing visible at a time, spaced out
+  ══════════════════════════════════ */
   var entities=[];
 
-  // Stagger spawns
-  setTimeout(function(){entities.push(makeSolo(0));},2000);
-  setTimeout(function(){entities.push(makeSolo(1));},8000);
-  setTimeout(function(){entities.push(makeSolo(2));},14000);
-  setTimeout(function(){entities.push(makeSchool(altumCfg));},3500);
-  setTimeout(function(){entities.push(makeSchool(cardinalCfg));},6000);
-  setTimeout(function(){entities.push(makeSchool(congoCfg));},11000);
+  // Altum school — first, alone for a while
+  setTimeout(function(){entities.push(makeSchool(altumCfg));},2000);
+  // Geo cichlid — arrives after Altum well underway
+  setTimeout(function(){entities.push(makeSolo(geoCfg));},12000);
+  // Cardinal school — after cichlid gone from view
+  setTimeout(function(){entities.push(makeSchool(cardinalCfg));},20000);
+  // Congo tetra school
+  setTimeout(function(){entities.push(makeSchool(congoCfg));},30000);
+  // Oscar — solo
+  setTimeout(function(){entities.push(makeSolo(oscarCfg));},40000);
 
+  // Shrimp — 3 grazing at bottom from start, staggered
+  setTimeout(function(){makeShrimp();},3000);
+  setTimeout(function(){makeShrimp();},9000);
+  setTimeout(function(){makeShrimp();},16000);
+
+  // Snail — 1 on driftwood area
+  setTimeout(function(){makeSnail();},7000);
+
+  /* ── ANIMATION TICK ── */
   var last=null;
   function tick(ts){
     if(!last)last=ts;
@@ -1206,16 +1334,17 @@ document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el)
         e.t+=dt;
         e.x+=(e.goRight?1:-1)*e.speed*dt;
         var y=e.baseY+Math.sin(e.t*e.wobF)*e.wob;
-        y=Math.max(H*.05,Math.min(H*.78,y));
+        y=Math.max(H*.04,Math.min(H*.76,y));
         e.el.style.left=Math.round(e.x)+'px';
         e.el.style.top=Math.round(y)+'px';
         var gone=e.goRight?e.x>W+e.w+80:e.x<-e.w-80;
         if(gone){
           var el2=e.el;el2.style.opacity='0';
+          var rfn=e.respawnFn;var rd=e.respawnDelay;
           setTimeout(function(){
             el2.parentNode&&el2.parentNode.removeChild(el2);
-            entities.push(makeSolo(Math.floor(Math.random()*soloFish.length)));
-          },16000+Math.random()*16000);
+            entities.push(rfn());
+          },rd+Math.random()*12000);
           return false;
         }
         return true;
@@ -1226,15 +1355,15 @@ document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el)
           m.el.style.left=Math.round(e.x+m.ox)+'px';
           m.el.style.top=Math.round(e.baseY+m.oy+Math.sin(m.t*m.wobF)*m.wob)+'px';
         });
-        var edge=e.spreadX+80;
+        var edge=e.spreadX+100;
         var gone2=e.goRight?e.x>W+edge:e.x<-edge;
         if(gone2){
           e.members.forEach(function(m){
             m.el.style.opacity='0';
             setTimeout(function(){m.el.parentNode&&m.el.parentNode.removeChild(m.el);},1200);
           });
-          var rfn=e.respawnFn;
-          setTimeout(function(){entities.push(rfn());},e.respawnDelay+Math.random()*15000);
+          var rfn2=e.respawnFn;var rd2=e.respawnDelay;
+          setTimeout(function(){entities.push(rfn2());},rd2+Math.random()*15000);
           return false;
         }
         return true;
@@ -1244,6 +1373,7 @@ document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el)
   }
   requestAnimationFrame(tick);
 })();
+
 
 /* ══════════════════════════════════════
    MUSIC — YouTube iframe, loads on first click
