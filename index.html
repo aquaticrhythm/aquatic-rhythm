@@ -6,6 +6,9 @@
 <title>Aquatic Rhythm — A System for Living Water</title>
 <meta name="description" content="Aquatic Rhythm helps people understand, build, and stabilise aquarium ecosystems through ARA — Aquatic Rhythm Alignment.">
 <meta name="google-site-verification" content="YNg85UJRTB6NR2wdMs_txYDIzi4yu4n8UUU7V9Xoobw" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='9' fill='%23041e28'/%3E%3Cpath d='M6 22 C9 15 13 15 16 22 C19 29 23 29 26 22 C29 15 33 15 36 22' stroke='rgba(60,210,225,0.88)' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Cellipse cx='21' cy='25' rx='4.5' ry='2.6' fill='rgba(60,210,225,0.48)'/%3E%3Cpath d='M16.5 25 L14 22.5 L14 27.5 Z' fill='rgba(60,210,225,0.42)'/%3E%3Ccircle cx='24' cy='23.8' r='1.1' fill='rgba(255,255,255,0.58)'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='9' fill='%23041e28'/%3E%3Cpath d='M6 22 C9 15 13 15 16 22 C19 29 23 29 26 22 C29 15 33 15 36 22' stroke='rgba(60,210,225,0.88)' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Cellipse cx='21' cy='25' rx='4.5' ry='2.6' fill='rgba(60,210,225,0.48)'/%3E%3Cpath d='M16.5 25 L14 22.5 L14 27.5 Z' fill='rgba(60,210,225,0.42)'/%3E%3Ccircle cx='24' cy='23.8' r='1.1' fill='rgba(255,255,255,0.58)'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#041e28">
 <link rel="canonical" href="https://aquaticrhythm.com/">
 
 <!-- Open Graph -->
@@ -106,9 +109,9 @@ nav{position:fixed;z-index:800}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4.5rem);background:linear-gradient(to bottom,rgba(3,18,30,.88),transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.nl{font-family:var(--serif);font-size:1.05rem;font-weight:300;letter-spacing:.04em;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s}
-.nl:hover{color:rgba(255,255,255,.85)}
-.nl em{font-style:italic;color:rgba(60,210,225,.82)}
+.nl{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}
+.nl:hover{opacity:.75}
+.nl svg text{transition:fill .3s}
 .nlinks{display:flex;gap:2.6rem;list-style:none}
 .nlinks a{font-size:.63rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s;position:relative}
 .nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(60,210,225,.6);transition:width .35s var(--ease)}
@@ -342,7 +345,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .aboutblock p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.95}
 @media(max-width:960px){.aboutg{grid-template-columns:1fr;gap:3rem}}
 
-/* FOOTER */padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(255,255,255,.06)}
+/* FOOTER */
+footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(255,255,255,.06)}
+.subfooter{text-align:center;padding:.8rem clamp(1.5rem,5vw,4.5rem) 1.6rem;border-top:1px solid rgba(255,255,255,.03);display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap}
+.sflink{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);text-decoration:none;transition:color .3s}
+.sflink:hover{color:rgba(139,189,210,.55)}
+.sfdot{color:rgba(255,255,255,.1)}
 .fl{font-family:var(--serif);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.35);text-decoration:none}
 .fl em{font-style:italic;color:rgba(139,189,210,.5)}
 .fm{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center}
@@ -446,7 +454,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nl" data-page="home">Aquatic <em>Rhythm</em></a>
+  <a href="/" class="nl" data-page="home" aria-label="Aquatic Rhythm — Home">
+    <svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- R1: one clean wave cycle, minimal fish -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(60,210,225,0.72)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="12" cy="15" rx="3.8" ry="2.2" fill="rgba(60,210,225,0.4)"/>
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(60,210,225,0.36)"/>
+      <circle cx="14.8" cy="14.2" r=".85" fill="rgba(255,255,255,0.52)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg>
+  </a>
   <ul class="nlinks">
     <li><a href="/" data-page="home">Living Water</a></li>
     <li><a href="/ara" data-page="ara">The Framework</a></li>
@@ -476,6 +495,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
     <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
     <li><a href="/about" data-page="about">About</a></li>
     <li><a href="/privacy" data-page="privacy" style="color:rgba(255,255,255,.2)">Privacy Policy</a></li>
+    <li><a href="/terms" data-page="terms" style="color:rgba(255,255,255,.2)">Terms of Use</a></li>
   </ul>
 </div>
 
@@ -539,10 +559,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
     <span class="fm">A system for living water</span>
     <div class="fr"><a href="/ara" data-page="ara">The Framework →</a></div>
   </footer>
-  <div style="text-align:center;padding:.8rem clamp(1.5rem,5vw,4.5rem) 1.5rem;border-top:1px solid rgba(255,255,255,.03)">
-    <a href="/privacy" data-page="privacy" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);text-decoration:none">Privacy Policy</a>
-    <span style="color:rgba(255,255,255,.1);margin:0 .8rem">·</span>
-    <a href="mailto:aquaticrhythm.ai@gmail.com" style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);text-decoration:none">Contact</a>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a>
+    <span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a>
+    <span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a>
+    <span class="sfdot">·</span>
+    <a href="mailto:aquaticrhythm.ai@gmail.com" class="sflink">Contact</a>
   </div>
 </div></div>
 
@@ -593,6 +617,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
   </section>
   <section class="ctasec pad"><span class="ey ey-t sr">See it in the real world</span><h2 class="dmd sr d1" style="color:rgba(255,255,255,.65)">How does ARA read<br>real situations?</h2><p class="bt sr d2">Three different keepers. Three different moments. One framework that reads each one differently — and knows what each actually needs.</p><a href="/helps" class="btn bf sr d3" style="margin-top:1rem;display:inline-block" data-page="helps">How It Helps →</a></section>
   <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">A system for living water</span><div class="fr"><a href="/helps" data-page="helps">How It Helps →</a></div></footer>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a>
+    <span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a>
+    <span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a>
+    <span class="sfdot">·</span>
+    <a href="mailto:aquaticrhythm.ai@gmail.com" class="sflink">Contact</a>
+  </div>
 </div></div>
 
 <!-- RHYSSA PAGE -->
@@ -680,7 +713,79 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
   </section>
   <section class="ctasec pad"><span class="ey ey-t sr">Now meet who brings this to life</span><h2 class="dmd sr d1" style="color:rgba(255,255,255,.65)">The companion<br>trained in ARA.</h2><p class="bt sr d2">Rhyssa brings ARA into conversation — with your specific situation, your specific tank, at whatever pace feels right.</p><a href="/rhyssa" class="btn bf sr d3" style="margin-top:1rem;display:inline-block" data-page="rhyssa">Meet Rhyssa →</a></section>
   <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">A system for living water</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a>
+    <span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a>
+    <span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a>
+    <span class="sfdot">·</span>
+    <a href="mailto:aquaticrhythm.ai@gmail.com" class="sflink">Contact</a>
+  </div>
 </div></div>
+<!-- TERMS OF USE PAGE -->
+<div id="pg-terms" class="page"><div class="pl">
+  <section class="privh pad cap">
+    <div class="sr">
+      <span class="ey">Legal</span>
+      <h1 class="dlg" style="color:rgba(255,255,255,.78)">Terms of Use</h1>
+      <span class="privdate">Last updated: March 2026</span>
+    </div>
+  </section>
+  <div class="privbody cap">
+
+    <div class="privsec sr">
+      <h3>Overview</h3>
+      <p>By using this website and the Rhyssa AI companion, you agree to these terms. Aquatic Rhythm is a small, independent project provided in good faith. Please read this briefly — it is written plainly, not in legal jargon.</p>
+    </div>
+
+    <div class="privsec sr">
+      <h3>What Aquatic Rhythm offers</h3>
+      <p>Aquatic Rhythm provides a framework called ARA — Aquatic Rhythm Alignment — and access to Rhyssa, an AI companion trained in that framework. Everything here is offered for informational and educational purposes only.</p>
+      <p>Rhyssa is an AI language system. Her responses are generated based on training and context, not professional expertise. She is not a licensed veterinarian, aquatic biologist, or certified aquarium professional.</p>
+    </div>
+
+    <div class="privsec sr">
+      <h3>No professional advice</h3>
+      <p>Nothing on this website or in any conversation with Rhyssa constitutes professional advice of any kind — including but not limited to veterinary, medical, legal, or financial advice.</p>
+      <p>If your fish or aquatic animals are ill or in distress, please consult a qualified veterinarian or aquatic specialist. Rhyssa can offer perspective and a framework for thinking — she cannot diagnose, prescribe, or replace professional judgment.</p>
+    </div>
+
+    <div class="privsec sr">
+      <h3>AI limitations</h3>
+      <p>Rhyssa can be wrong. Like all AI systems, she may produce inaccurate, incomplete, or outdated information. You are responsible for evaluating her responses critically before acting on them. Aquatic Rhythm accepts no liability for decisions made based on Rhyssa's responses.</p>
+      <p>Conversations with Rhyssa take place on an external platform. By using Rhyssa, you also agree to the terms of that platform.</p>
+    </div>
+
+    <div class="privsec sr">
+      <h3>Intellectual property</h3>
+      <p>The ARA framework, the content of this website, and the name Aquatic Rhythm are the intellectual property of this project. You may share and reference them freely for personal, educational, or non-commercial purposes, with attribution. Commercial use requires prior permission.</p>
+    </div>
+
+    <div class="privsec sr">
+      <h3>Limitation of liability</h3>
+      <p>Aquatic Rhythm is provided as-is, without warranties of any kind. We are not liable for any direct, indirect, or incidental damages arising from your use of this website or Rhyssa — including any harm to your aquatic animals or equipment resulting from advice followed.</p>
+    </div>
+
+    <div class="privsec sr">
+      <h3>Changes to these terms</h3>
+      <p>These terms may be updated as Aquatic Rhythm grows. The date at the top of this page reflects the most recent revision. Continued use of this website after changes constitutes acceptance of the updated terms.</p>
+      <p>Questions? Write to us at <a href="mailto:aquaticrhythm.ai@gmail.com" style="color:rgba(139,189,210,.7);text-decoration:none">aquaticrhythm.ai@gmail.com</a></p>
+    </div>
+
+  </div>
+  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">A system for living water</span><div class="fr"><a href="/privacy" data-page="privacy">Privacy Policy →</a></div></footer>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a>
+    <span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a>
+    <span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a>
+    <span class="sfdot">·</span>
+    <a href="mailto:aquaticrhythm.ai@gmail.com" class="sflink">Contact</a>
+  </div>
+</div></div>
+
 <!-- PRIVACY POLICY PAGE -->
 <div id="pg-privacy" class="page"><div class="pl">
   <section class="privh pad cap">
@@ -742,6 +847,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 
   </div>
   <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">A system for living water</span><div class="fr"><a href="/about" data-page="about">About →</a></div></footer>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a>
+    <span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a>
+    <span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a>
+    <span class="sfdot">·</span>
+    <a href="mailto:aquaticrhythm.ai@gmail.com" class="sflink">Contact</a>
+  </div>
 </div></div>
 
 <!-- ABOUT PAGE -->
@@ -798,6 +912,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
     <a href="/ara" class="btn bf sr d3" style="display:inline-block" data-page="ara">Explore the Framework →</a>
   </section>
   <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">A system for living water</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a>
+    <span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a>
+    <span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a>
+    <span class="sfdot">·</span>
+    <a href="mailto:aquaticrhythm.ai@gmail.com" class="sflink">Contact</a>
+  </div>
 </div></div>
 
 </main>
