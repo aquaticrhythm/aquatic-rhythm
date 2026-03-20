@@ -75,29 +75,15 @@ body.hov #cr{width:48px;height:48px;border-color:rgba(100,230,180,0.18)}
 nav{position:fixed;z-index:800}
 #music-btn{z-index:850}
 
-/* ── TEXT PROTECTION — one unified rule across all pages ──
-   A single soft dark veil on every content section.
-   Light enough that fauna and animation still read through.
-   Strong enough that text is always clear.
-── */
-.hero,.psec,.arasec,.ctasec,.araph,.adefs,.prins,.cmps,
-.rhhero,.qsec,.helph,.scns,.stpg{
-  position:relative;
+/* ── TEXT PROTECTION — hanya pada elemen teks, bukan seluruh page ── */
+.ht,.pst,.bt,.hk,.api,.rhd,.apq,.snt,.sco,.stit,.starr,.stco{
+  text-shadow:0 1px 12px rgba(3,9,8,.9), 0 0 32px rgba(3,9,8,.7);
 }
-.hero::before,.psec::before,.arasec::before,.ctasec::before,
-.araph::before,.adefs::before,.prins::before,.cmps::before,
-.rhhero::before,.qsec::before,.helph::before,.scns::before,.stpg::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(3,9,8,.42);
-  pointer-events:none;
-  z-index:0;
+.dxl,.dlg,.dmd,.rhtit{
+  text-shadow:0 2px 16px rgba(3,9,8,.95), 0 0 48px rgba(3,9,8,.8);
 }
-.hero>*,.psec>*,.arasec>*,.ctasec>*,.araph>*,.adefs>*,
-.prins>*,.cmps>*,.rhhero>*,.qsec>*,.helph>*,.scns>*,.stpg>*{
-  position:relative;
-  z-index:1;
+.pc,.snb,.eg,.scv,.rhr,.qi,.pb{
+  background:rgba(6,14,11,.72);
 }
 
 /* NAV */
