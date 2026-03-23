@@ -1,56 +1,70 @@
 # Aquatic Rhythm
 
-Aquatic Rhythm is a project space exploring balance, rhythm, and non-dominant presence across human, ecological, and artificial systems.
+**In rhythm with living water.**
 
-At its core is **Aquatic Rhythm Alignment (ARA)** — a conceptual framework that guides how these ideas are understood, articulated, and documented.
+[aquaticrhythm.com](https://aquaticrhythm.com) · [hello@aquaticrhythm.com](mailto:hello@aquaticrhythm.com)
+
+---
 
 ## What This Is
 
-Aquatic Rhythm is not a software product, platform, or AI system.
+Aquatic Rhythm is a small, independent project built around one observation: most aquarium problems are not mistakes — they are misalignment.
 
-It is a project that hosts ideas, documents, and explorations grounded in the **Aquatic Rhythm Alignment (ARA)** framework.
+At its core is **ARA — Aquatic Rhythm Alignment** — a conceptual framework for reading closed aquatic ecosystems through rhythm, phase, and the reality of human care. ARA treats the aquarium not as a machine to be tuned, but as a living system that responds to patterns, consistency, and time.
 
-ARA examines how systems—human, ecological, and artificial—can coexist without domination, optimization pressure, or central control.
+This repository hosts the website and all associated project files.
 
-The project is expressed primarily through written documents rather than executable code.
+---
 
-## Core Ideas
+## The Framework
 
-The following principles emerge from the Aquatic Rhythm Alignment (ARA) framework:
+ARA is built on four principles:
 
-- Rhythm over efficiency  
-- Balance over control  
-- Presence over performance  
-- Documentation as a living record, not an interface  
+- **Timing before technique** — the right moment matters more than the right action
+- **Capacity before ambition** — honest assessment of what your real life can sustain
+- **Rhythm before intensity** — small consistent care outperforms dramatic intervention
+- **Observation before correction** — watch and understand before you disturb
 
-These principles guide how ideas are developed, revised, and shared.
+Behind these principles is a complete ecological system of thinking — five interlocking rhythms, three phases of system maturity, and a recognition that human behaviour is not external to the ecosystem. It is part of it.
 
-## Relationship to AI
+---
 
-Within Aquatic Rhythm, AI is considered through the lens of the ARA framework.
+## Rhyssa
 
-Aquatic Rhythm does not aim to build or train AI models.
+Rhyssa is the conversational companion of Aquatic Rhythm, shaped by ARA.
 
-Instead, it explores how AI *may appear* within human systems:
-- as a companion, not an authority  
-- as a reader of context, not a controller of outcomes  
-- as something that remains at the edge, not the center  
+She does not answer before she understands. She does not manufacture urgency where there is none. She moves at the pace living systems actually need.
 
-Any AI-related expression is considered a **medium**, not the core.
+Rhyssa lives as a custom GPT on ChatGPT:
+[Meet Rhyssa](https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion)
 
-## Repository Purpose
+---
 
-This repository serves as:
-- an archive of documents  
-- a record of conceptual evolution  
-- a stable reference point independent of platforms or tools  
+## Repository Contents
 
-It is intentionally minimal.
+```
+/
+├── index.html           — main website (single-page application)
+├── favicon.png          — site favicon (48×48)
+├── apple-touch-icon.png — home screen icon (192×192)
+├── og-image.png         — social sharing image (1200×630)
+├── CNAME                — custom domain (aquaticrhythm.com)
+├── sitemap.xml          — sitemap for search engine indexing
+└── README.md            — this file
+```
 
-## Status
+---
 
-This project evolves slowly and deliberately.
+## Project Status
 
-Changes are made when understanding matures, not according to release cycles.
+Aquatic Rhythm evolves slowly and deliberately.
 
-Aquatic Rhythm is maintained as an ongoing exploration rather than a finished product.
+Changes are made when understanding matures — not according to release cycles. The framework, the companion, and the website are all works in progress, shaped by use and observation over time.
+
+This is not a finished product. It is a living exploration.
+
+---
+
+## Contact
+
+[hello@aquaticrhythm.com](mailto:hello@aquaticrhythm.com)
