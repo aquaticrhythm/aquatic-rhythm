@@ -483,9 +483,9 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 }
 
 /* ECOSYSTEM TOGGLE */
-#eco-toggle{position:fixed;bottom:1.4rem;right:1.4rem;z-index:850;display:flex;gap:6px;align-items:center;background:rgba(6,16,13,.65);border:1px solid rgba(139,189,210,.12);border-radius:100px;padding:.35rem .55rem;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:.35;transition:opacity .3s,border-color .3s}
+#eco-toggle{position:fixed;bottom:1.4rem;right:1.4rem;z-index:900;pointer-events:all;display:flex;gap:6px;align-items:center;background:rgba(6,16,13,.65);border:1px solid rgba(139,189,210,.12);border-radius:100px;padding:.35rem .55rem;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:.35;transition:opacity .3s,border-color .3s;cursor:pointer}
 #eco-toggle:hover{opacity:.85;border-color:rgba(139,189,210,.28)}
-.eco-btn{width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:none;border:none;border-radius:50%;cursor:pointer;padding:0;transition:background .25s,opacity .25s;position:relative}
+.eco-btn{width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:none;border:none;border-radius:50%;cursor:pointer!important;padding:0;transition:background .25s,opacity .25s;position:relative;pointer-events:all}
 .eco-btn:hover{background:rgba(139,189,210,.1)}
 .eco-btn svg{display:block}
 .eco-btn .eco-slash{transition:opacity .2s}
@@ -1467,6 +1467,102 @@ if(hasHover){
   requestAnimationFrame(tick);
 })();
 
+/* ── MOBILE NAV ── */
+var bg=document.getElementById('burger'),nm=document.getElementById('nmob');
+bg.addEventListener('click',function(){var o=bg.classList.toggle('open');nm.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);nm.setAttribute('aria-hidden',!o);});
+function cm(){bg.classList.remove('open');nm.classList.remove('open');bg.setAttribute('aria-expanded','false');nm.setAttribute('aria-hidden','true');}
+window.addEventListener('resize',function(){if(window.innerWidth>960)cm();},{passive:true});
+
+/* ── PAGE NAV ── */
+var pageMap={
+  '':        'home',
+  '/':       'home',
+  '/ara':    'ara',
+  '/rhyssa': 'rhyssa',
+  '/about':  'about',
+  '/privacy':'privacy',
+  '/terms':  'terms'
+};
+
+function go(id,push){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  var t=document.getElementById('pg-'+id);if(!t)return;
+  t.classList.add('active');window.scrollTo({top:0,behavior:'auto'});cm();
+  setTimeout(function(){obs(t);},80);
+  var path=id==='home'?'/':'/'+id;
+  if(push!==false)history.pushState({page:id},'',path);
+  var can=document.querySelector('link[rel="canonical"]');
+  if(can)can.setAttribute('href','https://aquaticrhythm.com'+path);
+  if(typeof gtag!=='undefined'){
+    gtag('event','page_view',{page_path:path,page_title:id});
+  }
+}
+
+document.addEventListener('click',function(e){
+  var link=e.target.closest('[data-page]');if(!link)return;
+  e.preventDefault();go(link.getAttribute('data-page'));
+});
+
+window.addEventListener('popstate',function(e){
+  var id=(e.state&&e.state.page)?e.state.page:pageMap[location.pathname]||'home';
+  go(id,false);
+});
+
+(function(){
+  var redirect=sessionStorage.getItem('spa_redirect');
+  if(redirect){sessionStorage.removeItem('spa_redirect');history.replaceState(null,'',redirect);}
+  var id=pageMap[location.pathname]||'home';
+  var active=document.querySelector('.page.active');
+  if(active)active.classList.remove('active');
+  var t=document.getElementById('pg-'+id);
+  if(t){
+    t.classList.add('active');
+    try{history.replaceState({page:id},'',location.pathname);}catch(e){}
+    var path=id==='home'?'/':'/'+id;
+    var can=document.querySelector('link[rel="canonical"]');
+    if(can)can.setAttribute('href','https://aquaticrhythm.com'+path);
+    if(typeof gtag!=='undefined'){
+      gtag('event','page_view',{page_path:path,page_title:id});
+    }
+  }
+})();
+/* ── ECOSYSTEM TOGGLE ── */
+(function(){
+  var faunaBtn=document.getElementById('fauna-btn');
+  var floraBtn=document.getElementById('flora-btn');
+  var fish=document.getElementById('fish-layer');
+  var plants=document.getElementById('plants');
+  var driftwood=document.getElementById('driftwood-layer');
+  if(!faunaBtn||!floraBtn)return;
+
+  var faunaOff=localStorage.getItem('ar_fauna')==='0';
+  var floraOff=localStorage.getItem('ar_flora')==='0';
+
+  function applyFauna(off){
+    faunaOff=off;
+    faunaBtn.classList.toggle('off',off);
+    faunaBtn.setAttribute('aria-pressed',off?'true':'false');
+    faunaBtn.title=off?'Show fish':'Hide fish';
+    if(fish){fish.style.transition='opacity .6s';fish.style.opacity=off?'0':'';}
+    localStorage.setItem('ar_fauna',off?'0':'1');
+  }
+
+  function applyFlora(off){
+    floraOff=off;
+    floraBtn.classList.toggle('off',off);
+    floraBtn.setAttribute('aria-pressed',off?'true':'false');
+    floraBtn.title=off?'Show plants':'Hide plants';
+    if(plants){plants.style.transition='opacity .6s';plants.style.opacity=off?'0':'';}
+    if(driftwood){driftwood.style.transition='opacity .6s';driftwood.style.opacity=off?'0':'';}
+    localStorage.setItem('ar_flora',off?'0':'1');
+  }
+
+  faunaBtn.addEventListener('click',function(e){e.stopPropagation();applyFauna(!faunaOff);});
+  floraBtn.addEventListener('click',function(e){e.stopPropagation();applyFlora(!floraOff);});
+
+  if(faunaOff)applyFauna(true);
+  if(floraOff)applyFlora(true);
+})();
 /* ── SCROLL REVEAL ── */
 var currentObserver=null;
 function obs(page){
@@ -1482,4 +1578,4 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 </body>
-  </html>
+        </html>
