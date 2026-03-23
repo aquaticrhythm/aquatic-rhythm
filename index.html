@@ -496,6 +496,23 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   backdrop-filter:none!important;-webkit-backdrop-filter:none!important
 }
 /* ARA PILLARS — responsive */
+
+/* NOTES PAGE */
+.note-card{display:grid;grid-template-columns:120px 1fr;gap:3rem;padding:3rem;background:rgba(6,16,13,.55);text-decoration:none;transition:background .35s;align-items:start}
+.note-card:hover{background:rgba(9,22,18,.8)}
+.note-meta{display:flex;flex-direction:column;gap:.5rem;padding-top:.3rem}
+.note-date{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.note-tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(157,191,154,.6);font-weight:500}
+.note-body{}
+.note-title{font-family:var(--serif);font-size:clamp(1.2rem,1.8vw,1.7rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.3;margin-bottom:.7rem;transition:color .3s}
+.note-card:hover .note-title{color:rgba(61,214,232,.9)}
+.note-excerpt{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;max-width:640px}
+.note-read{display:inline-block;margin-top:1rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.55);transition:color .3s}
+.note-card:hover .note-read{color:rgba(61,214,232,.9)}
+@media(max-width:960px){
+  .note-card{grid-template-columns:1fr;gap:1rem}
+  .note-meta{flex-direction:row;gap:1rem}
+}
 /* RHYSSA PAGE — new sections responsive */
 .rhyssa-stance-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .rhyssa-limits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
@@ -1024,6 +1041,54 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
 </div></div>
+<!-- NOTES PAGE -->
+<div id="pg-notes" class="page"><div class="pl">
+  <section style="padding:12rem clamp(1.5rem,5vw,4.5rem) 5rem">
+    <div class="cap">
+      <div class="sr">
+        <span class="ey">From the keeper</span>
+        <h2 class="dlg" style="color:rgba(255,255,255,.88)">Notes.</h2>
+        <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.3vw,1.15rem);font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;max-width:560px;margin-top:1.4rem">Observations from someone still learning to read living water. On tanks, rhythm, misalignment, and what it means to care for something that breathes.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section style="padding:5rem clamp(1.5rem,5vw,4.5rem) 9rem">
+    <div class="cap">
+      <div id="notes-grid" style="display:flex;flex-direction:column;gap:1px;background:rgba(139,189,210,.06)">
+
+        <!-- TAMBAH ARTIKEL BARU DI SINI — salin blok di bawah
+        <a href="/notes/nama-fail.html" class="note-card" target="_blank" rel="noopener">
+          <div class="note-meta">
+            <span class="note-date">MMM YYYY</span>
+            <span class="note-tag">Kategori</span>
+          </div>
+          <div class="note-body">
+            <h2 class="note-title">Tajuk Artikel</h2>
+            <p class="note-excerpt">Satu atau dua ayat ringkasan.</p>
+            <span class="note-read">Read →</span>
+          </div>
+        </a>
+        -->
+
+        <div style="padding:6rem 3rem;text-align:center">
+          <p style="font-family:var(--serif);font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.28);line-height:1.8">The first note is still forming.<br>It will arrive when it is ready.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
+  <div class="subfooter">
+    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
+    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
+    <a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span>
+    <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a>
+  </div>
+</div></div>
 </main>
 
 
@@ -1454,7 +1519,8 @@ var pageMap={
   '/rhyssa': 'rhyssa',
   '/about':  'about',
   '/privacy':'privacy',
-  '/terms':  'terms'
+  '/terms':  'terms',
+  '/notes':  'notes'
 };
 
 function go(id,push){
