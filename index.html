@@ -482,11 +482,15 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
   backdrop-filter:none!important;-webkit-backdrop-filter:none!important
 }
 
-/* REDUCE MOTION BUTTON */
-#motion-btn{position:fixed;bottom:2rem;right:2rem;z-index:850;display:flex;align-items:center;gap:.5rem;background:rgba(6,16,13,.75);border:1px solid rgba(139,189,210,.18);color:rgba(139,189,210,.55);padding:.55rem 1rem;border-radius:100px;font-family:var(--sans);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .3s,border-color .3s,color .3s;cursor:pointer}
-#motion-btn:hover{background:rgba(9,22,18,.9);border-color:rgba(139,189,210,.35);color:rgba(139,189,210,.9)}
-#motion-btn.still{border-color:rgba(157,191,154,.4);color:rgba(157,191,154,.7)}
-#motion-btn .mb-icon{font-size:.8rem;line-height:1}
+/* ECOSYSTEM TOGGLE */
+#eco-toggle{position:fixed;bottom:1.4rem;right:1.4rem;z-index:850;display:flex;gap:6px;align-items:center;background:rgba(6,16,13,.65);border:1px solid rgba(139,189,210,.12);border-radius:100px;padding:.35rem .55rem;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:.35;transition:opacity .3s,border-color .3s}
+#eco-toggle:hover{opacity:.85;border-color:rgba(139,189,210,.28)}
+.eco-btn{width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:none;border:none;border-radius:50%;cursor:pointer;padding:0;transition:background .25s,opacity .25s;position:relative}
+.eco-btn:hover{background:rgba(139,189,210,.1)}
+.eco-btn svg{display:block}
+.eco-btn .eco-slash{transition:opacity .2s}
+.eco-btn.off .eco-slash{opacity:1}
+.eco-btn:not(.off) .eco-slash{opacity:0}
 /* ARA PILLARS — responsive */
 
 
@@ -550,10 +554,27 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 
 
 
-<button id="motion-btn" type="button" aria-label="Reduce motion" aria-pressed="false" title="Reduce motion">
-  <span class="mb-icon">◎</span>
-  <span class="mb-label">Reduce motion</span>
-</button>
+<div id="eco-toggle" role="group" aria-label="Ecosystem visibility">
+  <!-- Ikan toggle -->
+  <button class="eco-btn" id="fauna-btn" aria-label="Toggle fauna" title="Toggle fish and animals">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <ellipse cx="10" cy="9" rx="4" ry="2.2" fill="rgba(139,189,210,.8)"/>
+      <path d="M6 9 L4 6.8 L4 11.2 Z" fill="rgba(139,189,210,.7)"/>
+      <circle cx="12.5" cy="8.2" r=".75" fill="rgba(255,255,255,.9)"/>
+      <line class="eco-slash" x1="3" y1="3" x2="15" y2="15" stroke="rgba(200,90,90,.85)" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <!-- Tumbuhan toggle -->
+  <button class="eco-btn" id="flora-btn" aria-label="Toggle flora" title="Toggle plants and driftwood">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <line x1="9" y1="16" x2="9" y2="4" stroke="rgba(100,190,82,.85)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="9" y1="11" x2="5.5" y2="7" stroke="rgba(100,190,82,.7)" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="9" y1="8" x2="12.5" y2="5" stroke="rgba(100,190,82,.6)" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="9" cy="16" rx="2.5" ry=".8" fill="rgba(80,60,30,.5)"/>
+      <line class="eco-slash" x1="3" y1="3" x2="15" y2="15" stroke="rgba(200,90,90,.85)" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
 
 <div class="nmob" id="nmob" aria-hidden="true">
   <ul>
@@ -1119,9 +1140,9 @@ var TIER=(function(){
 if(TIER==='low')document.documentElement.classList.add('tier-low');
 
 var CFG={
-  low: {plants:6, rays:3, motes:6,  sparks:8,  shrimpMax:1,snailMax:0},
-  mid: {plants:10,rays:5, motes:12, sparks:18, shrimpMax:2,snailMax:1},
-  high:{plants:17,rays:8, motes:25, sparks:38, shrimpMax:3,snailMax:1}
+  low: {plants:6, rays:3, motes:6,  sparks:8},
+  mid: {plants:10,rays:5, motes:12, sparks:18},
+  high:{plants:17,rays:8, motes:25, sparks:38}
 }[TIER];
 
 /* ── PAUSE ON HIDDEN TAB ── */
@@ -1347,19 +1368,7 @@ if(hasHover){
     s.appendChild(mk('circle',{cx:'50',cy:'13',r:'4',fill:'rgba(255,255,255,.88)'}));
     s.appendChild(mk('circle',{cx:'50.5',cy:'13',r:'2',fill:'rgba(8,4,0,.92)'}));
   }
-  function buildShrimp(s){
-    s.appendChild(mk('path',{d:'M22,8 C26,5 32,5 36,8 C38,10 38,14 36,16 C33,18 28,18 24,16 C21,14 20,10 22,8Z',fill:'rgba(210,68,55,.78)'}));
-    s.appendChild(mk('path',{d:'M24,12 C22,10 19,9 16,10 C14,11 13,13 14,15 C16,16 20,16 23,15 C24,14 25,13 24,12Z',fill:'rgba(205,65,52,.8)'}));
-    s.appendChild(mk('path',{d:'M9,11 C7,9 5,9 3,11 C2,12 2,14 3,15 C5,16 8,16 10,15 C11,14 11,12 9,11Z',fill:'rgba(195,60,48,.78)'}));
-    s.appendChild(mk('path',{d:'M8,10 C12,8 18,8 24,9 C28,10 32,10 35,10',stroke:'rgba(240,90,70,.4)','stroke-width':'1.5',fill:'none'}));
-    s.appendChild(mk('circle',{cx:'36',cy:'8',r:'2',fill:'rgba(255,255,255,.88)'}));
-    s.appendChild(mk('circle',{cx:'36.3',cy:'8',r:'1',fill:'rgba(20,5,5,.92)'}));
-  }
-  function buildSnail(s){
-    s.appendChild(mk('path',{d:'M14,10 C14,4 18,1 22,3 C26,5 28,10 26,15 C24,20 18,22 14,20 C10,18 8,13 10,9 C12,5 16,4 18,7 C20,10 18,14 15,14Z',fill:'rgba(100,60,30,.72)',stroke:'rgba(70,40,18,.45)','stroke-width':'1'}));
-    s.appendChild(mk('path',{d:'M8,18 C10,20 16,22 22,21 C28,20 32,18 30,16 C26,15 14,16 8,16Z',fill:'rgba(120,100,60,.58)'}));
-    s.appendChild(mk('circle',{cx:'28',cy:'10',r:'1',fill:'rgba(30,20,5,.75)'}));
-  }
+
 
   var entities=[];
 
@@ -1398,30 +1407,6 @@ if(hasHover){
     wrap.appendChild(svg);fl.appendChild(wrap);
     setTimeout(function(){wrap.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},150);
     return{type:'solo',el:wrap,x:startX,baseY:baseY,goRight:goRight,speed:speed,bodyW:cfg.w*sc,wob:cfg.wob*(0.8+Math.random()*.4),wobF:cfg.wobF*(0.8+Math.random()*.4),t:Math.random()*Math.PI*2,cfg:cfg};
-  }
-
-  function makeShrimp(){
-    var vW=W(),vH=H(),x=vW*.05+Math.random()*vW*.88,baseY=vH*(0.72+Math.random()*.14);
-    var sc=0.55+Math.random()*.3,goRight=Math.random()>.5;
-    var svg=document.createElementNS(NS,'svg');svg.setAttribute('width','48');svg.setAttribute('height','26');svg.setAttribute('viewBox','-6 0 54 26');
-    buildShrimp(svg);
-    var wrap=document.createElement('div');wrap.className='fish';
-    wrap.style.cssText='left:'+Math.round(x)+'px;top:'+Math.round(baseY)+'px;transform:scaleX('+(goRight?1:-1)+') scale('+sc+');transform-origin:center center;opacity:0;transition:opacity 1s,left 1.5s ease-in-out,top 1.5s ease-in-out';
-    wrap.appendChild(svg);fl.appendChild(wrap);
-    setTimeout(function(){wrap.style.opacity=(0.5+Math.random()*.28).toFixed(2);},200);
-    return{type:'shrimp',el:wrap,x:x,baseY:baseY,dir:goRight?1:-1,sc:sc,nextStep:Date.now()+2000+Math.random()*3000,lifetime:Date.now()+35000+Math.random()*25000};
-  }
-
-  function makeSnail(){
-    var vW=W(),vH=H(),x=(Math.random()<.5)?vW*.05+Math.random()*vW*.25:vW*.55+Math.random()*vW*.3;
-    var baseY=vH*(0.74+Math.random()*.1),sc=0.7+Math.random()*.4,goRight=Math.random()>.5;
-    var svg=document.createElementNS(NS,'svg');svg.setAttribute('width','34');svg.setAttribute('height','24');svg.setAttribute('viewBox','0 0 34 24');
-    buildSnail(svg);
-    var wrap=document.createElement('div');wrap.className='fish';
-    wrap.style.cssText='left:'+Math.round(x)+'px;top:'+Math.round(baseY)+'px;transform:scaleX('+(goRight?1:-1)+') scale('+sc+');transform-origin:center center;opacity:0;transition:left 4s ease-in-out,top 4s ease-in-out,opacity 1.5s';
-    wrap.appendChild(svg);fl.appendChild(wrap);
-    setTimeout(function(){wrap.style.opacity=(0.45+Math.random()*.25).toFixed(2);},400);
-    return{type:'snail',el:wrap,x:x,baseY:baseY,dir:goRight?1:-1,sc:sc,nextStep:Date.now()+4000+Math.random()*5000,lifetime:Date.now()+60000+Math.random()*30000};
   }
 
   var altumCfg={w:54,h:82,build:buildAltum,count:TIER==='low'?3:5,spreadX:200,spreadY:140,speedMin:5,speedMax:9,yMin:.06,yMax:.44,scaleMin:.55,scaleMax:.78,opMin:.44,opMax:.7,wob:1.0,wobF:0.22};
@@ -1467,38 +1452,6 @@ if(hasHover){
         }
         return true;
       }
-      if(e.type==='shrimp'){
-        if(now>=e.nextStep){
-          var move=(Math.random()<.75)?(e.dir*(4+Math.random()*12)):(e.dir*(-2-Math.random()*4));
-          e.x+=move;
-          if(e.x<20){e.x=20;e.dir=1;}if(e.x>vW-20){e.x=vW-20;e.dir=-1;}
-          var ny=e.baseY+(Math.random()-.5)*8;
-          e.el.style.left=Math.round(e.x)+'px';e.el.style.top=Math.round(ny)+'px';
-          e.el.style.transform='scaleX('+(e.dir>0?1:-1)+') scale('+e.sc+')';
-          e.nextStep=now+1800+Math.random()*3500;
-        }
-        if(now>=e.lifetime){
-          e.el.style.opacity='0';
-          setTimeout(function(){e.el.parentNode&&e.el.parentNode.removeChild(e.el);setTimeout(makeShrimp,5000+Math.random()*8000);},1200);
-          return false;
-        }
-        return true;
-      }
-      if(e.type==='snail'){
-        if(now>=e.nextStep){
-          e.x+=e.dir*(1.5+Math.random()*3);
-          if(e.x<10){e.x=10;e.dir=1;}if(e.x>vW-10){e.x=vW-10;e.dir=-1;}
-          var sny=e.baseY+(Math.random()-.5)*6;
-          e.el.style.left=Math.round(e.x)+'px';e.el.style.top=Math.round(sny)+'px';
-          e.nextStep=now+3500+Math.random()*5000;
-        }
-        if(now>=e.lifetime){
-          e.el.style.opacity='0';
-          setTimeout(function(){e.el.parentNode&&e.el.parentNode.removeChild(e.el);setTimeout(makeSnail,20000+Math.random()*30000);},2000);
-          return false;
-        }
-        return true;
-      }
       return true;
     });
   }
@@ -1510,109 +1463,8 @@ if(hasHover){
     setTimeout(function(){entities.push(makeSchool(congoCfg));},20000);
   }
   setTimeout(function(){entities.push(makeSolo(oscarCfg));},28000);
-  for(var si=0;si<CFG.shrimpMax;si++){(function(i){setTimeout(function(){entities.push(makeShrimp());},2500+i*6000);})(si);}
-  if(CFG.snailMax>0)setTimeout(function(){entities.push(makeSnail());},6000);
 
   requestAnimationFrame(tick);
-})();
-
-
-
-
-/* ── REDUCE MOTION ── */
-(function(){
-  var btn=document.getElementById('motion-btn');
-  var fish=document.getElementById('fish-layer');
-  var plants=document.getElementById('plants');
-  var driftwood=document.getElementById('driftwood-layer');
-  var still=localStorage.getItem('ar_still')==='1';
-
-  function apply(s){
-    still=s;
-    btn.classList.toggle('still',s);
-    btn.setAttribute('aria-pressed',s?'true':'false');
-    btn.querySelector('.mb-label').textContent=s?'Motion on':'Reduce motion';
-    btn.querySelector('.mb-icon').textContent=s?'○':'◎';
-    /* Sembunyikan fauna dan flora sahaja — air, caustic, zarah kekal */
-    if(fish)fish.style.opacity=s?'0':'';
-    if(plants)plants.style.opacity=s?'0':'';
-    if(driftwood)driftwood.style.opacity=s?'0':'';
-    localStorage.setItem('ar_still',s?'1':'0');
-  }
-
-  btn.addEventListener('click',function(){apply(!still);});
-  if(still)apply(true);
-})();
-/* ── MOBILE NAV ── */
-var bg=document.getElementById('burger'),nm=document.getElementById('nmob');
-bg.addEventListener('click',function(){var o=bg.classList.toggle('open');nm.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);nm.setAttribute('aria-hidden',!o);});
-function cm(){bg.classList.remove('open');nm.classList.remove('open');bg.setAttribute('aria-expanded','false');nm.setAttribute('aria-hidden','true');}
-window.addEventListener('resize',function(){if(window.innerWidth>960)cm();},{passive:true});
-
-/* ── PAGE NAV ── */
-var pageMap={
-  '':        'home',
-  '/':       'home',
-  '/ara':    'ara',
-  '/rhyssa': 'rhyssa',
-  '/about':  'about',
-  '/privacy':'privacy',
-  '/terms':  'terms'
-};
-
-function go(id,push){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  var t=document.getElementById('pg-'+id);if(!t)return;
-  t.classList.add('active');window.scrollTo({top:0,behavior:'auto'});cm();
-  setTimeout(function(){obs(t);},80);
-
-  /* Update URL */
-  var path=id==='home'?'/':'/'+id;
-  if(push!==false)history.pushState({page:id},'',path);
-
-  /* Update canonical */
-  var can=document.querySelector('link[rel="canonical"]');
-  if(can)can.setAttribute('href','https://aquaticrhythm.com'+path);
-
-  /* GA4 track page */
-  if(typeof gtag!=='undefined'){
-    gtag('event','page_view',{page_path:path,page_title:id});
-  }
-}
-
-document.addEventListener('click',function(e){
-  var link=e.target.closest('[data-page]');if(!link)return;
-  e.preventDefault();go(link.getAttribute('data-page'));
-});
-
-/* Handle back/forward button */
-window.addEventListener('popstate',function(e){
-  var id=(e.state&&e.state.page)?e.state.page:pageMap[location.pathname]||'home';
-  go(id,false);
-});
-
-/* Handle direct URL on load — including 404 redirect */
-(function(){
-  /* Semak redirect dari 404.html */
-  var redirect=sessionStorage.getItem('spa_redirect');
-  if(redirect){
-    sessionStorage.removeItem('spa_redirect');
-    history.replaceState(null,'',redirect);
-  }
-  var id=pageMap[location.pathname]||'home';
-  var active=document.querySelector('.page.active');
-  if(active)active.classList.remove('active');
-  var t=document.getElementById('pg-'+id);
-  if(t){
-    t.classList.add('active');
-    try{history.replaceState({page:id},'',location.pathname);}catch(e){}
-    var path=id==='home'?'/':'/'+id;
-    var can=document.querySelector('link[rel="canonical"]');
-    if(can)can.setAttribute('href','https://aquaticrhythm.com'+path);
-    if(typeof gtag!=='undefined'){
-      gtag('event','page_view',{page_path:path,page_title:id});
-    }
-  }
 })();
 
 /* ── SCROLL REVEAL ── */
