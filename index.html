@@ -110,10 +110,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-8MDN065WNW', {
-    anonymize_ip: true,
-    cookie_flags: 'SameSite=None;Secure'
-  });
+  gtag('config', 'G-8MDN065WNW');
 </script>
 <!-- OPTIMIZED: async font loading — tidak lagi render-blocking -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,18 +188,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(61,214,232,.75);transition:width .35s var(--ease)}
 .nlinks a:hover{color:rgba(255,255,255,.82)}
 .nlinks a:hover::after{width:100%}
-/* NOTES DROPDOWN */
-.has-drop{position:relative}
-.has-drop>a{display:flex;align-items:center;gap:.3rem}
-.drop-arrow{font-size:.5rem;opacity:.5;transition:transform .3s var(--ease)}
-.has-drop:hover .drop-arrow{transform:rotate(180deg)}
-.dropdown{position:absolute;top:calc(100% + 1rem);right:0;min-width:220px;background:rgba(4,20,32,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(139,189,210,.1);padding:.6rem 0;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .28s var(--ease),transform .28s var(--ease)}
-.has-drop:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s,padding-left .25s var(--ease);white-space:nowrap}
-.dropdown a:hover{color:rgba(61,214,232,.82);padding-left:1.5rem}
-.dropdown-all{border-top:1px solid rgba(139,189,210,.08);margin-top:.4rem;padding-top:.4rem}
-.dropdown-all a{color:rgba(61,214,232,.45)!important}
-.dropdown-all a:hover{color:rgba(61,214,232,.88)!important}
+
 .ncta{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.92);border:1px solid rgba(61,214,232,.35);padding:.52rem 1.25rem;border-radius:100px;text-decoration:none;transition:background .3s,border-color .3s,color .3s;backdrop-filter:blur(8px)}
 .ncta:hover{background:rgba(61,214,232,.15);border-color:rgba(61,214,232,.6);color:#ffffff}
 .nbg{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;padding:5px}
@@ -431,7 +417,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .aboutblock p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.95}
 
 /* FOOTER */
-footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(255,255,255,.06)}
+footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;justify-content:center;border-top:1px solid rgba(255,255,255,.06)}
 .subfooter{text-align:center;padding:.8rem clamp(1.5rem,5vw,4.5rem) 1.6rem;border-top:1px solid rgba(255,255,255,.03);display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap}
 .sflink{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);text-decoration:none;transition:color .3s}
 .sflink:hover{color:rgba(139,189,210,.55)}
@@ -439,9 +425,6 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
 .fl{font-family:var(--serif);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.35);text-decoration:none}
 .fl em{font-style:italic;color:rgba(139,189,210,.5)}
 .fm{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center}
-.fr{display:flex;justify-content:flex-end}
-.fr a{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);text-decoration:none;transition:color .3s}
-.fr a:hover{color:rgba(61,214,232,.82)}
 
 /* BIOLUMINESCENCE CURSOR */
 .bio{position:fixed;border-radius:50%;pointer-events:none;z-index:9998;mix-blend-mode:screen}
@@ -456,7 +439,9 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   50%{opacity:calc(var(--bo)*1.4);transform:translate(-50%,-50%) scale(1.3)}
 }
 
-  .nlinks{display:none}.nbg{display:flex}.ncta{display:none}
+  
+@media(max-width:960px){
+.nlinks{display:none}.nbg{display:flex}.ncta{display:none}
   .hi,.arah,.sysin,.araph,.adg,.rhg,.qg,.scn,.aboutg{grid-template-columns:1fr;gap:2.5rem}
   .aboutg{margin-top:2rem}
   .abouth{padding:8rem clamp(1.5rem,5vw,4.5rem) 3rem}
@@ -472,18 +457,19 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   .pnl{font-size:2.2rem}
   .scn:nth-child(even) .scl{order:unset}.scn:nth-child(even) .scr{order:unset}
   .orblg{width:220px;height:220px}
-  footer{grid-template-columns:1fr;text-align:center}.fr{justify-content:center}
-}
-@media(max-width:560px){.aragrid{grid-template-columns:1fr}.dxl{font-size:2.9rem}}
-@media(hover:hover) and (pointer:fine){body,.btn,.spp,.nbg{cursor:none}}
-@media(hover:none),(pointer:coarse){#cd,#cr{display:none!important}}
-@media(max-width:960px){
-  .cl2,.spk{display:none}
+.cl2,.spk{display:none}
   #driftwood-layer{opacity:.5}
   .mote{opacity:.35!important}
   .ray{opacity:.35!important}
   .cl{animation-duration:20s}
+.rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
+  .rhyssa-limits-grid{grid-template-columns:1fr!important}
+.ara-pillars{grid-template-columns:1fr!important}
 }
+@media(max-width:560px){.aragrid{grid-template-columns:1fr}.dxl{font-size:2.9rem}}
+@media(hover:hover) and (pointer:fine){body,.btn,.spp,.nbg{cursor:none}}
+@media(hover:none),(pointer:coarse){#cd,#cr{display:none!important}}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -497,36 +483,16 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
 }
 /* ARA PILLARS — responsive */
 
-/* NOTES PAGE */
-.note-card{display:grid;grid-template-columns:120px 1fr;gap:3rem;padding:3rem;background:rgba(6,16,13,.55);text-decoration:none;transition:background .35s;align-items:start}
-.note-card:hover{background:rgba(9,22,18,.8)}
-.note-meta{display:flex;flex-direction:column;gap:.5rem;padding-top:.3rem}
-.note-date{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25)}
-.note-tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(157,191,154,.6);font-weight:500}
-.note-body{}
-.note-title{font-family:var(--serif);font-size:clamp(1.2rem,1.8vw,1.7rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.3;margin-bottom:.7rem;transition:color .3s}
-.note-card:hover .note-title{color:rgba(61,214,232,.9)}
-.note-excerpt{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;max-width:640px}
-.note-read{display:inline-block;margin-top:1rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.55);transition:color .3s}
-.note-card:hover .note-read{color:rgba(61,214,232,.9)}
-@media(max-width:960px){
-  .note-card{grid-template-columns:1fr;gap:1rem}
-  .note-meta{flex-direction:row;gap:1rem}
-}
+
 /* RHYSSA PAGE — new sections responsive */
 .rhyssa-stance-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .rhyssa-limits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
-@media(max-width:960px){
-  .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
-  .rhyssa-limits-grid{grid-template-columns:1fr!important}
-}
+
 @media(max-width:560px){
   .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2rem!important}
   .rhyssa-limits-grid{grid-template-columns:1fr!important}
 }
-@media(max-width:960px){
-  .ara-pillars{grid-template-columns:1fr!important}
-}
+
 </style>
 </head>
 <body>
@@ -568,20 +534,10 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
     </svg>
   </a>
   <ul class="nlinks">
-    <li><a href="/" data-page="home">Living Water</a></li>
-    <li><a href="/ara" data-page="ara">The Framework</a></li>
+    <li><a href="/" data-page="home">Home</a></li>
+    <li><a href="/ara" data-page="ara">Explore ARA</a></li>
     <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
     <li><a href="/about" data-page="about">About</a></li>
-    <li class="has-drop">
-      <a href="/notes/">Notes <span class="drop-arrow">▾</span></a>
-      <div class="dropdown">
-        <!-- Tambah artikel baru di sini -->
-        <!-- <a href="/notes/nama-artikel.html">Tajuk Artikel</a> -->
-        <div class="dropdown-all">
-          <a href="/notes/">All Notes →</a>
-        </div>
-      </div>
-    </li>
   </ul>
   <button class="nbg" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </nav>
@@ -590,11 +546,10 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
 
 <div class="nmob" id="nmob" aria-hidden="true">
   <ul>
-    <li><a href="/" data-page="home">Living Water</a></li>
-    <li><a href="/ara" data-page="ara">The Framework</a></li>
+    <li><a href="/" data-page="home">Home</a></li>
+    <li><a href="/ara" data-page="ara">Explore ARA</a></li>
     <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
     <li><a href="/about" data-page="about">About</a></li>
-    <li><a href="/notes/">Notes</a></li>
     <li><a href="/privacy" data-page="privacy" style="color:rgba(255,255,255,.2)">Privacy Policy</a></li>
     <li><a href="/terms" data-page="terms" style="color:rgba(255,255,255,.2)">Terms of Use</a></li>
   </ul>
@@ -606,9 +561,10 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <section class="hero pad">
     <div class="hi cap">
       <div class="ht">
-        <span class="ey">Living Water</span>
+        <span class="ey">Home</span>
         <h1 class="dxl">Your tank has<br>a rhythm.<br><em style="font-style:italic;color:rgba(61,214,232,.85)">Learn it.</em></h1>
-        <p class="hk">A living aquarium isn't something you configure. It breathes, shifts, and finds its own balance — on its own time. The keepers who thrive are the ones who learn to move with it.</p>
+        <p class="hk">A living aquarium isn't something you configure. It breathes, shifts, and finds its own balance — on its own time. The keepers who thrive learn to move with it, not ahead of it.</p>
+        <p style="font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:-.5rem;margin-bottom:2.2rem;font-family:var(--sans)">A framework for reading aquarium ecosystems — and a companion to help you apply it.</p>
       </div>
       <div class="hoz">
         <div class="orb">
@@ -621,14 +577,28 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
     <div class="scue"><div class="sline"></div></div>
   </section>
   <div class="div"></div>
+
+  <section class="psec pad" style="padding-top:8rem;padding-bottom:8rem">
+    <div class="cap">
+      <span class="ey sr">A closed world</span>
+      <h2 class="dlg sr d1" style="color:rgba(255,255,255,.78);max-width:680px">Every aquarium is a living system<br>held together by one person.</h2>
+      <div class="sr d2" style="max-width:680px;margin-top:3rem">
+          <p class="bt">Water covers most of this planet and hosts most of its life. In the ocean, in rivers, in the quiet margins of a lake — ecosystems have been finding their own balance for millions of years. Chemistry responding to biology. Biology shaped by light and season. Everything in quiet conversation with everything else.</p>
+          <p class="bt" style="margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:1.12rem;color:rgba(255,255,255,.72);line-height:1.85">Then we put some of that world in a glass box.</p>
+          <p class="bt" style="margin-top:1.6rem">A closed aquarium is not a simplified version of nature. It is nature — compressed, isolated, and handed to a single human being. The nitrogen cycle that once stretched across kilometres now fits inside forty litres. The slow rhythms that once governed water temperature are now governed by a heater dial and your schedule.</p>
+          <p class="bt" style="margin-top:1.4rem">What was once distributed across an entire ecosystem now rests entirely with you. That is not a small thing. Most people who struggle with their tanks aren't doing it wrong. They simply haven't been told what they've taken on.</p>
+      </div>
+    </div>
+  </section>
+  <div class="div"></div>
   <section class="psec">
     <div class="cap">
       <span class="ey sr">Why it feels harder than it should</span>
       <p class="pst sr d1">Most struggling keepers aren't careless. They're just <em>moving faster than their tank can follow.</em></p>
       <div class="pcards" style="margin-top:5rem">
-        <div class="pc sr d1"><div class="pn">01</div><h4>Too much noise, not enough clarity</h4><p>Every forum says something different. You absorb it all and end up more lost than when you started. Information without a frame just becomes anxiety.</p></div>
+        <div class="pc sr d1"><div class="pn">01</div><h4>Too much noise, not enough clarity</h4><p>Every forum says something different. You absorb it all and end up more lost than when you started. Information without a frame doesn't build knowledge — it builds anxiety.</p></div>
         <div class="pc sr d2"><div class="pn">02</div><h4>Acting before the tank has finished speaking</h4><p>Something looks off. The urge to fix it is immediate. But most changes in a living tank are the system mid-sentence — it needs a moment to finish its thought.</p></div>
-        <div class="pc sr d3"><div class="pn">03</div><h4>Vision bigger than real life allows</h4><p>You want a beautiful tank. You also have a job, a family, a life. When that gap isn't honestly mapped, things fall apart quietly — not from bad choices, but unrealistic ones.</p></div>
+        <div class="pc sr d3"><div class="pn">03</div><h4>Vision bigger than real life allows</h4><p>You want something beautiful. You also have a job, a family, a life that doesn't always leave room. When that gap isn't honestly mapped, things fall apart quietly — not from bad choices, but unrealistic ones.</p></div>
       </div>
     </div>
   </section>
@@ -636,10 +606,10 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <section class="arasec pad">
     <div class="cap">
       <div class="arah">
-        <div class="sr"><span class="ey">A different approach</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Aquatic Rhythm<br>is a way of<br>reading your tank.</h2></div>
+        <div class="sr"><span class="ey">A different approach</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Aquatic Rhythm<br>was built around<br>this understanding.</h2></div>
         <div class="sr d2">
-          <p class="bt">Not a list of tips. Not another troubleshooting guide. A way of understanding the relationship between a living system, its natural pace, and the person tending it.</p>
-          <p class="bt">When that relationship clicks — when your timing, your energy, and your tank's rhythm are actually aligned — things settle. Not because you did more. Because you stopped doing the wrong things at the wrong moments.</p>
+          <p class="bt">Not as a guide to fixing problems. As a way of reading the living system you're responsible for — its pace, its signals, its particular needs at this particular moment.</p>
+          <p class="bt">That framework is called ARA — Aquatic Rhythm Alignment. Four principles. Not rules to follow. Questions to ask before you act.</p>
           <p class="bt" style="margin-top:1.8rem;color:rgba(255,255,255,.42);font-style:italic;font-family:var(--serif)">The hobby gave us encyclopaedias. Aquatic Rhythm gives you a compass.</p>
         </div>
       </div>
@@ -647,19 +617,32 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   </section>
   <div class="div"></div>
   <section class="ctasec pad">
-    <span class="ey ey-t sr">There is a better way</span>
+    <span class="ey ey-t sr">Ready to begin</span>
     <h2 class="dmd sr d1" style="color:rgba(255,255,255,.78)">It starts with<br>understanding the rhythm.</h2>
-    <p class="bt sr d2">ARA — Aquatic Rhythm Alignment — is four principles that change how you read your tank, make decisions, and know when — and when not — to act.</p>
+    <p class="bt sr d2">ARA is four principles that change how you read your tank, make decisions, and know when — and when not — to act.</p>
     <div class="sr d3" style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
-      <a href="/ara" class="btn bf" data-page="ara">Understand ARA →</a>
-      <a href="/rhyssa" class="btn bg" data-page="rhyssa">Talk with Rhyssa →</a>
+      <a href="/ara" class="btn bf" data-page="ara">Explore ARA →</a>
+      <a href="/rhyssa" class="btn bg" data-page="rhyssa">Meet Rhyssa →</a>
     </div>
   </section>
-  <footer>
-    <a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a>
-    <span class="fm">In rhythm with living water.</span>
-    <div class="fr"><a href="/ara" data-page="ara">The Framework →</a></div>
-  </footer>
+  <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orbit -->
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <!-- Plants — hijau cerah -->
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Fish body -->
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <!-- Tail -->
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <!-- Wave — dominan -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg></div><span class="fm">In rhythm with living water.</span></footer>
   <div class="subfooter">
     <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
     <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
@@ -674,12 +657,12 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <!-- HERO -->
   <section class="araph pad cap">
     <div class="sr">
-      <span class="ey">The Framework</span>
+      <span class="ey">Explore ARA</span>
       <h2 class="dxl" style="color:rgba(255,255,255,.78)">Aquatic Rhythm<br>Alignment.</h2>
       <p class="api"><em style="font-style:normal;color:rgba(139,189,210,.7);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--sans)">ARA</em><br><br>Not a set of rules.<br>Not a checklist to follow.<br>A way of understanding why a living tank behaves the way it does — and how the moment you choose to act shapes everything that follows.</p>
     </div>
     <div class="sr d2" style="padding-top:1rem">
-      <p class="bt">Most aquarium problems don't begin with one big mistake. They begin quietly — when something in the system's rhythm shifts and the keeper hasn't quite seen it yet. By the time something looks wrong, the underlying pressure has already been building for days, sometimes weeks.</p>
+      <p class="bt">Most aquarium problems don't begin with one big mistake. They begin quietly — when something in the system's rhythm shifts and the keeper hasn't quite seen it yet. By the time something looks wrong, the pressure has usually been building for days, sometimes weeks.</p>
       <p class="bt">ARA changes the question. Instead of <em style="font-style:italic;color:rgba(255,255,255,.78)">"What went wrong?"</em> it asks: <em style="font-style:italic;color:rgba(139,189,210,.8)">"What is no longer moving in rhythm — and what does this system need to find it again?"</em></p>
       <p class="bt" style="margin-top:1.8rem;color:rgba(255,255,255,.38);font-style:italic;font-family:var(--serif)">That shift — from error to rhythm — changes everything that follows.</p>
     </div>
@@ -695,9 +678,9 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
           <p class="apq">Living systems respond to<br><strong>patterns.</strong><br>Not to numbers.<br>Not to corrections.<br>To rhythm over time.</p>
         </div>
         <div class="sr d2">
-          <p class="bt">An aquarium is not a machine you dial in. It is a living micro-ecosystem — water, biology, light, temperature, and behaviour all moving together, continuously. The same action taken at different moments produces different outcomes. A tank two weeks old responds differently to a water change than a tank two years old.</p>
+          <p class="bt">An aquarium is not a machine you dial in. It is a living micro-ecosystem — water, biology, light, temperature, and behaviour all moving together, continuously. The same action taken at different moments produces entirely different outcomes.</p>
           <p class="bt">ARA is built on one foundational observation: <em style="font-style:italic;color:rgba(255,255,255,.75)">the keepers with the most stable tanks are not always the most knowledgeable. They are the ones who learned to slow down, watch honestly, and act in sync with what their tank is actually doing — right now.</em></p>
-          <p class="bt">Stability in ARA is not defined as perfect clarity or zero problems. It is defined as a state where fluctuations are absorbed without collapse. That kind of stability is not achieved once and locked in. It is maintained through rhythm — and it grows with time.</p>
+          <p class="bt">Stability in ARA is not defined as perfect clarity or zero problems. It is a state where fluctuations are absorbed without collapse. That kind of stability is not achieved once and locked in. It is maintained through rhythm — and it grows with time.</p>
         </div>
       </div>
     </div>
@@ -719,19 +702,19 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
         <div style="padding:2.8rem 2.4rem;background:rgba(6,16,13,.6)">
           <div style="font-family:var(--serif);font-size:2.6rem;font-weight:300;color:rgba(60,210,225,.25);line-height:1;margin-bottom:1.4rem">I</div>
           <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.7rem;line-height:1.3">Five ecological rhythms</h3>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">Every aquarium has five interlocking rhythms: water, biology and chemistry, environment, livestock behaviour, and the human tending it. When one falls out of step, the others feel it — often before any number changes.</p>
+          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">Every aquarium has five interlocking rhythms: water, biology and chemistry, environment, livestock behaviour, and the human tending it.  one falls out of step, the others feel it — often before any number changes.</p>
         </div>
 
         <div style="padding:2.8rem 2.4rem;background:rgba(6,16,13,.6)">
           <div style="font-family:var(--serif);font-size:2.6rem;font-weight:300;color:rgba(60,210,225,.25);line-height:1;margin-bottom:1.4rem">II</div>
           <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.7rem;line-height:1.3">Three phases of maturity</h3>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">A young tank and a mature tank are not the same system. Early systems are fragile — small actions carry amplified effects. Mature systems have built up internal buffering, and can absorb the kind of inconsistency that would destabilise a younger tank.</p>
+          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">A young tank and a mature tank are not the same system. Early systems are fragile — small actions carry amplified effects. Mature systems have built up internal buffering, and can absorb inconsistencies that would destabilise a younger tank entirely.</p>
         </div>
 
         <div style="padding:2.8rem 2.4rem;background:rgba(6,16,13,.6)">
           <div style="font-family:var(--serif);font-size:2.6rem;font-weight:300;color:rgba(60,210,225,.25);line-height:1;margin-bottom:1.4rem">III</div>
           <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.7rem;line-height:1.3">Human rhythm as ecology</h3>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">In a closed aquarium, the keeper is part of the ecosystem — not external to it. How often, how consistently, and how attentively a person interacts with the tank shapes the system's stability. ARA treats human variability as a design input, not a flaw to be corrected.</p>
+          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">In a closed aquarium, the keeper is part of the ecosystem — not external to it. How consistently and attentively a person tends the tank shapes its stability over time. ARA treats human variability as a design input, not a flaw to be corrected.</p>
         </div>
       </div>
 
@@ -755,7 +738,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
         <div><span class="ptag">First principle</span><h3 class="ptit">Timing before technique</h3></div>
         <div>
           <p class="bt">The same action produces completely different outcomes depending on when it is taken. ARA does not only ask "is this the right thing to do?" It asks first: "is right now the right moment to do it?" A system mid-recovery, a tank mid-cycle, a keeper mid-exhaustion — timing changes everything.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>A large water change right after spotting algae can crash an unstable cycle. The same change three weeks later — once the cycle has matured — would have helped. Same technique. Wrong moment.</p></div>
+          <div class="eg"><span class="egtag">In practice</span><p>A large water change right after spotting algae can crash an unstable cycle. The same change three weeks later would have helped. Same technique. Wrong moment.</p></div>
         </div>
       </div>
 
@@ -764,7 +747,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
         <div><span class="ptag">Second principle</span><h3 class="ptit">Capacity before ambition</h3></div>
         <div>
           <p class="bt">Every keeper has a real capacity — the time they actually have, the knowledge they genuinely hold, the energy left after a long day. Ambition quietly outruns this. ARA treats that gap honestly: not to limit the vision, but to find the version of it that a real life can actually sustain.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>A demanding planted tank needs consistent attention across months — not just free weekends. ARA doesn't kill the vision. It asks what version of that vision holds up when life gets busy.</p></div>
+          <div class="eg"><span class="egtag">In practice</span><p>A demanding planted tank needs consistent attention — not just free weekends. ARA asks what version of the vision holds up when life gets busy.</p></div>
         </div>
       </div>
 
@@ -773,7 +756,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
         <div><span class="ptag">Third principle</span><h3 class="ptit">Rhythm before intensity</h3></div>
         <div>
           <p class="bt">Living systems are not built through dramatic corrections. They are built through small, consistent care repeated over time. Doing a little, regularly, with honest attention, creates more stability than doing a great deal, occasionally, in a burst of effort followed by nothing.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>A keeper who tops up water gently every few days and watches quietly each morning is doing something more valuable than one who performs a major overhaul every three weeks. Rhythm outweighs intensity, every time.</p></div>
+          <div class="eg"><span class="egtag">In practice</span><p>Topping up water quietly every few days outperforms a major overhaul every three weeks. Rhythm outweighs intensity, every time.</p></div>
         </div>
       </div>
 
@@ -782,7 +765,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
         <div><span class="ptag">Fourth principle</span><h3 class="ptit">Observation before correction</h3></div>
         <div>
           <p class="bt">Many early changes in a living system are not problems — they are the ecosystem reorganising itself. Visible disturbance is often a lagging signal: the underlying shift happened days ago. Intervening before that process completes interrupts something that was already working its way toward resolution.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>Yellowing leaves in a new planted tank's first weeks are almost always adjustment, not deficiency. Wait and watch — it usually resolves. Dose immediately, and you spend weeks trying to read a tank you've made unreadable.</p></div>
+          <div class="eg"><span class="egtag">In practice</span><p>Yellowing leaves in a new tank's first weeks are almost always adjustment, not deficiency. Wait and watch — it usually resolves on its own.</p></div>
         </div>
       </div>
     </div>
@@ -819,32 +802,6 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
     </div>
   </section>
 
-  <!-- REAL SITUATIONS — moved from Helps page -->
-  <div class="div"></div>
-  <section style="padding:7rem clamp(1.5rem,5vw,4.5rem) 0">
-    <div class="cap">
-      <span class="ey sr">ARA in real situations</span>
-      <div class="sr d1" style="max-width:620px;margin-bottom:1rem">
-        <h2 class="dmd" style="color:rgba(255,255,255,.65)">Three keepers.<br>Three moments.<br><em style="font-style:italic;color:rgba(139,189,210,.55)">One framework.</em></h2>
-      </div>
-      <p class="bt sr d2" style="max-width:580px;margin-bottom:4rem">This is how ARA reads real situations — not with a fixed answer, but with the right question first.</p>
-    </div>
-  </section>
-  <section class="scns pad cap" style="padding-top:1rem">
-    <div class="scn sr">
-      <div class="scl"><div class="scnum">01</div><span class="scty">When everything feels confusing</span><h2 class="sctit">You've done the research. Somehow you feel less certain than before.</h2><div class="scv"><p>"I've been through forums, videos, guides. Everyone says something different. I don't know where to start. I'm scared I'll kill everything before I figure it out."</p></div><p class="bt">This keeper isn't short on effort. They're short on a frame. Information without structure doesn't build knowledge — it builds dread. And dread leads to decisions made from fear, not clarity.</p></div>
-      <div class="scr"><div class="rhr"><p>ARA doesn't begin with more information. It begins with the situation. Before anything else, it asks: what is actually true here, right now? When there's a frame, the noise settles — not because you know more, but because you know what to look at.</p></div><p class="sco">The goal isn't to know everything about aquariums. It's to know your next step. That's always enough to begin.</p><p class="sco">ARA's fourth principle — <em>observation before correction</em> — means nothing gets touched until it's first understood.</p></div>
-    </div>
-    <div class="scn sr">
-      <div class="scl"><div class="scnum">02</div><span class="scty">When you want to build something</span><h2 class="sctit">You have a vision. You're not sure if you're ready for it.</h2><div class="scv"><p>"I want to do an iwagumi — clean stones, shrimp, maybe nano fish. I've had a community tank about a year. I honestly don't know if I'm ready."</p></div><p class="bt">This is where the most costly mistakes happen. Not because the vision is wrong — but because the distance between where you are and where you want to be hasn't been looked at honestly.</p><p class="bt" style="margin-top:1rem">ARA doesn't say no. It asks what version of this vision your real life can genuinely keep alive.</p></div>
-      <div class="scr"><div class="rhr"><p>ARA's second principle — <em>capacity before ambition</em> — maps vision against reality. Not the time you'd like to have. The time that's actually there, on an ordinary week. That answer shapes everything.</p></div><p class="sco">Sometimes the answer confirms the original vision. Sometimes it finds the version that actually survives.</p><p class="sco">Either way, you're building on honest ground — and that's what makes anything last.</p></div>
-    </div>
-    <div class="scn sr">
-      <div class="scl"><div class="scnum">03</div><span class="scty">When something feels off</span><h2 class="sctit">Everything measures fine. But your tank doesn't feel right.</h2><div class="scv"><p>"Parameters are where they should be. But something has changed. The fish are quieter. Plants have slowed. I can't point to anything specific."</p></div><p class="bt">The measurable things look fine. But this tank is sending a signal that numbers don't capture. Fish behaviour, colour, the rhythm of growth — these tell the real story, often before the chemistry shifts.</p><p class="bt" style="margin-top:1rem">ARA reads this as an observation moment — not a correction moment.</p></div>
-      <div class="scr"><div class="rhr"><p>ARA's first principle applies directly: <em>timing before technique</em>. The instinct is to act. But the aligned response is to look more carefully — at what changed recently, however small. A new plant. A shift in the light schedule. A different feeding time.</p></div><p class="sco">What you're sensing is real information. It just hasn't appeared in the numbers yet.</p><p class="sco">In many cases, nothing needs to be done. The system is adjusting. ARA helps you stay with what you're seeing long enough to understand it — before you disturb it.</p></div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="ctasec pad">
     <span class="ey ey-t sr">Ready to bring ARA into conversation?</span>
@@ -853,7 +810,24 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
     <a href="/rhyssa" class="btn bf sr d3" style="margin-top:1rem;display:inline-block" data-page="rhyssa">Meet Rhyssa →</a>
   </section>
 
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
+  <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orbit -->
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <!-- Plants — hijau cerah -->
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Fish body -->
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <!-- Tail -->
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <!-- Wave — dominan -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg></div><span class="fm">In rhythm with living water.</span></footer>
   <div class="subfooter">
     <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
     <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
@@ -867,7 +841,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
   <section class="rhhero pad">
     <div class="cap rhg">
       <div class="sr">
-        <span class="ey">Aquatic Rhythm — Primary Interface</span>
+        <span class="ey">Meet Rhyssa</span>
         <p style="font-family:var(--serif);font-style:italic;font-size:.88rem;color:rgba(61,214,232,.45);letter-spacing:.08em;margin-bottom:.5rem">✦ In rhythm with living water ✦</p>
         <h2 class="rhtit">Rhyssa is how<br><em>ARA speaks</em><br>to you.</h2>
 
@@ -899,8 +873,8 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
         <div class="qis">
           <!-- KEMASKINI 2 cont: Presence qualities -->
           <div class="qi"><h4>She stands with, not above</h4><p>Rhyssa doesn't position herself as an authority. She offers perspective, orientation, and structure when needed — but the decisions remain yours. She is a companion, not a guide who leads.</p></div>
-          <div class="qi"><h4>She protects your dignity</h4><p>Irregular care, long gaps, mistakes — these are ecological inputs, not moral failures. Rhyssa never frames your behaviour as a problem to correct. She holds it as part of the system.</p></div>
-          <div class="qi"><h4>She knows when to do less</h4><p>There are moments when the most aligned response is restraint. When the system is already stabilising. When time itself is the correction. Rhyssa recognises those moments and doesn't interrupt them.</p></div>
+          <div class="qi"><h4>She protects your dignity</h4><p>Irregular care, long gaps, mistakes made in good faith — these are ecological inputs, not moral failures. Rhyssa never frames your behaviour as a problem to correct. She holds it as part of the system.</p></div>
+          <div class="qi"><h4>She knows when to do less</h4><p>There are moments when the most aligned response is restraint — when the system is already stabilising, when time itself is the correction. Rhyssa recognises those moments. She doesn't interrupt them.</p></div>
           <div class="qi"><h4>She reads phase, not just symptoms</h4>
           <!-- KEMASKINI 3: fasa ekosistem -->
           <p>A tank two weeks old and a tank two years old are not the same system. The same action — a water change, a new plant, a feeding adjustment — means something completely different depending on where the ecosystem is in its maturity. Rhyssa reads phase before she reads anything else.</p></div>
@@ -971,7 +945,24 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
     </div>
   </section>
 
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/ara" data-page="ara">The Framework →</a></div></footer>
+  <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orbit -->
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <!-- Plants — hijau cerah -->
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Fish body -->
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <!-- Tail -->
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <!-- Wave — dominan -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg></div><span class="fm">In rhythm with living water.</span></footer>
   <div class="subfooter">
     <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
     <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
@@ -983,114 +974,111 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-column
 <!-- TERMS PAGE -->
 <div id="pg-terms" class="page"><div class="pl">
   <section class="privh pad cap">
-    <div class="sr"><span class="ey">Legal</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Terms of Use</h2><span class="privdate">Last updated: March 2026</span></div>
+    <div class="sr"><span class="ey">Terms of Use</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Terms of Use</h2><span class="privdate">Last updated: March 2026</span></div>
   </section>
   <div class="privbody cap">
-    <div class="privsec sr"><h3>Overview</h3><p>By using this website and the Rhyssa AI companion, you agree to these terms. Aquatic Rhythm is a small, independent project provided in good faith. Please read this briefly — it is written plainly, not in legal jargon.</p></div>
-    <div class="privsec sr"><h3>What Aquatic Rhythm offers</h3><p>Aquatic Rhythm provides a framework called ARA — Aquatic Rhythm Alignment — and access to Rhyssa, an AI companion trained in that framework. Everything here is offered for informational and educational purposes only.</p><p>Rhyssa is an AI language system. Her responses are generated based on training and context, not professional expertise. She is not a licensed veterinarian, aquatic biologist, or certified aquarium professional.</p></div>
-    <div class="privsec sr"><h3>No professional advice</h3><p>Nothing on this website or in any conversation with Rhyssa constitutes professional advice of any kind — including but not limited to veterinary, medical, legal, or financial advice.</p><p>If your fish or aquatic animals are ill or in distress, please consult a qualified veterinarian or aquatic specialist. Rhyssa can offer perspective and a framework for thinking — she cannot diagnose, prescribe, or replace professional judgment.</p></div>
-    <div class="privsec sr"><h3>AI limitations</h3><p>Rhyssa can be wrong. Like all AI systems, she may produce inaccurate, incomplete, or outdated information. You are responsible for evaluating her responses critically before acting on them. Aquatic Rhythm accepts no liability for decisions made based on Rhyssa's responses.</p><p>Conversations with Rhyssa take place on an external platform. By using Rhyssa, you also agree to the terms of that platform.</p></div>
+    <div class="privsec sr"><h3>Overview</h3><p>Aquatic Rhythm is a small, independent project offered in good faith. By using this website and the Rhyssa AI companion, you agree to these terms. They are written plainly — not in legal jargon.</p></div>
+    <div class="privsec sr"><h3>What Aquatic Rhythm offers</h3><p>Aquatic Rhythm provides a framework called ARA — Aquatic Rhythm Alignment — and access to Rhyssa, an AI companion shaped by that framework. Everything here is offered for informational and educational purposes only.</p><p>Rhyssa is an AI language system. Her responses are shaped by training and context, not professional expertise. She is not a licensed veterinarian, aquatic biologist, or certified aquarium professional.</p></div>
+    <div class="privsec sr"><h3>No professional advice</h3><p>Nothing on this website or in any conversation with Rhyssa constitutes professional advice — including veterinary, medical, legal, or financial advice.</p><p>If your fish or aquatic animals are ill or in distress, please consult a qualified specialist. Rhyssa can offer perspective and a way of thinking — she cannot diagnose, prescribe, or replace professional judgment.</p></div>
+    <div class="privsec sr"><h3>AI limitations</h3><p>Rhyssa can be wrong. Like all AI systems, she may produce inaccurate, incomplete, or outdated information. You are responsible for evaluating her responses before acting on them. Aquatic Rhythm accepts no liability for decisions made based on her responses.</p><p>Conversations with Rhyssa take place on an external platform. By using Rhyssa, you also agree to the terms of that platform.</p></div>
     <div class="privsec sr"><h3>Intellectual property</h3><p>The ARA framework, the content of this website, and the name Aquatic Rhythm are the intellectual property of this project. You may share and reference them freely for personal, educational, or non-commercial purposes, with attribution. Commercial use requires prior permission.</p></div>
     <div class="privsec sr"><h3>Limitation of liability</h3><p>Aquatic Rhythm is provided as-is, without warranties of any kind. We are not liable for any direct, indirect, or incidental damages arising from your use of this website or Rhyssa — including any harm to your aquatic animals or equipment resulting from advice followed.</p></div>
-    <div class="privsec sr"><h3>Changes to these terms</h3><p>These terms may be updated as Aquatic Rhythm grows. The date at the top of this page reflects the most recent revision. Continued use of this website after changes constitutes acceptance of the updated terms.</p><p>Questions? Write to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="7b131e1717143b1a0a0e1a0f12180913020f131655181416">[email&#160;protected]</span></a></p></div>
+    <div class="privsec sr"><h3>Changes to these terms</h3><p>These terms may be updated as Aquatic Rhythm grows. The date at the top of this page reflects the most recent revision. Continued use of this website after changes constitutes acceptance of the updated terms.</p><p>Questions? Write to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="91f9f4fdfdfed1f0e0e4f0e5f8f2e3f9e8e5f9fcbff2fefc">[email&#160;protected]</span></a></p></div>
   </div>
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/privacy" data-page="privacy">Privacy Policy →</a></div></footer>
+  <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orbit -->
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <!-- Plants — hijau cerah -->
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Fish body -->
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <!-- Tail -->
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <!-- Wave — dominan -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg></div><span class="fm">In rhythm with living water.</span></footer>
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
 </div></div>
 
 <!-- PRIVACY PAGE -->
 <div id="pg-privacy" class="page"><div class="pl">
   <section class="privh pad cap">
-    <div class="sr"><span class="ey">Legal</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Privacy Policy</h2><span class="privdate">Last updated: March 2026</span></div>
+    <div class="sr"><span class="ey">Privacy Policy</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Privacy Policy</h2><span class="privdate">Last updated: March 2026</span></div>
   </section>
   <div class="privbody cap">
-    <div class="privsec sr"><h3>Overview</h3><p>Aquatic Rhythm is a small, independent project. We are committed to being transparent about how this website works and what happens to any information you share with us. This policy explains what data is collected, by whom, and how it is used.</p><p>If you have any questions, you can reach us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="aec6cbc2c2c1eecfdfdbcfdac7cddcc6d7dac6c380cdc1c3">[email&#160;protected]</span></a></p></div>
-    <div class="privsec sr"><h3>Information we collect directly</h3><p>Aquatic Rhythm does not require you to create an account. However, we may collect information in the following ways:</p><ul><li><strong style="color:rgba(255,255,255,.6)">Email contact</strong> — if you write to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" style="color:rgba(139,189,210,.7);text-decoration:none"><span class="__cf_email__" data-cfemail="9cf4f9f0f0f3dcfdede9fde8f5ffeef4e5e8f4f1b2fff3f1">[email&#160;protected]</span></a>, we receive your email address and the content of your message. We use this only to respond to you.</li><li><strong style="color:rgba(255,255,255,.6)">Feedback or survey forms</strong> — if we introduce a feedback form in the future, we will update this policy to reflect what is collected and how it is used.</li></ul><p>We do not sell, share, or use your personal information for marketing purposes.</p></div>
+    <div class="privsec sr"><h3>Overview</h3><p>Aquatic Rhythm is a small, independent project. We are transparent about how this website works and what happens to any information you share with us. This policy explains what data is collected, by whom, and how it is used. </p><p>If you have any questions, you can reach us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="88e0ede4e4e7c8e9f9fde9fce1ebfae0f1fce0e5a6ebe7e5">[email&#160;protected]</span></a></p></div>
+    <div class="privsec sr"><h3>Information we collect directly</h3><p>Aquatic Rhythm does not require you to create an account. However, we may collect information in the following ways:</p><ul><li><strong style="color:rgba(255,255,255,.6)">Email contact</strong> — if you write to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" style="color:rgba(139,189,210,.7);text-decoration:none"><span class="__cf_email__" data-cfemail="2f474a4343406f4e5e5a4e5b464c5d47565b4742014c4042">[email&#160;protected]</span></a>, we receive your email address and the content of your message. We use this only to respond to you.</li><li><strong style="color:rgba(255,255,255,.6)">Feedback or survey forms</strong> — if we introduce a feedback form in the future, we will update this policy to reflect what is collected and how it is used.</li></ul><p>We do not sell, share, or use your personal information for marketing purposes.</p></div>
     <div class="privsec sr"><h3>Third-party services</h3><p>This website uses several third-party services that may collect data independently according to their own privacy policies. We have no control over that data.</p><ul><li><strong style="color:rgba(255,255,255,.6)">GitHub Pages</strong> — hosts this website. GitHub may collect server logs including your IP address and browser information. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">GitHub's Privacy Statement</a>.</li><li><strong style="color:rgba(255,255,255,.6)">ChatGPT / OpenAI</strong> — Rhyssa is accessed through ChatGPT. Any conversation you have with Rhyssa is subject to <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">OpenAI's Privacy Policy</a>. We do not receive or store your conversations.</li><li><strong style="color:rgba(255,255,255,.6)">Google Search Console</strong> — used to monitor how this site appears in Google Search. This tool collects aggregated, anonymised data about search performance. No individual user data is visible to us.</li>
 <li><strong style="color:rgba(255,255,255,.6)">Google Analytics</strong> — used to understand how visitors interact with this website. It collects anonymised data including pages visited, time spent, device type, and approximate location. IP addresses are anonymised. No personally identifiable information is collected. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">Google's opt-out browser add-on</a>.</li></ul></div>
-    <div class="privsec sr"><h3>Cookies</h3><p>Aquatic Rhythm does not use its own cookies. However, third-party services embedded in this site may set cookies on your device:</p><ul><li><strong style="color:rgba(255,255,255,.6)">Google Analytics</strong> — sets cookies automatically when you visit this website to distinguish visitors and track sessions. These are anonymised and do not identify you personally.</li></ul><p>You can manage or disable cookies through your browser settings, or opt out of Google Analytics tracking via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">Google's opt-out tool</a>.</p></div>
-    <div class="privsec sr"><h3>Your rights</h3><p>If you are located in the European Union, United Kingdom, or other regions with data protection laws, you may have rights regarding your personal data — including the right to access, correct, or delete information we hold about you.</p><p>As we collect very little personal data directly, the most likely scenario is that you have contacted us by email. In that case, you may request that we delete your correspondence by writing to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="fe969b929291be9f8f8b9f8a979d8c96878a9693d09d9193">[email&#160;protected]</span></a>.</p></div>
+    <div class="privsec sr"><h3>Cookies</h3><p>Aquatic Rhythm itself does not create account or login cookies. However, third-party services embedded in this site may set cookies on your device:</p><ul><li><strong style="color:rgba(255,255,255,.6)">Google Analytics</strong> — sets cookies automatically when you visit this website to distinguish visitors and track sessions. These are anonymised and do not identify you personally.</li></ul><p>You can manage or disable cookies through your browser settings, or opt out of Google Analytics tracking via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">Google's opt-out tool</a>.</p></div>
+    <div class="privsec sr"><h3>Your rights</h3><p>If you are located in the European Union, United Kingdom, or other regions with data protection laws, you may have rights regarding your personal data — including the right to access, correct, or delete information we hold about you.</p><p>As we collect very little personal data directly, the most likely scenario is that you have contacted us by email. In that case, you may request that we delete your correspondence by writing to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="8de5e8e1e1e2cdecfcf8ecf9e4eeffe5f4f9e5e0a3eee2e0">[email&#160;protected]</span></a>.</p></div>
     <div class="privsec sr"><h3>Children</h3><p>This website is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p></div>
     <div class="privsec sr"><h3>Changes to this policy</h3><p>As Aquatic Rhythm grows, this policy may be updated to reflect new features or services. The date at the top of this page will always show when it was last revised. We encourage you to check back occasionally.</p></div>
   </div>
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/about" data-page="about">About →</a></div></footer>
+  <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orbit -->
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <!-- Plants — hijau cerah -->
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Fish body -->
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <!-- Tail -->
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <!-- Wave — dominan -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg></div><span class="fm">In rhythm with living water.</span></footer>
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
 </div></div>
 
 <!-- ABOUT PAGE -->
 <div id="pg-about" class="page"><div class="pl">
   <section class="abouth pad cap">
-    <div class="sr"><span class="ey">About Aquatic Rhythm</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Where this<br>came from.</h2></div>
+    <div class="sr"><span class="ey">About</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Where this<br>came from.</h2></div>
     <div class="aboutg">
       <div class="sr d1"><p class="aboutq">This didn't begin with a framework.<br>It began with <em>a tank, and a person</em> who didn't always have enough left to tend it.</p></div>
       <div class="aboutdiv sr">
-        <div class="aboutblock"><h4>The honest beginning</h4><p>Aquatic Rhythm came from real experience — not theory. From years of keeping aquariums with genuine care, and from noticing that care doesn't always stay consistent. There were phases of full attention. Phases of pulling back. Phases of not checking the tank for days, then returning with guilt. Phases of wanting to start over.</p><p style="margin-top:.9rem">What became clear, slowly, is that this is not a rare failure. It is a rhythm many people live through — and almost no one in the hobby talks about it honestly.</p></div>
-        <div class="aboutblock"><h4>The silence this responds to</h4><p>The internet has no shortage of aquarium information. What it rarely holds is the full picture of what it actually feels like to be the person keeping the tank — the overwhelm, the guilt when the rhythm breaks, the over-correcting, the quiet hope that things can still be recovered.</p><p style="margin-top:.9rem">Aquatic Rhythm was created in response to that silence. Not to add more noise or more urgency — but to offer something the hobby tends to move past too quickly: honesty, gentleness, and a clearer way of seeing.</p></div>
-        <div class="aboutblock"><h4>A different way of seeing the tank</h4><p>An aquarium is not only a technical system. It is a living relationship between water, ecology, time, and human capacity. The person keeping the tank is part of that ecosystem — not a stable external variable, but someone whose energy, mood, and bandwidth shape everything that happens inside the glass.</p><p style="margin-top:.9rem">This means that problems in a tank are not always caused by carelessness. Sometimes they come from misalignment — between what the system needs and what the keeper honestly has to give at that moment in their life.</p><p style="margin-top:.9rem">ARA was built around that understanding.</p></div>
-        <div class="aboutblock"><h4>Why Rhyssa exists</h4><p>Rhyssa is not just a tool. She is a companion for the parts of this hobby that the usual sources tend to skip — the uncertainty, the doubt, the feeling that you have fallen behind, the desire to begin again.</p><p style="margin-top:.9rem">She is there for what the internet often moves past too quickly. Not a voice of hard authority, but a calm, honest presence — one that listens before it advises, and holds space for where you actually are.</p></div>
-        <div class="aboutblock"><h4>What this project is</h4><p>Aquatic Rhythm is small and independent. It is not a company. It exists because someone believed that people who care about their tanks deserve more than parameter charts and correction protocols — they deserve to feel understood, and to feel that there is still hope in the hobby, even after a long stretch away from it.</p><p style="margin-top:.9rem">This project exists so that fewer people give up on something they genuinely love — simply because no one acknowledged the reality of keeping it.</p></div>
+        <div class="aboutblock"><h4>The honest beginning</h4><p>Aquatic Rhythm came from real experience — not theory. From years of keeping aquariums with genuine care, and from noticing that care doesn't always stay consistent.<p class="bt" style="margin-top:.9rem">There were phases of full attention. Phases of pulling back. Phases of not checking the tank for days, then returning with something close to guilt. Phases of wanting to start over entirely.</p></p><p style="margin-top:.9rem">What became clear, slowly, is that this is not a rare failure. It is a rhythm many people live through — and almost no one in the hobby talks about it honestly.</p></div>
+        <div class="aboutblock"><h4>The silence this responds to</h4><p>The internet has no shortage of aquarium information. What it rarely holds is the full picture of what it actually feels like to be the person keeping the tank.<p class="bt" style="margin-top:.9rem">The overwhelm. The guilt when the rhythm breaks. The over-correcting, the quiet hope that things can still be recovered.</p></p><p style="margin-top:.9rem">Aquatic Rhythm was created in response to that silence. Not to add more noise or more urgency — but to offer something the hobby tends to move past too quickly: honesty, gentleness, and a clearer way of seeing.</p></div>
+        <div class="aboutblock"><h4>A different way of seeing the tank</h4><p>An aquarium is not only a technical system. It is a living relationship between water, ecology, time, and human capacity. The person keeping the tank is part of that ecosystem — not a stable external variable, but someone whose energy, mood, and bandwidth shape everything that happens inside the glass.</p><p style="margin-top:.9rem">Problems in a tank are not always caused by carelessness. Sometimes they come from misalignment — between what the system needs and what the keeper honestly has to give at that particular moment in their life.</p><p style="margin-top:.9rem">ARA was built around that understanding.</p></div>
+        <div class="aboutblock"><h4>Why Rhyssa exists</h4><p>Rhyssa is not just a tool. She is a companion for the parts of this hobby that the usual sources tend to skip — the uncertainty, the doubt, the feeling that you have fallen behind, the desire to begin again.</p><p style="margin-top:.9rem">There are moments when the most aligned response is restraint — when the system is already stabilising, when time itself is the correction. Not a voice of hard authority. A calm, honest presence — one that listens before it advises, and holds space for where you actually are.</p></div>
+        <div class="aboutblock"><h4>What this project is</h4><p>Aquatic Rhythm is small and independent. It is not a company.<p class="bt" style="margin-top:.9rem">It exists because someone believed that people who care about their tanks deserve more than parameter charts and correction protocols — they deserve to feel understood, and to feel that there is still something worth continuing, even after a long stretch away.</p></p><p style="margin-top:.9rem">This project exists so that fewer people give up on something they genuinely love — simply because no one acknowledged the reality of keeping it.</p></div>
       </div>
     </div>
   </section>
-  <section class="ctasec pad">
-    <span class="ey ey-t sr">Still here. Still growing.</span>
-    <h2 class="dmd sr d1" style="color:rgba(255,255,255,.65)">The framework is open.<br>Start wherever you are.</h2>
-    <p class="bt sr d2" style="max-width:420px;margin:0 auto 2rem">Whether you're just beginning, rebuilding after a long break, or simply trying to understand what your tank is telling you — there is a place for you here.</p>
-    <a href="/ara" class="btn bf sr d3" style="display:inline-block" data-page="ara">Explore the Framework →</a>
-  </section>
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
+
+  <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orbit -->
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <!-- Plants — hijau cerah -->
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Fish body -->
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <!-- Tail -->
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <!-- Wave — dominan -->
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <!-- Wordmark -->
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg></div><span class="fm">In rhythm with living water.</span></footer>
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
 </div></div>
-<!-- NOTES PAGE -->
-<div id="pg-notes" class="page"><div class="pl">
-  <section style="padding:12rem clamp(1.5rem,5vw,4.5rem) 5rem">
-    <div class="cap">
-      <div class="sr">
-        <span class="ey">From the keeper</span>
-        <h2 class="dlg" style="color:rgba(255,255,255,.88)">Notes.</h2>
-        <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.3vw,1.15rem);font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;max-width:560px;margin-top:1.4rem">Observations from someone still learning to read living water. On tanks, rhythm, misalignment, and what it means to care for something that breathes.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="div"></div>
-
-  <section style="padding:5rem clamp(1.5rem,5vw,4.5rem) 9rem">
-    <div class="cap">
-      <div id="notes-grid" style="display:flex;flex-direction:column;gap:1px;background:rgba(139,189,210,.06)">
-
-        <!-- TAMBAH ARTIKEL BARU DI SINI — salin blok di bawah
-        <a href="/notes/nama-fail.html" class="note-card" target="_blank" rel="noopener">
-          <div class="note-meta">
-            <span class="note-date">MMM YYYY</span>
-            <span class="note-tag">Kategori</span>
-          </div>
-          <div class="note-body">
-            <h2 class="note-title">Tajuk Artikel</h2>
-            <p class="note-excerpt">Satu atau dua ayat ringkasan.</p>
-            <span class="note-read">Read →</span>
-          </div>
-        </a>
-        -->
-
-        <div style="padding:6rem 3rem;text-align:center">
-          <p style="font-family:var(--serif);font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.28);line-height:1.8">The first note is still forming.<br>It will arrive when it is ready.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
-  <div class="subfooter">
-    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
-    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
-    <a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span>
-    <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a>
-  </div>
-</div></div>
 </main>
-
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1519,8 +1507,7 @@ var pageMap={
   '/rhyssa': 'rhyssa',
   '/about':  'about',
   '/privacy':'privacy',
-  '/terms':  'terms',
-  '/notes':  'notes'
+  '/terms':  'terms'
 };
 
 function go(id,push){
@@ -1593,1564 +1580,4 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 </body>
-</html>
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Aquatic Rhythm",
-        "url": "https://aquaticrhythm.com"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Aquatic Rhythm Alignment (ARA)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ARA is a conceptual framework for understanding closed aquarium ecosystems. Instead of asking what went wrong, ARA asks what fell out of rhythm — and what the system needs to find balance again. It treats the aquarium as a living system shaped by water, biology, environment, livestock behaviour, and the person tending it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the four principles of ARA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The four principles of ARA are: (1) Timing before technique — the right moment matters more than the right action; (2) Capacity before ambition — honest assessment of what your real life can sustain; (3) Rhythm before intensity — small consistent care outperforms dramatic interventions; (4) Observation before correction — watch and understand before disturbing the system."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Rhyssa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Rhyssa is an AI aquarium companion trained in the ARA framework. She reads your specific situation — your tank, your stage, your real life — and offers guidance that moves at the pace living systems actually need. Rhyssa is available as a custom GPT on ChatGPT."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why do aquarium problems happen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most aquarium problems do not begin with one big mistake. They begin when a system's rhythm shifts and the keeper hasn't seen it yet. By the time something looks wrong, the underlying pressure has often been building for days or weeks. ARA helps keepers read these patterns before they become visible problems."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is ARA suitable for beginners?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. ARA meets keepers where they actually are. It does not demand ideal care patterns or assume expert knowledge. It is designed for all experience levels — from those setting up their first tank to experienced keepers rebuilding after a long break."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aquaticrhythm.com/">
-<meta property="og:title" content="Aquatic Rhythm — In rhythm with living water">
-<meta property="og:description" content="Most aquarium problems aren't mistakes — they're misalignment. ARA helps you read your tank's rhythm and move with it, not against it.">
-<meta property="og:image" content="https://aquaticrhythm.com/og-image.png">
-<meta property="og:image:alt" content="Aquatic Rhythm — In rhythm with living water. A framework for living aquarium ecosystems.">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Aquatic Rhythm">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://aquaticrhythm.com/">
-<meta name="twitter:title" content="Aquatic Rhythm — In rhythm with living water">
-<meta name="twitter:description" content="Most aquarium problems aren't mistakes — they're misalignment. ARA helps you read your tank's rhythm and move with it, not against it.">
-<meta name="twitter:image" content="https://aquaticrhythm.com/og-image.png">
-<meta name="twitter:image:alt" content="Aquatic Rhythm — In rhythm with living water.">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8MDN065WNW', {
-    anonymize_ip: true,
-    cookie_flags: 'SameSite=None;Secure'
-  });
-</script>
-<!-- OPTIMIZED: async font loading — tidak lagi render-blocking -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet"></noscript>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px}
-:root{
-  --ink:#18190f;--ink-3:#606355;--ink-4:#959880;--ink-5:#c2c5b0;
-  --paper:#f8f6f0;--paper-3:#e6e0d3;
-  --moss:#4a6b48;--moss-2:#6a9268;--moss-3:#9dbf9a;--moss-4:#cce0ca;--moss-5:#eaf4e8;
-  --tide:#3a6e8c;--tide-2:#5a94b2;--tide-3:#8bbdd2;--tide-4:#c2dde8;--tide-5:#e8f4f8;
-  --deep:#06100d;--deep-2:#091a15;--abyss:#030b09;
-  /* Aksen utama — disatukan */
-  --accent:#3DD6E8;      /* teal cerah, lebih tepu dari sebelum */
-  --accent-dim:#28B8C8;  /* aksen gelap untuk hover */
-  --accent-glow:rgba(61,214,232,0.18);
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'DM Sans',system-ui,sans-serif;
-  --ease:cubic-bezier(0.19,1,0.22,1);
-}
-body{font-family:var(--sans);background:var(--abyss);color:rgba(255,255,255,0.94);overflow-x:hidden;line-height:1.72}
-
-/* CURSOR */
-#cd,#cr{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-#cd{width:5px;height:5px;background:rgba(61,214,232,0.95);transition:transform .15s var(--ease),background .3s}
-#cr{width:28px;height:28px;border:1px solid rgba(61,214,232,0.35);transition:width .4s var(--ease),height .4s var(--ease),border-color .3s}
-body.hov #cd{transform:translate(-50%,-50%) scale(2.2);background:rgba(100,230,180,0.9)}
-body.hov #cr{width:48px;height:48px;border-color:rgba(100,230,180,0.18)}
-
-/* ECOSYSTEM FIXED BG */
-#eco{position:fixed;inset:0;z-index:0;overflow:hidden;contain:layout style}
-.wb{position:absolute;inset:0;background:linear-gradient(180deg,#052535 0%,#073040 18%,#062a38 38%,#041e28 58%,#030f18 78%,#020810 100%)}
-.cl{position:absolute;top:0;left:0;right:0;height:60%;background:radial-gradient(ellipse at 50% 0%,rgba(60,200,220,.14) 0%,rgba(20,140,180,.08) 38%,transparent 72%);animation:caustic 14s ease-in-out infinite}
-@keyframes caustic{0%{transform:scaleX(1) translateX(0);opacity:.55}20%{transform:scaleX(1.18) translateX(4%);opacity:1}45%{transform:scaleX(.88) translateX(-3%);opacity:.38}70%{transform:scaleX(1.12) translateX(2%);opacity:.9}100%{transform:scaleX(1) translateX(0);opacity:.55}}
-.cl2{position:absolute;top:0;left:-10%;right:-10%;height:45%;background:radial-gradient(ellipse at 40% 0%,rgba(40,180,200,.08) 0%,transparent 60%);animation:caustic2 19s ease-in-out infinite 3s}
-@keyframes caustic2{0%{opacity:.2;transform:translateX(0) scaleX(1)}35%{opacity:.7;transform:translateX(8%) scaleX(1.2)}65%{opacity:.15;transform:translateX(-5%) scaleX(.85)}100%{opacity:.2;transform:translateX(0) scaleX(1)}}
-.sl{position:absolute;top:0;left:-20%;right:-20%;height:1px;background:linear-gradient(to right,transparent,rgba(80,220,235,.65),transparent);animation:surfsh 8s ease-in-out infinite}
-@keyframes surfsh{0%,100%{transform:translateX(-8%) scaleX(.8);opacity:.35}50%{transform:translateX(8%) scaleX(1.2);opacity:.9}}
-.df{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(2,8,16,.88),transparent)}
-.ray{position:absolute;top:0;transform-origin:top center;background:linear-gradient(180deg,rgba(80,220,235,.09) 0%,rgba(40,170,200,.04) 50%,transparent 100%);border-radius:50% 50% 80% 80%;animation:rayf ease-in-out infinite;filter:blur(1.5px)}
-@keyframes rayf{0%,100%{opacity:.4;transform:skewX(-4deg) scaleY(1)}50%{opacity:1;transform:skewX(4deg) scaleY(1.08)}}
-.plant-layer{position:absolute;bottom:0;left:0;right:0;height:70%;pointer-events:none}
-.plant{position:absolute;bottom:0;transform-origin:bottom center}
-@keyframes psway{0%,100%{transform:rotate(var(--sa))}50%{transform:rotate(var(--sb))}}
-.mote{position:absolute;border-radius:50%;background:rgba(80,220,240,.55);animation:mrise linear infinite;pointer-events:none;will-change:transform,opacity}
-@keyframes mrise{0%{opacity:0;transform:translateY(0) translateX(0)}5%{opacity:var(--mo)}90%{opacity:calc(var(--mo)*.4)}100%{opacity:0;transform:translateY(var(--mr)) translateX(var(--md))}}
-.spk{position:absolute;border-radius:50%;background:rgba(60,200,180,.35);animation:sdrift ease-in-out infinite alternate;pointer-events:none;will-change:transform,opacity}
-@keyframes sdrift{from{transform:translate(0,0);opacity:.1}to{transform:translate(var(--sx),var(--sy));opacity:.55}}
-#driftwood-layer{position:absolute;bottom:0;left:0;right:0;height:55%;pointer-events:none}
-
-/* Z-INDEX STACK */
-#fish-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1;contain:strict;will-change:contents}
-#app-main{position:relative;z-index:20;isolation:isolate}
-#pl{position:relative;z-index:1}
-.page{position:relative;z-index:1}
-nav{position:fixed;z-index:800}
-
-/* FISH */
-.fish{position:absolute;pointer-events:none;will-change:transform,left,top;contain:layout style size}
-.fish svg{display:block}
-
-/* TEXT PROTECTION */
-.ht,.pst,.bt,.hk,.api,.rhd,.apq,.snt,.sco,.stit,.starr,.stco{text-shadow:0 1px 12px rgba(3,9,8,.9),0 0 32px rgba(3,9,8,.7)}
-.dxl,.dlg,.dmd,.rhtit{text-shadow:0 2px 16px rgba(3,9,8,.95),0 0 48px rgba(3,9,8,.8)}
-.pc,.snb,.eg,.scv,.rhr,.qi,.pb{background:rgba(6,14,11,.72)}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4.5rem);background:linear-gradient(to bottom,rgba(3,18,30,.88),transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.nl{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}
-.nl:hover{opacity:.75}
-.nlinks{display:flex;gap:2.6rem;list-style:none}
-.nlinks a{font-size:.63rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s;position:relative}
-.nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(61,214,232,.75);transition:width .35s var(--ease)}
-.nlinks a:hover{color:rgba(255,255,255,.82)}
-.nlinks a:hover::after{width:100%}
-/* NOTES DROPDOWN */
-.has-drop{position:relative}
-.has-drop>a{display:flex;align-items:center;gap:.3rem}
-.drop-arrow{font-size:.5rem;opacity:.5;transition:transform .3s var(--ease)}
-.has-drop:hover .drop-arrow{transform:rotate(180deg)}
-.dropdown{position:absolute;top:calc(100% + 1rem);right:0;min-width:220px;background:rgba(4,20,32,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(139,189,210,.1);padding:.6rem 0;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .28s var(--ease),transform .28s var(--ease)}
-.has-drop:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s,padding-left .25s var(--ease);white-space:nowrap}
-.dropdown a:hover{color:rgba(61,214,232,.82);padding-left:1.5rem}
-.dropdown-all{border-top:1px solid rgba(139,189,210,.08);margin-top:.4rem;padding-top:.4rem}
-.dropdown-all a{color:rgba(61,214,232,.45)!important}
-.dropdown-all a:hover{color:rgba(61,214,232,.88)!important}
-.ncta{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.92);border:1px solid rgba(61,214,232,.35);padding:.52rem 1.25rem;border-radius:100px;text-decoration:none;transition:background .3s,border-color .3s,color .3s;backdrop-filter:blur(8px)}
-.ncta:hover{background:rgba(61,214,232,.15);border-color:rgba(61,214,232,.6);color:#ffffff}
-.nbg{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;padding:5px}
-.nbg span{display:block;height:1px;background:rgba(255,255,255,.4);transition:transform .36s var(--ease),opacity .22s,width .3s var(--ease);transform-origin:center}
-.nbg span:nth-child(1){width:18px}
-.nbg span:nth-child(2){width:12px}
-.nbg.open span:nth-child(1){transform:translateY(6px) rotate(45deg);width:18px}
-.nbg.open span:nth-child(2){transform:translateY(-6px) rotate(-45deg);width:18px}
-.nmob{position:fixed;top:68px;left:0;right:0;z-index:799;background:rgba(6,16,13,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,189,210,.08);padding:0 clamp(1.5rem,5vw,4.5rem);max-height:0;overflow:hidden;pointer-events:none;transition:max-height .48s var(--ease),padding-top .35s,padding-bottom .35s}
-.nmob.open{max-height:380px;padding-top:1.6rem;padding-bottom:2rem;pointer-events:all}
-.nmob ul{list-style:none}
-.nmob li{border-bottom:1px solid rgba(255,255,255,.05)}
-.nmob li:last-child{border-bottom:none}
-.nmob a{display:block;padding:.95rem 0;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .25s,padding-left .3s var(--ease)}
-.nmob a:hover{color:rgba(139,189,210,.85);padding-left:.5rem}
-.nmob .nmc{color:rgba(139,189,210,.6)}
-
-/* PAGE SYSTEM */
-.page{display:none}
-.page.active{display:block;animation:pgin .6s var(--ease) forwards}
-@keyframes pgin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.sr{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.sr.in{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.3s}.d4{transition-delay:.44s}.d5{transition-delay:.58s}
-
-/* SHARED */
-.cap{max-width:1160px;margin:0 auto}
-.pad{padding-left:clamp(1.5rem,5vw,4.5rem);padding-right:clamp(1.5rem,5vw,4.5rem)}
-.ey{display:block;font-size:.65rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(157,191,154,.8);margin-bottom:1.6rem}
-.ey-t{color:rgba(61,214,232,.72)}
-.div{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.12),transparent)}
-.dxl{font-family:var(--serif);font-weight:300;line-height:1.08;font-size:clamp(3.4rem,6.5vw,6.5rem);letter-spacing:-.01em}
-.dlg{font-family:var(--serif);font-weight:300;line-height:1.1;font-size:clamp(2.4rem,4.2vw,4.4rem)}
-.dmd{font-family:var(--serif);font-weight:300;line-height:1.18;font-size:clamp(1.9rem,2.8vw,2.9rem)}
-.bt{font-size:1rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.95}
-.bt+.bt{margin-top:1rem}
-.btn{display:inline-block;text-decoration:none;font-family:var(--sans);font-size:.67rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;transition:all .32s var(--ease)}
-.bf{background:rgba(30,165,185,.88);color:#ffffff;border:1px solid rgba(61,214,232,.55);padding:.9rem 2rem;backdrop-filter:blur(8px);letter-spacing:.01em}
-.bf:hover{background:rgba(40,184,208,.95);border-color:rgba(61,214,232,.8);transform:translateY(-2px);box-shadow:0 12px 36px rgba(40,184,208,.35)}
-.bg{background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.12);padding:.9rem 2rem}
-.bg:hover{border-color:rgba(60,210,225,.35);color:rgba(60,210,225,.85)}
-.bl{background:transparent;color:rgba(61,214,232,.72);border-bottom:1px solid rgba(61,214,232,.32);border-radius:0;padding:0;font-size:.62rem}
-.bl:hover{color:rgba(61,214,232,1);border-bottom-color:rgba(61,214,232,.7)}
-
-/* HOME HERO */
-.hero{min-height:100svh;display:flex;align-items:center;padding:68px clamp(1.5rem,5vw,4.5rem) 0;position:relative}
-.hi{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;padding:8rem 0 6rem}
-.ht .ey{opacity:0;animation:ru .9s var(--ease) forwards .3s}
-.ht .dxl{color:rgba(255,255,255,.95);opacity:0;animation:ru .9s var(--ease) forwards .48s}
-.hk{opacity:0;animation:ru .9s var(--ease) forwards .66s;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(255,255,255,.58);line-height:1.8;max-width:420px;margin:2rem 0 3rem}
-.hb{opacity:0;animation:ru .9s var(--ease) forwards .84s;display:flex;gap:1rem;flex-wrap:wrap}
-@keyframes ru{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.hoz{display:flex;justify-content:center;align-items:center;opacity:0;animation:or 1.4s var(--ease) forwards 1s}
-@keyframes or{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
-.orb{position:relative;width:320px;height:320px;display:flex;align-items:center;justify-content:center}
-.or{position:absolute;border-radius:50%;border:1px solid;animation:ob ease-in-out infinite}
-.or1{inset:0;border-color:rgba(139,189,210,.14);animation-duration:5.5s}
-.or2{inset:30px;border-color:rgba(139,189,210,.08);animation-duration:7s;animation-delay:1s}
-.or3{inset:72px;border-color:rgba(157,191,154,.06);animation-duration:9s;animation-delay:2s}
-.or4{inset:118px;border-color:rgba(139,189,210,.04);animation-duration:11s;animation-delay:3s}
-@keyframes ob{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.025);opacity:.4}}
-.oc{position:absolute;inset:108px;border-radius:50%;background:radial-gradient(circle at 38% 32%,rgba(139,189,210,.18) 0%,rgba(58,110,140,.1) 45%,rgba(74,107,72,.06) 100%);animation:ocs 6s ease-in-out infinite}
-@keyframes ocs{0%,100%{opacity:.8}50%{opacity:1}}
-.ol{position:relative;z-index:2;text-align:center}
-.on{display:block;font-family:var(--serif);font-style:italic;font-size:1.7rem;font-weight:300;color:rgba(255,255,255,.32);animation:nb 5s ease-in-out infinite}
-@keyframes nb{0%,100%{opacity:.32}50%{opacity:.52}}
-.os{display:block;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(139,189,210,.22);margin-top:.5rem}
-.scue{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:0;animation:ru 1s var(--ease) forwards 1.6s}
-.scue span{font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.18)}
-.sline{width:1px;height:40px;background:linear-gradient(to bottom,rgba(139,189,210,.3),transparent);animation:sd 2.2s ease-in-out infinite}
-@keyframes sd{0%,100%{transform:scaleY(1) translateY(0);opacity:.5}50%{transform:scaleY(.6) translateY(8px);opacity:1}}
-
-/* PROBLEM */
-.psec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
-.pst{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.5rem);font-weight:300;line-height:1.38;color:rgba(255,255,255,.88);max-width:660px}
-.pst em{font-style:italic;color:rgba(61,214,232,.88)}
-.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(139,189,210,.06);margin-top:5rem}
-.pc{padding:2.8rem 2.4rem;background:rgba(6,16,13,.6);backdrop-filter:blur(12px);position:relative;overflow:hidden;transition:background .4s}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.2),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.pc:hover{background:rgba(9,22,18,.75)}
-.pc:hover::before{transform:scaleX(1)}
-.pn{font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(61,214,232,.38);line-height:1;margin-bottom:1.4rem}
-.pc h4{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:rgba(255,255,255,.94);margin-bottom:.5rem;line-height:1.3}
-.pc p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.68);line-height:1.85}
-
-/* ARA SECTION */
-.arasec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
-.arah{display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;margin-bottom:6rem;align-items:end}
-.aragrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(157,191,154,.06)}
-.ac{padding:2.4rem 1.8rem;background:rgba(6,16,13,.55);backdrop-filter:blur(10px);position:relative;overflow:hidden;transition:background .35s}
-.ac:hover{background:rgba(9,22,18,.8)}
-.ac::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(157,191,154,.25),transparent);transform:scaleX(0);transform-origin:center;transition:transform .45s var(--ease)}
-.ac:hover::after{transform:scaleX(1)}
-.an{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:rgba(61,214,232,.4);line-height:1;margin-bottom:1.2rem}
-.ac h4{font-family:var(--serif);font-size:1.02rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.3;margin-bottom:.5rem}
-.ac p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75}
-
-/* SYSTEM */
-.syssec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 600px}
-.sysin{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
-.stit{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,3.8vw,4.2rem);line-height:1.12;color:rgba(255,255,255,.9);margin:1.4rem 0 2rem}
-.stit em{font-style:italic;color:rgba(139,189,210,.75)}
-.slayers{display:flex;flex-direction:column;gap:1px;background:rgba(139,189,210,.06);margin-top:3rem}
-.sl2{display:flex;gap:1.4rem;align-items:start;padding:1.6rem 1.8rem;background:rgba(6,16,13,.55);transition:background .3s}
-.sl2:hover{background:rgba(9,22,18,.75)}
-.sdot{width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0}
-.dg{background:rgba(157,191,154,.6);box-shadow:0 0 8px rgba(157,191,154,.4)}
-.db{background:rgba(139,189,210,.6);box-shadow:0 0 8px rgba(139,189,210,.4)}
-.dw{background:rgba(255,255,255,.22)}
-.sl2 h5{font-family:var(--serif);font-size:1.02rem;font-weight:400;color:rgba(255,255,255,.82);margin-bottom:.25rem}
-.sl2 p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.8}
-.snb{padding:3rem;border:1px solid rgba(139,189,210,.12);background:rgba(6,16,13,.7);position:relative;overflow:hidden}
-.snb::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.25),transparent)}
-.snt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,.58)}
-.snt em{font-style:normal;color:rgba(139,189,210,.75)}
-
-/* CTA */
-.ctasec{padding:9rem clamp(1.5rem,5vw,4.5rem);text-align:center;content-visibility:auto;contain-intrinsic-size:0 400px}
-.ctasec .dmd{color:rgba(255,255,255,.68);max-width:500px;margin:1.2rem auto 1.5rem}
-.ctasec .bt{max-width:380px;margin:0 auto 3rem}
-
-/* ARA PAGE */
-.araph{padding:12rem clamp(1.5rem,5vw,4.5rem) 7rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:end}
-.api{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(255,255,255,.58);line-height:1.85;margin-top:1.8rem}
-.adefs{padding:7rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
-.adg{display:grid;grid-template-columns:1fr 1.4fr;gap:8rem;align-items:start;margin-top:4rem}
-.apq{font-family:var(--serif);font-size:clamp(1.5rem,2.3vw,2.3rem);font-weight:300;line-height:1.45;color:rgba(255,255,255,.82)}
-.apq strong{font-weight:400;font-style:italic;color:rgba(139,189,210,.88)}
-.prins{padding:5rem clamp(1.5rem,5vw,4.5rem) 9rem;content-visibility:auto;contain-intrinsic-size:0 900px}
-.pb{display:grid;grid-template-columns:60px 200px 1fr;gap:4.5rem;padding:4.5rem 0;align-items:start;border-bottom:1px solid rgba(255,255,255,.06)}
-.pb:last-child{border-bottom:none}
-.pnl{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(61,214,232,.45);line-height:1}
-.ptag{font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(157,191,154,.72);display:block;margin-bottom:.7rem}
-.ptit{font-family:var(--serif);font-size:clamp(1.3rem,1.9vw,1.85rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.28}
-.eg{margin-top:1.6rem;padding:1.2rem 1.5rem;border-left:1px solid rgba(139,189,210,.22);background:rgba(58,110,140,.07)}
-.egtag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(139,189,210,.65);display:block;margin-bottom:.45rem}
-.eg p{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.52);line-height:1.75}
-.cmps{padding:7rem clamp(1.5rem,5vw,4.5rem) 9rem;content-visibility:auto;contain-intrinsic-size:0 500px}
-.ctab{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(139,189,210,.06);margin-top:4rem}
-.cc{padding:3rem;background:rgba(6,16,13,.6)}
-.ccb{background:rgba(58,110,140,.08)}
-.ch{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.chd{color:rgba(255,255,255,.45)}.cht{color:rgba(61,214,232,.82)}
-.cis{display:flex;flex-direction:column;gap:1.5rem}
-.ci{display:flex;gap:.9rem;align-items:start}
-.cmk{width:14px;height:14px;border-radius:50%;border:1px solid;flex-shrink:0;margin-top:5px;font-size:.5rem;display:flex;align-items:center;justify-content:center}
-.mx{border-color:rgba(200,80,80,.4);color:rgba(200,80,80,.6)}
-.my{border-color:rgba(139,189,210,.45);color:rgba(139,189,210,.8)}
-.ci p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75}
-
-/* RHYSSA PAGE */
-.rhhero{min-height:100svh;padding-top:68px;display:flex;align-items:center;padding-left:clamp(1.5rem,5vw,4.5rem);padding-right:clamp(1.5rem,5vw,4.5rem)}
-.rhg{display:grid;grid-template-columns:1.1fr 1fr;gap:8rem;align-items:center;padding:7rem 0}
-.rhtit{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,5.2vw,5.4rem);line-height:1.1;color:rgba(255,255,255,.92);margin:1.4rem 0 1.8rem}
-.rhtit em{font-style:italic;color:rgba(61,214,232,.78)}
-.rhd{font-size:.97rem;font-weight:300;color:rgba(255,255,255,.55);line-height:2;max-width:420px;margin-bottom:2.8rem}
-.orblg{position:relative;width:360px;height:360px;display:flex;align-items:center;justify-content:center;margin:0 auto}
-.qsec{padding:7rem clamp(1.5rem,5vw,4.5rem) 9rem;content-visibility:auto;contain-intrinsic-size:0 600px}
-.qg{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
-.qis{display:flex;flex-direction:column}
-.qi{padding:1.8rem 0 1.8rem 2rem;border-left:1px solid rgba(139,189,210,.12);transition:border-color .3s,padding-left .35s var(--ease)}
-.qi:hover{border-left-color:rgba(61,214,232,.45);padding-left:2.5rem}
-.qi+.qi{border-top:1px solid rgba(255,255,255,.05)}
-.qi h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.82);margin-bottom:.35rem}
-.qi p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.8}
-
-/* HELPS PAGE */
-.helph{padding:12rem clamp(1.5rem,5vw,4.5rem) 6rem}
-.scns{padding:0 clamp(1.5rem,5vw,4.5rem) 9rem;content-visibility:auto;contain-intrinsic-size:0 1200px}
-.scn{display:grid;grid-template-columns:1fr 1fr;gap:8rem;padding:6rem 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:start}
-.scn:last-child{border-bottom:none}
-.scn:nth-child(even) .scl{order:2}
-.scn:nth-child(even) .scr{order:1}
-.scnum{font-family:var(--serif);font-size:4.5rem;font-weight:300;color:rgba(61,214,232,.38);line-height:1;margin-bottom:.8rem}
-.scty{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(157,191,154,.72);display:block;margin-bottom:.8rem}
-.sctit{font-family:var(--serif);font-size:clamp(1.3rem,1.9vw,1.75rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.3;margin-bottom:1.6rem}
-.scv{background:rgba(6,16,13,.6);border-left:1px solid rgba(255,255,255,.1);padding:1.3rem 1.7rem;margin-bottom:1.6rem}
-.scv p{font-family:var(--serif);font-style:italic;font-size:.93rem;color:rgba(255,255,255,.52);line-height:1.75}
-.rhr{background:rgba(58,110,140,.09);border:1px solid rgba(139,189,210,.15);padding:1.8rem 2rem;position:relative;margin-bottom:1.6rem}
-.rhr::before{content:'ARA in practice';position:absolute;top:-.5rem;left:1.1rem;background:rgba(9,22,18,.95);padding:0 .4rem;font-family:var(--serif);font-style:italic;font-size:.72rem;color:rgba(60,210,225,.55)}
-.rhr p{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.9}
-.sco{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.85}
-.sco+.sco{margin-top:.8rem}
-
-/* START PAGE */
-.stpg{min-height:100svh;padding-top:68px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.str{position:absolute;border-radius:50%;border:1px solid rgba(139,189,210,.05);top:50%;left:50%;transform:translate(-50%,-50%);animation:strp ease-in-out infinite;pointer-events:none}
-.sr1{width:160px;height:160px;animation-duration:6s}
-.sr2{width:320px;height:320px;animation-duration:6s;animation-delay:1s}
-.sr3{width:min(520px,140vw);height:min(520px,140vw);animation-duration:6s;animation-delay:2s}
-.sr4{width:min(760px,200vw);height:min(760px,200vw);animation-duration:6s;animation-delay:3s}
-.sr5{width:min(1040px,280vw);height:min(1040px,280vw);animation-duration:6s;animation-delay:4s}
-@keyframes strp{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:.15;transform:translate(-50%,-50%) scale(1.02)}}
-.stin{position:relative;z-index:2;max-width:560px;margin:0 auto;padding:7rem 2rem}
-.starr{display:block;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:rgba(255,255,255,.42);margin-bottom:2.2rem}
-.stin .dxl{color:rgba(255,255,255,.88);margin-bottom:1.8rem}
-.stin .dxl em{font-style:italic;color:rgba(139,189,210,.72)}
-.stpaths{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(139,189,210,.06);margin-top:4rem;text-align:left}
-.spp{background:rgba(6,16,13,.55);padding:1.8rem 1.5rem;text-decoration:none;display:block;backdrop-filter:blur(8px);transition:background .35s}
-.spp:hover{background:rgba(9,22,18,.8)}
-.spg{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:rgba(139,189,210,.25);display:block;margin-bottom:.8rem;transition:color .3s}
-.spp:hover .spg{color:rgba(139,189,210,.5)}
-.spp h4{font-family:var(--serif);font-size:.97rem;font-weight:400;color:rgba(255,255,255,.75);margin-bottom:.3rem}
-.spp p{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.42);line-height:1.68}
-.stco{margin-top:4rem;font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.3);line-height:1.75}
-
-/* PRIVACY / TERMS */
-.privh{padding:12rem clamp(1.5rem,5vw,4.5rem) 4rem}
-.privbody{max-width:720px;padding:0 clamp(1.5rem,5vw,4.5rem) 9rem}
-.privsec{margin-bottom:3.5rem}
-.privsec h3{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:rgba(255,255,255,.78);margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.privsec p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.52);line-height:2;margin-bottom:.8rem}
-.privsec ul{list-style:none;margin:.5rem 0 .8rem 0}
-.privsec ul li{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.9;padding-left:1.2rem;position:relative}
-.privsec ul li::before{content:'—';position:absolute;left:0;color:rgba(139,189,210,.4)}
-.privdate{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-top:.8rem;display:block}
-
-/* ABOUT PAGE */
-.abouth{padding:12rem clamp(1.5rem,5vw,4.5rem) 6rem}
-.aboutg{display:grid;grid-template-columns:1fr 1.2fr;gap:8rem;align-items:start;margin-top:4rem}
-.aboutq{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,2.1rem);font-weight:300;line-height:1.5;color:rgba(255,255,255,.82)}
-.aboutq em{font-style:italic;color:rgba(139,189,210,.75)}
-.aboutdiv{display:flex;flex-direction:column;gap:3rem}
-.aboutblock{padding-top:2.2rem;border-top:1px solid rgba(255,255,255,.07)}
-.aboutblock h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.75);margin-bottom:.7rem}
-.aboutblock p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.95}
-
-/* FOOTER */
-footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(255,255,255,.06)}
-.subfooter{text-align:center;padding:.8rem clamp(1.5rem,5vw,4.5rem) 1.6rem;border-top:1px solid rgba(255,255,255,.03);display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap}
-.sflink{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);text-decoration:none;transition:color .3s}
-.sflink:hover{color:rgba(139,189,210,.55)}
-.sfdot{color:rgba(255,255,255,.1)}
-.fl{font-family:var(--serif);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.35);text-decoration:none}
-.fl em{font-style:italic;color:rgba(139,189,210,.5)}
-.fm{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center}
-.fr{display:flex;justify-content:flex-end}
-.fr a{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);text-decoration:none;transition:color .3s}
-.fr a:hover{color:rgba(61,214,232,.82)}
-
-/* BIOLUMINESCENCE CURSOR */
-.bio{position:fixed;border-radius:50%;pointer-events:none;z-index:9998;mix-blend-mode:screen}
-@keyframes bioglow{
-  0%{opacity:0;transform:translate(-50%,-50%) scale(0)}
-  15%{opacity:var(--bo)}
-  60%{opacity:calc(var(--bo)*.6)}
-  100%{opacity:0;transform:translate(-50%,-50%) scale(var(--bs)) translateY(var(--by))}
-}
-@keyframes biopulse{
-  0%,100%{opacity:var(--bo);transform:translate(-50%,-50%) scale(1)}
-  50%{opacity:calc(var(--bo)*1.4);transform:translate(-50%,-50%) scale(1.3)}
-}
-
-  .nlinks{display:none}.nbg{display:flex}.ncta{display:none}
-  .hi,.arah,.sysin,.araph,.adg,.rhg,.qg,.scn,.aboutg{grid-template-columns:1fr;gap:2.5rem}
-  .aboutg{margin-top:2rem}
-  .abouth{padding:8rem clamp(1.5rem,5vw,4.5rem) 3rem}
-  .aboutq{font-size:clamp(1.3rem,5.5vw,1.9rem);line-height:1.4}
-  .aboutblock p{font-size:.9rem}
-  .aboutdiv{gap:2rem}
-  .hoz{display:none}
-  .hi{padding:6rem 0 4rem}
-  .pcards{grid-template-columns:1fr}
-  .aragrid{grid-template-columns:1fr 1fr}
-  .ctab,.stpaths{grid-template-columns:1fr}
-  .pb{grid-template-columns:1fr;gap:1.2rem}
-  .pnl{font-size:2.2rem}
-  .scn:nth-child(even) .scl{order:unset}.scn:nth-child(even) .scr{order:unset}
-  .orblg{width:220px;height:220px}
-  footer{grid-template-columns:1fr;text-align:center}.fr{justify-content:center}
-}
-@media(max-width:560px){.aragrid{grid-template-columns:1fr}.dxl{font-size:2.9rem}}
-@media(hover:hover) and (pointer:fine){body,.btn,.spp,.nbg{cursor:none}}
-@media(hover:none),(pointer:coarse){#cd,#cr{display:none!important}}
-@media(max-width:960px){
-  .cl2,.spk{display:none}
-  #driftwood-layer{opacity:.5}
-  .mote{opacity:.35!important}
-  .ray{opacity:.35!important}
-  .cl{animation-duration:20s}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  #cd,#cr,#eco,.cl,.cl2,.sl,.ray,.plant,.mote,.spk,.str,.or,.oc,.on,.sline,.sr{animation:none!important;transition:none!important}
-}
-
-/* PERFORMANCE: hapus backdrop-filter mahal pada tier rendah */
-.tier-low .pc,.tier-low .ac,.tier-low .sl2,.tier-low .spp,
-.tier-low .ncta,.tier-low .snb,.tier-low .bf{
-  backdrop-filter:none!important;-webkit-backdrop-filter:none!important
-}
-/* ARA PILLARS — responsive */
-
-/* NOTES PAGE */
-.note-card{display:grid;grid-template-columns:120px 1fr;gap:3rem;padding:3rem;background:rgba(6,16,13,.55);text-decoration:none;transition:background .35s;align-items:start}
-.note-card:hover{background:rgba(9,22,18,.8)}
-.note-meta{display:flex;flex-direction:column;gap:.5rem;padding-top:.3rem}
-.note-date{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25)}
-.note-tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(157,191,154,.6);font-weight:500}
-.note-body{}
-.note-title{font-family:var(--serif);font-size:clamp(1.2rem,1.8vw,1.7rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.3;margin-bottom:.7rem;transition:color .3s}
-.note-card:hover .note-title{color:rgba(61,214,232,.9)}
-.note-excerpt{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;max-width:640px}
-.note-read{display:inline-block;margin-top:1rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.55);transition:color .3s}
-.note-card:hover .note-read{color:rgba(61,214,232,.9)}
-@media(max-width:960px){
-  .note-card{grid-template-columns:1fr;gap:1rem}
-  .note-meta{flex-direction:row;gap:1rem}
-}
-/* RHYSSA PAGE — new sections responsive */
-.rhyssa-stance-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-.rhyssa-limits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
-@media(max-width:960px){
-  .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
-  .rhyssa-limits-grid{grid-template-columns:1fr!important}
-}
-@media(max-width:560px){
-  .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2rem!important}
-  .rhyssa-limits-grid{grid-template-columns:1fr!important}
-}
-@media(max-width:960px){
-  .ara-pillars{grid-template-columns:1fr!important}
-}
-</style>
-</head>
-<body>
-<div id="cd" aria-hidden="true"></div><div id="cr" aria-hidden="true"></div>
-
-<div id="eco" aria-hidden="true">
-  <div class="wb"></div>
-  <div class="cl"></div>
-  <div class="cl2"></div>
-  <div class="sl"></div>
-  <div class="df"></div>
-  <div id="rays"></div>
-  <div id="driftwood-layer"></div>
-  <div class="plant-layer" id="plants"></div>
-  <div id="particles"></div>
-</div>
-
-<div id="fish-layer" aria-hidden="true"></div>
-
-<nav>
-  <a href="/" class="nl" data-page="home" aria-label="Aquatic Rhythm — In rhythm with living water">
-    <svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Orbit -->
-      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
-      <!-- Plants — hijau cerah -->
-      <line x1="16.8" y1="24.5" x2="16.8" y2="9"  stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
-      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
-      <!-- Fish body -->
-      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
-      <!-- Tail -->
-      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
-      <!-- Wave — dominan -->
-      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <!-- Eye -->
-      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
-      <!-- Wordmark -->
-      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
-      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
-    </svg>
-  </a>
-  <ul class="nlinks">
-    <li><a href="/" data-page="home">Living Water</a></li>
-    <li><a href="/ara" data-page="ara">The Framework</a></li>
-    <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
-    <li><a href="/about" data-page="about">About</a></li>
-    <li class="has-drop">
-      <a href="/notes/">Notes <span class="drop-arrow">▾</span></a>
-      <div class="dropdown">
-        <!-- Tambah artikel baru di sini -->
-        <!-- <a href="/notes/nama-artikel.html">Tajuk Artikel</a> -->
-        <div class="dropdown-all">
-          <a href="/notes/">All Notes →</a>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <button class="nbg" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
-</nav>
-
-
-
-<div class="nmob" id="nmob" aria-hidden="true">
-  <ul>
-    <li><a href="/" data-page="home">Living Water</a></li>
-    <li><a href="/ara" data-page="ara">The Framework</a></li>
-    <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
-    <li><a href="/about" data-page="about">About</a></li>
-    <li><a href="/notes/">Notes</a></li>
-    <li><a href="/privacy" data-page="privacy" style="color:rgba(255,255,255,.2)">Privacy Policy</a></li>
-    <li><a href="/terms" data-page="terms" style="color:rgba(255,255,255,.2)">Terms of Use</a></li>
-  </ul>
-</div>
-
-<main id="app-main">
-<!-- HOME -->
-<div id="pg-home" class="page active"><div class="pl">
-  <section class="hero pad">
-    <div class="hi cap">
-      <div class="ht">
-        <span class="ey">Living Water</span>
-        <h1 class="dxl">Your tank has<br>a rhythm.<br><em style="font-style:italic;color:rgba(61,214,232,.85)">Learn it.</em></h1>
-        <p class="hk">A living aquarium isn't something you configure. It breathes, shifts, and finds its own balance — on its own time. The keepers who thrive are the ones who learn to move with it.</p>
-      </div>
-      <div class="hoz">
-        <div class="orb">
-          <div class="or or1"></div><div class="or or2"></div><div class="or or3"></div><div class="or or4"></div>
-          <div class="oc"></div>
-          <div class="ol"><span class="on">Aquatic</span><span class="os">Rhythm</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="scue"><div class="sline"></div></div>
-  </section>
-  <div class="div"></div>
-  <section class="psec">
-    <div class="cap">
-      <span class="ey sr">Why it feels harder than it should</span>
-      <p class="pst sr d1">Most struggling keepers aren't careless. They're just <em>moving faster than their tank can follow.</em></p>
-      <div class="pcards" style="margin-top:5rem">
-        <div class="pc sr d1"><div class="pn">01</div><h4>Too much noise, not enough clarity</h4><p>Every forum says something different. You absorb it all and end up more lost than when you started. Information without a frame just becomes anxiety.</p></div>
-        <div class="pc sr d2"><div class="pn">02</div><h4>Acting before the tank has finished speaking</h4><p>Something looks off. The urge to fix it is immediate. But most changes in a living tank are the system mid-sentence — it needs a moment to finish its thought.</p></div>
-        <div class="pc sr d3"><div class="pn">03</div><h4>Vision bigger than real life allows</h4><p>You want a beautiful tank. You also have a job, a family, a life. When that gap isn't honestly mapped, things fall apart quietly — not from bad choices, but unrealistic ones.</p></div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-  <section class="arasec pad">
-    <div class="cap">
-      <div class="arah">
-        <div class="sr"><span class="ey">A different approach</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Aquatic Rhythm<br>is a way of<br>reading your tank.</h2></div>
-        <div class="sr d2">
-          <p class="bt">Not a list of tips. Not another troubleshooting guide. A way of understanding the relationship between a living system, its natural pace, and the person tending it.</p>
-          <p class="bt">When that relationship clicks — when your timing, your energy, and your tank's rhythm are actually aligned — things settle. Not because you did more. Because you stopped doing the wrong things at the wrong moments.</p>
-          <p class="bt" style="margin-top:1.8rem;color:rgba(255,255,255,.42);font-style:italic;font-family:var(--serif)">The hobby gave us encyclopaedias. Aquatic Rhythm gives you a compass.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-  <section class="ctasec pad">
-    <span class="ey ey-t sr">There is a better way</span>
-    <h2 class="dmd sr d1" style="color:rgba(255,255,255,.78)">It starts with<br>understanding the rhythm.</h2>
-    <p class="bt sr d2">ARA — Aquatic Rhythm Alignment — is four principles that change how you read your tank, make decisions, and know when — and when not — to act.</p>
-    <div class="sr d3" style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
-      <a href="/ara" class="btn bf" data-page="ara">Understand ARA →</a>
-      <a href="/rhyssa" class="btn bg" data-page="rhyssa">Talk with Rhyssa →</a>
-    </div>
-  </section>
-  <footer>
-    <a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a>
-    <span class="fm">In rhythm with living water.</span>
-    <div class="fr"><a href="/ara" data-page="ara">The Framework →</a></div>
-  </footer>
-  <div class="subfooter">
-    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
-    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
-    <a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span>
-    <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a>
-  </div>
-</div></div>
-
-<!-- ARA PAGE -->
-<div id="pg-ara" class="page"><div class="pl">
-
-  <!-- HERO -->
-  <section class="araph pad cap">
-    <div class="sr">
-      <span class="ey">The Framework</span>
-      <h2 class="dxl" style="color:rgba(255,255,255,.78)">Aquatic Rhythm<br>Alignment.</h2>
-      <p class="api"><em style="font-style:normal;color:rgba(139,189,210,.7);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--sans)">ARA</em><br><br>Not a set of rules.<br>Not a checklist to follow.<br>A way of understanding why a living tank behaves the way it does — and how the moment you choose to act shapes everything that follows.</p>
-    </div>
-    <div class="sr d2" style="padding-top:1rem">
-      <p class="bt">Most aquarium problems don't begin with one big mistake. They begin quietly — when something in the system's rhythm shifts and the keeper hasn't quite seen it yet. By the time something looks wrong, the underlying pressure has already been building for days, sometimes weeks.</p>
-      <p class="bt">ARA changes the question. Instead of <em style="font-style:italic;color:rgba(255,255,255,.78)">"What went wrong?"</em> it asks: <em style="font-style:italic;color:rgba(139,189,210,.8)">"What is no longer moving in rhythm — and what does this system need to find it again?"</em></p>
-      <p class="bt" style="margin-top:1.8rem;color:rgba(255,255,255,.38);font-style:italic;font-family:var(--serif)">That shift — from error to rhythm — changes everything that follows.</p>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- LAYER 1: THE CORE IDEA -->
-  <section class="adefs pad">
-    <div class="cap">
-      <span class="ey sr">What ARA is built on</span>
-      <div class="adg">
-        <div class="sr d1">
-          <p class="apq">Living systems respond to<br><strong>patterns.</strong><br>Not to numbers.<br>Not to corrections.<br>To rhythm over time.</p>
-        </div>
-        <div class="sr d2">
-          <p class="bt">An aquarium is not a machine you dial in. It is a living micro-ecosystem — water, biology, light, temperature, and behaviour all moving together, continuously. The same action taken at different moments produces different outcomes. A tank two weeks old responds differently to a water change than a tank two years old.</p>
-          <p class="bt">ARA is built on one foundational observation: <em style="font-style:italic;color:rgba(255,255,255,.75)">the keepers with the most stable tanks are not always the most knowledgeable. They are the ones who learned to slow down, watch honestly, and act in sync with what their tank is actually doing — right now.</em></p>
-          <p class="bt">Stability in ARA is not defined as perfect clarity or zero problems. It is defined as a state where fluctuations are absorbed without collapse. That kind of stability is not achieved once and locked in. It is maintained through rhythm — and it grows with time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- LAYER 2: THE STRUCTURE -->
-  <section style="padding:7rem clamp(1.5rem,5vw,4.5rem)">
-    <div class="cap">
-      <span class="ey sr">The structure behind ARA</span>
-      <div class="sr d1" style="max-width:660px;margin-bottom:4rem">
-        <h2 class="dmd" style="color:rgba(255,255,255,.72);margin-bottom:1.4rem">ARA is not a surface idea.<br><em style="font-style:italic;color:rgba(139,189,210,.6)">It is a complete system of thinking.</em></h2>
-        <p class="bt">Behind ARA is a full ecological framework — one that accounts for how aquariums change over time, how different parts of a tank influence each other, and why the person tending the tank is as much a part of the ecosystem as the water itself.</p>
-      </div>
-
-      <!-- Three pillars -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(139,189,210,.06);margin-bottom:5rem" class="ara-pillars sr d2">
-
-        <div style="padding:2.8rem 2.4rem;background:rgba(6,16,13,.6)">
-          <div style="font-family:var(--serif);font-size:2.6rem;font-weight:300;color:rgba(60,210,225,.25);line-height:1;margin-bottom:1.4rem">I</div>
-          <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.7rem;line-height:1.3">Five ecological rhythms</h3>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">Every aquarium has five interlocking rhythms: water, biology and chemistry, environment, livestock behaviour, and the human tending it. When one falls out of step, the others feel it — often before any number changes.</p>
-        </div>
-
-        <div style="padding:2.8rem 2.4rem;background:rgba(6,16,13,.6)">
-          <div style="font-family:var(--serif);font-size:2.6rem;font-weight:300;color:rgba(60,210,225,.25);line-height:1;margin-bottom:1.4rem">II</div>
-          <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.7rem;line-height:1.3">Three phases of maturity</h3>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">A young tank and a mature tank are not the same system. Early systems are fragile — small actions carry amplified effects. Mature systems have built up internal buffering, and can absorb the kind of inconsistency that would destabilise a younger tank.</p>
-        </div>
-
-        <div style="padding:2.8rem 2.4rem;background:rgba(6,16,13,.6)">
-          <div style="font-family:var(--serif);font-size:2.6rem;font-weight:300;color:rgba(60,210,225,.25);line-height:1;margin-bottom:1.4rem">III</div>
-          <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.7rem;line-height:1.3">Human rhythm as ecology</h3>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.85">In a closed aquarium, the keeper is part of the ecosystem — not external to it. How often, how consistently, and how attentively a person interacts with the tank shapes the system's stability. ARA treats human variability as a design input, not a flaw to be corrected.</p>
-        </div>
-      </div>
-
-      <!-- Alignment thinking note -->
-      <div class="snb sr d3" style="max-width:720px">
-        <span class="ey" style="margin-bottom:.9rem">How alignment thinking works</span>
-        <p class="snt">ARA does not ask "what is broken?" It asks "what is slightly out of sync?" The smallest adjustment that reduces friction is almost always more effective than the largest correction available. When multiple problems appear at once, ARA looks for the dominant rhythm — the one disturbance that is amplifying everything else — rather than addressing each symptom separately. Often, one thing settles and others resolve on their own.<br><br>Doing less, when the system is mid-recovery, is not passivity. <em>It is the most aligned response available.</em></p>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- LAYER 3: FOUR PRINCIPLES -->
-  <section class="prins pad">
-    <div class="cap">
-      <span class="ey sr">The four principles</span>
-      <p class="bt sr d1" style="max-width:580px;margin-bottom:4rem">These are not rules. They are questions ARA asks before any action is considered. Each one shifts the frame from reaction to understanding.</p>
-
-      <div class="pb sr">
-        <div class="pnl">01</div>
-        <div><span class="ptag">First principle</span><h3 class="ptit">Timing before technique</h3></div>
-        <div>
-          <p class="bt">The same action produces completely different outcomes depending on when it is taken. ARA does not only ask "is this the right thing to do?" It asks first: "is right now the right moment to do it?" A system mid-recovery, a tank mid-cycle, a keeper mid-exhaustion — timing changes everything.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>A large water change right after spotting algae can crash an unstable cycle. The same change three weeks later — once the cycle has matured — would have helped. Same technique. Wrong moment.</p></div>
-        </div>
-      </div>
-
-      <div class="pb sr">
-        <div class="pnl">02</div>
-        <div><span class="ptag">Second principle</span><h3 class="ptit">Capacity before ambition</h3></div>
-        <div>
-          <p class="bt">Every keeper has a real capacity — the time they actually have, the knowledge they genuinely hold, the energy left after a long day. Ambition quietly outruns this. ARA treats that gap honestly: not to limit the vision, but to find the version of it that a real life can actually sustain.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>A demanding planted tank needs consistent attention across months — not just free weekends. ARA doesn't kill the vision. It asks what version of that vision holds up when life gets busy.</p></div>
-        </div>
-      </div>
-
-      <div class="pb sr">
-        <div class="pnl">03</div>
-        <div><span class="ptag">Third principle</span><h3 class="ptit">Rhythm before intensity</h3></div>
-        <div>
-          <p class="bt">Living systems are not built through dramatic corrections. They are built through small, consistent care repeated over time. Doing a little, regularly, with honest attention, creates more stability than doing a great deal, occasionally, in a burst of effort followed by nothing.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>A keeper who tops up water gently every few days and watches quietly each morning is doing something more valuable than one who performs a major overhaul every three weeks. Rhythm outweighs intensity, every time.</p></div>
-        </div>
-      </div>
-
-      <div class="pb sr">
-        <div class="pnl">04</div>
-        <div><span class="ptag">Fourth principle</span><h3 class="ptit">Observation before correction</h3></div>
-        <div>
-          <p class="bt">Many early changes in a living system are not problems — they are the ecosystem reorganising itself. Visible disturbance is often a lagging signal: the underlying shift happened days ago. Intervening before that process completes interrupts something that was already working its way toward resolution.</p>
-          <div class="eg"><span class="egtag">In practice</span><p>Yellowing leaves in a new planted tank's first weeks are almost always adjustment, not deficiency. Wait and watch — it usually resolves. Dose immediately, and you spend weeks trying to read a tank you've made unreadable.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- COMPARISON -->
-  <section class="cmps pad">
-    <div class="cap">
-      <span class="ey sr">ARA vs typical aquarium thinking</span>
-      <h2 class="dmd sr d1" style="color:rgba(255,255,255,.65);margin-top:1rem;max-width:560px">Most advice tells you what to do.<br>ARA asks <em style="font-style:italic;color:rgba(139,189,210,.55)">when, why,</em> and <em style="font-style:italic;color:rgba(139,189,210,.55)">whether.</em></h2>
-      <div class="ctab sr d2">
-        <div class="cc">
-          <div class="ch chd">Typical approach</div>
-          <div class="cis">
-            <div class="ci"><div class="cmk mx">✕</div><p>Treats parameters as isolated readings — as though the right numbers automatically mean a healthy system.</p></div>
-            <div class="ci"><div class="cmk mx">✕</div><p>Assumes more information and more action always leads somewhere better.</p></div>
-            <div class="ci"><div class="cmk mx">✕</div><p>Treats anything visible as a problem requiring immediate correction.</p></div>
-            <div class="ci"><div class="cmk mx">✕</div><p>Ignores the keeper's real life, schedule, and energy entirely.</p></div>
-            <div class="ci"><div class="cmk mx">✕</div><p>Applies the same approach regardless of how old or mature the tank is.</p></div>
-          </div>
-        </div>
-        <div class="cc ccb">
-          <div class="ch cht">ARA</div>
-          <div class="cis">
-            <div class="ci"><div class="cmk my">✓</div><p>Reads patterns and rhythms across time — not snapshots taken on a single afternoon.</p></div>
-            <div class="ci"><div class="cmk my">✓</div><p>Knows that the right timing often matters more than the action itself.</p></div>
-            <div class="ci"><div class="cmk my">✓</div><p>Treats visible changes as information — worth understanding before you disturb them.</p></div>
-            <div class="ci"><div class="cmk my">✓</div><p>Holds the keeper's real life as part of the ecosystem — a design input, not a problem.</p></div>
-            <div class="ci"><div class="cmk my">✓</div><p>Reads the phase the system is in, and adjusts its reasoning accordingly.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REAL SITUATIONS — moved from Helps page -->
-  <div class="div"></div>
-  <section style="padding:7rem clamp(1.5rem,5vw,4.5rem) 0">
-    <div class="cap">
-      <span class="ey sr">ARA in real situations</span>
-      <div class="sr d1" style="max-width:620px;margin-bottom:1rem">
-        <h2 class="dmd" style="color:rgba(255,255,255,.65)">Three keepers.<br>Three moments.<br><em style="font-style:italic;color:rgba(139,189,210,.55)">One framework.</em></h2>
-      </div>
-      <p class="bt sr d2" style="max-width:580px;margin-bottom:4rem">This is how ARA reads real situations — not with a fixed answer, but with the right question first.</p>
-    </div>
-  </section>
-  <section class="scns pad cap" style="padding-top:1rem">
-    <div class="scn sr">
-      <div class="scl"><div class="scnum">01</div><span class="scty">When everything feels confusing</span><h2 class="sctit">You've done the research. Somehow you feel less certain than before.</h2><div class="scv"><p>"I've been through forums, videos, guides. Everyone says something different. I don't know where to start. I'm scared I'll kill everything before I figure it out."</p></div><p class="bt">This keeper isn't short on effort. They're short on a frame. Information without structure doesn't build knowledge — it builds dread. And dread leads to decisions made from fear, not clarity.</p></div>
-      <div class="scr"><div class="rhr"><p>ARA doesn't begin with more information. It begins with the situation. Before anything else, it asks: what is actually true here, right now? When there's a frame, the noise settles — not because you know more, but because you know what to look at.</p></div><p class="sco">The goal isn't to know everything about aquariums. It's to know your next step. That's always enough to begin.</p><p class="sco">ARA's fourth principle — <em>observation before correction</em> — means nothing gets touched until it's first understood.</p></div>
-    </div>
-    <div class="scn sr">
-      <div class="scl"><div class="scnum">02</div><span class="scty">When you want to build something</span><h2 class="sctit">You have a vision. You're not sure if you're ready for it.</h2><div class="scv"><p>"I want to do an iwagumi — clean stones, shrimp, maybe nano fish. I've had a community tank about a year. I honestly don't know if I'm ready."</p></div><p class="bt">This is where the most costly mistakes happen. Not because the vision is wrong — but because the distance between where you are and where you want to be hasn't been looked at honestly.</p><p class="bt" style="margin-top:1rem">ARA doesn't say no. It asks what version of this vision your real life can genuinely keep alive.</p></div>
-      <div class="scr"><div class="rhr"><p>ARA's second principle — <em>capacity before ambition</em> — maps vision against reality. Not the time you'd like to have. The time that's actually there, on an ordinary week. That answer shapes everything.</p></div><p class="sco">Sometimes the answer confirms the original vision. Sometimes it finds the version that actually survives.</p><p class="sco">Either way, you're building on honest ground — and that's what makes anything last.</p></div>
-    </div>
-    <div class="scn sr">
-      <div class="scl"><div class="scnum">03</div><span class="scty">When something feels off</span><h2 class="sctit">Everything measures fine. But your tank doesn't feel right.</h2><div class="scv"><p>"Parameters are where they should be. But something has changed. The fish are quieter. Plants have slowed. I can't point to anything specific."</p></div><p class="bt">The measurable things look fine. But this tank is sending a signal that numbers don't capture. Fish behaviour, colour, the rhythm of growth — these tell the real story, often before the chemistry shifts.</p><p class="bt" style="margin-top:1rem">ARA reads this as an observation moment — not a correction moment.</p></div>
-      <div class="scr"><div class="rhr"><p>ARA's first principle applies directly: <em>timing before technique</em>. The instinct is to act. But the aligned response is to look more carefully — at what changed recently, however small. A new plant. A shift in the light schedule. A different feeding time.</p></div><p class="sco">What you're sensing is real information. It just hasn't appeared in the numbers yet.</p><p class="sco">In many cases, nothing needs to be done. The system is adjusting. ARA helps you stay with what you're seeing long enough to understand it — before you disturb it.</p></div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="ctasec pad">
-    <span class="ey ey-t sr">Ready to bring ARA into conversation?</span>
-    <h2 class="dmd sr d1" style="color:rgba(255,255,255,.65)">Meet the companion<br>trained in this framework.</h2>
-    <p class="bt sr d2">Rhyssa thinks the way ARA does — asking before advising, reading your situation, moving at the pace your tank actually needs.</p>
-    <a href="/rhyssa" class="btn bf sr d3" style="margin-top:1rem;display:inline-block" data-page="rhyssa">Meet Rhyssa →</a>
-  </section>
-
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
-  <div class="subfooter">
-    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
-    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
-    <a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span>
-    <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a>
-  </div>
-</div></div>
-
-<!-- RHYSSA PAGE -->
-<div id="pg-rhyssa" class="page"><div class="pl">
-  <section class="rhhero pad">
-    <div class="cap rhg">
-      <div class="sr">
-        <span class="ey">Aquatic Rhythm — Primary Interface</span>
-        <p style="font-family:var(--serif);font-style:italic;font-size:.88rem;color:rgba(61,214,232,.45);letter-spacing:.08em;margin-bottom:.5rem">✦ In rhythm with living water ✦</p>
-        <h2 class="rhtit">Rhyssa is how<br><em>ARA speaks</em><br>to you.</h2>
-
-        <!-- KEMASKINI 1: bukan "trained in" tapi "thinks through" -->
-        <p style="font-family:var(--sans);font-size:.82rem;font-weight:400;letter-spacing:.06em;color:rgba(61,214,232,.65);text-transform:uppercase;margin-bottom:.8rem">Setup · Troubleshooting · Reading your tank</p>
-        <p class="rhd">Rhyssa doesn't use ARA as a reference. She thinks through it. Every question she receives, she reads first as an ecological situation — not a problem to solve, but a rhythm to understand. That's not a style choice. It's how ARA works.</p>
-      </div>
-      <div class="sr d2">
-        <div class="orblg">
-          <div class="or or1"></div><div class="or or2"></div><div class="or or3"></div><div class="or or4"></div>
-          <div class="oc"></div>
-          <div class="ol"><span class="on">Rhyssa</span><span class="os">Aquarium Companion</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- KEMASKINI 2: bagaimana Rhyssa berdiri — Presence -->
-  <section style="padding:6rem clamp(1.5rem,5vw,4.5rem)">
-    <div class="cap">
-      <span class="ey sr">How Rhyssa stands</span>
-      <div class="sr d1 rhyssa-stance-grid">
-        <div>
-          <h3 class="dmd" style="color:rgba(255,255,255,.72);margin-bottom:1.8rem">She doesn't answer<br>before she understands.<br><em style="font-style:italic;color:rgba(61,214,232,.6)">That's not a limitation.<br>It's a discipline.</em></h3>
-          <p class="bt">Most AI companions are built to respond quickly and confidently. Rhyssa is built differently — she holds back when holding back is the more honest ecological move. Uncertainty, in ARA, is not a gap to fill. It is information.</p>
-          <p class="bt" style="margin-top:1rem">She will not manufacture urgency where there is none. She will not give you a confident answer when the situation hasn't yet earned one. She moves at the pace the living system actually needs — not the pace that feels satisfying in the moment.</p>
-        </div>
-        <div class="qis">
-          <!-- KEMASKINI 2 cont: Presence qualities -->
-          <div class="qi"><h4>She stands with, not above</h4><p>Rhyssa doesn't position herself as an authority. She offers perspective, orientation, and structure when needed — but the decisions remain yours. She is a companion, not a guide who leads.</p></div>
-          <div class="qi"><h4>She protects your dignity</h4><p>Irregular care, long gaps, mistakes — these are ecological inputs, not moral failures. Rhyssa never frames your behaviour as a problem to correct. She holds it as part of the system.</p></div>
-          <div class="qi"><h4>She knows when to do less</h4><p>There are moments when the most aligned response is restraint. When the system is already stabilising. When time itself is the correction. Rhyssa recognises those moments and doesn't interrupt them.</p></div>
-          <div class="qi"><h4>She reads phase, not just symptoms</h4>
-          <!-- KEMASKINI 3: fasa ekosistem -->
-          <p>A tank two weeks old and a tank two years old are not the same system. The same action — a water change, a new plant, a feeding adjustment — means something completely different depending on where the ecosystem is in its maturity. Rhyssa reads phase before she reads anything else.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- KEMASKINI 4: epistemic restraint — apa Rhyssa tidak akan buat -->
-  <section style="padding:5rem clamp(1.5rem,5vw,4.5rem)">
-    <div class="cap">
-      <span class="ey sr">What Rhyssa will not do</span>
-      <div class="sr d1" style="max-width:680px;margin-bottom:3rem">
-        <p class="bt">In a world where every AI competes to answer faster and more confidently, Rhyssa does the opposite — deliberately. These are not limitations. They are the most ecologically honest choices she can make.</p>
-      </div>
-      <div class="sr d2 rhyssa-limits-grid" style="background:rgba(139,189,210,.06)">
-        <div style="padding:2.4rem 2rem;background:rgba(6,16,13,.6)">
-          <div style="font-family:var(--serif);font-size:2rem;font-weight:300;color:rgba(61,214,232,.3);margin-bottom:1rem">—</div>
-          <h4 style="font-family:var(--serif);font-size:1rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.6rem;line-height:1.3">She will not rush to certainty</h4>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.8">When the situation is unclear, she holds multiple possibilities rather than collapsing into one confident answer. Premature certainty in a living system often causes more harm than the original problem.</p>
-        </div>
-        <div style="padding:2.4rem 2rem;background:rgba(6,16,13,.6)">
-          <div style="font-family:var(--serif);font-size:2rem;font-weight:300;color:rgba(61,214,232,.3);margin-bottom:1rem">—</div>
-          <h4 style="font-family:var(--serif);font-size:1rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.6rem;line-height:1.3">She will not stack corrections</h4>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.8">Changing multiple things at once makes it impossible to know what helped, what harmed, or what simply needed time. Rhyssa sequences. She moves one rhythm at a time.</p>
-        </div>
-        <div style="padding:2.4rem 2rem;background:rgba(6,16,13,.6)">
-          <div style="font-family:var(--serif);font-size:2rem;font-weight:300;color:rgba(61,214,232,.3);margin-bottom:1rem">—</div>
-          <h4 style="font-family:var(--serif);font-size:1rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.6rem;line-height:1.3">She will not amplify urgency</h4>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.8">Most aquarium situations are not emergencies. They are systems mid-sentence. Rhyssa helps you wait for the sentence to finish — because intervening too early often interrupts something that was already resolving.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="div"></div>
-
-  <!-- KEMASKINI 5: "honest things" — nada selaras dengan Presence -->
-  <section class="psec" style="padding-top:5rem">
-    <div class="cap pad">
-      <div class="snb sr">
-        <span class="ey" style="margin-bottom:.9rem">A few honest things about Rhyssa</span>
-        <p class="snt">Rhyssa is an AI companion shaped by ARA — she reads what you bring and responds through its ecological logic. She doesn't see your tank directly, and she won't carry memory between conversations. Like any living framework, she is still growing.<br><br>Right now she lives as a custom GPT on ChatGPT. That was a deliberate starting point — it let us put all our attention into getting the reasoning right. The way she listens. The way she holds uncertainty. The way she moves at ecological pace rather than conversational pace. The platform may change. That reasoning won't.<br><br>
-
-        <!-- KEMASKINI 6: apa yang membezakan Rhyssa -->
-        What she offers is not a faster answer. It is a more honest one — shaped by a framework that treats your tank as a living system, your care as an ecological force, and your life as part of the equation. That is what makes her different from every other aquarium assistant you will find.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="ctasec pad" style="position:relative;overflow:hidden;padding-bottom:7rem">
-    <div class="str sr1"></div><div class="str sr2"></div><div class="str sr3"></div><div class="str sr4"></div><div class="str sr5"></div>
-    <div style="position:relative;z-index:2">
-      <span class="ey ey-t sr">Whenever you're ready</span>
-      <h3 class="dmd sr d1" style="color:rgba(255,255,255,.78)">She's already<br>there.</h3>
-      <p class="bt sr d2" style="max-width:420px;margin:1.2rem auto 0">Bring whatever you've got — the messy tank, the half-formed question, the thing you're not sure how to say. She won't rush you.</p>
-      <p class="bt sr d3" style="max-width:420px;margin:.8rem auto 0;color:rgba(255,255,255,.3);font-style:italic;font-family:var(--serif)">Free to use. You'll need a ChatGPT account — a free one works perfectly.</p>
-      <div class="sr d4" style="margin-top:2.5rem">
-        <a href="https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion" class="btn bf" style="font-size:.78rem;padding:1.1rem 3rem" target="_blank" rel="noopener">Talk with Rhyssa</a>
-      </div>
-      <div class="stpaths sr d5" style="margin-top:4rem;text-align:left">
-        <a href="https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion" class="spp" target="_blank" rel="noopener"><span class="spg">I.</span><h4>Explore</h4><p>I'm new. I want to understand how to begin — without getting ahead of myself.</p></a>
-        <a href="https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion" class="spp" target="_blank" rel="noopener"><span class="spg">II.</span><h4>Build</h4><p>I have a vision for a tank. I want to know if I'm ready — and how to build something that lasts.</p></a>
-        <a href="https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion" class="spp" target="_blank" rel="noopener"><span class="spg">III.</span><h4>Understand</h4><p>Something in my tank isn't right. I need to see it more clearly before I do anything.</p></a>
-      </div>
-      <p class="stco sr" style="margin-top:3rem">Rhyssa is in early access, shaped by ARA.<br>She's a work in progress — and so are we.</p>
-      <p style="margin-top:1.2rem;font-family:var(--serif);font-style:italic;font-size:.85rem;color:rgba(61,214,232,.35);letter-spacing:.06em">✦ In rhythm with living water ✦</p>
-    </div>
-  </section>
-
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/ara" data-page="ara">The Framework →</a></div></footer>
-  <div class="subfooter">
-    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
-    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
-    <a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span>
-    <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a>
-  </div>
-</div></div>
-
-<!-- TERMS PAGE -->
-<div id="pg-terms" class="page"><div class="pl">
-  <section class="privh pad cap">
-    <div class="sr"><span class="ey">Legal</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Terms of Use</h2><span class="privdate">Last updated: March 2026</span></div>
-  </section>
-  <div class="privbody cap">
-    <div class="privsec sr"><h3>Overview</h3><p>By using this website and the Rhyssa AI companion, you agree to these terms. Aquatic Rhythm is a small, independent project provided in good faith. Please read this briefly — it is written plainly, not in legal jargon.</p></div>
-    <div class="privsec sr"><h3>What Aquatic Rhythm offers</h3><p>Aquatic Rhythm provides a framework called ARA — Aquatic Rhythm Alignment — and access to Rhyssa, an AI companion trained in that framework. Everything here is offered for informational and educational purposes only.</p><p>Rhyssa is an AI language system. Her responses are generated based on training and context, not professional expertise. She is not a licensed veterinarian, aquatic biologist, or certified aquarium professional.</p></div>
-    <div class="privsec sr"><h3>No professional advice</h3><p>Nothing on this website or in any conversation with Rhyssa constitutes professional advice of any kind — including but not limited to veterinary, medical, legal, or financial advice.</p><p>If your fish or aquatic animals are ill or in distress, please consult a qualified veterinarian or aquatic specialist. Rhyssa can offer perspective and a framework for thinking — she cannot diagnose, prescribe, or replace professional judgment.</p></div>
-    <div class="privsec sr"><h3>AI limitations</h3><p>Rhyssa can be wrong. Like all AI systems, she may produce inaccurate, incomplete, or outdated information. You are responsible for evaluating her responses critically before acting on them. Aquatic Rhythm accepts no liability for decisions made based on Rhyssa's responses.</p><p>Conversations with Rhyssa take place on an external platform. By using Rhyssa, you also agree to the terms of that platform.</p></div>
-    <div class="privsec sr"><h3>Intellectual property</h3><p>The ARA framework, the content of this website, and the name Aquatic Rhythm are the intellectual property of this project. You may share and reference them freely for personal, educational, or non-commercial purposes, with attribution. Commercial use requires prior permission.</p></div>
-    <div class="privsec sr"><h3>Limitation of liability</h3><p>Aquatic Rhythm is provided as-is, without warranties of any kind. We are not liable for any direct, indirect, or incidental damages arising from your use of this website or Rhyssa — including any harm to your aquatic animals or equipment resulting from advice followed.</p></div>
-    <div class="privsec sr"><h3>Changes to these terms</h3><p>These terms may be updated as Aquatic Rhythm grows. The date at the top of this page reflects the most recent revision. Continued use of this website after changes constitutes acceptance of the updated terms.</p><p>Questions? Write to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="7b131e1717143b1a0a0e1a0f12180913020f131655181416">[email&#160;protected]</span></a></p></div>
-  </div>
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/privacy" data-page="privacy">Privacy Policy →</a></div></footer>
-  <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
-</div></div>
-
-<!-- PRIVACY PAGE -->
-<div id="pg-privacy" class="page"><div class="pl">
-  <section class="privh pad cap">
-    <div class="sr"><span class="ey">Legal</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Privacy Policy</h2><span class="privdate">Last updated: March 2026</span></div>
-  </section>
-  <div class="privbody cap">
-    <div class="privsec sr"><h3>Overview</h3><p>Aquatic Rhythm is a small, independent project. We are committed to being transparent about how this website works and what happens to any information you share with us. This policy explains what data is collected, by whom, and how it is used.</p><p>If you have any questions, you can reach us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="aec6cbc2c2c1eecfdfdbcfdac7cddcc6d7dac6c380cdc1c3">[email&#160;protected]</span></a></p></div>
-    <div class="privsec sr"><h3>Information we collect directly</h3><p>Aquatic Rhythm does not require you to create an account. However, we may collect information in the following ways:</p><ul><li><strong style="color:rgba(255,255,255,.6)">Email contact</strong> — if you write to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" style="color:rgba(139,189,210,.7);text-decoration:none"><span class="__cf_email__" data-cfemail="9cf4f9f0f0f3dcfdede9fde8f5ffeef4e5e8f4f1b2fff3f1">[email&#160;protected]</span></a>, we receive your email address and the content of your message. We use this only to respond to you.</li><li><strong style="color:rgba(255,255,255,.6)">Feedback or survey forms</strong> — if we introduce a feedback form in the future, we will update this policy to reflect what is collected and how it is used.</li></ul><p>We do not sell, share, or use your personal information for marketing purposes.</p></div>
-    <div class="privsec sr"><h3>Third-party services</h3><p>This website uses several third-party services that may collect data independently according to their own privacy policies. We have no control over that data.</p><ul><li><strong style="color:rgba(255,255,255,.6)">GitHub Pages</strong> — hosts this website. GitHub may collect server logs including your IP address and browser information. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">GitHub's Privacy Statement</a>.</li><li><strong style="color:rgba(255,255,255,.6)">ChatGPT / OpenAI</strong> — Rhyssa is accessed through ChatGPT. Any conversation you have with Rhyssa is subject to <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">OpenAI's Privacy Policy</a>. We do not receive or store your conversations.</li><li><strong style="color:rgba(255,255,255,.6)">Google Search Console</strong> — used to monitor how this site appears in Google Search. This tool collects aggregated, anonymised data about search performance. No individual user data is visible to us.</li>
-<li><strong style="color:rgba(255,255,255,.6)">Google Analytics</strong> — used to understand how visitors interact with this website. It collects anonymised data including pages visited, time spent, device type, and approximate location. IP addresses are anonymised. No personally identifiable information is collected. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">Google's opt-out browser add-on</a>.</li></ul></div>
-    <div class="privsec sr"><h3>Cookies</h3><p>Aquatic Rhythm does not use its own cookies. However, third-party services embedded in this site may set cookies on your device:</p><ul><li><strong style="color:rgba(255,255,255,.6)">Google Analytics</strong> — sets cookies automatically when you visit this website to distinguish visitors and track sessions. These are anonymised and do not identify you personally.</li></ul><p>You can manage or disable cookies through your browser settings, or opt out of Google Analytics tracking via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:rgba(139,189,210,.6);text-decoration:none">Google's opt-out tool</a>.</p></div>
-    <div class="privsec sr"><h3>Your rights</h3><p>If you are located in the European Union, United Kingdom, or other regions with data protection laws, you may have rights regarding your personal data — including the right to access, correct, or delete information we hold about you.</p><p>As we collect very little personal data directly, the most likely scenario is that you have contacted us by email. In that case, you may request that we delete your correspondence by writing to us at <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink"><span class="__cf_email__" data-cfemail="fe969b929291be9f8f8b9f8a979d8c96878a9693d09d9193">[email&#160;protected]</span></a>.</p></div>
-    <div class="privsec sr"><h3>Children</h3><p>This website is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p></div>
-    <div class="privsec sr"><h3>Changes to this policy</h3><p>As Aquatic Rhythm grows, this policy may be updated to reflect new features or services. The date at the top of this page will always show when it was last revised. We encourage you to check back occasionally.</p></div>
-  </div>
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/about" data-page="about">About →</a></div></footer>
-  <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
-</div></div>
-
-<!-- ABOUT PAGE -->
-<div id="pg-about" class="page"><div class="pl">
-  <section class="abouth pad cap">
-    <div class="sr"><span class="ey">About Aquatic Rhythm</span><h2 class="dlg" style="color:rgba(255,255,255,.78)">Where this<br>came from.</h2></div>
-    <div class="aboutg">
-      <div class="sr d1"><p class="aboutq">This didn't begin with a framework.<br>It began with <em>a tank, and a person</em> who didn't always have enough left to tend it.</p></div>
-      <div class="aboutdiv sr">
-        <div class="aboutblock"><h4>The honest beginning</h4><p>Aquatic Rhythm came from real experience — not theory. From years of keeping aquariums with genuine care, and from noticing that care doesn't always stay consistent. There were phases of full attention. Phases of pulling back. Phases of not checking the tank for days, then returning with guilt. Phases of wanting to start over.</p><p style="margin-top:.9rem">What became clear, slowly, is that this is not a rare failure. It is a rhythm many people live through — and almost no one in the hobby talks about it honestly.</p></div>
-        <div class="aboutblock"><h4>The silence this responds to</h4><p>The internet has no shortage of aquarium information. What it rarely holds is the full picture of what it actually feels like to be the person keeping the tank — the overwhelm, the guilt when the rhythm breaks, the over-correcting, the quiet hope that things can still be recovered.</p><p style="margin-top:.9rem">Aquatic Rhythm was created in response to that silence. Not to add more noise or more urgency — but to offer something the hobby tends to move past too quickly: honesty, gentleness, and a clearer way of seeing.</p></div>
-        <div class="aboutblock"><h4>A different way of seeing the tank</h4><p>An aquarium is not only a technical system. It is a living relationship between water, ecology, time, and human capacity. The person keeping the tank is part of that ecosystem — not a stable external variable, but someone whose energy, mood, and bandwidth shape everything that happens inside the glass.</p><p style="margin-top:.9rem">This means that problems in a tank are not always caused by carelessness. Sometimes they come from misalignment — between what the system needs and what the keeper honestly has to give at that moment in their life.</p><p style="margin-top:.9rem">ARA was built around that understanding.</p></div>
-        <div class="aboutblock"><h4>Why Rhyssa exists</h4><p>Rhyssa is not just a tool. She is a companion for the parts of this hobby that the usual sources tend to skip — the uncertainty, the doubt, the feeling that you have fallen behind, the desire to begin again.</p><p style="margin-top:.9rem">She is there for what the internet often moves past too quickly. Not a voice of hard authority, but a calm, honest presence — one that listens before it advises, and holds space for where you actually are.</p></div>
-        <div class="aboutblock"><h4>What this project is</h4><p>Aquatic Rhythm is small and independent. It is not a company. It exists because someone believed that people who care about their tanks deserve more than parameter charts and correction protocols — they deserve to feel understood, and to feel that there is still hope in the hobby, even after a long stretch away from it.</p><p style="margin-top:.9rem">This project exists so that fewer people give up on something they genuinely love — simply because no one acknowledged the reality of keeping it.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="ctasec pad">
-    <span class="ey ey-t sr">Still here. Still growing.</span>
-    <h2 class="dmd sr d1" style="color:rgba(255,255,255,.65)">The framework is open.<br>Start wherever you are.</h2>
-    <p class="bt sr d2" style="max-width:420px;margin:0 auto 2rem">Whether you're just beginning, rebuilding after a long break, or simply trying to understand what your tank is telling you — there is a place for you here.</p>
-    <a href="/ara" class="btn bf sr d3" style="display:inline-block" data-page="ara">Explore the Framework →</a>
-  </section>
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
-  <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a></div>
-</div></div>
-<!-- NOTES PAGE -->
-<div id="pg-notes" class="page"><div class="pl">
-  <section style="padding:12rem clamp(1.5rem,5vw,4.5rem) 5rem">
-    <div class="cap">
-      <div class="sr">
-        <span class="ey">From the keeper</span>
-        <h2 class="dlg" style="color:rgba(255,255,255,.88)">Notes.</h2>
-        <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.3vw,1.15rem);font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;max-width:560px;margin-top:1.4rem">Observations from someone still learning to read living water. On tanks, rhythm, misalignment, and what it means to care for something that breathes.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="div"></div>
-
-  <section style="padding:5rem clamp(1.5rem,5vw,4.5rem) 9rem">
-    <div class="cap">
-      <div id="notes-grid" style="display:flex;flex-direction:column;gap:1px;background:rgba(139,189,210,.06)">
-
-        <!-- TAMBAH ARTIKEL BARU DI SINI — salin blok di bawah
-        <a href="/notes/nama-fail.html" class="note-card" target="_blank" rel="noopener">
-          <div class="note-meta">
-            <span class="note-date">MMM YYYY</span>
-            <span class="note-tag">Kategori</span>
-          </div>
-          <div class="note-body">
-            <h2 class="note-title">Tajuk Artikel</h2>
-            <p class="note-excerpt">Satu atau dua ayat ringkasan.</p>
-            <span class="note-read">Read →</span>
-          </div>
-        </a>
-        -->
-
-        <div style="padding:6rem 3rem;text-align:center">
-          <p style="font-family:var(--serif);font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.28);line-height:1.8">The first note is still forming.<br>It will arrive when it is ready.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer><a href="/" class="fl" data-page="home">Aquatic <em>Rhythm</em></a><span class="fm">In rhythm with living water.</span><div class="fr"><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa →</a></div></footer>
-  <div class="subfooter">
-    <a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span>
-    <a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span>
-    <a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span>
-    <a href="#" onclick="window.location.href='mail'+'to:hello@aquaticrhythm.com';return false;" class="sflink">Contact</a>
-  </div>
-</div></div>
-</main>
-
-
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ── DEVICE TIER ── */
-var TIER=(function(){
-  var cores=navigator.hardwareConcurrency||2;
-  var mem=navigator.deviceMemory||2;
-  var mob=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-  if(mob&&(cores<=4||mem<=2))return'low';
-  if(mob)return'mid';
-  return'high';
-})();
-if(TIER==='low')document.documentElement.classList.add('tier-low');
-
-var CFG={
-  low: {plants:6, rays:3, motes:6,  sparks:8,  shrimpMax:1,snailMax:0},
-  mid: {plants:10,rays:5, motes:12, sparks:18, shrimpMax:2,snailMax:1},
-  high:{plants:17,rays:8, motes:25, sparks:38, shrimpMax:3,snailMax:1}
-}[TIER];
-
-/* ── PAUSE ON HIDDEN TAB ── */
-var paused=false;
-document.addEventListener('visibilitychange',function(){paused=document.hidden;});
-
-/* ── ECOSYSTEM ── */
-(function(){
-  var rc=document.getElementById('rays');
-  var allRays=[
-    {l:'5%', w:58,h:'60%',d:12,dl:0},{l:'15%',w:38,h:'48%',d:15,dl:2},
-    {l:'27%',w:66,h:'68%',d:11,dl:.8},{l:'41%',w:44,h:'54%',d:13,dl:3},
-    {l:'56%',w:52,h:'63%',d:10,dl:1.5},{l:'69%',w:36,h:'46%',d:14,dl:4},
-    {l:'81%',w:60,h:'58%',d:11.5,dl:2.2},{l:'91%',w:32,h:'42%',d:16,dl:.5}
-  ];
-  allRays.slice(0,CFG.rays).forEach(function(r){
-    var e=document.createElement('div');e.className='ray';
-    e.style.cssText='left:'+r.l+';width:'+r.w+'px;height:'+r.h+';animation-duration:'+r.d+'s;animation-delay:'+r.dl+'s';
-    rc.appendChild(e);
-  });
-
-  var pc=document.getElementById('plants');
-  var NS='http://www.w3.org/2000/svg';
-  var plantTypes=[
-    {name:'val',draw:function(svg,w,h,c){
-      var cx=w/2;
-      [[0,1,.92],[-.18,.88,1],[.14,.96,.78],[-.06,.82,.95]].forEach(function(r,i){
-        var bx=cx+r[0]*w*.3,bh=h*r[1],cv=(i%2===0)?1:-1;
-        var p=document.createElementNS(NS,'path');
-        p.setAttribute('d','M'+bx+' '+h+' C'+(bx+cv*w*.35)+' '+(h*.6)+' '+(bx-cv*w*.2)+' '+(h*.3)+' '+(bx+cv*w*.1)+' '+bh);
-        p.setAttribute('stroke',c);p.setAttribute('stroke-width',(r[2]*2.5).toString());p.setAttribute('fill','none');p.setAttribute('stroke-linecap','round');svg.appendChild(p);
-      });
-    }},
-    {name:'sword',draw:function(svg,w,h,c){
-      var cx=w/2,s=document.createElementNS(NS,'path');
-      s.setAttribute('d','M'+cx+' '+h+' C'+cx+' '+(h*.7)+' '+cx+' '+(h*.3)+' '+cx+' 0');
-      s.setAttribute('stroke',c);s.setAttribute('stroke-width','1.8');s.setAttribute('fill','none');svg.appendChild(s);
-      [[.75,-1,28,12],[.55,1,32,14],[.38,-1,26,11],[.22,1,20,9],[.1,-1,14,7]].forEach(function(lp){
-        var ly=h*lp[0],dir=lp[1],lw=lp[2],lhh=lp[3],lx=cx+dir*lw*.15;
-        var leaf=document.createElementNS(NS,'path');
-        leaf.setAttribute('d','M'+cx+' '+ly+' C'+(lx+dir*lw*.5)+' '+(ly-lhh*.3)+' '+(lx+dir*lw)+' '+(ly-lhh*.7)+' '+(lx+dir*lw*.8)+' '+(ly-lhh)+' C'+(lx+dir*lw*.5)+' '+(ly-lhh*1.1)+' '+(cx+dir*4)+' '+(ly-lhh*.5)+' '+cx+' '+ly+'Z');
-        leaf.setAttribute('fill',c);leaf.setAttribute('opacity','0.75');svg.appendChild(leaf);
-      });
-    }},
-    {name:'cabomba',draw:function(svg,w,h,c){
-      var cx=w/2,s=document.createElementNS(NS,'path');
-      s.setAttribute('d','M'+cx+' '+h+' C'+(cx-w*.1)+' '+(h*.7)+' '+(cx+w*.08)+' '+(h*.4)+' '+cx+' 0');
-      s.setAttribute('stroke',c);s.setAttribute('stroke-width','1.5');s.setAttribute('fill','none');svg.appendChild(s);
-      [.82,.65,.5,.36,.22,.1].forEach(function(pos,i){
-        var y=h*pos,branches=3+i%2;
-        for(var b=-branches;b<=branches;b++){
-          if(b===0)continue;
-          var angle=b*(Math.PI/(branches*1.4)),len=w*.28+Math.abs(b)*2;
-          var ex=cx+Math.sin(angle)*len,ey=y-Math.cos(angle)*len*.4;
-          var br=document.createElementNS(NS,'path');
-          br.setAttribute('d','M'+cx+' '+y+' Q'+((cx+ex)/2+b*2)+' '+(y-len*.2)+' '+ex+' '+ey);
-          br.setAttribute('stroke',c);br.setAttribute('stroke-width','0.9');br.setAttribute('fill','none');br.setAttribute('opacity','0.7');svg.appendChild(br);
-        }
-      });
-    }},
-    {name:'bacopa',draw:function(svg,w,h,c){
-      var cx=w/2,s=document.createElementNS(NS,'path');
-      s.setAttribute('d','M'+cx+' '+h+' C'+(cx+w*.08)+' '+(h*.7)+' '+(cx-w*.08)+' '+(h*.4)+' '+cx+' 0');
-      s.setAttribute('stroke',c);s.setAttribute('stroke-width','1.6');s.setAttribute('fill','none');svg.appendChild(s);
-      for(var li=8;li>0;li-=1.5){
-        var ly=h*li/10;
-        [-1,1].forEach(function(dir){
-          var lf=document.createElementNS(NS,'ellipse');
-          lf.setAttribute('cx',(cx+dir*w*.22).toString());lf.setAttribute('cy',(ly-4).toString());
-          lf.setAttribute('rx',(w*.18).toString());lf.setAttribute('ry','5');
-          lf.setAttribute('fill',c);lf.setAttribute('opacity','0.68');svg.appendChild(lf);
-        });
-      }
-    }},
-    {name:'moss',draw:function(svg,w,h,c){
-      var count=TIER==='low'?8:16;
-      for(var mi=0;mi<count;mi++){
-        var angle2=-Math.PI/2+(Math.random()-.5)*Math.PI*.9,len2=h*(.35+Math.random()*.55);
-        var sx=w*.1+Math.random()*w*.8,ex=sx+Math.cos(angle2)*len2*.5+(Math.random()-.5)*w*.2,ey=h-Math.sin(-angle2)*len2;
-        var br2=document.createElementNS(NS,'path');
-        br2.setAttribute('d','M'+sx+' '+h+' Q'+((sx+ex)/2+(Math.random()-.5)*w*.3)+' '+(h-len2*.5)+' '+ex+' '+ey);
-        br2.setAttribute('stroke',c);br2.setAttribute('stroke-width',(.8+Math.random()*.8).toString());br2.setAttribute('fill','none');br2.setAttribute('opacity',(.4+Math.random()*.35).toString());svg.appendChild(br2);
-      }
-    }}
-  ];
-
-  var allPlacements=[
-    {l:'1%', t:'val',    w:32,h:145,sa:'-3deg', sb:'2.5deg',d:'6.5s',dl:'0s',  c:'rgba(68,105,62,.62)'},
-    {l:'5%', t:'moss',   w:45,h:55, sa:'-2deg', sb:'2deg',  d:'9s',  dl:'.5s', c:'rgba(55,90,45,.55)'},
-    {l:'10%',t:'sword',  w:52,h:200,sa:'-2deg', sb:'2.5deg',d:'8s',  dl:'1s',  c:'rgba(72,110,60,.65)'},
-    {l:'17%',t:'bacopa', w:28,h:130,sa:'-4deg', sb:'4deg',  d:'7s',  dl:'2s',  c:'rgba(62,100,52,.55)'},
-    {l:'23%',t:'val',    w:26,h:165,sa:'-3deg', sb:'3deg',  d:'9.5s',dl:'.8s', c:'rgba(58,95,48,.58)'},
-    {l:'29%',t:'cabomba',w:50,h:180,sa:'-2.5deg',sb:'2deg', d:'7.5s',dl:'1.5s',c:'rgba(78,120,65,.6)'},
-    {l:'37%',t:'moss',   w:55,h:60, sa:'-2deg', sb:'2.5deg',d:'10s', dl:'3s',  c:'rgba(50,85,40,.5)'},
-    {l:'43%',t:'sword',  w:46,h:185,sa:'-2deg', sb:'2.5deg',d:'7s',  dl:'1.1s',c:'rgba(70,112,58,.62)'},
-    {l:'51%',t:'bacopa', w:30,h:115,sa:'-3.5deg',sb:'3.5deg',d:'8s', dl:'2.2s',c:'rgba(62,100,50,.52)'},
-    {l:'57%',t:'sword',  w:46,h:185,sa:'-2deg', sb:'2.5deg',d:'7s',  dl:'1.1s',c:'rgba(70,112,58,.62)'},
-    {l:'64%',t:'val',    w:24,h:140,sa:'-3deg', sb:'3.5deg',d:'9s',  dl:'.6s', c:'rgba(60,98,50,.56)'},
-    {l:'70%',t:'cabomba',w:44,h:170,sa:'-3deg', sb:'2.5deg',d:'8.5s',dl:'1.8s',c:'rgba(75,115,62,.6)'},
-    {l:'77%',t:'moss',   w:48,h:52, sa:'-2deg', sb:'2deg',  d:'11s', dl:'2.8s',c:'rgba(52,88,42,.5)'},
-    {l:'82%',t:'sword',  w:50,h:195,sa:'-2deg', sb:'2deg',  d:'7.5s',dl:'.4s', c:'rgba(72,110,60,.64)'},
-    {l:'88%',t:'val',    w:28,h:150,sa:'-3.5deg',sb:'3deg', d:'8s',  dl:'1.4s',c:'rgba(64,102,54,.58)'},
-    {l:'93%',t:'bacopa', w:26,h:120,sa:'-4deg', sb:'4deg',  d:'9.5s',dl:'2.5s',c:'rgba(60,96,48,.5)'},
-    {l:'97%',t:'moss',   w:42,h:48, sa:'-2deg', sb:'2.5deg',d:'10s', dl:'0s',  c:'rgba(55,88,44,.48)'}
-  ];
-
-  var chosen=allPlacements.slice(0,CFG.plants),pi=0;
-  function plantBatch(){
-    for(var b=0;b<3&&pi<chosen.length;b++,pi++){
-      var pd=chosen[pi],type=plantTypes.find(function(t){return t.name===pd.t;})||plantTypes[0];
-      var wrap=document.createElement('div');wrap.className='plant';
-      wrap.style.cssText='left:'+pd.l+';--sa:'+pd.sa+';--sb:'+pd.sb+';animation:psway '+pd.d+' ease-in-out '+pd.dl+' infinite';
-      var svg=document.createElementNS(NS,'svg');
-      svg.setAttribute('width',pd.w);svg.setAttribute('height',pd.h);svg.setAttribute('viewBox','0 0 '+pd.w+' '+pd.h);svg.setAttribute('fill','none');
-      type.draw(svg,pd.w,pd.h,pd.c);wrap.appendChild(svg);pc.appendChild(wrap);
-    }
-    if(pi<chosen.length)setTimeout(plantBatch,80);
-  }
-  setTimeout(plantBatch,200);
-
-  setTimeout(function(){
-    var ptc=document.getElementById('particles');
-    for(var i=0;i<CFG.motes;i++){
-      var m=document.createElement('div');m.className='mote';
-      var sz=3+Math.random()*5,lt=Math.random()*100,bt=40+Math.random()*60;
-      var dur=8+Math.random()*14,dl=Math.random()*20,rise=-(280+Math.random()*480),drift=(Math.random()-.5)*55,op=.3+Math.random()*.5;
-      m.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+lt+'%;bottom:'+bt+'px;--mo:'+op+';--mr:'+rise+'px;--md:'+drift+'px;animation-duration:'+dur+'s;animation-delay:'+dl+'s';
-      ptc.appendChild(m);
-    }
-    for(var j=0;j<CFG.sparks;j++){
-      var s=document.createElement('div');s.className='spk';
-      var ssz=1+Math.random()*2.2,slt=Math.random()*100,stp=10+Math.random()*75;
-      var sdur=6+Math.random()*12,sdl=Math.random()*10,sxv=((Math.random()-.5)*16)+'px',syv=((Math.random()-.5)*12)+'px';
-      s.style.cssText='width:'+ssz+'px;height:'+ssz+'px;left:'+slt+'%;top:'+stp+'%;--sx:'+sxv+';--sy:'+syv+';animation-duration:'+sdur+'s;animation-delay:'+sdl+'s';
-      ptc.appendChild(s);
-    }
-  },800);
-})();
-
-/* ── DRIFTWOOD — mid/high only, lazy ── */
-if(TIER!=='low'){
-  setTimeout(function(){
-    var dl=document.getElementById('driftwood-layer');
-    var NS='http://www.w3.org/2000/svg';
-    function mkEl(tag,attrs){var e=document.createElementNS(NS,tag);Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});return e;}
-    function path(d,fill,stroke,sw){var e=mkEl('path',{d:d});if(fill&&fill!=='none')e.setAttribute('fill',fill);else e.setAttribute('fill','none');if(stroke){e.setAttribute('stroke',stroke);e.setAttribute('stroke-width',sw||2);}e.setAttribute('stroke-linecap','round');return e;}
-    (function(){
-      var w=300,h=140,svg=mkEl('svg',{width:w,height:h,viewBox:'0 0 '+w+' '+h});
-      svg.appendChild(path('M8,'+h+' C25,'+Math.round(h*.72)+' 70,'+Math.round(h*.48)+' 130,'+Math.round(h*.38)+' C185,'+Math.round(h*.3)+' 248,'+Math.round(h*.33)+' 292,'+Math.round(h*.4),'none','rgba(52,32,12,.7)',9));
-      svg.appendChild(path('M130,'+Math.round(h*.38)+' C148,'+Math.round(h*.2)+' 188,'+Math.round(h*.1)+' 215,'+Math.round(h*.06),'none','rgba(46,28,10,.58)',5.5));
-      svg.appendChild(path('M195,'+Math.round(h*.32)+' C215,'+Math.round(h*.44)+' 252,'+Math.round(h*.5)+' 294,'+Math.round(h*.54),'none','rgba(44,26,8,.52)',4));
-      [[30,h*.68,14,6],[55,h*.6,10,5],[80,h*.54,12,5]].forEach(function(r){svg.appendChild(mkEl('ellipse',{cx:r[0],cy:Math.round(r[1]),rx:r[2],ry:r[3],fill:'rgba(42,62,28,.38)'}));});
-      var wrap=document.createElement('div');wrap.style.cssText='position:absolute;left:2%;bottom:0;opacity:.5';wrap.appendChild(svg);dl.appendChild(wrap);
-    })();
-    (function(){
-      var w=270,h=88,svg=mkEl('svg',{width:w,height:h,viewBox:'0 0 '+w+' '+h});
-      svg.appendChild(path('M0,'+Math.round(h*.62)+' C38,'+Math.round(h*.46)+' 95,'+Math.round(h*.38)+' 158,'+Math.round(h*.42)+' C208,'+Math.round(h*.46)+' 255,'+Math.round(h*.56)+' 268,'+Math.round(h*.66),'none','rgba(48,30,10,.65)',13));
-      svg.appendChild(path('M95,'+Math.round(h*.38)+' C100,'+Math.round(h*.2)+' 112,'+Math.round(h*.1)+' 120,'+Math.round(h*.06),'none','rgba(44,26,8,.52)',6));
-      [[60,h*.5,11,5],[95,h*.42,9,4],[130,h*.44,10,5]].forEach(function(r){svg.appendChild(mkEl('ellipse',{cx:r[0],cy:Math.round(r[1]),rx:r[2],ry:r[3],fill:'rgba(40,60,25,.34)'}));});
-      var wrap=document.createElement('div');wrap.style.cssText='position:absolute;left:58%;bottom:0;opacity:.45';wrap.appendChild(svg);dl.appendChild(wrap);
-    })();
-  },1200);
-}
-
-/* ── CURSOR ── */
-var cd=document.getElementById('cd'),cr=document.getElementById('cr');
-var mx=0,my=0,rx=0,ry=0;
-var hasHover=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-if(hasHover){
-  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
-  (function cl(){if(!paused){rx+=(mx-rx)*.09;ry+=(my-ry)*.09;cr.style.left=rx+'px';cr.style.top=ry+'px';}requestAnimationFrame(cl);})();
-  document.querySelectorAll('a,button,.ac,.qi,.sl2,.spp,.pc').forEach(function(el){
-    el.addEventListener('mouseenter',function(){document.body.classList.add('hov');});
-    el.addEventListener('mouseleave',function(){document.body.classList.remove('hov');});
-  });
-}
-
-/* ── FAUNA — SINGLE RAF LOOP ── */
-(function(){
-  var fl=document.getElementById('fish-layer');
-  var NS='http://www.w3.org/2000/svg';
-  function W(){return window.innerWidth;}
-  function H(){return window.innerHeight;}
-  function mk(tag,attrs){var e=document.createElementNS(NS,tag);Object.keys(attrs).forEach(function(k){e.setAttribute(k,attrs[k]);});return e;}
-
-  function buildAltum(s){
-    s.appendChild(mk('path',{d:'M2,38 C8,28 16,12 24,2 C32,12 42,28 48,38 C42,48 32,64 24,74 C16,64 8,48 2,38Z',fill:'rgba(182,200,188,.8)'}));
-    s.appendChild(mk('path',{d:'M16,7 C14,18 14,40 15,58 C16,64 18,70 20,72 C18,70 16,64 16,58 C15,40 16,18 18,7Z',fill:'rgba(35,45,38,.58)'}));
-    s.appendChild(mk('path',{d:'M24,3 C22,12 22,36 23,56 C24,66 24,72 24,74 C24,72 24,66 25,56 C26,36 26,12 24,3Z',fill:'rgba(35,45,38,.44)'}));
-    s.appendChild(mk('path',{d:'M32,7 C30,18 30,40 31,58 C32,64 30,70 28,72 C30,70 32,64 32,58 C31,40 32,18 34,7Z',fill:'rgba(35,45,38,.38)'}));
-    s.appendChild(mk('path',{d:'M2,38 C-5,30 -9,22 -4,16 C0,22 4,30 8,34Z',fill:'rgba(162,184,170,.62)'}));
-    s.appendChild(mk('path',{d:'M2,38 C-5,46 -9,54 -4,60 C0,54 4,46 8,42Z',fill:'rgba(162,184,170,.58)'}));
-    s.appendChild(mk('circle',{cx:'40',cy:'34',r:'3.2',fill:'rgba(255,255,255,.9)'}));
-    s.appendChild(mk('circle',{cx:'40.4',cy:'34',r:'1.6',fill:'rgba(6,10,6,.92)'}));
-  }
-  function buildCongo(s){
-    s.appendChild(mk('path',{d:'M0,5 Q5,8 0,11 L8,8Z',fill:'rgba(70,55,110,.8)'}));
-    s.appendChild(mk('path',{d:'M8,8 C8,3 17,0 27,1 C35,2 40,4 41,8 C40,12 35,14 27,15 C17,16 8,13 8,8Z',fill:'rgba(75,58,118,.82)'}));
-    s.appendChild(mk('path',{d:'M9,6 C17,4 27,4 37,7 C39,8 40,9 40,9 C38,8 27,6 17,7 C13,7 10,7 9,8Z',fill:'rgba(110,90,200,.72)'}));
-    s.appendChild(mk('circle',{cx:'36',cy:'7',r:'2',fill:'rgba(255,255,255,.9)'}));
-    s.appendChild(mk('circle',{cx:'36.2',cy:'7',r:'1',fill:'rgba(5,4,8,.92)'}));
-  }
-  function buildCardinal(s){
-    s.appendChild(mk('path',{d:'M0,3 Q4,6 0,9 L6,6Z',fill:'rgba(125,55,42,.85)'}));
-    s.appendChild(mk('path',{d:'M6,6 C6,2 13,0 22,1 C29,2 34,4 35,6 C34,8 29,10 22,11 C13,12 6,10 6,6Z',fill:'rgba(132,58,44,.85)'}));
-    s.appendChild(mk('path',{d:'M7,2 C13,0 22,0 30,3 C32,4 34,5 34,5 C32,4 22,2 13,2Z',fill:'rgba(25,120,215,.85)'}));
-    s.appendChild(mk('path',{d:'M7,8 C13,9 22,10 30,9 L30,11 C22,12 13,11 7,10Z',fill:'rgba(210,42,30,.7)'}));
-    s.appendChild(mk('circle',{cx:'30',cy:'5',r:'1.7',fill:'rgba(255,255,255,.9)'}));
-    s.appendChild(mk('circle',{cx:'30.2',cy:'5',r:'.85',fill:'rgba(4,4,4,.92)'}));
-  }
-  function buildGeo(s){
-    s.appendChild(mk('path',{d:'M2,12 Q9,18 2,24 L13,18Z',fill:'rgba(38,140,130,.82)'}));
-    s.appendChild(mk('path',{d:'M13,18 C13,5 24,1 36,1 C50,1 58,8 58,18 C58,28 50,35 36,35 C24,35 13,31 13,18Z',fill:'rgba(42,155,140,.82)'}));
-    [[22,8,3],[30,6,2.5],[38,9,3],[26,14,2],[34,13,3.5]].forEach(function(sp){s.appendChild(mk('circle',{cx:sp[0],cy:sp[1],r:sp[2],fill:'rgba(80,220,200,.45)'}));});
-    s.appendChild(mk('circle',{cx:'48',cy:'10',r:'3.8',fill:'rgba(255,255,255,.88)'}));
-    s.appendChild(mk('circle',{cx:'48.5',cy:'10',r:'1.9',fill:'rgba(5,15,10,.92)'}));
-  }
-  function buildOscar(s){
-    s.appendChild(mk('path',{d:'M2,14 Q9,22 2,30 L13,22Z',fill:'rgba(175,78,18,.85)'}));
-    s.appendChild(mk('path',{d:'M13,22 C13,7 24,2 34,2 C48,2 60,10 60,22 C60,34 48,42 34,42 C24,42 13,37 13,22Z',fill:'rgba(185,85,20,.85)'}));
-    s.appendChild(mk('path',{d:'M20,4 C18,12 20,22 18,34',stroke:'rgba(18,6,1,.42)','stroke-width':'5',fill:'none'}));
-    s.appendChild(mk('path',{d:'M32,3 C30,13 32,23 30,37',stroke:'rgba(18,6,1,.38)','stroke-width':'4',fill:'none'}));
-    s.appendChild(mk('circle',{cx:'50',cy:'13',r:'4',fill:'rgba(255,255,255,.88)'}));
-    s.appendChild(mk('circle',{cx:'50.5',cy:'13',r:'2',fill:'rgba(8,4,0,.92)'}));
-  }
-  function buildShrimp(s){
-    s.appendChild(mk('path',{d:'M22,8 C26,5 32,5 36,8 C38,10 38,14 36,16 C33,18 28,18 24,16 C21,14 20,10 22,8Z',fill:'rgba(210,68,55,.78)'}));
-    s.appendChild(mk('path',{d:'M24,12 C22,10 19,9 16,10 C14,11 13,13 14,15 C16,16 20,16 23,15 C24,14 25,13 24,12Z',fill:'rgba(205,65,52,.8)'}));
-    s.appendChild(mk('path',{d:'M9,11 C7,9 5,9 3,11 C2,12 2,14 3,15 C5,16 8,16 10,15 C11,14 11,12 9,11Z',fill:'rgba(195,60,48,.78)'}));
-    s.appendChild(mk('path',{d:'M8,10 C12,8 18,8 24,9 C28,10 32,10 35,10',stroke:'rgba(240,90,70,.4)','stroke-width':'1.5',fill:'none'}));
-    s.appendChild(mk('circle',{cx:'36',cy:'8',r:'2',fill:'rgba(255,255,255,.88)'}));
-    s.appendChild(mk('circle',{cx:'36.3',cy:'8',r:'1',fill:'rgba(20,5,5,.92)'}));
-  }
-  function buildSnail(s){
-    s.appendChild(mk('path',{d:'M14,10 C14,4 18,1 22,3 C26,5 28,10 26,15 C24,20 18,22 14,20 C10,18 8,13 10,9 C12,5 16,4 18,7 C20,10 18,14 15,14Z',fill:'rgba(100,60,30,.72)',stroke:'rgba(70,40,18,.45)','stroke-width':'1'}));
-    s.appendChild(mk('path',{d:'M8,18 C10,20 16,22 22,21 C28,20 32,18 30,16 C26,15 14,16 8,16Z',fill:'rgba(120,100,60,.58)'}));
-    s.appendChild(mk('circle',{cx:'28',cy:'10',r:'1',fill:'rgba(30,20,5,.75)'}));
-  }
-
-  var entities=[];
-
-  function makeSchool(cfg){
-    var vW=W(),vH=H(),goRight=Math.random()>.5;
-    var baseY=vH*(cfg.yMin+Math.random()*(cfg.yMax-cfg.yMin));
-    var speed=cfg.speedMin+Math.random()*(cfg.speedMax-cfg.speedMin);
-    var schoolX=goRight?-(cfg.spreadX+120):vW+(cfg.spreadX+120);
-    var members=[];
-    for(var i=0;i<cfg.count;i++){
-      var ox=(Math.random()-.5)*cfg.spreadX*2,oy=(Math.random()-.5)*cfg.spreadY*2;
-      var sc=cfg.scaleMin+Math.random()*(cfg.scaleMax-cfg.scaleMin);
-      var svg=document.createElementNS(NS,'svg');
-      svg.setAttribute('width',cfg.w);svg.setAttribute('height',cfg.h);svg.setAttribute('viewBox','0 0 '+cfg.w+' '+cfg.h);
-      cfg.build(svg);
-      var wrap=document.createElement('div');wrap.className='fish';
-      wrap.style.cssText='left:'+Math.round(schoolX+ox)+'px;top:'+Math.round(baseY+oy)+'px;transform:scaleX('+(goRight?1:-1)+') scale('+sc+');transform-origin:center center;opacity:0;transition:opacity 1s';
-      wrap.appendChild(svg);fl.appendChild(wrap);
-      (function(w,d){setTimeout(function(){w.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},250+d*55);})(wrap,i);
-      members.push({el:wrap,ox:ox,oy:oy,wob:cfg.wob*(0.7+Math.random()*.6),wobF:cfg.wobF*(0.8+Math.random()*.4),t:Math.random()*Math.PI*2});
-    }
-    return{type:'school',members:members,x:schoolX,baseY:baseY,goRight:goRight,speed:speed,spreadX:cfg.spreadX,cfg:cfg};
-  }
-
-  function makeSolo(cfg){
-    var vW=W(),vH=H(),goRight=Math.random()>.5;
-    var baseY=vH*(cfg.yMin+Math.random()*(cfg.yMax-cfg.yMin));
-    var speed=cfg.speedMin+Math.random()*(cfg.speedMax-cfg.speedMin);
-    var sc=cfg.scaleMin+Math.random()*(cfg.scaleMax-cfg.scaleMin);
-    var startX=goRight?-(cfg.w*sc+80):vW+(cfg.w*sc+80);
-    var svg=document.createElementNS(NS,'svg');
-    svg.setAttribute('width',cfg.w);svg.setAttribute('height',cfg.h);svg.setAttribute('viewBox','0 0 '+cfg.w+' '+cfg.h);
-    cfg.build(svg);
-    var wrap=document.createElement('div');wrap.className='fish';
-    wrap.style.cssText='left:'+Math.round(startX)+'px;top:'+Math.round(baseY)+'px;transform:scaleX('+(goRight?1:-1)+') scale('+sc+');transform-origin:center center;opacity:0;transition:opacity 1.2s';
-    wrap.appendChild(svg);fl.appendChild(wrap);
-    setTimeout(function(){wrap.style.opacity=(cfg.opMin+Math.random()*(cfg.opMax-cfg.opMin)).toFixed(2);},150);
-    return{type:'solo',el:wrap,x:startX,baseY:baseY,goRight:goRight,speed:speed,bodyW:cfg.w*sc,wob:cfg.wob*(0.8+Math.random()*.4),wobF:cfg.wobF*(0.8+Math.random()*.4),t:Math.random()*Math.PI*2,cfg:cfg};
-  }
-
-  function makeShrimp(){
-    var vW=W(),vH=H(),x=vW*.05+Math.random()*vW*.88,baseY=vH*(0.72+Math.random()*.14);
-    var sc=0.55+Math.random()*.3,goRight=Math.random()>.5;
-    var svg=document.createElementNS(NS,'svg');svg.setAttribute('width','48');svg.setAttribute('height','26');svg.setAttribute('viewBox','-6 0 54 26');
-    buildShrimp(svg);
-    var wrap=document.createElement('div');wrap.className='fish';
-    wrap.style.cssText='left:'+Math.round(x)+'px;top:'+Math.round(baseY)+'px;transform:scaleX('+(goRight?1:-1)+') scale('+sc+');transform-origin:center center;opacity:0;transition:opacity 1s,left 1.5s ease-in-out,top 1.5s ease-in-out';
-    wrap.appendChild(svg);fl.appendChild(wrap);
-    setTimeout(function(){wrap.style.opacity=(0.5+Math.random()*.28).toFixed(2);},200);
-    return{type:'shrimp',el:wrap,x:x,baseY:baseY,dir:goRight?1:-1,sc:sc,nextStep:Date.now()+2000+Math.random()*3000,lifetime:Date.now()+35000+Math.random()*25000};
-  }
-
-  function makeSnail(){
-    var vW=W(),vH=H(),x=(Math.random()<.5)?vW*.05+Math.random()*vW*.25:vW*.55+Math.random()*vW*.3;
-    var baseY=vH*(0.74+Math.random()*.1),sc=0.7+Math.random()*.4,goRight=Math.random()>.5;
-    var svg=document.createElementNS(NS,'svg');svg.setAttribute('width','34');svg.setAttribute('height','24');svg.setAttribute('viewBox','0 0 34 24');
-    buildSnail(svg);
-    var wrap=document.createElement('div');wrap.className='fish';
-    wrap.style.cssText='left:'+Math.round(x)+'px;top:'+Math.round(baseY)+'px;transform:scaleX('+(goRight?1:-1)+') scale('+sc+');transform-origin:center center;opacity:0;transition:left 4s ease-in-out,top 4s ease-in-out,opacity 1.5s';
-    wrap.appendChild(svg);fl.appendChild(wrap);
-    setTimeout(function(){wrap.style.opacity=(0.45+Math.random()*.25).toFixed(2);},400);
-    return{type:'snail',el:wrap,x:x,baseY:baseY,dir:goRight?1:-1,sc:sc,nextStep:Date.now()+4000+Math.random()*5000,lifetime:Date.now()+60000+Math.random()*30000};
-  }
-
-  var altumCfg={w:54,h:82,build:buildAltum,count:TIER==='low'?3:5,spreadX:200,spreadY:140,speedMin:5,speedMax:9,yMin:.06,yMax:.44,scaleMin:.55,scaleMax:.78,opMin:.44,opMax:.7,wob:1.0,wobF:0.22};
-  var congoCfg={w:42,h:16,build:buildCongo,count:TIER==='low'?8:TIER==='mid'?12:16,spreadX:105,spreadY:55,speedMin:24,speedMax:36,yMin:.12,yMax:.6,scaleMin:.58,scaleMax:.8,opMin:.52,opMax:.78,wob:1.6,wobF:0.48};
-  var cardinalCfg={w:36,h:12,build:buildCardinal,count:TIER==='low'?10:TIER==='mid'?16:22,spreadX:115,spreadY:58,speedMin:30,speedMax:45,yMin:.15,yMax:.65,scaleMin:.55,scaleMax:.75,opMin:.55,opMax:.82,wob:1.4,wobF:0.55};
-  var geoCfg={w:60,h:36,build:buildGeo,yMin:.1,yMax:.55,speedMin:12,speedMax:20,scaleMin:.7,scaleMax:.95,opMin:.58,opMax:.8,wob:1.2,wobF:0.32};
-  var oscarCfg={w:62,h:44,build:buildOscar,yMin:.08,yMax:.5,speedMin:10,speedMax:18,scaleMin:.68,scaleMax:.9,opMin:.55,opMax:.78,wob:1.0,wobF:0.28};
-
-  /* SINGLE RAF TICK */
-  var lastTs=null;
-  function tick(ts){
-    requestAnimationFrame(tick);
-    if(paused)return;
-    if(!lastTs){lastTs=ts;return;}
-    var dt=Math.min((ts-lastTs)/1000,.05);
-    lastTs=ts;
-    var vW=W(),vH=H(),now=Date.now();
-
-    entities=entities.filter(function(e){
-      if(e.type==='school'){
-        e.x+=(e.goRight?1:-1)*e.speed*dt;
-        e.members.forEach(function(m){
-          m.t+=dt;
-          var y=Math.max(vH*.02,Math.min(vH*.80,e.baseY+m.oy+Math.sin(m.t*m.wobF)*m.wob));
-          m.el.style.left=Math.round(e.x+m.ox)+'px';m.el.style.top=Math.round(y)+'px';
-        });
-        var edge=e.spreadX+140;
-        if(e.goRight?e.x>(vW+edge):e.x<(-edge)){
-          e.members.forEach(function(m){m.el.style.opacity='0';setTimeout(function(){m.el.parentNode&&m.el.parentNode.removeChild(m.el);},1000);});
-          setTimeout(function(){entities.push(makeSchool(e.cfg));},10000+Math.random()*12000);
-          return false;
-        }
-        return true;
-      }
-      if(e.type==='solo'){
-        e.t+=dt;e.x+=(e.goRight?1:-1)*e.speed*dt;
-        var y=Math.max(vH*.02,Math.min(vH*.80,e.baseY+Math.sin(e.t*e.wobF)*e.wob));
-        e.el.style.left=Math.round(e.x)+'px';e.el.style.top=Math.round(y)+'px';
-        if(e.goRight?e.x>(vW+e.bodyW+80):e.x<(-e.bodyW-80)){
-          var el2=e.el,cfg2=e.cfg;el2.style.opacity='0';
-          setTimeout(function(){el2.parentNode&&el2.parentNode.removeChild(el2);setTimeout(function(){entities.push(makeSolo(cfg2));},8000+Math.random()*10000);},1000);
-          return false;
-        }
-        return true;
-      }
-      if(e.type==='shrimp'){
-        if(now>=e.nextStep){
-          var move=(Math.random()<.75)?(e.dir*(4+Math.random()*12)):(e.dir*(-2-Math.random()*4));
-          e.x+=move;
-          if(e.x<20){e.x=20;e.dir=1;}if(e.x>vW-20){e.x=vW-20;e.dir=-1;}
-          var ny=e.baseY+(Math.random()-.5)*8;
-          e.el.style.left=Math.round(e.x)+'px';e.el.style.top=Math.round(ny)+'px';
-          e.el.style.transform='scaleX('+(e.dir>0?1:-1)+') scale('+e.sc+')';
-          e.nextStep=now+1800+Math.random()*3500;
-        }
-        if(now>=e.lifetime){
-          e.el.style.opacity='0';
-          setTimeout(function(){e.el.parentNode&&e.el.parentNode.removeChild(e.el);setTimeout(makeShrimp,5000+Math.random()*8000);},1200);
-          return false;
-        }
-        return true;
-      }
-      if(e.type==='snail'){
-        if(now>=e.nextStep){
-          e.x+=e.dir*(1.5+Math.random()*3);
-          if(e.x<10){e.x=10;e.dir=1;}if(e.x>vW-10){e.x=vW-10;e.dir=-1;}
-          var sny=e.baseY+(Math.random()-.5)*6;
-          e.el.style.left=Math.round(e.x)+'px';e.el.style.top=Math.round(sny)+'px';
-          e.nextStep=now+3500+Math.random()*5000;
-        }
-        if(now>=e.lifetime){
-          e.el.style.opacity='0';
-          setTimeout(function(){e.el.parentNode&&e.el.parentNode.removeChild(e.el);setTimeout(makeSnail,20000+Math.random()*30000);},2000);
-          return false;
-        }
-        return true;
-      }
-      return true;
-    });
-  }
-
-  setTimeout(function(){entities.push(makeSchool(altumCfg));},1000);
-  setTimeout(function(){entities.push(makeSolo(geoCfg));},6000);
-  if(TIER!=='low'){
-    setTimeout(function(){entities.push(makeSchool(cardinalCfg));},12000);
-    setTimeout(function(){entities.push(makeSchool(congoCfg));},20000);
-  }
-  setTimeout(function(){entities.push(makeSolo(oscarCfg));},28000);
-  for(var si=0;si<CFG.shrimpMax;si++){(function(i){setTimeout(function(){entities.push(makeShrimp());},2500+i*6000);})(si);}
-  if(CFG.snailMax>0)setTimeout(function(){entities.push(makeSnail());},6000);
-
-  requestAnimationFrame(tick);
-})();
-
-
-
-/* ── MOBILE NAV ── */
-var bg=document.getElementById('burger'),nm=document.getElementById('nmob');
-bg.addEventListener('click',function(){var o=bg.classList.toggle('open');nm.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);nm.setAttribute('aria-hidden',!o);});
-function cm(){bg.classList.remove('open');nm.classList.remove('open');bg.setAttribute('aria-expanded','false');nm.setAttribute('aria-hidden','true');}
-window.addEventListener('resize',function(){if(window.innerWidth>960)cm();},{passive:true});
-
-/* ── PAGE NAV ── */
-var pageMap={
-  '':        'home',
-  '/':       'home',
-  '/ara':    'ara',
-  '/rhyssa': 'rhyssa',
-  '/about':  'about',
-  '/privacy':'privacy',
-  '/terms':  'terms',
-  '/notes':  'notes'
-};
-
-function go(id,push){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  var t=document.getElementById('pg-'+id);if(!t)return;
-  t.classList.add('active');window.scrollTo({top:0,behavior:'auto'});cm();
-  setTimeout(function(){obs(t);},80);
-
-  /* Update URL */
-  var path=id==='home'?'/':'/'+id;
-  if(push!==false)history.pushState({page:id},'',path);
-
-  /* Update canonical */
-  var can=document.querySelector('link[rel="canonical"]');
-  if(can)can.setAttribute('href','https://aquaticrhythm.com'+path);
-
-  /* GA4 track page */
-  if(typeof gtag!=='undefined'){
-    gtag('event','page_view',{page_path:path,page_title:id});
-  }
-}
-
-document.addEventListener('click',function(e){
-  var link=e.target.closest('[data-page]');if(!link)return;
-  e.preventDefault();go(link.getAttribute('data-page'));
-});
-
-/* Handle back/forward button */
-window.addEventListener('popstate',function(e){
-  var id=(e.state&&e.state.page)?e.state.page:pageMap[location.pathname]||'home';
-  go(id,false);
-});
-
-/* Handle direct URL on load — including 404 redirect */
-(function(){
-  /* Semak redirect dari 404.html */
-  var redirect=sessionStorage.getItem('spa_redirect');
-  if(redirect){
-    sessionStorage.removeItem('spa_redirect');
-    history.replaceState(null,'',redirect);
-  }
-  var id=pageMap[location.pathname]||'home';
-  var active=document.querySelector('.page.active');
-  if(active)active.classList.remove('active');
-  var t=document.getElementById('pg-'+id);
-  if(t){
-    t.classList.add('active');
-    try{history.replaceState({page:id},'',location.pathname);}catch(e){}
-    var path=id==='home'?'/':'/'+id;
-    var can=document.querySelector('link[rel="canonical"]');
-    if(can)can.setAttribute('href','https://aquaticrhythm.com'+path);
-    if(typeof gtag!=='undefined'){
-      gtag('event','page_view',{page_path:path,page_title:id});
-    }
-  }
-})();
-
-/* ── SCROLL REVEAL ── */
-var currentObserver=null;
-function obs(page){
-  page.querySelectorAll('.sr').forEach(function(el){el.classList.remove('in');});
-  if(currentObserver)currentObserver.disconnect();
-  currentObserver=new IntersectionObserver(function(entries,ob){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ob.unobserve(e.target);}});
-  },{threshold:.07,rootMargin:'0px 0px -24px 0px'});
-  page.querySelectorAll('.sr').forEach(function(el){currentObserver.observe(el);});
-}
-document.addEventListener('DOMContentLoaded',function(){
-  obs(document.querySelector('.page.active'));
-});
-</script>
-</body>
-</html>
+  </html>
