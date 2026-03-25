@@ -103,7 +103,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 /* ── OVERLAYS ── */
 .ov{position:fixed;inset:0;z-index:200;background:rgba(3,11,9,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;transition:opacity .4s;overflow-y:auto}
 .ov.hide{opacity:0;pointer-events:none}
-.oc{max-width:400px;padding:2.2rem;text-align:center;margin:1rem auto;border:1px solid rgba(139,189,210,.15);background:rgba(6,16,13,.96)}
+.oc{max-width:420px;padding:2rem 1.8rem;text-align:center;margin:1rem auto;border:1px solid rgba(139,189,210,.15);background:rgba(6,16,13,.98)}
 .oi{font-size:2.2rem;display:block;margin-bottom:.65rem}
 .ot{font-family:var(--serif);font-weight:300;font-size:1.6rem;color:rgba(255,255,255,.9);margin-bottom:.5rem;line-height:1.2}
 .om{font-family:var(--serif);font-style:italic;font-size:.86rem;color:rgba(255,255,255,.42);line-height:1.78;margin-bottom:1.4rem}
@@ -165,9 +165,11 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   #bbar{order:3;flex-shrink:0}
   .ah,.t-status,.t-label{display:none}
   .ab{padding:.42rem .2rem}
-  .oc{padding:1.6rem 1.2rem}
-  .setup-options{gap:.35rem}
-  .sopt{min-width:68px;padding:.5rem .3rem}
+  .oc{padding:1.4rem 1rem;width:calc(100vw - 2rem)}
+  .setup-options{gap:.3rem}
+  .sopt{min-width:60px;padding:.45rem .25rem}
+  .setup-note,.setup-warn,.expected-box{padding:.55rem .7rem}
+  .setup-note p,.setup-warn p,.expected-box p{font-size:.68rem}
 }
 </style>
 </head>
@@ -292,6 +294,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       <span class="t-status" id="t-status">Setting up</span>
     </div>
     <div class="tb-right">
+      <a href="/articles/new-tank-syndrome" class="btn-sm" style="text-decoration:none">← Article</a>
       <button class="btn-sm" id="btn-reset" title="Restart">↺</button>
       <button class="btn-sm btn-pp" id="btn-pp">⏸ Pause</button>
     </div>
@@ -395,7 +398,7 @@ var S = {
   fishless:true
 };
 
-var TICK_MS=7000,SUB_MS=150,subSteps=TICK_MS/SUB_MS,subCount=0,running=false,subTimer=null;
+var TICK_MS=7000,SUB_MS=200,subSteps=35,subCount=0,running=false,subTimer=null;
 
 /* Time phases */
 var phases=[
