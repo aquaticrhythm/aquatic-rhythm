@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>New Tank Simulator — Aquatic Rhythm</title>
-<meta name="description" content="An interactive simulation of a new aquarium cycling. Make decisions and watch how the tank responds.">
+<meta name="description" content="An interactive simulation of the nitrogen cycle. Choose your setup, learn what to expect, and watch how the tank responds to your decisions.">
 <link rel="canonical" href="https://aquaticrhythm.com/articles/tank-simulator">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <meta name="theme-color" content="#041e28">
@@ -16,84 +16,45 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif;background:#020810;color:rgba(255,255,255,.88)}
+:root{--serif:'Cormorant Garamond',Georgia,serif;--accent:#3DD6E8}
 
-/* FULL VIEWPORT APP */
-#app{
-  display:grid;
-  grid-template-rows:auto 1fr auto;
-  height:100dvh;
-  max-width:900px;
-  margin:0 auto;
-  padding:0 clamp(.5rem,2vw,1.2rem);
-}
+/* ── APP GRID ── */
+#app{display:grid;grid-template-rows:auto 1fr auto;height:100dvh;max-width:900px;margin:0 auto;padding:0 clamp(.5rem,2vw,1.2rem)}
 
-/* TOP BAR */
-#topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.5rem 0 .42rem;
-  border-bottom:1px solid rgba(139,189,210,.1);
-  gap:.5rem;flex-shrink:0;
-}
+/* ── TOPBAR ── */
+#topbar{display:flex;align-items:center;justify-content:space-between;padding:.48rem 0 .4rem;border-bottom:1px solid rgba(139,189,210,.1);gap:.5rem;flex-shrink:0}
 .tb-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity .3s}
 .tb-logo:hover{opacity:.75}
-.tb-center{display:flex;align-items:center;gap:.5rem;flex:1;justify-content:center;min-width:0;overflow:hidden;flex-wrap:nowrap}
+.tb-center{display:flex;align-items:center;gap:.45rem;flex:1;justify-content:center;min-width:0;overflow:hidden}
 .t-icon{font-size:.9rem;line-height:1;flex-shrink:0}
-.t-label{font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);flex-shrink:0;display:none}
-.t-prog{width:48px;height:2px;background:rgba(255,255,255,.1);border-radius:1px;overflow:hidden;flex-shrink:0}
+.t-label{font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);flex-shrink:0}
+.t-prog{width:44px;height:2px;background:rgba(255,255,255,.1);border-radius:1px;overflow:hidden;flex-shrink:0}
 .t-prog-fill{height:100%;border-radius:1px;transition:width .3s ease,background .5s}
 .t-day{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.65);border:1px solid rgba(61,214,232,.2);padding:.2rem .55rem;border-radius:100px;white-space:nowrap;flex-shrink:0}
-.t-status{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.75rem;color:rgba(255,255,255,.3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
+.t-status{font-family:var(--serif);font-style:italic;font-size:.75rem;color:rgba(255,255,255,.28);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
 .tb-right{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
-.btn-sm{
-  font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;
-  background:rgba(6,16,13,.8);border:1px solid rgba(255,255,255,.1);
-  border-radius:100px;padding:.26rem .65rem;cursor:pointer;
-  transition:color .2s,border-color .2s;color:rgba(255,255,255,.38);
-}
+.btn-sm{font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;background:rgba(6,16,13,.8);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.26rem .65rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(255,255,255,.38)}
 .btn-sm:hover{color:rgba(255,255,255,.62);border-color:rgba(255,255,255,.22)}
 .btn-pp{color:rgba(255,255,255,.45)}
 .btn-pp:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
 .btn-pp.paused{color:rgba(80,200,120,.75);border-color:rgba(80,200,120,.25)}
 
-/* MIDDLE — 3 columns: params | tank | insight+log */
-#middle{
-  display:grid;
-  grid-template-columns:110px 1fr 145px;
-  gap:.5rem;
-  min-height:0;
-  padding:.4rem 0;
-}
+/* ── MIDDLE ── */
+#middle{display:grid;grid-template-columns:110px 1fr 150px;gap:.45rem;min-height:0;padding:.38rem 0}
 
-/* LEFT — PARAMS */
-#pleft{display:flex;flex-direction:column;gap:.35rem;justify-content:space-between}
-.pc{
-  background:rgba(6,16,13,.65);
-  border:1px solid rgba(139,189,210,.09);
-  padding:.5rem .6rem;
-  border-radius:2px;
-}
-.pc-lbl{
-  font-size:.44rem;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(255,255,255,.28);display:block;margin-bottom:.2rem;
-}
-.pc-val{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;font-weight:300;line-height:1;transition:color .5s;
-}
-.pc-unit{font-size:.46rem;color:rgba(255,255,255,.22);margin-left:.15rem}
-.pc-bar{height:2px;background:rgba(255,255,255,.07);border-radius:1px;margin-top:.28rem;overflow:hidden}
+/* LEFT PARAMS */
+#pleft{display:flex;flex-direction:column;gap:.32rem;justify-content:space-between}
+.pc{background:rgba(6,16,13,.65);border:1px solid rgba(139,189,210,.09);padding:.48rem .58rem;border-radius:2px}
+.pc-lbl{font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-bottom:.18rem}
+.pc-val{font-family:var(--serif);font-size:1.28rem;font-weight:300;line-height:1;transition:color .5s}
+.pc-unit{font-size:.44rem;color:rgba(255,255,255,.2);margin-left:.12rem}
+.pc-bar{height:2px;background:rgba(255,255,255,.07);border-radius:1px;margin-top:.26rem;overflow:hidden}
 .pc-fill{height:100%;border-radius:1px;transition:width .8s ease,background .8s}
 .safe{color:rgba(80,200,120,1)}.warn{color:rgba(200,160,40,1)}.danger{color:rgba(220,80,60,1)}
 
-/* CENTRE — TANK */
-#tcol{position:relative;min-height:0;display:flex;flex-direction:column;gap:.3rem}
-#tank{
-  flex:1;min-height:0;
-  border:1px solid rgba(139,189,210,.18);
-  border-top:2px solid rgba(139,189,210,.3);
-  border-radius:0 0 4px 4px;
-  overflow:hidden;position:relative;background:#041e28;
-}
+/* TANK */
+#tcol{position:relative;min-height:0;display:flex;flex-direction:column;gap:.28rem}
+#tank{flex:1;min-height:0;border:1px solid rgba(139,189,210,.18);border-top:2px solid rgba(139,189,210,.3);border-radius:0 0 4px 4px;overflow:hidden;position:relative;background:#041e28}
 #tsky{position:absolute;inset:0;transition:background 3s ease;pointer-events:none}
 #twater{position:absolute;inset:0;transition:background 2s ease;pointer-events:none}
 #tlight{position:absolute;top:0;left:0;right:0;height:55%;background:radial-gradient(ellipse at 50% 0%,rgba(60,200,220,.18) 0%,transparent 72%);transition:opacity 3s ease;pointer-events:none}
@@ -103,169 +64,212 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 #tplants{position:absolute;bottom:16px;left:0;right:0;pointer-events:none}
 #tfish{position:absolute;inset:0;pointer-events:none}
 #tstars{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 3s}
-#tmsg{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  text-align:center;pointer-events:none;transition:opacity .5s;
-}
-#tmsg span{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:.75rem;color:rgba(255,255,255,.45);
-  background:rgba(3,11,9,.72);padding:.3rem .8rem;border-radius:2px;
-  white-space:nowrap;
-}
+#tmsg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;transition:opacity .5s}
+#tmsg span{font-family:var(--serif);font-style:italic;font-size:.74rem;color:rgba(255,255,255,.42);background:rgba(3,11,9,.72);padding:.28rem .75rem;border-radius:2px;white-space:nowrap}
 
-/* SLIM PARAM BAR under tank */
-#param-bar{
-  display:flex;align-items:center;gap:.4rem;
-  padding:.22rem 0;flex-wrap:wrap;flex-shrink:0;
-}
-.pi{display:flex;align-items:center;gap:.28rem;flex:1;min-width:60px}
-.pi-lbl{font-size:.44rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap}
-.pi-val{font-size:.6rem;font-weight:300;font-family:'Cormorant Garamond',serif;transition:color .5s;min-width:26px}
-.pi-track{flex:1;height:2px;background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;min-width:18px}
+/* SLIM PARAM BAR */
+#param-bar{display:flex;align-items:center;gap:.38rem;flex-shrink:0;flex-wrap:wrap}
+.pi{display:flex;align-items:center;gap:.26rem;flex:1;min-width:58px}
+.pi-lbl{font-size:.42rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.24);white-space:nowrap}
+.pi-val{font-size:.58rem;font-weight:300;font-family:var(--serif);transition:color .5s;min-width:24px}
+.pi-track{flex:1;height:2px;background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;min-width:16px}
 .pi-fill{height:100%;border-radius:1px;transition:width .8s ease,background .8s}
-.pi-fish{display:flex;align-items:center;gap:.25rem}
-.pi-fish-lbl{font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2)}
-.pi-fish-val{font-size:.6rem;color:rgba(139,189,210,.6)}
-.pi-div{width:1px;height:10px;background:rgba(255,255,255,.08);flex-shrink:0}
+.pi-fish{display:flex;align-items:center;gap:.22rem}
+.pi-fish-lbl{font-size:.42rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.pi-fish-val{font-size:.58rem;color:rgba(139,189,210,.6)}
+.pi-div{width:1px;height:9px;background:rgba(255,255,255,.08);flex-shrink:0}
 
-/* RIGHT — INSIGHT + LOG */
-#pright{display:flex;flex-direction:column;gap:.35rem;min-height:0}
-.insight-box{
-  background:rgba(58,110,140,.08);
-  border-left:2px solid rgba(61,214,232,.25);
-  padding:.5rem .65rem;flex-shrink:0;
-}
-.ib-lbl{font-size:.44rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.4);display:block;margin-bottom:.22rem}
-.ib-txt{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:.74rem;color:rgba(255,255,255,.55);line-height:1.58;
-}
-.log-box{
-  background:rgba(6,16,13,.5);
-  border:1px solid rgba(255,255,255,.06);
-  overflow-y:auto;flex:1;min-height:0;
-}
-.le{
-  padding:.3rem .55rem;font-size:.64rem;font-weight:300;
-  color:rgba(255,255,255,.42);line-height:1.45;
-  border-bottom:1px solid rgba(255,255,255,.04);
-  display:flex;gap:.35rem;
-}
+/* RIGHT PANEL */
+#pright{display:flex;flex-direction:column;gap:.32rem;min-height:0}
+.insight-box{background:rgba(58,110,140,.08);border-left:2px solid rgba(61,214,232,.25);padding:.48rem .62rem;flex-shrink:0}
+.ib-lbl{font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.4);display:block;margin-bottom:.2rem}
+.ib-txt{font-family:var(--serif);font-style:italic;font-size:.72rem;color:rgba(255,255,255,.54);line-height:1.55}
+.log-box{background:rgba(6,16,13,.5);border:1px solid rgba(255,255,255,.06);overflow-y:auto;flex:1;min-height:0}
+.le{padding:.28rem .5rem;font-size:.65rem;font-weight:300;color:rgba(255,255,255,.42);line-height:1.45;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.35rem}
 .le:last-child{border-bottom:none}
-.ld{font-size:.5rem;color:rgba(61,214,232,.35);flex-shrink:0;min-width:34px}
+.ld{font-size:.5rem;color:rgba(61,214,232,.35);flex-shrink:0;min-width:32px}
 .lw{color:rgba(200,160,40,.75)}.ldg{color:rgba(220,100,80,.8)}.lgd{color:rgba(80,200,120,.72)}
 
 /* BOTTOM ACTIONS */
-#bbar{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:.4rem;padding:.4rem 0 .5rem;
-  border-top:1px solid rgba(139,189,210,.09);
-  flex-shrink:0;
-}
-.ab{
-  display:flex;flex-direction:column;align-items:center;gap:.2rem;
-  padding:.55rem .3rem;
-  background:rgba(6,16,13,.6);
-  border:1px solid rgba(139,189,210,.1);
-  border-radius:2px;cursor:pointer;
-  transition:background .2s,border-color .2s,transform .15s;
-  font-family:'DM Sans',system-ui,sans-serif;
-}
+#bbar{display:grid;grid-template-columns:repeat(4,1fr);gap:.38rem;padding:.38rem 0 .48rem;border-top:1px solid rgba(139,189,210,.09);flex-shrink:0}
+.ab{display:flex;flex-direction:column;align-items:center;gap:.18rem;padding:.52rem .28rem;background:rgba(6,16,13,.6);border:1px solid rgba(139,189,210,.1);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;font-family:'DM Sans',system-ui,sans-serif}
 .ab:hover:not(:disabled){background:rgba(9,22,18,.88);border-color:rgba(61,214,232,.25);transform:translateY(-1px)}
 .ab:active:not(:disabled){transform:translateY(0)}
 .ab:disabled{opacity:.25;cursor:not-allowed}
-.ai{font-size:1.2rem;line-height:1}
+.ai{font-size:1.18rem;line-height:1}
 .an{font-size:.5rem;font-weight:400;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.ah{font-size:.45rem;color:rgba(255,255,255,.22);text-align:center;line-height:1.3}
+.ah{font-size:.44rem;color:rgba(255,255,255,.22);text-align:center;line-height:1.25}
 
-/* OVERLAYS */
-.ov{position:fixed;inset:0;z-index:200;background:rgba(3,11,9,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;transition:opacity .4s}
+/* ── OVERLAYS ── */
+.ov{position:fixed;inset:0;z-index:200;background:rgba(3,11,9,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;transition:opacity .4s;overflow-y:auto}
 .ov.hide{opacity:0;pointer-events:none}
-.oc{max-width:380px;padding:2.4rem;text-align:center;margin:1rem;border:1px solid rgba(139,189,210,.15);background:rgba(6,16,13,.96)}
-.oi{font-size:2.4rem;display:block;margin-bottom:.7rem}
-.ot{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.65rem;color:rgba(255,255,255,.9);margin-bottom:.55rem;line-height:1.2}
-.om{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:rgba(255,255,255,.44);line-height:1.8;margin-bottom:1.5rem}
-.osteps{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.5rem;text-align:left}
-.ostep{display:flex;gap:.6rem;align-items:flex-start}
-.ostep-i{font-size:.9rem;flex-shrink:0;margin-top:.05rem}
-.ostep p{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.55}
-.ostep strong{color:rgba(255,255,255,.75);font-weight:400}
-.obtn{
-  font-size:.6rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;
-  padding:.7rem 1.5rem;border-radius:2px;cursor:pointer;
-  transition:background .2s,transform .2s;
-  margin:.25rem;display:inline-block;text-decoration:none;
-}
+.oc{max-width:400px;padding:2.2rem;text-align:center;margin:1rem auto;border:1px solid rgba(139,189,210,.15);background:rgba(6,16,13,.96)}
+.oi{font-size:2.2rem;display:block;margin-bottom:.65rem}
+.ot{font-family:var(--serif);font-weight:300;font-size:1.6rem;color:rgba(255,255,255,.9);margin-bottom:.5rem;line-height:1.2}
+.om{font-family:var(--serif);font-style:italic;font-size:.86rem;color:rgba(255,255,255,.42);line-height:1.78;margin-bottom:1.4rem}
+.obtn{font-size:.6rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:.68rem 1.5rem;border-radius:2px;cursor:pointer;transition:background .2s,transform .2s;margin:.22rem;display:inline-block;text-decoration:none}
 .op{background:rgba(30,165,185,.88);color:#fff;border:1px solid rgba(61,214,232,.45)}
 .op:hover{background:rgba(40,184,208,.98);transform:translateY(-1px)}
 .os{background:transparent;color:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.12)}
 .os:hover{color:rgba(255,255,255,.68);background:rgba(255,255,255,.05)}
 
+/* ── SETUP OVERLAY ── */
+.setup-section{margin-bottom:1.4rem;text-align:left}
+.setup-section-label{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.45);display:block;margin-bottom:.65rem}
+.setup-options{display:flex;gap:.45rem;flex-wrap:wrap}
+.sopt{
+  flex:1;min-width:80px;padding:.6rem .5rem;
+  background:rgba(6,16,13,.7);border:1px solid rgba(139,189,210,.12);
+  border-radius:2px;cursor:pointer;text-align:center;
+  transition:background .2s,border-color .2s;
+}
+.sopt:hover{background:rgba(9,22,18,.9);border-color:rgba(61,214,232,.2)}
+.sopt.selected{background:rgba(58,110,140,.2);border-color:rgba(61,214,232,.45)}
+.sopt-icon{font-size:1.1rem;display:block;margin-bottom:.22rem}
+.sopt-name{font-size:.56rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);display:block}
+.sopt-desc{font-size:.5rem;color:rgba(255,255,255,.3);line-height:1.4;display:block;margin-top:.18rem}
+.setup-note{
+  padding:.75rem .9rem;margin-top:1rem;
+  background:rgba(80,180,100,.06);border:1px solid rgba(80,180,100,.18);border-radius:2px;
+  text-align:left;
+}
+.setup-note p{font-size:.72rem;font-weight:300;color:rgba(80,180,100,.75);line-height:1.65}
+.setup-note strong{color:rgba(80,180,100,.95);font-weight:400}
+.setup-warn{
+  padding:.75rem .9rem;margin-top:.7rem;
+  background:rgba(200,140,40,.05);border:1px solid rgba(200,140,40,.18);border-radius:2px;
+}
+.setup-warn p{font-size:.7rem;font-weight:300;color:rgba(200,160,40,.7);line-height:1.65}
+.expected-box{
+  padding:.75rem .9rem;margin-top:1rem;
+  background:rgba(6,16,13,.6);border:1px solid rgba(139,189,210,.1);
+  border-radius:2px;text-align:left;
+}
+.expected-box p{font-size:.7rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65}
+.expected-box strong{color:rgba(61,214,232,.7);font-weight:400}
+
 /* MOBILE */
 @media(max-width:580px){
-  #middle{
-    grid-template-columns:1fr;
-    grid-template-rows:1fr auto auto;
-  }
-  /* Hide desktop left panel — use slim param bar instead */
+  #app{grid-template-rows:auto auto auto 1fr auto}
+  #middle{display:contents}
   #pleft{display:none}
-  /* Tank fills available space */
-  #tcol{order:1;min-height:0}
-  /* Slim param bar visible */
-  #param-bar{order:2;display:flex;flex-wrap:wrap;gap:.3rem .5rem;padding:.25rem 0}
-  .pi{min-width:auto;flex:1}
+  #tcol{order:0;height:140px;min-height:0;flex-shrink:0;display:block}
+  #tank{height:100%}
+  #param-bar{order:1;padding:.22rem 0;flex-wrap:nowrap;overflow-x:auto;gap:0 .38rem}
   .pi-div{display:none}
-  /* Log compact */
-  #pright{order:3;max-height:130px;min-height:0}
-  .insight-box{padding:.35rem .5rem}
-  .ib-txt{font-size:.68rem;line-height:1.45}
-  .le{padding:.22rem .45rem;font-size:.6rem}
-  /* Actions */
-  .an{font-size:.46rem}
-  .ah{display:none}
-  .ai{font-size:1.05rem}
+  #pright{order:2;flex:1;min-height:0;display:flex;flex-direction:column}
+  .insight-box{flex-shrink:0;padding:.32rem .45rem}
+  .ib-txt{font-size:.68rem}
+  .log-box{flex:1;min-height:0}
+  .le{font-size:.66rem;padding:.26rem .42rem}
+  #bbar{order:3;flex-shrink:0}
+  .ah,.t-status,.t-label{display:none}
   .ab{padding:.42rem .2rem}
-  /* Topbar */
-  .t-status{display:none}
-}
-@media(min-width:581px){
-  .t-label{display:block}
-  #param-bar{display:flex}
+  .oc{padding:1.6rem 1.2rem}
+  .setup-options{gap:.35rem}
+  .sopt{min-width:68px;padding:.5rem .3rem}
 }
 </style>
 </head>
 <body>
 
-<!-- ONBOARD -->
-<div class="ov" id="ov-ob">
-  <div class="oc">
-    <span class="oi">🌊</span>
-    <h2 class="ot">Your new tank</h2>
-    <p class="om">Time flows on its own. Watch what happens. Act when something needs your attention.</p>
-    <div class="osteps">
-      <div class="ostep"><span class="ostep-i">🐠</span><p><strong>Add fish</strong> to begin the nitrogen cycle. No fish — no cycle.</p></div>
-      <div class="ostep"><span class="ostep-i">📊</span><p>Watch <strong>Ammonia, Nitrite, Nitrate</strong>. Red is dangerous. Green is safe.</p></div>
-      <div class="ostep"><span class="ostep-i">⏳</span><p><strong>Be patient.</strong> Over-intervening usually makes things worse.</p></div>
-      <div class="ostep"><span class="ostep-i">🌙</span><p>Day and night pass on their own — 15 seconds per day. <strong>Pause anytime.</strong></p></div>
+<!-- ── SETUP OVERLAY ── -->
+<div class="ov" id="ov-setup">
+  <div class="oc" style="max-width:440px;text-align:left">
+    <div style="text-align:center;margin-bottom:1.4rem">
+      <span class="oi">🌊</span>
+      <h2 class="ot">Set up your tank</h2>
+      <p class="om">Your choices will affect how the cycle unfolds — and what to expect along the way.</p>
     </div>
-    <button class="obtn op" id="btn-start" style="width:100%">Begin →</button>
+
+    <!-- Tank size -->
+    <div class="setup-section">
+      <span class="setup-section-label">Tank size</span>
+      <div class="setup-options" id="opt-size">
+        <div class="sopt selected" data-val="small">
+          <span class="sopt-icon">🫙</span>
+          <span class="sopt-name">Small</span>
+          <span class="sopt-desc">Under 40L · Less forgiving</span>
+        </div>
+        <div class="sopt" data-val="medium">
+          <span class="sopt-icon">🪣</span>
+          <span class="sopt-name">Medium</span>
+          <span class="sopt-desc">40–120L · More stable</span>
+        </div>
+        <div class="sopt" data-val="large">
+          <span class="sopt-icon">🏊</span>
+          <span class="sopt-name">Large</span>
+          <span class="sopt-desc">120L+ · Most forgiving</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cycling method -->
+    <div class="setup-section">
+      <span class="setup-section-label">Cycling method</span>
+      <div class="setup-options" id="opt-method">
+        <div class="sopt selected" data-val="fishless">
+          <span class="sopt-icon">🧪</span>
+          <span class="sopt-name">Fishless</span>
+          <span class="sopt-desc">Add ammonia source, no fish harmed</span>
+        </div>
+        <div class="sopt" data-val="fish-in">
+          <span class="sopt-icon">🐠</span>
+          <span class="sopt-name">Fish-in</span>
+          <span class="sopt-desc">Traditional but harder on fish</span>
+        </div>
+      </div>
+
+      <!-- Welfare note for fishless -->
+      <div class="setup-note" id="note-fishless">
+        <p><strong>Fishless cycling is recommended.</strong> Adding pure ammonia or a piece of food — rather than live fish — lets the bacteria establish without putting any animals through the stress of high ammonia. It is gentler, more controllable, and produces the same result.</p>
+      </div>
+
+      <!-- Warning for fish-in -->
+      <div class="setup-warn" id="note-fishin" style="display:none">
+        <p><strong>Fish-in cycling places real stress on fish.</strong> Ammonia and nitrite will rise before bacteria can process them. If you use this method, very small fish populations, frequent small water changes, and close observation are essential. Many keepers now prefer fishless cycling for this reason.</p>
+      </div>
+    </div>
+
+    <!-- Plants -->
+    <div class="setup-section">
+      <span class="setup-section-label">Starting plants?</span>
+      <div class="setup-options" id="opt-plants">
+        <div class="sopt selected" data-val="yes">
+          <span class="sopt-icon">🌿</span>
+          <span class="sopt-name">Yes</span>
+          <span class="sopt-desc">Helps buffer nitrate</span>
+        </div>
+        <div class="sopt" data-val="no">
+          <span class="sopt-icon">—</span>
+          <span class="sopt-name">No plants</span>
+          <span class="sopt-desc">Less buffering</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expected outcome -->
+    <div class="expected-box" id="expected-box">
+      <p id="expected-text">With a <strong>small tank</strong>, <strong>fishless cycling</strong>, and <strong>plants</strong> — expect the cycle to complete in roughly <strong>3–4 weeks</strong>. Ammonia will peak first, then nitrite, then both will fall as bacteria establish. Plants will help keep nitrate manageable.</p>
+    </div>
+
+    <button class="obtn op" id="btn-begin" style="width:100%;margin-top:1.2rem">Begin simulation →</button>
   </div>
 </div>
 
-<!-- END -->
+<!-- ── END OVERLAY ── -->
 <div class="ov hide" id="ov-end">
   <div class="oc">
     <span class="oi" id="ov-icon">🐟</span>
-    <h2 class="ot" id="ov-title">The tank crashed.</h2>
-    <p class="om" id="ov-msg">Ammonia became too high before the bacteria could process it.</p>
+    <h2 class="ot" id="ov-title">The cycle crashed.</h2>
+    <p class="om" id="ov-msg">Ammonia reached a critical level.</p>
     <button class="obtn op" id="btn-restart">Try again</button>
     <a href="/articles/new-tank-syndrome" class="obtn os">Read the article</a>
   </div>
 </div>
 
+<!-- ── APP ── -->
 <div id="app">
-  <!-- TOP BAR -->
   <div id="topbar">
     <a href="/" class="tb-logo" aria-label="Aquatic Rhythm">
       <svg width="100" height="20" viewBox="0 0 175 30" fill="none" aria-hidden="true">
@@ -285,7 +289,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       <span class="t-label" id="t-label">Morning</span>
       <div class="t-prog"><div class="t-prog-fill" id="t-fill"></div></div>
       <span class="t-day" id="t-day">Day 1</span>
-      <span class="t-status" id="t-status">No fish yet</span>
+      <span class="t-status" id="t-status">Setting up</span>
     </div>
     <div class="tb-right">
       <button class="btn-sm" id="btn-reset" title="Restart">↺</button>
@@ -293,9 +297,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     </div>
   </div>
 
-  <!-- MIDDLE -->
   <div id="middle">
-    <!-- LEFT PARAMS (desktop) -->
     <div id="pleft">
       <div class="pc">
         <span class="pc-lbl">Ammonia <span class="pc-unit">ppm</span></span>
@@ -324,67 +326,37 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       </div>
     </div>
 
-    <!-- TANK + SLIM PARAM BAR -->
     <div id="tcol">
       <div id="tank">
-        <div id="tsky"></div>
-        <div id="twater"></div>
-        <div id="tlight"></div>
-        <canvas id="tstars"></canvas>
-        <div id="tsurf"></div>
-        <div id="tplants"></div>
-        <div id="tfish"></div>
-        <div id="tgravel"></div>
-        <div id="tmsg"><span>Add fish to begin.</span></div>
+        <div id="tsky"></div><div id="twater"></div><div id="tlight"></div>
+        <canvas id="tstars"></canvas><div id="tsurf"></div>
+        <div id="tplants"></div><div id="tfish"></div><div id="tgravel"></div>
+        <div id="tmsg"><span id="tmsg-txt">Setting up...</span></div>
       </div>
-      <!-- SLIM PARAM INDICATORS -->
       <div id="param-bar">
-        <div class="pi">
-          <span class="pi-lbl">NH₃</span>
-          <span class="pi-val safe" id="v-nh3">0.00</span>
-          <div class="pi-track"><div class="pi-fill" id="b-nh3"></div></div>
-        </div>
+        <div class="pi"><span class="pi-lbl">NH₃</span><span class="pi-val safe" id="v-nh3">0.00</span><div class="pi-track"><div class="pi-fill" id="b-nh3"></div></div></div>
         <div class="pi-div"></div>
-        <div class="pi">
-          <span class="pi-lbl">NO₂</span>
-          <span class="pi-val safe" id="v-no2">0.00</span>
-          <div class="pi-track"><div class="pi-fill" id="b-no2"></div></div>
-        </div>
+        <div class="pi"><span class="pi-lbl">NO₂</span><span class="pi-val safe" id="v-no2">0.00</span><div class="pi-track"><div class="pi-fill" id="b-no2"></div></div></div>
         <div class="pi-div"></div>
-        <div class="pi">
-          <span class="pi-lbl">NO₃</span>
-          <span class="pi-val safe" id="v-no3">0.00</span>
-          <div class="pi-track"><div class="pi-fill" id="b-no3"></div></div>
-        </div>
+        <div class="pi"><span class="pi-lbl">NO₃</span><span class="pi-val safe" id="v-no3">0.00</span><div class="pi-track"><div class="pi-fill" id="b-no3"></div></div></div>
         <div class="pi-div"></div>
-        <div class="pi-fish">
-          <span class="pi-fish-lbl">Fish</span>
-          <span class="pi-fish-val" id="v-fish">0</span>
-        </div>
+        <div class="pi-fish"><span class="pi-fish-lbl">Fish</span><span class="pi-fish-val" id="v-fish">0</span></div>
         <div class="pi-div"></div>
-        <div class="pi-fish">
-          <span class="pi-fish-lbl">Plants</span>
-          <span class="pi-fish-val" id="v-plant" style="color:rgba(100,180,80,.6)">0</span>
-        </div>
+        <div class="pi-fish"><span class="pi-fish-lbl">Plants</span><span class="pi-fish-val" id="v-plant" style="color:rgba(100,180,80,.6)">0</span></div>
       </div>
     </div>
 
-    <!-- INSIGHT + LOG -->
     <div id="pright">
-      <div class="insight-box">
-        <span class="ib-lbl">What is happening</span>
-        <span class="ib-txt" id="ib-txt">Day one. The tank is empty. Add fish to start the nitrogen cycle.</span>
-      </div>
-      <div class="log-box" id="log">
-        <div class="le"><span class="ld">Day 1</span><span>Tank set up. Cycle not started.</span></div>
-      </div>
+      <div class="insight-box"><span class="ib-lbl">What is happening</span><span class="ib-txt" id="ib-txt">Your tank is ready. The cycle will begin when you add an ammonia source.</span></div>
+      <div class="log-box" id="log"><div class="le"><span class="ld">Day 1</span><span>Tank set up. Ready to begin cycling.</span></div></div>
     </div>
   </div>
 
-  <!-- ACTIONS -->
-  <div id="bbar">
-    <button class="ab" id="act-fish" onclick="doAct('fish')">
-      <span class="ai">🐠</span><span class="an">Add fish</span><span class="ah">Starts cycle</span>
+  <div id="bbar" id="bbar">
+    <button class="ab" id="act-source" onclick="doAct('source')">
+      <span class="ai" id="act-source-icon">🧪</span>
+      <span class="an" id="act-source-name">Add ammonia</span>
+      <span class="ah">Starts cycle</span>
     </button>
     <button class="ab" id="act-feed" onclick="doAct('feed')" disabled>
       <span class="ai">🥣</span><span class="an">Feed</span><span class="ah">Adds ammonia</span>
@@ -399,11 +371,31 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 </div>
 
 <script>
-/* AQUATIC RHYTHM — Tank Simulator
-   15 seconds per simulated day */
+/* ═══════════════════════════════════
+   AQUATIC RHYTHM — Tank Simulator
+   7 seconds per simulated day
+═══════════════════════════════════ */
 
-var S={day:1,nh3:0,no2:0,no3:0,fish:0,plants:0,bacA:0,bacB:0,cycleOk:false,dead:false,won:false,stress:0,wc:0,totalWc:0};
-var TICK_MS=15000,SUB_MS=200,subSteps=TICK_MS/SUB_MS,subCount=0,running=false,subTimer=null;
+/* Setup config */
+var CFG = { size:'small', method:'fishless', plants:'yes' };
+
+/* Size modifiers */
+var sizeMap = {
+  small:  { buf:.7,  load:1.3, label:'small' },
+  medium: { buf:1.0, load:1.0, label:'medium' },
+  large:  { buf:1.5, load:.75, label:'large' }
+};
+
+var S = {
+  day:1,nh3:0,no2:0,no3:0,
+  fish:0,plants:0,ammSource:0,
+  bacA:0,bacB:0,
+  cycleOk:false,dead:false,won:false,
+  stress:0,wc:0,totalWc:0,
+  fishless:true
+};
+
+var TICK_MS=7000,SUB_MS=150,subSteps=TICK_MS/SUB_MS,subCount=0,running=false,subTimer=null;
 
 /* Time phases */
 var phases=[
@@ -422,7 +414,7 @@ function initStars(){
   var t=document.getElementById('tank');
   sC.width=t.offsetWidth;sC.height=t.offsetHeight;
   stars=[];
-  for(var i=0;i<18;i++)stars.push({x:Math.random()*sC.width,y:Math.random()*sC.height*.58,r:.4+Math.random()*.85});
+  for(var i=0;i<18;i++)stars.push({x:Math.random()*sC.width,y:Math.random()*sC.height*.6,r:.4+Math.random()*.85});
 }
 function drawStars(op){
   if(!sX||!sC.width)return;
@@ -430,7 +422,6 @@ function drawStars(op){
   if(op<.02)return;
   stars.forEach(function(s){sX.beginPath();sX.arc(s.x,s.y,s.r,0,Math.PI*2);sX.fillStyle='rgba(255,255,255,'+Math.min(op*.75,.55).toFixed(3)+')';sX.fill();});
 }
-
 function renderTime(t){
   var p=phase(t);
   var sky=document.getElementById('tsky'),light=document.getElementById('tlight'),st=document.getElementById('tstars');
@@ -444,129 +435,198 @@ function renderTime(t){
   var fill=document.getElementById('t-fill');
   if(fill){fill.style.width=(t*100)+'%';fill.style.background=p.lightO>.5?'rgba(255,200,80,.6)':'rgba(80,100,200,.52)';}
 }
-
 function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 
 function tick(){
   if(S.dead||S.won)return;
   S.day++;S.wc++;
-  var load=S.fish*.08*(1-S.plants*.04);
-  S.nh3=clamp(S.nh3+load,0,8);
-  if(S.nh3>.1)S.bacA=clamp(S.bacA+.018*(1-S.bacA)*S.nh3,0,1);
-  if(S.no2>.1)S.bacB=clamp(S.bacB+.014*(1-S.bacB)*S.no2,0,1);
-  var c1=S.bacA*S.nh3*.35;S.nh3=clamp(S.nh3-c1,0,8);S.no2=clamp(S.no2+c1*.9,0,8);
-  var c2=S.bacB*S.no2*.28;S.no2=clamp(S.no2-c2,0,8);S.no3=clamp(S.no3+c2*.85,0,80);
-  if(S.plants>0)S.no3=clamp(S.no3-S.plants*.15,0,80);
-  if(!S.cycleOk&&S.bacA>.75&&S.bacB>.65&&S.nh3<.25&&S.no2<.25){S.cycleOk=true;addLog('Nitrogen cycle established. Parameters now processing continuously.','good');}
-  var sf=0;if(S.nh3>.5)sf+=(S.nh3-.5)*15;if(S.no2>.5)sf+=(S.no2-.5)*18;if(S.no3>50)sf+=(S.no3-50)*.8;S.stress=clamp(sf,0,100);
-  if(!S.won&&S.cycleOk&&S.day>25&&S.fish>0&&S.stress<20){S.won=true;running=false;showEnd('won');}
-  if(!S.dead&&S.fish>0&&(S.nh3>4||S.no2>5||(S.stress>85&&S.day>3))){S.dead=true;S.fish=0;running=false;showEnd('crashed');}
+  var sz=sizeMap[CFG.size];
+
+  /* Ammonia source */
+  var ammoniaIn=0;
+  if(S.fishless){
+    /* Fishless: ammonia from added source only */
+    ammoniaIn=S.ammSource*.06*sz.load;
+  } else {
+    /* Fish-in: continuous from fish */
+    ammoniaIn=S.fish*.08*sz.load;
+  }
+  ammoniaIn*=(1-S.plants*.04);
+  S.nh3=clamp(S.nh3+ammoniaIn,0,8);
+
+  /* Bacteria grow */
+  if(S.nh3>.05)S.bacA=clamp(S.bacA+.02*(1-S.bacA)*S.nh3*sz.buf,0,1);
+  if(S.no2>.05)S.bacB=clamp(S.bacB+.015*(1-S.bacB)*S.no2*sz.buf,0,1);
+
+  /* Conversion */
+  var c1=S.bacA*S.nh3*.38;S.nh3=clamp(S.nh3-c1,0,8);S.no2=clamp(S.no2+c1*.9,0,8);
+  var c2=S.bacB*S.no2*.3;S.no2=clamp(S.no2-c2,0,8);S.no3=clamp(S.no3+c2*.85,0,80);
+  if(S.plants>0)S.no3=clamp(S.no3-S.plants*.14,0,80);
+
+  /* Cycle complete */
+  if(!S.cycleOk&&S.bacA>.75&&S.bacB>.65&&S.nh3<.25&&S.no2<.25){
+    S.cycleOk=true;
+    addLog('Nitrogen cycle established. Ammonia and nitrite are now processed continuously.','good');
+  }
+
+  /* Stress — only relevant if fish present */
+  var sf=0;
+  if(S.fish>0||!S.fishless){
+    if(S.nh3>.5)sf+=(S.nh3-.5)*15;
+    if(S.no2>.5)sf+=(S.no2-.5)*18;
+    if(S.no3>50)sf+=(S.no3-50)*.8;
+  }
+  S.stress=clamp(sf,0,100);
+
+  /* Win */
+  if(!S.won&&S.cycleOk&&S.day>18){
+    var fishOk=S.fishless||(S.fish>0&&S.stress<20);
+    if(fishOk){S.won=true;running=false;showEnd('won');}
+  }
+  /* Crash — only if fish present and ammonia lethal */
+  if(!S.dead&&S.fish>0&&(S.nh3>4.5||S.no2>5.5||(S.stress>88&&S.day>3))){
+    S.dead=true;S.fish=0;running=false;showEnd('crashed');
+  }
+
   genLog();render();
 }
 
 function doAct(a){
   if(S.dead||S.won)return;
-  if(a==='fish'){if(S.fish>=6){addLog('The tank cannot hold more fish right now.','warn');return;}S.fish++;addLog('Added a fish. Total: '+S.fish+'.',S.fish>3?'warn':'');}
-  if(a==='feed'){S.nh3=clamp(S.nh3+S.fish*.12,0,8);addLog('Fed the fish. Waste added ammonia.',S.nh3>1?'warn':'');}
-  if(a==='water'){
-    S.nh3*=.75;S.no2*=.75;S.no3*=.72;
-    if(!S.cycleOk){S.bacA=clamp(S.bacA-.12,0,1);S.bacB=clamp(S.bacB-.1,0,1);}
-    S.wc=0;S.totalWc++;
-    addLog('25% water change done.'+(!S.cycleOk?' Cycle slowed slightly.':''),'');
+  if(a==='source'){
+    if(S.fishless){
+      if(S.ammSource>=5){addLog('Ammonia source is already sufficient.','warn');return;}
+      S.ammSource++;
+      S.nh3=clamp(S.nh3+.4,0,8);
+      addLog('Ammonia added. Cycle progressing.'+( S.ammSource===1?' Bacteria will begin arriving soon.':''),'');
+    } else {
+      if(S.fish>=5){addLog('The tank is carrying enough fish for now.','warn');return;}
+      S.fish++;
+      addLog('Added a fish. Total: '+S.fish+'.'+( S.fish>2?' Watch ammonia carefully.':''),S.fish>2?'warn':'');
+    }
   }
-  if(a==='plant'){if(S.plants>=4){addLog('Tank is well planted.','');return;}S.plants++;addLog('Plants added. Will slowly absorb nitrate.','good');}
+  if(a==='feed'){
+    if(S.fish===0&&S.fishless){addLog('Nothing to feed yet.','');return;}
+    S.nh3=clamp(S.nh3+(S.fishless?.1:S.fish*.12),0,8);
+    addLog('Fed. Waste added to ammonia load.',S.nh3>1.5?'warn':'');
+  }
+  if(a==='water'){
+    var sz=sizeMap[CFG.size];
+    S.nh3*=.75;S.no2*=.75;S.no3*=.72;
+    if(!S.cycleOk){S.bacA=clamp(S.bacA-.1,0,1);S.bacB=clamp(S.bacB-.08,0,1);}
+    S.wc=0;S.totalWc++;
+    addLog('25% water change done.'+(!S.cycleOk?' Bacteria slightly disrupted.':''),'');
+  }
+  if(a==='plant'){
+    if(S.plants>=4){addLog('Tank is well planted.','');return;}
+    S.plants++;
+    addLog('Plants added. Will absorb nitrate over time.','good');
+  }
   render();
 }
 
+/* Insights */
 var insights=[
-  {t:function(s){return s.fish===0;},txt:'The tank is biologically empty. No fish means no ammonia — and no cycle can begin.'},
-  {t:function(s){return s.fish>0&&s.nh3<.3&&s.day<6;},txt:'Fish are producing waste. Ammonia is rising. Bacteria are arriving — but it takes days before they make a difference.'},
-  {t:function(s){return s.nh3>=.5&&s.nh3<2&&s.no2<.5;},txt:'Ammonia is elevated. Expected in a new tank. Resist large water changes — they remove the bacteria trying to establish.'},
-  {t:function(s){return s.no2>.5&&s.bacA>.3;},txt:'Nitrite is rising — the first stage of the cycle is working. Nitrobacter bacteria now need time to process this. More patience.'},
-  {t:function(s){return s.cycleOk&&s.no3<30;},txt:'Cycle established. Ammonia and nitrite are being processed continuously. The tank has found its rhythm.'},
-  {t:function(s){return s.totalWc>4&&s.day<20;},txt:'Frequent water changes are disrupting bacterial colonies. Smaller, less frequent changes are better at this stage.'},
-  {t:function(s){return s.fish>=4&&!s.cycleOk;},txt:'Heavy load for an uncycled tank. More fish means more ammonia before bacteria can catch up.'},
-  {t:function(s){return s.stress>50&&!s.dead;},txt:'Fish are stressed. The tank is communicating before numbers become critical. Watch for surface breathing.'},
-  {t:function(s){return s.wc>7&&s.no3>40;},txt:'Nitrate accumulating. A 15-20% water change would help without disrupting the established bacteria.'},
-  {t:function(s){return s.won;},txt:'Cycle complete. You navigated the most fragile phase by reading the pattern and responding gently.'}
+  {t:function(s){return s.ammSource===0&&s.fish===0&&!s.fishless===false;},txt:'The tank is ready. Add an ammonia source to begin the nitrogen cycle.'},
+  {t:function(s){return s.ammSource===0&&s.fish===0&&s.fishless===false;},txt:'The tank is ready. Add fish to begin — but watch ammonia closely.'},
+  {t:function(s){return (s.ammSource>0||s.fish>0)&&s.nh3<.3&&s.day<6;},txt:'Ammonia is starting to rise. Bacteria are beginning to arrive. Days, not hours.'},
+  {t:function(s){return s.nh3>=.5&&s.nh3<2&&s.no2<.5;},txt:'Ammonia is elevated. Expected at this stage. Resist large water changes — they slow the bacteria.'},
+  {t:function(s){return s.no2>.5&&s.bacA>.3;},txt:'Nitrite is rising — the first stage of the cycle is working. Nitrobacter bacteria need time now.'},
+  {t:function(s){return s.cycleOk&&s.no3<30;},txt:'Cycle established. The tank is now processing ammonia and nitrite continuously. Well done.'},
+  {t:function(s){return s.totalWc>4&&s.day<20;},txt:'Frequent water changes are slowing the bacteria. Smaller and less frequent is better right now.'},
+  {t:function(s){return s.fish>0&&s.stress>50&&!s.dead;},txt:'Fish are stressed. Surface breathing and hiding are early warning signs. Watch carefully.'},
+  {t:function(s){return s.wc>8&&s.no3>40;},txt:'Nitrate has been accumulating. A small water change would help without disrupting the cycle.'},
+  {t:function(s){return s.won;},txt:'The cycle is complete. You read the system and responded with patience. That is what this phase required.'}
 ];
-function getInsight(s){for(var i=insights.length-1;i>=0;i--)if(insights[i].t(s))return insights[i].txt;return 'Watch. The system is communicating.';}
+function getInsight(s){for(var i=insights.length-1;i>=0;i--)if(insights[i].t(s))return insights[i].txt;return 'Watch. The system is still settling.';}
 
 function addLog(msg,type){
   var log=document.getElementById('log');
   var e=document.createElement('div');
-  e.className='le'+(type?' l'+type.charAt(0):'');
-  /* Map type to class: warn→lw, danger/dg→ldg, good→lgd */
   e.className='le'+(type==='warn'?' lw':type==='danger'?' ldg':type==='good'?' lgd':'');
   e.innerHTML='<span class="ld">Day '+S.day+'</span><span>'+msg+'</span>';
   log.insertBefore(e,log.firstChild);
-  while(log.children.length>16)log.removeChild(log.lastChild);
+  while(log.children.length>20)log.removeChild(log.lastChild);
 }
 
 function genLog(){
-  if(S.nh3>2&&S.nh3<=4)addLog('Ammonia dangerously high. Fish under significant stress.','danger');
-  else if(S.nh3>.5&&S.day%3===0)addLog('Ammonia elevated. Cycle still establishing.','warn');
-  if(S.no2>2)addLog('Nitrite spike. Part of the cycle — stressful for fish.','warn');
-  if(S.no3>40&&S.day%4===0)addLog('Nitrate accumulating. Small water change would help.','warn');
-  if(S.cycleOk&&S.day%5===0)addLog('Tank cycling steadily. Parameters stable.','good');
+  if(S.nh3>2.5&&S.nh3<=4.5)addLog('Ammonia critically high.'+( S.fish>0?' Fish in danger.':''),'danger');
+  else if(S.nh3>.5&&S.day%3===0)addLog('Ammonia elevated. Cycle still building.','warn');
+  if(S.no2>2)addLog('Nitrite spike. Cycle progressing but stressful for fish.','warn');
+  if(S.no3>40&&S.day%5===0)addLog('Nitrate accumulating. Consider a small water change.','warn');
+  if(S.cycleOk&&S.day%6===0)addLog('Parameters stable. Cycle running well.','good');
+  if(S.bacA>.4&&S.bacA<.6&&S.day%4===0)addLog('Bacterial colonies expanding. Getting closer.','');
 }
 
 function render(){
   document.getElementById('t-day').textContent='Day '+S.day;
-  var st='No fish yet';
-  if(S.fish>0){if(S.cycleOk)st='Cycle established ✓';else if(S.bacA>.5)st='Nearly cycled';else if(S.bacA>.2)st='Cycle building';else st='Early cycle';}
+  var st='Setting up';
+  if(S.fishless&&S.ammSource>0||!S.fishless&&S.fish>0){
+    if(S.cycleOk)st='Cycle complete ✓';
+    else if(S.bacA>.5)st='Nearly cycled';
+    else if(S.bacA>.2)st='Cycle building';
+    else st='Early cycle';
+  }
   document.getElementById('t-status').textContent=st;
 
-  function setP(vi,bi,val,max,w,d){
+  function setP(slim_v,slim_b,desk_v,desk_b,val,max,w,d){
     var cls='pi-val '+(val>=d?'danger':val>=w?'warn':'safe');
+    var dcls='pc-val '+(val>=d?'danger':val>=w?'warn':'safe');
     var bg=val>=d?'rgba(220,80,60,.8)':val>=w?'rgba(200,160,40,.75)':'rgba(80,200,120,.7)';
     var pct=clamp(val/max*100,0,100)+'%';
-    /* slim bar */
-    var el=document.getElementById(vi),bar=document.getElementById(bi);
-    if(el){el.textContent=val.toFixed(2);el.className=cls;}
-    if(bar){bar.style.width=pct;bar.style.background=bg;}
-    /* desktop panel */
-    var pel=document.getElementById('p'+vi),pbar=document.getElementById('p'+bi);
-    if(pel){pel.textContent=val.toFixed(2);pel.className='pc-val '+(val>=d?'danger':val>=w?'warn':'safe');}
-    if(pbar){pbar.style.width=pct;pbar.style.background=bg;}
+    var el=document.getElementById(slim_v);if(el){el.textContent=val.toFixed(2);el.className=cls;}
+    var bar=document.getElementById(slim_b);if(bar){bar.style.width=pct;bar.style.background=bg;}
+    var del=document.getElementById(desk_v);if(del){del.textContent=val.toFixed(2);del.className=dcls;}
+    var dbar=document.getElementById(desk_b);if(dbar){dbar.style.width=pct;dbar.style.background=bg;}
   }
-  setP('v-nh3','b-nh3',S.nh3,5,.5,2);
-  setP('v-no2','b-no2',S.no2,5,.5,2);
-  setP('v-no3','b-no3',S.no3,80,20,50);
-  /* slim bar fish/plant */
-  document.getElementById('v-fish').textContent=S.fish;
-  document.getElementById('v-plant').textContent=S.plants;
-  /* desktop panel fish/plant */
-  var pf=document.getElementById('pv-fish'),pp2=document.getElementById('pv-plant');
-  var pbf=document.getElementById('pb-fish'),pbp=document.getElementById('pb-plant');
-  if(pf)pf.textContent=S.fish;
-  if(pp2)pp2.textContent=S.plants;
-  if(pbf)pbf.style.width=(S.fish/6*100)+'%';
-  if(pbp)pbp.style.width=(S.plants/4*100)+'%';
+  setP('v-nh3','b-nh3','pv-nh3','pb-nh3',S.nh3,5,.5,2);
+  setP('v-no2','b-no2','pv-no2','pb-no2',S.no2,5,.5,2);
+  setP('v-no3','b-no3','pv-no3','pb-no3',S.no3,80,20,50);
 
+  var fishCount=S.fishless?0:S.fish;
+  ['v-fish','pv-fish'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=fishCount;});
+  ['v-plant','pv-plant'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=S.plants;});
+  var pbf=document.getElementById('pb-fish');if(pbf)pbf.style.width=(fishCount/5*100)+'%';
+  var pbp=document.getElementById('pb-plant');if(pbp)pbp.style.width=(S.plants/4*100)+'%';
+
+  /* Water colour */
   var danger=Math.max(S.nh3/4,S.no2/4);
   var teal=Math.max(0,.16-danger*.12);
   document.getElementById('twater').style.background='radial-gradient(ellipse at 50% 30%,rgba(60,200,220,'+teal.toFixed(3)+') 0%,rgba('+(4+Math.round(danger*22))+','+(28+Math.round(danger*6))+','+(38-Math.round(danger*8))+',.55) 100%)';
 
+  /* Tank message */
   var msg=document.getElementById('tmsg');
-  msg.style.opacity=S.fish===0?'1':'0';
-  if(S.fish===0)msg.querySelector('span').textContent=S.plants>0?'Plants settling. Add fish.':'Add fish to begin.';
+  var hasActivity=S.fishless?(S.ammSource>0):(S.fish>0);
+  msg.style.opacity=hasActivity?'0':'1';
+  if(!hasActivity){
+    var txt=S.fishless?'Add an ammonia source to begin.':'Add fish to begin.';
+    document.getElementById('tmsg-txt').textContent=txt;
+  }
 
-  /* Fish visuals */
+  /* Fish visuals (fish-in only) */
   var fc=document.getElementById('tfish');
   var tankW=document.getElementById('tank').offsetWidth||200;
-  while(fc.children.length<S.fish){
+  var displayFish=S.fishless?0:S.fish;
+  while(fc.children.length<displayFish){
     var idx=fc.children.length;
     var f=document.createElement('div');
-    f.style.cssText='position:absolute;top:'+(22+idx*13)+'%;left:0;animation:fs'+(idx%3)+' '+(7+idx*1.6)+'s linear '+(idx*1.1)+'s infinite;opacity:'+(S.stress>60?.38:.75)+'';
-    var cols=['rgba(139,189,210,.85)','rgba(180,140,80,.85)','rgba(120,160,100,.85)','rgba(180,100,80,.85)','rgba(100,130,180,.85)','rgba(160,120,160,.85)'];
-    var c=cols[idx%6];
+    f.style.cssText='position:absolute;top:'+(22+idx*14)+'%;left:0;animation:fs'+(idx%3)+' '+(7+idx*1.5)+'s linear '+(idx*1.1)+'s infinite;opacity:'+(S.stress>60?.38:.75);
+    var cols=['rgba(139,189,210,.85)','rgba(180,140,80,.85)','rgba(120,160,100,.85)','rgba(180,100,80,.85)','rgba(160,120,160,.85)'];
+    var c=cols[idx%5];
     f.innerHTML='<svg width="30" height="18" viewBox="0 0 30 18" fill="none"><ellipse cx="18" cy="9" rx="10" ry="5.8" fill="'+c+'"/><path d="M8 9 L1 4.5 L1 13.5Z" fill="'+c+'" opacity=".8"/><circle cx="25" cy="6.5" r="1.8" fill="rgba(255,255,255,.9)"/></svg>';
     fc.appendChild(f);
   }
-  while(fc.children.length>S.fish)fc.removeChild(fc.lastChild);
+  while(fc.children.length>displayFish)fc.removeChild(fc.lastChild);
 
-  /* Plant visuals */
+  /* Fishless — show bubbles when active */
+  if(S.fishless&&S.ammSource>0&&!fc.querySelector('.amm-bubble')){
+    var b=document.createElement('div');b.className='amm-bubble';
+    b.style.cssText='position:absolute;bottom:20%;left:50%;animation:fsb 3s ease-in-out infinite;opacity:.5';
+    b.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="rgba(61,214,232,.6)" stroke-width="1"/></svg>';
+    fc.appendChild(b);
+  }
+
+  /* Plants */
   var pc=document.getElementById('tplants');
   pc.innerHTML='';
   for(var i=0;i<S.plants;i++){
@@ -580,8 +640,8 @@ function render(){
   document.getElementById('ib-txt').textContent=getInsight(S);
 
   var ended=S.dead||S.won;
-  document.getElementById('act-fish').disabled=S.fish>=6||ended;
-  document.getElementById('act-feed').disabled=S.fish===0||ended;
+  document.getElementById('act-source').disabled=(S.fishless?S.ammSource>=5:S.fish>=5)||ended;
+  document.getElementById('act-feed').disabled=(S.fish===0&&S.ammSource===0)||ended;
   document.getElementById('act-water').disabled=ended;
   document.getElementById('act-plant').disabled=S.plants>=4||ended;
   var pp=document.getElementById('btn-pp');
@@ -592,9 +652,10 @@ function showEnd(type){
   var ov=document.getElementById('ov-end');
   document.getElementById('ov-icon').textContent=type==='won'?'🌿':'💀';
   document.getElementById('ov-title').textContent=type==='won'?'The cycle is complete.':'The tank crashed.';
+  var fishNote=S.fishless?'The fishless method worked — bacteria established without any animals being harmed in the process.':'Ammonia reached a lethal level before the bacteria could process it. This is why fishless cycling is now widely preferred.';
   document.getElementById('ov-msg').textContent=type==='won'
-    ?'Day '+S.day+'. The tank found its rhythm — not through constant correction, but through patience and observation.'
-    :'Ammonia reached a lethal level before bacteria could process it. This happens in almost every new setup. Now you know what the cycle felt like from the inside.';
+    ?'Day '+S.day+'. '+fishNote
+    :fishNote;
   ov.classList.remove('hide');
 }
 
@@ -603,7 +664,8 @@ function showEnd(type){
   var tw=document.getElementById('tank').offsetWidth||200;
   var css='@keyframes fs0{0%{transform:translateX(0) scaleX(1)}49%{transform:translateX('+(tw-44)+'px) scaleX(1)}50%{transform:translateX('+(tw-44)+'px) scaleX(-1)}99%{transform:translateX(0) scaleX(-1)}100%{transform:translateX(0) scaleX(1)}}'
          +'@keyframes fs1{0%{transform:translateX('+(tw-44)+'px) scaleX(-1)}49%{transform:translateX(0) scaleX(-1)}50%{transform:translateX(0) scaleX(1)}99%{transform:translateX('+(tw-44)+'px) scaleX(1)}100%{transform:translateX('+(tw-44)+'px) scaleX(-1)}}'
-         +'@keyframes fs2{0%{transform:translateX(15px) scaleX(1)}49%{transform:translateX('+(tw-55)+'px) scaleX(1)}50%{transform:translateX('+(tw-55)+'px) scaleX(-1)}99%{transform:translateX(15px) scaleX(-1)}100%{transform:translateX(15px) scaleX(1)}}';
+         +'@keyframes fs2{0%{transform:translateX(15px) scaleX(1)}49%{transform:translateX('+(tw-55)+'px) scaleX(1)}50%{transform:translateX('+(tw-55)+'px) scaleX(-1)}99%{transform:translateX(15px) scaleX(-1)}100%{transform:translateX(15px) scaleX(1)}}'
+         +'@keyframes fsb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(.8)}}';
   var s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
   window.addEventListener('resize',function(){initStars();});
 })();
@@ -622,33 +684,82 @@ function startLoop(){
 function reset(){
   running=false;subCount=0;
   if(subTimer){clearInterval(subTimer);subTimer=null;}
-  S={day:1,nh3:0,no2:0,no3:0,fish:0,plants:0,bacA:0,bacB:0,cycleOk:false,dead:false,won:false,stress:0,wc:0,totalWc:0};
-  document.getElementById('log').innerHTML='<div class="le"><span class="ld">Day 1</span><span>Tank set up. Cycle not started.</span></div>';
+  S={day:1,nh3:0,no2:0,no3:0,fish:0,plants:0,ammSource:0,bacA:0,bacB:0,cycleOk:false,dead:false,won:false,stress:0,wc:0,totalWc:0,fishless:CFG.method==='fishless'};
+  document.getElementById('log').innerHTML='<div class="le"><span class="ld">Day 1</span><span>Tank set up. Ready to begin cycling.</span></div>';
   document.getElementById('tfish').innerHTML='';
   document.getElementById('tplants').innerHTML='';
   document.getElementById('ov-end').classList.add('hide');
-  document.getElementById('ov-ob').classList.remove('hide');
-  document.getElementById('ov-ob').style.display='';
+  document.getElementById('ov-setup').classList.remove('hide');
+  document.getElementById('ov-setup').style.display='';
   var pp=document.getElementById('btn-pp');pp.textContent='⏸ Pause';pp.classList.remove('paused');pp.disabled=false;pp.style.opacity='';
+  /* Apply starting plants if selected */
+  if(CFG.plants==='yes'){S.plants=2;}
   renderTime(0);render();
 }
 
-document.getElementById('btn-start').addEventListener('click',function(){
-  var ov=document.getElementById('ov-ob');
+/* ── SETUP SCREEN ── */
+function setupOption(groupId, val) {
+  document.querySelectorAll('#'+groupId+' .sopt').forEach(function(el){
+    el.classList.toggle('selected', el.getAttribute('data-val')===val);
+  });
+  if(groupId==='opt-size') CFG.size=val;
+  if(groupId==='opt-method'){
+    CFG.method=val;
+    document.getElementById('note-fishless').style.display=val==='fishless'?'block':'none';
+    document.getElementById('note-fishin').style.display=val==='fish-in'?'block':'none';
+    /* Update action button */
+    var icon=document.getElementById('act-source-icon');
+    var name=document.getElementById('act-source-name');
+    if(icon)icon.textContent=val==='fishless'?'🧪':'🐠';
+    if(name)name.textContent=val==='fishless'?'Add ammonia':'Add fish';
+    /* Feed button label */
+    document.getElementById('act-feed').querySelector('.ah').textContent=val==='fishless'?'More ammonia':'Adds ammonia';
+  }
+  if(groupId==='opt-plants') CFG.plants=val;
+  updateExpected();
+}
+
+function updateExpected(){
+  var sz=CFG.size,mt=CFG.method,pl=CFG.plants;
+  var weeks={small:{fishless:4,fish:5},medium:{fishless:3,fish:4},large:{fishless:'2–3',fish:'3–4'}};
+  var wk=weeks[sz]?weeks[sz][mt==='fishless'?'fishless':'fish']:'3–4';
+  var szLabel={small:'small',medium:'medium',large:'large'}[sz];
+  var mtLabel=mt==='fishless'?'fishless cycling':'fish-in cycling';
+  var plNote=pl==='yes'?'Plants will help keep nitrate manageable.':'Without plants, monitor nitrate more closely.';
+  var welfareNote=mt==='fishless'?' No animals will be harmed in the process.':'';
+  document.getElementById('expected-text').innerHTML=
+    'With a <strong>'+szLabel+' tank</strong> and <strong>'+mtLabel+'</strong> — expect the cycle to complete in roughly <strong>'+wk+' weeks</strong>.'+welfareNote+' Ammonia peaks first, then nitrite, then both fall as bacteria establish. '+plNote;
+}
+
+/* Setup option clicks */
+['opt-size','opt-method','opt-plants'].forEach(function(gid){
+  document.getElementById(gid).querySelectorAll('.sopt').forEach(function(el){
+    el.addEventListener('click',function(){setupOption(gid,this.getAttribute('data-val'));});
+  });
+});
+
+document.getElementById('btn-begin').addEventListener('click',function(){
+  var ov=document.getElementById('ov-setup');
   ov.classList.add('hide');
   setTimeout(function(){ov.style.display='none';},400);
+  S.fishless=CFG.method==='fishless';
+  if(CFG.plants==='yes')S.plants=2;
   running=true;initStars();startLoop();
+  render();
 });
+
 document.getElementById('btn-pp').addEventListener('click',function(){
   running=!running;
-  var btn=document.getElementById('btn-pp');
-  btn.textContent=running?'⏸ Pause':'▶ Resume';
-  btn.classList.toggle('paused',!running);
+  var btn=this;btn.textContent=running?'⏸ Pause':'▶ Resume';btn.classList.toggle('paused',!running);
 });
-document.getElementById('btn-reset').addEventListener('click',reset);
-document.getElementById('btn-restart').addEventListener('click',function(){
+document.getElementById('btn-reset').addEventListener('click',function(){
+  if(subTimer){clearInterval(subTimer);subTimer=null;}
   reset();
-  setTimeout(function(){document.getElementById('btn-start').click();},100);
+});
+document.getElementById('btn-restart').addEventListener('click',function(){
+  if(subTimer){clearInterval(subTimer);subTimer=null;}
+  reset();
+  setTimeout(function(){document.getElementById('btn-begin').click();},100);
 });
 
 render();renderTime(0);
