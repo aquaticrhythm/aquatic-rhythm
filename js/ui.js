@@ -64,6 +64,15 @@
     '/terms':   'terms'
   };
 
+  var titleMap = {
+    'home':    'Aquatic Rhythm — Aligned with Living Systems',
+    'ara':     'Aquatic Rhythm Alignment — Reading the Rhythm of Living Aquarium Systems',
+    'rhyssa':  'Rhyssa — An Aquarium Companion Shaped by ARA',
+    'about':   'About — Where Aquatic Rhythm Came From',
+    'privacy': 'Privacy Policy — Aquatic Rhythm',
+    'terms':   'Terms of Use — Aquatic Rhythm'
+  };
+
   function go(id, push) {
     document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active'); });
     var t = document.getElementById('pg-' + id);
@@ -72,6 +81,9 @@
     window.scrollTo({ top: 0, behavior: 'auto' });
     closeMenu();
     setTimeout(function () { observeScrollReveal(t); }, 80);
+
+    /* Update page title */
+    if (titleMap[id]) document.title = titleMap[id];
 
     var path = id === 'home' ? '/' : '/' + id;
     if (push !== false) history.pushState({ page: id }, '', path);
@@ -112,12 +124,13 @@
     var t = document.getElementById('pg-' + id);
     if (t) {
       t.classList.add('active');
+      if (titleMap[id]) document.title = titleMap[id];
       try { history.replaceState({ page: id }, '', location.pathname); } catch (e) {}
       var path = id === 'home' ? '/' : '/' + id;
       var can = document.querySelector('link[rel="canonical"]');
       if (can) can.setAttribute('href', 'https://aquaticrhythm.com' + path);
       if (typeof gtag !== 'undefined') {
-        gtag('event', 'page_view', { page_path: path, page_title: id });
+        gtag('event', 'page_view', { page_path: path, page_title: titleMap[id] || id });
       }
     }
   })();
