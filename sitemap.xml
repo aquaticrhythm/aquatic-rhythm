@@ -24,6 +24,12 @@
 <priority>0.6</priority>
 </url>
 <url>
+<loc>https://aquaticrhythm.com/reading</loc>
+<lastmod>2026-03-25</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
 <loc>https://aquaticrhythm.com/privacy</loc>
 <lastmod>2026-03-25</lastmod>
 <changefreq>yearly</changefreq>
@@ -34,5 +40,11 @@
 <lastmod>2026-03-25</lastmod>
 <changefreq>yearly</changefreq>
 <priority>0.3</priority>
+</url>
+<url>
+<loc>https://aquaticrhythm.com/articles/new-tank-syndrome</loc>
+<lastmod>2026-03-25</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
 </url>
 </urlset>
