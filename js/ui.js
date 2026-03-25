@@ -255,4 +255,41 @@
     if (floraOff) applyFlora(true);
   })();
 
+  /* ── FLOATING RHYSSA BUTTON ── */
+  (function () {
+    var btn = document.getElementById('rhyssa-float');
+    if (!btn) return;
+
+    var visible = false;
+    var ticking = false;
+
+    function update() {
+      var activePage = document.querySelector('.page.active');
+      var isAra = activePage && activePage.id === 'pg-ara';
+
+      /* Only show on ARA page, after scrolling 300px */
+      var shouldShow = isAra && window.scrollY > 300;
+
+      if (shouldShow !== visible) {
+        visible = shouldShow;
+        btn.classList.toggle('visible', visible);
+        btn.setAttribute('aria-hidden', !visible);
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+
+    /* Also update on page navigation */
+    var _goOrig = window.go;
+    window.go = function (id, push) {
+      _goOrig(id, push);
+      setTimeout(update, 120);
+    };
+
+    update();
+  })();
+
 })();
