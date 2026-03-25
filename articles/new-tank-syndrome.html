@@ -308,42 +308,40 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
   <!-- ═══ MODULE 1 — Not a mistake ═══ -->
   <section class="module" id="mod-1" data-mod="1">
-    <div class="mod-eyebrow"><span class="mod-num">01 / 05</span><span class="mod-tag">New tank syndrome</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">01 / 05</span><span class="mod-tag">What is new tank syndrome</span></div>
     <h1 class="mod-title">It is not a mistake.<br><em>It is a phase.</em></h1>
     <div class="mod-body">
-      <p>Almost every new aquarium goes through a period where the water looks cloudy, the fish seem stressed, and nothing you do appears to help.</p>
-      <p>Most people assume they did something wrong. They test the water, change it, add products — and wonder why it keeps happening.</p>
-      <p>But new tank syndrome is not caused by error. It is what happens when a living system is still in its earliest stage of development — before the biological processes that make a tank stable have had time to establish themselves.</p>
+      <p>Almost every new aquarium goes through a period where the water turns cloudy, the fish seem stressed, and nothing you do appears to help. Most people assume they did something wrong.</p>
+      <p>They did not. New tank syndrome is not caused by error. It is the name given to the period before a tank's biological processes have had enough time to establish — before the system has learned to process its own waste.</p>
+      <p>It affects every new tank, regardless of how carefully it was set up. Understanding what is actually happening changes everything about how you respond to it.</p>
     </div>
 
-    <!-- VISUAL 1: Tank coming alive -->
-    <div class="vis-block" style="height:160px;background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
+    <!-- VISUAL 1: Slider day 1 → week 3 -->
+    <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
       <canvas id="cv1" style="width:100%;height:160px"></canvas>
-      <div style="position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);text-align:center;pointer-events:none">
-        <span style="font-family:var(--serif);font-style:italic;font-size:.78rem;color:rgba(255,255,255,.35)">A new tank. Clear water, but biologically — almost nothing is here yet.</span>
-      </div>
     </div>
 
-    <div class="mod-body">
-      <p>Understanding what is actually happening — instead of reacting to what is visible — changes everything about how you respond to it.</p>
+    <div class="hn">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>ARA does not treat new tank syndrome as a problem to be solved — it treats it as a phase to be read. The system is not broken. It is early. What it needs is not correction, but the right conditions and enough time.</p>
     </div>
 
     <div class="mod-next">
-      <span></span>
-      <button class="btn-next" onclick="goMod(2)">What is actually happening <span>→</span></button>
+      <button class="btn-prev" onclick="goIntro()">← Intro</button>
+      <button class="btn-next" onclick="goMod(2)">What is happening inside the water <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 2 — Waste becomes poison ═══ -->
+  <!-- ═══ MODULE 2 — Ammonia ═══ -->
   <section class="module" id="mod-2" data-mod="2">
     <div class="mod-eyebrow"><span class="mod-num">02 / 05</span><span class="mod-tag">Ammonia</span></div>
     <h2 class="mod-title">Waste becomes<br><em>poison.</em></h2>
     <div class="mod-body">
-      <p>The moment a fish enters your tank, it begins producing waste. That waste breaks down into <strong>ammonia</strong> — a compound that is toxic to fish, even in small amounts.</p>
-      <p>In a mature aquarium, ammonia is processed almost as quickly as it is produced. But in a new tank, the bacteria responsible for that process have not yet arrived in meaningful numbers.</p>
+      <p>Fish produce waste continuously — through respiration, excretion, and uneaten food decomposing in the water. That waste breaks down into <strong>ammonia (NH₃)</strong>, a compound that is directly toxic to fish even at low concentrations.</p>
+      <p>In a mature tank, ammonia is processed almost as quickly as it is produced. In a new tank, the bacteria responsible for that process do not yet exist in meaningful numbers. Ammonia accumulates.</p>
     </div>
 
-    <!-- VISUAL 2: Ammonia rising animation -->
+    <!-- VISUAL 2: Tap to add days -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
       <canvas id="cv2" style="width:100%;height:180px"></canvas>
     </div>
@@ -353,61 +351,66 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="mod-body">
-      <p>Without bacteria to process it, ammonia accumulates. The fish begin to feel it before any test kit can confirm it. Hiding, surface breathing, loss of colour — these are the tank's first signals.</p>
+      <p>Fish under ammonia stress show visible signs before any test kit confirms the problem — surface breathing (gasping at the water line), hiding, clamped fins, or loss of colour. These are the system's first signals. They deserve to be read, not suppressed with products.</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">On fish welfare</span>
+      <p>This is one reason <em>fishless cycling</em> is now widely preferred — using an ammonia source (pure ammonia or decaying food) to grow bacteria before any animals are introduced. Fish-in cycling subjects living animals to prolonged ammonia exposure that causes real physiological stress. If you have already started with fish, frequent small water changes — not large ones — can keep levels manageable while the cycle builds.</p>
     </div>
 
     <div class="mod-next">
       <button class="btn-prev" onclick="goMod(1)">← Back</button>
-      <button class="btn-next" onclick="goMod(3)">Where do bacteria come in <span>→</span></button>
+      <button class="btn-next" onclick="goMod(3)">Where bacteria come in <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 3 — Bacteria are the answer ═══ -->
+  <!-- ═══ MODULE 3 — Bacteria ═══ -->
   <section class="module" id="mod-3" data-mod="3">
-    <div class="mod-eyebrow"><span class="mod-num">03 / 05</span><span class="mod-tag">Beneficial bacteria</span></div>
-    <h2 class="mod-title">Bacteria are<br><em>the answer.</em></h2>
+    <div class="mod-eyebrow"><span class="mod-num">03 / 05</span><span class="mod-tag">The nitrogen cycle</span></div>
+    <h2 class="mod-title">Bacteria are<br><em>the only answer.</em></h2>
     <div class="mod-body">
-      <p>Two types of beneficial bacteria are what make a healthy aquarium possible. They do not come in a bottle — at least, not in the numbers needed. They colonise the tank slowly, over weeks, drawn by the presence of ammonia and nitrite.</p>
+      <p>The nitrogen cycle is the biological process that makes a stable aquarium possible. It relies on two types of nitrifying bacteria that colonise the tank's surfaces — filter media, substrate, decor — over a period of weeks.</p>
     </div>
 
-    <!-- VISUAL 3: Bacteria growth -->
+    <!-- VISUAL 3: Toggle bacteria types -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
       <canvas id="cv3" style="width:100%;height:160px"></canvas>
     </div>
 
     <div class="mod-body">
-      <p><strong>Nitrosomonas</strong> bacteria arrive first. They convert ammonia into nitrite — which is still harmful, but the system is learning.</p>
-      <p><strong>Nitrobacter</strong> bacteria arrive after. They convert nitrite into nitrate — far less toxic, and manageable through regular small water changes.</p>
+      <p><strong>Nitrosomonas</strong> (and related genera) arrive first. They convert ammonia into nitrite — still harmful, but the system is learning. This is why nitrite often spikes after ammonia begins to fall.</p>
+      <p><strong>Nitrospira</strong> (commonly grouped under "Nitrobacter") arrive after. They convert nitrite into nitrate — far less acutely toxic, and manageable through regular water changes.</p>
+      <p>Nitrate accumulates over time and is removed primarily through partial water changes and plant uptake. It does not disappear on its own.</p>
     </div>
 
     <div class="hn">
       <span class="hn-label">Worth knowing</span>
-      <p>This process — ammonia to nitrite to nitrate — is called the nitrogen cycle. It is the biological foundation of every stable aquarium. It cannot be skipped. It can only be supported.</p>
-      <p>Bacterial supplements can help seed the process, but they still need time, consistency, and a stable environment to establish. There is no shortcut — only patience and the right conditions.</p>
+      <p>Bacterial supplement products (such as bottled bacteria) can help seed the process and may shorten cycling time. They are not a shortcut — the bacteria still need time, food (ammonia), and stable conditions to multiply to effective levels. Temperature matters too: beneficial bacteria grow significantly faster at 25–27°C than below 20°C.</p>
     </div>
 
     <div class="mod-next">
       <button class="btn-prev" onclick="goMod(2)">← Back</button>
-      <button class="btn-next" onclick="goMod(4)">Why intervention makes it worse <span>→</span></button>
+      <button class="btn-next" onclick="goMod(4)">Why intervention usually makes it worse <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 4 — The patience problem ═══ -->
+  <!-- ═══ MODULE 4 — Patience ═══ -->
   <section class="module" id="mod-4" data-mod="4">
     <div class="mod-eyebrow"><span class="mod-num">04 / 05</span><span class="mod-tag">The patience problem</span></div>
     <h2 class="mod-title">Why doing more<br><em>often makes it worse.</em></h2>
     <div class="mod-body">
-      <p>When something looks wrong, the instinct is to act. Change the water. Add something. Adjust the parameters. This impulse comes from care — and it is the most common reason new tank syndrome takes longer than it should.</p>
+      <p>When something looks wrong, the instinct is to act. Change the water. Add a product. Adjust the filter. This impulse comes from genuine care — and it is the most common reason new tank syndrome takes longer than it should.</p>
     </div>
 
-    <!-- VISUAL 4: Intervention disruption -->
+    <!-- VISUAL 4: Intervene vs wait -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
       <canvas id="cv4" style="width:100%;height:170px"></canvas>
     </div>
 
     <div class="mod-body">
-      <p>Large water changes remove bacteria along with the ammonia. Chemical additives can interfere with the biological processes trying to establish. Frequent adjustments prevent the system from settling.</p>
-      <p>Small, consistent water changes — 10 to 15 percent every few days — help without disrupting. Reduced feeding means less ammonia before the cycle can handle it. And waiting, when waiting is the right response, is itself a form of care.</p>
+      <p>Large water changes dilute ammonia, but they also remove the bacteria and the ammonia they need to grow. The cycle loses progress. Chemical ammonia removers mask the reading without addressing the biology. Excessive product use can stall or disrupt the bacterial colonies entirely.</p>
+      <p>What actually moves the cycle forward: small water changes (10–20%) every few days to keep ammonia below harmful levels without stripping bacteria. Reduced feeding — less waste means less ammonia load. No new livestock until ammonia and nitrite have both held near zero for at least a week.</p>
     </div>
 
     <div class="pq">
@@ -415,46 +418,50 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="hn">
-      <span class="hn-label">What actually helps</span>
-      <p>Small water changes every few days — not large reactive ones. Reduced feeding until the cycle establishes. No new fish until ammonia and nitrite are consistently near zero. Patience over products.</p>
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>ARA calls this the intervention trap — the moment a keeper's care becomes the obstacle. The system is not asking for correction. It is asking for stability. Frequent disturbances reset the very progress that patience would have preserved. Watching and waiting, when the system is within safe limits, is not neglect. It is the right response.</p>
     </div>
 
     <div class="mod-next">
       <button class="btn-prev" onclick="goMod(3)">← Back</button>
-      <button class="btn-next" onclick="goMod(5)">What stability feels like <span>→</span></button>
+      <button class="btn-next" onclick="goMod(5)">What stability looks like <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 5 — What stability looks like + simulator ═══ -->
+  <!-- ═══ MODULE 5 — Stability ═══ -->
   <section class="module" id="mod-5" data-mod="5">
     <div class="mod-eyebrow"><span class="mod-num">05 / 05</span><span class="mod-tag">Stability</span></div>
     <h2 class="mod-title">The tank finds<br><em>its own rhythm.</em></h2>
     <div class="mod-body">
-      <p>When the cycle completes, something changes quietly. Ammonia stays near zero. Nitrite disappears. The fish begin to move differently — less guarded, more present.</p>
-      <p>This is not achieved through perfect control. It emerges through consistency, restraint, and enough time for biological processes to do what they do naturally.</p>
-      <p>A cycled tank is not fragile. It has developed the capacity to absorb your inconsistency, recover from minor disruptions, and sustain itself through real life — with all its gaps and imperfections.</p>
+      <p>When the cycle completes — typically 4 to 8 weeks from the introduction of an ammonia source — something changes quietly. Ammonia holds near zero. Nitrite disappears. Nitrate begins to accumulate steadily. The water may clear. Fish, if present, begin to move with less guardedness.</p>
+      <p>A fully cycled tank is not fragile. It has developed biological capacity — the ability to absorb irregular feeding, brief gaps in care, minor fluctuations — and return to stability on its own.</p>
     </div>
 
-    <!-- VISUAL 5: Stable tank -->
+    <!-- VISUAL 5: Day 1 to Day 30 -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
       <canvas id="cv5" style="width:100%;height:160px"></canvas>
     </div>
 
     <div class="mod-body">
-      <p>That is what this phase is asking for. Not perfection. Just enough consistency, and enough patience, for life to establish itself.</p>
+      <p>This is what new tank syndrome was always moving toward. Not a perfect system — a living one. One that has learned to process its own waste, and can now sustain itself through your real life, with all its inconsistencies.</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>The keeper who navigates new tank syndrome well is not the one who intervenes most. It is the one who learned to distinguish between a signal that requires action and one that simply requires reading. That skill — ecological attunement — is what ARA is built around. New tank syndrome is, in a way, the first lesson.</p>
+    </div>
+
+    <div class="mod-next" style="margin-top:1.5rem">
+      <button class="btn-prev" onclick="goMod(4)">← Back</button>
+      <span></span>
     </div>
 
     <!-- SIMULATOR CTA -->
     <div class="final-cta">
-      <p>You have just learned how the nitrogen cycle works. Now try it yourself — add fish, make decisions, and watch what happens when you intervene too much, or simply wait.</p>
+      <p>Now try it yourself. Set up a tank, choose your cycling method, and watch the nitrogen cycle unfold in real time.</p>
       <a href="/articles/tank-simulator" class="btn-sim">Try the simulator →</a>
-      <a href="/reading" class="btn-ar">← Back to Reading</a>
     </div>
 
-    <footer class="art-footer">
-      <a href="/reading">← Reading</a>
-      <span style="font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.12)">Aquatic Rhythm</span>
-    </footer>
   </section>
 
 </div>
@@ -468,9 +475,25 @@ var totalMods = 5;
 var currentMod = 1;
 var canvases = {};
 
+function goIntro() {
+  /* Return to intro — hide modules, show intro */
+  var mod = document.getElementById('mod-' + currentMod);
+  if (mod) { mod.classList.remove('visible'); setTimeout(function(){ mod.classList.remove('active'); }, 300); }
+  var wrap = document.querySelector('.module-wrap');
+  var intro = document.querySelector('.art-intro');
+  if (wrap) wrap.classList.remove('active');
+  if (intro) { intro.classList.remove('hidden'); intro.style.display = ''; }
+  window.scrollTo({ top: 0, behavior: 'auto' });
+  /* Reset dots */
+  currentMod = 1;
+  updateDots();
+}
+
 function goMod(n) {
   var prev = document.getElementById('mod-' + currentMod);
   if (prev) { prev.classList.remove('visible'); setTimeout(function(){ prev.classList.remove('active'); }, 300); }
+  /* Stop current animation before switching */
+  stopAnim('cv' + currentMod);
 
   currentMod = n;
 
@@ -938,6 +961,7 @@ canvases[4] = function() {
     var grd=ctx.createLinearGradient(0,0,0,H);
     grd.addColorStop(0,'rgba(4,22,34,.95)'); grd.addColorStop(1,'rgba(2,12,20,.98)');
     ctx.fillStyle=grd; ctx.fillRect(0,0,W,H);
+    if(animT < 100 && choice !== null) animT++;
 
     var padL=38,padR=16,padT=24,padB=28;
     var gW=W-padL-padR, gH=H-padT-padB;
