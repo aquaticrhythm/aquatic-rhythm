@@ -148,28 +148,82 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .expected-box p{font-size:.7rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65}
 .expected-box strong{color:rgba(61,214,232,.7);font-weight:400}
 
-/* MOBILE */
-@media(max-width:580px){
-  #app{grid-template-rows:auto auto auto 1fr auto}
-  #middle{display:contents}
+/* ── MOBILE ── */
+@media(max-width:600px){
+  /* App — full height flex column */
+  #app{
+    display:flex;flex-direction:column;
+    height:100dvh;padding:0;gap:0;
+  }
+
+  /* Topbar */
+  #topbar{flex-shrink:0;padding:.38rem .75rem}
+  .t-label,.t-status,.ah{display:none}
+  .btn-sm{padding:.2rem .45rem;font-size:.48rem}
+
+  /* Middle — flex column, takes remaining space */
+  #middle{
+    display:flex;flex-direction:column;
+    flex:1;min-height:0;gap:0;padding:0;
+  }
+
+  /* Hide desktop left params */
   #pleft{display:none}
-  #tcol{order:0;height:140px;min-height:0;flex-shrink:0;display:block}
-  #tank{height:100%}
-  #param-bar{order:1;padding:.22rem 0;flex-wrap:nowrap;overflow-x:auto;gap:0 .38rem}
-  .pi-div{display:none}
-  #pright{order:2;flex:1;min-height:0;display:flex;flex-direction:column}
-  .insight-box{flex-shrink:0;padding:.32rem .45rem}
-  .ib-txt{font-size:.68rem}
-  .log-box{flex:1;min-height:0}
-  .le{font-size:.66rem;padding:.26rem .42rem}
-  #bbar{order:3;flex-shrink:0}
-  .ah,.t-status,.t-label{display:none}
-  .ab{padding:.42rem .2rem}
-  .oc{padding:1.4rem 1rem;width:calc(100vw - 2rem)}
-  .setup-options{gap:.3rem}
-  .sopt{min-width:60px;padding:.45rem .25rem}
-  .setup-note,.setup-warn,.expected-box{padding:.55rem .7rem}
-  .setup-note p,.setup-warn p,.expected-box p{font-size:.68rem}
+
+  /* Tank col — fixed height, no gap (param-bar below) */
+  #tcol{
+    flex-shrink:0;
+    height:150px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    padding:.3rem .75rem 0;
+  }
+  #tank{flex:1;min-height:0}
+
+  /* Slim param bar inside tcol */
+  #param-bar{
+    flex-shrink:0;
+    display:flex;flex-wrap:nowrap;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    gap:0 .5rem;
+    padding:.2rem .75rem;
+    border-top:1px solid rgba(139,189,210,.08);
+    border-bottom:1px solid rgba(139,189,210,.08);
+    background:rgba(6,16,13,.35);
+  }
+  .pi{flex-shrink:0;gap:.2rem;min-width:auto}
+  .pi-lbl{font-size:.4rem}
+  .pi-val{font-size:.62rem;min-width:18px}
+  .pi-track{width:22px;flex:none}
+  .pi-fish-lbl{font-size:.4rem}
+  .pi-fish-val{font-size:.62rem}
+  .pi-div{height:8px}
+
+  /* Right panel — takes all remaining space */
+  #pright{
+    flex:1;min-height:0;
+    display:flex;flex-direction:column;
+    padding:.28rem .75rem 0;
+    overflow:hidden;
+  }
+  .insight-box{flex-shrink:0;padding:.28rem .5rem}
+  .ib-lbl{font-size:.4rem}
+  .ib-txt{font-size:.7rem;line-height:1.42}
+  .log-box{flex:1;min-height:0;overflow-y:auto}
+  .le{font-size:.68rem;padding:.24rem .4rem;line-height:1.38}
+  .ld{font-size:.52rem;min-width:28px}
+
+  /* Actions */
+  #bbar{
+    flex-shrink:0;
+    padding:.3rem .75rem .4rem;
+    gap:.3rem;
+    border-top:1px solid rgba(139,189,210,.09);
+  }
+  .ab{padding:.42rem .2rem;gap:.12rem}
+  .ai{font-size:1.05rem}
+  .an{font-size:.46rem}
 }
 </style>
 </head>
