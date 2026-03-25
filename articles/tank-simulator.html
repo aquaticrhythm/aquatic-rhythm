@@ -30,7 +30,13 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .t-label{font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);flex-shrink:0}
 .t-prog{width:44px;height:2px;background:rgba(255,255,255,.1);border-radius:1px;overflow:hidden;flex-shrink:0}
 .t-prog-fill{height:100%;border-radius:1px;transition:width .3s ease,background .5s}
-.t-day{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.65);border:1px solid rgba(61,214,232,.2);padding:.2rem .55rem;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.t-day{
+  font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(61,214,232,.75);border:1px solid rgba(61,214,232,.25);
+  padding:.22rem .6rem;border-radius:100px;
+  white-space:nowrap;flex-shrink:0;
+  min-width:52px;text-align:center;
+}
 .t-status{font-family:var(--serif);font-style:italic;font-size:.75rem;color:rgba(255,255,255,.28);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
 .tb-right{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
 .btn-sm{font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;background:rgba(6,16,13,.8);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.26rem .65rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(255,255,255,.38)}
@@ -157,9 +163,21 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   }
 
   /* Topbar */
-  #topbar{flex-shrink:0;padding:.38rem .75rem}
-  .t-label,.t-status,.ah{display:none}
-  .btn-sm{padding:.2rem .45rem;font-size:.48rem}
+  #topbar{flex-shrink:0;padding:.38rem .75rem;gap:.4rem}
+  .t-label,.t-status{display:none}
+  .ah{display:none}
+  .tb-center{gap:.3rem;justify-content:flex-start}
+  .t-icon{font-size:.85rem}
+  .t-prog{display:none}
+  .t-day{
+    font-size:.64rem !important;
+    letter-spacing:.1em;
+    padding:.22rem .65rem;
+    color:rgba(61,214,232,.9) !important;
+    border-color:rgba(61,214,232,.4) !important;
+    min-width:56px;
+  }
+  .btn-sm{padding:.2rem .45rem;font-size:.46rem}
 
   /* Middle — flex column, takes remaining space */
   #middle{
