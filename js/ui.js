@@ -134,9 +134,16 @@
     go(id, false);
   });
 
-  /* Initial page load */
+  /* Initial page load — also check ?p= param from 404 redirect */
   (function () {
-    var id = pageMap[location.pathname] || 'home';
+    var params = new URLSearchParams(location.search);
+    var pParam = params.get('p');
+    var id = (pParam && pageMap['/' + pParam]) ? pageMap['/' + pParam] : pageMap[location.pathname] || 'home';
+    /* Clean up the ?p= from URL */
+    if(pParam) {
+      var cleanPath = '/' + pParam;
+      try { history.replaceState({ page: id }, '', cleanPath); } catch(e) {}
+    }
     var active = document.querySelector('.page.active');
     if (active) active.classList.remove('active');
     var t = document.getElementById('pg-' + id);
