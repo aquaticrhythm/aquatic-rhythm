@@ -60,7 +60,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 .module-wrap.active{display:block}
 
 /* PROGRESS DOTS */
-.progress-dots{position:fixed;right:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.55rem;z-index:50}
+.progress-dots{position:fixed;right:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.55rem;z-index:50;opacity:0;pointer-events:none;transition:opacity .4s}
+.progress-dots.visible{opacity:1;pointer-events:all}
 .pdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .4s,transform .4s;cursor:pointer}
 .pdot.active{background:rgba(61,214,232,.8);transform:scale(1.4)}
 .pdot.done{background:rgba(61,214,232,.35)}
@@ -477,15 +478,16 @@ var currentMod = 1;
 var canvases = {};
 
 function goIntro() {
-  /* Return to intro — hide modules, show intro */
   var mod = document.getElementById('mod-' + currentMod);
   if (mod) { mod.classList.remove('visible'); setTimeout(function(){ mod.classList.remove('active'); }, 300); }
   var wrap = document.querySelector('.module-wrap');
   var intro = document.querySelector('.art-intro');
   if (wrap) wrap.classList.remove('active');
   if (intro) { intro.classList.remove('hidden'); intro.style.display = ''; }
+  /* Hide progress dots */
+  var dots = document.getElementById('progress-dots');
+  if (dots) dots.classList.remove('visible');
   window.scrollTo({ top: 0, behavior: 'auto' });
-  /* Reset dots */
   currentMod = 1;
   updateDots();
 }
@@ -513,13 +515,14 @@ function goMod(n) {
 }
 
 function startLearning() {
-  /* Hide intro, show modules */
   var intro = document.querySelector('.art-intro');
   var wrap = document.querySelector('.module-wrap');
   if (intro) intro.classList.add('hidden');
   if (wrap) wrap.classList.add('active');
+  /* Show progress dots */
+  var dots = document.getElementById('progress-dots');
+  if (dots) dots.classList.add('visible');
   window.scrollTo({ top: 0, behavior: 'auto' });
-  /* Init first module */
   var first = document.getElementById('mod-1');
   if (first) {
     first.classList.add('active');
