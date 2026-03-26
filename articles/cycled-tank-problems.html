@@ -60,20 +60,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 @media(max-width:600px){.art-back-meta{display:none}}
 
 /* PROGRESS DOTS */
-.progress-dots{
-  position:fixed;
-  /* Stay outside the content column — content is max 660px centered */
-  right:max(1rem, calc(50% - 380px - 2.5rem));
-  top:50%;
-  transform:translateY(-50%);
-  display:flex;flex-direction:column;gap:.6rem;
-  z-index:50;opacity:0;pointer-events:none;transition:opacity .5s;
-}
-.progress-dots.visible{opacity:1;pointer-events:all}
-.pdot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.12);transition:background .4s,transform .4s;cursor:pointer;border:none;padding:0}
-.pdot.active{background:rgba(61,214,232,.75);transform:scale(1.3)}
-.pdot.done{background:rgba(61,214,232,.35)}
-@media(max-width:1000px){.progress-dots{display:none}}
+
+
 
 /* INTRO */
 .art-intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem clamp(1.5rem,5vw,3rem) 5rem;position:relative}
@@ -147,6 +135,39 @@ canvas{display:block;width:100%}
 .final-cta p{font-family:var(--serif);font-style:italic;font-size:.96rem;color:rgba(255,255,255,.48);line-height:1.8;margin-bottom:1.4rem}
 .btn-reading{display:inline-block;text-decoration:none;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.12);padding:.75rem 1.8rem;border-radius:2px;transition:color .25s,border-color .25s;font-family:var(--sans)}
 .btn-reading:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
+
+/* MODULE PROGRESS BAR */
+#mod-progress-wrap{
+  position:fixed;top:64px;left:0;right:0;z-index:90;
+  opacity:0;pointer-events:none;transition:opacity .4s;
+}
+#mod-progress-wrap.visible{opacity:1}
+#mod-progress-bar{
+  height:2px;
+  background:rgba(255,255,255,.06);
+  position:relative;
+  overflow:hidden;
+}
+#mod-progress-bar::after{
+  content:'';
+  position:absolute;
+  left:0;top:0;height:100%;
+  width:var(--prog,0%);
+  background:linear-gradient(to right,rgba(61,214,232,.6),rgba(157,191,154,.4));
+  transition:width .5s cubic-bezier(0.19,1,0.22,1);
+}
+#mod-progress-label{
+  position:absolute;
+  right:clamp(1.5rem,5vw,4.5rem);
+  top:6px;
+  font-size:.52rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.25);
+  font-family:var(--sans);
+  transition:opacity .3s;
+}
+
 </style>
 </head>
 <body>
@@ -187,7 +208,10 @@ canvas{display:block;width:100%}
   </ul>
 </div>
 
-<nav class="progress-dots" id="progress-dots" aria-label="Module progress"></nav>
+<div id="mod-progress-wrap">
+  <div id="mod-progress-bar"></div>
+  <div id="mod-progress-label"></div>
+</div>
 
 <div class="art-back-bar">
   <a href="/reading" class="art-back-link"><span>←</span><span>Reading</span></a>
@@ -370,8 +394,8 @@ function goIntro(){
   var intro=document.getElementById('art-intro');
   if(wrap)wrap.classList.remove('active');
   if(intro){intro.classList.remove('hidden');intro.style.display='';}
-  var dots=document.getElementById('progress-dots');
-  if(dots)dots.classList.remove('visible');
+  var pw=document.getElementById('mod-progress-wrap');
+  if(pw)pw.classList.remove('visible');
   window.scrollTo({top:0,behavior:'auto'});
   currentMod=1;
   updateDots();
@@ -391,32 +415,21 @@ function goMod(n){
   if(canvases[n])setTimeout(function(){canvases[n]();},120);
 }
 
-function buildDots(){
-  var wrap=document.getElementById('progress-dots');
-  if(!wrap)return;
-  for(var i=1;i<=totalMods;i++){
-    var d=document.createElement('button');
-    d.className='pdot';d.setAttribute('aria-label','Module '+i);d.setAttribute('data-n',i);
-    d.addEventListener('click',function(){goMod(parseInt(this.getAttribute('data-n')));});
-    wrap.appendChild(d);
-  }
-}
+function buildDots(){}
 function updateDots(){
-  document.querySelectorAll('.pdot').forEach(function(d,i){
-    var n=i+1;d.classList.remove('active','done');
-    if(n===currentMod)d.classList.add('active');
-    else if(n<currentMod)d.classList.add('done');
-  });
+  var bar=document.getElementById('mod-progress-bar');
+  var lbl=document.getElementById('mod-progress-label');
+  if(bar) bar.style.setProperty('--prog', Math.round((currentMod/totalMods)*100)+'%');
+  if(lbl) lbl.textContent='Module '+currentMod+' / '+totalMods;
 }
-buildDots();
 
 function startLearning(){
   var intro=document.getElementById('art-intro');
   var wrap=document.getElementById('module-wrap');
   if(intro)intro.classList.add('hidden');
   if(wrap)wrap.classList.add('active');
-  var dots=document.getElementById('progress-dots');
-  if(dots)dots.classList.add('visible');
+  var pw=document.getElementById('mod-progress-wrap');
+  if(pw)pw.classList.add('visible');
   window.scrollTo({top:0,behavior:'auto'});
   var first=document.getElementById('mod-1');
   if(first){first.classList.add('active');setTimeout(function(){first.classList.add('visible');},30);}
