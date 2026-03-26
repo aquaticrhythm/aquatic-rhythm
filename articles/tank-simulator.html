@@ -462,6 +462,67 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   </div>
 </div>
 
+
+<!-- ── BRIEFING OVERLAY — shown once before first game ── -->
+<div class="ov hide" id="ov-brief">
+  <div class="oc" style="max-width:400px;text-align:left;margin:auto;width:100%">
+    <div style="text-align:center;margin-bottom:1.4rem">
+      <span class="oi" style="font-size:1.4rem">🌊</span>
+      <h2 class="ot" style="margin-bottom:.4rem">Before you begin</h2>
+      <p class="om" style="font-size:.72rem;color:rgba(255,255,255,.35)">Five things worth knowing. Takes 20 seconds.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.6rem">
+
+      <div style="display:flex;gap:.85rem;align-items:flex-start">
+        <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">⏱</span>
+        <div>
+          <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Time</div>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">One simulated day passes every 8 seconds. Let it run. Watch the log — it explains what is happening as it unfolds.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:.85rem;align-items:flex-start">
+        <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">⚙️</span>
+        <div>
+          <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Equipment</div>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">Heater, filter, and light are on by default. Tap any of them to toggle off — and see what actually happens to the cycle.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:.85rem;align-items:flex-start">
+        <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">🐠</span>
+        <div>
+          <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Fish-in only</div>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">If you chose fish-in cycling, feed your fish every few days. They will weaken without food — and a weakened fish handles ammonia worse.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:.85rem;align-items:flex-start">
+        <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">🦠</span>
+        <div>
+          <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Bacteria starter</div>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">The Seed button gives bacteria a head-start. It works once. Use it when you are ready — not before you understand why.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:.85rem;align-items:flex-start">
+        <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">⏸</span>
+        <div>
+          <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Pause and skip</div>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">Pause anytime to read the log carefully. Use <strong style="color:rgba(255,255,255,.6);font-weight:400">+1d</strong> in the top bar to skip forward one day when you are waiting.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:flex;gap:.6rem;flex-direction:column">
+      <button class="obtn op" id="btn-brief-go" style="width:100%">Begin →</button>
+      <button id="btn-brief-skip" style="background:none;border:none;color:rgba(255,255,255,.25);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:.4rem;font-family:var(--sans)">Skip — I know this already</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── END OVERLAY ── -->
 <div class="ov hide" id="ov-end" style="align-items:flex-start;padding:1rem">
   <div class="oc" style="max-width:460px;text-align:left;margin-top:auto;margin-bottom:auto;width:100%">
@@ -1831,13 +1892,10 @@ function updateExpected(){
   });
 });
 
-document.getElementById('btn-begin').addEventListener('click',function(){
+function beginGame(){
   var ov=document.getElementById('ov-setup');
-  ov.classList.add('hide');
-  setTimeout(function(){ov.style.display='none';},400);
+  if(ov){ov.classList.add('hide');setTimeout(function(){ov.style.display='none';},400);}
   S.fishless=CFG.method==='fishless';
-  /* factors already in CFG */
-  /* Ensure button icons match chosen method */
   var srcIcon=document.getElementById('act-source-icon');
   var srcName=document.getElementById('act-source-name');
   if(srcIcon)srcIcon.textContent=S.fishless?'🧪':'🐠';
@@ -1846,10 +1904,31 @@ document.getElementById('btn-begin').addEventListener('click',function(){
   running=true;initStars();startLoop();
   initFishCanvas();animFish();
   render();updateGuide();
-  /* First-time orientation log */
   setTimeout(function(){
     addLog('Tank ready. Heater, filter, and light are on by default — tap to toggle. Watch the bacteria bar as the cycle progresses. The log will explain what is happening.','');
   },400);
+}
+
+document.getElementById('btn-begin').addEventListener('click',function(){
+  document.getElementById('ov-setup').classList.add('hide');
+  var seen=false;try{seen=!!localStorage.getItem('ar-sim-seen');}catch(e){}
+  if(!seen){
+    document.getElementById('ov-brief').classList.remove('hide');
+  } else {
+    beginGame();
+  }
+});
+
+document.getElementById('btn-brief-go').addEventListener('click',function(){
+  try{localStorage.setItem('ar-sim-seen','1');}catch(e){}
+  document.getElementById('ov-brief').classList.add('hide');
+  beginGame();
+});
+
+document.getElementById('btn-brief-skip').addEventListener('click',function(){
+  try{localStorage.setItem('ar-sim-seen','1');}catch(e){}
+  document.getElementById('ov-brief').classList.add('hide');
+  beginGame();
 });
 
 document.getElementById('btn-pp').addEventListener('click',function(){
