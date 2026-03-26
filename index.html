@@ -772,37 +772,62 @@
 
   <div class="div"></div>
 
-  <!-- ARTICLES -->
+  <!-- ARTICLES BY CATEGORY -->
   <section style="padding:3rem clamp(1.5rem,5vw,4.5rem) 5rem">
     <div class="cap" style="max-width:760px">
 
-      <a href="/articles/new-tank-syndrome" class="sr" style="display:block;text-decoration:none;background:rgba(6,16,13,.55);border:1px solid rgba(139,189,210,.1);transition:border-color .3s;overflow:hidden;margin-bottom:1rem" onmouseover="this.style.borderColor='rgba(61,214,232,.22)'" onmouseout="this.style.borderColor='rgba(139,189,210,.1)'">
-        <div style="height:2px;background:linear-gradient(to right,rgba(61,214,232,.5),rgba(157,191,154,.3),transparent)"></div>
-        <div style="padding:2rem 2.4rem 1.8rem">
-          <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
-            <span style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(157,191,154,.72);border:1px solid rgba(157,191,154,.2);padding:.16rem .5rem;border-radius:100px">Beginner &amp; Intermediate</span>
-            <span style="font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(139,189,210,.4)">5 modules · ~10 min</span>
-            <span style="font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.35)">Interactive</span>
-          </div>
-          <h2 style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.65rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.22;margin-bottom:.7rem">New Tank Syndrome<br><em style="font-style:italic;color:rgba(255,255,255,.5);font-size:clamp(.95rem,1.6vw,1.3rem)">What is actually happening and why waiting is the right answer</em></h2>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.8;max-width:540px;margin-bottom:1.2rem">The water turned cloudy. The fish look stressed. A guided introduction to the nitrogen cycle — with interactive visuals and a live simulator.</p>
-          <span style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5)">Read &amp; Explore →</span>
+      <!-- CATEGORY 1: Living Systems -->
+      <div class="rd-cat">
+        <div class="rd-cat-header">
+          <span class="rd-cat-label">Living Systems</span>
+          <p class="rd-cat-desc">The biology, chemistry, and ecology of what happens inside the water.</p>
         </div>
-      </a>
 
-      <a href="/articles/cycled-tank-problems" class="sr" style="display:block;text-decoration:none;background:rgba(6,16,13,.55);border:1px solid rgba(139,189,210,.1);transition:border-color .3s;overflow:hidden" onmouseover="this.style.borderColor='rgba(61,214,232,.22)'" onmouseout="this.style.borderColor='rgba(139,189,210,.1)'">
-        <div style="height:2px;background:linear-gradient(to right,rgba(61,214,232,.5),rgba(157,191,154,.3),transparent)"></div>
-        <div style="padding:2rem 2.4rem 1.8rem">
-          <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
-            <span style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(157,191,154,.72);border:1px solid rgba(157,191,154,.2);padding:.16rem .5rem;border-radius:100px">Intermediate</span>
-            <span style="font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(139,189,210,.4)">4 modules · ~8 min</span>
-            <span style="font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.35)">Interactive</span>
+        <a href="/articles/new-tank-syndrome" class="rd-card" onmouseover="this.style.borderColor='rgba(61,214,232,.22)'" onmouseout="this.style.borderColor='rgba(139,189,210,.1)'">
+          <div class="rd-card-bar"></div>
+          <div class="rd-card-inner">
+            <div class="rd-card-tags">
+              <span class="rd-tag rd-tag-level">Beginner &amp; Intermediate</span>
+              <span class="rd-tag">5 modules · ~10 min</span>
+              <span class="rd-tag rd-tag-int">Interactive</span>
+            </div>
+            <h2 class="rd-card-title">New Tank Syndrome<br><em>What is actually happening and why waiting is the right answer</em></h2>
+            <p class="rd-card-desc-text">The water turned cloudy. The fish look stressed. A guided introduction to the nitrogen cycle — with interactive visuals and a live simulator.</p>
+            <span class="rd-card-cta">Read &amp; Explore →</span>
           </div>
-          <h2 style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.65rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.22;margin-bottom:.7rem">Your Tank Is Cycled<br><em style="font-style:italic;color:rgba(255,255,255,.5);font-size:clamp(.95rem,1.6vw,1.3rem)">So why are things still going wrong?</em></h2>
-          <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.8;max-width:540px;margin-bottom:1.2rem">The cycle is done but problems keep returning. A calm, guided look at what established tanks actually need — and how to read what yours is telling you.</p>
-          <span style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5)">Read →</span>
+        </a>
+
+        <a href="/articles/cycled-tank-problems" class="rd-card" onmouseover="this.style.borderColor='rgba(61,214,232,.22)'" onmouseout="this.style.borderColor='rgba(139,189,210,.1)'">
+          <div class="rd-card-bar"></div>
+          <div class="rd-card-inner">
+            <div class="rd-card-tags">
+              <span class="rd-tag rd-tag-level">Intermediate</span>
+              <span class="rd-tag">4 modules · ~8 min</span>
+              <span class="rd-tag rd-tag-int">Interactive</span>
+            </div>
+            <h2 class="rd-card-title">Your Tank Is Cycled<br><em>So why are things still going wrong?</em></h2>
+            <p class="rd-card-desc-text">The cycle is done but problems keep returning. A calm, guided look at what established tanks actually need — and how to read what yours is telling you.</p>
+            <span class="rd-card-cta">Read →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- DIVIDER -->
+      <div style="height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.1),transparent);margin:3.5rem 0"></div>
+
+      <!-- CATEGORY 2: Attuned Keepers -->
+      <div class="rd-cat">
+        <div class="rd-cat-header">
+          <span class="rd-cat-label">Attuned Keepers</span>
+          <p class="rd-cat-desc">The human side of keeping — attention, rhythm, capacity, and the relationship between keeper and system.</p>
         </div>
-      </a>
+
+        <div class="rd-coming">
+          <p>Articles in this collection are being written.</p>
+        </div>
+
+      </div>
 
     </div>
   </section>
@@ -824,6 +849,162 @@
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="mailto:hello@aquaticrhythm.com" class="sflink">Contact</a></div>
 </div></div>
 
+<script src="js/ecosystem.js" defer></script>
+<script src="js/fauna.js" defer></script>
+<script src="js/ui.js" defer></script>
+
+</body>
+</html
+/* READING PAGE CATEGORIES */
+.rd-cat{margin-bottom:.5rem}
+.rd-cat-header{margin-bottom:1.8rem}
+.rd-cat-label{display:inline-block;font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(61,214,232,.7);border-bottom:1px solid rgba(61,214,232,.25);padding-bottom:.3rem;margin-bottom:.7rem}
+.rd-cat-desc{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.75;max-width:480px}
+.rd-card{display:block;text-decoration:none;background:rgba(6,16,13,.55);border:1px solid rgba(139,189,210,.1);transition:border-color .3s;overflow:hidden;margin-bottom:.85rem}
+.rd-card-bar{height:2px;background:linear-gradient(to right,rgba(61,214,232,.5),rgba(157,191,154,.3),transparent)}
+.rd-card-inner{padding:1.8rem 2.2rem 1.6rem}
+.rd-card-tags{display:flex;align-items:center;gap:.5rem;margin-bottom:.9rem;flex-wrap:wrap}
+.rd-tag{font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(139,189,210,.4)}
+.rd-tag-level{color:rgba(157,191,154,.72);border:1px solid rgba(157,191,154,.2);padding:.14rem .45rem;border-radius:100px}
+.rd-tag-int{color:rgba(61,214,232,.35)}
+.rd-card-title{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.55rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.22;margin-bottom:.65rem}
+.rd-card-title em{font-style:italic;color:rgba(255,255,255,.48);font-size:clamp(.9rem,1.4vw,1.2rem)}
+.rd-card-desc-text{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.8;max-width:520px;margin-bottom:1rem}
+.rd-card-cta{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5)}
+.rd-coming{padding:1.6rem 2rem;border:1px dashed rgba(255,255,255,.07);background:rgba(6,16,13,.3)}
+.rd-coming p{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.22)}
+</style>PE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aquatic Rhythm — Aligned with Living Systems</title>
+<meta name="description" id="meta-desc" content="Your aquarium is a living system. Aquatic Rhythm helps you read it — through ARA, a framework for ecological care, and Rhyssa, a companion shaped by it.">
+<meta name="google-site-verification" content="YNg85UJRTB6NR2wdMs_txYDIzi4yu4n8UUU7V9Xoobw" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='0' y='0' width='44' height='44' rx='8' fill='%23041822'/%3E%3Ccircle cx='22' cy='22' r='13.8' stroke='%233dd6e8' stroke-opacity='.22' stroke-width='1' fill='none'/%3E%3Cline x1='26.8' y1='30.5' x2='26.8' y2='13' stroke='%2364c852' stroke-opacity='.82' stroke-width='1.9' stroke-linecap='round'/%3E%3Cline x1='30' y1='29.2' x2='30' y2='21' stroke='%2364c852' stroke-opacity='.65' stroke-width='1.5' stroke-linecap='round'/%3E%3Cellipse cx='18' cy='22' rx='4.5' ry='2.6' fill='%23287896' fill-opacity='.88'/%3E%3Cpath d='M13.5 22 L11 19.5 L11 24.5 Z' fill='%23287896' fill-opacity='.80'/%3E%3Cpath d='M8 22 C11 16 15 16 18 22 C21 28 25 28 28 22' stroke='%233dd6e8' stroke-opacity='.96' stroke-width='2.3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='21.2' cy='21' r='1.1' fill='white' fill-opacity='.96'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='0' y='0' width='44' height='44' rx='8' fill='%23041822'/%3E%3Ccircle cx='22' cy='22' r='13.8' stroke='%233dd6e8' stroke-opacity='.22' stroke-width='1' fill='none'/%3E%3Cline x1='26.8' y1='30.5' x2='26.8' y2='13' stroke='%2364c852' stroke-opacity='.82' stroke-width='1.9' stroke-linecap='round'/%3E%3Cline x1='30' y1='29.2' x2='30' y2='21' stroke='%2364c852' stroke-opacity='.65' stroke-width='1.5' stroke-linecap='round'/%3E%3Cellipse cx='18' cy='22' rx='4.5' ry='2.6' fill='%23287896' fill-opacity='.88'/%3E%3Cpath d='M13.5 22 L11 19.5 L11 24.5 Z' fill='%23287896' fill-opacity='.80'/%3E%3Cpath d='M8 22 C11 16 15 16 18 22 C21 28 25 28 28 22' stroke='%233dd6e8' stroke-opacity='.96' stroke-width='2.3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='21.2' cy='21' r='1.1' fill='white' fill-opacity='.96'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+<meta name="theme-color" content="#041e28">
+<link rel="canonical" href="https://aquaticrhythm.com/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"WebSite","name":"Aquatic Rhythm","alternateName":"Aligned with living Systems","url":"https://aquaticrhythm.com","description":"Aquatic Rhythm Alignment (ARA) is a framework for reading your aquarium ecosystem rhythm and aligning your care with how living systems actually work.","inLanguage":"en"},
+    {"@type":"Article","headline":"What is Aquatic Rhythm Alignment (ARA)?","description":"ARA is a behaviour-aware ecological framework for closed aquarium ecosystems.","url":"https://aquaticrhythm.com","author":{"@type":"Organization","name":"Aquatic Rhythm"},"publisher":{"@type":"Organization","name":"Aquatic Rhythm","url":"https://aquaticrhythm.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is Aquatic Rhythm Alignment (ARA)?","acceptedAnswer":{"@type":"Answer","text":"ARA is a conceptual framework for understanding closed aquarium ecosystems. Instead of asking what went wrong, ARA asks what fell out of rhythm — and what the system needs to find balance again."}},
+      {"@type":"Question","name":"What are the four principles of ARA?","acceptedAnswer":{"@type":"Answer","text":"The four principles of ARA are: (1) Timing before technique; (2) Capacity before ambition; (3) Rhythm before intensity; (4) Observation before correction."}},
+      {"@type":"Question","name":"What is Rhyssa?","acceptedAnswer":{"@type":"Answer","text":"Rhyssa is an AI aquarium companion trained in the ARA framework. She is available as a custom GPT on ChatGPT."}},
+      {"@type":"Question","name":"Why do aquarium problems happen?","acceptedAnswer":{"@type":"Answer","text":"Most aquarium problems do not begin with one big mistake. They begin when a system's rhythm shifts and the keeper hasn't seen it yet."}},
+      {"@type":"Question","name":"Is ARA suitable for beginners?","acceptedAnswer":{"@type":"Answer","text":"Yes. ARA meets keepers where they actually are. It is designed for all experience levels."}}
+    ]}
+  ]
+}
+</script>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aquaticrhythm.com/">
+<meta property="og:title" content="Aquatic Rhythm — Aligned with living systems">
+<meta property="og:description" content="Your aquarium is a living system. Aquatic Rhythm helps you read it — through ARA, a framework for ecological care, and Rhyssa, a companion shaped by it.">
+<meta property="og:image" content="https://aquaticrhythm.com/og-image.png">
+<meta property="og:image:alt" content="Aquatic Rhythm — Aligned with living systems. An ecological framework for living aquarium ecosystems.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Aquatic Rhythm">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://aquaticrhythm.com/">
+<meta name="twitter:title" content="Aquatic Rhythm — Aligned with living systems">
+<meta name="twitter:description" content="Your aquarium is a living system. Aquatic Rhythm helps you read it — through ARA, a framework for ecological care, and Rhyssa, a companion shaped by it.">
+<meta name="twitter:image" content="https://aquaticrhythm.com/og-image.png">
+<meta name="twitter:image:alt" content="Aquatic Rhythm — Aligned with living systems.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8MDN065WNW');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="cd" aria-hidden="true"></div><div id="cr" aria-hidden="true"></div>
+
+<div id="eco" aria-hidden="true">
+  <div class="wb"></div><div class="cl"></div><div class="cl2"></div><div class="sl"></div><div class="df"></div>
+  <div id="rays"></div><div id="driftwood-layer"></div>
+  <div class="plant-layer" id="plants"></div><div id="particles"></div>
+</div>
+
+<div id="water-level" aria-hidden="true">
+  <div id="water-track"></div><div id="water-fill"></div><div id="water-bubble"></div>
+</div>
+<div id="fish-layer" aria-hidden="true"></div>
+
+<nav>
+  <a href="/" class="nl" data-page="home" aria-label="Aquatic Rhythm — Aligned with living systems">
+    <svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg>
+  </a>
+  <ul class="nlinks">
+    <li><a href="/" data-page="home">Home</a></li>
+    <li><a href="/ara" data-page="ara">Explore ARA</a></li>
+    <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
+    <li><a href="/about" data-page="about">About</a></li>
+    <li><a href="/reading" data-page="reading">Reading</a></li>
+  </ul>
+  <button class="nbg" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</nav>
+
+<div id="progress-bar" aria-hidden="true"></div>
+<div id="eco-toggle" role="group" aria-label="Ecosystem visibility">
+  <button class="eco-btn" id="fauna-btn" aria-label="Toggle fauna" title="Toggle fish and animals">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <ellipse cx="10" cy="9" rx="4" ry="2.2" fill="rgba(139,189,210,.8)"/>
+      <path d="M6 9 L4 6.8 L4 11.2 Z" fill="rgba(139,189,210,.7)"/>
+      <circle cx="12.5" cy="8.2" r=".75" fill="rgba(255,255,255,.9)"/>
+      <line class="eco-slash" x1="3" y1="3" x2="15" y2="15" stroke="rgba(200,90,90,.85)" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <button class="eco-btn" id="flora-btn" aria-label="Toggle flora" title="Toggle plants and driftwood">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <line x1="9" y1="16" x2="9" y2="4" stroke="rgba(100,190,82,.85)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="9" y1="11" x2="5.5" y2="7" stroke="rgba(100,190,82,.7)" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="9" y1="8" x2="12.5" y2="5" stroke="rgba(100,190,82,.6)" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="9" cy="16" rx="2.5" ry=".8" fill="rgba(80,60,30,.5)"/>
+      <line class="eco-slash" x1="3" y1="3" x2="15" y2="15" stroke="rgba(200,90,90,.85)" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
+
+
+<div class="nmob" id="nmob" aria-hidden="true">
+  <ul>
+    <li><a href="/" data-page="home">Home</a></li>
+    <li><a href="/ara" data-page="ara">Explore ARA</a></li>
+    <li><a href="/rhyssa" data-page="rhyssa">Meet Rhyssa</a></li>
+    <li><a href="/about" data-page="about">About</a></li>
+    <li><a href="/reading" data-page="reading">Reading</a></li>
+    <li><a href="/privacy" data-page="privacy" style="color:rgba(255,255,255,.2)">Privacy Policy</a></li>
+    <li><a href="/terms" data-page="terms" style="color:rgba(255,255,255,.2)">Terms of Use</a></li>
+  </ul>
+</div>
+
+<main id="app-main">
+
+<!-- ═══════════ HOME ═══════════ -->
 </main>
 
 <script src="js/ecosystem.js" defer></script>
@@ -831,4 +1012,4 @@
 <script src="js/ui.js" defer></script>
 
 </body>
-        </html>
+  </html>
