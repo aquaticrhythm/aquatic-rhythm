@@ -318,7 +318,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
     <!-- VISUAL 1: Slider day 1 → week 3 -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
-      <canvas id="cv1" style="width:100%;height:160px"></canvas>
+      <canvas id="cv1" style="width:100%;height:180px"></canvas>
     </div>
 
     <div class="hn">
@@ -343,7 +343,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
     <!-- VISUAL 2: Tap to add days -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
-      <canvas id="cv2" style="width:100%;height:180px"></canvas>
+      <canvas id="cv2" style="width:100%;height:200px"></canvas>
     </div>
 
     <div class="pq">
@@ -375,7 +375,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
     <!-- VISUAL 3: Toggle bacteria types -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
-      <canvas id="cv3" style="width:100%;height:160px"></canvas>
+      <canvas id="cv3" style="width:100%;height:185px"></canvas>
     </div>
 
     <div class="mod-body">
@@ -405,7 +405,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
     <!-- VISUAL 4: Intervene vs wait -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
-      <canvas id="cv4" style="width:100%;height:170px"></canvas>
+      <canvas id="cv4" style="width:100%;height:210px"></canvas>
     </div>
 
     <div class="mod-body">
@@ -439,7 +439,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
     <!-- VISUAL 5: Day 1 to Day 30 -->
     <div class="vis-block" style="background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)">
-      <canvas id="cv5" style="width:100%;height:160px"></canvas>
+      <canvas id="cv5" style="width:100%;height:180px"></canvas>
     </div>
 
     <div class="mod-body">
@@ -681,7 +681,8 @@ canvases[1] = function() {
     } else if (p > .7) {
       ctx.font='300 10px DM Sans,system-ui,sans-serif';
       ctx.fillStyle='rgba(80,200,120,.6)';
-      ctx.fillText('Stabilising', W*.72, 22);
+      var t2='Stabilising';
+      ctx.fillText(t2,Math.min(W*.72,W-ctx.measureText(t2).width-8),22);
     }
   }
 
@@ -795,7 +796,7 @@ canvases[2] = function() {
 
     /* NH3 value */
     if (day > 0) {
-      ctx.font='500 '+(12+Math.round(danger*4))+'px DM Sans,system-ui,sans-serif';
+      ctx.font='600 '+(13+Math.round(danger*3))+'px DM Sans,system-ui,sans-serif';
       ctx.fillStyle='rgba('+(80+Math.round(danger*140))+','+(180-Math.round(danger*100))+',60,'+(0.55+danger*.35).toFixed(2)+')';
       ctx.fillText('NH₃  '+ammonia.toFixed(2)+' ppm', W*.55, H*.3);
       if (bacteria > .2) {
@@ -877,11 +878,12 @@ canvases[3] = function() {
     ctx.beginPath(); ctx.moveTo(W*.5,H*.12); ctx.lineTo(W*.5,H-.14); ctx.stroke();
 
     /* Labels */
-    ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.font='300 11px DM Sans,system-ui,sans-serif';
     ctx.fillStyle='rgba(220,140,60,'+(0.3+animP.A*.5).toFixed(2)+')'; ctx.fillText('Nitrosomonas',8,16);
     ctx.fillStyle='rgba(80,200,100,'+(0.3+animP.B*.5).toFixed(2)+')'; ctx.fillText('Nitrobacter',W*.52+4,16);
-    ctx.fillStyle='rgba(255,255,255,.18)';
-    ctx.fillText('NH₃ → NO₂',8,26); ctx.fillText('NO₂ → NO₃',W*.52+4,26);
+    ctx.fillStyle='rgba(255,255,255,.45)';
+    ctx.fillText('NH₃ → NO₂',8,26);
+    ctx.fillText('NO₂ → NO₃',Math.min(W*.52+4,W/2+4),26);
 
     ['A','B'].forEach(function(type){
       var p = animP[type];
@@ -963,27 +965,38 @@ canvases[4] = function() {
     ctx.fillStyle=grd; ctx.fillRect(0,0,W,H);
     if(animT < 100 && choice !== null) animT++;
 
-    var padL=38,padR=16,padT=24,padB=28;
+    var padL=42,padR=14,padT=26,padB=30;
     var gW=W-padL-padR, gH=H-padT-padB;
 
     /* Axes */
     ctx.strokeStyle='rgba(255,255,255,.1)'; ctx.lineWidth=1; ctx.setLineDash([]);
     ctx.beginPath(); ctx.moveTo(padL,padT); ctx.lineTo(padL,padT+gH); ctx.lineTo(padL+gW,padT+gH); ctx.stroke();
-    ctx.font='300 9px DM Sans,system-ui,sans-serif'; ctx.fillStyle='rgba(255,255,255,.22)';
+    ctx.font='300 11px DM Sans,system-ui,sans-serif'; ctx.fillStyle='rgba(255,255,255,.5)';
     ctx.fillText('NH₃',2,padT+8);
 
     /* Danger line */
     var dy=padT+gH*.28;
     ctx.strokeStyle='rgba(220,80,60,.2)'; ctx.setLineDash([3,4]);
     ctx.beginPath(); ctx.moveTo(padL,dy); ctx.lineTo(padL+gW,dy); ctx.stroke();
-    ctx.setLineDash([]); ctx.font='300 8px DM Sans,system-ui,sans-serif';
-    ctx.fillStyle='rgba(220,80,60,.4)'; ctx.fillText('stress zone',padL+gW*.6,dy-3);
+    ctx.setLineDash([]); ctx.font='300 10px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(220,80,60,.5)';
+    var szTxt='stress zone';
+    ctx.fillText(szTxt,Math.min(padL+gW*.55,W-ctx.measureText(szTxt).width-8),dy-4);
 
     if (choice === null) {
-      /* Show question mark */
+      /* Wrapped question text */
       ctx.font='italic 300 13px Cormorant Garamond,serif';
-      ctx.fillStyle='rgba(255,255,255,.28)';
-      ctx.fillText('Ammonia is rising. Your choice determines the path.',padL+8,padT+gH*.5);
+      ctx.fillStyle='rgba(255,255,255,.58)';
+      var qText='Ammonia is rising. Your choice determines the path.';
+      var qWords=qText.split(' ');
+      var qLine=''; var qY=padT+gH*.35; var qMaxW=gW-10;
+      qWords.forEach(function(w){
+        var test=qLine+(qLine?' ':'')+w;
+        if(ctx.measureText(test).width>qMaxW&&qLine){
+          ctx.fillText(qLine,padL+4,qY); qLine=w; qY+=18;
+        } else qLine=test;
+      });
+      if(qLine) ctx.fillText(qLine,padL+4,qY);
       /* Show a rising line */
       ctx.strokeStyle='rgba(200,140,40,.4)'; ctx.lineWidth=1.5; ctx.setLineDash([]);
       ctx.beginPath();
@@ -1010,22 +1023,29 @@ canvases[4] = function() {
 
       /* Annotation for intervene */
       if(choice==='intervene' && animT>35){
-        ctx.font='300 9px DM Sans,system-ui,sans-serif';
+        ctx.font='300 11px DM Sans,system-ui,sans-serif';
         ctx.fillStyle='rgba(220,100,60,.6)';
-        ctx.fillText('water change',padL+(35/100)*gW-10,padT+gH*.55);
-        ctx.fillText('↓ bacteria disrupted',padL+(35/100)*gW-10,padT+gH*.65);
+        ctx.font='300 10px DM Sans,system-ui,sans-serif';
+        var ax=padL+(28/100)*gW;
+        ctx.fillStyle='rgba(220,100,60,.65)';
+        ctx.fillText('water change',ax,padT+gH*.48);
+        ctx.fillText('↓ bacteria reset',ax,padT+gH*.6);
       }
       if(choice==='wait' && animT>50){
-        ctx.font='300 9px DM Sans,system-ui,sans-serif';
+        ctx.font='300 11px DM Sans,system-ui,sans-serif';
         ctx.fillStyle='rgba(61,214,232,.6)';
-        ctx.fillText('bacteria processing',padL+(50/100)*gW,padT+gH*.3);
-        ctx.fillText('↓ natural decline',padL+(50/100)*gW,padT+gH*.4);
+        ctx.font='300 10px DM Sans,system-ui,sans-serif';
+        var bx=padL+(42/100)*gW;
+        if(bx+ctx.measureText('bacteria growing').width>W-6) bx=padL+(30/100)*gW;
+        ctx.fillStyle='rgba(61,214,232,.65)';
+        ctx.fillText('bacteria growing',bx,padT+gH*.28);
+        ctx.fillText('↓ ammonia easing',bx,padT+gH*.4);
       }
       if(animT<100)animT++;
     }
 
     ctx.fillStyle='rgba(50,35,15,.7)'; ctx.fillRect(0,H-12,W,12);
-    ctx.font='300 8px DM Sans,system-ui,sans-serif'; ctx.fillStyle='rgba(255,255,255,.18)';
+    ctx.font='300 10px DM Sans,system-ui,sans-serif'; ctx.fillStyle='rgba(255,255,255,.45)';
     ctx.fillText('Days →',padL+gW-24,padT+gH+11);
 
     animFrames['cv4'] = requestAnimationFrame(drawLoop);
@@ -1144,10 +1164,13 @@ canvases[5] = function() {
 
     /* Status overlay */
     ctx.font='300 10px DM Sans,system-ui,sans-serif';
-    if (day < 8) { ctx.fillStyle='rgba(220,160,40,.6)'; ctx.fillText('Ammonia rising',W*.62,22); }
-    else if (day < 16) { ctx.fillStyle='rgba(200,160,40,.6)'; ctx.fillText('Nitrite building',W*.62,22); }
-    else if (day < 24) { ctx.fillStyle='rgba(61,214,232,.5)'; ctx.fillText('Cycle progressing',W*.56,22); }
-    else { ctx.fillStyle='rgba(80,200,120,.65)'; ctx.fillText('Cycle established',W*.57,22); }
+    var statusTxt=''; var statusCol='';
+    if(day<8){statusTxt='Ammonia rising';statusCol='rgba(220,160,40,.6)';}
+    else if(day<16){statusTxt='Nitrite building';statusCol='rgba(200,160,40,.6)';}
+    else if(day<24){statusTxt='Cycle progressing';statusCol='rgba(61,214,232,.5)';}
+    else{statusTxt='Cycle established';statusCol='rgba(80,200,120,.65)';}
+    ctx.fillStyle=statusCol;
+    ctx.fillText(statusTxt,Math.min(W*.56,W-ctx.measureText(statusTxt).width-8),22);
 
     /* Day progress bar */
     ctx.fillStyle='rgba(255,255,255,.07)'; ctx.fillRect(0,H-16,W,2);
