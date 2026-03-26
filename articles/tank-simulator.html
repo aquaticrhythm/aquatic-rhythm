@@ -163,21 +163,23 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   }
 
   /* Topbar */
-  #topbar{flex-shrink:0;padding:.38rem .75rem;gap:.4rem}
-  .t-label,.t-status{display:none}
+  #topbar{flex-shrink:0;padding:.38rem .6rem;gap:.3rem}
+  .t-label,.t-status,.t-prog{display:none}
   .ah{display:none}
-  .tb-center{gap:.3rem;justify-content:flex-start}
-  .t-icon{font-size:.85rem}
-  .t-prog{display:none}
+  .tb-center{gap:.3rem;justify-content:flex-start;flex:0 0 auto}
+  .t-icon{font-size:.82rem}
   .t-day{
-    font-size:.64rem !important;
-    letter-spacing:.1em;
-    padding:.22rem .65rem;
+    font-size:.62rem !important;
+    letter-spacing:.08em;
+    padding:.2rem .55rem;
     color:rgba(61,214,232,.9) !important;
     border-color:rgba(61,214,232,.4) !important;
-    min-width:56px;
+    min-width:52px;flex-shrink:0;
   }
-  .btn-sm{padding:.2rem .45rem;font-size:.46rem}
+  .btn-art{display:none}
+  .tb-right{gap:.25rem;flex:1;justify-content:flex-end}
+  .btn-sm{padding:.18rem .38rem;font-size:.44rem}
+  .btn-skip-inline{font-size:.44rem;padding:.18rem .38rem}
 
   /* Middle — flex column, takes remaining space */
   #middle{
@@ -255,24 +257,17 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .bac-dot.full{color:rgba(80,200,100,.85);text-shadow:0 0 6px rgba(80,200,100,.5)}
 
 /* ── GUIDED HINTS ── */
+/* Guide hint — sits above bbar, part of normal flow */
 #guide-hint{
-  position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);
-  z-index:50;pointer-events:none;
-  transition:opacity .5s,transform .5s;
-  opacity:0;
+  display:none;
+  border-top:1px solid rgba(61,214,232,.15);
+  background:rgba(4,16,12,.88);
+  padding:.38rem clamp(.5rem,2vw,1.2rem);
 }
-#guide-hint.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
-.gh-inner{
-  background:rgba(6,22,18,.92);
-  border:1px solid rgba(61,214,232,.25);
-  border-radius:3px;
-  padding:.45rem .9rem;
-  display:flex;align-items:center;gap:.5rem;
-  backdrop-filter:blur(8px);
-  white-space:nowrap;
-}
-.gh-icon{font-size:.9rem}
-.gh-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.75rem;color:rgba(255,255,255,.72)}
+#guide-hint.show{display:flex;align-items:center;gap:.5rem}
+.gh-inner{display:flex;align-items:center;gap:.5rem;width:100%}
+.gh-icon{font-size:.85rem;flex-shrink:0}
+.gh-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.72rem;color:rgba(255,255,255,.65);line-height:1.3}
 
 /* Button pulse — Aquatic Rhythm guide */
 .ab.ar-pulse{
@@ -283,6 +278,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   animation:ar-warn 1.8s ease-in-out infinite;
   border-color:rgba(200,160,40,.5);
 }
+.ab.ab-used{opacity:.25;cursor:default}
 .ab.ar-stop{
   animation:ar-stop 1.2s ease-in-out infinite;
   border-color:rgba(220,80,60,.5);
@@ -301,13 +297,62 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 }
 
 /* Wait button */
-#act-wait{
+/* #act-skip removed */
   background:rgba(6,16,13,.6);
   border:1px solid rgba(139,189,210,.12);
 }
-#act-wait.ar-pulse{
+/* #act-skip.ar-pulse removed */
   border-color:rgba(61,214,232,.4) !important;
 }
+
+
+/* WATER CHANGE PICKER */
+.wc-opt{
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(6,22,18,.8);border:1px solid rgba(139,189,210,.18);
+  border-radius:3px;padding:.55rem .9rem;cursor:pointer;
+  font-family:var(--sans);font-size:.78rem;font-weight:500;
+  color:rgba(255,255,255,.8);letter-spacing:.05em;
+  min-width:48px;transition:border-color .2s,color .2s;
+}
+.wc-opt:hover{border-color:rgba(61,214,232,.45);color:rgba(61,214,232,.9)}
+
+
+/* EQUIPMENT BAR */
+#equip-bar{
+  display:flex;align-items:center;gap:0;
+  background:rgba(3,10,8,.6);
+  border-bottom:1px solid rgba(139,189,210,.08);
+  padding:.2rem .4rem;
+  flex-shrink:0;
+}
+.eq-btn{
+  display:flex;align-items:center;gap:.25rem;
+  background:none;border:none;cursor:pointer;
+  padding:.2rem .5rem;border-radius:2px;
+  transition:opacity .25s,background .2s;
+  opacity:.35;
+  font-family:var(--sans);
+}
+.eq-btn.eq-on{opacity:1}
+.eq-btn:hover{background:rgba(255,255,255,.04)}
+.eq-icon{font-size:.75rem;line-height:1}
+.eq-lbl{font-size:.42rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.eq-temp{font-size:.42rem;color:rgba(61,214,232,.6);margin-left:.15rem}
+.eq-btn.eq-used{opacity:.25;cursor:default}
+.eq-div{width:1px;height:12px;background:rgba(255,255,255,.07);margin:0 .2rem}
+
+
+/* Skip day — inline beside day badge */
+.btn-skip-inline{
+  font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.1);border-radius:100px;
+  padding:.18rem .4rem;cursor:pointer;
+  font-family:var(--sans);flex-shrink:0;
+  transition:color .2s,border-color .2s;
+}
+.btn-skip-inline:hover{color:rgba(61,214,232,.75);border-color:rgba(61,214,232,.3)}
 
 </style>
 </head>
@@ -399,12 +444,24 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
 <!-- ── END OVERLAY ── -->
 <div class="ov hide" id="ov-end">
-  <div class="oc">
-    <span class="oi" id="ov-icon">🐟</span>
-    <h2 class="ot" id="ov-title">The cycle crashed.</h2>
-    <p class="om" id="ov-msg">Ammonia reached a critical level.</p>
-    <button class="obtn op" id="btn-restart">Try again</button>
-    <a href="/articles/new-tank-syndrome" class="obtn os">Read the article</a>
+  <div class="oc" style="max-width:460px;text-align:left">
+    <div style="text-align:center;margin-bottom:1.2rem">
+      <span class="oi" id="ov-icon">🐟</span>
+      <h2 class="ot" id="ov-title">The cycle crashed.</h2>
+      <p class="om" id="ov-msg" style="text-align:center"></p>
+    </div>
+
+    <!-- Report card -->
+    <div id="ov-report" style="background:rgba(4,18,28,.7);border:1px solid rgba(139,189,210,.12);padding:1.2rem 1.4rem;margin-bottom:1.2rem">
+      <div style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.5);margin-bottom:.9rem">Simulation Report</div>
+      <div id="rpt-rows" style="display:flex;flex-direction:column;gap:.55rem"></div>
+      <div id="rpt-verdict" style="margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.07);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6"></div>
+    </div>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center">
+      <button class="obtn op" id="btn-restart">Try again</button>
+      <a href="/articles/new-tank-syndrome" class="obtn os">Read the article</a>
+    </div>
   </div>
 </div>
 
@@ -432,8 +489,9 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       <span class="t-status" id="t-status">Setting up</span>
     </div>
     <div class="tb-right">
-      <a href="/articles/new-tank-syndrome" class="btn-sm" style="text-decoration:none">← Article</a>
+      <a href="/articles/new-tank-syndrome" class="btn-sm btn-art" style="text-decoration:none">← Article</a>
       <button class="btn-sm" id="btn-reset" title="Restart">↺</button>
+      <button class="btn-skip-inline" id="btn-skip" onclick="skipDay()" title="Skip one day">+1d</button>
       <button class="btn-sm btn-pp" id="btn-pp">⏸ Pause</button>
     </div>
   </div>
@@ -471,10 +529,33 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     <div id="tcol">
       <div id="tank">
         <div id="tsky"></div><div id="twater"></div><div id="tlight"></div>
-        <canvas id="tstars"></canvas><div id="tsurf"></div>
+        <canvas id="tstars"></canvas>
+        <canvas id="tbac" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 1s"></canvas>
+        <canvas id="tdiatom" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 2s"></canvas>
+        <div id="tsurf"></div>
         <div id="tplants"></div><div id="tfish"></div><div id="tgravel"></div>
         <div id="tmsg"><span id="tmsg-txt">Setting up...</span></div>
       </div>
+      <!-- Equipment row -->
+      <div id="equip-bar">
+        <button class="eq-btn eq-on" id="eq-heater" onclick="toggleEquip('heater')" title="Heater">
+          <span class="eq-icon">🔥</span>
+          <span class="eq-lbl">Heater</span>
+          <span class="eq-temp" id="eq-temp">26°C</span>
+        </button>
+        <div class="eq-div"></div>
+        <button class="eq-btn eq-on" id="eq-filter" onclick="toggleEquip('filter')" title="Filter">
+          <span class="eq-icon">🌀</span>
+          <span class="eq-lbl">Filter</span>
+        </button>
+        <div class="eq-div"></div>
+        <button class="eq-btn eq-on" id="eq-light" onclick="cycleLight()" title="Light intensity">
+          <span class="eq-icon">💡</span>
+          <span class="eq-lbl">Light</span>
+          <span class="eq-temp" id="eq-light-lbl">Med</span>
+        </button>
+      </div>
+
       <div id="param-bar">
         <div class="pi"><span class="pi-lbl">NH₃</span><span class="pi-val safe" id="v-nh3">0.00</span><div class="pi-track"><div class="pi-fill" id="b-nh3"></div></div></div>
         <div class="pi-div"></div>
@@ -485,24 +566,49 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <div class="pi-fish"><span class="pi-fish-lbl">Fish</span><span class="pi-fish-val" id="v-fish">0</span></div>
         <div class="pi-div"></div>
         <div class="pi-fish"><span class="pi-fish-lbl">Plants</span><span class="pi-fish-val" id="v-plant" style="color:rgba(100,180,80,.6)">0</span></div>
-        <div class="pi-div"></div>
-        <div class="pi-bac" id="bac-indicator">
-          <span class="pi-fish-lbl" style="font-size:.38rem;letter-spacing:.08em">BAC</span>
-          <span class="bac-dot" id="bac-a">●</span>
-          <span class="bac-pct" id="bac-a-pct" style="font-size:.42rem;color:rgba(220,140,60,.5);min-width:18px">0%</span>
-          <span class="bac-dot" id="bac-b" style="margin-left:.1rem">●</span>
-          <span class="bac-pct" id="bac-b-pct" style="font-size:.42rem;color:rgba(80,200,100,.5);min-width:18px">0%</span>
-        </div>
+
       </div>
     </div>
 
     <div id="pright">
+      <!-- Bacteria indicator — always visible above insight -->
+      <div id="bac-box" style="background:rgba(4,18,28,.6);border:1px solid rgba(139,189,210,.1);padding:.45rem .62rem;display:none">
+        <span style="font-size:.42rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-bottom:.38rem">Bacteria</span>
+        <div style="display:flex;flex-direction:column;gap:.28rem">
+          <div style="display:flex;align-items:center;gap:.4rem">
+            <span style="font-size:.5rem;color:rgba(220,140,60,.65);min-width:44px;letter-spacing:.04em">NH₃→NO₂</span>
+            <div style="flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden">
+              <div id="bac-bar-a" style="height:100%;width:0%;background:linear-gradient(to right,rgba(220,140,60,.6),rgba(220,140,60,.9));border-radius:2px;transition:width 1.2s ease"></div>
+            </div>
+            <span id="bac-a-pct" style="font-size:.5rem;color:rgba(220,140,60,.7);min-width:26px;text-align:right">0%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.4rem">
+            <span style="font-size:.5rem;color:rgba(80,200,100,.65);min-width:44px;letter-spacing:.04em">NO₂→NO₃</span>
+            <div style="flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden">
+              <div id="bac-bar-b" style="height:100%;width:0%;background:linear-gradient(to right,rgba(80,200,100,.6),rgba(80,200,100,.9));border-radius:2px;transition:width 1.2s ease"></div>
+            </div>
+            <span id="bac-b-pct" style="font-size:.5rem;color:rgba(80,200,100,.7);min-width:26px;text-align:right">0%</span>
+          </div>
+        </div>
+      </div>
       <div class="insight-box"><span class="ib-lbl">What is happening</span><span class="ib-txt" id="ib-txt">Your tank is ready. The cycle will begin when you add an ammonia source.</span></div>
       <div class="log-box" id="log"><div class="le"><span class="ld">Day 1</span><span>Tank set up. Ready to begin cycling.</span></div></div>
     </div>
   </div>
 
-  <!-- Guide hint -->
+  <!-- Water change picker -->
+  <div id="wc-picker" style="display:none;position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:60;background:rgba(6,16,13,.96);border:1px solid rgba(61,214,232,.2);border-radius:4px;padding:.9rem 1.2rem;backdrop-filter:blur(12px);min-width:220px">
+    <div style="font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.7rem;text-align:center">How much water to change?</div>
+    <div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap">
+      <button class="wc-opt" onclick="doWaterChange(10)">10%</button>
+      <button class="wc-opt" onclick="doWaterChange(25)">25%</button>
+      <button class="wc-opt" onclick="doWaterChange(50)">50%</button>
+      <button class="wc-opt" onclick="doWaterChange(80)">80%</button>
+    </div>
+    <div style="text-align:center;margin-top:.6rem"><button onclick="hideWaterPicker()" style="font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);background:none;border:none;cursor:pointer">Cancel</button></div>
+  </div>
+
+  <!-- Guide hint — inline above buttons -->
   <div id="guide-hint"><div class="gh-inner"><span class="gh-icon" id="gh-icon">💧</span><span class="gh-text" id="gh-text">Small water change now</span></div></div>
 
   <div id="bbar">
@@ -514,14 +620,14 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     <button class="ab" id="act-feed" onclick="doAct('feed')" disabled>
       <span class="ai">🥣</span><span class="an">Feed</span><span class="ah">Adds ammonia</span>
     </button>
-    <button class="ab" id="act-water" onclick="doAct('water')">
-      <span class="ai">💧</span><span class="an">Water change</span><span class="ah">Dilutes, disrupts</span>
+    <button class="ab" id="act-water" onclick="showWaterPicker()">
+      <span class="ai">💧</span><span class="an">Water change</span><span class="ah">Choose amount</span>
     </button>
     <button class="ab" id="act-plant" onclick="doAct('plant')">
       <span class="ai">🌿</span><span class="an">Add plants</span><span class="ah">Buffers nitrate</span>
     </button>
-    <button class="ab" id="act-wait" onclick="doAct('wait')">
-      <span class="ai">⏳</span><span class="an">Wait</span><span class="ah">Do nothing</span>
+    <button class="ab" id="act-seed" onclick="doSeed()">
+      <span class="ai">🦠</span><span class="an">Seed</span><span class="ah">Bacteria starter</span>
     </button>
   </div>
 </div>
@@ -534,6 +640,21 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
 /* Setup config */
 var CFG = { size:'small', method:'fishless', plants:'yes' };
+
+/* Fish individual states */
+var fishStates = [];
+function initFishState(idx){
+  return {
+    x: Math.random()*0.6+0.1,   /* 0-1 relative x */
+    y: 0.2+idx*0.15,             /* relative y */
+    vx: (Math.random()>.5?1:-1)*(0.0015+Math.random()*.002),
+    vy: 0,
+    targetY: 0.2+idx*0.15,
+    pauseTimer: 0,               /* ticks until next direction change */
+    surfacing: false,            /* stress behaviour */
+    bobPhase: Math.random()*Math.PI*2,
+  };
+}
 
 /* Size modifiers */
 var sizeMap = {
@@ -548,10 +669,16 @@ var S = {
   bacA:0,bacB:0,
   cycleOk:false,dead:false,won:false,
   stress:0,wc:0,totalWc:0,
-  fishless:true
+  fishless:true,
+  fishHealth:100,daysSinceFed:0,feedCount:0,
+  spikeDay:0,spikeType:'',warned:{},
+  /* Equipment */
+  heater:true,filter:true,seeded:false,temp:26,
+  light:2,   /* 0=off, 1=low, 2=med, 3=high */
+  algae:0    /* 0-1 algae level */
 };
 
-var TICK_MS=5000,SUB_MS=200,subSteps=25,subCount=0,running=false,subTimer=null;
+var TICK_MS=8000,SUB_MS=200,subSteps=40,subCount=0,running=false,subTimer=null;
 
 /* Time phases */
 var phases=[
@@ -597,58 +724,302 @@ function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 
 function tick(){
   if(S.dead||S.won)return;
-  /* Don't advance day until cycle has started */
   var hasStarted=S.fishless?(S.ammSource>0):(S.fish>0);
   if(!hasStarted)return;
   S.day++;S.wc++;
   var sz=sizeMap[CFG.size];
 
-  /* Ammonia source */
+  /* ── SCHEDULE RANDOM SPIKE ──
+     In real tanks, bacterial die-off, temperature shifts, or
+     organic matter can cause sudden parameter jumps. */
+  if(S.spikeDay===0&&S.day>4){
+    /* Schedule a spike somewhere in days 5-20 */
+    S.spikeDay=S.day+Math.floor(Math.random()*12)+3;
+    S.spikeType=Math.random()>.5?'ammonia':'nitrite';
+  }
+
+  /* ── AMMONIA INPUT ── */
   var ammoniaIn=0;
   if(S.fishless){
-    /* Fishless: ammonia from added source only */
     ammoniaIn=S.ammSource*.07*sz.load*(1-S.plants*.04);
   } else {
-    /* Fish-in: continuous from fish */
-    ammoniaIn=S.fish*.08*sz.load;
+    /* Fish-in: base waste from respiration + waste
+       Amount varies slightly day to day (±15%) — fish are biological */
+    var dailyVar=0.85+Math.random()*.3;
+    ammoniaIn=S.fish*.09*sz.load*dailyVar*(1-S.plants*.04);
+
+    /* ── FEEDING MECHANICS ──
+       Fish-in requires feeding. Without food, fish health drops.
+       Overfeeding spikes ammonia — uneaten food decomposes quickly. */
+    S.daysSinceFed++;
+    S.feedCount=0; /* reset daily count */
+
+    if(S.fish>0){
+      /* Fish can go ~4 days before showing stress.
+         Day 5+ : visibly sick. Day 8+ : fatal.
+         Physiologically: glycogen depleted → muscle catabolism → immune collapse. */
+      if(S.daysSinceFed>=5){
+        var starveRate=S.daysSinceFed===5?8:S.daysSinceFed===6?14:S.daysSinceFed===7?20:28;
+        S.fishHealth=clamp(S.fishHealth-starveRate,0,100);
+        if(!S.warned['hungry5']&&S.daysSinceFed===5){
+          S.warned['hungry5']=true;
+          addLog('Day 5 without food. Fish begin showing stress — clamped fins, reduced movement. Glycogen stores are depleted.','warn');
+        }
+        if(!S.warned['hungry7']&&S.daysSinceFed>=7){
+          S.warned['hungry7']=true;
+          addLog('Fish critically malnourished. Muscle tissue is being metabolised. Immune function is failing.','danger');
+        }
+      } else {
+        /* Healthy recovery if fed regularly */
+        S.fishHealth=clamp(S.fishHealth+3,0,100);
+      }
+    }
   }
   S.nh3=clamp(S.nh3+ammoniaIn,0,8);
 
-  /* Bacteria grow — faster, realistic cycle ~20-28 days */
-  if(S.nh3>.05)S.bacA=clamp(S.bacA+.18*(1-S.bacA)*S.nh3*sz.buf,0,1);
-  if(S.no2>.05)S.bacB=clamp(S.bacB+.18*(1-S.bacB)*S.no2*sz.buf,0,1);
-
-  /* Conversion */
-  var c1=S.bacA*S.nh3*.6;S.nh3=clamp(S.nh3-c1,0,8);S.no2=clamp(S.no2+c1*.9,0,8);
-  var c2=S.bacB*S.no2*.55;S.no2=clamp(S.no2-c2,0,8);S.no3=clamp(S.no3+c2*.85,0,80);
-  if(S.plants>0)S.no3=clamp(S.no3-S.plants*.02,0,80);
-
-  /* Cycle complete */
-  if(!S.cycleOk&&S.bacA>.75&&S.bacB>.65&&S.nh3<.25&&S.no2<.25){
-    S.cycleOk=true;
-    addLog('Nitrogen cycle established. Ammonia and nitrite are now processed continuously.','good');
+  /* ── RANDOM SPIKE EVENT ──
+     Mimics real-world unpredictability:
+     - Dead organic matter decomposing suddenly
+     - Temperature fluctuation slowing bacteria
+     - Bacterial colony partial die-off */
+  if(S.spikeDay>0&&S.day===S.spikeDay&&!S.cycleOk){
+    var spikeMag=0.3+Math.random()*.5;
+    if(S.spikeType==='ammonia'){
+      S.nh3=clamp(S.nh3+spikeMag,0,8);
+      addLog('Ammonia spike detected. This can happen when organic matter decomposes faster than bacteria can process — a normal part of an unstable cycle.','warn');
+    } else {
+      S.no2=clamp(S.no2+spikeMag,0,8);
+      addLog('Nitrite spike. As Nitrosomonas bacteria multiply rapidly, nitrite can temporarily outpace the Nitrospira colony that hasn\'t caught up yet.','warn');
+    }
+    /* Schedule another possible spike */
+    S.spikeDay=0;
   }
 
-  /* Stress — only relevant if fish present */
-  var sf=0;
-  if(S.fish>0||!S.fishless){
+  /* ── TEMPERATURE ──
+     Heater on: stable 26°C optimal. Off: drops ~0.5°C/day toward room temp ~22°C.
+     Below 20°C: bacterial growth halves. Below 15°C: nearly stalls. */
+  if(S.heater){
+    S.temp=Math.min(S.temp+0.8,26);
+  } else {
+    S.temp=Math.max(S.temp-0.5,18); /* drops toward 18°C room temp */
+    if(S.temp<22&&S.day%3===0&&!S.warned['cold'+Math.floor(S.temp)]){
+      S.warned['cold'+Math.floor(S.temp)]=true;
+      addLog('Temperature at '+S.temp.toFixed(0)+'°C. Bacterial metabolism is slowing — Nitrospira are especially temperature-sensitive.','warn');
+    }
+  }
+  var tempFac = S.temp>=25?1.0:S.temp>=22?0.7:S.temp>=18?0.45:0.2;
+
+  /* ── FILTER ──
+     Filter provides: oxygenation + surface area for bacteria.
+     Without filter: bacteria lose ~60% effective surface, low DO slows metabolism. */
+  var filterFac = S.filter ? 1.0 : 0.35;
+
+  /* ── BACTERIA GROWTH ── */
+  var facBuf = sz.buf * tempFac * filterFac;
+  /* Colony momentum — established colonies grow faster (autocatalytic effect) */
+  var momentum = S.bacA>.5 ? 1.3 : 1.0;
+  if(S.nh3>.05)S.bacA=clamp(S.bacA+.18*(1-S.bacA)*S.nh3*facBuf*momentum,0,1);
+  var momentumB = S.bacB>.5 ? 1.3 : 1.0;
+  if(S.no2>.05)S.bacB=clamp(S.bacB+.18*(1-S.bacB)*S.no2*facBuf*momentumB,0,1);
+
+  /* Small random fluctuation — bacteria colonies are not perfectly stable */
+  if(Math.random()<.08&&!S.cycleOk){
+    var noise=(Math.random()-.5)*.015;
+    S.bacA=clamp(S.bacA+noise,0,1);
+  }
+
+  /* ── CONVERSION ──
+     When colonies are mature (>80%), conversion accelerates —
+     reflecting a dense, well-established bacterial population
+     processing waste almost as fast as it is produced. */
+  var maturityBoost = (S.bacA>.8&&S.bacB>.7) ? 1.5 : (S.bacA>.6&&S.bacB>.5) ? 1.15 : 1.0;
+  var c1=S.bacA*S.nh3*.6*maturityBoost;
+  S.nh3=clamp(S.nh3-c1,0,8);
+  S.no2=clamp(S.no2+c1*.9,0,8);
+  var c2=S.bacB*S.no2*.55*maturityBoost;
+  S.no2=clamp(S.no2-c2,0,8);
+  S.no3=clamp(S.no3+c2*.85,0,80);
+  /* Plants absorb nitrate — affected by light level */
+  var lightEff=[0,0.3,1.0,1.4][S.light||2]; /* off=0, low=0.3, med=1.0, high=1.4 */
+  if(S.plants>0)S.no3=clamp(S.no3-S.plants*.02*lightEff,0,80);
+
+  /* Algae dynamics:
+     High light + high nitrate = algae outbreak
+     Low light = diatoms increase
+     Cycled tank + medium light + plants = algae suppressed */
+  var algaeGrow=0;
+  if(S.light===3&&S.no3>20) algaeGrow=0.015;       /* high light + nutrients = green algae */
+  else if(S.light<=1&&S.day>3) algaeGrow=0.008;     /* low/no light = diatoms */
+  else if(S.light===2&&S.cycleOk&&S.plants>1) algaeGrow=-0.01; /* balanced = algae recedes */
+  S.algae=clamp((S.algae||0)+algaeGrow,0,1);
+
+  /* Plant health — wilt without light */
+  if(S.light===0&&S.plants>0&&S.day%4===0&&!S.warned['nolight']){
+    S.warned['nolight']=true;
+    addLog('Plants are not receiving light. Without photosynthesis they cannot grow — and will begin to decay, adding to the organic load.','warn');
+  }
+  if(S.light===3&&S.no3>30&&S.day%5===0&&!S.warned['algbloom'+S.day]){
+    S.warned['algbloom'+S.day]=true;
+    addLog('Algae is proliferating. High light intensity combined with elevated nitrate creates ideal conditions for rapid algae growth.','warn');
+  }
+
+  /* ── CYCLE COMPLETE ── */
+  if(!S.cycleOk&&S.bacA>.75&&S.bacB>.65&&S.nh3<.25&&S.no2<.25){
+    S.cycleOk=true;
+    addLog('Nitrogen cycle established. Ammonia and nitrite are now consistently processed. The bacterial colonies are stable.','good');
+  }
+
+  /* ── STRESS (fish) ──
+     Combines water quality stress + health from feeding */
+  if(S.fish>0){
+    var sf=0;
     if(S.nh3>.5)sf+=(S.nh3-.5)*15;
     if(S.no2>.5)sf+=(S.no2-.5)*18;
     if(S.no3>50)sf+=(S.no3-50)*.8;
+    /* Health factor amplifies stress when fish are weakened */
+    var healthMult=S.fishHealth<50?(1+(50-S.fishHealth)/50):1;
+    S.stress=clamp(sf*healthMult,0,100);
+  } else {
+    S.stress=0;
   }
-  S.stress=clamp(sf,0,100);
 
-  /* Win */
+  /* ── FISH DEATH FROM STARVATION ── */
+  if(S.fish>0&&S.fishHealth<=0&&!S.dead){
+    S.dead=true;S.fish=0;running=false;
+    addLog('The fish have died from starvation and stress. Without regular feeding, metabolic function collapsed.','danger');
+    showEnd('crashed');return;
+  }
+
+  /* ── WIN condition: cycle complete, day 22+, no3 present ── */
   if(!S.won&&S.cycleOk&&S.day>22&&S.no3>.1){
-    var fishOk=S.fishless||(S.fish>0&&S.stress<25);
+    var fishOk=S.fishless||(S.fish>0&&S.stress<30&&S.fishHealth>40);
     if(fishOk){S.won=true;running=false;showEnd('won');}
   }
-  /* Crash — only if fish present and ammonia lethal */
-  if(!S.dead&&S.fish>0&&(S.nh3>4.5||S.no2>5.5||(S.stress>88&&S.day>3))){
-    S.dead=true;S.fish=0;running=false;showEnd('crashed');
+
+  /* No hard day limit — cycle at its own pace */
+
+  /* ── CRASH from water quality ── */
+  if(!S.dead&&S.fish>0&&(S.nh3>4.5||S.no2>5.5||(S.stress>90&&S.day>3))){
+    S.dead=true;S.fish=0;running=false;showEnd('crashed');return;
   }
 
   genLog();render();updateGuide();
+}
+
+function toggleEquip(type){
+  if(S.dead||S.won)return;
+  if(type==='heater'){
+    S.heater=!S.heater;
+    var btn=document.getElementById('eq-heater');
+    if(S.heater){
+      btn.classList.add('eq-on');
+      addLog('Heater on. Tank temperature returning to 26°C. Bacterial activity will increase.','');
+    } else {
+      btn.classList.remove('eq-on');
+      addLog('Heater off. Water temperature will begin to drop. Below 20°C, bacterial growth slows significantly.','warn');
+    }
+  }
+  if(type==='filter'){
+    S.filter=!S.filter;
+    var btn=document.getElementById('eq-filter');
+    if(S.filter){
+      btn.classList.add('eq-on');
+      addLog('Filter on. Water circulation restored. Bacteria colonising filter media will resume processing.','');
+    } else {
+      btn.classList.remove('eq-on');
+      addLog('Filter off. Without circulation, bacteria lose oxygen supply and filter surface area. Cycling will slow dramatically — and may stall entirely.','warn');
+    }
+  }
+  render();updateGuide();
+}
+
+function cycleLight(){
+  if(S.dead||S.won)return;
+  var levels=[0,1,2,3];
+  var labels=['Off','Low','Med','High'];
+  S.light=(S.light+1)%4;
+  var btn=document.getElementById('eq-light');
+  var lbl=document.getElementById('eq-light-lbl');
+  if(lbl)lbl.textContent=labels[S.light];
+  if(btn)btn.classList.toggle('eq-on',S.light>0);
+  var msgs={
+    0:'Light off. Plants will begin to suffer — photosynthesis requires light. Algae will shift toward low-light tolerant species.',
+    1:'Low light. Plants grow slowly. Diatoms (brown algae) may increase — they thrive under low light conditions.',
+    2:'Medium light. A good balance for most planted tanks. Algae is manageable if nutrients are not excessive.',
+    3:'High light. Plants grow faster — but so does algae, especially if CO₂ and nutrients are not matched. Watch for outbreaks.'
+  };
+  addLog(msgs[S.light],'');
+  render();updateGuide();
+}
+
+function doSeed(){
+  if(S.dead||S.won)return;
+  if(S.seeded){addLog('Bacteria starter already added.','');return;}
+  S.seeded=true;
+  S.bacA=Math.min(S.bacA+0.18,1);
+  S.bacB=Math.min(S.bacB+0.10,1);
+  var btn=document.getElementById('act-seed');
+  if(btn){btn.classList.add('ab-used');btn.disabled=true;}
+  addLog('Bacteria starter added. Nitrosomonas and Nitrospira seeded onto surfaces. Expect noticeably faster colonisation.','good');
+  render();updateGuide();
+}
+
+function skipDay(){
+  if(S.dead||S.won||!running)return;
+  tick();
+}
+
+function showWaterPicker(){
+  if(S.dead||S.won)return;
+  document.getElementById('wc-picker').style.display='block';
+}
+function hideWaterPicker(){
+  document.getElementById('wc-picker').style.display='none';
+}
+function doWaterChange(pct){
+  hideWaterPicker();
+  if(S.dead||S.won)return;
+  var frac=pct/100;
+
+  /* Parameters diluted proportionally */
+  S.nh3*=(1-frac);
+  S.no2*=(1-frac);
+  S.no3*=(1-frac);
+
+  /* Bacteria live on filter media surfaces, NOT in water column.
+     With filter running: 10-25% water change = virtually zero impact on bacteria.
+     50%+ : water change may disturb filter physically, slight impact.
+     80%+ : significant physical disturbance, water chemistry shock. */
+  var bacPenalty=0;
+  if(S.filter){
+    if(pct<=25) bacPenalty=0;          /* bacteria safe in filter */
+    else if(pct<=50) bacPenalty=0.03;  /* minor physical disturbance */
+    else if(pct<=70) bacPenalty=0.10;  /* moderate disturbance */
+    else bacPenalty=0.25;              /* severe — approaching tank reset */
+  } else {
+    /* No filter — bacteria on substrate/decor only, more vulnerable */
+    bacPenalty=frac*0.3;
+  }
+  S.bacA=clamp(S.bacA-bacPenalty,0,1);
+  S.bacB=clamp(S.bacB-bacPenalty*.85,0,1);
+  S.wc=0;S.totalWc++;
+
+  var msg='';var type='';
+  if(pct<=25){
+    msg=pct+'% water change. Parameters diluted — bacteria in the filter are unaffected.';
+    type=S.cycleOk?'good':'';
+  } else if(pct<=50){
+    msg=pct+'% water change. Good dilution. Minor physical disturbance to filter but bacteria colonies remain largely intact.';
+    type='';
+  } else if(pct<=70){
+    msg=pct+'% water change. Significant. Parameters improved but filter turbulence has set back bacterial progress somewhat.';
+    type='warn';
+  } else {
+    msg=pct+'% water change — near-complete reset. Water quality improved sharply. Bacterial colonies in the filter are disrupted. Use this only in emergencies.';
+    type='danger';
+  }
+  addLog(msg,type);
+  render();updateGuide();
 }
 
 function doAct(a){
@@ -666,54 +1037,146 @@ function doAct(a){
     }
   }
   if(a==='feed'){
-    if(S.fish===0&&S.fishless){addLog('Nothing to feed yet.','');return;}
-    S.nh3=clamp(S.nh3+(S.fishless?.1:S.fish*.12),0,8);
-    addLog('Fed. Waste added to ammonia load.',S.nh3>1.5?'warn':'');
-  }
-  if(a==='water'){
-    S.nh3*=.75;S.no2*=.75;S.no3*=.72;
-    var wcPenalty=!S.cycleOk?0.12:0.03;
-    S.bacA=clamp(S.bacA-wcPenalty,0,1);
-    S.bacB=clamp(S.bacB-wcPenalty*.8,0,1);
-    S.wc=0;S.totalWc++;
-    var rapid=S.totalWc>3&&S.day<15;
-    var msg='25% water change done.';
-    var type='';
-    if(!S.cycleOk&&rapid){
-      msg='Water changed again — '+S.totalWc+' times already. Frequent changes are resetting bacterial progress. The cycle needs stability, not intervention.';
-      type='danger';
-    } else if(!S.cycleOk){
-      msg='25% water change done. Bacteria slightly disrupted — the cycle will take a little longer.';
-      type='warn';
+    if(S.fish===0&&S.fishless){addLog('Nothing to feed yet — no fish in a fishless cycle.','');return;}
+    if(S.fish===0){addLog('Add fish first.','');return;}
+    S.feedCount=(S.feedCount||0)+1;
+    /* Feeding resets hunger clock */
+    S.daysSinceFed=0;
+    S.fishHealth=clamp(S.fishHealth+8,0,100);
+    /* Ammonia load from feeding:
+       Uneaten food decomposes into ammonia within hours.
+       Overfeeding is one of the fastest ways to spike parameters. */
+    /* Ammonia from feeding depends on cycle stage.
+       Pre-cycle: bacteria cannot process waste → ammonia rises.
+       Post-cycle: bacteria process waste almost immediately → minimal net rise.
+       Nitrite present = bacteria active = less ammonia accumulation. */
+    var cycleActive = S.bacA > 0.3; /* bacteria processing meaningfully */
+    var baseLoad = cycleActive ? S.fish * 0.025 : S.fish * 0.1;
+
+    if(S.feedCount > 1){
+      /* Overfeeding always causes problems regardless of cycle stage */
+      var overLoad = cycleActive ? S.fish * 0.08 : S.fish * 0.22;
+      S.nh3 = clamp(S.nh3 + overLoad, 0, 8);
+      addLog('Fed again. Excess food decomposes faster than bacteria can process — ammonia is rising.', 'warn');
+    } else if(S.feedCount > 2){
+      var bigLoad = cycleActive ? S.fish * 0.14 : S.fish * 0.35;
+      S.nh3 = clamp(S.nh3 + bigLoad, 0, 8);
+      addLog('Overfeeding. Uneaten food is polluting the water. Bacteria cannot keep up with this load.', 'danger');
+    } else {
+      S.nh3 = clamp(S.nh3 + baseLoad, 0, 8);
+      var feedMsg = cycleActive
+        ? 'Fed. Bacteria are processing waste — parameters should stay stable.'
+        : 'Fed. Waste is adding to ammonia load.';
+      addLog(feedMsg, S.nh3 > 1.5 && !cycleActive ? 'warn' : '');
     }
-    addLog(msg,type);
   }
+  /* water handled by doWaterChange() */
   if(a==='plant'){
     if(S.plants>=4){addLog('Tank is well planted.','');return;}
     S.plants++;
     addLog('Plants added. Will absorb nitrate over time.','good');
   }
-  if(a==='wait'){
-    addLog('Waiting. The system is working on its own timeline.','');
-  }
+  /* wait replaced by doSkipDay() */
   render();
   updateGuide();
 }
 
-/* Insights */
-var insights=[
-  {t:function(s){return s.ammSource===0&&s.fish===0&&!s.fishless===false;},txt:'The tank is ready. Add an ammonia source to begin the nitrogen cycle.'},
-  {t:function(s){return s.ammSource===0&&s.fish===0&&s.fishless===false;},txt:'The tank is ready. Add fish to begin — but watch ammonia closely.'},
-  {t:function(s){return (s.ammSource>0||s.fish>0)&&s.nh3<.3&&s.day<6;},txt:'Ammonia is starting to rise. Bacteria are beginning to arrive. Days, not hours.'},
-  {t:function(s){return s.nh3>=.5&&s.nh3<2&&s.no2<.5;},txt:'Ammonia is elevated. Expected at this stage. Resist large water changes — they slow the bacteria.'},
-  {t:function(s){return s.no2>.5&&s.bacA>.3;},txt:'Nitrite is rising — the first stage of the cycle is working. Nitrobacter bacteria need time now.'},
-  {t:function(s){return s.cycleOk&&s.no3<30;},txt:'Cycle established. The tank is now processing ammonia and nitrite continuously. Well done.'},
-  {t:function(s){return s.totalWc>4&&s.day<20;},txt:'Frequent water changes are slowing the bacteria. Smaller and less frequent is better right now.'},
-  {t:function(s){return s.fish>0&&s.stress>50&&!s.dead;},txt:'Fish are stressed. Surface breathing and hiding are early warning signs. Watch carefully.'},
-  {t:function(s){return s.wc>8&&s.no3>40;},txt:'Nitrate has been accumulating. A small water change would help without disrupting the cycle.'},
-  {t:function(s){return s.won;},txt:'The cycle is complete. You read the system and responded with patience. That is what this phase required.'}
+/* Insights — multi-message rotation per condition */
+var insightTick=0;
+var insightGroups=[
+  {t:function(s){return s.ammSource===0&&s.fish===0&&s.fishless;},msgs:[
+    'The tank is ready. Add an ammonia source to begin the nitrogen cycle.',
+    '💧 An empty tank has no biology yet. Ammonia is what brings bacteria in.',
+    'Fishless cycling is the kinder method — no fish experience the difficult early weeks.'
+  ]},
+  {t:function(s){return s.ammSource===0&&s.fish===0&&!s.fishless;},msgs:[
+    '🐠 The tank is ready. Add your first fish to begin the cycle.',
+    'Watch ammonia closely once fish are added — they produce waste continuously.',
+    'Start with fewer fish than you plan to keep. The cycle will be easier to manage.'
+  ]},
+  {t:function(s){return (s.ammSource>0||s.fish>0)&&s.nh3<.3&&s.day<6;},msgs:[
+    '🔬 Day '+0+'. Bacteria are beginning to seed onto surfaces. Invisible but already working.',
+    'The early days look quiet — but colonisation has begun on filter media and substrate.',
+    '⏳ Nothing to do right now. This phase is about time, not action.'
+  ]},
+  {t:function(s){return s.nh3>=.5&&s.nh3<2&&s.no2<.5;},msgs:[
+    'Ammonia is rising. This is normal — bacteria are not yet numerous enough to process it.',
+    '🟡 Elevated ammonia is the first sign the cycle is fuelling. Resist the urge to intervene.',
+    'The bacteria feeding on ammonia (Nitrosomonas) are multiplying now. Give them time.'
+  ]},
+  {t:function(s){return s.nh3>=2&&s.no2<.5&&s.fish>0;},msgs:[
+    '⚠️ Ammonia is getting high. If fish are present, a small water change will help.',
+    'High ammonia damages fish gills directly. It does not need to be lethal to cause harm.',
+    'A 10-15% water change dilutes ammonia without washing away bacteria. Small and steady.'
+  ]},
+  {t:function(s){return s.no2>.3&&s.no2<1.5&&s.bacA>.3;},msgs:[
+    'Nitrite is rising — Nitrosomonas are converting ammonia successfully. Stage one is working.',
+    '🟠 Nitrite spike means the cycle is progressing. Nitrospira (stage two bacteria) need time now.',
+    'This is the most dangerous phase for fish — nitrite blocks oxygen uptake in the blood.'
+  ]},
+  {t:function(s){return s.no2>=1.5;},msgs:[
+    '🔴 Nitrite is very high. If fish are present, a water change is needed now.',
+    'High nitrite causes brown blood disease in fish — haemoglobin cannot carry oxygen.',
+    'Nitrospira colonies are still establishing. They grow slower than Nitrosomonas — patience.'
+  ]},
+  {t:function(s){return s.bacA>.6&&s.bacB>.4&&!s.cycleOk;},msgs:[
+    '🌱 Bacterial colonies are reaching maturity. The end of the cycle is getting close.',
+    'Both stages are now active. Parameters should begin stabilising soon.',
+    'Watch for ammonia and nitrite falling together — that is the sign the cycle is completing.'
+  ]},
+  {t:function(s){return s.cycleOk&&s.no3<30;},msgs:[
+    '✅ Cycle established. The tank is now self-sustaining. Well done.',
+    '🎉 Both bacterial colonies are stable and processing continuously.',
+    'Nitrate will accumulate from here — monitor it and change water regularly.'
+  ]},
+  {t:function(s){return s.cycleOk&&s.no3>=30;},msgs:[
+    'Nitrate is building. Regular partial water changes will keep it manageable.',
+    '💧 A weekly 15-25% water change is the most effective nitrate control.',
+    'Live plants absorb nitrate too — a well-planted tank needs fewer water changes.'
+  ]},
+  {t:function(s){return s.totalWc>3&&s.day<18&&!s.cycleOk;},msgs:[
+    '⚠️ Multiple water changes this early may be slowing progress.',
+    'Each large water change removes some bacteria along with the ammonia.',
+    'Smaller, less frequent changes are better during an active cycle.'
+  ]},
+  {t:function(s){return s.fish>0&&s.stress>50&&!s.dead;},msgs:[
+    '😰 Fish are showing stress. Surface breathing is an early warning.',
+    'Stressed fish have suppressed immunity — disease risk increases.',
+    'Check ammonia and nitrite. One of them is likely the cause.'
+  ]},
+  {t:function(s){return !s.heater&&s.temp<22;},msgs:[
+    '🌡️ Temperature is dropping. Bacterial growth slows significantly below 22°C.',
+    'Nitrospira are especially sensitive to cold — they slow before Nitrosomonas do.',
+    'Turn the heater on to restore optimal conditions (25-27°C).'
+  ]},
+  {t:function(s){return !s.filter;},msgs:[
+    '🌀 No filter running. Bacteria are losing their primary colonisation surface.',
+    'Without circulation, dissolved oxygen drops — bacteria become less active.',
+    'Even a simple sponge filter makes a significant difference to cycling speed.'
+  ]}
 ];
-function getInsight(s){for(var i=insights.length-1;i>=0;i--)if(insights[i].t(s))return insights[i].txt;return 'Watch. The system is still settling.';}
+var insightRotate={};
+function getInsight(s){
+  insightTick++;
+  for(var i=insightGroups.length-1;i>=0;i--){
+    if(insightGroups[i].t(s)){
+      var msgs=insightGroups[i].msgs;
+      var key='g'+i;
+      if(!insightRotate[key])insightRotate[key]=0;
+      /* Rotate every 3 ticks */
+      if(insightTick%3===0)insightRotate[key]=(insightRotate[key]+1)%msgs.length;
+      var txt=msgs[insightRotate[key]];
+      /* Replace day placeholder */
+      return txt.replace('Day '+0,'Day '+s.day);
+    }
+  }
+  var idle=['Watch. The system is still settling.',
+    '🔬 Biology works on its own schedule — not yours.',
+    'Every stable tank went through exactly this phase.',
+    '💭 The best thing you can do right now is observe.'];
+  if(insightTick%4===0)insightRotate['idle']=(( insightRotate['idle']||0)+1)%idle.length;
+  return idle[insightRotate['idle']||0];
+}
 
 function addLog(msg,type){
   var log=document.getElementById('log');
@@ -725,12 +1188,44 @@ function addLog(msg,type){
 }
 
 function genLog(){
-  if(S.nh3>2.5&&S.nh3<=4.5)addLog('Ammonia critically high.'+( S.fish>0?' Fish in danger.':''),'danger');
-  else if(S.nh3>.5&&S.day%3===0)addLog('Ammonia elevated. Cycle still building.','warn');
-  if(S.no2>2)addLog('Nitrite spike. Cycle progressing but stressful for fish.','warn');
-  if(S.no3>40&&S.day%5===0)addLog('Nitrate accumulating. Consider a small water change.','warn');
-  if(S.cycleOk&&S.day%6===0)addLog('Parameters stable. Cycle running well.','good');
-  if(S.bacA>.4&&S.bacA<.6&&S.day%4===0)addLog('Bacterial colonies expanding. Getting closer.','');
+  if(S.nh3>2.5&&S.nh3<=4.5)addLog('Ammonia critically high.'+( S.fish>0?' Fish in acute danger — gills are being damaged.':''),'danger');
+  else if(S.nh3>.5&&S.day%3===0)addLog('Ammonia elevated. Bacteria are building but not yet sufficient.','warn');
+  if(S.no2>2&&S.day%2===0)addLog('Nitrite spike. Nitrospira colonies are still establishing — this is normal but dangerous for fish.','warn');
+  if(S.no3>40&&S.day%5===0)addLog('Nitrate accumulating. A partial water change would help.','warn');
+  if(S.cycleOk&&S.day%6===0)addLog('Parameters stable. Bacterial colonies are self-sustaining.','good');
+  if(S.bacA>.3&&S.bacA<.6&&S.day%5===0)addLog('Nitrosomonas colonies growing. Nitrite will begin rising soon.','');
+  if(S.bacB>.3&&S.bacB<.7&&S.day%5===0)addLog('Nitrospira establishing. Nitrite should start falling.','');
+  /* Fish health status */
+  if(S.fish>0&&S.fishHealth<70&&S.fishHealth>=40&&S.day%3===0)
+    addLog('Fish showing stress signs — slower movement, reduced colour. Health: '+((S.fishHealth||100)).toFixed(0)+'%.','warn');
+  if(S.fish>0&&S.fishHealth<40&&S.day%2===0)
+    addLog('Fish in poor condition. Immune function compromised — disease risk rising. Health: '+((S.fishHealth||100)).toFixed(0)+'%.','danger');
+
+  /* Narrative logs — biology explanations every few days */
+  var narratives=[
+    {day:3, fn:function(){return !S.warned['n3'];}, msg:'Day 3. Invisible activity has begun. Ammonia-oxidising bacteria are seeding from the air, water, and any surfaces you introduced.',type:''},
+    {day:6, fn:function(){return S.bacA<.15&&!S.warned['n6'];}, msg:'Bacterial colonies are microscopic at this stage. You cannot see them, but they are there — multiplying slowly on filter media and substrate.',type:''},
+    {day:10, fn:function(){return S.no2>.2&&!S.warned['n10'];}, msg:'Nitrite appearing is a sign the first stage is working. Nitrosomonas are converting ammonia — the second colony (Nitrospira) now has substrate to grow on.',type:''},
+    {day:15, fn:function(){return !S.cycleOk&&!S.warned['n15'];}, msg:'Week two. The most difficult waiting period. Parameters may look chaotic — this is normal. The biology is reorganising itself.',type:''},
+    {day:20, fn:function(){return !S.cycleOk&&!S.warned['n20'];}, msg:'Bacterial colonies typically reach self-sustaining density around weeks 3-4. Temperature, surface area, and consistency all affect the timeline.',type:''},
+    {day:25, fn:function(){return !S.cycleOk&&!S.warned['n25'];}, msg:'Day 25. Some cycles complete by now — others take 6-8 weeks. If parameters are still unstable, the system is still working.',type:''},
+  ];
+  narratives.forEach(function(n){
+    if(S.day===n.day&&n.fn()){
+      S.warned['n'+n.day]=true;
+      addLog(n.msg,n.type);
+    }
+  });
+
+  /* Diatom event */
+  if(S.day===4&&!S.warned['diatom']){
+    S.warned['diatom']=true;
+    addLog('A brown film is forming on surfaces — diatom algae (Bacillariophyceae). Normal in new tanks. They feed on silicates and excess light. Will fade as the tank matures.','');
+  }
+  if(S.cycleOk&&!S.warned['diatom_fade']){
+    S.warned['diatom_fade']=true;
+    addLog('Diatoms are receding. As the cycle stabilises, competing algae and reduced silicates make conditions less favourable for them.','good');
+  }
 }
 
 /* ── GUIDE SYSTEM ── */
@@ -743,7 +1238,7 @@ function updateGuide(){
   var ghText = document.getElementById('gh-text');
 
   /* Clear all button pulses first */
-  ['act-source','act-feed','act-water','act-plant','act-wait'].forEach(function(id){
+  ['act-source','act-feed','act-water','act-plant','act-seed'].forEach(function(id){
     var el=document.getElementById(id);
     if(el)el.classList.remove('ar-pulse','ar-warn','ar-stop');
   });
@@ -759,13 +1254,17 @@ function updateGuide(){
   if(!hasStarted){
     /* Pulse source button */
     pulseBtn='act-source'; pulseClass='ar-pulse';
-    icon='🧪'; text=S.fishless?'Add an ammonia source to begin':'Add a fish to begin the cycle';
+    icon=S.fishless?'🧪':'🐠'; text=S.fishless?'Add an ammonia source to begin':'Add fish to begin the cycle';
     hintShow=true;
 
+  } else if(!S.fishless&&S.fish>0&&S.daysSinceFed>=4){
+    /* Fish need feeding */
+    pulseBtn='act-feed'; pulseClass='ar-warn';
+    icon='🥣'; text='Fish need feeding — don\'t skip days';
+    hintShow=true;
   } else if(S.nh3<.3&&S.bacA<.15&&S.day<8){
-    /* Early days — just wait */
-    pulseBtn='act-wait'; pulseClass='ar-pulse';
-    icon='⏳'; text='Bacteria are seeding — patience now';
+    pulseBtn=null;
+    icon='⏳'; text='The cycle is seeding. Leave it alone for now.';
     hintShow=true;
 
   } else if(S.nh3>3&&S.fish>0){
@@ -775,21 +1274,18 @@ function updateGuide(){
     hintShow=true;
 
   } else if(S.nh3>1.5&&S.no2<.5&&!S.cycleOk){
-    /* Ammonia high but cycle still early — small water change ok */
     pulseBtn='act-water'; pulseClass='ar-warn';
-    icon='💧'; text='Ammonia elevated — small water change helps';
+    icon='💧'; text='Ammonia elevated — consider a water change';
     hintShow=true;
 
   } else if(S.nh3>.3&&S.no2>.3&&S.bacA>.3&&!S.cycleOk){
-    /* Mid cycle — both rising, bacteria working — wait */
-    pulseBtn='act-wait'; pulseClass='ar-pulse';
-    icon='⏳'; text='Bacteria are working — leave it alone';
+    pulseBtn=null;
+    icon='⏳'; text='Bacteria are working — nothing to do but wait';
     hintShow=true;
 
   } else if(S.no3>40&&S.cycleOk){
-    /* Cycle done but nitrate high */
     pulseBtn='act-water'; pulseClass='ar-warn';
-    icon='💧'; text='Nitrate accumulating — time for a water change';
+    icon='💧'; text='Nitrate is building — the tank needs a water change';
     hintShow=true;
 
   } else if(S.cycleOk&&S.no3<30){
@@ -798,8 +1294,8 @@ function updateGuide(){
 
   } else if(S.totalWc>3&&S.day<20&&!S.cycleOk){
     /* Too many water changes */
-    pulseBtn='act-wait'; pulseClass='ar-warn';
-    icon='⛔'; text='Too many changes — stop and let bacteria establish';
+    pulseBtn=null;
+    icon='⛔'; text='Too many changes. Stop intervening — let bacteria recover.';
     hintShow=true;
   }
 
@@ -816,6 +1312,156 @@ function updateGuide(){
     } else {
       hint.classList.remove('show');
     }
+    /* Also pulse water button for water change reminders */
+    if(pulseBtn==='act-water'&&hintShow){
+      var wBtn=document.getElementById('act-water');
+      if(wBtn)wBtn.classList.add(pulseClass);
+    }
+  }
+}
+
+/* ── FISH CANVAS ANIMATION ── */
+var fishAnimId=null;
+var fishCols=['rgba(139,189,210,1)','rgba(180,140,80,1)','rgba(120,160,100,1)','rgba(180,100,80,1)','rgba(160,120,160,1)'];
+var fishCanvas=null,fishCtx=null;
+
+function initFishCanvas(){
+  var tank=document.getElementById('tank');
+  fishCanvas=document.getElementById('tfish');
+  /* Convert tfish div to canvas */
+  if(fishCanvas.tagName!=='CANVAS'){
+    var cv=document.createElement('canvas');
+    cv.id='tfish-cv';
+    cv.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';
+    tank.appendChild(cv);
+    fishCanvas=cv;
+  }
+  fishCtx=fishCanvas.getContext('2d');
+  resizeFishCanvas();
+}
+
+function resizeFishCanvas(){
+  if(!fishCanvas)return;
+  var tank=document.getElementById('tank');
+  fishCanvas.width=tank.offsetWidth;
+  fishCanvas.height=tank.offsetHeight;
+}
+
+function drawFish(ctx,x,y,w,h,col,facingLeft,opacity,sick){
+  ctx.save();
+  ctx.globalAlpha=opacity;
+  if(sick){ctx.filter='sepia(0.6) brightness(0.7)';}
+  /* Body */
+  ctx.fillStyle=col;
+  ctx.beginPath();ctx.ellipse(x,y,w,h,0,0,Math.PI*2);ctx.fill();
+  /* Tail */
+  var tx=facingLeft?x+w:x-w;
+  ctx.beginPath();
+  if(facingLeft){ctx.moveTo(x+w*.6,y);ctx.lineTo(tx+w*.7,y-h*1.1);ctx.lineTo(tx+w*.7,y+h*1.1);}
+  else{ctx.moveTo(x-w*.6,y);ctx.lineTo(tx-w*.7,y-h*1.1);ctx.lineTo(tx-w*.7,y+h*1.1);}
+  ctx.closePath();ctx.globalAlpha=opacity*.8;ctx.fill();
+  /* Eye */
+  ctx.globalAlpha=opacity;
+  ctx.fillStyle='rgba(255,255,255,.9)';
+  var ex=facingLeft?x-w*.45:x+w*.45;
+  ctx.beginPath();ctx.arc(ex,y-h*.25,h*.4,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='rgba(20,20,30,.9)';
+  ctx.beginPath();ctx.arc(ex+(facingLeft?-.15:.15),y-h*.25,h*.22,0,Math.PI*2);ctx.fill();
+  if(sick){ctx.filter='none';}
+  ctx.restore();
+}
+
+function animFish(){
+  fishAnimId=requestAnimationFrame(animFish);
+  if(!fishCtx||!fishCanvas.width)return;
+  var W=fishCanvas.width,H=fishCanvas.height;
+  fishCtx.clearRect(0,0,W,H);
+  if(!running||S.fishless||S.fish===0)return;
+
+  var now=Date.now();
+  var sick=S.fishHealth<50;
+  var stressed=S.stress>40;
+  var speed=sick?0.2:stressed?0.45:0.65;
+
+  fishStates.forEach(function(fs,idx){
+    /* Update position */
+    if(fs.pauseTimer>0){
+      fs.pauseTimer--;
+    } else {
+      /* Move */
+      fs.x+=fs.vx*speed;
+      /* Bob up/down gently */
+      fs.bobPhase+=0.012*speed;
+      var bobAmp=sick?0.004:0.008;
+      fs.y+=(fs.targetY-fs.y)*.05+Math.sin(fs.bobPhase)*bobAmp;
+
+      /* Stress behaviour — surface breathing */
+      if(stressed&&!sick){
+        fs.targetY=0.08+idx*.04;
+      } else if(sick){
+        /* Sick fish sink lower, move sluggishly */
+        fs.targetY=0.55+idx*.08;
+        if(Math.random()<.01)fs.pauseTimer=30+Math.floor(Math.random()*60);
+      } else {
+        /* Normal — roam mid-tank */
+        fs.targetY=0.2+idx*.12+Math.sin(now*.0004+idx)*0.06;
+        if(Math.random()<.008)fs.pauseTimer=15+Math.floor(Math.random()*25);
+      }
+
+      /* Bounce off walls */
+      if(fs.x<0.05){fs.x=0.05;fs.vx=Math.abs(fs.vx);}
+      if(fs.x>0.92){fs.x=0.92;fs.vx=-Math.abs(fs.vx);}
+      fs.y=Math.max(0.06,Math.min(0.85,fs.y));
+    }
+
+    var x=fs.x*W, y=fs.y*H;
+    var fw=9*Math.min(W/200,1.2), fh=5.5*Math.min(W/200,1.2);
+    var col=fishCols[idx%5];
+    var op=sick?0.45:stressed?0.6:0.82;
+    drawFish(fishCtx,x,y,fw,fh,col,fs.vx<0,op,sick);
+  });
+
+  /* Bacteria glow overlay */
+  var tbac=document.getElementById('tbac');
+  if(tbac&&tbac.getContext&&parseFloat(tbac.style.opacity)>.05){
+    var bCtx=tbac.getContext('2d');
+    tbac.width=W;tbac.height=H;
+    bCtx.clearRect(0,0,W,H);
+    var bStr=parseFloat(tbac.style.opacity)||0;
+    /* Scattered bacteria dots on surfaces */
+    for(var i=0;i<18;i++){
+      var bx=(i/18)*W+Math.sin(now*.0005+i)*8;
+      var by=H*.7+Math.sin(i*1.4)*H*.22;
+      var col2=S.bacB>.3?'rgba(80,200,100,':'rgba(220,140,60,';
+      var grd=bCtx.createRadialGradient(bx,by,0,bx,by,18);
+      grd.addColorStop(0,col2+(bStr*.12).toFixed(3)+')');
+      grd.addColorStop(1,'transparent');
+      bCtx.fillStyle=grd;bCtx.fillRect(bx-18,by-18,36,36);
+    }
+  }
+
+  /* Diatom (brown algae) on glass and substrate */
+  var tdiatom=document.getElementById('tdiatom');
+  if(tdiatom&&tdiatom.getContext&&parseFloat(tdiatom.style.opacity)>.05){
+    var dCtx=tdiatom.getContext('2d');
+    if(tdiatom.width!==W){tdiatom.width=W;tdiatom.height=H;}
+    dCtx.clearRect(0,0,W,H);
+    var dStr=parseFloat(tdiatom.style.opacity)||0;
+    /* Brown algae patches on walls */
+    for(var j=0;j<8;j++){
+      var dx=j%2===0?j*12+4:W-j*10-20;
+      var dy=H*.3+j*H*.06;
+      var dr=8+j*3;
+      var dg=dCtx.createRadialGradient(dx,dy,0,dx,dy,dr);
+      dg.addColorStop(0,'rgba(160,100,40,'+(dStr*.35).toFixed(2)+')');
+      dg.addColorStop(1,'transparent');
+      dCtx.fillStyle=dg;dCtx.fillRect(dx-dr,dy-dr,dr*2,dr*2);
+    }
+    /* Substrate diatom film */
+    var sg=dCtx.createLinearGradient(0,H*.82,0,H);
+    sg.addColorStop(0,'transparent');
+    sg.addColorStop(1,'rgba(140,90,30,'+(dStr*.2).toFixed(2)+')');
+    dCtx.fillStyle=sg;dCtx.fillRect(0,H*.82,W,H*.18);
   }
 }
 
@@ -850,41 +1496,68 @@ function render(){
   var pbf=document.getElementById('pb-fish');if(pbf)pbf.style.width=(fishCount/5*100)+'%';
   var pbp=document.getElementById('pb-plant');if(pbp)pbp.style.width=(S.plants/4*100)+'%';
 
-  /* Water colour */
-  var danger=Math.max(S.nh3/4,S.no2/4);
-  var teal=Math.max(0,.16-danger*.12);
-  document.getElementById('twater').style.background='radial-gradient(ellipse at 50% 30%,rgba(60,200,220,'+teal.toFixed(3)+') 0%,rgba('+(4+Math.round(danger*22))+','+(28+Math.round(danger*6))+','+(38-Math.round(danger*8))+',.55) 100%)';
+  /* Water colour — murky when ammonia high, clears as cycle stabilises */
+  var danger=Math.max(S.nh3/5,S.no2/5);
+  var murk=Math.min(1,S.nh3*.25+S.no2*.15);
+  var clarity=S.cycleOk?0.22:Math.max(0,.16-danger*.12-murk*.06);
+  /* Cloudy effect — ammonia makes water greenish-yellow, early tank is murky brown */
+  var r=4+Math.round(danger*18)+Math.round(murk*12);
+  var g=28+Math.round(murk*10)-Math.round(danger*4);
+  var b=38-Math.round(danger*8)-Math.round(murk*6);
+  document.getElementById('twater').style.background=
+    'radial-gradient(ellipse at 50% 30%,rgba(60,200,220,'+clarity.toFixed(3)+') 0%,rgba('+r+','+g+','+b+',.6) 100%)';
+  /* Cloudiness overlay — new tank often gets bacterial bloom (white cloud) */
+  var tsky=document.getElementById('tsky');
+  if(tsky&&S.day>2&&S.day<10&&!S.cycleOk&&S.nh3>.3){
+    var cloudStr=Math.min(.15,(S.day-2)*.02);
+    tsky.style.background='rgba('+Math.round(2+murk*20)+','+Math.round(5+murk*12)+','+Math.round(15+murk*8)+','+Math.max(.62,cloudStr+.62)+')';
+  }
 
   /* Tank message */
   var msg=document.getElementById('tmsg');
   var hasActivity=S.fishless?(S.ammSource>0):(S.fish>0);
   msg.style.opacity=hasActivity?'0':'1';
   if(!hasActivity){
-    var txt=S.fishless?'Add an ammonia source to begin.':'Add fish to begin.';
+    var txt=S.fishless?'Add an ammonia source to begin.':'🐠 Add fish to begin.';
     document.getElementById('tmsg-txt').textContent=txt;
   }
 
-  /* Fish visuals (fish-in only) */
-  var fc=document.getElementById('tfish');
-  var tankW=document.getElementById('tank').offsetWidth||200;
+  /* Fish visuals drawn on canvas each animation frame — see animFish() */
   var displayFish=S.fishless?0:S.fish;
-  while(fc.children.length<displayFish){
-    var idx=fc.children.length;
-    var f=document.createElement('div');
-    f.style.cssText='position:absolute;top:'+(22+idx*14)+'%;left:0;animation:fs'+(idx%3)+' '+(7+idx*1.5)+'s linear '+(idx*1.1)+'s infinite;opacity:'+(S.stress>60?.38:.75);
-    var cols=['rgba(139,189,210,.85)','rgba(180,140,80,.85)','rgba(120,160,100,.85)','rgba(180,100,80,.85)','rgba(160,120,160,.85)'];
-    var c=cols[idx%5];
-    f.innerHTML='<svg width="30" height="18" viewBox="0 0 30 18" fill="none"><ellipse cx="18" cy="9" rx="10" ry="5.8" fill="'+c+'"/><path d="M8 9 L1 4.5 L1 13.5Z" fill="'+c+'" opacity=".8"/><circle cx="25" cy="6.5" r="1.8" fill="rgba(255,255,255,.9)"/></svg>';
-    fc.appendChild(f);
-  }
-  while(fc.children.length>displayFish)fc.removeChild(fc.lastChild);
+  /* Sync fishStates array */
+  while(fishStates.length<displayFish)fishStates.push(initFishState(fishStates.length));
+  while(fishStates.length>displayFish)fishStates.pop();
 
-  /* Fishless — show bubbles when active */
+  /* Fishless bubble */
+  var fc=document.getElementById('tfish');
+  fc.innerHTML='';
   if(S.fishless&&S.ammSource>0&&!fc.querySelector('.amm-bubble')){
     var b=document.createElement('div');b.className='amm-bubble';
     b.style.cssText='position:absolute;bottom:20%;left:50%;animation:fsb 3s ease-in-out infinite;opacity:.5';
     b.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="rgba(61,214,232,.6)" stroke-width="1"/></svg>';
     fc.appendChild(b);
+  }
+
+  /* Bacteria canvas visibility */
+  var tbac=document.getElementById('tbac');
+  if(tbac)tbac.style.opacity=S.bacA>.15?Math.min(1,(S.bacA-.15)/.6).toFixed(2):'0';
+
+  /* Algae/diatom canvas — driven by S.algae */
+  var tdiatom=document.getElementById('tdiatom');
+  if(tdiatom){
+    var algaeLevel=S.algae||0;
+    /* Diatoms (brown) — early cycle or low light */
+    var diatomBase=S.day>=3&&S.day<18&&!S.cycleOk?Math.min(.5,(S.day-3)/8):0;
+    /* Add low-light diatoms */
+    if(S.light<=1)diatomBase=Math.max(diatomBase,algaeLevel*.8);
+    var finalAlgae=Math.min(.85,diatomBase+algaeLevel*.4);
+    tdiatom.style.opacity=finalAlgae.toFixed(2);
+    /* Tint green for high-light outbreak */
+    if(S.light===3&&algaeLevel>.3){
+      tdiatom.style.filter='hue-rotate(60deg) saturate(1.4)';
+    } else {
+      tdiatom.style.filter='none';
+    }
   }
 
   /* Plants */
@@ -900,18 +1573,40 @@ function render(){
 
   document.getElementById('ib-txt').textContent=getInsight(S);
 
-  /* Bacteria indicator */
-  var bacA=document.getElementById('bac-a'),bacB=document.getElementById('bac-b');
-  var bacApct=document.getElementById('bac-a-pct'),bacBpct=document.getElementById('bac-b-pct');
-  if(bacA){bacA.className='bac-dot'+(S.bacA>.7?' full':S.bacA>.2?' active':'');}
-  if(bacB){bacB.className='bac-dot'+(S.bacB>.65?' full':S.bacB>.2?' active':'');}
-  if(bacApct){
-    bacApct.textContent=(S.bacA*100).toFixed(0)+'%';
-    bacApct.style.color=S.bacA>.7?'rgba(80,200,100,.85)':S.bacA>.2?'rgba(220,140,60,.75)':'rgba(255,255,255,.2)';
+  /* Fish health indicator */
+  var fhl=document.getElementById('fish-health-lbl');
+  var fhv=document.getElementById('fish-health-val');
+  if(fhl&&fhv){
+    if(S.fish>0&&!S.fishless){
+      fhl.style.display='inline';
+      fhv.textContent=Math.round(S.fishHealth);
+      fhl.style.color=S.fishHealth>70?'rgba(80,200,100,.7)':S.fishHealth>40?'rgba(200,160,40,.8)':'rgba(220,80,60,.9)';
+    } else {
+      fhl.style.display='none';
+    }
   }
-  if(bacBpct){
-    bacBpct.textContent=(S.bacB*100).toFixed(0)+'%';
-    bacBpct.style.color=S.bacB>.65?'rgba(80,200,100,.85)':S.bacB>.2?'rgba(220,140,60,.75)':'rgba(255,255,255,.2)';
+
+  /* Temperature display */
+  var eqTemp=document.getElementById('eq-temp');
+  if(eqTemp)eqTemp.textContent=(S.temp||26).toFixed(0)+'°C';
+  var hBtn=document.getElementById('eq-heater');
+  if(hBtn)hBtn.classList.toggle('eq-on',S.heater);
+
+  /* Bacteria box — show when cycle has started */
+  var bacBox=document.getElementById('bac-box');
+  var hasStartedBac=S.fishless?(S.ammSource>0):(S.fish>0);
+  if(bacBox)bacBox.style.display=hasStartedBac?'block':'none';
+  var barA=document.getElementById('bac-bar-a'),barB=document.getElementById('bac-bar-b');
+  var pctA=document.getElementById('bac-a-pct'),pctB=document.getElementById('bac-b-pct');
+  if(barA)barA.style.width=(S.bacA*100).toFixed(0)+'%';
+  if(barB)barB.style.width=(S.bacB*100).toFixed(0)+'%';
+  if(pctA){
+    pctA.textContent=(S.bacA*100).toFixed(0)+'%';
+    pctA.style.color=S.bacA>.7?'rgba(80,200,100,.9)':S.bacA>.2?'rgba(220,140,60,.85)':'rgba(255,255,255,.3)';
+  }
+  if(pctB){
+    pctB.textContent=(S.bacB*100).toFixed(0)+'%';
+    pctB.style.color=S.bacB>.65?'rgba(80,200,100,.9)':S.bacB>.2?'rgba(220,140,60,.85)':'rgba(255,255,255,.3)';
   }
 
   var ended=S.dead||S.won;
@@ -919,19 +1614,102 @@ function render(){
   document.getElementById('act-feed').disabled=(S.fish===0&&S.ammSource===0)||ended;
   document.getElementById('act-water').disabled=ended;
   document.getElementById('act-plant').disabled=S.plants>=4||ended;
+  var seedBtn2=document.getElementById('act-seed');if(seedBtn2&&!S.seeded)seedBtn2.disabled=ended;else if(seedBtn2&&S.seeded){seedBtn2.classList.add('ab-used');seedBtn2.disabled=true;}
+
   var pp=document.getElementById('btn-pp');
   if(ended){pp.disabled=true;pp.style.opacity='.3';}
 }
 
 function showEnd(type){
   var ov=document.getElementById('ov-end');
-  document.getElementById('ov-icon').textContent=type==='won'?'🌿':'💀';
-  document.getElementById('ov-title').textContent=type==='won'?'The cycle is complete.':'The tank crashed.';
-  var fishNote=S.fishless?'The fishless method worked — bacteria established without any animals being harmed in the process.':'Ammonia reached a lethal level before the bacteria could process it. This is why fishless cycling is now widely preferred.';
-  document.getElementById('ov-msg').textContent=type==='won'
-    ?'Day '+S.day+'. '+fishNote
-    :fishNote;
+  var icons={won:'🌿',crashed:'💀'};
+  var titles={won:'The cycle is complete.',crashed:'The tank crashed.'};
+  document.getElementById('ov-icon').textContent=icons[type]||'💀';
+  document.getElementById('ov-title').textContent=titles[type]||'Simulation ended.';
+  var msg='';
+  if(type==='won'){
+    msg=S.fishless
+      ?'Day '+S.day+'. Bacteria established without any animals being harmed.'
+      :'Day '+S.day+'. The cycle completed with fish present.';
+  } else {
+    msg=S.fishHealth<=0
+      ?'The fish weakened from lack of food and the stress became fatal.'
+      :'Ammonia or nitrite reached a level the fish could not survive.';
+  }
+  document.getElementById('ov-msg').textContent=msg;
+  buildReport(type);
   ov.classList.remove('hide');
+}
+
+function buildReport(type){
+  var rows=document.getElementById('rpt-rows');
+  var verdict=document.getElementById('rpt-verdict');
+  if(!rows)return;
+  rows.innerHTML='';
+
+  function row(label,value,note,warn){
+    var d=document.createElement('div');
+    d.style.cssText='display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05)';
+    var col=warn?'rgba(220,140,60,.9)':'rgba(255,255,255,.78)';
+    d.innerHTML='<span style="font-size:.56rem;color:rgba(255,255,255,.38);flex-shrink:0;padding-top:.1rem">'+label+'</span>'
+      +'<div style="text-align:right;max-width:220px"><span style="font-size:.6rem;color:'+col+'">'+value+'</span>'
+      +(note?'<span style="display:block;font-size:.48rem;color:rgba(255,255,255,.28);margin-top:.15rem;line-height:1.4">'+note+'</span>':'')
+      +'</div>';
+    rows.appendChild(d);
+  }
+
+  var wcWarn=S.totalWc>6;
+  var wcNote=S.totalWc>6?'Too frequent — removes bacteria the cycle needs':
+             S.totalWc===0?'None done — nitrate may have accumulated':
+             S.totalWc<=3?'Well managed — targeted not reactive':'Acceptable';
+
+  var feedWarn=!S.fishless&&S.daysSinceFed>3;
+  var heatWarn=!S.heater&&(S.temp||26)<22;
+  var filterWarn=!S.filter;
+
+  row('Days elapsed', S.day+' days', null, false);
+  row('Method', S.fishless?'Fishless':'Fish-in',
+    S.fishless?'No animals exposed to ammonia stress':'Fish experienced elevated ammonia and nitrite',
+    !S.fishless&&type==='crashed');
+  row('Water changes', S.totalWc+' total', wcNote, wcWarn);
+  if(!S.fishless) row('Fish feeding',
+    feedWarn?'Insufficient':'Managed',
+    feedWarn?'Fish went '+S.daysSinceFed+' days unfed — need food every 1-4 days':'Good',
+    feedWarn);
+  row('Heater', S.heater?'On throughout':'Off at some point',
+    heatWarn?'Temperature fell — bacteria slow significantly below 22°C':'Stable temperature throughout',
+    heatWarn);
+  row('Filter', S.filter?'On throughout':'Turned off',
+    filterWarn?'Without filter: bacteria lose primary surface area and oxygen':'Filter running — bacteria had full access to media',
+    filterWarn);
+  row('Bacteria starter', S.seeded?'Used':'Not used',
+    S.seeded?'Provided a head-start for colony seeding':null, false);
+  row('Nitrosomonas (A)', (S.bacA*100).toFixed(0)+'%',
+    S.bacA>.75?'Fully established':S.bacA>.4?'Partially established':'Still seeding', S.bacA<.5);
+  row('Nitrospira (B)', (S.bacB*100).toFixed(0)+'%',
+    S.bacB>.65?'Fully established':S.bacB>.3?'Growing':'Not yet active', S.bacB<.4);
+
+  /* Opening — warm, honest, specific to outcome */
+  var opening='';
+  if(type==='won'){
+    var openings=['You did it — and more importantly, you did it the right way. The system had what it needed: time, stability, and a keeper who read it rather than fought it.','The cycle is complete. Every stable aquarium in the world got here through exactly this process. Now you know what it feels like from the inside.','Well done. Patience is the hardest part when something looks wrong. You practiced it here. That carries over into a real tank.'];
+    opening=openings[S.day%3];
+  } else {
+    var crashings=['This is not failure — it is data. The tank showed you something specific about what went wrong. That knowledge is worth more than a clean run.','Every experienced keeper has been here. What matters is understanding why. This report helps with that.','The cycle did not complete this time. Real tanks are more forgiving than simulations — and now you know what to watch for.'];
+    opening=crashings[S.day%3];
+  }
+
+  var advice='';
+  if(S.totalWc>6) advice='Water changes were frequent. In a real tank, the filter protects bacteria — but the habit of reacting to every spike with a large change still disrupts stability. Learning when not to act changes outcomes.';
+  else if(filterWarn) advice='The filter was off for part of the run. In a real aquarium the filter is where most bacteria live. Without it, the biological foundation of the cycle collapses.';
+  else if(feedWarn) advice='Feeding was missed for too long. Fish need food every 1-4 days even during a difficult cycle. Starvation compounds ammonia stress — the two together are harder to recover from.';
+  else if(heatWarn) advice='Temperature dropped significantly. Nitrospira bacteria are especially cold-sensitive — below 22\u00b0C they slow dramatically. A reliable heater is one of the best investments in a new tank.';
+  else if(type==='won'&&S.totalWc<=2) advice='Remarkably clean. Few changes, stable equipment, patient observation. In a real tank this approach produces the fastest and least stressful cycles.';
+  else advice=type==='won'?'Everything was managed thoughtfully. Stable temperature, filter running, measured water changes. This is what good cycling looks like.':'Keep the filter running, maintain 25-27\u00b0C, and resist large water changes during the early weeks. Those three things account for most cycling problems.';
+
+  if(verdict){
+    verdict.innerHTML='<em style="display:block;font-size:.9rem;color:rgba(61,214,232,.7);margin-bottom:.65rem;font-style:normal;line-height:1.5">'+opening+'</em><span style="font-size:.82rem;color:rgba(255,255,255,.52);line-height:1.65">'+advice+'</span>';
+  }
 }
 
 /* Fish swim keyframes */
@@ -965,8 +1743,12 @@ function startLoop(){
 function reset(){
   running=false;subCount=0;
   if(subTimer){clearInterval(subTimer);subTimer=null;}
-  S={day:1,nh3:0,no2:0,no3:0,fish:0,plants:0,ammSource:0,bacA:0,bacB:0,cycleOk:false,dead:false,won:false,stress:0,wc:0,totalWc:0,fishless:CFG.method==='fishless'};
+  S={day:1,nh3:0,no2:0,no3:0,fish:0,plants:0,ammSource:0,bacA:0,bacB:0,cycleOk:false,dead:false,won:false,stress:0,wc:0,totalWc:0,fishless:CFG.method==='fishless',fishHealth:100,daysSinceFed:0,feedCount:0,spikeDay:0,spikeType:'',warned:{},heater:true,filter:true,seeded:false,temp:26,light:2,algae:0};
   document.getElementById('log').innerHTML='<div class="le"><span class="ld">Day 1</span><span>Tank set up. Ready to begin cycling.</span></div>';
+  ['eq-heater','eq-filter','eq-light'].forEach(function(id){var b=document.getElementById(id);if(b){b.classList.add('eq-on');b.classList.remove('eq-used');b.disabled=false;}});
+  var seedBtn=document.getElementById('act-seed');if(seedBtn){seedBtn.classList.remove('ab-used');seedBtn.disabled=false;}
+  document.getElementById('eq-temp').textContent='26°C';
+  var lbl=document.getElementById('eq-light-lbl');if(lbl)lbl.textContent='Med';
   document.getElementById('tfish').innerHTML='';
   document.getElementById('tplants').innerHTML='';
   document.getElementById('ov-end').classList.add('hide');
@@ -1002,8 +1784,10 @@ function setupOption(groupId, val) {
 
 function updateExpected(){
   var sz=CFG.size,mt=CFG.method,pl=CFG.plants;
-  var weeks={small:{fishless:4,fish:5},medium:{fishless:3,fish:4},large:{fishless:'2–3',fish:'3–4'}};
-  var wk=weeks[sz]?weeks[sz][mt==='fishless'?'fishless':'fish']:'3–4';
+  var baseWeeks={small:{fishless:4,fish:5},medium:{fishless:3,fish:4},large:{fishless:'2–3',fish:'3–4'}};
+  var wkBase=baseWeeks[sz]?baseWeeks[sz][mt==='fishless'?'fishless':'fish']:'3–4';
+  var facLabel='';
+  var wk=wkBase+facLabel;
   var szLabel={small:'small',medium:'medium',large:'large'}[sz];
   var mtLabel=mt==='fishless'?'fishless cycling':'fish-in cycling';
   var plNote=pl==='yes'?'Plants will help keep nitrate manageable.':'Without plants, monitor nitrate more closely.';
@@ -1024,8 +1808,15 @@ document.getElementById('btn-begin').addEventListener('click',function(){
   ov.classList.add('hide');
   setTimeout(function(){ov.style.display='none';},400);
   S.fishless=CFG.method==='fishless';
+  /* factors already in CFG */
+  /* Ensure button icons match chosen method */
+  var srcIcon=document.getElementById('act-source-icon');
+  var srcName=document.getElementById('act-source-name');
+  if(srcIcon)srcIcon.textContent=S.fishless?'🧪':'🐠';
+  if(srcName)srcName.textContent=S.fishless?'Add ammonia':'Add fish';
   if(CFG.plants==='yes')S.plants=2;
   running=true;initStars();startLoop();
+  initFishCanvas();animFish();
   render();updateGuide();
 });
 
