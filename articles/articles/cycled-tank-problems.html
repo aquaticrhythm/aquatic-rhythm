@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Your Tank Is Cycled. So Why Are Things Still Going Wrong?</title>
+<meta name="description" content="The nitrogen cycle is done. But problems keep coming back. This gentle guide walks through why established tanks still struggle — and how to read what your tank is actually telling you.">
+<link rel="canonical" href="https://aquaticrhythm.com/articles/cycled-tank-problems">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<meta name="theme-color" content="#041e28">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aquaticrhythm.com/articles/cycled-tank-problems">
+<meta property="og:title" content="Your Tank Is Cycled. So Why Are Things Still Going Wrong?">
+<meta property="og:description" content="A calm, guided look at why established tanks still struggle — and what your tank might actually be telling you.">
+<meta property="og:image" content="https://aquaticrhythm.com/og-image.png">
+<meta property="og:site_name" content="Aquatic Rhythm">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Your Tank Is Cycled. So Why Are Things Still Going Wrong?","description":"The nitrogen cycle is done. But problems keep coming back. This gentle guide walks through why.","url":"https://aquaticrhythm.com/articles/cycled-tank-problems","author":{"@type":"Organization","name":"Aquatic Rhythm"},"publisher":{"@type":"Organization","name":"Aquatic Rhythm","url":"https://aquaticrhythm.com"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+:root{--abyss:#030b09;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--accent:#3DD6E8;--ease:cubic-bezier(0.19,1,0.22,1)}
+body{font-family:var(--sans);background:var(--abyss);color:rgba(255,255,255,.88);overflow-x:hidden;line-height:1.72}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#052535 0%,#062a38 35%,#041e28 65%,#020810 100%)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4.5rem);background:linear-gradient(to bottom,rgba(3,18,30,.88),transparent);backdrop-filter:blur(6px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}
+.nav-logo:hover{opacity:.75}
+.art-nlinks{display:flex;gap:2.4rem;list-style:none}
+.art-nlinks a{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s;position:relative}
+.art-nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(61,214,232,.75);transition:width .35s}
+.art-nlinks a:hover{color:rgba(255,255,255,.8)}
+.art-nlinks a:hover::after,.art-nlinks a[href="/reading"]::after{width:100%}
+.art-nlinks a[href="/reading"]{color:rgba(61,214,232,.6)}
+.art-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;padding:5px;cursor:pointer}
+.art-burger span{display:block;height:1px;background:rgba(255,255,255,.4);transition:transform .36s,width .3s;transform-origin:center}
+.art-burger span:nth-child(1){width:18px}
+.art-burger span:nth-child(2){width:12px}
+.art-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);width:18px}
+.art-burger.open span:nth-child(2){transform:translateY(-6px) rotate(-45deg);width:18px}
+.art-nmob{position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(6,16,13,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,189,210,.08);padding:0 clamp(1.5rem,5vw,4.5rem);max-height:0;overflow:hidden;pointer-events:none;transition:max-height .48s,padding-top .35s,padding-bottom .35s}
+.art-nmob.open{max-height:320px;padding-top:1.6rem;padding-bottom:2rem;pointer-events:all}
+.art-nmob ul{list-style:none}
+.art-nmob li{border-bottom:1px solid rgba(255,255,255,.05)}
+.art-nmob li:last-child{border-bottom:none}
+.art-nmob a{display:block;padding:.9rem 0;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .25s,padding-left .3s}
+.art-nmob a:hover{color:rgba(139,189,210,.85);padding-left:.5rem}
+@media(max-width:960px){.art-nlinks{display:none}.art-burger{display:flex}}
+
+/* BACK BAR */
+.art-back-bar{position:sticky;top:64px;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:.5rem clamp(1.5rem,5vw,3rem);background:rgba(3,11,9,.88);border-bottom:1px solid rgba(139,189,210,.08);backdrop-filter:blur(8px)}
+.art-back-link{display:flex;align-items:center;gap:.45rem;text-decoration:none;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.6);transition:color .25s}
+.art-back-link:hover{color:rgba(61,214,232,.9)}
+.art-back-meta{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+@media(max-width:600px){.art-back-meta{display:none}}
+
+/* PROGRESS DOTS */
+.progress-dots{position:fixed;right:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.55rem;z-index:50}
+.pdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .4s,transform .4s;cursor:pointer;border:none;padding:0}
+.pdot.active{background:rgba(61,214,232,.8);transform:scale(1.4)}
+.pdot.done{background:rgba(61,214,232,.35)}
+@media(max-width:600px){.progress-dots{display:none}}
+
+/* INTRO */
+.art-intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem clamp(1.5rem,5vw,3rem) 5rem;position:relative}
+.art-intro::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--abyss));pointer-events:none}
+.art-intro-inner{max-width:620px;margin:0 auto}
+.art-eyebrow{display:block;font-size:.6rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(157,191,154,.75);margin-bottom:1.6rem}
+.art-main-title{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,5vw,3.4rem);color:rgba(255,255,255,.92);line-height:1.1;margin-bottom:2rem}
+.art-main-title em{font-style:italic;color:rgba(61,214,232,.72)}
+.art-intro-text{font-size:1rem;font-weight:300;color:rgba(255,255,255,.62);line-height:1.95;margin-bottom:1rem}
+.art-intro-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.6vw,1.18rem);font-weight:300;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:1.4rem}
+.art-intro-meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:2rem 0;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.meta-dot{color:rgba(255,255,255,.12)}
+.art-begin-btn{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.8rem 2rem;border-radius:2px;cursor:pointer;transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
+.art-begin-btn:hover{background:rgba(40,184,208,.95);transform:translateY(-1px)}
+.art-begin-btn span{opacity:.65;font-size:.9rem}
+
+/* MODULE SYSTEM */
+.module-wrap{max-width:660px;margin:0 auto;padding:6rem clamp(1.5rem,5vw,3rem) 6rem;display:none}
+.module-wrap.active{display:block}
+.module{display:none;opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.module.active{display:block}
+.module.visible{opacity:1;transform:translateY(0)}
+
+/* MODULE CONTENT */
+.mod-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem}
+.mod-num{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(61,214,232,.4)}
+.mod-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+.mod-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,4vw,2.8rem);color:rgba(255,255,255,.92);line-height:1.1;margin-bottom:1.6rem}
+.mod-title em{font-style:italic;color:rgba(61,214,232,.72)}
+.mod-body p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.68);line-height:1.95;margin-bottom:1.2rem}
+.mod-body p:last-child{margin-bottom:0}
+.mod-body strong{font-weight:400;color:rgba(255,255,255,.85)}
+.mod-body em{font-style:italic;color:rgba(255,255,255,.5)}
+
+/* PULL QUOTE */
+.pq{margin:2.4rem 0;padding:1.6rem 2rem;border-left:2px solid rgba(61,214,232,.35);background:rgba(58,110,140,.07)}
+.pq p{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.7vw,1.15rem);color:rgba(255,255,255,.65);line-height:1.85;margin:0}
+
+/* HIGHLIGHT */
+.hn{margin:2rem 0;padding:1.4rem 1.8rem;border:1px solid rgba(139,189,210,.14);background:rgba(6,16,13,.7);position:relative}
+.hn-label{position:absolute;top:-.52rem;left:1rem;background:rgba(3,11,9,.95);padding:0 .45rem;font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(139,189,210,.5)}
+.hn.ar{border-color:rgba(61,214,232,.18)}
+.hn.ar .hn-label{color:rgba(61,214,232,.55)}
+.hn p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.85;margin-bottom:.6rem}
+.hn p:last-child{margin-bottom:0}
+
+/* VISUAL */
+.vis-block{margin:2.2rem 0;border-radius:3px;overflow:hidden;position:relative;background:rgba(4,22,32,.8);border:1px solid rgba(139,189,210,.12)}
+canvas{display:block;width:100%}
+.vis-ctrl{padding:.6rem 0 .3rem}
+.vc-label{text-align:center;margin-bottom:.4rem}
+.vc-label span{font-family:var(--serif);font-style:italic;font-size:.82rem;color:rgba(255,255,255,.45)}
+.vc-hint{text-align:center;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-top:.35rem}
+.vis-slider{-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:2px;background:rgba(255,255,255,.1);outline:none;cursor:pointer;margin:.3rem 0;display:block}
+.vis-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:rgba(61,214,232,.85);cursor:pointer;border:2px solid rgba(255,255,255,.15);box-shadow:0 0 8px rgba(61,214,232,.4)}
+.vis-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:rgba(61,214,232,.85);cursor:pointer;border:none}
+.vis-btn{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(6,16,13,.7);color:rgba(255,255,255,.45);border:1px solid rgba(139,189,210,.15);border-radius:2px;padding:.38rem .85rem;cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.vis-btn:hover{background:rgba(9,22,18,.9);color:rgba(255,255,255,.75);border-color:rgba(61,214,232,.25)}
+.vis-btn-active{background:rgba(58,110,140,.25)!important;color:rgba(61,214,232,.85)!important;border-color:rgba(61,214,232,.45)!important}
+
+/* NAVIGATION */
+.mod-next{margin-top:2.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.btn-next{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.75rem 1.8rem;border-radius:2px;cursor:pointer;transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans)}
+.btn-next:hover{background:rgba(40,184,208,.95);transform:translateY(-1px)}
+.btn-next span{opacity:.6;font-size:.8rem}
+.btn-prev{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);background:none;border:none;cursor:pointer;transition:color .25s;padding:0;font-family:var(--sans)}
+.btn-prev:hover{color:rgba(255,255,255,.6)}
+
+/* FINAL CTA */
+.final-cta{margin-top:3rem;padding:2.2rem;border:1px solid rgba(61,214,232,.12);background:rgba(6,16,13,.7);text-align:center}
+.final-cta p{font-family:var(--serif);font-style:italic;font-size:.96rem;color:rgba(255,255,255,.48);line-height:1.8;margin-bottom:1.4rem}
+.btn-reading{display:inline-block;text-decoration:none;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.12);padding:.75rem 1.8rem;border-radius:2px;transition:color .25s,border-color .25s;font-family:var(--sans)}
+.btn-reading:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="Aquatic Rhythm">
+    <svg width="160" height="26" viewBox="0 0 175 30" fill="none" role="presentation" aria-hidden="true">
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="12" cy="15" rx="4" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <path d="M8.2 15 L6 12.5 L6 17.5Z" fill="rgba(40,120,150,0.78)"/>
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg>
+  </a>
+  <ul class="art-nlinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/ara">Explore ARA</a></li>
+    <li><a href="/rhyssa">Meet Rhyssa</a></li>
+    <li><a href="/reading">Reading</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+  <button class="art-burger" id="art-burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="art-nmob" id="art-nmob" aria-hidden="true">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/ara">Explore ARA</a></li>
+    <li><a href="/rhyssa">Meet Rhyssa</a></li>
+    <li><a href="/reading">Reading</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<nav class="progress-dots" id="progress-dots" aria-label="Module progress"></nav>
+
+<div class="art-back-bar">
+  <a href="/reading" class="art-back-link"><span>←</span><span>Reading</span></a>
+  <span class="art-back-meta">Your Tank Is Cycled · 4 modules</span>
+</div>
+
+<main>
+
+<!-- INTRO -->
+<div class="art-intro" id="art-intro">
+  <div class="art-intro-inner">
+    <span class="art-eyebrow">Reading · Your Tank Is Cycled</span>
+    <h1 class="art-main-title">Your Tank Is Cycled</h1>
+    <p class="art-intro-subtitle">So why are things still going wrong?</p>
+    <p class="art-intro-text">You did the hard part. You waited through the cycle, tested the water, got through it. Things were supposed to settle after that.</p>
+    <p class="art-intro-text">Sometimes they do. But often, a new kind of difficulty begins — quieter, slower, and harder to name. The fish seem slightly off. Something keeps coming back. You feel like you must be missing something.</p>
+    <p class="art-intro-text">You are probably not missing something obvious. You are just learning what a living system actually asks of you once it is established.</p>
+    <div class="art-intro-meta">
+      <span>4 modules</span><span class="meta-dot">·</span>
+      <span>Intermediate</span><span class="meta-dot">·</span>
+      <span>~8 min</span>
+    </div>
+    <button class="art-begin-btn" onclick="startLearning()">Begin reading <span>→</span></button>
+  </div>
+</div>
+
+<!-- MODULES -->
+<div class="module-wrap" id="module-wrap">
+
+  <!-- ═══ MODULE 1 — The cycle was never the finish line ═══ -->
+  <section class="module" id="mod-1" data-mod="1">
+    <div class="mod-eyebrow"><span class="mod-num">01 / 04</span><span class="mod-tag">What nobody tells you</span></div>
+    <h2 class="mod-title">The cycle was<br><em>never the finish line.</em></h2>
+    <div class="mod-body">
+      <p>There is a version of the aquarium hobby that goes like this: cycle the tank, stock it carefully, do your water changes, and everything will be fine. And sometimes it is.</p>
+      <p>But a lot of keepers who followed every step still find themselves stuck. The cycle is done. The parameters look okay. And yet something always feels slightly wrong — a fish that is not quite right, a problem that keeps coming back, a tank that never feels stable for long.</p>
+      <p>This is not failure. It is a sign that you have moved past the beginner phase — and into a different kind of learning. The kind that is less about following steps, and more about reading what is in front of you.</p>
+    </div>
+
+    <div class="pq">
+      <p>Stability is not something you arrive at. It is something you maintain — quietly, consistently, even when nothing visible is going wrong.</p>
+    </div>
+
+    <div class="mod-body">
+      <p>A cycled tank is a living system. It has capacity — the ability to absorb small disturbances and return to balance. But that capacity has limits. And when those limits are quietly exceeded over time, the problems that emerge can feel sudden, even though they were building slowly for weeks.</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>In ARA, we think about a tank's phase — not just its chemistry. A mature, established tank is in a different phase than a cycling one, and it responds differently to the same inputs. The keeper who learns to recognise which phase their system is in, and what that phase asks of them, spends far less time reacting to crises.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goIntro()">← Intro</button>
+      <button class="btn-next" onclick="goMod(2)">What usually causes it <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 2 — One thing at a time ═══ -->
+  <section class="module" id="mod-2" data-mod="2">
+    <div class="mod-eyebrow"><span class="mod-num">02 / 04</span><span class="mod-tag">Finding the root</span></div>
+    <h2 class="mod-title">Most problems have<br><em>one root.</em></h2>
+    <div class="mod-body">
+      <p>When a tank is struggling — fish getting sick, algae returning, parameters that drift — it can feel like everything is wrong at once. It rarely is. There is almost always one thing that is the primary pressure, and everything else is responding to that.</p>
+      <p>Treating all the symptoms at the same time is exhausting, expensive, and usually ineffective. Finding the one thing that is actually driving the others — and addressing that — changes the picture entirely.</p>
+    </div>
+
+    <!-- VISUAL: Stressor selector -->
+    <div class="vis-block">
+      <canvas id="cv-stress" style="height:210px"></canvas>
+    </div>
+
+    <div class="mod-body">
+      <p>The four things that destabilise established tanks most often are: nitrate that has been quietly accumulating, a stocking level that is too high for the biological capacity of the system, water chemistry that does not match what the fish actually need, and maintenance that has become irregular enough that the tank never quite recovers between sessions.</p>
+      <p>None of these are dramatic failures. They are all quiet drifts — gradual movements away from balance that eventually become visible problems.</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>ARA calls this the dominant stressor — the single pressure that is placing the most strain on the system at any given time. Remove it, and the other issues often begin to resolve on their own. The skill is learning to look for the root, rather than treating each symptom separately. That shift — from reactive to ecological — is one of the things that changes how a keeper experiences the hobby.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(1)">← Back</button>
+      <button class="btn-next" onclick="goMod(3)">The one thing most people miss <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 3 — Nitrate ═══ -->
+  <section class="module" id="mod-3" data-mod="3">
+    <div class="mod-eyebrow"><span class="mod-num">03 / 04</span><span class="mod-tag">The quiet one</span></div>
+    <h2 class="mod-title">Nitrate.<br><em>It builds without drama.</em></h2>
+    <div class="mod-body">
+      <p>After the cycle completes, ammonia and nitrite are being processed. That part is working. But nitrate — the end product of that process — does not get processed. It simply accumulates, every day, until something removes it.</p>
+      <p>At low levels, nitrate causes no visible symptoms. Fish look normal. Parameters seem fine. But at levels that creep up over weeks and months, it gradually suppresses immune function, reduces the ability to handle other stressors, and leaves fish permanently slightly below their best — more vulnerable to disease, slower to recover, harder to keep looking well.</p>
+    </div>
+
+    <!-- VISUAL: Nitrate toggle -->
+    <div class="vis-block">
+      <canvas id="cv-nitrate" style="height:195px"></canvas>
+    </div>
+
+    <div class="mod-body">
+      <p>The most common recommendation is to keep nitrate below 20 ppm for sensitive fish, and below 40 ppm for more tolerant species. But the number matters less than the trend. A tank at 30 ppm that is stable is healthier than one at 25 ppm that is rising.</p>
+      <p>Regular partial water changes — 15 to 25 percent, weekly — are the most reliable way to keep nitrate in check. Live plants help significantly. Overfeeding is one of the fastest ways to accelerate accumulation.</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">A reassuring note</span>
+      <p>If you have been keeping a tank for a while and suspect nitrate has been higher than it should be — a gradual reduction over a few weeks (not a sudden large water change) will likely produce a visible improvement in fish behaviour and appearance. Many keepers describe the difference as their fish suddenly looking more alive. They were probably just finally comfortable.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(2)">← Back</button>
+      <button class="btn-next" onclick="goMod(4)">How to actually read your tank <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 4 — Reading the tank ═══ -->
+  <section class="module" id="mod-4" data-mod="4">
+    <div class="mod-eyebrow"><span class="mod-num">04 / 04</span><span class="mod-tag">A different kind of attention</span></div>
+    <h2 class="mod-title">Your fish are<br><em>always telling you something.</em></h2>
+    <div class="mod-body">
+      <p>A test kit tells you what is in the water at the moment you test it. Your fish tell you what the water has been doing to them — continuously, in real time.</p>
+      <p>Most keepers learn to read parameters before they learn to read behaviour. Which makes sense — numbers feel concrete, and behaviour can seem hard to interpret. But behaviour is usually the earlier signal. By the time ammonia shows on a test kit, the fish have often been responding to it for some time already.</p>
+    </div>
+
+    <!-- VISUAL: Behaviour signals slider -->
+    <div class="vis-block">
+      <canvas id="cv-behaviour" style="height:200px"></canvas>
+    </div>
+
+    <div class="mod-body">
+      <p>This is not about becoming an expert in fish disease. It is about becoming familiar with your fish — knowing what normal looks like for them, so that not-normal is noticeable early. A fish that is slightly less active than usual. One that is eating with less enthusiasm. A group that has quietly reorganised its use of space in the tank.</p>
+      <p>These signals are worth noticing even when you cannot immediately name what they mean. The noticing itself is the beginning of understanding.</p>
+    </div>
+
+    <div class="pq">
+      <p>You do not need to know what is wrong to know that something has changed. And knowing something has changed — early — is most of what good tank-keeping actually is.</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>ARA calls this ecological attunement — a quality of attention that develops over time, through presence rather than study. It cannot be learned from a guide. But it can be cultivated by spending time at the tank not looking for problems, just looking. Watching how the fish move. Noticing the texture of the water, the way the plants sit, the small shifts that most people miss because they are only checking, not seeing.</p>
+      <p>The keeper who has developed this attention does not spend more time managing their tank. They spend less — because they catch things earlier, respond more calmly, and trust the system more. That trust is earned. It comes from knowing the tank well enough to read it.</p>
+    </div>
+
+    <div class="mod-next" style="margin-bottom:1.5rem">
+      <button class="btn-prev" onclick="goMod(3)">← Back</button>
+      <span></span>
+    </div>
+
+    <div class="final-cta">
+      <p>If something in your tank feels off and you are not sure what you are reading — that is exactly where this kind of exploration begins. Take your time with it.</p>
+      <a href="/reading" class="btn-reading">← Back to Reading</a>
+    </div>
+
+  </section>
+
+</div><!-- /module-wrap -->
+</main>
+
+<script>
+/* ═══════════════════════════════
+   MODULE NAVIGATION
+═══════════════════════════════ */
+var totalMods = 4;
+var currentMod = 1;
+var canvases = {};
+var animFrames = {};
+
+function stopAnim(id){
+  if(animFrames[id]){cancelAnimationFrame(animFrames[id]);animFrames[id]=null;}
+}
+
+function goIntro(){
+  var mod=document.getElementById('mod-'+currentMod);
+  if(mod){mod.classList.remove('visible');setTimeout(function(){mod.classList.remove('active');},300);}
+  var wrap=document.getElementById('module-wrap');
+  var intro=document.getElementById('art-intro');
+  if(wrap)wrap.classList.remove('active');
+  if(intro){intro.classList.remove('hidden');intro.style.display='';}
+  window.scrollTo({top:0,behavior:'auto'});
+  currentMod=1;
+  updateDots();
+}
+
+function goMod(n){
+  stopAnim('cv-stress');stopAnim('cv-nitrate');stopAnim('cv-behaviour');
+  var prev=document.getElementById('mod-'+currentMod);
+  if(prev){prev.classList.remove('visible');setTimeout(function(){prev.classList.remove('active');},300);}
+  currentMod=n;
+  window.scrollTo({top:0,behavior:'auto'});
+  var next=document.getElementById('mod-'+n);
+  if(!next)return;
+  next.classList.add('active');
+  setTimeout(function(){next.classList.add('visible');},30);
+  updateDots();
+  if(canvases[n])setTimeout(function(){canvases[n]();},120);
+}
+
+function buildDots(){
+  var wrap=document.getElementById('progress-dots');
+  if(!wrap)return;
+  for(var i=1;i<=totalMods;i++){
+    var d=document.createElement('button');
+    d.className='pdot';d.setAttribute('aria-label','Module '+i);d.setAttribute('data-n',i);
+    d.addEventListener('click',function(){goMod(parseInt(this.getAttribute('data-n')));});
+    wrap.appendChild(d);
+  }
+}
+function updateDots(){
+  document.querySelectorAll('.pdot').forEach(function(d,i){
+    var n=i+1;d.classList.remove('active','done');
+    if(n===currentMod)d.classList.add('active');
+    else if(n<currentMod)d.classList.add('done');
+  });
+}
+buildDots();
+
+function startLearning(){
+  var intro=document.getElementById('art-intro');
+  var wrap=document.getElementById('module-wrap');
+  if(intro)intro.classList.add('hidden');
+  if(wrap)wrap.classList.add('active');
+  window.scrollTo({top:0,behavior:'auto'});
+  var first=document.getElementById('mod-1');
+  if(first){first.classList.add('active');setTimeout(function(){first.classList.add('visible');},30);}
+  updateDots();
+  if(canvases[1])setTimeout(function(){canvases[1]();},120);
+}
+
+/* Hide intro when hidden class added */
+var introEl=document.getElementById('art-intro');
+if(introEl){
+  var obs=new MutationObserver(function(){
+    if(introEl.classList.contains('hidden'))introEl.style.display='none';
+  });
+  obs.observe(introEl,{attributes:true,attributeFilter:['class']});
+}
+
+/* ═══════════════════════════════
+   VISUALS
+═══════════════════════════════ */
+function resizeCanvas(id,h){
+  var c=document.getElementById(id);if(!c)return null;
+  c.width=c.parentElement.offsetWidth;
+  c.height=h||parseInt(c.style.height)||180;
+  return c;
+}
+
+/* ── VISUAL 1: Dominant stressor selector ── */
+canvases[2]=function(){
+  stopAnim('cv-stress');
+  var c=resizeCanvas('cv-stress',210);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+
+  var stressors=[
+    {label:'Nitrate buildup',
+     icon:'NO₃↑',color:'rgba(200,160,40,',
+     signals:['Fish seem dull or less enthusiastic','Disease keeps returning after treatment','Algae growing despite regular maintenance'],
+     note:'Nitrate rises quietly after every cycle. At high levels it suppresses immune function — fish survive but are never quite comfortable. Weekly partial water changes are the most reliable solution.'},
+    {label:'Too many fish',
+     icon:'🐟🐟🐟',color:'rgba(180,100,80,',
+     signals:['Frequent fin damage or aggression','Fish breathing at the surface','Ammonia spikes after feeding'],
+     note:'More fish means more waste, less oxygen, more competition. The bacteria can handle the chemistry — but the fish still experience the crowding. Rehoming some fish often transforms a tank overnight.'},
+    {label:'Wrong chemistry',
+     icon:'pH?',color:'rgba(80,150,180,',
+     signals:['Fish surviving but never thriving','Difficulty breeding species that should breed','Chronic low-grade illness without clear cause'],
+     note:'Fish evolved for specific water conditions. A species from soft acidic rivers kept in hard alkaline water is under constant stress, even if it looks fine on paper. Research your specific species — not just "tropical fish" in general.'},
+    {label:'Irregular care',
+     icon:'📅',color:'rgba(139,189,210,',
+     signals:['Tank seems fine then suddenly crashes','Problems always seem to appear at the same time','Recovery from problems takes unusually long'],
+     note:'Tanks can tolerate gaps — but not indefinitely. Weeks of missed water changes, irregular feeding, and sporadic attention create cumulative stress. The crash feels sudden because the warning signs were quiet. A modest consistent routine beats intensive irregular care.'}
+  ];
+
+  var selected=0;
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  var btnRow=document.createElement('div');
+  btnRow.style.cssText='display:flex;gap:.35rem;flex-wrap:wrap;justify-content:center;margin:.4rem 0';
+  stressors.forEach(function(s,i){
+    var btn=document.createElement('button');
+    btn.className='vis-btn'+(i===0?' vis-btn-active':'');
+    btn.textContent=s.label;btn.style.fontFamily='"DM Sans",system-ui,sans-serif';
+    btn.addEventListener('click',function(){
+      selected=i;
+      wrap.querySelectorAll('.vis-btn').forEach(function(b){b.classList.remove('vis-btn-active');});
+      btn.classList.add('vis-btn-active');draw();
+    });
+    btnRow.appendChild(btn);
+  });
+  ctrl.appendChild(btnRow);
+  var hint=document.createElement('div');hint.className='vc-hint';hint.textContent='tap a stressor to explore it';
+  ctrl.appendChild(hint);
+  wrap.appendChild(ctrl);
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var s=stressors[selected];
+
+    /* Icon area */
+    ctx.font='300 11px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle=s.color+'0.7)';
+    ctx.fillText(s.icon,12,22);
+
+    /* Signals */
+    ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(255,255,255,.3)';ctx.fillText('What you might notice:',12,42);
+    s.signals.forEach(function(sig,i){
+      ctx.fillStyle='rgba(255,255,255,.58)';
+      ctx.fillText('·  '+sig,16,58+i*17);
+    });
+
+    /* Divider */
+    ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(12,112);ctx.lineTo(W-12,112);ctx.stroke();
+
+    /* Note */
+    ctx.font='italic 300 9.5px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(255,255,255,.48)';
+    var words=s.note.split(' ');
+    var line='';var y=130;var maxW=W-24;
+    words.forEach(function(w){
+      var test=line+(line?' ':'')+w;
+      if(ctx.measureText(test).width>maxW&&line){
+        ctx.fillText(line,12,y);line=w;y+=15;
+      } else line=test;
+    });
+    if(line)ctx.fillText(line,12,y);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+/* ── VISUAL 2: Nitrate toggle ── */
+canvases[3]=function(){
+  stopAnim('cv-nitrate');
+  var c=resizeCanvas('cv-nitrate',195);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+  var withWC=true;
+
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  ctrl.innerHTML='<div style="display:flex;gap:.45rem;justify-content:center;margin:.45rem 0"><button class="vis-btn vis-btn-active" id="btn-wc-y" style="font-family:\'DM Sans\',system-ui">Weekly water changes</button><button class="vis-btn" id="btn-wc-n" style="font-family:\'DM Sans\',system-ui">No water changes</button></div><div class="vc-hint">see how nitrate builds over 12 weeks</div>';
+  wrap.appendChild(ctrl);
+
+  document.getElementById('btn-wc-y').addEventListener('click',function(){
+    withWC=true;this.className='vis-btn vis-btn-active';
+    document.getElementById('btn-wc-n').className='vis-btn';draw();
+  });
+  document.getElementById('btn-wc-n').addEventListener('click',function(){
+    withWC=false;this.className='vis-btn vis-btn-active';
+    document.getElementById('btn-wc-y').className='vis-btn';draw();
+  });
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var pL=38,pR=16,pT=24,pB=30;
+    var gW=W-pL-pR,gH=H-pT-pB,maxV=80;
+
+    /* Grid */
+    [0,20,40,60,80].forEach(function(v){
+      var y=pT+gH-(v/maxV)*gH;
+      ctx.strokeStyle=v===40?'rgba(220,80,60,.22)':'rgba(255,255,255,.06)';
+      ctx.lineWidth=1;ctx.setLineDash(v===40?[3,4]:[]);
+      ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+gW,y);ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.font='300 8px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle=v===40?'rgba(220,80,60,.5)':'rgba(255,255,255,.22)';
+      ctx.fillText(v,2,y+3);
+    });
+    ctx.fillStyle='rgba(220,80,60,.4)';
+    ctx.fillText('stress zone',pL+gW*.58,pT+gH-(40/maxV)*gH-5);
+
+    /* Axes */
+    ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;ctx.setLineDash([]);
+    ctx.beginPath();ctx.moveTo(pL,pT);ctx.lineTo(pL,pT+gH);ctx.lineTo(pL+gW,pT+gH);ctx.stroke();
+    ctx.font='300 8px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(255,255,255,.2)';
+    ctx.fillText('NO₃ ppm',2,pT+8);
+    [1,4,8,12].forEach(function(w){ctx.fillText('W'+w,pL+(w/12)*gW-6,pT+gH+13);});
+
+    /* Line */
+    ctx.strokeStyle=withWC?'rgba(61,214,232,.75)':'rgba(220,100,60,.75)';
+    ctx.lineWidth=2;ctx.setLineDash([]);ctx.beginPath();
+    for(var i=0;i<=120;i++){
+      var t=i/10;
+      var val;
+      if(withWC){
+        var d=t-Math.floor(t);
+        val=8+d*20;
+      } else {
+        val=Math.min(t*5.5,maxV);
+      }
+      var x=pL+(t/12)*gW;
+      var y=pT+gH-(val/maxV)*gH;
+      if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+
+    /* Caption */
+    ctx.font='italic 300 9.5px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(255,255,255,.38)';
+    ctx.fillText(withWC
+      ?'Regular changes keep nitrate stable and fish comfortable.'
+      :'Without water changes, nitrate drifts steadily into the stress range.',
+      pL+4,pT+gH-6);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+/* ── VISUAL 3: Behaviour signals slider ── */
+canvases[4]=function(){
+  stopAnim('cv-behaviour');
+  var c=resizeCanvas('cv-behaviour',200);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+  var selected=0;
+
+  var signals=[
+    {label:'Surface breathing',
+     meaning:'Fish gulping at the water surface is one of the clearest distress signals. It usually means dissolved oxygen is low — from overcrowding, overfeeding, poor surface agitation, or high ammonia affecting gill function.',
+     urgency:'high',icon:'🐟↑'},
+    {label:'Hiding more than usual',
+     meaning:'A fish that suddenly spends time hiding when it normally did not is often experiencing stress from poor water quality, aggression from tankmates, or the early stages of illness. It is worth investigating before other symptoms appear.',
+     urgency:'medium',icon:'👁️'},
+    {label:'Eating less eagerly',
+     meaning:'Loss of appetite is one of the earliest and most reliable signs that something is not right. Fish that are comfortable and healthy are almost always enthusiastic feeders. A fish that skips meals deserves attention.',
+     urgency:'medium',icon:'🥣'},
+    {label:'Colour looking faded',
+     meaning:'Fish often show their best colour when they are genuinely comfortable — the right temperature, good water quality, low stress. Fading can be gradual and easy to miss. Comparing to photographs taken weeks apart can be revealing.',
+     urgency:'low',icon:'🎨'},
+    {label:'Staying near the heater',
+     meaning:'Fish huddling near a heat source often indicates the tank is too cold, or that a temperature fluctuation has occurred. Check your heater is functioning and that readings are consistent throughout the day.',
+     urgency:'medium',icon:'🌡️'}
+  ];
+
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  ctrl.innerHTML='<div class="vc-label"><span id="beh-label">'+signals[0].label+'</span></div><input type="range" min="0" max="4" value="0" step="1" class="vis-slider" id="beh-slider"><div class="vc-hint">slide to explore behaviour signals</div>';
+  wrap.appendChild(ctrl);
+
+  var slider=document.getElementById('beh-slider');
+  var lbl=document.getElementById('beh-label');
+  slider.addEventListener('input',function(){
+    selected=parseInt(this.value);
+    lbl.textContent=signals[selected].label;
+    draw();
+  });
+
+  var urgencyColor={'high':'rgba(220,100,60,.8)','medium':'rgba(200,160,40,.75)','low':'rgba(80,200,120,.7)'};
+  var urgencyLabel={'high':'Respond soon','medium':'Worth checking','low':'Keep an eye on it'};
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var s=signals[selected];
+
+    /* Icon */
+    ctx.font='22px serif';ctx.fillText(s.icon,12,28);
+
+    /* Urgency badge */
+    var uc=urgencyColor[s.urgency];
+    ctx.font='300 8px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle=uc;ctx.fillText(urgencyLabel[s.urgency],W-80,16);
+
+    /* Meaning */
+    ctx.font='italic 300 10.5px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(255,255,255,.62)';
+    var words=s.meaning.split(' ');
+    var line='';var y=48;var maxW=W-24;
+    words.forEach(function(w){
+      var test=line+(line?' ':'')+w;
+      if(ctx.measureText(test).width>maxW&&line){
+        ctx.fillText(line,12,y);line=w;y+=16;
+      } else line=test;
+    });
+    if(line)ctx.fillText(line,12,y);
+
+    /* Divider */
+    ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(12,H-36);ctx.lineTo(W-12,H-36);ctx.stroke();
+
+    /* Footer note */
+    ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(255,255,255,.28)';
+    ctx.fillText('Signal '+(selected+1)+' of '+signals.length+' · '+s.label,12,H-18);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+/* NAV BURGER */
+(function(){
+  var bg=document.getElementById('art-burger'),nm=document.getElementById('art-nmob');
+  if(!bg||!nm)return;
+  bg.addEventListener('click',function(){
+    var o=bg.classList.toggle('open');
+    nm.classList.toggle('open',o);
+    bg.setAttribute('aria-expanded',o);
+    nm.setAttribute('aria-hidden',!o);
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>960){bg.classList.remove('open');nm.classList.remove('open');}});
+})();
+</script>
+</body>
+</html>
