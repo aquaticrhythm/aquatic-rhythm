@@ -40,17 +40,43 @@ Rhyssa lives as a custom GPT on ChatGPT:
 
 ---
 
-## Repository Contents
+## Reading
+
+Aquatic Rhythm publishes short guided articles — not long-form guides. Each piece is built as a modular reading experience: one idea at a time, with interactive visuals and, where relevant, a live simulator.
+
+Current articles:
+
+- **New Tank Syndrome** — What is actually happening and why waiting is the right answer
+- **Your Tank Is Cycled** — So why are things still going wrong?
+- **Tank Simulator** — An interactive nitrogen cycle simulator
+
+---
+
+## Repository Structure
 
 ```
 /
-├── index.html           — main website (single-page application)
-├── favicon.png          — site favicon (48×48)
-├── apple-touch-icon.png — home screen icon (192×192)
-├── og-image.png         — social sharing image (1200×630)
-├── CNAME                — custom domain (aquaticrhythm.com)
-├── sitemap.xml          — sitemap for search engine indexing
-└── README.md            — this file
+├── index.html                        — main website (single-page application)
+├── 404.html                          — SPA redirect for GitHub Pages routing
+├── favicon.png                       — site favicon (48×48)
+├── apple-touch-icon.png              — home screen icon (192×192)
+├── og-image.png                      — social sharing image (1200×630)
+├── CNAME                             — custom domain (aquaticrhythm.com)
+├── sitemap.xml                       — sitemap for search engine indexing
+├── README.md                         — this file
+│
+├── articles/
+│   ├── new-tank-syndrome.html        — guided article, 5 modules
+│   ├── cycled-tank-problems.html     — guided article, 4 modules
+│   └── tank-simulator.html           — interactive nitrogen cycle simulator
+│
+├── css/
+│   └── style.css                     — main stylesheet
+│
+└── js/
+    ├── ui.js                         — SPA routing, navigation, page transitions
+    ├── ecosystem.js                  — background ecosystem canvas animation
+    └── fauna.js                      — fauna layer for ecosystem visual
 ```
 
 ---
