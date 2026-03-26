@@ -1,8 +1,6 @@
 User-agent: *
 Allow: /
 
-# SPA query params — not separate pages
 Disallow: /?p=
 
 Sitemap: https://aquaticrhythm.com/sitemap.xml
-
