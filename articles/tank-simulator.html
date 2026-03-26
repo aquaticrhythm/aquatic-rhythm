@@ -354,6 +354,31 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 }
 .btn-skip-inline:hover{color:rgba(61,214,232,.75);border-color:rgba(61,214,232,.3)}
 
+
+/* Equipment tooltips on hover/tap */
+.eq-btn{position:relative}
+.eq-btn[data-tip]:hover::after,.eq-btn[data-tip]:focus::after{
+  content:attr(data-tip);
+  position:absolute;
+  bottom:calc(100% + 6px);
+  left:50%;transform:translateX(-50%);
+  background:rgba(4,16,12,.96);
+  border:1px solid rgba(139,189,210,.18);
+  color:rgba(255,255,255,.65);
+  font-size:.52rem;
+  font-family:var(--sans);
+  letter-spacing:.04em;
+  line-height:1.45;
+  padding:.35rem .55rem;
+  border-radius:3px;
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:99;
+  max-width:180px;
+  white-space:normal;
+  text-align:center;
+}
+
 </style>
 </head>
 <body>
@@ -364,7 +389,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     <div style="text-align:center;margin-bottom:1.4rem">
       <span class="oi">🌊</span>
       <h2 class="ot">Set up your tank</h2>
-      <p class="om">Your choices will affect how the cycle unfolds — and what to expect along the way.</p>
+      <p class="om">This is a compressed simulation of the nitrogen cycle — the biological process every new aquarium goes through. Your choices shape how it unfolds.</p>
     </div>
 
     <!-- Tank size -->
@@ -374,17 +399,17 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <div class="sopt selected" data-val="small">
           <span class="sopt-icon">🫙</span>
           <span class="sopt-name">Small</span>
-          <span class="sopt-desc">Under 40L · Less forgiving</span>
+          <span class="sopt-desc">Under 40L · Parameters swing faster · Less room for error</span>
         </div>
         <div class="sopt" data-val="medium">
           <span class="sopt-icon">🪣</span>
           <span class="sopt-name">Medium</span>
-          <span class="sopt-desc">40–120L · More stable</span>
+          <span class="sopt-desc">40–120L · More water volume · More forgiving of mistakes</span>
         </div>
         <div class="sopt" data-val="large">
           <span class="sopt-icon">🏊</span>
           <span class="sopt-name">Large</span>
-          <span class="sopt-desc">120L+ · Most forgiving</span>
+          <span class="sopt-desc">120L+ · Dilution helps enormously · Slower parameter swings</span>
         </div>
       </div>
     </div>
@@ -396,12 +421,12 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <div class="sopt selected" data-val="fishless">
           <span class="sopt-icon">🧪</span>
           <span class="sopt-name">Fishless</span>
-          <span class="sopt-desc">Add ammonia source, no fish harmed</span>
+          <span class="sopt-desc">Grow bacteria before adding fish · Kinder and more controlled</span>
         </div>
         <div class="sopt" data-val="fish-in">
           <span class="sopt-icon">🐠</span>
           <span class="sopt-name">Fish-in</span>
-          <span class="sopt-desc">Traditional but harder on fish</span>
+          <span class="sopt-desc">Fish present from day one · Requires feeding and close attention</span>
         </div>
       </div>
 
@@ -423,12 +448,12 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <div class="sopt selected" data-val="yes">
           <span class="sopt-icon">🌿</span>
           <span class="sopt-name">Yes</span>
-          <span class="sopt-desc">Helps buffer nitrate</span>
+          <span class="sopt-desc">Absorbs nitrate · Adds oxygen · Competes with algae</span>
         </div>
         <div class="sopt" data-val="no">
           <span class="sopt-icon">—</span>
           <span class="sopt-name">No plants</span>
-          <span class="sopt-desc">Less buffering</span>
+          <span class="sopt-desc">Simpler setup · Nitrate accumulates faster</span>
         </div>
       </div>
     </div>
@@ -438,7 +463,12 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       <p id="expected-text">With a <strong>small tank</strong>, <strong>fishless cycling</strong>, and <strong>plants</strong> — expect the cycle to complete in roughly <strong>3–4 weeks</strong>. Ammonia will peak first, then nitrite, then both will fall as bacteria establish. Plants will help keep nitrate manageable.</p>
     </div>
 
-    <button class="obtn op" id="btn-begin" style="width:100%;margin-top:1.2rem">Begin simulation →</button>
+    <div style="margin-top:1rem;padding:.7rem .9rem;background:rgba(255,255,255,.03);border-radius:3px">
+      <p style="font-size:.58rem;color:rgba(255,255,255,.28);line-height:1.7;margin:0">
+        Inside the simulator you will find equipment controls — heater, filter, and light. These are on by default. You can toggle them to see how each one affects the cycle. There is also a bacteria starter you can use once. The log will explain what is happening as it unfolds.
+      </p>
+    </div>
+    <button class="obtn op" id="btn-begin" style="width:100%;margin-top:1rem">Begin simulation →</button>
   </div>
 </div>
 
@@ -538,18 +568,18 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       </div>
       <!-- Equipment row -->
       <div id="equip-bar">
-        <button class="eq-btn eq-on" id="eq-heater" onclick="toggleEquip('heater')" title="Heater">
+        <button class="eq-btn eq-on" id="eq-heater" onclick="toggleEquip('heater')" data-tip="Keeps water at 26°C. Bacteria grow ~50% faster at optimal temperature.">
           <span class="eq-icon">🔥</span>
           <span class="eq-lbl">Heater</span>
           <span class="eq-temp" id="eq-temp">26°C</span>
         </button>
         <div class="eq-div"></div>
-        <button class="eq-btn eq-on" id="eq-filter" onclick="toggleEquip('filter')" title="Filter">
+        <button class="eq-btn eq-on" id="eq-filter" onclick="toggleEquip('filter')" data-tip="Where bacteria live. Without it, the cycle almost cannot complete.">
           <span class="eq-icon">🌀</span>
           <span class="eq-lbl">Filter</span>
         </button>
         <div class="eq-div"></div>
-        <button class="eq-btn eq-on" id="eq-light" onclick="cycleLight()" title="Light intensity">
+        <button class="eq-btn eq-on" id="eq-light" onclick="cycleLight()" data-tip="Tap to cycle: Off → Low → Med → High. Affects plants and algae.">
           <span class="eq-icon">💡</span>
           <span class="eq-lbl">Light</span>
           <span class="eq-temp" id="eq-light-lbl">Med</span>
@@ -987,9 +1017,12 @@ function doWaterChange(pct){
   S.no3*=(1-frac);
 
   /* Bacteria live on filter media surfaces, NOT in water column.
-     With filter running: 10-25% water change = virtually zero impact on bacteria.
-     50%+ : water change may disturb filter physically, slight impact.
-     80%+ : significant physical disturbance, water chemistry shock. */
+     Direct removal: none — bacteria are not in the drained water.
+     Indirect effects of large changes:
+     - Chemistry shock (pH, KH, temperature shift) slows metabolism
+     - Ammonia substrate removed — bacteria temporarily without food
+     - Physical disturbance to filter can dislodge surface colonies
+     These effects scale with change size, hence the graduated penalty. */
   var bacPenalty=0;
   if(S.filter){
     if(pct<=25) bacPenalty=0;          /* bacteria safe in filter */
@@ -1006,16 +1039,16 @@ function doWaterChange(pct){
 
   var msg='';var type='';
   if(pct<=25){
-    msg=pct+'% water change. Parameters diluted — bacteria in the filter are unaffected.';
+    msg=pct+'% water change. Parameters diluted proportionally. Bacteria on filter media are unaffected — they do not live in the water column.';
     type=S.cycleOk?'good':'';
   } else if(pct<=50){
-    msg=pct+'% water change. Good dilution. Minor physical disturbance to filter but bacteria colonies remain largely intact.';
+    msg=pct+'% water change. Bacteria remain on filter surfaces. However, sudden chemistry shifts and loss of ammonia substrate may slow their activity for a day or two.';
     type='';
   } else if(pct<=70){
-    msg=pct+'% water change. Significant. Parameters improved but filter turbulence has set back bacterial progress somewhat.';
+    msg=pct+'% water change. Bacteria are not removed, but pH and mineral shock from replacing most of the water can temporarily suppress metabolic activity. Ammonia substrate lost. Expect a slight slowdown.';
     type='warn';
   } else {
-    msg=pct+'% water change — near-complete reset. Water quality improved sharply. Bacterial colonies in the filter are disrupted. Use this only in emergencies.';
+    msg=pct+'% water change. Extreme dilution. Bacteria survive on filter media but face significant chemistry shock and complete loss of ammonia substrate. Recovery may take several days. Use only in genuine emergencies.';
     type='danger';
   }
   addLog(msg,type);
@@ -1818,6 +1851,10 @@ document.getElementById('btn-begin').addEventListener('click',function(){
   running=true;initStars();startLoop();
   initFishCanvas();animFish();
   render();updateGuide();
+  /* First-time orientation log */
+  setTimeout(function(){
+    addLog('Simulation started. The equipment bar shows your heater, filter, and light — tap to toggle each one. The bacteria bar will show colony growth as the cycle progresses.','');
+  },400);
 });
 
 document.getElementById('btn-pp').addEventListener('click',function(){
