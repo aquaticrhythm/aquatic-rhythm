@@ -60,13 +60,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 .module-wrap.active{display:block}
 
 /* PROGRESS DOTS */
-.progress-dots{position:fixed;right:clamp(.8rem,2vw,1.8rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.45rem;z-index:50;opacity:0;pointer-events:none;transition:opacity .5s}
-.progress-dots.visible{opacity:1;pointer-events:all}
-.pdot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .4s,transform .35s;cursor:pointer;border:none;padding:0}
+
 .pdot:hover{background:rgba(255,255,255,.35)}
-.pdot.active{background:rgba(61,214,232,.5);transform:scale(1.25)}
-.pdot.done{background:rgba(255,255,255,.22)}
-@media(max-width:768px){.progress-dots{display:none}}
+
 
 /* INDIVIDUAL MODULE */
 .module{
@@ -234,6 +230,39 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 }
 @media(max-width:600px){.art-back-meta{display:none}}
 
+
+/* MODULE PROGRESS BAR */
+#mod-progress-wrap{
+  position:fixed;top:64px;left:0;right:0;z-index:90;
+  opacity:0;pointer-events:none;transition:opacity .4s;
+}
+#mod-progress-wrap.visible{opacity:1}
+#mod-progress-bar{
+  height:2px;
+  background:rgba(255,255,255,.06);
+  position:relative;
+  overflow:hidden;
+}
+#mod-progress-bar::after{
+  content:'';
+  position:absolute;
+  left:0;top:0;height:100%;
+  width:var(--prog,0%);
+  background:linear-gradient(to right,rgba(61,214,232,.6),rgba(157,191,154,.4));
+  transition:width .5s cubic-bezier(0.19,1,0.22,1);
+}
+#mod-progress-label{
+  position:absolute;
+  right:clamp(1.5rem,5vw,4.5rem);
+  top:6px;
+  font-size:.52rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.25);
+  font-family:var(--sans);
+  transition:opacity .3s;
+}
+
 </style>
 </head>
 <body>
@@ -274,7 +303,10 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 </div>
 
 <!-- PROGRESS DOTS -->
-<nav class="progress-dots" aria-label="Module progress" id="progress-dots"></nav>
+<div id="mod-progress-wrap">
+  <div id="mod-progress-bar"></div>
+  <div id="mod-progress-label"></div>
+</div>
 
 <main>
 
@@ -485,9 +517,8 @@ function goIntro() {
   var intro = document.querySelector('.art-intro');
   if (wrap) wrap.classList.remove('active');
   if (intro) { intro.classList.remove('hidden'); intro.style.display = ''; }
-  /* Hide progress dots */
-  var dots = document.getElementById('progress-dots');
-  if (dots) dots.classList.remove('visible');
+  var pw=document.getElementById('mod-progress-wrap');
+  if(pw)pw.classList.remove('visible');
   window.scrollTo({ top: 0, behavior: 'auto' });
   currentMod = 1;
   updateDots();
@@ -520,9 +551,8 @@ function startLearning() {
   var wrap = document.querySelector('.module-wrap');
   if (intro) intro.classList.add('hidden');
   if (wrap) wrap.classList.add('active');
-  /* Show progress dots */
-  var dots = document.getElementById('progress-dots');
-  if (dots) dots.classList.add('visible');
+  var pw=document.getElementById('mod-progress-wrap');
+  if(pw)pw.classList.add('visible');
   window.scrollTo({ top: 0, behavior: 'auto' });
   var first = document.getElementById('mod-1');
   if (first) {
@@ -533,27 +563,14 @@ function startLearning() {
   if (canvases[1]) setTimeout(function(){ canvases[1](); }, 150);
 }
 
-/* Progress dots */
-function buildDots() {
-  var wrap = document.getElementById('progress-dots');
-  for (var i = 1; i <= totalMods; i++) {
-    var d = document.createElement('button');
-    d.className = 'pdot';
-    d.setAttribute('aria-label', 'Module ' + i);
-    d.setAttribute('data-n', i);
-    d.addEventListener('click', function(){ goMod(parseInt(this.getAttribute('data-n'))); });
-    wrap.appendChild(d);
-  }
+function buildDots(){}
+function updateDots(){
+  var pct = Math.round(((currentMod-1)/totalMods)*100)+'%';
+  var bar=document.getElementById('mod-progress-bar');
+  var lbl=document.getElementById('mod-progress-label');
+  if(bar) bar.style.setProperty('--prog', Math.round((currentMod/totalMods)*100)+'%');
+  if(lbl) lbl.textContent='Module '+currentMod+' / '+totalMods;
 }
-function updateDots() {
-  document.querySelectorAll('.pdot').forEach(function(d, i) {
-    var n = i + 1;
-    d.classList.remove('active', 'done');
-    if (n === currentMod) d.classList.add('active');
-    else if (n < currentMod) d.classList.add('done');
-  });
-}
-buildDots();
 
 /* Init — show intro first */
 (function(){
