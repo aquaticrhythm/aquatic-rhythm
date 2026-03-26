@@ -257,17 +257,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .bac-dot.full{color:rgba(80,200,100,.85);text-shadow:0 0 6px rgba(80,200,100,.5)}
 
 /* ── GUIDED HINTS ── */
-/* Guide hint — sits above bbar, part of normal flow */
-#guide-hint{
-  display:none;
-  border-top:1px solid rgba(61,214,232,.15);
-  background:rgba(4,16,12,.88);
-  padding:.38rem clamp(.5rem,2vw,1.2rem);
-}
-#guide-hint.show{display:flex;align-items:center;gap:.5rem}
-.gh-inner{display:flex;align-items:center;gap:.5rem;width:100%}
-.gh-icon{font-size:.85rem;flex-shrink:0}
-.gh-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.72rem;color:rgba(255,255,255,.65);line-height:1.3}
+
 
 /* Button pulse — Aquatic Rhythm guide */
 .ab.ar-pulse{
@@ -637,9 +627,6 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     </div>
     <div style="text-align:center;margin-top:.6rem"><button onclick="hideWaterPicker()" style="font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);background:none;border:none;cursor:pointer">Cancel</button></div>
   </div>
-
-  <!-- Guide hint — inline above buttons -->
-  <div id="guide-hint"><div class="gh-inner"><span class="gh-icon" id="gh-icon">💧</span><span class="gh-text" id="gh-text">Small water change now</span></div></div>
 
   <div id="bbar">
     <button class="ab" id="act-source" onclick="doAct('source')">
@@ -1266,10 +1253,6 @@ var guideHintTimer = null;
 
 function updateGuide(){
   if(S.dead||S.won)return;
-  var hint = document.getElementById('guide-hint');
-  var ghIcon = document.getElementById('gh-icon');
-  var ghText = document.getElementById('gh-text');
-
   /* Clear all button pulses first */
   ['act-source','act-feed','act-water','act-plant','act-seed'].forEach(function(id){
     var el=document.getElementById(id);
@@ -1337,19 +1320,31 @@ function updateGuide(){
     if(el)el.classList.add(pulseClass);
   }
 
-  if(hint){
-    if(hintShow){
-      ghIcon.textContent=icon;
-      ghText.textContent=text;
-      hint.classList.add('show');
-    } else {
-      hint.classList.remove('show');
+  /* Route guide messages into insight box */
+  var ibtxt = document.getElementById('ib-txt');
+  var ibbox = ibtxt ? ibtxt.parentElement : null;
+  if(hintShow){
+    if(ibtxt){
+      ibtxt.textContent = icon+' '+text;
+      ibtxt.style.color = pulseClass==='ar-stop'?'rgba(220,100,60,.8)':
+                          pulseClass==='ar-warn'?'rgba(220,160,60,.75)':
+                          'rgba(255,255,255,.65)';
     }
-    /* Also pulse water button for water change reminders */
-    if(pulseBtn==='act-water'&&hintShow){
-      var wBtn=document.getElementById('act-water');
-      if(wBtn)wBtn.classList.add(pulseClass);
+    if(ibbox)ibbox.style.borderLeftColor = pulseClass==='ar-stop'?'rgba(220,80,60,.4)':
+                                            pulseClass==='ar-warn'?'rgba(220,160,40,.35)':
+                                            'rgba(61,214,232,.25)';
+    /* Still pulse the relevant button */
+    if(pulseBtn){
+      var el=document.getElementById(pulseBtn);
+      if(el)el.classList.add(pulseClass);
     }
+  } else {
+    /* Restore insight text from getInsight */
+    if(ibtxt){
+      ibtxt.textContent = getInsight(S);
+      ibtxt.style.color = '';
+    }
+    if(ibbox)ibbox.style.borderLeftColor = '';
   }
 }
 
