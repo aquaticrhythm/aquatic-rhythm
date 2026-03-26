@@ -443,8 +443,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 </div>
 
 <!-- ── END OVERLAY ── -->
-<div class="ov hide" id="ov-end">
-  <div class="oc" style="max-width:460px;text-align:left">
+<div class="ov hide" id="ov-end" style="align-items:flex-start;padding:1rem">
+  <div class="oc" style="max-width:460px;text-align:left;margin-top:auto;margin-bottom:auto;width:100%">
     <div style="text-align:center;margin-bottom:1.2rem">
       <span class="oi" id="ov-icon">🐟</span>
       <h2 class="ot" id="ov-title">The cycle crashed.</h2>
@@ -1831,7 +1831,9 @@ document.getElementById('btn-reset').addEventListener('click',function(){
 document.getElementById('btn-restart').addEventListener('click',function(){
   if(subTimer){clearInterval(subTimer);subTimer=null;}
   reset();
-  setTimeout(function(){document.getElementById('btn-begin').click();},100);
+  /* Return to setup screen — not auto-start */
+  document.getElementById('ov-end').classList.add('hide');
+  document.getElementById('ov-setup').classList.remove('hide');
 });
 
 render();renderTime(0);
