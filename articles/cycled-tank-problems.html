@@ -60,12 +60,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 @media(max-width:600px){.art-back-meta{display:none}}
 
 /* PROGRESS DOTS */
-.progress-dots{position:fixed;right:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.55rem;z-index:50;opacity:0;pointer-events:none;transition:opacity .4s}
+.progress-dots{
+  position:fixed;
+  /* Stay outside the content column — content is max 660px centered */
+  right:max(1rem, calc(50% - 380px - 2.5rem));
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:.6rem;
+  z-index:50;opacity:0;pointer-events:none;transition:opacity .5s;
+}
 .progress-dots.visible{opacity:1;pointer-events:all}
-.pdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .4s,transform .4s;cursor:pointer;border:none;padding:0}
-.pdot.active{background:rgba(61,214,232,.8);transform:scale(1.4)}
+.pdot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.12);transition:background .4s,transform .4s;cursor:pointer;border:none;padding:0}
+.pdot.active{background:rgba(61,214,232,.75);transform:scale(1.3)}
 .pdot.done{background:rgba(61,214,232,.35)}
-@media(max-width:600px){.progress-dots{display:none}}
+@media(max-width:1000px){.progress-dots{display:none}}
 
 /* INTRO */
 .art-intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem clamp(1.5rem,5vw,3rem) 5rem;position:relative}
