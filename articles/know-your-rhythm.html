@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Know Your Rhythm — Aquatic Rhythm</title>
+<meta name="description" content="Before you choose a tank, understand yourself as a keeper. Seven reflective questions. No right answers. A mirror, not a calculator.">
+<link rel="canonical" href="https://aquaticrhythm.com/articles/know-your-rhythm">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<meta name="theme-color" content="#041e28">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+:root{--abyss:#030b09;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--accent:#3DD6E8;--ease:cubic-bezier(0.19,1,0.22,1)}
+body{font-family:var(--sans);background:var(--abyss);color:rgba(255,255,255,.88);overflow-x:hidden;line-height:1.72}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#052535 0%,#062a38 35%,#041e28 65%,#020810 100%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4.5rem);background:linear-gradient(to bottom,rgba(3,18,30,.88),transparent);backdrop-filter:blur(6px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}
+.nav-logo:hover{opacity:.75}
+.art-nlinks{display:flex;gap:2.4rem;list-style:none}
+.art-nlinks a{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s;position:relative}
+.art-nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(61,214,232,.75);transition:width .35s}
+.art-nlinks a:hover{color:rgba(255,255,255,.8)}
+.art-nlinks a:hover::after,.art-nlinks a[href="/reading"]::after{width:100%}
+.art-nlinks a[href="/reading"]{color:rgba(61,214,232,.6)}
+.art-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;padding:5px;cursor:pointer}
+.art-burger span{display:block;height:1px;background:rgba(255,255,255,.4);transition:transform .36s,width .3s;transform-origin:center}
+.art-burger span:nth-child(1){width:18px}
+.art-burger span:nth-child(2){width:12px}
+.art-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);width:18px}
+.art-burger.open span:nth-child(2){transform:translateY(-6px) rotate(-45deg);width:18px}
+.art-nmob{position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(6,16,13,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,189,210,.08);padding:0 clamp(1.5rem,5vw,4.5rem);max-height:0;overflow:hidden;pointer-events:none;transition:max-height .48s,padding-top .35s,padding-bottom .35s}
+.art-nmob.open{max-height:320px;padding-top:1.6rem;padding-bottom:2rem;pointer-events:all}
+.art-nmob ul{list-style:none}
+.art-nmob li{border-bottom:1px solid rgba(255,255,255,.05)}
+.art-nmob li:last-child{border-bottom:none}
+.art-nmob a{display:block;padding:.9rem 0;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .25s,padding-left .3s}
+.art-nmob a:hover{color:rgba(139,189,210,.85);padding-left:.5rem}
+@media(max-width:960px){.art-nlinks{display:none}.art-burger{display:flex}}
+.art-back-bar{position:sticky;top:64px;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:.5rem clamp(1.5rem,5vw,3rem);background:rgba(3,11,9,.88);border-bottom:1px solid rgba(139,189,210,.08);backdrop-filter:blur(8px)}
+.art-back-link{display:flex;align-items:center;gap:.45rem;text-decoration:none;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.6);transition:color .25s}
+.art-back-link:hover{color:rgba(61,214,232,.9)}
+.art-back-meta{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+@media(max-width:600px){.art-back-meta{display:none}}
+#kyr-progress{height:2px;background:rgba(255,255,255,.06);position:sticky;top:calc(64px + 41px);z-index:79}
+#kyr-prog-fill{height:100%;width:0%;background:rgba(61,214,232,.45);transition:width .7s var(--ease)}
+main{min-height:100vh;padding-top:64px}
+
+/* INTRO */
+.kyr-intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem clamp(1.5rem,5vw,3rem) 5rem;position:relative}
+.kyr-intro::after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to bottom,transparent,var(--abyss));pointer-events:none}
+.kyr-intro-inner{max-width:540px;margin:0 auto}
+.kyr-eyebrow{display:block;font-size:.6rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(157,191,154,.75);margin-bottom:1.4rem}
+.kyr-title{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,5vw,3.8rem);color:rgba(255,255,255,.92);line-height:1.06;margin-bottom:1.8rem}
+.kyr-title em{font-style:italic;color:rgba(61,214,232,.72)}
+.kyr-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(.98rem,1.6vw,1.14rem);font-weight:300;color:rgba(255,255,255,.46);line-height:1.88;margin-bottom:1rem}
+.kyr-body{font-size:.94rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.95;margin-bottom:1.4rem}
+.kyr-note{font-size:.76rem;color:rgba(255,255,255,.25);line-height:1.72;margin-bottom:2.2rem;font-style:italic;font-family:var(--serif);padding-left:1rem;border-left:1px solid rgba(255,255,255,.1)}
+.kyr-begin{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.82rem 2.2rem;border-radius:2px;cursor:pointer;transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans)}
+.kyr-begin:hover{background:rgba(40,184,208,.95);transform:translateY(-1px)}
+
+/* QUESTION */
+#kyr-screen{display:none;padding:3.5rem clamp(1.5rem,5vw,3rem) 6rem}
+.kyr-wrap{max-width:560px;margin:0 auto}
+#kyr-canvas-wrap{margin-bottom:2.8rem}
+#kyr-canvas{width:100%;display:block;border-radius:2px}
+.kyr-q-num{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.2);display:block;margin-bottom:.85rem}
+.kyr-q-text{font-family:var(--serif);font-weight:300;font-size:clamp(1.45rem,3vw,2.05rem);color:rgba(255,255,255,.88);line-height:1.22;margin-bottom:.55rem}
+.kyr-q-sub{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.32);line-height:1.72;margin-bottom:2rem;font-style:italic;font-family:var(--serif)}
+.kyr-options{display:flex;flex-direction:column;gap:.52rem;margin-bottom:2.2rem}
+.kyr-opt{display:block;width:100%;text-align:left;padding:.88rem 1.15rem;background:rgba(6,16,13,.55);border:1px solid rgba(139,189,210,.1);border-radius:2px;cursor:pointer;transition:background .2s,border-color .25s,transform .18s;font-family:var(--sans)}
+.kyr-opt:hover{background:rgba(9,22,18,.88);border-color:rgba(61,214,232,.2);transform:translateX(3px)}
+.kyr-opt.selected{background:rgba(58,110,140,.16);border-color:rgba(61,214,232,.42)}
+.kyr-opt-label{font-size:.88rem;font-weight:400;color:rgba(255,255,255,.76);display:block;margin-bottom:.16rem}
+.kyr-opt-desc{font-size:.7rem;color:rgba(255,255,255,.28);line-height:1.52;font-style:italic;font-family:var(--serif)}
+.kyr-nav{display:flex;justify-content:space-between;align-items:center}
+.kyr-btn-next{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.7rem 1.9rem;border-radius:2px;cursor:pointer;transition:background .25s,opacity .25s;font-family:var(--sans);opacity:.28;pointer-events:none}
+.kyr-btn-next.active{opacity:1;pointer-events:all}
+.kyr-btn-next.active:hover{background:rgba(40,184,208,.95)}
+.kyr-btn-back{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.22);background:none;border:none;cursor:pointer;padding:.7rem 0;font-family:var(--sans);transition:color .2s}
+.kyr-btn-back:hover{color:rgba(255,255,255,.52)}
+
+/* RESULT */
+#kyr-result{display:none;padding:5rem clamp(1.5rem,5vw,3rem) 7rem}
+.kyr-result-wrap{max-width:580px;margin:0 auto}
+.kyr-result-eyebrow{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(157,191,154,.6);display:block;margin-bottom:1.5rem}
+.kyr-result-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4vw,2.9rem);color:rgba(255,255,255,.88);line-height:1.12;margin-bottom:2.8rem}
+.kyr-result-title em{font-style:italic;color:rgba(61,214,232,.62)}
+.kyr-reflection{margin-bottom:2.4rem}
+.kyr-reflection p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.98;margin-bottom:1.5rem}
+.kyr-reflection p:last-child{margin-bottom:0}
+.kyr-divider{height:1px;background:linear-gradient(to right,rgba(61,214,232,.2),transparent);margin:2.4rem 0}
+.kyr-q-close{padding:1.8rem 2rem;border-left:2px solid rgba(61,214,232,.25);background:rgba(58,110,140,.04)}
+.kyr-q-close-label{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(61,214,232,.4);display:block;margin-bottom:.8rem}
+.kyr-q-close p{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:rgba(255,255,255,.45);line-height:1.92}
+.kyr-note-end{font-size:.76rem;color:rgba(255,255,255,.22);line-height:1.7;margin-top:2.5rem;font-style:italic;font-family:var(--serif)}
+.kyr-actions{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.kyr-btn-restart{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.55);background:none;border:1px solid rgba(61,214,232,.18);padding:.7rem 1.6rem;border-radius:2px;cursor:pointer;font-family:var(--sans);transition:color .25s,border-color .25s}
+.kyr-btn-restart:hover{color:rgba(61,214,232,.88);border-color:rgba(61,214,232,.42)}
+.kyr-link-reading{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.24);text-decoration:none;font-family:var(--sans);transition:color .25s}
+.kyr-link-reading:hover{color:rgba(255,255,255,.52)}
+@media(max-width:600px){.kyr-opt-desc{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo" aria-label="Aquatic Rhythm">
+    <svg width="160" height="26" viewBox="0 0 175 30" fill="none" role="presentation" aria-hidden="true">
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg>
+  </a>
+  <ul class="art-nlinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/ara">Explore ARA</a></li>
+    <li><a href="/rhyssa">Meet Rhyssa</a></li>
+    <li><a href="/reading">Reading</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+  <button class="art-burger" id="art-burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
+<div class="art-nmob" id="art-nmob" aria-hidden="true">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/ara">Explore ARA</a></li>
+    <li><a href="/rhyssa">Meet Rhyssa</a></li>
+    <li><a href="/reading">Reading</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+<div class="art-back-bar">
+  <a href="/reading" class="art-back-link"><span>←</span><span>Reading</span></a>
+  <span class="art-back-meta">Know Your Rhythm · 7 questions</span>
+</div>
+<div id="kyr-progress"><div id="kyr-prog-fill"></div></div>
+<main>
+  <div id="kyr-intro" class="kyr-intro">
+    <div class="kyr-intro-inner">
+      <span class="kyr-eyebrow">Try It Yourself</span>
+      <h1 class="kyr-title">Know Your<br><em>Rhythm.</em></h1>
+      <p class="kyr-subtitle">Before you choose a tank, understand yourself as a keeper.</p>
+      <p class="kyr-body">Most people start with the tank. The size, the fish, the equipment. Then they discover — sometimes weeks later, sometimes months — that the system they built does not fit the life they actually have.</p>
+      <p class="kyr-body">This is not about finding the perfect setup. It is about understanding what kind of keeper you already are — your actual rhythm, not the one you intend to have. What you notice under pressure. How you relate to things that grow slowly. What you are really hoping to feel, sitting beside it.</p>
+      <p class="kyr-note">Seven questions drawn from behavioural psychology and the ARA framework. No right answers. What you receive at the end is a reflection — not a recommendation — because only you can judge whether it holds.</p>
+      <button class="kyr-begin" id="kyr-begin-btn">Begin →</button>
+    </div>
+  </div>
+  <div id="kyr-screen">
+    <div class="kyr-wrap">
+      <div id="kyr-canvas-wrap"><canvas id="kyr-canvas"></canvas></div>
+      <span class="kyr-q-num" id="kyr-q-num">Question 1 of 7</span>
+      <h2 class="kyr-q-text" id="kyr-q-text"></h2>
+      <p class="kyr-q-sub" id="kyr-q-sub"></p>
+      <div class="kyr-options" id="kyr-options"></div>
+      <div class="kyr-nav">
+        <button class="kyr-btn-back" id="kyr-btn-back">← Back</button>
+        <button class="kyr-btn-next" id="kyr-btn-next">Next →</button>
+      </div>
+    </div>
+  </div>
+  <div id="kyr-result">
+    <div class="kyr-result-wrap">
+      <span class="kyr-result-eyebrow">Your reflection</span>
+      <h2 class="kyr-result-title" id="kyr-result-title"></h2>
+      <div class="kyr-reflection" id="kyr-reflection"></div>
+      <div class="kyr-divider"></div>
+      <div class="kyr-q-close">
+        <span class="kyr-q-close-label">A question to sit with</span>
+        <p id="kyr-closing-q"></p>
+      </div>
+      <p class="kyr-note-end">This reflection is not a diagnosis. It is a starting point — one that changes as you do. You can return to it whenever the question feels different.</p>
+      <div class="kyr-actions">
+        <button class="kyr-btn-restart" id="kyr-btn-restart">Start again</button>
+        <a href="/reading" class="kyr-link-reading">← Back to Reading</a>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+/* ═══ QUESTIONS ═══ */
+var Q=[
+  {id:'tending',
+   text:'Think of something living you have tended before.',
+   sub:'A plant, a pet, a garden, a sourdough starter. How did that actually go — not at the beginning, but over the course of a year?',
+   opts:[
+     {v:'consistent', l:'I tended it consistently', d:'It became part of my routine. Not always easy, but I kept at it.'},
+     {v:'started-well', l:'I started well, then life got in the way', d:'The first weeks or months were good. Then it drifted. It happens.'},
+     {v:'drifted-returned', l:'It drifted, but I came back to it', d:'There were gaps. But I returned. The relationship had enough pull to survive the absences.'},
+     {v:'did-not-last', l:'It did not last — and I know why', d:'Something happened. I have a sense of what it was, even if I could not name it at the time.'}
+   ]},
+  {id:'response',
+   text:'Something you are caring for starts looking wrong.',
+   sub:'You are not sure why. What happens next — honestly?',
+   opts:[
+     {v:'research', l:'I need to understand it before I can settle', d:'The uncertainty is uncomfortable. I find myself reading, testing, trying to close the gap.'},
+     {v:'observe', l:'I observe and wait before acting', d:'I give it space. Things sometimes resolve if you do not rush to intervene.'},
+     {v:'multiple', l:'I tend to try several things at once', d:'When something is wrong, I want to do something. Waiting feels like giving up.'},
+     {v:'step-back', l:'I step back and give it room', d:'My instinct is to reduce interference. The system usually knows what it needs.'}
+   ]},
+  {id:'role',
+   text:'Where does this tank live in your imagination — not the room, but the role it plays?',
+   sub:'Not what you plan to do with it. What feeling are you moving toward?',
+   opts:[
+     {v:'anchor', l:'Something to come home to', d:'A presence. Quiet, consistent, alive. Something that is there when other things are not.'},
+     {v:'project', l:'A project I tend and improve', d:'I am drawn to the craft of it. The adjusting, the learning, the gradual refinement.'},
+     {v:'responsibility', l:'A living thing I am responsible for', d:'The weight of it is part of the appeal. Something genuinely depends on my attention.'},
+     {v:'control', l:'A corner of the world I can shape', d:'Not control in a rigid sense. But a space where my choices visibly matter.'}
+   ]},
+  {id:'imagination',
+   text:'Imagine yourself six months from now, beside a tank that is working well.',
+   sub:'What are you actually doing — in that moment, right now, in your mind?',
+   opts:[
+     {v:'watching', l:'Watching without doing anything', d:'Just sitting. The tank is running. I am present but not needed.'},
+     {v:'adjusting', l:'Adjusting, testing, improving something', d:'I am engaged with it. Tinkering, reading a parameter, thinking about what to change next.'},
+     {v:'feeding-quietly', l:'Feeding and observing quietly', d:'A ritual. Small, daily, mine. The fish know me. It is unhurried.'},
+     {v:'sharing', l:'Showing someone else what I have made', d:'It has become something worth sharing. I want someone else to see what I see.'}
+   ]},
+  {id:'slowness',
+   text:'How do you relate to things that take weeks or months to show results?',
+   sub:'Think of other areas of your life — not how you wish you were, but how you actually are.',
+   opts:[
+     {v:'calming', l:'I find it calming — the slowness is part of the appeal', d:'Patience is not something I have to practise here. It comes naturally with things I care about.'},
+     {v:'managed', l:'I manage it — I have done it before', d:'Slow processes are not easy, but I have navigated them. I know how to stay in.'},
+     {v:'difficult', l:'I struggle — I need to see progress to stay engaged', d:'Honestly, this is a challenge. I need visible change to stay motivated over time.'},
+     {v:'untested', l:'I have not tested this in myself', d:'I am not sure. This might be the thing that tells me.'}
+   ]},
+  {id:'loss',
+   text:'Have you ever stopped caring for something you initially loved?',
+   sub:'This is not a trick question. The answer is more common than people admit.',
+   opts:[
+     {v:'carry-it', l:'Yes — and I still carry some of it', d:'Something ended that probably did not have to. I think about it sometimes.'},
+     {v:'life-changed', l:'Yes — life changed and I had to let go', d:'It was not neglect. It was circumstance. The distinction matters to me.'},
+     {v:'rarely-stop', l:'I tend not to stop things once I start', d:'Commitment feels important to me. I do not take it on lightly, and I do not walk away easily.'},
+     {v:'first-time', l:'This would be my first real commitment like this', d:'I have not had the chance to find out yet. This might be where I do.'}
+   ]},
+  {id:'success',
+   text:'What would make you feel, a year from now, that this was worth it?',
+   sub:'Not the metric. The feeling. What does it actually look like when it has gone well?',
+   opts:[
+     {v:'running', l:'The tank is still running and the fish are well', d:'Longevity and health. Simple, but not easy. That would be enough.'},
+     {v:'understanding', l:'I understand it in a way I did not before', d:'I came for the animals. I stayed for the biology. I learned something real.'},
+     {v:'part-of-life', l:'It has become part of my daily life without feeling like work', d:'It integrated. It belongs to my routine in a way that feels earned, not forced.'},
+     {v:'witnessed', l:'Someone sat beside it with me and saw what I see', d:'It became something shareable. Someone else paused at it. That mattered.'}
+   ]}
+];
+
+/* ═══ REFLECTION LOGIC ═══ */
+function reflect(ans){
+  var t=ans.tending, r=ans.response, ro=ans.role, im=ans.imagination;
+  var sl=ans.slowness, lo=ans.loss, su=ans.success;
+
+  /* Derive character dimensions */
+  var episodic=(t==='started-well'||t==='drifted-returned'||sl==='difficult');
+  var committed=(t==='consistent'||lo==='rarely-stop');
+  var reflective=(r==='observe'||r==='step-back'||t==='did-not-last');
+  var curious=(su==='understanding'||r==='research'||ro==='project');
+  var relational=(ro==='anchor'||ro==='responsibility'||im==='sharing'||im==='feeding-quietly');
+  var aesthetic=(ro==='control'||im==='watching'||su==='part-of-life');
+  var grieving=(lo==='carry-it');
+  var uncertain=(sl==='untested'||t==='first-time'||lo==='first-time');
+
+  /* Title */
+  var title;
+  if(grieving&&reflective) title='Someone who has learned something from <em>what did not hold.</em>';
+  else if(committed&&curious) title='Someone drawn to this <em>for the depth of it.</em>';
+  else if(episodic&&relational) title='Someone who loves what this could be, <em>and is honest about how life actually goes.</em>';
+  else if(reflective&&aesthetic) title='Someone who wants to sit beside something <em>that simply lives.</em>';
+  else if(curious&&!committed) title='Someone whose interest runs ahead of <em>their rhythm.</em>';
+  else if(committed&&relational) title='Someone for whom care <em>is not incidental.</em>';
+  else if(uncertain) title='Someone at the beginning of <em>finding out.</em>';
+  else title='Someone still learning <em>what kind of keeper they are.</em>';
+
+  /* Paragraphs */
+  var paras=[];
+
+  /* Tending history */
+  if(t==='consistent'){
+    paras.push('The pattern you have described — tending something consistently over time, not just at the beginning — is less common than it sounds. Most people start with high attention and find it difficult to sustain. If this genuinely describes your relationship with the things you care for, it is a meaningful starting point. It means you have already done the harder part of what this hobby asks. The question becomes not whether you can sustain attention, but what kind of system is worth giving it to.');
+  } else if(t==='drifted-returned'){
+    paras.push('The relationship you described — drifting, then returning — is actually one of the more honest patterns in long-term care. It does not mean inconsistency is a character flaw. It means you have a relationship with the thing that survives absence. That is worth something. A tank designed for this kind of keeper — one with enough biological stability to tolerate gaps and recover — is not a lesser system. It is an honest one.');
+  } else if(t==='started-well'){
+    paras.push('Starting well and drifting is probably the most common pattern, and the least acknowledged. The first weeks or months tend to feel very different from month six or seven, when the novelty has settled and the demands remain. Knowing this about yourself is not a reason not to begin — it is a reason to design differently. A system that asks for less consistency is not a compromise. It is a realistic fit.');
+  } else if(t==='did-not-last'){
+    paras.push('There is something important in the phrase “I know why.” Most people who stop caring for something do not. They attribute it to being busy, or bad luck, or the wrong conditions. Having a sense of what actually happened is a different kind of self-knowledge — and it is probably the most useful thing you can bring into this. Whatever that reason was, it is worth sitting beside before you choose what to set up next.');
+  }
+
+  /* Response to difficulty */
+  if(r==='observe'){
+    paras.push('Your instinct when something looks wrong is to observe before acting. In aquarium keeping, this is one of the rarer and more valuable qualities a keeper can have. Most problems in established tanks are not emergencies. They are slow processes that look urgent. The impulse to intervene — immediately, visibly — is one of the most common causes of secondary problems. If sitting with uncertainty long enough to actually understand it is something you can do, that capacity will serve the tank well.');
+  } else if(r==='multiple'){
+    paras.push('The impulse to try several things at once when something goes wrong is understandable — and very common. The difficulty is that it makes it nearly impossible to know what helped and what did not. In a living system, that ambiguity compounds over time. One change, watched carefully, teaches you something. Five changes at once teach you nothing except whether the overall direction was right. That is worth being aware of, not as a criticism, but as a design constraint. Systems with fewer moving parts are more forgiving of this pattern.');
+  } else if(r==='research'){
+    paras.push('Needing to understand what is happening before you can settle is a quality that tends to make people very good at this hobby over time — and sometimes more anxious in the early weeks than necessary. Most parameters in a new tank look alarming before they resolve naturally. Knowing this intellectually does not always help when you are looking at a reading that seems wrong. What tends to help is having done enough reading beforehand that the pattern is familiar before it arrives.');
+  }
+
+  /* Success */
+  if(su==='understanding'){
+    paras.push('The version of success you named — understanding something you did not before — is worth examining carefully. It is an honest answer, and a rare one. Most people say they want healthy fish or a beautiful tank. You said you want to know. That orientation shapes everything: the species you keep, the readings you take, the amount of time you spend at the glass. It also means that the difficult early weeks, when everything is uncertain and nothing is stable, are not a failure state. They are the most interesting part.');
+  } else if(su==='part-of-life'){
+    paras.push('The version of success you described — something that integrates into daily life without effort — is one of the most honest things you can want from this. It is also one of the hardest to engineer deliberately. It tends to happen when the system is well-matched to the keeper: not too demanding, not too fragile, not too complex to understand. When it fits, it fits. You stop noticing the labour and start noticing the tank.');
+  } else if(su==='witnessed'){
+    paras.push('There is something in wanting someone else to pause at what you have made — to see what you see. It is not vanity. It is the desire for the thing to be legible, for the care to show, for the result to be visible to someone who did not put in the hours. That desire is a useful signal. It means aesthetics matter to you, not just health. It means the tank will need to be something you are proud of, not just something that works.');
+  }
+
+  /* Loss */
+  if(grieving){
+    paras.push('What you said about still carrying something that ended — that is worth naming directly. Loss in the context of care is not always visible. Sometimes it looks like a tank that slowly declined, or a routine that drifted until there was nothing left to tend. If this is part of what you are bringing to this, it is not a warning sign. It is information. It tells you what matters to you, and how much. The question is whether this time the conditions are different — and whether you know what would need to be different for them to be.');
+  }
+
+  /* Slowness */
+  if(sl==='difficult'){
+    paras.push('You said that processes requiring weeks or months to show results are genuinely difficult for you. This is important information. A new tank takes four to eight weeks to establish its bacterial colony. The parameters during that time can look alarming. The fish, if present, may look stressed. Nothing seems to be working. This period is not a sign of failure — but it requires either trusting a process you cannot see, or having done enough reading to know why the patience is justified. Knowing this about yourself does not mean this is not right for you. It means you go in with your eyes open.');
+  } else if(sl==='untested'){
+    paras.push('Not knowing how you relate to slow processes — until you are in one — is an honest answer. The first few weeks of a new tank tend to answer this question fairly quickly. If you find the waiting easier than expected, that tells you something. If you find it harder, that also tells you something. Either way, you will know yourself a little better by the time the cycle is complete. That is not a bad reason to start.');
+  }
+
+  /* Closing question */
+  var closing;
+  if(grieving) closing='Whatever did not hold before — what would need to be different, this time, for it to last? Not in the tank. In you.';
+  else if(episodic&&!committed) closing='If you described your actual rhythm to the system before you built it — honestly, the way you described that plant or that pet — what would the system need to be able to absorb?';
+  else if(curious&&su==='understanding') closing='What is the specific thing you most want to understand that you do not yet? Starting there — rather than with a species list — often produces the most coherent setup.';
+  else if(sl==='difficult') closing='The early weeks of a new tank can feel wrong before they feel right. What would help you stay in through that period — reading, community, daily observation, or something else?';
+  else if(su==='witnessed') closing='What does it look like, in your mind, when someone else pauses at it? What would they be looking at — and what would that mean to you?';
+  else if(uncertain) closing='This might be the thing that teaches you what you needed to know about yourself as a keeper. What would you want to remember, six months from now, about where you started?';
+  else closing='Sitting beside a tank that is genuinely settled — stable, unhurried, clearly alive — what would that feel like? And what would it ask of you, week after week, to stay that way?';
+
+  return{title:title,paras:paras,closing:closing};
+}
+
+/* ═══ CANVAS ═══ */
+var cvs=document.getElementById('kyr-canvas');
+var ctx=cvs.getContext('2d');
+var ST={tending:null,response:null,role:null,imagination:null,slowness:null,loss:null,success:null};
+function szCvs(){var w=document.getElementById('kyr-canvas-wrap');cvs.width=w.offsetWidth;cvs.height=window.innerWidth<600?115:155;}
+function drawCvs(qIdx,ans){
+  szCvs();var W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);
+  var bg=ctx.createLinearGradient(0,0,0,H);
+  bg.addColorStop(0,'rgba(4,20,34,.96)');bg.addColorStop(1,'rgba(2,10,20,.98)');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  var tx=14,ty=11,tw=W-28,th=H-22;
+  ctx.strokeStyle='rgba(139,189,210,.14)';ctx.lineWidth=1;ctx.strokeRect(tx,ty,tw,th);
+
+  /* Water clarity from tending + response */
+  var clarity=0.42;
+  if(ST.tending==='consistent'||ST.response==='observe'||ST.response==='step-back')clarity=0.78;
+  if(ST.tending==='started-well'||ST.tending==='did-not-last')clarity=0.25;
+  var wg=ctx.createLinearGradient(tx,ty,tx,ty+th);
+  wg.addColorStop(0,'rgba(5,42,65,'+(clarity*.38).toFixed(2)+')');
+  wg.addColorStop(1,'rgba(2,16,28,'+(clarity*.58).toFixed(2)+')');
+  ctx.fillStyle=wg;ctx.fillRect(tx+1,ty+1,tw-2,th-2);
+  if(clarity>0.5){
+    var sg=ctx.createLinearGradient(tx,ty,tx,ty+th*.45);
+    sg.addColorStop(0,'rgba(61,214,232,'+(clarity*.055).toFixed(3)+')');sg.addColorStop(1,'transparent');
+    ctx.fillStyle=sg;ctx.fillRect(tx+1,ty+1,tw-2,th*.45);
+  }
+
+  /* Substrate */
+  ctx.fillStyle='rgba(38,26,10,.82)';ctx.fillRect(tx+1,ty+th-9,tw-2,8);
+
+  /* Plants from role + imagination */
+  if(ST.role==='anchor'||ST.role==='responsibility'||ST.imagination==='watching'||ST.imagination==='feeding-quietly'){
+    var pxs=[tx+tw*.07,tx+tw*.2,tx+tw*.68,tx+tw*.82];
+    pxs.forEach(function(px,i){
+      var ph=(16+i%2*11)*Math.min(1,(qIdx)*.22);if(ph<=1)return;
+      ctx.strokeStyle='rgba(75,145,55,.62)';ctx.lineWidth=1.3;
+      ctx.beginPath();ctx.moveTo(px,ty+th-9);ctx.lineTo(px,ty+th-9-ph);ctx.stroke();
+      if(ph>9){ctx.fillStyle='rgba(65,125,48,.42)';ctx.beginPath();ctx.ellipse(px-3,ty+th-9-ph*.55,3.2,2.3,-.32,0,Math.PI*2);ctx.fill();}
+    });
+  }
+
+  /* Fish from imagination + role */
+  var fc=0;
+  if(ST.imagination==='adjusting'||ST.role==='project')fc=3;
+  else if(ST.imagination==='feeding-quietly')fc=2;
+  else if(qIdx>2)fc=1;
+  if(ST.imagination==='watching'&&qIdx>3)fc=2;
+  var fcols=['rgba(139,189,210,.75)','rgba(172,122,62,.75)','rgba(95,155,85,.75)'];
+  for(var f=0;f<Math.min(fc,3);f++){
+    var fx=tx+tw*(.2+f*.28),fy=ty+th*(.33+f*.09);
+    ctx.save();ctx.globalAlpha=Math.min(.88,qIdx*.28);
+    ctx.fillStyle=fcols[f];
+    ctx.beginPath();ctx.ellipse(fx,fy,8.5,5.2,0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.moveTo(fx-8.5,fy);ctx.lineTo(fx-13,fy-3.2);ctx.lineTo(fx-13,fy+3.2);ctx.closePath();ctx.fill();
+    ctx.fillStyle='rgba(255,255,255,.88)';ctx.beginPath();ctx.arc(fx+4,fy-1.2,1.3,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  }
+
+  /* Loss ripple — subtle visual echo */
+  if(ST.loss==='carry-it'&&qIdx>5){
+    ctx.strokeStyle='rgba(61,214,232,.08)';ctx.lineWidth=.8;
+    for(var r=1;r<=3;r++){ctx.beginPath();ctx.ellipse(tx+tw*.75,ty+th*.3,r*9,r*4,0,0,Math.PI*2);ctx.stroke();}
+  }
+
+  /* Progress dots */
+  var dtot=7,dsp=11,dw=dtot*dsp,dx=(W-dw)/2;
+  for(var d=0;d<dtot;d++){
+    ctx.beginPath();ctx.arc(dx+d*dsp+5.5,H-7,d<qIdx?2:1.3,0,Math.PI*2);
+    ctx.fillStyle=d<qIdx?'rgba(61,214,232,.65)':'rgba(255,255,255,.1)';ctx.fill();
+  }
+}
+
+/* ═══ FLOW ═══ */
+var curQ=0,ans={};
+function showIntro(){
+  document.getElementById('kyr-intro').style.display='flex';
+  document.getElementById('kyr-screen').style.display='none';
+  document.getElementById('kyr-result').style.display='none';
+  document.getElementById('kyr-prog-fill').style.width='0%';
+}
+function showQ(i){
+  document.getElementById('kyr-intro').style.display='none';
+  document.getElementById('kyr-screen').style.display='block';
+  document.getElementById('kyr-result').style.display='none';
+  curQ=i;var q=Q[i];
+  document.getElementById('kyr-q-num').textContent='Question '+(i+1)+' of '+Q.length;
+  document.getElementById('kyr-q-text').textContent=q.text;
+  document.getElementById('kyr-q-sub').textContent=q.sub;
+  document.getElementById('kyr-prog-fill').style.width=((i/Q.length)*100)+'%';
+  var oc=document.getElementById('kyr-options');oc.innerHTML='';
+  q.opts.forEach(function(opt){
+    var btn=document.createElement('button');
+    btn.className='kyr-opt'+(ans[q.id]===opt.v?' selected':'');
+    btn.innerHTML='<span class="kyr-opt-label">'+opt.l+'</span><span class="kyr-opt-desc">'+opt.d+'</span>';
+    btn.addEventListener('click',function(){
+      ans[q.id]=opt.v;ST[q.id]=opt.v;
+      oc.querySelectorAll('.kyr-opt').forEach(function(b){b.classList.remove('selected');});
+      btn.classList.add('selected');
+      document.getElementById('kyr-btn-next').classList.add('active');
+      drawCvs(curQ+1,ans);
+    });
+    oc.appendChild(btn);
+  });
+  var nb=document.getElementById('kyr-btn-next');
+  nb.classList.toggle('active',!!ans[q.id]);
+  nb.textContent=i<Q.length-1?'Next →':'See reflection →';
+  document.getElementById('kyr-btn-back').style.visibility=i===0?'hidden':'visible';
+  window.scrollTo({top:0,behavior:'auto'});
+  drawCvs(i+(ans[q.id]?1:0),ans);
+}
+function showResult(){
+  document.getElementById('kyr-intro').style.display='none';
+  document.getElementById('kyr-screen').style.display='none';
+  document.getElementById('kyr-result').style.display='block';
+  document.getElementById('kyr-prog-fill').style.width='100%';
+  var ref=reflect(ans);
+  document.getElementById('kyr-result-title').innerHTML=ref.title;
+  var re=document.getElementById('kyr-reflection');re.innerHTML='';
+  ref.paras.forEach(function(p){var el=document.createElement('p');el.textContent=p;re.appendChild(el);});
+  document.getElementById('kyr-closing-q').textContent=ref.closing;
+  window.scrollTo({top:0,behavior:'auto'});
+}
+document.getElementById('kyr-begin-btn').addEventListener('click',function(){showQ(0);});
+document.getElementById('kyr-btn-next').addEventListener('click',function(){
+  if(!this.classList.contains('active'))return;
+  if(curQ<Q.length-1)showQ(curQ+1);else showResult();
+});
+document.getElementById('kyr-btn-back').addEventListener('click',function(){
+  if(curQ>0)showQ(curQ-1);else showIntro();
+});
+document.getElementById('kyr-btn-restart').addEventListener('click',function(){
+  ans={};ST={tending:null,response:null,role:null,imagination:null,slowness:null,loss:null,success:null};showIntro();
+});
+window.addEventListener('resize',function(){
+  if(document.getElementById('kyr-screen').style.display!=='none')
+    drawCvs(curQ+(ans[Q[curQ].id]?1:0),ans);
+});
+(function(){
+  var bg=document.getElementById('art-burger'),nm=document.getElementById('art-nmob');
+  if(!bg||!nm)return;
+  bg.addEventListener('click',function(){var o=bg.classList.toggle('open');nm.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);nm.setAttribute('aria-hidden',!o);});
+  window.addEventListener('resize',function(){if(window.innerWidth>960){bg.classList.remove('open');nm.classList.remove('open');}});
+})();
+</script>
+</body>
+</html>
