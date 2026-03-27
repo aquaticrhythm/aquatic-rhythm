@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>New Tank Simulator — Aquatic Rhythm</title>
+<title>Tank Cycle Simulator — Interactive Nitrogen Cycle — Aquatic Rhythm</title>
 <meta name="description" content="An interactive simulation of the nitrogen cycle. Choose your setup, learn what to expect, and watch how the tank responds to your decisions.">
 <link rel="canonical" href="https://aquaticrhythm.com/articles/tank-simulator">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
@@ -76,8 +76,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 /* SLIM PARAM BAR */
 #param-bar{display:flex;align-items:center;gap:.38rem;flex-shrink:0;flex-wrap:wrap}
 .pi{display:flex;align-items:center;gap:.26rem;flex:1;min-width:58px}
-.pi-lbl{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.24);white-space:nowrap}
-.pi-val{font-size:.72rem;font-weight:300;font-family:var(--serif);transition:color .5s;min-width:26px}
+.pi-lbl{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.24);white-space:nowrap}
+.pi-val{font-size:.78rem;font-weight:300;font-family:var(--serif);transition:color .5s;min-width:28px}
 .pi-track{flex:1;height:2px;background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;min-width:16px}
 .pi-fill{height:100%;border-radius:1px;transition:width .8s ease,background .8s}
 .pi-fish{display:flex;align-items:center;gap:.22rem}
@@ -92,9 +92,9 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .ib-lbl{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.4);display:block;margin-bottom:.22rem}
 .ib-txt{font-family:var(--serif);font-style:italic;font-size:.76rem;color:rgba(255,255,255,.54);line-height:1.58}
 .log-box{background:rgba(6,16,13,.5);border:1px solid rgba(255,255,255,.06);overflow-y:auto;flex:1;min-height:0}
-.le{padding:.3rem .5rem;font-size:.68rem;font-weight:300;color:rgba(255,255,255,.42);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.35rem}
+.le{padding:.32rem .5rem;font-size:.72rem;font-weight:300;color:rgba(255,255,255,.42);line-height:1.55;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.35rem}
 .le:last-child{border-bottom:none}
-.ld{font-size:.54rem;color:rgba(61,214,232,.35);flex-shrink:0;min-width:32px}
+.ld{font-size:.58rem;color:rgba(61,214,232,.35);flex-shrink:0;min-width:34px}
 .lw{color:rgba(200,160,40,.75)}.ldg{color:rgba(220,100,80,.8)}.lgd{color:rgba(80,200,120,.72)}
 
 /* BOTTOM ACTIONS */
@@ -104,7 +104,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .ab:active:not(:disabled){transform:translateY(0)}
 .ab:disabled{opacity:.25;cursor:not-allowed}
 .ai{font-size:1.18rem;line-height:1}
-.an{font-size:.52rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.an{font-size:.56rem;font-weight:400;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .ah{font-size:.44rem;color:rgba(255,255,255,.22);text-align:center;line-height:1.25}
 
 /* ── OVERLAYS ── */
@@ -195,7 +195,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   /* Tank col — fixed height, no gap (param-bar below) */
   #tcol{
     flex-shrink:0;
-    height:150px;
+    height:210px;
     display:flex;
     flex-direction:column;
     gap:0;
@@ -231,8 +231,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     overflow:hidden;
   }
   .insight-box{flex-shrink:0;padding:.3rem .5rem}
-  .ib-lbl{font-size:.7rem}
-  .ib-txt{font-size:1rem;line-height:1.52}
+  .ib-lbl{font-size:.75rem}
+  .ib-txt{font-size:1.05rem;line-height:1.55}
   .log-box{flex:1;min-height:0;overflow-y:auto}
   .le{font-size:.88rem;padding:.32rem .5rem;line-height:1.52}
   .ld{font-size:.72rem;min-width:34px}
@@ -241,8 +241,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   #equip-bar{padding:.25rem .75rem}
   .eq-btn{padding:.25rem .6rem}
   .eq-icon{font-size:1rem}
-  .eq-lbl{font-size:.65rem}
-  .eq-temp{font-size:.65rem}
+  .eq-lbl{font-size:.72rem}
+  .eq-temp{font-size:.72rem}
 
   /* Actions */
   #bbar{
@@ -399,7 +399,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     <div style="text-align:center;margin-bottom:1.4rem">
       <span class="oi">🌊</span>
       <h2 class="ot">Set up your tank</h2>
-      <p class="om">This is a compressed simulation of the nitrogen cycle — the biological process every new aquarium goes through. Your choices shape how it unfolds.</p>
+      <p class="om">Every new aquarium goes through the same invisible process — bacteria slowly building up, ammonia and nitrite rising then falling, the water finding its balance. This simulator lets you watch that happen and make decisions along the way. No experience needed.</p>
     </div>
 
     <!-- Tank size -->
@@ -431,23 +431,23 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <div class="sopt selected" data-val="fishless">
           <span class="sopt-icon">🧪</span>
           <span class="sopt-name">Fishless</span>
-          <span class="sopt-desc">Grow bacteria before adding fish · Kinder and more controlled</span>
+          <span class="sopt-desc">Add ammonia without fish · Bacteria grow safely · Easier to manage</span>
         </div>
         <div class="sopt" data-val="fish-in">
           <span class="sopt-icon">🐠</span>
           <span class="sopt-name">Fish-in</span>
-          <span class="sopt-desc">Fish present from day one · Requires feeding and close attention</span>
+          <span class="sopt-desc">Fish in the tank from the start · Need feeding · Higher stakes</span>
         </div>
       </div>
 
       <!-- Welfare note for fishless -->
       <div class="setup-note" id="note-fishless">
-        <p><strong>Fishless cycling is recommended.</strong> Adding pure ammonia or a piece of food — rather than live fish — lets the bacteria establish without putting any animals through the stress of high ammonia. It is gentler, more controllable, and produces the same result.</p>
+        <p><strong>Fishless cycling is the gentler option.</strong> You add ammonia to feed the bacteria — no fish involved. The bacteria grow at their own pace, and when the cycle is done, the tank is ready for fish.</p>
       </div>
 
       <!-- Warning for fish-in -->
       <div class="setup-warn" id="note-fishin" style="display:none">
-        <p><strong>Fish-in cycling places real stress on fish.</strong> Ammonia and nitrite will rise before bacteria can process them. If you use this method, very small fish populations, frequent small water changes, and close observation are essential. Many keepers now prefer fishless cycling for this reason.</p>
+        <p><strong>Fish-in cycling is more demanding.</strong> Ammonia and nitrite will rise before bacteria can process them. Your fish will feel it — clamped fins, hiding, surface breathing. Small water changes help, but this method requires close attention.</p>
       </div>
     </div>
 
@@ -475,10 +475,10 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
     <div style="margin-top:1rem;padding:.7rem .9rem;background:rgba(255,255,255,.03);border-radius:3px">
       <p style="font-size:.58rem;color:rgba(255,255,255,.28);line-height:1.7;margin:0">
-        Inside the simulator you will find equipment controls — heater, filter, and light. These are on by default. You can toggle them to see how each one affects the cycle. There is also a bacteria starter you can use once. The log will explain what is happening as it unfolds.
+        Once inside, you will see three equipment toggles — heater, filter, and light. They are on by default. Try turning one off to see what happens. There is also a one-time bacteria starter if you want to give things a head start. The log at the bottom explains what is happening as you go.
       </p>
     </div>
-    <button class="obtn op" id="btn-begin" style="width:100%;margin-top:1rem">Begin simulation →</button>
+    <button class="obtn op" id="btn-begin" style="width:100%;margin-top:1rem">Begin →</button>
   </div>
 </div>
 
@@ -489,7 +489,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     <div style="text-align:center;margin-bottom:1.4rem">
       <span class="oi" style="font-size:1.4rem">🌊</span>
       <h2 class="ot" style="margin-bottom:.4rem">Before you begin</h2>
-      <p class="om" style="font-size:.72rem;color:rgba(255,255,255,.35)">Five things worth knowing. Takes 20 seconds.</p>
+      <p class="om" style="font-size:.72rem;color:rgba(255,255,255,.35)">Six things worth knowing. Takes 30 seconds.</p>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.6rem">
@@ -514,7 +514,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">🐠</span>
         <div>
           <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Fish-in only</div>
-          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">If you chose fish-in cycling, feed your fish every few days. They will weaken without food — and a weakened fish handles ammonia worse.</p>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">If you chose fish-in cycling, feed your fish every 1–2 days. After 4 days without food they begin to weaken — and stressed fish are less tolerant of ammonia.</p>
         </div>
       </div>
 
@@ -522,7 +522,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem">🦠</span>
         <div>
           <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.2rem">Bacteria starter</div>
-          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">The Seed button gives bacteria a head-start. It works once. Use it when you are ready — not before you understand why.</p>
+          <p style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0">The Seed button gives bacteria a head-start. It works once. Use it after a few days — bacteria need some ammonia present first before seeding helps.</p>
         </div>
       </div>
 
@@ -534,10 +534,17 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
         </div>
       </div>
 
+      <!-- Goal item -->
+      <div style="margin-top:.4rem;padding:.85rem 1rem;background:rgba(61,214,232,.04);border:1px solid rgba(61,214,232,.12);border-radius:2px">
+        <div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(61,214,232,.6);margin-bottom:.35rem">What you are trying to do</div>
+        <p style="font-size:.76rem;font-weight:300;color:rgba(255,255,255,.62);line-height:1.65;margin:0">Get ammonia and nitrite down to near zero — and keep them there for three days in a row. That means your bacteria colony is mature enough to process waste continuously. You will see <em style="color:rgba(255,255,255,.8)">Stable ✓</em> in the bacteria box when the cycle is complete.</p>
+        <p style="font-size:.72rem;font-weight:300;color:rgba(255,255,255,.35);line-height:1.55;margin:.5rem 0 0">The cycle crashes if ammonia or nitrite gets too high for too long — or if your fish go without food. There is no time limit. The biology moves at its own pace.</p>
+      </div>
+
     </div>
 
     <div style="display:flex;gap:.6rem;flex-direction:column">
-      <button class="obtn op" id="btn-brief-go" style="width:100%">Begin →</button>
+      <button class="obtn op" id="btn-brief-go" style="width:100%">Start the simulation →</button>
       <button id="btn-brief-skip" style="background:none;border:none;color:rgba(255,255,255,.25);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:.4rem;font-family:var(--sans)">Skip — I know this already</button>
     </div>
   </div>
@@ -561,7 +568,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center">
       <button class="obtn op" id="btn-restart">Try again</button>
-      <a href="/articles/new-tank-syndrome" class="obtn os">Read the article</a>
+      <a href="/reading" class="obtn os">Back to Reading</a>
     </div>
   </div>
 </div>
@@ -658,11 +665,11 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       </div>
 
       <div id="param-bar">
-        <div class="pi"><span class="pi-lbl">NH₃</span><span class="pi-val safe" id="v-nh3">0.00</span><span class="pi-arrow" id="arr-nh3"></span><div class="pi-track"><div class="pi-fill" id="b-nh3"></div></div></div>
+        <div class="pi"><span class="pi-lbl" title="Ammonia">NH₃</span><span class="pi-val safe" id="v-nh3">0.00</span><span class="pi-arrow" id="arr-nh3"></span><div class="pi-track"><div class="pi-fill" id="b-nh3"></div></div></div>
         <div class="pi-div"></div>
-        <div class="pi"><span class="pi-lbl">NO₂</span><span class="pi-val safe" id="v-no2">0.00</span><span class="pi-arrow" id="arr-no2"></span><div class="pi-track"><div class="pi-fill" id="b-no2"></div></div></div>
+        <div class="pi"><span class="pi-lbl" title="Nitrite">NO₂</span><span class="pi-val safe" id="v-no2">0.00</span><span class="pi-arrow" id="arr-no2"></span><div class="pi-track"><div class="pi-fill" id="b-no2"></div></div></div>
         <div class="pi-div"></div>
-        <div class="pi"><span class="pi-lbl">NO₃</span><span class="pi-val safe" id="v-no3">0.00</span><span class="pi-arrow" id="arr-no3"></span><div class="pi-track"><div class="pi-fill" id="b-no3"></div></div></div>
+        <div class="pi"><span class="pi-lbl" title="Nitrate">NO₃</span><span class="pi-val safe" id="v-no3">0.00</span><span class="pi-arrow" id="arr-no3"></span><div class="pi-track"><div class="pi-fill" id="b-no3"></div></div></div>
         <div class="pi-div"></div>
         <div class="pi-fish"><span class="pi-fish-icon">🐠</span><span class="pi-fish-val" id="v-fish">0</span></div>
         <div class="pi-div"></div>
@@ -675,31 +682,34 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       <!-- Bacteria indicator — always visible above insight -->
       <div id="bac-box" style="background:rgba(4,18,28,.6);border:1px solid rgba(139,189,210,.1);padding:.45rem .62rem;display:none">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.38rem">
-          <span style="font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.28)">Bacteria</span>
+          <span style="font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.28)">Bacteria Colony</span>
           <span id="bac-status" style="font-size:.78rem;letter-spacing:.03em;color:rgba(255,255,255,.3)">Seeding</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:.28rem">
           <div style="display:flex;align-items:center;gap:.4rem">
-            <span style="font-size:.78rem;color:rgba(220,140,60,.65);min-width:54px;letter-spacing:.02em">NH₃→NO₂</span>
+            <span style="font-size:.72rem;color:rgba(220,140,60,.65);min-width:54px;letter-spacing:.01em;line-height:1.3">Nitrosomonas<br><span style="font-size:.65rem;opacity:.7">NH₃ → NO₂</span></span>
             <div style="flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden">
               <div id="bac-bar-a" style="height:100%;width:0%;background:linear-gradient(to right,rgba(220,140,60,.6),rgba(220,140,60,.9));border-radius:2px;transition:width 1.2s ease"></div>
             </div>
             <span id="bac-a-pct" style="font-size:.78rem;color:rgba(220,140,60,.7);min-width:32px;text-align:right">0%</span>
           </div>
           <div style="display:flex;align-items:center;gap:.4rem">
-            <span style="font-size:.78rem;color:rgba(80,200,100,.65);min-width:54px;letter-spacing:.02em">NO₂→NO₃</span>
+            <span style="font-size:.72rem;color:rgba(80,200,100,.65);min-width:54px;letter-spacing:.01em;line-height:1.3">Nitrospira<br><span style="font-size:.65rem;opacity:.7">NO₂ → NO₃</span></span>
             <div style="flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden">
               <div id="bac-bar-b" style="height:100%;width:0%;background:linear-gradient(to right,rgba(80,200,100,.6),rgba(80,200,100,.9));border-radius:2px;transition:width 1.2s ease"></div>
             </div>
             <span id="bac-b-pct" style="font-size:.78rem;color:rgba(80,200,100,.7);min-width:32px;text-align:right">0%</span>
           </div>
           <!-- Stable days indicator — only shows when close to completion -->
-          <div id="stable-row" style="display:none;align-items:center;gap:.4rem;margin-top:.1rem">
-            <span style="font-size:.44rem;color:rgba(61,214,232,.5);min-width:44px">Stable</span>
-            <div style="flex:1;height:3px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden">
-              <div id="stable-bar" style="height:100%;width:0%;background:rgba(61,214,232,.7);border-radius:2px;transition:width .8s ease"></div>
+          <div id="stable-row" style="display:none;flex-direction:column;gap:.28rem;margin-top:.5rem;padding:.4rem .5rem;background:rgba(61,214,232,.04);border:1px solid rgba(61,214,232,.15);border-radius:2px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:.7rem;color:rgba(61,214,232,.7);letter-spacing:.04em;text-transform:uppercase">Stable days</span>
+              <span id="stable-pct" style="font-size:.82rem;font-weight:400;color:rgba(61,214,232,.9);letter-spacing:.04em">0/3</span>
             </div>
-            <span id="stable-pct" style="font-size:.44rem;color:rgba(61,214,232,.6);min-width:26px;text-align:right">0/3</span>
+            <div style="height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden">
+              <div id="stable-bar" style="height:100%;width:0%;background:rgba(61,214,232,.8);border-radius:2px;transition:width .8s ease"></div>
+            </div>
+            <span style="font-size:.62rem;color:rgba(255,255,255,.3);line-height:1.4">3 consecutive days with ammonia and nitrite near zero — then the cycle is complete.</span>
           </div>
         </div>
       </div>
@@ -2042,22 +2052,15 @@ function beginGame(){
 
 document.getElementById('btn-begin').addEventListener('click',function(){
   document.getElementById('ov-setup').classList.add('hide');
-  var seen=false;try{seen=!!localStorage.getItem('ar-sim-seen');}catch(e){}
-  if(!seen){
-    document.getElementById('ov-brief').classList.remove('hide');
-  } else {
-    beginGame();
-  }
+  document.getElementById('ov-brief').classList.remove('hide');
 });
 
 document.getElementById('btn-brief-go').addEventListener('click',function(){
-  try{localStorage.setItem('ar-sim-seen','1');}catch(e){}
   document.getElementById('ov-brief').classList.add('hide');
   beginGame();
 });
 
 document.getElementById('btn-brief-skip').addEventListener('click',function(){
-  try{localStorage.setItem('ar-sim-seen','1');}catch(e){}
   document.getElementById('ov-brief').classList.add('hide');
   beginGame();
 });
