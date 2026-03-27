@@ -215,7 +215,7 @@ canvas{display:block;width:100%}
 
 <div class="art-back-bar">
   <a href="/reading" class="art-back-link"><span>←</span><span>Reading</span></a>
-  <span class="art-back-meta">Established Tank · 4 modules</span>
+  <span class="art-back-meta">Established Tank · 5 modules</span>
 </div>
 
 <main>
@@ -230,7 +230,7 @@ canvas{display:block;width:100%}
     <p class="art-intro-text">But this is also where a quieter, slower kind of difficulty tends to begin. The fish seem slightly off. Something keeps coming back. The parameters look fine — and yet something is not quite right.</p>
     <p class="art-intro-text">An established tank is a different system from a cycling one. It asks something different from its keeper — less about building, more about reading. This is about learning to do that.</p>
     <div class="art-intro-meta">
-      <span>4 modules</span><span class="meta-dot">·</span>
+      <span>5 modules</span><span class="meta-dot">·</span>
       <span>Intermediate</span><span class="meta-dot">·</span>
       <span>~8 min</span>
     </div>
@@ -243,7 +243,7 @@ canvas{display:block;width:100%}
 
   <!-- ═══ MODULE 1 — The cycle was never the finish line ═══ -->
   <section class="module" id="mod-1" data-mod="1">
-    <div class="mod-eyebrow"><span class="mod-num">01 / 04</span><span class="mod-tag">A different kind of learning</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">01 / 05</span><span class="mod-tag">A different kind of learning</span></div>
     <h2 class="mod-title">The cycle was<br><em>never the finish line.</em></h2>
     <div class="mod-body">
       <p>A tank that has been running for six months is a fundamentally different system from one that just completed its cycle. The bacteria are established, the chemistry has found a rhythm, and the fish have settled. The urgent, unstable phase is over.</p>
@@ -271,7 +271,7 @@ canvas{display:block;width:100%}
 
   <!-- ═══ MODULE 2 — One thing at a time ═══ -->
   <section class="module" id="mod-2" data-mod="2">
-    <div class="mod-eyebrow"><span class="mod-num">02 / 04</span><span class="mod-tag">Finding the root</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">02 / 05</span><span class="mod-tag">Finding the root</span></div>
     <h2 class="mod-title">Most problems have<br><em>one root.</em></h2>
     <div class="mod-body">
       <p>When a tank is struggling — fish getting sick, algae returning, parameters that drift — it can feel like everything is wrong at once. It rarely is. There is almost always one thing that is the primary pressure, and everything else is responding to that.</p>
@@ -280,7 +280,7 @@ canvas{display:block;width:100%}
 
     <!-- VISUAL: Stressor selector -->
     <div class="vis-block">
-      <canvas id="cv-stress" style="height:320px"></canvas>
+      <canvas id="cv-stress" style="height:360px"></canvas>
     </div>
 
     <div class="mod-body">
@@ -295,17 +295,51 @@ canvas{display:block;width:100%}
 
     <div class="mod-next">
       <button class="btn-prev" onclick="goMod(1)">← Back</button>
-      <button class="btn-next" onclick="goMod(3)">The quietest problem of all <span>→</span></button>
+      <button class="btn-next" onclick="goMod(3)">What the filter is actually doing <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 3 — Nitrate ═══ -->
+  <!-- ═══ MODULE 3 — Filter maintenance ═══ -->
   <section class="module" id="mod-3" data-mod="3">
-    <div class="mod-eyebrow"><span class="mod-num">03 / 04</span><span class="mod-tag">The thing that builds without being seen</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">03 / 05</span><span class="mod-tag">The thing most guides skip</span></div>
+    <h2 class="mod-title">The filter is not<br><em>a machine. It is a habitat.</em></h2>
+    <div class="mod-body">
+      <p>Most people think of the filter as a mechanical device — it moves water, it catches debris, it can be cleaned when it looks dirty. That understanding is incomplete, and it leads to one of the most common mistakes in established tank care.</p>
+      <p>The filter media — the sponge, the ceramic rings, the bio-balls — is where the majority of your bacterial colony lives. Not in the water. Not on the gravel. On those surfaces. Those billions of bacteria are what make your tank stable. They are the cycle, running continuously, every hour of every day.</p>
+    </div>
+
+    <div class="vis-block">
+      <canvas id="cv-filter" style="height:280px"></canvas>
+    </div>
+
+    <div class="mod-body">
+      <p>This means that how you clean your filter matters enormously. Rinsing media under tap water — even briefly — exposes the colony to chlorine, which kills bacteria rapidly. Replacing all the media at once removes the entire colony in a single action. The tank will effectively need to re-cycle, slowly, while the new media builds up. You will not always notice immediately. But over the following weeks, parameters will drift, fish will seem slightly off, and the cause will be invisible.</p>
+      <p>The correct approach is simple once you understand why it matters. Clean filter media in old tank water removed during a water change — never tap water. Replace no more than a third of the media at a time, and wait at least four weeks before replacing any more. This preserves the colony while still maintaining the mechanical function of the filter.</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">Signs your filter colony may have been disrupted</span>
+      <p>A small ammonia or nitrite reading in an established tank — even 0.25 ppm — is a signal. So is a tank that suddenly seems less stable, or fish that recover more slowly from minor stress than they used to. These are not always caused by filter disruption, but if you recently cleaned or replaced media, that is where to look first.</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>The filter is the most important piece of equipment in the tank — not because of what it does mechanically, but because of what lives inside it. Treating it gently, and replacing it gradually, is one of the simplest and most overlooked ways to keep an established tank stable over years rather than months.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(2)">← Back</button>
+      <button class="btn-next" onclick="goMod(4)">The quietest problem of all <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 4 — Nitrate ═══ -->
+  <section class="module" id="mod-4" data-mod="4">
+    <div class="mod-eyebrow"><span class="mod-num">04 / 05</span><span class="mod-tag">The thing that builds without being seen</span></div>
     <h2 class="mod-title">Nitrate.<br><em>It builds without drama.</em></h2>
     <div class="mod-body">
       <p>After the cycle, ammonia and nitrite are handled. That part is working. But nitrate — the end product of the whole process — has nowhere to go. It does not get broken down further. It simply builds, quietly, every day, until something removes it.</p>
-      <p>At low levels, nothing looks wrong. Parameters seem fine. Fish look normal. But as nitrate rises over weeks and months, it gradually suppresses immune function and leaves fish slightly below their best — not sick, not dying, just not thriving. More prone to disease. Slower to recover. Never quite as vivid or active as they could be.</p>
+      <p>At low levels, nothing looks wrong. Parameters seem fine. Fish look normal. But nitrate is not inert. As it rises over weeks and months, it enters fish tissue through the gills and interferes with how blood carries oxygen — a process called methaemoglobinaemia at high concentrations, but even at moderate levels the effect is subtler and chronic. Immune function is gradually suppressed. Stress hormones remain slightly elevated. The fish survives, but it is running at a deficit — more prone to disease, slower to recover from minor stress, never quite as vivid or active as it could be in cleaner water.</p>
     </div>
 
     <!-- VISUAL: Nitrate toggle -->
@@ -324,14 +358,14 @@ canvas{display:block;width:100%}
     </div>
 
     <div class="mod-next">
-      <button class="btn-prev" onclick="goMod(2)">← Back</button>
-      <button class="btn-next" onclick="goMod(4)">Learning to see what is actually there <span>→</span></button>
+      <button class="btn-prev" onclick="goMod(3)">← Back</button>
+      <button class="btn-next" onclick="goMod(5)">Learning to see what is actually there <span>→</span></button>
     </div>
   </section>
 
   <!-- ═══ MODULE 4 — Reading the tank ═══ -->
-  <section class="module" id="mod-4" data-mod="4">
-    <div class="mod-eyebrow"><span class="mod-num">04 / 04</span><span class="mod-tag">Reading, not just checking</span></div>
+  <section class="module" id="mod-5" data-mod="5">
+    <div class="mod-eyebrow"><span class="mod-num">05 / 05</span><span class="mod-tag">Reading, not just checking</span></div>
     <h2 class="mod-title">Your fish are<br><em>always telling you something.</em></h2>
     <div class="mod-body">
       <p>A test kit tells you what the water contains at the moment you test it. Your fish tell you what the water has been doing to them — all day, every day, in real time.</p>
@@ -359,7 +393,7 @@ canvas{display:block;width:100%}
     </div>
 
     <div class="mod-next" style="margin-bottom:1.5rem">
-      <button class="btn-prev" onclick="goMod(3)">← Back</button>
+      <button class="btn-prev" onclick="goMod(4)">← Back</button>
       <span></span>
     </div>
 
@@ -377,7 +411,7 @@ canvas{display:block;width:100%}
 /* ═══════════════════════════════
    MODULE NAVIGATION
 ═══════════════════════════════ */
-var totalMods = 4;
+var totalMods = 5;
 var currentMod = 1;
 var canvases = {};
 var animFrames = {};
@@ -401,7 +435,7 @@ function goIntro(){
 }
 
 function goMod(n){
-  stopAnim('cv-stress');stopAnim('cv-nitrate');stopAnim('cv-behaviour');
+  stopAnim('cv-stress');stopAnim('cv-filter');stopAnim('cv-nitrate');stopAnim('cv-behaviour');
   var prev=document.getElementById('mod-'+currentMod);
   if(prev){prev.classList.remove('visible');setTimeout(function(){prev.classList.remove('active');},300);}
   currentMod=n;
@@ -458,7 +492,7 @@ function resizeCanvas(id,h){
 /* ── VISUAL 1: Dominant stressor selector ── */
 canvases[2]=function(){
   stopAnim('cv-stress');
-  var c=resizeCanvas('cv-stress',290);if(!c)return;
+  var c=resizeCanvas('cv-stress',320);if(!c)return;
   var ctx=c.getContext('2d');
   var W=c.width,H=c.height;
 
@@ -478,7 +512,7 @@ canvases[2]=function(){
     {label:'Irregular care',
      icon:'📅',color:'rgba(139,189,210,',
      signals:['Tank seems fine then suddenly crashes','Problems always seem to appear at the same time','Recovery from problems takes unusually long'],
-     note:'Tanks can tolerate gaps — but not indefinitely. Weeks of missed water changes, irregular feeding, and sporadic attention create cumulative stress. The crash feels sudden because the warning signs were quiet. A modest consistent routine beats intensive irregular care.'}
+     note:'Tanks tolerate gaps — but not indefinitely. Missed changes and irregular feeding create cumulative stress. The crash feels sudden because the warning signs were quiet. A modest consistent routine beats intensive irregular care.'}
   ];
 
   var selected=0;
@@ -583,6 +617,124 @@ canvases[2]=function(){
 
 /* ── VISUAL 2: Nitrate toggle ── */
 canvases[3]=function(){
+  stopAnim('cv-filter');
+  var c=resizeCanvas('cv-filter',245);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+
+  var scenarios=[
+    {label:'Correct — tank water',
+     color:'rgba(80,200,120,',
+     colony:0.95,
+     desc:'Rinsing in old tank water preserves the biofilm. Chlorine is absent. Bacteria survive. The colony remains intact.'},
+    {label:'Incorrect — tap water',
+     color:'rgba(220,100,60,',
+     colony:0.08,
+     desc:'Tap water contains chlorine. Even a brief rinse kills the majority of bacteria in the biofilm. The colony must rebuild from near zero.'},
+    {label:'Replace all media',
+     color:'rgba(220,80,40,',
+     colony:0.0,
+     desc:'New media has no bacteria. Replacing everything at once removes the entire colony. The tank effectively re-cycles — often invisibly, over weeks.'},
+    {label:'Replace one third',
+     color:'rgba(61,214,232,',
+     colony:0.72,
+     desc:'Replacing a third of the media at a time preserves most of the colony on the remaining surfaces. The new media colonises within 2–4 weeks.'}
+  ];
+
+  var selected=0;
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  var btnRow=document.createElement('div');
+  btnRow.style.cssText='display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center;margin:.4rem 0';
+  scenarios.forEach(function(s,i){
+    var btn=document.createElement('button');
+    btn.className='vis-btn'+(i===0?' vis-btn-active':'');
+    btn.textContent=s.label;
+    btn.style.fontFamily='"DM Sans",system-ui,sans-serif';
+    btn.addEventListener('click',function(){
+      selected=i;
+      wrap.querySelectorAll('.vis-btn').forEach(function(b){b.classList.remove('vis-btn-active');});
+      btn.classList.add('vis-btn-active');
+      draw();
+    });
+    btnRow.appendChild(btn);
+  });
+  ctrl.appendChild(btnRow);
+  wrap.appendChild(ctrl);
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var s=scenarios[selected];
+    var colony=s.colony;
+
+    /* Filter media illustration — left side */
+    var mediaX=18,mediaY=20,mediaW=W*.38,mediaH=H-50;
+    ctx.fillStyle='rgba(255,255,255,.04)';
+    ctx.fillRect(mediaX,mediaY,mediaW,mediaH);
+    ctx.strokeStyle='rgba(139,189,210,.15)';ctx.lineWidth=1;
+    ctx.strokeRect(mediaX,mediaY,mediaW,mediaH);
+
+    /* Label */
+    ctx.font='300 10px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(255,255,255,.3)';ctx.textAlign='center';
+    ctx.fillText('Filter media',mediaX+mediaW/2,mediaY-6);
+
+    /* Bacteria dots filling media */
+    var dotCount=Math.floor(colony*80);
+    var cols=8,rows=10;
+    for(var r=0;r<rows;r++){
+      for(var cc=0;cc<cols;cc++){
+        var idx2=r*cols+cc;
+        if(idx2>=80)break;
+        var dx=mediaX+6+(cc/cols)*( mediaW-12);
+        var dy=mediaY+8+(r/rows)*(mediaH-16);
+        var alive=idx2<dotCount;
+        ctx.beginPath();ctx.arc(dx,dy,2.8,0,Math.PI*2);
+        ctx.fillStyle=alive?s.color+'0.7)':'rgba(255,255,255,.06)';
+        ctx.fill();
+      }
+    }
+
+    /* Colony health bar — right side */
+    var barX=W*.52,barY=mediaY,barW=22,barH=mediaH;
+    ctx.fillStyle='rgba(255,255,255,.05)';ctx.fillRect(barX,barY,barW,barH);
+    var fillH=colony*barH;
+    if(fillH>0){
+      ctx.fillStyle=s.color+'0.7)';
+      ctx.fillRect(barX,barY+barH-fillH,barW,fillH);
+    }
+    ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle=s.color+'0.8)';ctx.textAlign='center';
+    ctx.fillText(Math.round(colony*100)+'%',barX+barW/2,barY+barH+14);
+    ctx.fillStyle='rgba(255,255,255,.25)';
+    ctx.fillText('Colony',barX+barW/2,barY-6);
+    ctx.textAlign='left';
+
+    /* Description */
+    var words=s.desc.split(' ');
+    var line='';var y=mediaY+mediaH+28;var maxW=W-24;var maxY=H-4;
+    ctx.font='italic 300 12px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(255,255,255,.52)';
+    words.forEach(function(w){
+      if(y>maxY)return;
+      var test=line+(line?' ':'')+w;
+      if(ctx.measureText(test).width>maxW&&line){
+        if(y+16<=maxY){ctx.fillText(line,12,y);line=w;y+=16;}
+        else{ctx.fillText(line+'…',12,y);line='';y=maxY+1;}
+      } else line=test;
+    });
+    if(line&&y<=maxY)ctx.fillText(line,12,y);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+canvases[4]=function(){
   stopAnim('cv-nitrate');
   var c=resizeCanvas('cv-nitrate',265);if(!c)return;
   var ctx=c.getContext('2d');
@@ -688,7 +840,7 @@ canvases[3]=function(){
 };
 
 /* ── VISUAL 3: Behaviour signals slider ── */
-canvases[4]=function(){
+canvases[5]=function(){
   stopAnim('cv-behaviour');
   var c=resizeCanvas('cv-behaviour',380);if(!c)return;
   var ctx=c.getContext('2d');
@@ -758,7 +910,7 @@ canvases[4]=function(){
     var s=signals[selected];
 
     /* Fish illustration — position and state changes per signal */
-    var tankH=H*.40, tankTop=H*.04;
+    var tankH=H*.38, tankTop=H*.04;
     ctx.fillStyle='rgba(255,255,255,.04)';ctx.fillRect(12,tankTop,W-24,tankH);
     ctx.fillStyle='rgba(50,35,15,.6)';ctx.fillRect(12,tankTop+tankH,W-24,6);
 
@@ -833,7 +985,7 @@ canvases[4]=function(){
     ctx.font='italic 300 13px Cormorant Garamond,serif';
     ctx.fillStyle='rgba(255,255,255,.68)';
     var words=s.meaning.split(' ');
-    var line='';var y=H*.52;var maxW=W-22;var maxY=H-30;
+    var line='';var y=H*.54;var maxW=W-22;var maxY=H-26;
     words.forEach(function(w){
       var test=line+(line?' ':'')+w;
       if(ctx.measureText(test).width>maxW&&line){
