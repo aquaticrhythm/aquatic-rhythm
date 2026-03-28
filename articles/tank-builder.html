@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Tank Builder — Aquatic Rhythm</title>
-<meta name="description" content="An interactive lab for building your first aquarium. Explore equipment, understand why each piece matters.">
+<meta name="description" content="An interactive lab for building your first aquarium.">
 <link rel="canonical" href="https://aquaticrhythm.com/articles/tank-builder">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <meta name="theme-color" content="#041e28">
@@ -22,42 +22,60 @@
   --accent:#3DD6E8;
   --ease:cubic-bezier(0.19,1,0.22,1);
 }
-html,body{height:100%;overflow:hidden}
-html{font-size:16px}
-body{font-family:var(--sans);background:#030b09;color:rgba(255,255,255,.88);height:100vh;overflow:hidden}
+
+/* ── BODY IS THE SCROLL CONTAINER ── */
+html{height:100%}
+body{
+  font-family:var(--sans);
+  background:#030b09;
+  color:rgba(255,255,255,.88);
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
 body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#052535 0%,#062a38 30%,#041e28 60%,#020810 100%)}
 
-/* NAV */
-#topnav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);background:rgba(3,11,9,.96);border-bottom:1px solid rgba(139,189,210,.07);backdrop-filter:blur(8px)}
+/* ── NAV ── fixed, 52px ── */
+#topnav{
+  position:fixed;top:0;left:0;right:0;
+  height:var(--nav);z-index:200;
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1rem,3vw,2rem);
+  background:rgba(3,11,9,.96);
+  border-bottom:1px solid rgba(139,189,210,.07);
+  backdrop-filter:blur(8px);
+}
 .nav-logo{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}.nav-logo:hover{opacity:.7}
 .nav-title{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2)}
 .nav-back{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5);text-decoration:none;display:flex;align-items:center;gap:.35rem;transition:color .25s}.nav-back:hover{color:rgba(61,214,232,.88)}
 
-/* BRIEFING */
+/* ── BRIEFING ── */
 #briefing{position:fixed;inset:0;z-index:500;background:rgba(2,8,14,.97);display:flex;align-items:center;justify-content:center;padding:1rem;overflow-y:auto;transition:opacity .5s}
 .brief-inner{max-width:520px;width:100%;padding:2.5rem clamp(1.5rem,5vw,3rem) 2rem}
-.brief-eyebrow{font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:1.2rem}
+.brief-eyebrow{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:1.2rem}
 .brief-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,4vw,2.6rem);color:rgba(255,255,255,.9);line-height:1.1;margin-bottom:1.4rem}
 .brief-title em{font-style:italic;color:rgba(61,214,232,.7)}
 .brief-body{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1.8rem}
 .brief-rhythms{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.8rem;padding:.9rem 1.1rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.08);border-radius:2px}
 .brief-rhy{display:flex;align-items:baseline;gap:.65rem}
 .brief-rhy-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:.15rem}
-.brief-rhy-name{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;flex-shrink:0;width:90px}
+.brief-rhy-name{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;flex-shrink:0;width:90px}
 .brief-rhy-desc{font-size:.74rem;font-weight:300;color:rgba(255,255,255,.4);font-family:var(--serif);font-style:italic;line-height:1.5}
 .brief-note{font-size:.7rem;color:rgba(255,255,255,.22);font-style:italic;font-family:var(--serif);line-height:1.65;margin-bottom:2rem;padding-left:.9rem;border-left:1px solid rgba(255,255,255,.1)}
-.brief-btn{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.78rem 2rem;border-radius:2px;cursor:pointer;font-family:var(--sans);transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
+.brief-btn{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.78rem 2rem;border-radius:2px;cursor:pointer;font-family:var(--sans);transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
 .brief-btn:hover{background:rgba(40,184,208,.95);transform:translateY(-1px)}
 
-/* WRAPPER — everything below nav */
-#wrapper{position:fixed;top:var(--nav);left:0;right:0;bottom:0;display:flex;flex-direction:column}
+/* ── SPACER for fixed nav ── */
+#nav-spacer{flex-shrink:0;height:var(--nav)}
 
-/* TOP BAND — sticky, tank + rhythms */
+/* ── TOP BAND ── tank + rhythms ── */
 #top-band{
   flex-shrink:0;
-  height:40vh;
+  height:38vh;
   display:grid;
-  grid-template-columns:1fr 192px;
+  grid-template-columns:1fr 188px;
   background:rgba(2,8,14,.97);
   border-bottom:1px solid rgba(139,189,210,.08);
   position:relative;
@@ -67,130 +85,122 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 #tank-zone{position:relative;overflow:hidden}
 #tank-canvas{width:100%;height:100%;display:block}
 
-/* Size buttons — on top of everything in top-band */
-.size-bar{
-  position:absolute;
-  top:.5rem;left:50%;
-  transform:translateX(-50%);
-  display:flex;gap:.22rem;
-  z-index:50;
-  pointer-events:none;
-}
-.size-bar button{pointer-events:all}
-.sz-btn{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:.24rem .52rem;border-radius:1px;cursor:pointer;border:1px solid rgba(139,189,210,.15);background:rgba(3,12,10,.92);color:rgba(255,255,255,.32);transition:all .18s;font-family:var(--sans);backdrop-filter:blur(4px)}
+/* Size buttons */
+.size-bar{position:absolute;top:.5rem;left:50%;transform:translateX(-50%);display:flex;gap:.2rem;z-index:10}
+.sz-btn{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.26rem .55rem;border-radius:1px;cursor:pointer;border:1px solid rgba(139,189,210,.15);background:rgba(3,12,10,.92);color:rgba(255,255,255,.35);transition:all .18s;font-family:var(--sans);backdrop-filter:blur(4px);white-space:nowrap}
 .sz-btn:hover{border-color:rgba(61,214,232,.3);color:rgba(255,255,255,.65)}
 .sz-btn.active{background:rgba(20,60,80,.6);border-color:rgba(61,214,232,.55);color:rgba(61,214,232,.88)}
 
 /* Rhythm panel */
-#rhy-panel{padding:.48rem .42rem .4rem;overflow:hidden;display:flex;flex-direction:column;gap:.15rem;border-left:1px solid rgba(139,189,210,.07);background:rgba(3,10,8,.75)}
-#rhy-panel::-webkit-scrollbar{width:2px}
-#rhy-panel::-webkit-scrollbar-thumb{background:rgba(61,214,232,.1)}
-.rhy-hdr{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18);display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
-#readiness-badge{font-family:var(--serif);font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.22);line-height:1;transition:color .5s}
+#rhy-panel{
+  padding:.48rem .44rem .42rem;
+  display:flex;
+  flex-direction:column;
+  gap:.12rem;
+  border-left:1px solid rgba(139,189,210,.07);
+  background:rgba(3,10,8,.75);
+  overflow:hidden;
+}
+.rhy-hdr{font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.18);display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem;flex-shrink:0}
+#readiness-badge{font-family:var(--serif);font-size:1rem;font-weight:300;color:rgba(255,255,255,.22);line-height:1;transition:color .5s}
+.rhy-row{display:grid;grid-template-columns:8px 38px 1fr 40px;align-items:center;gap:.22rem;flex-shrink:0}
+.rhy-dot{width:7px;height:7px;border-radius:50%;transition:background .6s,box-shadow .6s}
+.rhy-lbl{font-size:.46rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;overflow:hidden}
+.rhy-track{height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.rhy-fill{height:100%;width:0%;border-radius:2px;transition:width .7s var(--ease)}
+.rhy-mini{position:relative;height:5px;border-radius:2px;background:rgba(255,255,255,.05);overflow:hidden}
+.rhy-mini-fill{position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:2px;transition:width .7s var(--ease)}
+.rdy-section{margin-top:auto;padding-top:.28rem;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0}
+#readiness-lbl{font-size:.46rem;color:rgba(255,255,255,.18);font-style:italic;font-family:var(--serif);display:block;margin-bottom:.16rem}
+.rdy-list{display:flex;flex-wrap:wrap;gap:.1rem .3rem}
+.rdy-item{display:flex;align-items:center;gap:.16rem;font-size:.5rem;color:rgba(255,255,255,.2);transition:color .3s}
+.rdy-item.done{color:rgba(61,214,232,.8)}
+.rdy-dot-sm{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.15);flex-shrink:0;transition:background .3s}
+.rdy-item.done .rdy-dot-sm{background:rgba(61,214,232,.85)}
+.rdy-tick{display:none;font-size:.5rem;color:rgba(61,214,232,.85)}
+.rdy-item.done .rdy-tick{display:inline}
 
-.rdy-item.done 
-/* RACK — scrollable, fills remaining space */
+/* ── RACK ZONE — THE SCROLLABLE PART ── */
 #rack-zone{
   flex:1;
-  overflow-y:auto;
+  min-height:0;
+  overflow-y:scroll;
   overflow-x:hidden;
-  -webkit-overflow-scrolling:touch;
   background:rgba(3,10,8,.6);
 }
 #rack-zone::-webkit-scrollbar{width:3px}
-#rack-zone::-webkit-scrollbar-thumb{background:rgba(61,214,232,.1);border-radius:2px}
-#rack{padding:.5rem .6rem}
+#rack-zone::-webkit-scrollbar-thumb{background:rgba(61,214,232,.12);border-radius:2px}
+
+/* Rack */
+#rack{padding:.5rem .55rem .8rem}
 .rack-grid{display:grid;grid-template-columns:1fr 1fr;gap:.25rem}
-.rack-cat{grid-column:1/-1;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.16);padding:.4rem .2rem .15rem;margin-top:.2rem}
+.rack-cat{grid-column:1/-1;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18);padding:.42rem .2rem .16rem;margin-top:.2rem}
 .rack-cat:first-child{margin-top:0}
 
-/* Equipment item */
-.eq-item{display:flex;align-items:center;gap:.35rem;padding:.28rem .4rem;background:rgba(6,18,14,.55);border:1px solid rgba(139,189,210,.08);border-radius:2px;cursor:pointer;position:relative;transition:background .15s,border-color .18s,transform .12s,opacity .18s}
+/* Equipment items */
+.eq-item{display:flex;align-items:center;gap:.35rem;padding:.3rem .42rem;background:rgba(6,18,14,.55);border:1px solid rgba(139,189,210,.08);border-radius:2px;cursor:pointer;position:relative;transition:background .15s,border-color .18s,transform .12s,opacity .18s}
 .eq-item:hover:not(.disabled){background:rgba(9,24,18,.9);border-color:rgba(61,214,232,.18);transform:translateX(1px)}
 .eq-item.active{background:rgba(30,75,95,.22);border-color:rgba(61,214,232,.42)}
 .eq-item.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(61,214,232,.75);border-radius:2px 0 0 2px}
 .eq-item.warn-state{border-color:rgba(220,160,40,.3)!important}
-.eq-item.warn-state::after{content:'!';position:absolute;top:2px;right:3px;font-size:.42rem;color:rgba(220,160,40,.7)}
+.eq-item.warn-state::after{content:'!';position:absolute;top:2px;right:3px;font-size:.46rem;color:rgba(220,160,40,.7)}
 .eq-item.disabled{opacity:.25;cursor:not-allowed;pointer-events:none}
 .eq-item.size-warn{border-color:rgba(220,160,40,.2)}
-.eq-icon{font-size:.82rem;flex-shrink:0;width:16px;text-align:center}
+.eq-icon{font-size:.85rem;flex-shrink:0;width:16px;text-align:center}
 .eq-info{flex:1;min-width:0}
-.eq-name{font-size:.72rem;font-weight:400;color:rgba(255,255,255,.72);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.eq-role{font-size:.58rem;color:rgba(255,255,255,.22);font-style:italic;font-family:var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.eq-choice{font-size:.56rem;color:rgba(61,214,232,.6);display:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--serif);font-style:italic}
+.eq-name{font-size:.66rem;font-weight:400;color:rgba(255,255,255,.72);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq-role{font-size:.52rem;color:rgba(255,255,255,.22);font-style:italic;font-family:var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq-choice{font-size:.48rem;color:rgba(61,214,232,.6);display:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--serif);font-style:italic}
 .eq-dot{width:6px;height:6px;border-radius:50%;border:1px solid rgba(255,255,255,.15);flex-shrink:0;transition:all .2s}
 .eq-item.active .eq-dot{background:rgba(61,214,232,.75);border-color:rgba(61,214,232,.9);box-shadow:0 0 4px rgba(61,214,232,.2)}
 
 /* Dropdown */
-.eq-dropdown{display:none;flex-direction:column;background:rgba(4,18,28,.98);border:1px solid rgba(61,214,232,.2);border-radius:0 0 2px 2px;margin-top:.25rem;overflow:hidden;grid-column:1/-1;animation:ddOpen .15s ease}
+.eq-dropdown{display:none;flex-direction:column;background:rgba(4,18,28,.98);border:1px solid rgba(61,214,232,.2);border-radius:0 0 2px 2px;margin-top:.22rem;overflow:hidden;grid-column:1/-1}
 .eq-dropdown.open{display:flex}
-@keyframes ddOpen{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
-.dq-header{display:flex;align-items:center;justify-content:space-between;padding:.26rem .4rem .2rem;border-bottom:1px solid rgba(255,255,255,.06)}
-.dq-type{font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.22)}
-.dq-close{font-size:.55rem;color:rgba(255,255,255,.22);cursor:pointer;background:none;border:none;padding:.1rem .26rem;font-family:var(--sans);transition:color .2s;line-height:1}.dq-close:hover{color:rgba(255,255,255,.6)}
-.dq-note{font-size:.62rem;color:rgba(255,255,255,.24);font-style:italic;font-family:var(--serif);padding:.18rem .4rem;line-height:1.42;border-bottom:1px solid rgba(255,255,255,.05)}
-.dq-items{display:flex;flex-direction:column;gap:.15rem;padding:.22rem .32rem}
+.dq-header{display:flex;align-items:center;justify-content:space-between;padding:.26rem .4rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.dq-type{font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+.dq-close{font-size:.6rem;color:rgba(255,255,255,.22);cursor:pointer;background:none;border:none;padding:.1rem .28rem;font-family:var(--sans);transition:color .2s;line-height:1}.dq-close:hover{color:rgba(255,255,255,.6)}
+.dq-note{font-size:.54rem;color:rgba(255,255,255,.24);font-style:italic;font-family:var(--serif);padding:.18rem .4rem;line-height:1.42;border-bottom:1px solid rgba(255,255,255,.05)}
+.dq-items{display:flex;flex-direction:column;gap:.14rem;padding:.22rem .32rem}
 .dq-item{display:flex;flex-direction:column;gap:.06rem;padding:.2rem .32rem;border-radius:1px;cursor:pointer;transition:background .15s;border:1px solid transparent}
 .dq-item.named{color:rgba(61,214,232,.58);background:rgba(61,214,232,.03);border-color:rgba(61,214,232,.08)}
 .dq-item.named:hover,.dq-item.named.chosen{background:rgba(61,214,232,.1);border-color:rgba(61,214,232,.3);color:rgba(61,214,232,.9)}
 .dq-item.generic{color:rgba(255,255,255,.32);font-style:italic;font-family:var(--serif)}
 .dq-item.generic:hover,.dq-item.generic.chosen{background:rgba(255,255,255,.05);color:rgba(255,255,255,.6)}
-.dq-item-name{font-size:.68rem;line-height:1.25}
-.dq-item-note{font-size:.6rem;color:rgba(255,255,255,.2);line-height:1.32;font-family:var(--serif);font-style:italic;display:none}
-.dq-item.chosen .dq-item-note{display:block;color:rgba(61,214,232,.35)}
+.dq-item-name{font-size:.6rem;line-height:1.25}
+.dq-item-note{font-size:.5rem;color:rgba(255,255,255,.2);line-height:1.32;font-family:var(--serif);font-style:italic;display:none}
+.dq-item.chosen .dq-item-note{display:block;color:rgba(61,214,232,.38)}
 .dq-actions{padding:.18rem .32rem .26rem;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.4rem}
-.dq-btn-use{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(61,214,232,.82);color:#fff;border:none;padding:.2rem .55rem;border-radius:1px;cursor:pointer;font-family:var(--sans);opacity:.3;pointer-events:none;transition:all .18s;white-space:nowrap}
+.dq-btn-use{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(61,214,232,.82);color:#fff;border:none;padding:.22rem .6rem;border-radius:1px;cursor:pointer;font-family:var(--sans);opacity:.3;pointer-events:none;transition:all .18s;white-space:nowrap}
 .dq-btn-use.ready{opacity:1;pointer-events:all}.dq-btn-use.ready:hover{background:rgba(40,184,208,.95)}
-.dq-btn-skip{font-size:.58rem;color:rgba(255,255,255,.18);background:none;border:none;cursor:pointer;font-family:var(--sans);transition:color .2s}.dq-btn-skip:hover{color:rgba(255,255,255,.45)}
+.dq-btn-skip{font-size:.5rem;color:rgba(255,255,255,.18);background:none;border:none;cursor:pointer;font-family:var(--sans);transition:color .2s}.dq-btn-skip:hover{color:rgba(255,255,255,.45)}
 
-/* STATUS BAR — slim, sticky bottom */
+/* ── STATUS BAR ── */
 #status-bar{
   flex-shrink:0;
-  height:34px;
-  background:rgba(3,10,8,.95);
+  height:36px;
+  background:rgba(3,10,8,.96);
   border-top:1px solid rgba(139,189,210,.07);
   display:flex;align-items:center;gap:.6rem;
   padding:0 clamp(.75rem,2vw,1.2rem);
-  backdrop-filter:blur(4px);
 }
 .st-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;background:rgba(61,214,232,.45);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.9}}
-#status-txt{font-family:var(--serif);font-style:italic;font-size:.82rem;color:rgba(255,255,255,.35);flex:1;transition:opacity .25s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#status-txt{font-family:var(--serif);font-style:italic;font-size:.74rem;color:rgba(255,255,255,.35);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .25s}
 #status-txt.fade{opacity:0}
-#btn-reset{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.15);background:none;border:1px solid rgba(255,255,255,.07);padding:.18rem .48rem;border-radius:1px;cursor:pointer;font-family:var(--sans);transition:all .18s;flex-shrink:0}
+#btn-reset{font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.15);background:none;border:1px solid rgba(255,255,255,.07);padding:.2rem .5rem;border-radius:1px;cursor:pointer;font-family:var(--sans);transition:all .18s;flex-shrink:0}
 #btn-reset:hover{color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.18)}
 
 @media(max-width:680px){
   #top-band{height:auto;grid-template-columns:1fr;grid-template-rows:160px auto}
   #tank-zone{border-bottom:1px solid rgba(139,189,210,.07)}
-  #rhy-panel{border-left:none;flex-direction:row;flex-wrap:wrap;gap:.3rem;padding:.4rem .5rem}
-  .rhy-hdr{width:100%}
-    }
-
-/* Essential tick */
-
-/* ── RHYTHM ROWS ── */
-.rhy-row{display:grid;grid-template-columns:8px 40px 1fr 42px;align-items:center;gap:.25rem;padding:.1rem 0}
-.rhy-dot{width:7px;height:7px;border-radius:50%;transition:background .6s,box-shadow .6s}
-.rhy-lbl{font-size:.46rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.28);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rhy-track{height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
-.rhy-fill{height:100%;width:0%;border-radius:2px;transition:width .7s cubic-bezier(.4,0,.2,1)}
-.rhy-mini{position:relative;height:6px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden;border:1px solid rgba(255,255,255,.06)}
-.rhy-mini-fill{position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:3px;transition:width .7s cubic-bezier(.4,0,.2,1)}
-
-/* ── ESSENTIALS ── */
-.rdy-section{margin-top:auto;padding-top:.28rem;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0}
-#readiness-lbl{font-size:.46rem;color:rgba(255,255,255,.18);font-style:italic;font-family:var(--serif);display:block;margin-bottom:.18rem}
-.rdy-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:.12rem .32rem}
-.rdy-item{display:flex;align-items:center;gap:.18rem;font-size:.5rem;color:rgba(255,255,255,.2);transition:color .3s}
-.rdy-item.done{color:rgba(61,214,232,.75);font-weight:500}
-.rdy-dot-sm{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.15);flex-shrink:0;transition:background .3s}
-.rdy-item.done .rdy-dot-sm{background:rgba(61,214,232,.8)}
-.rdy-tick{font-size:.48rem;color:rgba(61,214,232,.85);display:none;margin-left:.05rem}
-.rdy-item.done .rdy-tick{display:inline}
+  #rhy-panel{flex-direction:row;flex-wrap:wrap;border-left:none;gap:.2rem}
+  .rhy-hdr{width:100%;margin-bottom:0}
+}
 </style>
 </head>
 <body>
+
 <div id="topnav">
   <a href="/" class="nav-logo" aria-label="Aquatic Rhythm">
     <svg width="120" height="20" viewBox="0 0 175 30" fill="none" role="presentation" aria-hidden="true">
@@ -230,98 +240,100 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
 
 
-<div id="wrapper">
-  <!-- TOP BAND: tank + rhythms, fixed height -->
-  <div id="top-band">
-    <!-- Size bar floats over top-band -->
-    <div class="size-bar">
-      <button class="sz-btn active" data-size="small">Small 20&#x2013;40L</button>
-      <button class="sz-btn" data-size="medium">Medium 60&#x2013;120L</button>
-      <button class="sz-btn" data-size="large">Large 150L+</button>
-    </div>
-    <div id="tank-zone">
-      <canvas id="tank-canvas"></canvas>
-    </div>
-    <div id="rhy-panel">
-      <div class="rhy-hdr">
-        <span>Rhythms</span>
-        <span id="readiness-badge">0<span style="font-size:.48rem;opacity:.3">/5</span></span>
-      </div>
-      <div class="rhy-row"><div class="rhy-dot" id="dot-water" style="background:rgba(61,214,232,.18)"></div><span class="rhy-lbl" style="color:rgba(61,214,232,.45)">Water</span><div class="rhy-track"><div class="rhy-fill" id="rf-water" style="background:rgba(61,214,232,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-water" style="background:rgba(61,214,232,.7)"></div></div></div>
-      <div class="rhy-row"><div class="rhy-dot" id="dot-bio" style="background:rgba(100,200,82,.18)"></div><span class="rhy-lbl" style="color:rgba(100,200,82,.45)">Bio</span><div class="rhy-track"><div class="rhy-fill" id="rf-bio" style="background:rgba(100,200,82,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-bio" style="background:rgba(100,200,82,.7)"></div></div></div>
-      <div class="rhy-row"><div class="rhy-dot" id="dot-env" style="background:rgba(220,160,60,.18)"></div><span class="rhy-lbl" style="color:rgba(220,160,60,.45)">Env</span><div class="rhy-track"><div class="rhy-fill" id="rf-env" style="background:rgba(220,160,60,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-env" style="background:rgba(220,160,60,.7)"></div></div></div>
-      <div class="rhy-row"><div class="rhy-dot" id="dot-live" style="background:rgba(180,120,200,.18)"></div><span class="rhy-lbl" style="color:rgba(180,120,200,.45)">Live</span><div class="rhy-track"><div class="rhy-fill" id="rf-live" style="background:rgba(180,120,200,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-live" style="background:rgba(180,120,200,.7)"></div></div></div>
-      <div class="rhy-row"><div class="rhy-dot" id="dot-human" style="background:rgba(139,189,210,.18)"></div><span class="rhy-lbl" style="color:rgba(139,189,210,.45)">Human</span><div class="rhy-track"><div class="rhy-fill" id="rf-human" style="background:rgba(139,189,210,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-human" style="background:rgba(139,189,210,.7)"></div></div></div>
-      <div class="rdy-section">
-        <span id="readiness-lbl">essentials missing</span>
-        <div class="rdy-list">
-          <div class="rdy-item" id="r-filter"><div class="rdy-dot-sm"></div>Filter<span class="rdy-tick">&#x2713;</span></div>
-          <div class="rdy-item" id="r-heater"><div class="rdy-dot-sm"></div>Heater<span class="rdy-tick">&#x2713;</span></div>
-          <div class="rdy-item" id="r-light"><div class="rdy-dot-sm"></div>Light<span class="rdy-tick">&#x2713;</span></div>
-          <div class="rdy-item" id="r-sub"><div class="rdy-dot-sm"></div>Substrate<span class="rdy-tick">&#x2713;</span></div>
-          <div class="rdy-item" id="r-test"><div class="rdy-dot-sm"></div>Test kit<span class="rdy-tick">&#x2713;</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- RACK: scrollable -->
-  <div id="rack-zone">
-    <div id="rack">
-      <div class="rack-grid">
-        <div class="rack-cat">Filtration</div>
-        <div class="eq-item" data-eq="filter-sponge"><span class="eq-icon">&#x1F9FD;</span><div class="eq-info"><span class="eq-name">Sponge Filter</span><span class="eq-role">Where bacteria live</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="filter-hang"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Hang-on Filter</span><span class="eq-role">Flow + mechanical</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="filter-canister"><span class="eq-icon">&#x1F6E2;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Canister Filter</span><span class="eq-role">High capacity</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-dropdown" data-for="filter-sponge"></div>
-        <div class="eq-dropdown" data-for="filter-hang"></div>
-        <div class="eq-dropdown" data-for="filter-canister"></div>
-        <div class="rack-cat">Environment</div>
-        <div class="eq-item" data-eq="heater"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Heater</span><span class="eq-role">Stable temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="light-basic"><span class="eq-icon">&#x1F4A1;</span><div class="eq-info"><span class="eq-name">Basic LED</span><span class="eq-role">Day/night cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="light-planted"><span class="eq-icon">&#x2600;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Plant Light</span><span class="eq-role">Full spectrum</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="airpump"><span class="eq-icon">&#x1F4A8;</span><div class="eq-info"><span class="eq-name">Air Pump</span><span class="eq-role">Oxygen + agitation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-dropdown" data-for="heater"></div>
-        <div class="eq-dropdown" data-for="light-basic"></div>
-        <div class="eq-dropdown" data-for="light-planted"></div>
-        <div class="eq-dropdown" data-for="airpump"></div>
-        <div class="rack-cat">Substrate</div>
-        <div class="eq-item" data-eq="sub-gravel"><span class="eq-icon">&#x1F7E4;</span><div class="eq-info"><span class="eq-name">Gravel</span><span class="eq-role">Neutral, forgiving</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="sub-sand"><span class="eq-icon">&#x1F7E1;</span><div class="eq-info"><span class="eq-name">Sand</span><span class="eq-role">Natural, soft</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="sub-soil"><span class="eq-icon">&#x1F7E2;</span><div class="eq-info"><span class="eq-name">Aqua Soil</span><span class="eq-role">Nutrient-rich</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-dropdown" data-for="sub-gravel"></div>
-        <div class="eq-dropdown" data-for="sub-sand"></div>
-        <div class="eq-dropdown" data-for="sub-soil"></div>
-        <div class="rack-cat">Additions</div>
-        <div class="eq-item" data-eq="conditioner"><span class="eq-icon">&#x1F4A7;</span><div class="eq-info"><span class="eq-name">Water Conditioner</span><span class="eq-role">Neutralise chlorine</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="ammonia-source"><span class="eq-icon">&#x26A1;</span><div class="eq-info"><span class="eq-name">Ammonia Source</span><span class="eq-role">Fishless cycling</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="lid"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Lid / Cover</span><span class="eq-role">Safety + evaporation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="siphon"><span class="eq-icon">&#x1F9F9;</span><div class="eq-info"><span class="eq-name">Gravel Vacuum</span><span class="eq-role">Water change tool</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="timer"><span class="eq-icon">&#x23F0;</span><div class="eq-info"><span class="eq-name">Light Timer</span><span class="eq-role">Consistent cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="seed"><span class="eq-icon">&#x1F9EA;</span><div class="eq-info"><span class="eq-name">Bacteria Starter</span><span class="eq-role">Cycle head-start</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="thermometer"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Thermometer</span><span class="eq-role">Verify temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-item" data-eq="testkit"><span class="eq-icon">&#x1F52C;</span><div class="eq-info"><span class="eq-name">Test Kit</span><span class="eq-role">Read the cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-        <div class="eq-dropdown" data-for="conditioner"></div>
-        <div class="eq-dropdown" data-for="ammonia-source"></div>
-        <div class="eq-dropdown" data-for="lid"></div>
-        <div class="eq-dropdown" data-for="siphon"></div>
-        <div class="eq-dropdown" data-for="timer"></div>
-        <div class="eq-dropdown" data-for="seed"></div>
-        <div class="eq-dropdown" data-for="thermometer"></div>
-        <div class="eq-dropdown" data-for="testkit"></div>
+<!-- NAV SPACER -->
+<div id="nav-spacer"></div>
+
+<!-- TOP BAND -->
+<div id="top-band">
+  <div class="size-bar">
+    <button class="sz-btn active" data-size="small">Small 20&#x2013;40L</button>
+    <button class="sz-btn" data-size="medium">Medium 60&#x2013;120L</button>
+    <button class="sz-btn" data-size="large">Large 150L+</button>
+  </div>
+  <div id="tank-zone">
+    <canvas id="tank-canvas"></canvas>
+  </div>
+  <div id="rhy-panel">
+    <div class="rhy-hdr">
+      <span>Rhythms</span>
+      <span id="readiness-badge">0<span style="font-size:.48rem;opacity:.3">/5</span></span>
+    </div>
+    <div class="rhy-row"><div class="rhy-dot" id="dot-water" style="background:rgba(61,214,232,.18)"></div><span class="rhy-lbl" style="color:rgba(61,214,232,.45)">Water</span><div class="rhy-track"><div class="rhy-fill" id="rf-water" style="background:rgba(61,214,232,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-water" style="background:rgba(61,214,232,.7)"></div></div></div>
+    <div class="rhy-row"><div class="rhy-dot" id="dot-bio" style="background:rgba(100,200,82,.18)"></div><span class="rhy-lbl" style="color:rgba(100,200,82,.45)">Bio</span><div class="rhy-track"><div class="rhy-fill" id="rf-bio" style="background:rgba(100,200,82,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-bio" style="background:rgba(100,200,82,.7)"></div></div></div>
+    <div class="rhy-row"><div class="rhy-dot" id="dot-env" style="background:rgba(220,160,60,.18)"></div><span class="rhy-lbl" style="color:rgba(220,160,60,.45)">Env</span><div class="rhy-track"><div class="rhy-fill" id="rf-env" style="background:rgba(220,160,60,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-env" style="background:rgba(220,160,60,.7)"></div></div></div>
+    <div class="rhy-row"><div class="rhy-dot" id="dot-live" style="background:rgba(180,120,200,.18)"></div><span class="rhy-lbl" style="color:rgba(180,120,200,.45)">Live</span><div class="rhy-track"><div class="rhy-fill" id="rf-live" style="background:rgba(180,120,200,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-live" style="background:rgba(180,120,200,.7)"></div></div></div>
+    <div class="rhy-row"><div class="rhy-dot" id="dot-human" style="background:rgba(139,189,210,.18)"></div><span class="rhy-lbl" style="color:rgba(139,189,210,.45)">Human</span><div class="rhy-track"><div class="rhy-fill" id="rf-human" style="background:rgba(139,189,210,.65)"></div></div><div class="rhy-mini"><div class="rhy-mini-fill" id="mini-human" style="background:rgba(139,189,210,.7)"></div></div></div>
+    <div class="rdy-section">
+      <span id="readiness-lbl">essentials missing</span>
+      <div class="rdy-list">
+        <div class="rdy-item" id="r-filter"><div class="rdy-dot-sm"></div>Filter<span class="rdy-tick">&#x2713;</span></div>
+        <div class="rdy-item" id="r-heater"><div class="rdy-dot-sm"></div>Heater<span class="rdy-tick">&#x2713;</span></div>
+        <div class="rdy-item" id="r-light"><div class="rdy-dot-sm"></div>Light<span class="rdy-tick">&#x2713;</span></div>
+        <div class="rdy-item" id="r-sub"><div class="rdy-dot-sm"></div>Substrate<span class="rdy-tick">&#x2713;</span></div>
+        <div class="rdy-item" id="r-test"><div class="rdy-dot-sm"></div>Test kit<span class="rdy-tick">&#x2713;</span></div>
       </div>
     </div>
-  </div>
-
-  <!-- STATUS BAR: slim bottom -->
-  <div id="status-bar">
-    <div class="st-dot" id="status-dot"></div>
-    <span id="status-txt">Add equipment from the rack to begin building your system.</span>
-    <button id="btn-reset">Reset</button>
   </div>
 </div>
 
+<!-- RACK ZONE — scrollable -->
+<div id="rack-zone">
+  <div id="rack">
+    <div class="rack-grid">
+      <div class="rack-cat">Filtration</div>
+      <div class="eq-item" data-eq="filter-sponge"><span class="eq-icon">&#x1F9FD;</span><div class="eq-info"><span class="eq-name">Sponge Filter</span><span class="eq-role">Where bacteria live</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="filter-hang"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Hang-on Filter</span><span class="eq-role">Flow + mechanical</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="filter-canister"><span class="eq-icon">&#x1F6E2;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Canister Filter</span><span class="eq-role">High capacity</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-dropdown" data-for="filter-sponge"></div>
+      <div class="eq-dropdown" data-for="filter-hang"></div>
+      <div class="eq-dropdown" data-for="filter-canister"></div>
+      <div class="rack-cat">Environment</div>
+      <div class="eq-item" data-eq="heater"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Heater</span><span class="eq-role">Stable temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="light-basic"><span class="eq-icon">&#x1F4A1;</span><div class="eq-info"><span class="eq-name">Basic LED</span><span class="eq-role">Day/night cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="light-planted"><span class="eq-icon">&#x2600;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Plant Light</span><span class="eq-role">Full spectrum</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="airpump"><span class="eq-icon">&#x1F4A8;</span><div class="eq-info"><span class="eq-name">Air Pump</span><span class="eq-role">Oxygen + agitation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-dropdown" data-for="heater"></div>
+      <div class="eq-dropdown" data-for="light-basic"></div>
+      <div class="eq-dropdown" data-for="light-planted"></div>
+      <div class="eq-dropdown" data-for="airpump"></div>
+      <div class="rack-cat">Substrate</div>
+      <div class="eq-item" data-eq="sub-gravel"><span class="eq-icon">&#x1F7E4;</span><div class="eq-info"><span class="eq-name">Gravel</span><span class="eq-role">Neutral, forgiving</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="sub-sand"><span class="eq-icon">&#x1F7E1;</span><div class="eq-info"><span class="eq-name">Sand</span><span class="eq-role">Natural, soft</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="sub-soil"><span class="eq-icon">&#x1F7E2;</span><div class="eq-info"><span class="eq-name">Aqua Soil</span><span class="eq-role">Nutrient-rich</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-dropdown" data-for="sub-gravel"></div>
+      <div class="eq-dropdown" data-for="sub-sand"></div>
+      <div class="eq-dropdown" data-for="sub-soil"></div>
+      <div class="rack-cat">Additions</div>
+      <div class="eq-item" data-eq="conditioner"><span class="eq-icon">&#x1F4A7;</span><div class="eq-info"><span class="eq-name">Water Conditioner</span><span class="eq-role">Neutralise chlorine</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="ammonia-source"><span class="eq-icon">&#x26A1;</span><div class="eq-info"><span class="eq-name">Ammonia Source</span><span class="eq-role">Fishless cycling</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="lid"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Lid / Cover</span><span class="eq-role">Safety + evaporation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="siphon"><span class="eq-icon">&#x1F9F9;</span><div class="eq-info"><span class="eq-name">Gravel Vacuum</span><span class="eq-role">Water change tool</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="timer"><span class="eq-icon">&#x23F0;</span><div class="eq-info"><span class="eq-name">Light Timer</span><span class="eq-role">Consistent cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="seed"><span class="eq-icon">&#x1F9EA;</span><div class="eq-info"><span class="eq-name">Bacteria Starter</span><span class="eq-role">Cycle head-start</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="thermometer"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Thermometer</span><span class="eq-role">Verify temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="testkit"><span class="eq-icon">&#x1F52C;</span><div class="eq-info"><span class="eq-name">Test Kit</span><span class="eq-role">Read the cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-dropdown" data-for="conditioner"></div>
+      <div class="eq-dropdown" data-for="ammonia-source"></div>
+      <div class="eq-dropdown" data-for="lid"></div>
+      <div class="eq-dropdown" data-for="siphon"></div>
+      <div class="eq-dropdown" data-for="timer"></div>
+      <div class="eq-dropdown" data-for="seed"></div>
+      <div class="eq-dropdown" data-for="thermometer"></div>
+      <div class="eq-dropdown" data-for="testkit"></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATUS BAR -->
+<div id="status-bar">
+  <div class="st-dot" id="status-dot"></div>
+  <span id="status-txt">Add equipment from the rack to begin building your system.</span>
+  <button id="btn-reset">Reset</button>
+</div>
+
 <script>
+
 
 var BRAND_NOTES={"Hikari Bacto Surge": "Reliable dual-sponge. Good biological surface area for small tanks.", "Aquael Fan Mini": "Compact and quiet. Adjustable flow useful for smaller fish.", "Any dual-sponge (generic)": "Functional and cheap. Sponge quality varies — squeeze it before buying.", "Seachem Tidal": "Self-priming, surface skimmer. Well-regarded for long-term reliability.", "AquaClear": "Industry standard. Easy to maintain, good media customisation.", "Aquael Versamax": "European brand, solid build. Widely available in Asia and Europe.", "Fluval C Series": "Good mechanical and biological filtration. Slightly noisier than AquaClear.", "Eheim Classic": "German engineering. Extremely quiet, very long lifespan. Higher upfront cost.", "Fluval 07 Series": "Modern canister, easy priming, good flow control.", "Oase BioMaster": "Built-in heater option. Premium price, premium quality.", "Aquael Ultramax": "Good value canister. Popular in Southeast Asia and Europe.", "Eheim Jager": "Accurate and adjustable. Considered the benchmark for reliability.", "Aquael Gold Heater": "Affordable, decent accuracy. Good entry-level choice.", "Fluval E Series": "Digital display shows actual water temperature. Easy to monitor.", "Sera Precision": "Accurate, shatterproof. Trusted for breeding setups.", "Aquael Leddy Slim": "Slim profile, fits most hoods. Good for fish-only tanks.", "Fluval Aquasky": "Bluetooth controllable. Useful if you want automated schedules.", "Generic clip-on LED": "Works for viewing. Not suitable for plants. Very affordable.", "Chihiros WRGB II": "Full spectrum, app-controlled. Popular in planted tank community.", "Twinstar": "Korean brand, excellent PAR output. Premium choice for planted tanks.", "Fluval Plant 3.0": "Bluetooth, sunrise/sunset modes. Good for medium planted tanks.", "Aquael Leddy Plant": "Affordable plant light. Good starting point for low-tech planted.", "Tetra APS": "Quiet for an air pump. Adjustable output.", "Aquael Oxyboost": "Compact and affordable. Does the job without much noise.", "Generic air pump + airstone": "Any will work. Prioritise noise level if near sleeping areas.", "Natural river gravel": "Free if sourced responsibly. Rinse very thoroughly before use.", "Unipac aquarium gravel": "Pre-washed, consistent sizing. Widely available.", "Any inert bagged gravel": "Check it is genuinely inert — some decorative gravels are coated.", "Pool filter sand": "Very affordable, widely available. Rinse thoroughly before use.", "Unipac natural sand": "Pre-washed, consistent grain size. Ready to use faster.", "CaribSea Super Naturals": "Fine grain, natural colour. Good quality but pricier.", "ADA Amazonia": "The benchmark. Excellent plant growth but expensive and acidic.", "Tropica Aquarium Soil": "Well-balanced. Less acidic than ADA. Good for most tropical plants.", "Sera Floredepot": "Mid-range option. Decent nutrient content. Less pH impact.", "Aquael Aqua Grunt": "Budget-friendly. Performance varies but adequate for hardy plants.", "Tropica tissue culture": "Pest and snail-egg free. Worth paying extra for a clean start.", "Aquael in-vitro plants": "Similar to Tropica. Healthy plants in sterile gel.", "Java fern (any source)": "Nearly indestructible. Attaches to hardscape, needs no soil.", "Anubias (any source)": "Extremely hardy. Slow-growing, low light, no special substrate needed.", "Seiryu stone": "Hard, angular, raises water hardness. Striking appearance.", "Dragon stone": "Lighter and more porous. Less hardness impact than Seiryu.", "Mopani driftwood": "Dense, sinks quickly. Releases tannins for weeks — soak or boil first.", "Spider wood": "Intricate branching structure. Lighter, may need weighing down initially.", "Lava rock": "Porous — good bacterial surface. Neutral effect on water chemistry.", "Dr. Tims One and Only": "Contains live nitrifying bacteria. Needs refrigeration. Most effective.", "Tetra SafeStart Plus": "Live bacteria, widely available. Refrigerate after opening.", "Seachem Stability": "Room temperature stable. Convenient but debated effectiveness.", "API Quick Start": "Easy to find. Results vary — treat as a supplement, not a guarantee.", "Eheim Slim Digital": "Accurate and easy to read. Slim enough to not be intrusive.", "Marina floating thermometer": "Simple and reliable. Cheap enough to keep a spare.", "Any digital stick-on": "Convenient but less accurate than floating types.", "API Freshwater Master Test Kit": "The standard recommendation. Covers all cycle parameters.", "Sera Aqua-Test Box": "European equivalent to API. Accurate, good shelf life.", "JBL ProAquaTest": "High quality. Slightly more expensive but very reliable."};
 
@@ -928,6 +940,7 @@ document.querySelector('.brief-btn').addEventListener('click',function(){
   br.style.opacity='0';
   setTimeout(function(){br.style.display='none';szCvs();updateRhythms();updateRackStates();checkAnimNeeded();},520);
 });
+
 
 
 </script>
