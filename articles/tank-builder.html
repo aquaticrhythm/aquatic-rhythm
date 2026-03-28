@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Tank Builder — Aquatic Rhythm</title>
+<meta name="description" content="An interactive lab for building your first aquarium. Explore equipment, understand why each piece matters.">
+<link rel="canonical" href="https://aquaticrhythm.com/articles/tank-builder">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<meta name="theme-color" content="#041e28">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --nav:52px;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --accent:#3DD6E8;
+  --ease:cubic-bezier(0.19,1,0.22,1);
+}
+html{font-size:16px}
+body{font-family:var(--sans);background:#030b09;color:rgba(255,255,255,.88);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#052535 0%,#062a38 30%,#041e28 60%,#020810 100%)}
+
+/* NAV */
+#topnav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);background:rgba(3,11,9,.96);border-bottom:1px solid rgba(139,189,210,.07);backdrop-filter:blur(8px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}.nav-logo:hover{opacity:.7}
+.nav-title{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.nav-back{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5);text-decoration:none;display:flex;align-items:center;gap:.35rem;transition:color .25s}.nav-back:hover{color:rgba(61,214,232,.88)}
+
+/* BRIEFING */
+#briefing{position:fixed;inset:0;z-index:500;background:rgba(2,8,14,.97);display:flex;align-items:center;justify-content:center;padding:1rem;overflow-y:auto;transition:opacity .5s}
+.brief-inner{max-width:520px;width:100%;padding:2.5rem clamp(1.5rem,5vw,3rem) 2rem}
+.brief-eyebrow{font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:1.2rem}
+.brief-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,4vw,2.6rem);color:rgba(255,255,255,.9);line-height:1.1;margin-bottom:1.4rem}
+.brief-title em{font-style:italic;color:rgba(61,214,232,.7)}
+.brief-body{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1.8rem}
+.brief-rhythms{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.8rem;padding:.9rem 1.1rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.08);border-radius:2px}
+.brief-rhy{display:flex;align-items:baseline;gap:.65rem}
+.brief-rhy-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:.15rem}
+.brief-rhy-name{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;flex-shrink:0;width:90px}
+.brief-rhy-desc{font-size:.74rem;font-weight:300;color:rgba(255,255,255,.4);font-family:var(--serif);font-style:italic;line-height:1.5}
+.brief-note{font-size:.7rem;color:rgba(255,255,255,.22);font-style:italic;font-family:var(--serif);line-height:1.65;margin-bottom:2rem;padding-left:.9rem;border-left:1px solid rgba(255,255,255,.1)}
+.brief-btn{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(30,165,185,.82);color:#fff;border:1px solid rgba(61,214,232,.45);padding:.78rem 2rem;border-radius:2px;cursor:pointer;font-family:var(--sans);transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
+.brief-btn:hover{background:rgba(40,184,208,.95);transform:translateY(-1px)}
+
+/* WRAPPER — everything below nav */
+#wrapper{padding-top:var(--nav);height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* TOP BAND — sticky, tank + rhythms */
+#top-band{
+  flex-shrink:0;
+  height:40vh;
+  display:grid;
+  grid-template-columns:1fr 192px;
+  background:rgba(2,8,14,.97);
+  border-bottom:1px solid rgba(139,189,210,.08);
+  position:relative;
+}
+
+/* Tank */
+#tank-zone{position:relative;overflow:hidden}
+#tank-canvas{width:100%;height:100%;display:block}
+
+/* Size buttons — on top of everything in top-band */
+.size-bar{
+  position:absolute;
+  top:.5rem;left:50%;
+  transform:translateX(-50%);
+  display:flex;gap:.22rem;
+  z-index:50;
+  pointer-events:none;
+}
+.size-bar button{pointer-events:all}
+.sz-btn{font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;padding:.24rem .52rem;border-radius:1px;cursor:pointer;border:1px solid rgba(139,189,210,.15);background:rgba(3,12,10,.92);color:rgba(255,255,255,.32);transition:all .18s;font-family:var(--sans);backdrop-filter:blur(4px)}
+.sz-btn:hover{border-color:rgba(61,214,232,.3);color:rgba(255,255,255,.65)}
+.sz-btn.active{background:rgba(20,60,80,.6);border-color:rgba(61,214,232,.55);color:rgba(61,214,232,.88)}
+
+/* Rhythm panel */
+#rhy-panel{
+  padding:.48rem .45rem;
+  overflow-y:auto;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  border-left:1px solid rgba(139,189,210,.07);
+  background:rgba(3,10,8,.75);
+}
+#rhy-panel::-webkit-scrollbar{width:2px}
+#rhy-panel::-webkit-scrollbar-thumb{background:rgba(61,214,232,.1)}
+.rhy-hdr{font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18);display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+#readiness-badge{font-family:var(--serif);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.22);line-height:1;transition:color .5s}
+.rhy-row{display:grid;grid-template-columns:8px 62px 1fr;align-items:center;gap:.38rem;padding:.18rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.rhy-row:last-of-type{border-bottom:none}
+.rhy-dot{width:7px;height:7px;border-radius:50%;transition:background .7s,box-shadow .7s}
+.rhy-lbl{font-size:.44rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.rhy-track{height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.rhy-fill{height:100%;width:0%;border-radius:2px;transition:width .7s var(--ease)}
+.rdy-section{margin-top:.4rem;padding-top:.38rem;border-top:1px solid rgba(255,255,255,.05)}
+#readiness-lbl{font-size:.46rem;color:rgba(255,255,255,.18);font-style:italic;font-family:var(--serif);display:block;margin-bottom:.28rem}
+.rdy-list{display:flex;flex-direction:column;gap:.16rem}
+.rdy-item{display:flex;align-items:center;gap:.2rem;font-size:.44rem;color:rgba(255,255,255,.18);transition:color .3s}
+.rdy-item.done{color:rgba(61,214,232,.65)}
+.rdy-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.12);flex-shrink:0;transition:background .3s}
+.rdy-item.done .rdy-dot{background:rgba(61,214,232,.72)}
+
+/* RACK — scrollable, fills remaining space */
+#rack-zone{
+  flex:1;
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  background:rgba(3,10,8,.6);
+}
+#rack-zone::-webkit-scrollbar{width:3px}
+#rack-zone::-webkit-scrollbar-thumb{background:rgba(61,214,232,.1);border-radius:2px}
+#rack{padding:.5rem .6rem}
+.rack-grid{display:grid;grid-template-columns:1fr 1fr;gap:.25rem}
+.rack-cat{grid-column:1/-1;font-size:.4rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.16);padding:.4rem .2rem .15rem;margin-top:.2rem}
+.rack-cat:first-child{margin-top:0}
+
+/* Equipment item */
+.eq-item{display:flex;align-items:center;gap:.35rem;padding:.28rem .4rem;background:rgba(6,18,14,.55);border:1px solid rgba(139,189,210,.08);border-radius:2px;cursor:pointer;position:relative;transition:background .15s,border-color .18s,transform .12s,opacity .18s}
+.eq-item:hover:not(.disabled){background:rgba(9,24,18,.9);border-color:rgba(61,214,232,.18);transform:translateX(1px)}
+.eq-item.active{background:rgba(30,75,95,.22);border-color:rgba(61,214,232,.42)}
+.eq-item.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(61,214,232,.75);border-radius:2px 0 0 2px}
+.eq-item.warn-state{border-color:rgba(220,160,40,.3)!important}
+.eq-item.warn-state::after{content:'!';position:absolute;top:2px;right:3px;font-size:.42rem;color:rgba(220,160,40,.7)}
+.eq-item.disabled{opacity:.25;cursor:not-allowed;pointer-events:none}
+.eq-item.size-warn{border-color:rgba(220,160,40,.2)}
+.eq-icon{font-size:.82rem;flex-shrink:0;width:16px;text-align:center}
+.eq-info{flex:1;min-width:0}
+.eq-name{font-size:.6rem;font-weight:400;color:rgba(255,255,255,.72);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq-role{font-size:.46rem;color:rgba(255,255,255,.22);font-style:italic;font-family:var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq-choice{font-size:.44rem;color:rgba(61,214,232,.6);display:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--serif);font-style:italic}
+.eq-dot{width:6px;height:6px;border-radius:50%;border:1px solid rgba(255,255,255,.15);flex-shrink:0;transition:all .2s}
+.eq-item.active .eq-dot{background:rgba(61,214,232,.75);border-color:rgba(61,214,232,.9);box-shadow:0 0 4px rgba(61,214,232,.2)}
+
+/* Dropdown */
+.eq-dropdown{display:none;flex-direction:column;background:rgba(4,18,28,.98);border:1px solid rgba(61,214,232,.2);border-radius:0 0 2px 2px;margin-top:.25rem;overflow:hidden;grid-column:1/-1;animation:ddOpen .15s ease}
+.eq-dropdown.open{display:flex}
+@keyframes ddOpen{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
+.dq-header{display:flex;align-items:center;justify-content:space-between;padding:.26rem .4rem .2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.dq-type{font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+.dq-close{font-size:.55rem;color:rgba(255,255,255,.22);cursor:pointer;background:none;border:none;padding:.1rem .26rem;font-family:var(--sans);transition:color .2s;line-height:1}.dq-close:hover{color:rgba(255,255,255,.6)}
+.dq-note{font-size:.5rem;color:rgba(255,255,255,.24);font-style:italic;font-family:var(--serif);padding:.18rem .4rem;line-height:1.42;border-bottom:1px solid rgba(255,255,255,.05)}
+.dq-items{display:flex;flex-direction:column;gap:.15rem;padding:.22rem .32rem}
+.dq-item{display:flex;flex-direction:column;gap:.06rem;padding:.2rem .32rem;border-radius:1px;cursor:pointer;transition:background .15s;border:1px solid transparent}
+.dq-item.named{color:rgba(61,214,232,.58);background:rgba(61,214,232,.03);border-color:rgba(61,214,232,.08)}
+.dq-item.named:hover,.dq-item.named.chosen{background:rgba(61,214,232,.1);border-color:rgba(61,214,232,.3);color:rgba(61,214,232,.9)}
+.dq-item.generic{color:rgba(255,255,255,.32);font-style:italic;font-family:var(--serif)}
+.dq-item.generic:hover,.dq-item.generic.chosen{background:rgba(255,255,255,.05);color:rgba(255,255,255,.6)}
+.dq-item-name{font-size:.57rem;line-height:1.25}
+.dq-item-note{font-size:.48rem;color:rgba(255,255,255,.2);line-height:1.32;font-family:var(--serif);font-style:italic;display:none}
+.dq-item.chosen .dq-item-note{display:block;color:rgba(61,214,232,.35)}
+.dq-actions{padding:.18rem .32rem .26rem;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.4rem}
+.dq-btn-use{font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(61,214,232,.82);color:#fff;border:none;padding:.2rem .55rem;border-radius:1px;cursor:pointer;font-family:var(--sans);opacity:.3;pointer-events:none;transition:all .18s;white-space:nowrap}
+.dq-btn-use.ready{opacity:1;pointer-events:all}.dq-btn-use.ready:hover{background:rgba(40,184,208,.95)}
+.dq-btn-skip{font-size:.46rem;color:rgba(255,255,255,.18);background:none;border:none;cursor:pointer;font-family:var(--sans);transition:color .2s}.dq-btn-skip:hover{color:rgba(255,255,255,.45)}
+
+/* STATUS BAR — slim, sticky bottom */
+#status-bar{
+  flex-shrink:0;
+  height:34px;
+  background:rgba(3,10,8,.95);
+  border-top:1px solid rgba(139,189,210,.07);
+  display:flex;align-items:center;gap:.6rem;
+  padding:0 clamp(.75rem,2vw,1.2rem);
+  backdrop-filter:blur(4px);
+}
+.st-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;background:rgba(61,214,232,.45);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.9}}
+#status-txt{font-family:var(--serif);font-style:italic;font-size:.7rem;color:rgba(255,255,255,.35);flex:1;transition:opacity .25s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#status-txt.fade{opacity:0}
+#btn-reset{font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.15);background:none;border:1px solid rgba(255,255,255,.07);padding:.18rem .48rem;border-radius:1px;cursor:pointer;font-family:var(--sans);transition:all .18s;flex-shrink:0}
+#btn-reset:hover{color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.18)}
+
+@media(max-width:680px){
+  #top-band{height:auto;grid-template-columns:1fr;grid-template-rows:160px auto}
+  #tank-zone{border-bottom:1px solid rgba(139,189,210,.07)}
+  #rhy-panel{border-left:none;flex-direction:row;flex-wrap:wrap;gap:.3rem;padding:.4rem .5rem}
+  .rhy-hdr{width:100%}
+  .rhy-row{grid-template-columns:8px 55px 1fr;flex:1;min-width:100px;border-bottom:none}
+  .rdy-section{width:100%}
+}
+</style>
+</head>
+<body>
+<div id="topnav">
+  <a href="/" class="nav-logo" aria-label="Aquatic Rhythm">
+    <svg width="120" height="20" viewBox="0 0 175 30" fill="none" role="presentation" aria-hidden="true">
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg>
+  </a>
+  <span class="nav-title">Tank Builder</span>
+  <a href="/reading" class="nav-back">&#8592; Reading</a>
+</div>
+
+<!-- BRIEFING OVERLAY -->
+<div id="briefing">
+  <div class="brief-inner">
+    <span class="brief-eyebrow">Try It Yourself</span>
+    <h1 class="brief-title">Build Your<br><em>First System.</em></h1>
+    <p class="brief-body">This is a lab, not a quiz. Add equipment from the rack, remove it, try different combinations. Each piece changes how the system behaves — and the five rhythms on the right tell you what is shifting as you build.</p>
+    <div class="brief-rhythms">
+      <div style="font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.4rem">The five rhythms your tank lives by</div>
+      <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(61,214,232,.7)"></div><span class="brief-rhy-name" style="color:rgba(61,214,232,.7)">Water</span><span class="brief-rhy-desc">Movement, renewal, and stability. Shaped most directly by filtration and water changes.</span></div>
+      <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(100,200,82,.7)"></div><span class="brief-rhy-name" style="color:rgba(100,200,82,.7)">Biological</span><span class="brief-rhy-desc">The bacterial colony that processes waste. Lives on filter media, not in the water.</span></div>
+      <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(220,160,60,.7)"></div><span class="brief-rhy-name" style="color:rgba(220,160,60,.7)">Environmental</span><span class="brief-rhy-desc">Temperature, light, and physical structure. Fish orient their whole lives around these.</span></div>
+      <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(180,120,200,.7)"></div><span class="brief-rhy-name" style="color:rgba(180,120,200,.7)">Livestock</span><span class="brief-rhy-desc">How ready the system is for fish. Not just chemistry — stability and predictability too.</span></div>
+      <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(139,189,210,.7)"></div><span class="brief-rhy-name" style="color:rgba(139,189,210,.7)">Human</span><span class="brief-rhy-desc">What this system will ask of you. How much attention, how often, how carefully.</span></div>
+    </div>
+    <p class="brief-note">There are no wrong choices here. Some combinations will produce warnings — those are observations, not judgements. The lab is yours to explore.</p>
+    <button class="brief-btn" id="btn-enter">Enter the lab &#8594;</button>
+  </div>
+</div>
+
+
+
+<div id="wrapper">
+  <!-- TOP BAND: tank + rhythms, fixed height -->
+  <div id="top-band">
+    <!-- Size bar floats over top-band -->
+    <div class="size-bar">
+      <button class="sz-btn active" data-size="small">Small 20&#x2013;40L</button>
+      <button class="sz-btn" data-size="medium">Medium 60&#x2013;120L</button>
+      <button class="sz-btn" data-size="large">Large 150L+</button>
+    </div>
+    <div id="tank-zone">
+      <canvas id="tank-canvas"></canvas>
+    </div>
+    <div id="rhy-panel">
+      <div class="rhy-hdr">
+        <span>Rhythms</span>
+        <span id="readiness-badge">0<span style="font-size:.5rem;opacity:.3">/5</span></span>
+      </div>
+      <div class="rhy-row"><div class="rhy-dot" id="dot-water" style="background:rgba(61,214,232,.18)"></div><span class="rhy-lbl" style="color:rgba(61,214,232,.45)">Water</span><div class="rhy-track"><div class="rhy-fill" id="rf-water" style="background:rgba(61,214,232,.65)"></div></div></div>
+      <div class="rhy-row"><div class="rhy-dot" id="dot-bio" style="background:rgba(100,200,82,.18)"></div><span class="rhy-lbl" style="color:rgba(100,200,82,.45)">Biological</span><div class="rhy-track"><div class="rhy-fill" id="rf-bio" style="background:rgba(100,200,82,.65)"></div></div></div>
+      <div class="rhy-row"><div class="rhy-dot" id="dot-env" style="background:rgba(220,160,60,.18)"></div><span class="rhy-lbl" style="color:rgba(220,160,60,.45)">Environment</span><div class="rhy-track"><div class="rhy-fill" id="rf-env" style="background:rgba(220,160,60,.65)"></div></div></div>
+      <div class="rhy-row"><div class="rhy-dot" id="dot-live" style="background:rgba(180,120,200,.18)"></div><span class="rhy-lbl" style="color:rgba(180,120,200,.45)">Livestock</span><div class="rhy-track"><div class="rhy-fill" id="rf-live" style="background:rgba(180,120,200,.65)"></div></div></div>
+      <div class="rhy-row"><div class="rhy-dot" id="dot-human" style="background:rgba(139,189,210,.18)"></div><span class="rhy-lbl" style="color:rgba(139,189,210,.45)">Human</span><div class="rhy-track"><div class="rhy-fill" id="rf-human" style="background:rgba(139,189,210,.65)"></div></div></div>
+      <div class="rdy-section">
+        <span id="readiness-lbl">essentials missing</span>
+        <div class="rdy-list">
+          <div class="rdy-item" id="r-filter"><div class="rdy-dot"></div>Filter</div>
+          <div class="rdy-item" id="r-heater"><div class="rdy-dot"></div>Heater</div>
+          <div class="rdy-item" id="r-light"><div class="rdy-dot"></div>Light</div>
+          <div class="rdy-item" id="r-sub"><div class="rdy-dot"></div>Substrate</div>
+          <div class="rdy-item" id="r-test"><div class="rdy-dot"></div>Test kit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RACK: scrollable -->
+  <div id="rack-zone">
+    <div id="rack">
+      <div class="rack-grid">
+        <div class="rack-cat">Filtration</div>
+        <div class="eq-item" data-eq="filter-sponge"><span class="eq-icon">&#x1F9FD;</span><div class="eq-info"><span class="eq-name">Sponge Filter</span><span class="eq-role">Where bacteria live</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="filter-hang"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Hang-on Filter</span><span class="eq-role">Flow + mechanical</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="filter-canister"><span class="eq-icon">&#x1F6E2;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Canister Filter</span><span class="eq-role">High capacity</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-dropdown" data-for="filter-sponge"></div>
+        <div class="eq-dropdown" data-for="filter-hang"></div>
+        <div class="eq-dropdown" data-for="filter-canister"></div>
+        <div class="rack-cat">Environment</div>
+        <div class="eq-item" data-eq="heater"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Heater</span><span class="eq-role">Stable temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="light-basic"><span class="eq-icon">&#x1F4A1;</span><div class="eq-info"><span class="eq-name">Basic LED</span><span class="eq-role">Day/night cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="light-planted"><span class="eq-icon">&#x2600;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Plant Light</span><span class="eq-role">Full spectrum</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="airpump"><span class="eq-icon">&#x1F4A8;</span><div class="eq-info"><span class="eq-name">Air Pump</span><span class="eq-role">Oxygen + agitation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-dropdown" data-for="heater"></div>
+        <div class="eq-dropdown" data-for="light-basic"></div>
+        <div class="eq-dropdown" data-for="light-planted"></div>
+        <div class="eq-dropdown" data-for="airpump"></div>
+        <div class="rack-cat">Substrate</div>
+        <div class="eq-item" data-eq="sub-gravel"><span class="eq-icon">&#x1F7E4;</span><div class="eq-info"><span class="eq-name">Gravel</span><span class="eq-role">Neutral, forgiving</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="sub-sand"><span class="eq-icon">&#x1F7E1;</span><div class="eq-info"><span class="eq-name">Sand</span><span class="eq-role">Natural, soft</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="sub-soil"><span class="eq-icon">&#x1F7E2;</span><div class="eq-info"><span class="eq-name">Aqua Soil</span><span class="eq-role">Nutrient-rich</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-dropdown" data-for="sub-gravel"></div>
+        <div class="eq-dropdown" data-for="sub-sand"></div>
+        <div class="eq-dropdown" data-for="sub-soil"></div>
+        <div class="rack-cat">Additions</div>
+        <div class="eq-item" data-eq="conditioner"><span class="eq-icon">&#x1F4A7;</span><div class="eq-info"><span class="eq-name">Water Conditioner</span><span class="eq-role">Neutralise chlorine</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="ammonia-source"><span class="eq-icon">&#x26A1;</span><div class="eq-info"><span class="eq-name">Ammonia Source</span><span class="eq-role">Fishless cycling</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="lid"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Lid / Cover</span><span class="eq-role">Safety + evaporation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="siphon"><span class="eq-icon">&#x1F9F9;</span><div class="eq-info"><span class="eq-name">Gravel Vacuum</span><span class="eq-role">Water change tool</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="timer"><span class="eq-icon">&#x23F0;</span><div class="eq-info"><span class="eq-name">Light Timer</span><span class="eq-role">Consistent cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="seed"><span class="eq-icon">&#x1F9EA;</span><div class="eq-info"><span class="eq-name">Bacteria Starter</span><span class="eq-role">Cycle head-start</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="thermometer"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Thermometer</span><span class="eq-role">Verify temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-item" data-eq="testkit"><span class="eq-icon">&#x1F52C;</span><div class="eq-info"><span class="eq-name">Test Kit</span><span class="eq-role">Read the cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+        <div class="eq-dropdown" data-for="conditioner"></div>
+        <div class="eq-dropdown" data-for="ammonia-source"></div>
+        <div class="eq-dropdown" data-for="lid"></div>
+        <div class="eq-dropdown" data-for="siphon"></div>
+        <div class="eq-dropdown" data-for="timer"></div>
+        <div class="eq-dropdown" data-for="seed"></div>
+        <div class="eq-dropdown" data-for="thermometer"></div>
+        <div class="eq-dropdown" data-for="testkit"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATUS BAR: slim bottom -->
+  <div id="status-bar">
+    <div class="st-dot" id="status-dot"></div>
+    <span id="status-txt">Add equipment from the rack to begin building your system.</span>
+    <button id="btn-reset">Reset</button>
+  </div>
+</div>
+
+<script>
+
+var BRAND_NOTES={"Hikari Bacto Surge": "Reliable dual-sponge. Good biological surface area for small tanks.", "Aquael Fan Mini": "Compact and quiet. Adjustable flow useful for smaller fish.", "Any dual-sponge (generic)": "Functional and cheap. Sponge quality varies — squeeze it before buying.", "Seachem Tidal": "Self-priming, surface skimmer. Well-regarded for long-term reliability.", "AquaClear": "Industry standard. Easy to maintain, good media customisation.", "Aquael Versamax": "European brand, solid build. Widely available in Asia and Europe.", "Fluval C Series": "Good mechanical and biological filtration. Slightly noisier than AquaClear.", "Eheim Classic": "German engineering. Extremely quiet, very long lifespan. Higher upfront cost.", "Fluval 07 Series": "Modern canister, easy priming, good flow control.", "Oase BioMaster": "Built-in heater option. Premium price, premium quality.", "Aquael Ultramax": "Good value canister. Popular in Southeast Asia and Europe.", "Eheim Jager": "Accurate and adjustable. Considered the benchmark for reliability.", "Aquael Gold Heater": "Affordable, decent accuracy. Good entry-level choice.", "Fluval E Series": "Digital display shows actual water temperature. Easy to monitor.", "Sera Precision": "Accurate, shatterproof. Trusted for breeding setups.", "Aquael Leddy Slim": "Slim profile, fits most hoods. Good for fish-only tanks.", "Fluval Aquasky": "Bluetooth controllable. Useful if you want automated schedules.", "Generic clip-on LED": "Works for viewing. Not suitable for plants. Very affordable.", "Chihiros WRGB II": "Full spectrum, app-controlled. Popular in planted tank community.", "Twinstar": "Korean brand, excellent PAR output. Premium choice for planted tanks.", "Fluval Plant 3.0": "Bluetooth, sunrise/sunset modes. Good for medium planted tanks.", "Aquael Leddy Plant": "Affordable plant light. Good starting point for low-tech planted.", "Tetra APS": "Quiet for an air pump. Adjustable output.", "Aquael Oxyboost": "Compact and affordable. Does the job without much noise.", "Generic air pump + airstone": "Any will work. Prioritise noise level if near sleeping areas.", "Natural river gravel": "Free if sourced responsibly. Rinse very thoroughly before use.", "Unipac aquarium gravel": "Pre-washed, consistent sizing. Widely available.", "Any inert bagged gravel": "Check it is genuinely inert — some decorative gravels are coated.", "Pool filter sand": "Very affordable, widely available. Rinse thoroughly before use.", "Unipac natural sand": "Pre-washed, consistent grain size. Ready to use faster.", "CaribSea Super Naturals": "Fine grain, natural colour. Good quality but pricier.", "ADA Amazonia": "The benchmark. Excellent plant growth but expensive and acidic.", "Tropica Aquarium Soil": "Well-balanced. Less acidic than ADA. Good for most tropical plants.", "Sera Floredepot": "Mid-range option. Decent nutrient content. Less pH impact.", "Aquael Aqua Grunt": "Budget-friendly. Performance varies but adequate for hardy plants.", "Tropica tissue culture": "Pest and snail-egg free. Worth paying extra for a clean start.", "Aquael in-vitro plants": "Similar to Tropica. Healthy plants in sterile gel.", "Java fern (any source)": "Nearly indestructible. Attaches to hardscape, needs no soil.", "Anubias (any source)": "Extremely hardy. Slow-growing, low light, no special substrate needed.", "Seiryu stone": "Hard, angular, raises water hardness. Striking appearance.", "Dragon stone": "Lighter and more porous. Less hardness impact than Seiryu.", "Mopani driftwood": "Dense, sinks quickly. Releases tannins for weeks — soak or boil first.", "Spider wood": "Intricate branching structure. Lighter, may need weighing down initially.", "Lava rock": "Porous — good bacterial surface. Neutral effect on water chemistry.", "Dr. Tims One and Only": "Contains live nitrifying bacteria. Needs refrigeration. Most effective.", "Tetra SafeStart Plus": "Live bacteria, widely available. Refrigerate after opening.", "Seachem Stability": "Room temperature stable. Convenient but debated effectiveness.", "API Quick Start": "Easy to find. Results vary — treat as a supplement, not a guarantee.", "Eheim Slim Digital": "Accurate and easy to read. Slim enough to not be intrusive.", "Marina floating thermometer": "Simple and reliable. Cheap enough to keep a spare.", "Any digital stick-on": "Convenient but less accurate than floating types.", "API Freshwater Master Test Kit": "The standard recommendation. Covers all cycle parameters.", "Sera Aqua-Test Box": "European equivalent to API. Accurate, good shelf life.", "JBL ProAquaTest": "High quality. Slightly more expensive but very reliable."};
+
+
+/* ═══ EQUIPMENT DATA ═══ */
+var EQ={
+  'filter-sponge':{cat:'filtration',water:25,bio:35,env:0,live:5,human:12,sizes:['small','medium'],sizeWarn:['large'],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{small:'Ideal. Gentle flow suits small tanks.',medium:'Works well. Consider pairing two for better coverage.',large:'Insufficient alone. Use alongside a canister.'},
+    brands:{type:'generic',note:'Highly consistent regardless of brand. Any dual-sponge model works.',examples:['Hikari Bacto Surge','Aquael Fan Mini','Any dual-sponge (generic)']}},
+  'filter-hang':{cat:'filtration',water:30,bio:28,env:0,live:8,human:18,sizes:['small','medium'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{small:'Good choice. Look for adjustable flow.',medium:'Well suited.',large:'Too small alone. Pair with a canister.'},
+    brands:{type:'named',note:'Brand quality varies significantly. Seachem Tidal and AquaClear are widely trusted.',examples:['Seachem Tidal','AquaClear','Aquael Versamax','Fluval C Series']}},
+  'filter-canister':{cat:'filtration',water:35,bio:42,env:0,live:12,human:28,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{small:'Overkill. Strong flow stresses small fish. Use sponge or hang-on instead.',medium:'Good match especially for planted tanks.',large:'The right choice. Provides the capacity a large tank needs.'},
+    brands:{type:'named',note:'Eheim Classic is the benchmark for reliability. Fluval and Oase offer modern features.',examples:['Eheim Classic','Fluval 07 Series','Oase BioMaster','Aquael Ultramax']}},
+  'heater':{cat:'environment',water:5,bio:15,env:35,live:15,human:14,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Essential. Aim for 25-27C. Always pair with a separate thermometer.'},
+    brands:{type:'named',note:'Eheim Jager is widely trusted for accuracy. Always buy 1W per litre.',examples:['Eheim Jager','Aquael Gold Heater','Fluval E Series','Sera Precision']}},
+  'light-basic':{cat:'environment',water:0,bio:0,env:15,live:8,human:8,sizes:['small','medium','large'],sizeWarn:[],conflicts:['light-planted'],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Establishes a light rhythm. Use a timer for consistent 8-10 hour cycles.'},
+    brands:{type:'named',note:'For fish-only tanks, most decent LEDs work. Schedule consistency matters more than intensity.',examples:['Aquael Leddy Slim','Fluval Aquasky','Generic clip-on LED']}},
+  'light-planted':{cat:'environment',water:0,bio:0,env:25,live:10,human:22,sizes:['small','medium','large'],sizeWarn:[],conflicts:['light-basic'],requiresOne:null,warnWithout:['plants'],
+    sizeNote:{all:'High-output light without plants accelerates algae. Only add this if you plan to keep live plants.'},
+    brands:{type:'named',note:'Light intensity (PAR) matters for plants. Chihiros and Twinstar are popular in planted communities.',examples:['Chihiros WRGB II','Twinstar','Fluval Plant 3.0','Aquael Leddy Plant']}},
+  'airpump':{cat:'environment',water:10,bio:5,env:5,live:5,human:6,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Not essential with a strong filter. Useful in warm or heavily stocked tanks.'},
+    brands:{type:'generic',note:'Most air pumps are functionally similar. Consider noise level.',examples:['Tetra APS','Aquael Oxyboost','Generic air pump + airstone']}},
+  'sub-gravel':{cat:'substrate',water:5,bio:10,env:5,live:8,human:8,sizes:['small','medium','large'],sizeWarn:[],conflicts:['sub-sand','sub-soil'],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Safest first substrate. Does not affect water chemistry.'},
+    brands:{type:'generic',note:'Any inert aquarium gravel works. Avoid coloured gravel with paint coatings.',examples:['Natural river gravel','Unipac aquarium gravel','Any inert bagged gravel']}},
+  'sub-sand':{cat:'substrate',water:5,bio:8,env:8,live:10,human:12,sizes:['small','medium','large'],sizeWarn:[],conflicts:['sub-gravel','sub-soil'],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Suits species that sift or burrow. Needs occasional gentle stirring.'},
+    brands:{type:'generic',note:'Pool filter sand is widely used and inexpensive. Avoid beach sand.',examples:['Pool filter sand','Unipac natural sand','CaribSea Super Naturals']}},
+  'sub-soil':{cat:'substrate',water:5,bio:12,env:10,live:12,human:28,sizes:['small','medium','large'],sizeWarn:[],conflicts:['sub-gravel','sub-sand'],requiresOne:null,warnWithout:['light-planted'],
+    sizeNote:{all:'Commits you to a planted approach. Lowers pH. Initially clouds water.'},
+    brands:{type:'named',note:'ADA Amazonia is the benchmark. Tropica is widely available and performs well.',examples:['ADA Amazonia','Tropica Aquarium Soil','Sera Floredepot','Aquael Aqua Grunt']}},
+  'seed':{cat:'additions',water:0,bio:20,env:0,live:5,human:6,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:['filter-sponge','filter-hang','filter-canister'],warnWithout:null,
+    sizeNote:{all:'Needs a running filter to work. Bacteria must attach to media. Add after equipment is running.'},
+    brands:{type:'named',note:'Dr. Tims and Tetra SafeStart contain live bacteria. Seachem Stability is room temperature stable.',examples:['Dr. Tims One and Only','Tetra SafeStart Plus','Seachem Stability','API Quick Start']}},
+  'thermometer':{cat:'additions',water:0,bio:0,env:5,live:5,human:10,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Heater thermostats drift by several degrees. A thermometer tells you what is actually happening.'},
+    brands:{type:'named',note:'A basic digital thermometer is sufficient.',examples:['Eheim Slim Digital','Marina floating thermometer','Any digital stick-on']}},
+  'testkit':{cat:'additions',water:0,bio:0,env:0,live:8,human:16,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Without it, cycling is invisible. Liquid kits are more accurate than strips.'},
+    brands:{type:'named',note:'API Master Kit covers all parameters needed to follow a cycle and is widely available.',examples:['API Freshwater Master Test Kit','Sera Aqua-Test Box','JBL ProAquaTest']}},
+  'conditioner':{cat:'additions',water:8,bio:0,env:0,live:10,human:10,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Add to tap water before every water change. Neutralises chlorine and chloramine which kill bacteria and harm fish.'},
+    brands:{type:'named',note:'Seachem Prime is the most widely recommended — it also detoxifies ammonia temporarily. API Stress Coat adds aloe vera for fish slime coat.',examples:['Seachem Prime','API Stress Coat+','Tetra AquaSafe','Aquael Aqua Conditioner']}},
+  'ammonia-source':{cat:'additions',water:0,bio:18,env:0,live:5,human:8,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:['filter-sponge','filter-hang','filter-canister'],warnWithout:null,
+    sizeNote:{all:'For fishless cycling only. Bacteria need ammonia to grow. Without a source the cycle cannot begin.'},
+    brands:{type:'generic',note:'Dr. Tims Ammonium Chloride is purpose-made and accurately dosed. Pure unscented ammonia from hardware stores also works.',examples:['Dr. Tims Ammonium Chloride','Pure unscented ammonia (hardware store)','Pinch of fish food (slow release)']}},
+  'lid':{cat:'additions',water:0,bio:0,env:8,live:12,human:5,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'Many fish jump especially when stressed. A lid also slows evaporation and keeps dust out. Often overlooked in first setups.'},
+    brands:{type:'generic',note:'Most tanks come with a compatible lid. Custom-cut glass or acrylic lids are available for open-top tanks.',examples:['Branded lid matching your tank','Custom-cut glass lid','Acrylic cover panel']}},
+  'siphon':{cat:'additions',water:5,bio:0,env:0,live:8,human:14,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'The gravel vacuum removes waste that settles in substrate during water changes. Without it detritus accumulates and nitrate rises faster.'},
+    brands:{type:'named',note:'Python No Spill is popular for larger tanks and connects to a tap. For smaller tanks a basic hand-start siphon works well.',examples:['Python No Spill Clean and Fill','Fluval Edge Gravel Cleaner','Basic gravel vacuum siphon','Aquael Gravel Cleaner']}},
+  'timer':{cat:'additions',water:0,bio:0,env:12,live:10,human:14,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:['light-basic','light-planted'],
+    sizeNote:{all:'Fish and plants orient to consistent light cycles. Manual switching is unreliable. A timer ensures 8-10 hours daily without depending on your schedule.'},
+    brands:{type:'generic',note:'Any basic plug-in timer works. Smart plugs with app control are convenient if you already use them.',examples:['Basic analogue plug timer','Digital countdown timer','Smart plug (TP-Link Kasa etc)']}}
+};
+
+/* ═══ STATE ═══ */
+var active={}, tankSize='small', selectedBrands={}, insightTimer=null, needsRedraw=false;
+
+/* ═══ CANVAS ═══ */
+var cvs=document.getElementById('tank-canvas');
+var ctx=cvs ? cvs.getContext('2d') : null;
+var tick=0;
+
+function szCvs(){
+  var w=document.getElementById('tank-zone');
+  if(w&&cvs){cvs.width=w.offsetWidth;cvs.height=w.offsetHeight;}
+}
+
+function drawTank(){
+  if(!cvs||!ctx)return;
+  szCvs();
+  var W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);
+  tick++;
+  var sc=tankSize==='large'?.88:tankSize==='medium'?.82:.74;
+  var tw=W*sc,th=H*.74*sc,tx=(W-tw)/2,ty=(H-th)/2+10;
+  /* Background — visible dark teal, not black */
+  ctx.fillStyle='rgba(3,18,28,.95)';ctx.fillRect(0,0,W,H);
+  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister'];
+  var h=active['heater'],lb=active['light-basic'],lp=active['light-planted'];
+  var sg=active['sub-gravel']||active['sub-sand']||active['sub-soil'];
+  var ap=active['airpump'];
+  /* Tank outline always visible */
+  ctx.strokeStyle='rgba(61,214,232,.18)';ctx.lineWidth=1.5;rr(tx,ty,tw,th);ctx.stroke();
+  /* Empty state — show dim water + hint */
+  if(!f){
+    var emptyWg=ctx.createLinearGradient(tx,ty,tx,ty+th);
+    emptyWg.addColorStop(0,'rgba(5,35,52,.5)');
+    emptyWg.addColorStop(1,'rgba(2,15,24,.7)');
+    ctx.fillStyle=emptyWg;rr(tx,ty,tw,th);ctx.fill();
+    ctx.font='300 '+(W>500?'11':'9')+'px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(255,255,255,.18)';ctx.textAlign='center';
+    ctx.fillText('Add a filter to bring this tank to life',W/2,ty+th/2);
+    ctx.textAlign='left';
+    return;
+  }
+  /* Water — visibly blue-green */
+  var cl=.72+(h?.12:0)+(sg?.06:0);
+  var wg=ctx.createLinearGradient(tx,ty,tx,ty+th);
+  wg.addColorStop(0,'rgba(8,62,95,'+(cl*.72).toFixed(2)+')');
+  wg.addColorStop(.5,'rgba(5,38,60,'+(cl*.85).toFixed(2)+')');
+  wg.addColorStop(1,'rgba(3,20,32,'+(cl*.9).toFixed(2)+')');
+  ctx.fillStyle=wg;rr(tx,ty,tw,th);ctx.fill();
+  /* Light beam */
+  if(lb||lp){
+    var lc=lp?'rgba(255,235,150,':'rgba(180,220,255,';
+    var li=lp?.09:.065;
+    var lg=ctx.createLinearGradient(tx,ty,tx,ty+th*.5);
+    lg.addColorStop(0,lc+li+')');lg.addColorStop(1,'transparent');
+    ctx.fillStyle=lg;rr(tx,ty,tw,th*.5);ctx.fill();
+    /* Caustics */
+    ctx.save();ctx.globalAlpha=.055;ctx.strokeStyle='rgba(255,255,255,1)';ctx.lineWidth=1.2;
+    for(var i=0;i<3;i++){
+      var rx=tx+tw*(.15+i*.28),ry=ty+8+Math.sin(tick*.02+i)*4,rw=14+Math.sin(tick*.03+i*1.4)*4;
+      ctx.beginPath();ctx.ellipse(rx,ry,rw,3,0,0,Math.PI*2);ctx.stroke();
+    }
+    ctx.restore();
+  }
+  /* Air bubbles */
+  if(ap){
+    ctx.save();ctx.globalAlpha=.32;
+    for(var b=0;b<4;b++){
+      var bx=tx+tw*.1+Math.sin(b*2)*6,by=ty+th-16-((tick*.5+b*18)%(th-24));
+      ctx.beginPath();ctx.arc(bx,by,1.6+b*.3,0,Math.PI*2);
+      ctx.strokeStyle='rgba(200,235,255,.7)';ctx.lineWidth=.7;ctx.stroke();
+    }
+    ctx.restore();
+  }
+  if(sg){
+    var subH=th*.09;
+    var sc2=active['sub-soil']?'rgba(65,46,20,.95)':active['sub-sand']?'rgba(185,162,95,.55)':'rgba(75,58,32,.88)';
+    ctx.fillStyle=sc2;ctx.fillRect(tx,ty+th-subH,tw,subH);
+    /* Texture */
+    ctx.save();ctx.globalAlpha=active['sub-sand']?.5:.35;
+    var dc=active['sub-soil']?'rgba(90,62,25,1)':active['sub-sand']?'rgba(215,190,120,1)':'rgba(100,78,42,1)';
+    for(var d=0;d<32;d++){
+      var dx=tx+(d/32)*tw+Math.sin(d*1.8)*6,dy=ty+th-subH*.6+Math.cos(d*2.4)*(subH*.25);
+      ctx.beginPath();ctx.arc(dx,dy,1.2,0,Math.PI*2);ctx.fillStyle=dc;ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  var fx=tx+tw*.035,fy=ty+th*.12,fh2=th*.6,fw=active['filter-canister']?16:active['filter-hang']?12:9;
+  ctx.fillStyle='rgba(40,70,100,.75)';ctx.fillRect(fx-fw/2,fy,fw,fh2);
+  ctx.strokeStyle='rgba(61,214,232,.35)';ctx.lineWidth=1;ctx.strokeRect(fx-fw/2,fy,fw,fh2);
+  ctx.save();ctx.globalAlpha=.45;
+  for(var fl=0;fl<3;fl++){var fy3=fy+((tick*.4+fl*12)%fh2);ctx.beginPath();ctx.arc(fx,fy3,1.5,0,Math.PI*2);ctx.fillStyle='rgba(61,214,232,.9)';ctx.fill();}
+  ctx.restore();
+  if(active['heater']){
+    var hx=tx+tw*.935,hy=ty+th*.18;
+    ctx.fillStyle='rgba(76,36,16,.6)';ctx.fillRect(hx-3.5,hy,7,th*.5);
+    var hg=ctx.createLinearGradient(hx,hy,hx,hy+th*.5);
+    hg.addColorStop(0,'rgba(255,90,25,.0)');hg.addColorStop(.5,'rgba(255,90,25,.12)');hg.addColorStop(1,'rgba(255,90,25,.0)');
+    ctx.fillStyle=hg;ctx.fillRect(hx-7,hy,14,th*.5);
+  }
+  ctx.strokeStyle='rgba(139,189,210,.25)';ctx.lineWidth=1.5;rr(tx,ty,tw,th);ctx.stroke();
+  ctx.strokeStyle='rgba(61,214,232,.2)';ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(tx+4,ty);ctx.lineTo(tx+tw-4,ty);ctx.stroke();
+  var slbl=tankSize==='large'?'150L+':tankSize==='medium'?'60-120L':'20-40L';
+  ctx.font='300 9px DM Sans,system-ui,sans-serif';ctx.fillStyle='rgba(255,255,255,.1)';ctx.textAlign='right';
+  ctx.fillText(slbl,tx+tw-6,ty+th-6);ctx.textAlign='left';
+}
+
+function rr(x,y,w,h){
+  ctx.beginPath();ctx.moveTo(x+3,y);ctx.lineTo(x+w-3,y);ctx.quadraticCurveTo(x+w,y,x+w,y+3);
+  ctx.lineTo(x+w,y+h-3);ctx.quadraticCurveTo(x+w,y+h,x+w-3,y+h);
+  ctx.lineTo(x+3,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-3);
+  ctx.lineTo(x,y+3);ctx.quadraticCurveTo(x,y,x+3,y);ctx.closePath();
+}
+
+function redraw(){ drawTank(); needsRedraw=false; }
+function scheduleRedraw(){ if(!needsRedraw){needsRedraw=true;requestAnimationFrame(redraw);} }
+
+
+/* ═══ RHYTHMS ═══ */
+function calcRhythms(){
+  var s={water:0,bio:0,env:0,live:0,human:0};
+  var b=tankSize==='large'?18:tankSize==='medium'?8:0;
+  Object.keys(active).forEach(function(k){
+    var e=EQ[k];s.water+=e.water;s.bio+=e.bio;s.env+=e.env;s.live+=e.live;s.human+=e.human;
+  });
+  s.water=Math.min(100,s.water+b*.4);s.bio=Math.min(100,s.bio+b*.3);
+  s.env=Math.min(100,s.env+b*.2);s.live=Math.min(100,s.live+b*.3);s.human=Math.min(100,s.human);
+  return s;
+}
+
+function updateRhythms(){
+  var s=calcRhythms();
+  var colors={water:'rgba(61,214,232,',bio:'rgba(100,200,82,',env:'rgba(220,160,60,',live:'rgba(180,120,200,',human:'rgba(139,189,210,'};
+  ['water','bio','env','live','human'].forEach(function(k){
+    var el=document.getElementById('rf-'+k);
+    var dot=document.getElementById('dot-'+k);
+    if(el)el.style.width=s[k]+'%';
+    if(dot){
+      var a=.15+s[k]/100*.7;
+      dot.style.background=colors[k]+a.toFixed(2)+')';
+      dot.style.boxShadow=s[k]>60?'0 0 5px '+colors[k]+'0.4)':'none';
+    }
+  });
+  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister'];
+  var ready=0;
+  var checks={filter:f,heater:active['heater'],light:active['light-basic']||active['light-planted'],sub:active['sub-gravel']||active['sub-sand']||active['sub-soil'],test:active['testkit']};
+  Object.keys(checks).forEach(function(k){
+    var el=document.getElementById('r-'+k);
+    if(checks[k]){ready++;if(el)el.classList.add('done');}
+    else{if(el)el.classList.remove('done');}
+  });
+  var badge=document.getElementById('readiness-badge');
+  var lbl=document.getElementById('readiness-lbl');
+  if(badge)badge.innerHTML=ready+'<span style="font-size:.5rem;opacity:.35">/5</span>';
+  if(badge)badge.style.color=ready>=4?'rgba(61,214,232,.8)':ready>=2?'rgba(220,160,60,.6)':'rgba(255,255,255,.22)';
+  var lbls=['essentials missing','getting started','foundation forming','nearly there','ready to cycle'];
+  if(lbl)lbl.textContent=lbls[ready]||'ready to cycle';
+}
+
+/* ═══ INSIGHT ═══ */
+function setStatus(txt,color){
+  var el=document.getElementById('status-txt');
+  var dot=document.getElementById('status-dot');
+  if(!el)return;
+  el.classList.add('fade');
+  clearTimeout(insightTimer);
+  insightTimer=setTimeout(function(){el.textContent=txt;if(dot)dot.style.background=color||'rgba(61,214,232,.5)';el.classList.remove('fade');},280);
+}
+
+function getSystemInsight(){
+  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister'];
+  var h=active['heater'],lp=active['light-planted'],sg=active['sub-gravel']||active['sub-sand']||active['sub-soil'];
+  var tk=active['testkit'],sd=active['seed'],soil=active['sub-soil'];
+  var n=Object.keys(active).length;
+  if(n===0)return{t:'Add equipment from the rack to begin building your system.',c:'rgba(61,214,232,.4)'};
+  if(lp)return{t:'Plant-grade light selected. This produces more light than most fish need — consider Basic LED unless you plan a planted setup.',c:'rgba(220,160,40,.5)'};
+  if(soil&&!lp)return{t:'Aqua soil without plant-grade light is a mismatch. The nutrients will fuel algae instead of plants.',c:'rgba(220,160,40,.6)'};
+  if(sd&&!f)return{t:'Bacteria starter without a filter has nowhere to establish. Add a filter first.',c:'rgba(220,160,40,.6)'};
+  if(active['ammonia-source']&&!f)return{t:'Ammonia source without a filter — bacteria have nowhere to colonise. Add filtration first.',c:'rgba(220,160,40,.6)'};
+  if(f&&h&&sg&&tk&&sd)return{t:'A well-prepared starting system. Expect four to six weeks before parameters stabilise.',c:'rgba(80,190,100,.6)'};
+  if(f&&h&&sg&&tk)return{t:'Solid foundation. Ready to begin cycling. Four to eight weeks — the test kit will make it readable.',c:'rgba(80,190,100,.6)'};
+  if(f&&h&&sg&&!tk)return{t:'Good setup. No test kit yet. Without it, cycling is invisible.',c:'rgba(220,160,40,.6)'};
+  if(!f)return{t:'No filter yet. A filter is the most important piece — it is where your bacterial colony lives.',c:'rgba(200,70,50,.5)'};
+  if(f&&!h)return{t:'Filter running. Without a heater, bacteria work noticeably slower in cool rooms.',c:'rgba(220,160,40,.6)'};
+  return{t:'Keep exploring. Each addition changes what the system can do.',c:'rgba(61,214,232,.4)'};
+}
+
+/* ═══ CONFLICT CHECK ═══ */
+function getStatus(id){
+  var eq=EQ[id];
+  for(var i=0;i<eq.conflicts.length;i++){if(active[eq.conflicts[i]])return'conflict';}
+  if(eq.sizeWarn&&eq.sizeWarn.indexOf(tankSize)>=0)return'sizeWarn';
+  if(eq.requiresOne){var ok=false;eq.requiresOne.forEach(function(r){if(active[r])ok=true;});if(!ok&&!active[id])return'needsFirst';}
+  if(eq.warnWithout&&active[id]){var miss=eq.warnWithout.filter(function(w){return!active[w];});if(miss.length===eq.warnWithout.length)return'warnState';}
+  return'ok';
+}
+
+function updateRackStates(){
+  document.querySelectorAll('.eq-item').forEach(function(item){
+    var id=item.dataset.eq,s=getStatus(id);
+    item.classList.remove('disabled','warn-state','size-warn');
+    if(!active[id]){
+      if(s==='conflict'||s==='needsFirst')item.classList.add('disabled');
+      else if(s==='sizeWarn')item.classList.add('size-warn');
+    } else {
+      if(s==='warnState')item.classList.add('warn-state');
+    }
+  });
+}
+
+/* ═══ DROPDOWN ═══ */
+function closeAllDropdowns(){
+  document.querySelectorAll('.eq-dropdown.open').forEach(function(d){d.classList.remove('open');d.innerHTML='';});
+}
+
+function openDropdown(id){
+  var dd=document.querySelector('.eq-dropdown[data-for="'+id+'"]');
+  if(!dd)return;
+  if(dd.classList.contains('open')){closeAllDropdowns();return;}
+  closeAllDropdowns();
+  var eq=EQ[id],examples=eq.brands.examples||[],chosen=selectedBrands[id]||null;
+  dd.innerHTML='';
+  /* Header */
+  var hdr=document.createElement('div');hdr.className='dq-header';
+  var lbl=document.createElement('span');lbl.className='dq-type';lbl.textContent=eq.brands.type==='named'?'Named brands':'Generic options';
+  var x=document.createElement('button');x.className='dq-close';x.innerHTML='&times;';
+  x.onclick=function(e){e.stopPropagation();closeAllDropdowns();};
+  hdr.appendChild(lbl);hdr.appendChild(x);dd.appendChild(hdr);
+  /* Note */
+  var nt=document.createElement('div');nt.className='dq-note';
+  var ntxt=eq.brands.note;nt.textContent=ntxt.length>110?ntxt.slice(0,108)+'\u2026':ntxt;
+  dd.appendChild(nt);
+  /* Items */
+  var wrap=document.createElement('div');wrap.className='dq-items';
+  var pick=chosen;
+  examples.forEach(function(ex){
+    var gen=/any|generic|pool filter|natural river/i.test(ex);
+    var row=document.createElement('div');row.className='dq-item '+(gen?'generic':'named');
+    if(pick===ex)row.classList.add('chosen');
+    var nm=document.createElement('div');nm.className='dq-item-name';nm.textContent=ex;
+    var bnote=document.createElement('div');bnote.className='dq-item-note';bnote.textContent=BRAND_NOTES[ex]||'';
+    row.appendChild(nm);row.appendChild(bnote);
+    row.onclick=function(e){
+      e.stopPropagation();
+      if(pick===ex){pick=null;row.classList.remove('chosen');}
+      else{pick=ex;wrap.querySelectorAll('.dq-item').forEach(function(r){r.classList.remove('chosen');});row.classList.add('chosen');}
+      var ub=dd.querySelector('.dq-btn-use');
+      if(ub){if(pick){ub.classList.add('ready');ub.textContent='Use '+pick.split(' ')[0]+' \u2192';}else{ub.classList.remove('ready');ub.textContent='Select one above';}}
+    };
+    wrap.appendChild(row);
+  });
+  dd.appendChild(wrap);
+  /* Actions */
+  var acts=document.createElement('div');acts.className='dq-actions';
+  var ub=document.createElement('button');ub.className='dq-btn-use';ub.textContent='Select one above';
+  if(chosen){ub.classList.add('ready');ub.textContent='Use '+chosen.split(' ')[0]+' \u2192';}
+  ub.onclick=function(e){
+    e.stopPropagation();if(!pick)return;
+    selectedBrands[id]=pick;updateEqChoice(id,pick);closeAllDropdowns();
+  };
+  var sk=document.createElement('button');sk.className='dq-btn-skip';sk.textContent='Skip for now';
+  sk.onclick=function(e){e.stopPropagation();closeAllDropdowns();};
+  acts.appendChild(ub);acts.appendChild(sk);dd.appendChild(acts);
+  dd.classList.add('open');
+}
+
+function updateEqChoice(id,name){
+  var item=document.querySelector('[data-eq="'+id+'"]');
+  if(!item)return;
+  var c=item.querySelector('.eq-choice');
+  if(!c)return;
+  if(name){c.textContent=name;c.style.display='block';}
+  else{c.textContent='';c.style.display='none';}
+}
+
+/* ═══ EVENTS ═══ */
+document.querySelectorAll('.eq-item').forEach(function(item){
+  item.addEventListener('click',function(e){
+    e.stopPropagation();
+    var id=item.dataset.eq,eq=EQ[id];
+    if(item.classList.contains('disabled'))return;
+    /* mutual exclusion */
+    if(eq.cat==='filtration'){['filter-sponge','filter-hang','filter-canister'].forEach(function(f){
+      if(f!==id&&active[f]){delete active[f];var el=document.querySelector('[data-eq="'+f+'"]');if(el)el.classList.remove('active');}
+    });}
+    if(eq.cat==='substrate'){['sub-gravel','sub-sand','sub-soil'].forEach(function(s){
+      if(s!==id&&active[s]){delete active[s];var el=document.querySelector('[data-eq="'+s+'"]');if(el)el.classList.remove('active');}
+    });}
+    if(id==='light-planted'&&active['light-basic']){delete active['light-basic'];var el=document.querySelector('[data-eq="light-basic"]');if(el)el.classList.remove('active');}
+    if(id==='light-basic'&&active['light-planted']){delete active['light-planted'];var el=document.querySelector('[data-eq="light-planted"]');if(el)el.classList.remove('active');}
+    if(active[id]){
+      delete active[id];item.classList.remove('active');closeAllDropdowns();
+    } else {
+      active[id]=true;item.classList.add('active');
+      openDropdown(id);
+      var sn=eq.sizeNote&&(eq.sizeNote[tankSize]||eq.sizeNote['all']);
+      setStatus(sn||'Added.',null);
+      setTimeout(function(){var ins=getSystemInsight();setStatus(ins.t,ins.c);},3000);
+    }
+    updateRackStates();updateRhythms();scheduleRedraw();
+  });
+});
+
+document.querySelectorAll('.sz-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.sz-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');tankSize=btn.dataset.size;
+    updateRackStates();updateRhythms();scheduleRedraw();
+    var ins=getSystemInsight();setStatus(ins.t,ins.c);
+  });
+});
+
+document.getElementById('btn-reset').addEventListener('click',function(){
+  active={};selectedBrands={};
+  document.querySelectorAll('.eq-item').forEach(function(i){
+    i.classList.remove('active','warn-state');
+    var c=i.querySelector('.eq-choice');if(c){c.textContent='';c.style.display='none';}
+  });
+  closeAllDropdowns();
+  updateRackStates();updateRhythms();scheduleRedraw();
+  setStatus('Tank reset. Start fresh — or try a different combination.',null);
+});
+
+/* Close dropdowns on outside click */
+document.addEventListener('click',function(){closeAllDropdowns();});
+
+window.addEventListener('resize',function(){scheduleRedraw();});
+
+/* Briefing */
+document.querySelector('.brief-btn').addEventListener('click',function(){
+  var br=document.getElementById('briefing');
+  br.style.opacity='0';
+  setTimeout(function(){br.style.display='none';szCvs();drawTank();updateRhythms();updateRackStates();scheduleRedraw();},520);
+});
+
+
+</script>
+</body>
+  </html>
