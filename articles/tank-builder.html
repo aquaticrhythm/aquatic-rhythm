@@ -319,9 +319,16 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <div class="rack-grid">
       <div class="rack-cat">Filtration</div>
       <div class="eq-item" data-eq="filter-sponge"><span class="eq-icon">&#x1F9FD;</span><div class="eq-info"><span class="eq-name">Sponge Filter</span><span class="eq-role">Where bacteria live</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="filter-overflow"><span class="eq-icon">&#x1F4A7;</span><div class="eq-info"><span class="eq-name">Overflow Filter</span><span class="eq-role">Trickle/wet-dry, high O₂</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="powerhead"><span class="eq-icon">&#x26A1;</span><div class="eq-info"><span class="eq-name">Powerhead</span><span class="eq-role">Return pump / circulation</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
       <div class="eq-item" data-eq="filter-hang"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Hang-on Filter</span><span class="eq-role">Flow + mechanical</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
       <div class="eq-item" data-eq="filter-canister"><span class="eq-icon">&#x1F6E2;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Canister Filter</span><span class="eq-role">High capacity</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="filter-internal"><span class="eq-icon">&#x1F4E6;</span><div class="eq-info"><span class="eq-name">Internal Filter</span><span class="eq-role">Submersible, compact</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="uv-sterilizer"><span class="eq-icon">&#x1F7E3;</span><div class="eq-info"><span class="eq-name">UV Sterilizer</span><span class="eq-role">Clarity + pathogen control</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-item" data-eq="wavemaker"><span class="eq-icon">&#x1F30A;</span><div class="eq-info"><span class="eq-name">Wavemaker</span><span class="eq-role">Circulation + flow</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-dropdown" data-for="filter-overflow"></div><div class="eq-dropdown" data-for="powerhead"></div>
       <div class="eq-dropdown" data-for="filter-sponge"></div><div class="eq-dropdown" data-for="filter-hang"></div><div class="eq-dropdown" data-for="filter-canister"></div>
+      <div class="eq-dropdown" data-for="filter-internal"></div><div class="eq-dropdown" data-for="uv-sterilizer"></div><div class="eq-dropdown" data-for="wavemaker"></div>
       <div class="rack-cat">Cooling</div>
       <div class="eq-item" data-eq="chiller"><span class="eq-icon">&#x2744;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Aquarium Chiller</span><span class="eq-role">Tropical climate control</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
       <div class="eq-item" data-eq="cooling-fan"><span class="eq-icon">&#x1F4A8;</span><div class="eq-info"><span class="eq-name">Cooling Fan</span><span class="eq-role">Evaporative cooling</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
@@ -347,7 +354,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <div class="eq-item" data-eq="seed"><span class="eq-icon">&#x1F9EA;</span><div class="eq-info"><span class="eq-name">Bacteria Starter</span><span class="eq-role">Cycle head-start</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
       <div class="eq-item" data-eq="thermometer"><span class="eq-icon">&#x1F321;&#xFE0F;</span><div class="eq-info"><span class="eq-name">Thermometer</span><span class="eq-role">Verify temperature</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
       <div class="eq-item" data-eq="testkit"><span class="eq-icon">&#x1F52C;</span><div class="eq-info"><span class="eq-name">Test Kit</span><span class="eq-role">Read the cycle</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
-      <div class="eq-dropdown" data-for="conditioner"></div><div class="eq-dropdown" data-for="ammonia-source"></div><div class="eq-dropdown" data-for="lid"></div><div class="eq-dropdown" data-for="siphon"></div><div class="eq-dropdown" data-for="timer"></div><div class="eq-dropdown" data-for="seed"></div><div class="eq-dropdown" data-for="thermometer"></div><div class="eq-dropdown" data-for="testkit"></div>
+      <div class="eq-item" data-eq="ato"><span class="eq-icon">&#x1F4A7;</span><div class="eq-info"><span class="eq-name">Auto Top-Off</span><span class="eq-role">Replaces evaporated water</span><span class="eq-choice"></span></div><div class="eq-dot"></div></div>
+      <div class="eq-dropdown" data-for="conditioner"></div><div class="eq-dropdown" data-for="ammonia-source"></div><div class="eq-dropdown" data-for="lid"></div><div class="eq-dropdown" data-for="siphon"></div><div class="eq-dropdown" data-for="ato"></div><div class="eq-dropdown" data-for="timer"></div><div class="eq-dropdown" data-for="seed"></div><div class="eq-dropdown" data-for="thermometer"></div><div class="eq-dropdown" data-for="testkit"></div>
     </div>
   </div>
 </div>
@@ -392,7 +400,18 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
   "IceProbe (nano)": {"summary": "Thermoelectric Peltier chiller for nano tanks under 30L. Silent and compact.", "pros": ["Silent operation", "Compact for nano tanks", "Simple and reliable"], "cons": ["Only for tanks under 25-30L", "Less efficient than compressor chillers"], "best_for": "Nano tanks in hot climates", "tier": "Mid", "tier_note": "The only practical chiller for very small tanks.", "avoid_if": "Your tank is larger than 30L"},
   "Aquacool fan": {"summary": "Clip-on aquarium fan for evaporative cooling. Popular in Southeast Asia for small tanks.", "pros": ["Inexpensive", "Simple setup", "2-4C drop possible"], "cons": ["High evaporation — daily top-ups needed", "Cannot replace chiller in extreme heat"], "best_for": "Small tanks in moderately warm climates", "tier": "Budget", "tier_note": "Cheapest cooling option. Works if ambient is not extreme.", "avoid_if": "Ambient temperature exceeds 32C regularly"},
   "Generic clip-on aquarium fan": {"summary": "Unbranded clip-on fan. Quality and noise completely unpredictable between units.", "pros": ["Very cheap", "Widely available"], "cons": ["Quality unpredictable", "May fail quickly"], "best_for": "Temporary or backup cooling", "tier": "Budget", "tier_note": "Buy named brands if possible.", "avoid_if": "Noise is a concern"},
-  "DIY PC fan mount": {"summary": "Computer case fan modified to blow across water surface. Effective, inexpensive, and customisable.", "pros": ["Very cheap", "Quiet PC fans available", "Customisable airflow"], "cons": ["Requires DIY assembly", "High evaporation rate"], "best_for": "Hobbyists comfortable with DIY wanting budget cooling", "tier": "Budget", "tier_note": "Excellent DIY option. Research 12V power supply options.", "avoid_if": "You want plug-and-play simplicity"}};
+  "DIY PC fan mount": {"summary": "Computer case fan modified to blow across water surface. Effective, inexpensive, and customisable.", "pros": ["Very cheap", "Quiet PC fans available", "Customisable airflow"], "cons": ["Requires DIY assembly", "High evaporation rate"], "best_for": "Hobbyists comfortable with DIY wanting budget cooling", "tier": "Budget", "tier_note": "Excellent DIY option. Research 12V power supply options.", "avoid_if": "You want plug-and-play simplicity"},
+  "Aquael Turbo": {"summary": "A reliable internal filter from Aquael. Widely used as a beginner filter across Asia and Europe. Compact, submersible, and easy to clean.", "pros": ["Very beginner-friendly", "Compact and submersible", "Comes with media included", "Widely available"], "cons": ["Limited media capacity compared to external filters", "Motor can be noisy over time"], "best_for": "Small to medium tanks as a primary or supplementary filter", "tier": "Budget", "tier_note": "One of the best value internal filters available.", "avoid_if": "You need high filtration capacity for a heavily stocked tank", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Fluval U series": {"summary": "A premium internal filter with multi-stage filtration and adjustable flow. Versatile and quiet.", "pros": ["Multi-stage filtration", "Adjustable flow direction", "Quiet motor", "Good media capacity for an internal"], "cons": ["More expensive than basic internals", "Takes up in-tank space"], "best_for": "Small to medium tanks where external filtration is not practical", "tier": "Mid", "tier_note": "Worth the premium for better media options and quieter operation.", "avoid_if": "You can fit a hang-on or canister — external filters outperform internals at similar cost", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Eheim Pickup": {"summary": "A compact internal filter from Eheim. Reliable German engineering in a small submersible format.", "pros": ["Reliable Eheim motor", "Compact size", "Easy to clean", "Quiet"], "cons": ["Small media volume", "Not suitable for larger tanks"], "best_for": "Small tanks and as a supplementary filter in medium tanks", "tier": "Budget-Mid", "tier_note": "Eheim reliability in a small package.", "avoid_if": "You need significant filtration capacity", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Aquael Turbo UV": {"summary": "An internal filter with built-in UV sterilizer from Aquael. Convenient two-in-one for small to medium tanks.", "pros": ["Combines filtration and UV in one unit", "Simple setup", "Good value two-in-one"], "cons": ["UV lamp needs periodic replacement", "Less powerful than dedicated UV sterilizers"], "best_for": "Small tanks where simplicity matters", "tier": "Mid", "tier_note": "Convenient but the UV component is less powerful than a dedicated unit.", "avoid_if": "You need serious UV sterilization capacity", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Fluval UVC Clarifier": {"summary": "A dedicated in-line UV clarifier from Fluval. Designed to connect to existing filter output tubing.", "pros": ["In-line design — works with existing canister filter", "Good UV output", "Easy lamp replacement"], "cons": ["Requires canister filter to connect to", "Lamp needs annual replacement"], "best_for": "Canister filter setups wanting UV clarification", "tier": "Mid", "tier_note": "A practical add-on for anyone already running a canister.", "avoid_if": "You do not have an external filter — a submersible UV is simpler", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Jebao SLW series": {"summary": "An affordable wavemaker from Chinese brand Jebao. Widely used in both reef and planted tanks for its adjustable flow and low price.", "pros": ["Very affordable", "Adjustable flow rate and direction", "Controller included on some models", "Widely available online"], "cons": ["Quality control inconsistent", "May require replacement more frequently than premium brands"], "best_for": "Medium to large tanks needing circulation on a budget", "tier": "Budget-Mid", "tier_note": "Excellent value when it works well. Buy a spare given the variable quality.", "avoid_if": "You want guaranteed long-term reliability", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Tunze Turbelle": {"summary": "A premium German wavemaker known for quiet operation, reliability, and compact design. The benchmark in circulation pumps.", "pros": ["Near-silent operation", "Exceptional reliability", "Compact and magnetically mounted", "Smooth variable flow"], "cons": ["Most expensive wavemaker option", "May be overkill for basic setups"], "best_for": "Medium to large tanks where quiet reliable flow matters", "tier": "Premium", "tier_note": "Worth the cost for a quiet pump that lasts many years.", "avoid_if": "Budget is tight — Jebao offers adequate flow at a fraction of the cost", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Hydor Koralia": {"summary": "An Italian wavemaker with magnetic mounting and quiet operation. Popular for both freshwater and reef tanks.", "pros": ["Quiet", "Magnetic mount — easy to reposition", "Reliable Italian build quality"], "cons": ["Less adjustable than Jebao or Tunze", "Older design compared to modern alternatives"], "best_for": "Medium tanks needing quiet supplementary flow", "tier": "Mid", "tier_note": "Good quality at a fair price. Widely trusted.", "avoid_if": "You need fine-tuned flow control", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "AutoAqua Smart ATO": {"summary": "A popular optical sensor ATO system. Reliable, compact, and widely used in both reef and freshwater tanks.", "pros": ["Optical sensor — no moving parts to fail", "Compact design", "Reliable long-term", "Easy to set up"], "cons": ["Requires a reservoir container", "Optical sensor needs occasional cleaning"], "best_for": "Any tank with significant evaporation — especially with chiller or fan", "tier": "Mid", "tier_note": "The most recommended ATO for hobbyists who want reliability without complexity.", "avoid_if": "You only lose a small amount of water daily — manual top-up may be adequate", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Tunze Osmolator": {"summary": "A premium ATO system from Tunze with both optical and float backup sensors. Used in demanding reef and planted tank setups.", "pros": ["Dual sensor system — very reliable", "Precise water level control", "German engineering longevity"], "cons": ["Most expensive ATO option", "More setup than simpler systems"], "best_for": "Serious hobbyists who want the most reliable ATO available", "tier": "Premium", "tier_note": "The benchmark ATO. Only necessary for setups where water level precision is critical.", "avoid_if": "Budget is a concern — AutoAqua Smart ATO performs similarly for less", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."},
+  "Generic float valve ATO": {"summary": "A simple mechanical float valve that allows water to flow from a reservoir when level drops. No electronics, no sensors.", "pros": ["Very cheap", "No electronics to fail", "Completely passive operation"], "cons": ["Less precise than electronic ATOs", "Float can stick — requires periodic checking", "No alarm or shutoff if reservoir runs empty"], "best_for": "Budget setups where any evaporation compensation is better than none", "tier": "Budget", "tier_note": "Check it weekly — float valves can stick and cause overflow.", "avoid_if": "You need reliable precise water level control", "disclaimer": "Brands mentioned are examples. Availability and pricing vary by region."}};
 
 
 
@@ -405,9 +424,27 @@ var BRAND_NOTES={"Hikari Bacto Surge": "Reliable dual-sponge. Good biological su
 
 /* ═══ EQUIPMENT DATA ═══ */
 var EQ={
+  'filter-internal':{cat:'filtration',water:22,bio:25,env:0,live:6,human:14,sizes:['small','medium'],sizeWarn:['large'],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{small:'Good fit. Submersible and hidden — unobtrusive in small tanks.',medium:'Adequate for a lightly stocked medium tank. Consider pairing with a sponge for more bio media.',large:'Underpowered for large tanks. Use canister or HOB instead.'},
+    brands:{type:'named',note:'Internal filters are fully submersible and very beginner-friendly. They combine mechanical and biological filtration in one compact unit.',examples:['Aquael Turbo','Fluval U series','Eheim Pickup','Tetra IN series','Sunsun HJ series']}},
+  'uv-sterilizer':{cat:'filtration',water:12,bio:0,env:8,live:12,human:10,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:['filter-sponge','filter-hang','filter-canister','filter-internal'],warnWithout:null,
+    sizeNote:{all:'UV sterilizers kill free-floating algae, bacteria, and parasites. Only effective when water passes through slowly — match flow rate to sterilizer rating.'},
+    brands:{type:'named',note:'UV sterilizers are supplementary — not a replacement for biological filtration. Flow rate through the UV unit is critical; too fast reduces effectiveness.',examples:['Aquael Turbo UV','Sunsun UV sterilizer','Fluval UVC Clarifier','SunSun JUP series','Tetra UV']}},
+  'wavemaker':{cat:'filtration',water:14,bio:8,env:5,live:8,human:6,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{small:'Creates too much turbulence for small tanks. Not recommended below 60L.',medium:'Useful for improving circulation in medium tanks — helps distribute heat and oxygen.',large:'Often essential in large tanks to eliminate dead spots where detritus accumulates.'},
+    brands:{type:'named',note:'Wavemakers improve circulation and oxygenation. Adjustable flow is important — you want movement without stressing fish.',examples:['Jebao SLW series','Aquael Circulator','Tunze Turbelle','Hydor Koralia','Ecotech Vortech']}},
+  'ato':{cat:'additions',water:6,bio:0,env:8,live:6,human:18,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:['chiller','cooling-fan'],warnWithout:['chiller','cooling-fan'],
+    sizeNote:{all:'Auto top-off devices automatically replace evaporated water. Essential if you use a chiller or cooling fan — evaporation in hot climates can drop water level significantly within hours.'},
+    brands:{type:'named',note:'ATO systems use a float switch or optical sensor to detect water level and pump from a reservoir automatically. Simple and essential for tanks with high evaporation.',examples:['Tunze Osmolator','AutoAqua Smart ATO','Innovative Marine Desktop ATO','Kalkwasser ATO','Generic float valve ATO']}},
   'filter-sponge':{cat:'filtration',water:25,bio:35,env:0,live:5,human:12,sizes:['small','medium'],sizeWarn:['large'],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{small:'Ideal. Gentle flow suits small tanks.',medium:'Works well. Consider pairing two for better coverage.',large:'Insufficient alone. Use alongside a canister.'},
     brands:{type:'generic',note:'Highly consistent regardless of brand. Any dual-sponge model works.',examples:['Hikari Bacto Surge','Aquael Fan Mini','Any dual-sponge (generic)']}},
+  'filter-overflow':{cat:'filtration',water:32,bio:38,env:0,live:10,human:24,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:['powerhead'],warnWithout:['powerhead'],
+    sizeNote:{small:'Overflow filters are designed for medium and large tanks. Too much flow for small setups.',medium:'Good match for medium tanks with livestock. Excellent oxygenation through trickle.',large:'Excellent choice for large tanks. High bio capacity and oxygen exchange.'},
+    brands:{type:'named',note:'Overflow boxes or built-in overflow sumps sit above or beside the tank. Water drains by gravity into a filter box, then a powerhead or return pump pushes it back. Very popular in Asia for cichlid, koi, and planted tanks.',examples:['Aquael Pat series','Aquael Ultramax overflow','Resun overflow filter','Generic trickle/wet-dry box','Custom sump with return pump']}},
+  'powerhead':{cat:'filtration',water:12,bio:5,env:4,live:4,human:6,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+    sizeNote:{all:'A submersible pump that moves water. Used to drive overflow filters, power undergravel filters, or boost circulation. Essential pairing for overflow setups.'},
+    brands:{type:'named',note:'Match powerhead flow rate to filter capacity. Too strong and water does not contact media long enough. Too weak and filtration is ineffective.',examples:['Aquael Powerhead','Jebao DC pump','Eheim compact pump','Resun SP series','Generic submersible pump']}},
   'filter-hang':{cat:'filtration',water:30,bio:28,env:0,live:8,human:18,sizes:['small','medium'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{small:'Good choice. Look for adjustable flow.',medium:'Well suited.',large:'Too small alone. Pair with a canister.'},
     brands:{type:'named',note:'Brand quality varies significantly. Seachem Tidal and AquaClear are widely trusted.',examples:['Seachem Tidal','AquaClear','Aquael Versamax','Fluval C Series','Sicce filter']}},
@@ -485,212 +522,319 @@ function drawTank(){
   szCvs();
   var W=cvs.width,H=cvs.height;
   ctx.clearRect(0,0,W,H);
+  tick++;
   var sc=tankSize==='large'?.88:tankSize==='medium'?.82:.74;
   var tw=W*sc,th=H*.74*sc,tx=(W-tw)/2,ty=(H-th)/2+10;
+  /* Background */
   ctx.fillStyle='rgba(3,18,28,.95)';ctx.fillRect(0,0,W,H);
-  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister'];
+  var fs=active['filter-sponge'],fh=active['filter-hang'],fc=active['filter-canister'];
+  var fi=active['filter-internal'],fo=active['filter-overflow'],ph=active['powerhead'];
+  var f=fs||fh||fc||fi||fo;
   var h=active['heater'],lb=active['light-basic'],lp=active['light-planted'];
   var sg=active['sub-gravel']||active['sub-sand']||active['sub-soil'];
-  var ap=active['airpump'],lid=active['lid'];
-  /* Tank frame */
+  var ap=active['airpump'],lid=active['lid'],wm=active['wavemaker'];
+  var uv=active['uv-sterilizer'],ch=active['chiller'],cf=active['cooling-fan'];
+  var ato=active['ato'],th2=active['thermometer'];
+  /* Tank outline */
   ctx.strokeStyle='rgba(61,214,232,.22)';ctx.lineWidth=1.5;rr(tx,ty,tw,th);ctx.stroke();
   if(!f){
     var eg=ctx.createLinearGradient(tx,ty,tx,ty+th);
     eg.addColorStop(0,'rgba(5,30,46,.5)');eg.addColorStop(1,'rgba(2,14,22,.7)');
     ctx.fillStyle=eg;rr(tx,ty,tw,th);ctx.fill();
-    ctx.font='300 '+(W>500?'11':'9')+'px DM Sans,sans-serif';
+    ctx.font='300 '+(W>400?'11':'9')+'px DM Sans,sans-serif';
     ctx.fillStyle='rgba(255,255,255,.2)';ctx.textAlign='center';
     ctx.fillText('Add a filter to begin',W/2,ty+th/2);ctx.textAlign='left';
     return;
   }
-  /* Water */
+  /* Water fill */
   var cl=.72+(h?.12:0)+(sg?.06:0);
   var wg=ctx.createLinearGradient(tx,ty,tx,ty+th);
   wg.addColorStop(0,'rgba(8,62,95,'+(cl*.72).toFixed(2)+')');
   wg.addColorStop(.5,'rgba(5,38,60,'+(cl*.85).toFixed(2)+')');
   wg.addColorStop(1,'rgba(3,20,32,'+(cl*.9).toFixed(2)+')');
   ctx.fillStyle=wg;rr(tx,ty,tw,th);ctx.fill();
-  /* Surface light + caustics */
+  /* Light beam */
   if(lb||lp){
-    var lc=lp?'rgba(255,232,140,':'rgba(180,220,255,';
-    var lg=ctx.createLinearGradient(tx,ty,tx,ty+th*.45);
-    lg.addColorStop(0,lc+(lp?.09:.065)+')');lg.addColorStop(1,'transparent');
-    ctx.fillStyle=lg;rr(tx,ty,tw,th*.45);ctx.fill();
-    ctx.save();ctx.globalAlpha=.055;ctx.strokeStyle='rgba(255,255,255,1)';ctx.lineWidth=1.2;
-    for(var i=0;i<3;i++){
-      var rx=tx+tw*(.15+i*.28),ry=ty+7+Math.sin(tick*.02+i)*4,rw=12+Math.sin(tick*.03+i*1.5)*4;
-      ctx.beginPath();ctx.ellipse(rx,ry,rw,2.8,0,0,Math.PI*2);ctx.stroke();
+    var lclr=lp?'rgba(255,232,140,':'rgba(180,220,255,';
+    var lgi=ctx.createLinearGradient(tx,ty,tx,ty+th*.45);
+    lgi.addColorStop(0,lclr+(lp?.09:.065)+')');lgi.addColorStop(1,'transparent');
+    ctx.fillStyle=lgi;rr(tx,ty,tw,th*.45);ctx.fill();
+    /* Caustic lines */
+    ctx.save();ctx.globalAlpha=.05;ctx.strokeStyle='rgba(255,255,255,1)';ctx.lineWidth=1.2;
+    for(var ci=0;ci<4;ci++){
+      var crx=tx+tw*(.12+ci*.22),cry=ty+6+Math.sin(tick*.022+ci)*4,crw=10+Math.sin(tick*.03+ci*1.5)*4;
+      ctx.beginPath();ctx.ellipse(crx,cry,crw,2.5,0,0,Math.PI*2);ctx.stroke();
     }
     ctx.restore();
   }
   /* Substrate */
   if(sg){
     var sh=th*.08;
-    var sc2=active['sub-soil']?'rgba(65,44,18,.95)':active['sub-sand']?'rgba(195,168,95,.5)':'rgba(78,58,32,.9)';
-    ctx.fillStyle=sc2;ctx.fillRect(tx,ty+th-sh,tw,sh);
-    ctx.save();ctx.globalAlpha=.4;
+    var scol=active['sub-soil']?'rgba(65,44,18,.95)':active['sub-sand']?'rgba(195,168,95,.5)':'rgba(78,58,32,.9)';
+    ctx.fillStyle=scol;ctx.fillRect(tx,ty+th-sh,tw,sh);
+    ctx.save();ctx.globalAlpha=.38;
     var dc=active['sub-soil']?'rgba(95,64,24,1)':active['sub-sand']?'rgba(220,195,125,1)':'rgba(108,82,45,1)';
-    for(var d=0;d<28;d++){
-      var dx=tx+(d/28)*tw+Math.sin(d*1.9)*5,dy=ty+th-sh*.55+Math.cos(d*2.5)*(sh*.28);
-      ctx.beginPath();ctx.arc(dx,dy,1.1,0,Math.PI*2);ctx.fillStyle=dc;ctx.fill();
+    for(var di=0;di<28;di++){
+      var ddx=tx+(di/28)*tw+Math.sin(di*1.9)*5,ddy=ty+th-sh*.55+Math.cos(di*2.5)*(sh*.28);
+      ctx.beginPath();ctx.arc(ddx,ddy,1.1,0,Math.PI*2);ctx.fillStyle=dc;ctx.fill();
     }
     ctx.restore();
   }
-  /* ── SPONGE FILTER ── realistic cylindrical shape */
-  if(active['filter-sponge']){
-    var fx=tx+tw*.06,fy=ty+th*.15,fw=tw*.055,fh=th*.58;
-    /* Outer sponge body — rounded rect, orange-brown */
-    ctx.fillStyle='rgba(140,80,30,.75)';
-    rr(fx-fw/2,fy,fw,fh);ctx.fill();
-    /* Sponge texture — horizontal lines */
-    ctx.save();ctx.globalAlpha=.3;ctx.strokeStyle='rgba(180,100,40,1)';ctx.lineWidth=.8;
-    for(var sl=0;sl<8;sl++){
-      var sy=fy+fh*(sl/8)+fh*.06;
-      ctx.beginPath();ctx.moveTo(fx-fw/2+2,sy);ctx.lineTo(fx+fw/2-2,sy);ctx.stroke();
-    }
+  /* ── SPONGE FILTER ── */
+  if(fs){
+    var sfx=tx+tw*.07,sfy=ty+th*.14,sfw=tw*.055,sfh=th*.58;
+    ctx.fillStyle='rgba(140,80,30,.78)';rr(sfx-sfw/2,sfy,sfw,sfh);ctx.fill();
+    ctx.save();ctx.globalAlpha=.28;ctx.strokeStyle='rgba(180,100,40,1)';ctx.lineWidth=.8;
+    for(var sl=0;sl<7;sl++){ctx.beginPath();ctx.moveTo(sfx-sfw/2+2,sfy+sfh*(sl/7)+sfh*.07);ctx.lineTo(sfx+sfw/2-2,sfy+sfh*(sl/7)+sfh*.07);ctx.stroke();}
     ctx.restore();
-    /* Inner tube — airline */
-    ctx.fillStyle='rgba(60,100,140,.8)';
-    ctx.fillRect(fx-1.5,fy+4,3,fh-8);
-    /* Top cap */
-    ctx.fillStyle='rgba(80,120,160,.9)';
-    ctx.beginPath();ctx.ellipse(fx,fy+3,fw/2+1,4,0,0,Math.PI*2);ctx.fill();
-    /* Suction cups */
+    ctx.fillStyle='rgba(60,100,140,.85)';ctx.fillRect(sfx-1.5,sfy+4,3,sfh-8);
+    ctx.fillStyle='rgba(80,120,160,.9)';ctx.beginPath();ctx.ellipse(sfx,sfy+3,sfw/2+1,4,0,0,Math.PI*2);ctx.fill();
     ctx.fillStyle='rgba(50,50,60,.8)';
-    ctx.beginPath();ctx.ellipse(fx+fw/2-1,fy+fh*.25,2.5,4,0,0,Math.PI*2);ctx.fill();
-    ctx.beginPath();ctx.ellipse(fx+fw/2-1,fy+fh*.65,2.5,4,0,0,Math.PI*2);ctx.fill();
-    /* Bubbles rising */
-    ctx.save();ctx.globalAlpha=.35;
-    for(var b=0;b<3;b++){
-      var bx=fx+Math.sin(b*1.8)*3,by=fy-8-((tick*.5+b*15)%28);
-      ctx.beginPath();ctx.arc(bx,by,1.4,0,Math.PI*2);
-      ctx.strokeStyle='rgba(200,235,255,.7)';ctx.lineWidth=.7;ctx.stroke();
-    }
+    ctx.beginPath();ctx.ellipse(sfx+sfw/2-1,sfy+sfh*.25,2.5,4,0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.ellipse(sfx+sfw/2-1,sfy+sfh*.65,2.5,4,0,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.globalAlpha=.3;
+    for(var sb=0;sb<3;sb++){var sbx=sfx+Math.sin(sb*1.8)*3,sby=sfy-8-((tick*.5+sb*15)%28);ctx.beginPath();ctx.arc(sbx,sby,1.4,0,Math.PI*2);ctx.strokeStyle='rgba(200,235,255,.7)';ctx.lineWidth=.7;ctx.stroke();}
     ctx.restore();
-    /* Label */
-    ctx.save();ctx.font='bold 8px DM Sans,sans-serif';ctx.fillStyle='rgba(255,255,255,.35)';ctx.textAlign='center';
-    ctx.fillText('SF',fx,ty+th*.84);ctx.restore();
+    drawLabel(ctx,sfx,ty+th*.88,'SF','rgba(255,255,255,.3)');
   }
-  /* ── HANG-ON FILTER ── box hanging on back wall */
-  if(active['filter-hang']){
-    var hfx=tx+tw*.06,hfy=ty-4,hfw=tw*.1,hfh=th*.42;
-    /* Outer casing */
-    ctx.fillStyle='rgba(45,65,85,.88)';
-    rr(hfx-hfw/2,hfy,hfw,hfh);ctx.fill();
-    ctx.strokeStyle='rgba(80,130,180,.4)';ctx.lineWidth=1;
-    rr(hfx-hfw/2,hfy,hfw,hfh);ctx.stroke();
-    /* Intake tube going into water */
-    ctx.fillStyle='rgba(55,80,100,.7)';
-    ctx.fillRect(hfx-1.5,hfy+hfh,3,th*.18);
-    /* Output lip at top */
-    ctx.fillStyle='rgba(60,100,150,.7)';
-    ctx.fillRect(hfx-hfw/2,hfy+hfh*.7,hfw,4);
-    /* Motor indicator dot */
-    ctx.fillStyle='rgba(61,214,232,.6)';
-    ctx.beginPath();ctx.arc(hfx,hfy+hfh*.2,3,0,Math.PI*2);ctx.fill();
-    /* Water flow line */
-    ctx.save();ctx.globalAlpha=.3;ctx.strokeStyle='rgba(100,180,220,1)';ctx.lineWidth=1;
-    var wfY=hfy+hfh*.72+((tick*.8)%(th*.18+hfh*.28));
-    ctx.beginPath();ctx.moveTo(hfx,wfY);ctx.lineTo(hfx,wfY+8);ctx.stroke();
+  /* ── HANG-ON FILTER ── */
+  if(fh){
+    var hfx=tx+tw*.07,hfy=ty-4,hfw=tw*.1,hfh=th*.4;
+    ctx.fillStyle='rgba(45,65,85,.9)';rr(hfx-hfw/2,hfy,hfw,hfh);ctx.fill();
+    ctx.strokeStyle='rgba(80,130,180,.4)';ctx.lineWidth=1;rr(hfx-hfw/2,hfy,hfw,hfh);ctx.stroke();
+    ctx.fillStyle='rgba(55,80,100,.75)';ctx.fillRect(hfx-1.5,hfy+hfh,3,th*.18);
+    ctx.fillStyle='rgba(60,100,150,.75)';ctx.fillRect(hfx-hfw/2,hfy+hfh*.68,hfw,4);
+    ctx.fillStyle='rgba(61,214,232,.65)';ctx.beginPath();ctx.arc(hfx,hfy+hfh*.2,3,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.globalAlpha=.3;
+    var wfy=hfy+hfh*.7+((tick*.8)%(th*.18+hfh*.3));
+    ctx.beginPath();ctx.moveTo(hfx,wfy);ctx.lineTo(hfx,wfy+8);ctx.strokeStyle='rgba(100,180,220,1)';ctx.lineWidth=1;ctx.stroke();
     ctx.restore();
-    ctx.save();ctx.font='bold 8px DM Sans,sans-serif';ctx.fillStyle='rgba(255,255,255,.35)';ctx.textAlign='center';
-    ctx.fillText('HOB',hfx,ty+th*.84);ctx.restore();
+    drawLabel(ctx,hfx,ty+th*.84,'HOB','rgba(255,255,255,.3)');
   }
-  /* ── CANISTER FILTER ── canister on side with tubes */
-  if(active['filter-canister']){
-    var cfx=tx+tw*.06,cfy=ty+th*.55,cfw=tw*.09,cfh=th*.35;
-    /* Body — rounded cylinder */
-    ctx.fillStyle='rgba(35,55,40,.9)';
-    rr(cfx-cfw/2,cfy,cfw,cfh);ctx.fill();
-    ctx.strokeStyle='rgba(60,120,70,.5)';ctx.lineWidth=1;
-    rr(cfx-cfw/2,cfy,cfw,cfh);ctx.stroke();
-    /* Green indicator light */
-    ctx.fillStyle='rgba(80,200,80,.8)';
-    ctx.beginPath();ctx.arc(cfx,cfy+8,3,0,Math.PI*2);ctx.fill();
-    /* Inlet tube */
+  /* ── CANISTER FILTER ── */
+  if(fc){
+    var cfx=tx+tw*.065,cfy=ty+th*.5,cfw=tw*.09,cfh=th*.38;
+    ctx.fillStyle='rgba(35,55,40,.92)';rr(cfx-cfw/2,cfy,cfw,cfh);ctx.fill();
+    ctx.strokeStyle='rgba(60,120,70,.5)';ctx.lineWidth=1;rr(cfx-cfw/2,cfy,cfw,cfh);ctx.stroke();
+    ctx.fillStyle='rgba(80,200,80,.85)';ctx.beginPath();ctx.arc(cfx,cfy+8,3,0,Math.PI*2);ctx.fill();
     ctx.strokeStyle='rgba(50,90,60,.7)';ctx.lineWidth=2;
-    ctx.beginPath();ctx.moveTo(cfx-4,cfy);ctx.lineTo(cfx-4,ty+th*.35);ctx.stroke();
-    /* Outlet tube */
-    ctx.beginPath();ctx.moveTo(cfx+4,cfy);ctx.lineTo(cfx+4,ty+th*.2);ctx.stroke();
-    /* Flow particles */
+    ctx.beginPath();ctx.moveTo(cfx-4,cfy);ctx.lineTo(cfx-4,ty+th*.32);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(cfx+4,cfy);ctx.lineTo(cfx+4,ty+th*.18);ctx.stroke();
     ctx.save();ctx.globalAlpha=.35;
-    var pt=((tick*.4)%(th*.35));
-    ctx.beginPath();ctx.arc(cfx+4,ty+th*.2+pt,1.5,0,Math.PI*2);
-    ctx.fillStyle='rgba(61,214,232,.8)';ctx.fill();
+    var cpt=((tick*.4)%(th*.32));
+    ctx.beginPath();ctx.arc(cfx+4,ty+th*.18+cpt,1.5,0,Math.PI*2);ctx.fillStyle='rgba(61,214,232,.8)';ctx.fill();
     ctx.restore();
-    ctx.save();ctx.font='bold 8px DM Sans,sans-serif';ctx.fillStyle='rgba(255,255,255,.35)';ctx.textAlign='center';
-    ctx.fillText('CAN',cfx,ty+th*.94);ctx.restore();
+    drawLabel(ctx,cfx,ty+th*.92,'CAN','rgba(255,255,255,.3)');
   }
-  /* ── HEATER ── slim glass tube with orange glow */
-  if(h){
-    var hx=tx+tw*.92,hy=ty+th*.12,hh=th*.62;
-    /* Glass tube */
-    ctx.fillStyle='rgba(60,80,100,.5)';
-    ctx.fillRect(hx-3,hy,6,hh);
-    ctx.strokeStyle='rgba(120,160,200,.3)';ctx.lineWidth=.8;
-    ctx.strokeRect(hx-3,hy,6,hh);
-    /* Element glow */
-    var hgrd=ctx.createLinearGradient(hx,hy,hx,hy+hh);
-    hgrd.addColorStop(0,'rgba(255,120,30,.0)');
-    hgrd.addColorStop(.3,'rgba(255,100,20,.18)');
-    hgrd.addColorStop(.7,'rgba(255,80,10,.18)');
-    hgrd.addColorStop(1,'rgba(255,120,30,.0)');
-    ctx.fillStyle=hgrd;ctx.fillRect(hx-8,hy,16,hh);
-    /* Temp indicator cap */
-    ctx.fillStyle='rgba(180,60,20,.8)';
-    ctx.beginPath();ctx.ellipse(hx,hy+5,4,6,0,0,Math.PI*2);ctx.fill();
-    /* Suction cup */
-    ctx.fillStyle='rgba(40,40,50,.8)';
-    ctx.beginPath();ctx.ellipse(hx+4,hy+hh*.3,2,4,0,0,Math.PI*2);ctx.fill();
-    ctx.beginPath();ctx.ellipse(hx+4,hy+hh*.7,2,4,0,0,Math.PI*2);ctx.fill();
+  /* ── INTERNAL FILTER ── */
+  if(fi){
+    var ifx=tx+tw*.88,ify=ty+th*.15,ifw=tw*.06,ifh=th*.55;
+    ctx.fillStyle='rgba(40,60,80,.82)';rr(ifx-ifw/2,ify,ifw,ifh);ctx.fill();
+    ctx.strokeStyle='rgba(80,140,200,.35)';ctx.lineWidth=1;rr(ifx-ifw/2,ify,ifw,ifh);ctx.stroke();
+    /* intake slots */
+    ctx.save();ctx.globalAlpha=.3;ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=.6;
+    for(var ii=0;ii<5;ii++){ctx.beginPath();ctx.moveTo(ifx-ifw/2+2,ify+ifh*.3+ii*ifh*.08);ctx.lineTo(ifx+ifw/2-2,ify+ifh*.3+ii*ifh*.08);ctx.stroke();}
+    ctx.restore();
+    /* impeller dot */
+    ctx.fillStyle='rgba(61,214,232,.6)';ctx.beginPath();ctx.arc(ifx,ify+ifh*.15,3,0,Math.PI*2);ctx.fill();
+    /* suction cup */
+    ctx.fillStyle='rgba(30,30,40,.8)';
+    ctx.beginPath();ctx.ellipse(ifx+ifw/2,ify+ifh*.35,2,4,0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.ellipse(ifx+ifw/2,ify+ifh*.7,2,4,0,0,Math.PI*2);ctx.fill();
+    drawLabel(ctx,ifx,ty+th*.78,'INT','rgba(255,255,255,.3)');
   }
-  /* ── LIGHT — LED bar across top ── */
-  if(lb||lp){
-    var lw=tw*.65,lx=tx+(tw-lw)/2,lbarY=ty+3;
-    /* Housing */
-    ctx.fillStyle='rgba(40,55,70,.85)';
-    ctx.fillRect(lx,lbarY,lw,8);
-    /* LED dots */
-    var ledCount=Math.floor(lw/12);
-    for(var li2=0;li2<ledCount;li2++){
-      var ldx=lx+li2*(lw/ledCount)+6;
-      var lclr=lp?'rgba(255,240,150,':'rgba(220,240,255,';
-      ctx.fillStyle=lclr+'0.9)';
-      ctx.beginPath();ctx.arc(ldx,lbarY+4,2,0,Math.PI*2);ctx.fill();
-      /* Glow */
-      ctx.fillStyle=lclr+'0.08)';
-      ctx.beginPath();ctx.arc(ldx,lbarY+4,6,0,Math.PI*2);ctx.fill();
+  /* ── OVERFLOW FILTER ── */
+  if(fo){
+    var ofx=tx+tw*.5,ofy=ty-th*.18,ofw=tw*.22,ofh=th*.2;
+    /* Box on top */
+    ctx.fillStyle='rgba(30,50,70,.88)';ctx.fillRect(ofx-ofw/2,ofy,ofw,ofh);
+    ctx.strokeStyle='rgba(80,140,200,.4)';ctx.lineWidth=1;ctx.strokeRect(ofx-ofw/2,ofy,ofw,ofh);
+    /* Media inside */
+    ctx.save();ctx.globalAlpha=.3;ctx.fillStyle='rgba(150,100,50,.8)';
+    ctx.fillRect(ofx-ofw/2+4,ofy+4,ofw-8,ofh*.5);ctx.restore();
+    /* Down pipe into tank */
+    ctx.fillStyle='rgba(55,80,100,.7)';ctx.fillRect(ofx-3,ofy+ofh,6,th*.22);
+    /* Return pipe (powerhead pushes back) */
+    if(ph){
+      ctx.strokeStyle='rgba(61,214,232,.4)';ctx.lineWidth=2;ctx.setLineDash([4,3]);
+      ctx.beginPath();ctx.moveTo(ofx+10,ty+th*.5);ctx.lineTo(ofx+10,ofy+ofh);ctx.stroke();
+      ctx.setLineDash([]);
+      /* drip animation */
+      ctx.save();ctx.globalAlpha=.4;
+      var dropy=ofy+ofh+((tick*.6)%(th*.22));
+      ctx.beginPath();ctx.arc(ofx,dropy,2,0,Math.PI*2);ctx.fillStyle='rgba(180,220,255,.8)';ctx.fill();
+      ctx.restore();
     }
-    /* Mounting arms */
-    ctx.strokeStyle='rgba(80,100,120,.5)';ctx.lineWidth=1.5;
-    ctx.beginPath();ctx.moveTo(lx+lw*.15,lbarY+8);ctx.lineTo(lx+lw*.15,ty+1);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(lx+lw*.85,lbarY+8);ctx.lineTo(lx+lw*.85,ty+1);ctx.stroke();
+    drawLabel(ctx,ofx,ty+th*.12,'OVF','rgba(255,255,255,.3)');
+  }
+  /* ── POWERHEAD ── */
+  if(ph&&!fo){
+    /* standalone powerhead on back wall */
+    var phx=tx+tw*.92,phy=ty+th*.5,phw=tw*.05,phh=th*.12;
+    ctx.fillStyle='rgba(40,55,70,.82)';ctx.fillRect(phx-phw/2,phy,phw,phh);
+    ctx.strokeStyle='rgba(61,214,232,.3)';ctx.lineWidth=.8;ctx.strokeRect(phx-phw/2,phy,phw,phh);
+    /* flow arrow */
+    ctx.save();ctx.globalAlpha=.35;ctx.strokeStyle='rgba(61,214,232,.8)';ctx.lineWidth=1;
+    var fax=phx-phw/2-2,fay=phy+phh/2;
+    ctx.beginPath();ctx.moveTo(fax,fay);ctx.lineTo(fax-tw*.06,fay);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(fax-tw*.04,fay-4);ctx.lineTo(fax-tw*.06,fay);ctx.lineTo(fax-tw*.04,fay+4);ctx.stroke();
+    ctx.restore();
+    drawLabel(ctx,phx,ty+th*.66,'PH','rgba(255,255,255,.3)');
+  }
+  /* ── UV STERILIZER ── */
+  if(uv){
+    var uvx=tx+tw*.15,uvh=th*.35,uvy=ty+(th-uvh)/2;
+    ctx.fillStyle='rgba(80,20,120,.65)';ctx.fillRect(uvx-4,uvy,8,uvh);
+    ctx.strokeStyle='rgba(160,80,220,.4)';ctx.lineWidth=1;ctx.strokeRect(uvx-4,uvy,8,uvh);
+    /* UV glow */
+    var uvg=ctx.createRadialGradient(uvx,uvy+uvh/2,0,uvx,uvy+uvh/2,20);
+    uvg.addColorStop(0,'rgba(180,100,255,.12)');uvg.addColorStop(1,'transparent');
+    ctx.fillStyle=uvg;ctx.fillRect(uvx-20,uvy,40,uvh);
+    /* end caps */
+    ctx.fillStyle='rgba(60,60,80,.8)';ctx.fillRect(uvx-5,uvy-4,10,5);ctx.fillRect(uvx-5,uvy+uvh,10,5);
+    drawLabel(ctx,uvx,ty+th*.88,'UV','rgba(160,80,220,.6)');
+  }
+  /* ── WAVEMAKER ── */
+  if(wm){
+    var wmx=tx+tw*.75,wmy=ty+th*.25,wmw=tw*.065,wmh=th*.1;
+    ctx.fillStyle='rgba(30,50,80,.82)';ctx.fillRect(wmx-wmw/2,wmy,wmw,wmh);
+    ctx.strokeStyle='rgba(61,214,232,.3)';ctx.lineWidth=.8;ctx.strokeRect(wmx-wmw/2,wmy,wmw,wmh);
+    /* flow lines */
+    ctx.save();ctx.globalAlpha=.25;ctx.strokeStyle='rgba(61,214,232,1)';ctx.lineWidth=1;
+    for(var wi=0;wi<3;wi++){
+      var wo=wi*8,wamp=6+wi*3;
+      ctx.beginPath();
+      for(var wx=0;wx<tw*.3;wx+=4){
+        var wy=wmy+wmh/2+Math.sin((wx+tick*2+wo)/12)*wamp;
+        wx===0?ctx.moveTo(wmx-wmw/2-wx,wy):ctx.lineTo(wmx-wmw/2-wx,wy);
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+    drawLabel(ctx,wmx,ty+th*.38,'WM','rgba(255,255,255,.3)');
+  }
+  /* ── HEATER ── */
+  if(h){
+    var hx=tx+tw*.935,hy=ty+th*.12,hhl=th*.62;
+    ctx.fillStyle='rgba(60,80,100,.5)';ctx.fillRect(hx-3,hy,6,hhl);
+    ctx.strokeStyle='rgba(120,160,200,.3)';ctx.lineWidth=.8;ctx.strokeRect(hx-3,hy,6,hhl);
+    var hgrd=ctx.createLinearGradient(hx,hy,hx,hy+hhl);
+    hgrd.addColorStop(0,'rgba(255,120,30,.0)');hgrd.addColorStop(.4,'rgba(255,100,20,.18)');hgrd.addColorStop(.7,'rgba(255,80,10,.18)');hgrd.addColorStop(1,'rgba(255,120,30,.0)');
+    ctx.fillStyle=hgrd;ctx.fillRect(hx-8,hy,16,hhl);
+    ctx.fillStyle='rgba(180,60,20,.85)';ctx.beginPath();ctx.ellipse(hx,hy+5,4,6,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(40,40,50,.8)';
+    ctx.beginPath();ctx.ellipse(hx+4,hy+hhl*.3,2,4,0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.ellipse(hx+4,hy+hhl*.7,2,4,0,0,Math.PI*2);ctx.fill();
+  }
+  /* ── THERMOMETER ── */
+  if(th2){
+    var tmx=tx+tw*.915,tmy=ty+th*.2,tmh=th*.4;
+    ctx.fillStyle='rgba(200,220,255,.12)';ctx.fillRect(tmx-2,tmy,4,tmh);
+    ctx.strokeStyle='rgba(180,200,255,.25)';ctx.lineWidth=.6;ctx.strokeRect(tmx-2,tmy,4,tmh);
+    ctx.fillStyle='rgba(220,80,80,.8)';ctx.beginPath();ctx.arc(tmx,tmy+tmh*.85,4,0,Math.PI*2);ctx.fill();
+    var tpct=0.6;
+    ctx.fillStyle='rgba(220,80,80,.6)';ctx.fillRect(tmx-1,tmy+tmh*(1-tpct),2,tmh*tpct);
+  }
+  /* ── CHILLER ── */
+  if(ch){
+    var chx=tx-tw*.12,chy=ty+th*.2,chw=tw*.1,chh=th*.5;
+    ctx.fillStyle='rgba(20,50,80,.85)';ctx.fillRect(chx,chy,chw,chh);
+    ctx.strokeStyle='rgba(61,214,232,.3)';ctx.lineWidth=1;ctx.strokeRect(chx,chy,chw,chh);
+    /* fan grill lines */
+    ctx.save();ctx.globalAlpha=.2;ctx.strokeStyle='rgba(200,230,255,1)';ctx.lineWidth=.5;
+    for(var cli=0;cli<4;cli++){ctx.beginPath();ctx.moveTo(chx+4,chy+chh*.2+cli*chh*.15);ctx.lineTo(chx+chw-4,chy+chh*.2+cli*chh*.15);ctx.stroke();}
+    ctx.restore();
+    /* cold indicator */
+    ctx.fillStyle='rgba(100,200,255,.7)';ctx.beginPath();ctx.arc(chx+chw/2,chy+8,3,0,Math.PI*2);ctx.fill();
+    /* pipes */
+    ctx.strokeStyle='rgba(61,214,232,.4)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(chx+chw,chy+chh*.3);ctx.lineTo(tx,chy+chh*.3);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(chx+chw,chy+chh*.6);ctx.lineTo(tx,chy+chh*.6);ctx.stroke();
+    drawLabel(ctx,chx+chw/2,chy+chh+12,'CHILL','rgba(100,200,255,.5)');
+  }
+  /* ── COOLING FAN ── */
+  if(cf){
+    var cfanx=tx+tw*.35,cfany=ty-20,cfanw=tw*.3,cfanh=16;
+    ctx.fillStyle='rgba(30,45,60,.82)';ctx.fillRect(cfanx,cfany,cfanw,cfanh);
+    ctx.strokeStyle='rgba(139,189,210,.3)';ctx.lineWidth=.8;ctx.strokeRect(cfanx,cfany,cfanw,cfanh);
+    /* fan blades spinning */
+    var fanCx=cfanx+cfanw/2,fanCy=cfany+cfanh/2,fanR=5;
+    ctx.save();ctx.translate(fanCx,fanCy);ctx.rotate(tick*.1);
+    ctx.strokeStyle='rgba(200,220,240,.5)';ctx.lineWidth=1;
+    for(var fb=0;fb<4;fb++){
+      ctx.beginPath();ctx.moveTo(0,0);
+      var ba=fb*Math.PI/2;
+      ctx.lineTo(Math.cos(ba)*fanR,Math.sin(ba)*fanR);ctx.stroke();
+    }
+    ctx.restore();
+    /* air arrows downward */
+    ctx.save();ctx.globalAlpha=.2;ctx.strokeStyle='rgba(200,235,255,1)';ctx.lineWidth=.8;
+    for(var fa=0;fa<3;fa++){
+      var fax2=cfanx+cfanw*.2+fa*cfanw*.3,fay2=cfany+cfanh+((tick*.4+fa*8)%20);
+      ctx.beginPath();ctx.moveTo(fax2,fay2);ctx.lineTo(fax2,fay2+6);ctx.stroke();
+    }
+    ctx.restore();
+    drawLabel(ctx,fanCx,cfany-8,'FAN','rgba(200,220,240,.4)');
+  }
+  /* ── ATO ── */
+  if(ato){
+    var atox=tx+tw+8,atoy=ty+th*.1,atow=12,atoh=th*.4;
+    ctx.fillStyle='rgba(20,50,80,.82)';ctx.fillRect(atox,atoy,atow,atoh);
+    ctx.strokeStyle='rgba(61,214,232,.25)';ctx.lineWidth=.8;ctx.strokeRect(atox,atoy,atow,atoh);
+    /* water level inside */
+    var atoLevel=.7;
+    ctx.fillStyle='rgba(61,180,232,.25)';ctx.fillRect(atox+2,atoy+atoh*(1-atoLevel),atow-4,atoh*atoLevel);
+    /* feed tube */
+    ctx.strokeStyle='rgba(61,214,232,.35)';ctx.lineWidth=1;ctx.setLineDash([2,2]);
+    ctx.beginPath();ctx.moveTo(atox,atoy+atoh*.6);ctx.lineTo(tx+tw,atoy+atoh*.6);ctx.stroke();
+    ctx.setLineDash([]);
+    drawLabel(ctx,atox+atow/2,atoy+atoh+10,'ATO','rgba(61,214,232,.4)');
+  }
+  /* ── LIGHT ── */
+  if(lb||lp){
+    var lw=tw*.62,lx2=tx+(tw-lw)/2,lby=ty+2;
+    ctx.fillStyle='rgba(40,55,70,.88)';ctx.fillRect(lx2,lby,lw,7);
+    var lcount=Math.floor(lw/12);
+    for(var li3=0;li3<lcount;li3++){
+      var ldx=lx2+li3*(lw/lcount)+6;
+      var lc=lp?'rgba(255,240,150,':'rgba(220,240,255,';
+      ctx.fillStyle=lc+'0.9)';ctx.beginPath();ctx.arc(ldx,lby+3.5,2,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=lc+'0.07)';ctx.beginPath();ctx.arc(ldx,lby+3.5,6,0,Math.PI*2);ctx.fill();
+    }
+    ctx.strokeStyle='rgba(80,100,120,.5)';ctx.lineWidth=1.2;
+    ctx.beginPath();ctx.moveTo(lx2+lw*.15,lby+7);ctx.lineTo(lx2+lw*.15,ty);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(lx2+lw*.85,lby+7);ctx.lineTo(lx2+lw*.85,ty);ctx.stroke();
   }
   /* ── AIRPUMP bubbles ── */
   if(ap){
-    ctx.save();ctx.globalAlpha=.32;
+    ctx.save();ctx.globalAlpha=.3;
     for(var ab=0;ab<5;ab++){
-      var abx=tx+tw*.5+Math.sin(ab*2.1)*tw*.08,
-          aby=ty+th*.8-((tick*.45+ab*18)%(th*.7));
+      var abx=tx+tw*.5+Math.sin(ab*2.1)*tw*.07,aby=ty+th*.8-((tick*.45+ab*18)%(th*.7));
       ctx.beginPath();ctx.arc(abx,aby,1.5+ab*.3,0,Math.PI*2);
       ctx.strokeStyle='rgba(200,235,255,.65)';ctx.lineWidth=.7;ctx.stroke();
     }
     ctx.restore();
   }
-  /* ── LID ── glass panel on top ── */
+  /* ── LID ── */
   if(lid){
-    ctx.fillStyle='rgba(180,210,240,.07)';
-    ctx.fillRect(tx+1,ty+1,tw-2,5);
+    ctx.fillStyle='rgba(180,210,240,.07)';ctx.fillRect(tx+1,ty+1,tw-2,5);
     ctx.strokeStyle='rgba(180,220,255,.25)';ctx.lineWidth=1;
     ctx.beginPath();ctx.moveTo(tx+4,ty+1);ctx.lineTo(tx+tw-4,ty+1);ctx.stroke();
   }
   /* Tank frame on top */
   ctx.strokeStyle='rgba(139,189,210,.22)';ctx.lineWidth=1.5;rr(tx,ty,tw,th);ctx.stroke();
-  ctx.strokeStyle='rgba(61,214,232,.18)';ctx.lineWidth=2;
-  ctx.beginPath();ctx.moveTo(tx+4,ty);ctx.lineTo(tx+tw-4,ty);ctx.stroke();
-  var slbl=tankSize==='large'?'150L+':tankSize==='medium'?'60\u2013120L':'20\u201340L';
+  var slbl=tankSize==='large'?'150L+':tankSize==='medium'?'60\u201360L':'20\u201340L';
   ctx.font='300 9px DM Sans,sans-serif';ctx.fillStyle='rgba(255,255,255,.12)';ctx.textAlign='right';
-  ctx.fillText(slbl,tx+tw-6,ty+th-5);ctx.textAlign='left';
+  ctx.fillText(slbl,tx+tw-5,ty+th-5);ctx.textAlign='left';
+}
+
+function drawLabel(ctx,x,y,txt,col){
+  ctx.save();
+  ctx.font='600 8px DM Sans,sans-serif';
+  var w=ctx.measureText(txt).width;
+  ctx.fillStyle='rgba(2,10,18,.7)';ctx.fillRect(x-w/2-2,y-5,w+4,10);
+  ctx.fillStyle=col||'rgba(255,255,255,.3)';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText(txt,x,y);ctx.restore();
 }
 
 function rr(x,y,w,h){
