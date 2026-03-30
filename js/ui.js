@@ -1,16 +1,18 @@
 /* ============================================================
-   ui.js — cursor, nav, page routing, scroll reveal,
+   ui.js — cursor, nav, hybrid routing, scroll reveal,
             water level, eco toggle, progress bar
    ============================================================ */
 
 (function () {
+
+  var hasSpaPages = !!document.querySelector('.page');
 
   /* ── CURSOR ── */
   var cd = document.getElementById('cd'), cr = document.getElementById('cr');
   var mx = 0, my = 0, rx = 0, ry = 0;
   var hasHover = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-  if (hasHover) {
+  if (hasHover && cd && cr) {
     document.addEventListener('mousemove', function (e) {
       mx = e.clientX; my = e.clientY;
       cd.style.left = mx + 'px'; cd.style.top = my + 'px';
@@ -35,25 +37,28 @@
   /* ── MOBILE NAV ── */
   var bg = document.getElementById('burger'), nm = document.getElementById('nmob');
 
-  bg.addEventListener('click', function () {
-    var o = bg.classList.toggle('open');
-    nm.classList.toggle('open', o);
-    bg.setAttribute('aria-expanded', o);
-    nm.setAttribute('aria-hidden', !o);
-  });
-
   function closeMenu() {
+    if (!bg || !nm) return;
     bg.classList.remove('open');
     nm.classList.remove('open');
     bg.setAttribute('aria-expanded', 'false');
     nm.setAttribute('aria-hidden', 'true');
   }
 
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 960) closeMenu();
-  }, { passive: true });
+  if (bg && nm) {
+    bg.addEventListener('click', function () {
+      var o = bg.classList.toggle('open');
+      nm.classList.toggle('open', o);
+      bg.setAttribute('aria-expanded', o);
+      nm.setAttribute('aria-hidden', !o);
+    });
 
-  /* ── PAGE ROUTING ── */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 960) closeMenu();
+    }, { passive: true });
+  }
+
+  /* ── PAGE ROUTING (SPA root page + standalone fallback) ── */
   var pageMap = {
     '':          'home',
     '/':         'home',
@@ -97,6 +102,13 @@
   }
 
   function go(id, push) {
+    var path = id === 'home' ? '/' : '/' + id;
+
+    if (!hasSpaPages) {
+      if (push !== false) window.location.href = path;
+      return;
+    }
+
     document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active'); });
     var t = document.getElementById('pg-' + id);
     if (!t) return;
@@ -105,11 +117,9 @@
     closeMenu();
     setTimeout(function () { observeScrollReveal(t); }, 80);
 
-    /* Update page title and description */
     if (titleMap[id]) document.title = titleMap[id];
     updateMeta(id);
 
-    var path = id === 'home' ? '/' : '/' + id;
     if (push !== false) history.pushState({ page: id }, '', path);
 
     var can = document.querySelector('link[rel="canonical"]');
@@ -119,71 +129,69 @@
       gtag('event', 'page_view', { page_path: path, page_title: id });
     }
 
-    /* Reset progress bar */
     var bar = document.getElementById('progress-bar');
     if (bar) { bar.style.width = '0%'; bar.classList.remove('visible'); }
     setTimeout(updateWaterLevel, 100);
   }
 
-  /* Expose go() globally so inline data-page links work */
   window.go = go;
 
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest('[data-page]');
-    if (!link) return;
-    e.preventDefault();
-    go(link.getAttribute('data-page'));
-  });
+  if (hasSpaPages) {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('[data-page]');
+      if (!link) return;
+      e.preventDefault();
+      go(link.getAttribute('data-page'));
+    });
 
-  window.addEventListener('popstate', function (e) {
-    var id = (e.state && e.state.page) ? e.state.page : pageMap[location.pathname] || 'home';
-    go(id, false);
-  });
+    window.addEventListener('popstate', function (e) {
+      var id = (e.state && e.state.page) ? e.state.page : pageMap[location.pathname] || 'home';
+      go(id, false);
+    });
 
-  /* Initial page load — also check ?p= param from 404 redirect */
-  (function () {
-    var params = new URLSearchParams(location.search);
-    var pParam = params.get('p');
-    var id = (pParam && pageMap['/' + pParam]) ? pageMap['/' + pParam] : pageMap[location.pathname] || 'home';
-    /* Clean up the ?p= from URL */
-    if(pParam) {
-      var cleanPath = '/' + pParam;
-      try { history.replaceState({ page: id }, '', cleanPath); } catch(e) {}
-    }
-    var active = document.querySelector('.page.active');
-    if (active) active.classList.remove('active');
-    var t = document.getElementById('pg-' + id);
-    if (t) {
-      t.classList.add('active');
-      if (titleMap[id]) document.title = titleMap[id];
-      updateMeta(id);
-      try { history.replaceState({ page: id }, '', location.pathname); } catch (e) {}
-      var path = id === 'home' ? '/' : '/' + id;
-      var can = document.querySelector('link[rel="canonical"]');
-      if (can) can.setAttribute('href', 'https://aquaticrhythm.com' + path);
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'page_view', { page_path: path, page_title: titleMap[id] || id });
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var pParam = params.get('p');
+      var id = (pParam && pageMap['/' + pParam]) ? pageMap['/' + pParam] : pageMap[location.pathname] || 'home';
+      if (pParam) {
+        var cleanPath = '/' + pParam;
+        try { history.replaceState({ page: id }, '', cleanPath); } catch (e) {}
       }
-    }
-  })();
+      var active = document.querySelector('.page.active');
+      if (active) active.classList.remove('active');
+      var t = document.getElementById('pg-' + id);
+      if (t) {
+        t.classList.add('active');
+        if (titleMap[id]) document.title = titleMap[id];
+        updateMeta(id);
+        try { history.replaceState({ page: id }, '', location.pathname); } catch (e) {}
+        var path = id === 'home' ? '/' : '/' + id;
+        var can = document.querySelector('link[rel="canonical"]');
+        if (can) can.setAttribute('href', 'https://aquaticrhythm.com' + path);
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'page_view', { page_path: path, page_title: titleMap[id] || id });
+        }
+      }
+    })();
+  }
 
   /* ── SCROLL REVEAL ── */
   var currentObserver = null;
 
-  function observeScrollReveal(page) {
-    page.querySelectorAll('.sr').forEach(function (el) { el.classList.remove('in'); });
+  function observeScrollReveal(scope) {
+    scope = scope || document;
+    scope.querySelectorAll('.sr').forEach(function (el) { el.classList.remove('in'); });
     if (currentObserver) currentObserver.disconnect();
     currentObserver = new IntersectionObserver(function (entries, ob) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); ob.unobserve(e.target); }
       });
     }, { threshold: .07, rootMargin: '0px 0px -24px 0px' });
-    page.querySelectorAll('.sr').forEach(function (el) { currentObserver.observe(el); });
+    scope.querySelectorAll('.sr').forEach(function (el) { currentObserver.observe(el); });
   }
 
-  /* defer means DOM is already ready — init immediately */
   (function () {
-    var active = document.querySelector('.page.active');
+    var active = hasSpaPages ? document.querySelector('.page.active') : document;
     if (active) observeScrollReveal(active);
   })();
 
@@ -194,9 +202,9 @@
     var ticking = false;
 
     function updateProgress() {
-      var activePage = document.querySelector('.page.active');
+      var activePage = hasSpaPages ? document.querySelector('.page.active') : document.documentElement;
       if (!activePage) { bar.style.width = '0%'; bar.classList.remove('visible'); return; }
-      var pageH = activePage.scrollHeight;
+      var pageH = activePage.scrollHeight || document.documentElement.scrollHeight;
       var viewH = window.innerHeight;
       var scrolled = window.scrollY;
       var total = pageH - viewH;
@@ -217,10 +225,10 @@
     var fill   = document.getElementById('water-fill');
     var bubble = document.getElementById('water-bubble');
     if (!fill) return;
-    var page = document.querySelector('.page.active');
+    var page = hasSpaPages ? document.querySelector('.page.active') : document.documentElement;
     if (!page) return;
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var docH = page.scrollHeight - window.innerHeight;
+    var docH = (page.scrollHeight || document.documentElement.scrollHeight) - window.innerHeight;
     if (docH <= 0) { fill.style.height = '100%'; return; }
     var pct = Math.min(100, Math.max(0, (scrollTop / docH) * 100));
     fill.style.height = pct + '%';
@@ -270,6 +278,5 @@
     if (faunaOff) applyFauna(true);
     if (floraOff) applyFlora(true);
   })();
-
 
 })();
