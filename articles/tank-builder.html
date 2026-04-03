@@ -265,6 +265,94 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
   font-family:var(--sans);transition:all .2s;text-align:center;
 }
 .bi-btn-back:hover{color:rgba(255,255,255,.65);border-color:rgba(255,255,255,.25)}
+
+/* ═══ PHASE 2 — ECOSYSTEM ═══ */
+#phase2-overlay{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(2,8,14,.98);
+  overflow-y:auto;
+  display:none;
+  flex-direction:column;
+  padding-top:var(--nav);
+  -webkit-overflow-scrolling:touch;
+}
+#phase2-overlay.open{display:flex}
+.ph2-inner{max-width:600px;width:100%;margin:0 auto;padding:1.5rem 1.2rem 5rem}
+.ph2-back{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.5);background:none;border:none;cursor:pointer;font-family:var(--sans);padding:.3rem 0;transition:color .2s;display:flex;align-items:center;gap:.35rem;margin-bottom:1.2rem}
+.ph2-back:hover{color:rgba(61,214,232,.88)}
+.ph2-eyebrow{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:.5rem}
+.ph2-title{font-family:var(--serif);font-size:clamp(1.4rem,3.5vw,2rem);font-weight:300;color:rgba(255,255,255,.88);line-height:1.15;margin-bottom:.5rem}
+.ph2-title em{font-style:italic;color:rgba(61,214,232,.7)}
+.ph2-subtitle{font-size:.78rem;color:rgba(255,255,255,.35);font-family:var(--serif);font-style:italic;line-height:1.6;margin-bottom:1.5rem}
+/* Style selector */
+.ph2-styles{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-bottom:1.8rem}
+.ph2-style-btn{
+  background:rgba(6,18,14,.55);border:1px solid rgba(139,189,210,.1);
+  border-radius:2px;padding:.65rem .75rem;cursor:pointer;transition:all .18s;text-align:left;
+}
+.ph2-style-btn:hover{background:rgba(9,24,18,.9);border-color:rgba(61,214,232,.2)}
+.ph2-style-btn.active{background:rgba(30,75,95,.25);border-color:rgba(61,214,232,.45)}
+.ph2-style-name{font-size:.68rem;font-weight:500;color:rgba(255,255,255,.72);display:block;margin-bottom:.18rem}
+.ph2-style-diff{font-size:.52rem;color:rgba(255,255,255,.28);font-style:italic;font-family:var(--serif)}
+/* Section headers */
+.ph2-section{margin-bottom:1.5rem}
+.ph2-section-hdr{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.65rem;padding-bottom:.35rem;border-bottom:1px solid rgba(255,255,255,.06)}
+/* Stock grid */
+.ph2-grid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
+.ph2-card{
+  background:rgba(6,18,14,.55);border:1px solid rgba(139,189,210,.08);
+  border-radius:2px;padding:.5rem .6rem;cursor:pointer;transition:all .18s;position:relative;
+}
+.ph2-card:hover{background:rgba(9,24,18,.9);border-color:rgba(61,214,232,.18)}
+.ph2-card.active{background:rgba(30,75,95,.2);border-color:rgba(61,214,232,.42)}
+.ph2-card.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(61,214,232,.75);border-radius:2px 0 0 2px}
+.ph2-card.warn{border-color:rgba(220,100,60,.35)}
+.ph2-card.warn::after{content:'⚠';position:absolute;top:3px;right:5px;font-size:.55rem;color:rgba(220,100,60,.7)}
+.ph2-card-name{font-size:.66rem;font-weight:400;color:rgba(255,255,255,.72);display:block;margin-bottom:.08rem}
+.ph2-card-latin{font-size:.5rem;font-style:italic;color:rgba(255,255,255,.2);font-family:var(--serif);display:block;margin-bottom:.18rem}
+.ph2-card-tags{display:flex;gap:.2rem;flex-wrap:wrap}
+.ph2-tag{font-size:.44rem;padding:.1rem .28rem;border-radius:1px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.07)}
+.ph2-tag.warn{background:rgba(220,100,60,.08);color:rgba(220,100,60,.65);border-color:rgba(220,100,60,.2)}
+.ph2-tag.ok{background:rgba(61,214,232,.06);color:rgba(61,214,232,.55);border-color:rgba(61,214,232,.12)}
+/* Pentagon live */
+.ph2-pentagon-wrap{margin-bottom:1.5rem;padding:.9rem 1rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.08);border-radius:2px}
+.ph2-pent-lbl{font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:.5rem;display:flex;justify-content:space-between}
+#ph2-pent-canvas{display:block;width:100%;height:180px}
+/* Compatibility note */
+.ph2-compat{font-size:.68rem;color:rgba(255,255,255,.35);font-family:var(--serif);font-style:italic;line-height:1.55;padding:.5rem .65rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.08);border-radius:2px;margin-top:1rem}
+/* Submit */
+.ph2-submit{width:100%;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(61,214,232,.82);color:#fff;border:none;padding:.85rem;border-radius:2px;cursor:pointer;font-family:var(--sans);margin-top:1.5rem;transition:background .2s;opacity:.4;pointer-events:none}
+.ph2-submit.ready{opacity:1;pointer-events:all}.ph2-submit.ready:hover{background:rgba(40,184,208,.95)}
+
+/* ── Search ── */
+.ph2-search-wrap{position:relative;margin-bottom:.8rem}
+.ph2-search{
+  width:100%;box-sizing:border-box;
+  background:rgba(6,18,14,.7);
+  border:1px solid rgba(139,189,210,.18);
+  border-radius:2px;
+  padding:.55rem .55rem .55rem 2rem;
+  font-size:.75rem;color:rgba(255,255,255,.75);
+  font-family:var(--sans);
+  outline:none;transition:border-color .18s;
+}
+.ph2-search::placeholder{color:rgba(255,255,255,.22)}
+.ph2-search:focus{border-color:rgba(61,214,232,.4)}
+.ph2-search-icon{
+  position:absolute;left:.55rem;top:50%;transform:translateY(-50%);
+  font-size:.75rem;color:rgba(255,255,255,.25);pointer-events:none;
+}
+.ph2-search-clear{
+  position:absolute;right:.55rem;top:50%;transform:translateY(-50%);
+  font-size:.8rem;color:rgba(255,255,255,.25);background:none;border:none;
+  cursor:pointer;padding:.1rem;display:none;
+}
+.ph2-search-clear.visible{display:block}
+.ph2-count{font-size:.52rem;color:rgba(255,255,255,.2);margin-bottom:.5rem;font-style:italic;font-family:var(--serif)}
+.ph2-empty{font-size:.72rem;color:rgba(255,255,255,.25);font-style:italic;font-family:var(--serif);padding:.8rem 0;text-align:center}
+/* card notes tooltip */
+.ph2-card-notes{font-size:.5rem;color:rgba(255,255,255,.2);font-family:var(--serif);font-style:italic;line-height:1.4;margin-top:.22rem;display:none}
+.ph2-card.active .ph2-card-notes{display:block}
 </style>
 </head>
 <body>
@@ -292,7 +380,17 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
   <div class="brief-inner">
     <span class="brief-eyebrow">Try It Yourself</span>
     <h1 class="brief-title">Build Your<br><em>First System.</em></h1>
-    <p class="brief-body">This is a setup lab. Choose equipment for your first tank, explore how each piece affects the system, and when you are ready — submit your choices to receive a full ARA report. Your rhythm profile, what your setup asks of you, and what to expect in the weeks ahead.</p>
+    <p class="brief-body">A two-phase lab. First, build your infrastructure — choose equipment and see how it shapes the five rhythms. Then, add your ecosystem — fish, plants, hardscape — and watch the rhythms respond to real life. The report at the end reads both together.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.2rem">
+      <div style="padding:.7rem .85rem;background:rgba(6,18,14,.5);border:1px solid rgba(61,214,232,.15);border-radius:2px">
+        <span style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.6);display:block;margin-bottom:.28rem">New Setup</span>
+        <span style="font-size:.72rem;color:rgba(255,255,255,.45);font-family:var(--serif);font-style:italic;line-height:1.5">Building from scratch. Guided through both phases.</span>
+      </div>
+      <div style="padding:.7rem .85rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.12);border-radius:2px">
+        <span style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(139,189,210,.5);display:block;margin-bottom:.28rem">Existing Tank</span>
+        <span style="font-size:.72rem;color:rgba(255,255,255,.45);font-family:var(--serif);font-style:italic;line-height:1.5">Already running. Check if your setup is balanced.</span>
+      </div>
+    </div>
     <div class="brief-rhythms">
       <div style="font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.4rem">The five rhythms your tank lives by</div>
       <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(61,214,232,.7)"></div><span class="brief-rhy-name" style="color:rgba(61,214,232,.7)">Water</span><span class="brief-rhy-desc">Movement, renewal, and stability. Shaped most directly by filtration and water changes.</span></div>
@@ -301,7 +399,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(180,120,200,.7)"></div><span class="brief-rhy-name" style="color:rgba(180,120,200,.7)">Livestock</span><span class="brief-rhy-desc">How ready the system is for fish. Not just chemistry — stability and predictability too.</span></div>
       <div class="brief-rhy"><div class="brief-rhy-dot" style="background:rgba(139,189,210,.7)"></div><span class="brief-rhy-name" style="color:rgba(139,189,210,.7)">Human</span><span class="brief-rhy-desc">What this system will ask of you. How much attention, how often, how carefully.</span></div>
     </div>
-    <p class="brief-note">There are no wrong choices. Warnings are observations, not judgements. When your setup feels right, submit it — the report reads what you have built and tells you what to expect.</p>
+    <p class="brief-note">The five rhythms are an ARA interpretive model — a lens, not a measurement. They reflect patterns observed in the hobby rather than precise scientific values. Use them as a guide for thinking, not as definitive scores.</p>
     <button class="brief-btn" id="btn-enter">Enter the lab &#8594;</button>
   </div>
 </div>
@@ -417,7 +515,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
 <div id="status-bar">
   <button id="btn-reset">Reset</button>
-  <button id="btn-submit" style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(61,214,232,.82);color:#fff;border:none;padding:.28rem .75rem;border-radius:1px;cursor:pointer;font-family:var(--sans);margin-left:auto;opacity:.3;pointer-events:none;transition:all .2s">See your report &#x2192;</button>
+  <button id="btn-submit" style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(61,214,232,.82);color:#fff;border:none;padding:.28rem .75rem;border-radius:1px;cursor:pointer;font-family:var(--sans);margin-left:auto;opacity:.3;pointer-events:none;transition:all .2s">Add ecosystem &#x2192;</button>
 </div>
 
 <!-- BRAND INFO OVERLAY -->
@@ -431,6 +529,66 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     </div>
     <div class="bi-body" id="bi-body"></div>
     <div class="bi-actions" id="bi-actions"></div>
+  </div>
+</div>
+
+<!-- PHASE 2 — ECOSYSTEM OVERLAY -->
+<div id="phase2-overlay">
+  <div class="ph2-inner">
+    <button class="ph2-back" id="ph2-back">&#8592; Back to equipment</button>
+    <span class="ph2-eyebrow">Phase 2 — Ecosystem</span>
+    <h2 class="ph2-title">Who will <em>live here?</em></h2>
+    <p class="ph2-subtitle">Your equipment sets the capacity of this system. Now choose what will inhabit it — and see how the five rhythms respond to real life.</p>
+
+    <!-- Live pentagon -->
+    <div class="ph2-pentagon-wrap">
+      <div class="ph2-pent-lbl">
+        <span>ARA Rhythm Model</span>
+        <span id="ph2-pent-score"></span>
+      </div>
+      <div style="font-size:.48rem;color:rgba(255,255,255,.18);font-style:italic;font-family:var(--serif);margin-bottom:.4rem">A qualitative model, not a scientific measurement. Reflects infrastructure and ecosystem balance as interpreted through the ARA framework.</div>
+      <canvas id="ph2-pent-canvas"></canvas>
+    </div>
+
+    <!-- Setup style -->
+    <div class="ph2-section">
+      <div class="ph2-section-hdr">Setup Style</div>
+      <div class="ph2-styles" id="ph2-styles"></div>
+    </div>
+
+    <!-- Search -->
+    <div class="ph2-section">
+      <div class="ph2-section-hdr">Browse &amp; Search</div>
+      <div class="ph2-search-wrap">
+        <span class="ph2-search-icon">&#x2315;</span>
+        <input class="ph2-search" id="ph2-search" type="text" placeholder="Search fish, plants, hardscape&#x2026;" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button class="ph2-search-clear" id="ph2-search-clear">&#x2715;</button>
+      </div>
+      <div class="ph2-count" id="ph2-count"></div>
+    </div>
+
+    <!-- Fish / Invertebrates -->
+    <div class="ph2-section" id="ph2-stock-section">
+      <div class="ph2-section-hdr">Fish &amp; Invertebrates</div>
+      <div class="ph2-grid" id="ph2-stock-grid"></div>
+    </div>
+
+    <!-- Plants -->
+    <div class="ph2-section" id="ph2-plant-section">
+      <div class="ph2-section-hdr">Plants</div>
+      <div class="ph2-grid" id="ph2-plant-grid"></div>
+    </div>
+
+    <!-- Hardscape -->
+    <div class="ph2-section" id="ph2-hard-section">
+      <div class="ph2-section-hdr">Hardscape</div>
+      <div class="ph2-grid" id="ph2-hard-grid"></div>
+    </div>
+
+    <!-- Compatibility note -->
+    <div class="ph2-compat" id="ph2-compat-note">Select a setup style above to begin.</div>
+
+    <button class="ph2-submit" id="ph2-submit">Generate ARA Report &#x2192;</button>
   </div>
 </div>
 
@@ -477,22 +635,22 @@ var BRAND_NOTES={"Hikari Bacto Surge": "Reliable dual-sponge. Good biological su
 
 /* ═══ EQUIPMENT DATA ═══ */
 var EQ={
-  'filter-internal':{cat:'filtration',water:22,bio:25,env:0,live:6,human:14,sizes:['small','medium'],sizeWarn:['large'],conflicts:[],requiresOne:null,warnWithout:null,
+  'filter-internal':{cat:'filtration',water:25,bio:25,env:0,live:8,human:12,sizes:['small','medium'],sizeWarn:['large'],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{small:'Good fit. Submersible and hidden — unobtrusive in small tanks.',medium:'Adequate for a lightly stocked medium tank. Consider pairing with a sponge for more bio media.',large:'Underpowered for large tanks. Use canister or HOB instead.'},
     brands:{type:'named',note:'Internal filters are fully submersible and very beginner-friendly. They combine mechanical and biological filtration in one compact unit.',examples:['Aquael Turbo','Fluval U series','Eheim Pickup','Tetra IN series','Sunsun HJ series']}},
-  'uv-sterilizer':{cat:'sterilization',water:12,bio:0,env:8,live:12,human:10,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+  'uv-sterilizer':{cat:'sterilization',water:10,bio:0,env:0,live:10,human:8,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{all:'UV sterilizers kill free-floating algae, bacteria, and parasites. Only effective when water passes through slowly — match flow rate to sterilizer rating.'},
     brands:{type:'named',note:'UV sterilizers are supplementary — not a replacement for biological filtration. Flow rate through the UV unit is critical; too fast reduces effectiveness.',examples:['Aquael Turbo UV','Sunsun UV sterilizer','Fluval UVC Clarifier','SunSun JUP series','Tetra UV']}},
-  'wavemaker':{cat:'circulation',water:14,bio:8,env:5,live:8,human:6,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:null,warnWithout:null,
+  'wavemaker':{cat:'circulation',water:12,bio:6,env:4,live:6,human:5,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{small:'Creates too much turbulence for small tanks. Not recommended below 60L.',medium:'Useful for improving circulation in medium tanks — helps distribute heat and oxygen.',large:'Often essential in large tanks to eliminate dead spots where detritus accumulates.'},
     brands:{type:'named',note:'Wavemakers improve circulation and oxygenation. Adjustable flow is important — you want movement without stressing fish.',examples:['Jebao SLW series','Aquael Circulator','Tunze Turbelle','Hydor Koralia','Ecotech Vortech']}},
-  'ato':{cat:'additions',water:6,bio:0,env:8,live:6,human:18,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
+  'ato':{cat:'additions',water:5,bio:0,env:8,live:5,human:15,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{all:'Auto top-off devices automatically replace evaporated water. Essential if you use a chiller or cooling fan — evaporation in hot climates can drop water level significantly within hours.'},
     brands:{type:'named',note:'ATO systems use a float switch or optical sensor to detect water level and pump from a reservoir automatically. Simple and essential for tanks with high evaporation.',examples:['Tunze Osmolator','AutoAqua Smart ATO','Innovative Marine Desktop ATO','Kalkwasser ATO','Generic float valve ATO']}},
   'filter-sponge':{cat:'filtration',water:25,bio:35,env:0,live:5,human:12,sizes:['small','medium'],sizeWarn:['large'],conflicts:[],requiresOne:null,warnWithout:null,
     sizeNote:{small:'Ideal. Gentle flow suits small tanks.',medium:'Works well. Consider pairing two for better coverage.',large:'Insufficient alone. Use alongside a canister.'},
     brands:{type:'generic',note:'Highly consistent regardless of brand. Any dual-sponge model works.',examples:['Hikari Bacto Surge','Aquael Fan Mini','Any dual-sponge (generic)']}},
-  'filter-overflow':{cat:'filtration',water:32,bio:38,env:0,live:10,human:24,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:null,warnWithout:['powerhead'],
+  'filter-overflow':{cat:'filtration',water:35,bio:38,env:0,live:10,human:28,sizes:['medium','large'],sizeWarn:['small'],conflicts:[],requiresOne:null,warnWithout:['powerhead'],
     sizeNote:{small:'Overflow filters are designed for medium and large tanks. Too much flow for small setups.',medium:'Good match for medium tanks with livestock. Excellent oxygenation through trickle.',large:'Excellent choice for large tanks. High bio capacity and oxygen exchange.'},
     brands:{type:'named',note:'Overflow boxes or built-in overflow sumps sit above or beside the tank. Water drains by gravity into a filter box, then a powerhead or return pump pushes it back. Very popular in Asia for cichlid, koi, and planted tanks.',examples:['Aquael Pat series','Aquael Ultramax overflow','Resun overflow filter','Generic trickle/wet-dry box','Custom sump with return pump']}},
   'powerhead':{cat:'filtration',water:12,bio:5,env:4,live:4,human:6,sizes:['small','medium','large'],sizeWarn:[],conflicts:[],requiresOne:null,warnWithout:null,
@@ -916,13 +1074,22 @@ function checkAnimNeeded(){
 
 /* ═══ RHYTHMS ═══ */
 function calcRhythms(){
+  /* ARA Rhythm Model — qualitative assessment, not scientific measurement.
+     Scores indicate relative presence of each dimension based on equipment choices.
+     A score of 75 means this dimension is well-represented, not that it equals 75% of anything. */
   var s={water:0,bio:0,env:0,live:0,human:0};
-  var b=tankSize==='large'?18:tankSize==='medium'?8:0;
   Object.keys(active).forEach(function(k){
-    var e=EQ[k];s.water+=e.water;s.bio+=e.bio;s.env+=e.env;s.live+=e.live;s.human+=e.human;
+    var e=EQ[k];
+    s.water+=e.water||0;s.bio+=e.bio||0;s.env+=e.env||0;
+    s.live+=e.live||0;s.human+=e.human||0;
   });
-  s.water=Math.min(100,s.water+b*.4);s.bio=Math.min(100,s.bio+b*.3);
-  s.env=Math.min(100,s.env+b*.2);s.live=Math.min(100,s.live+b*.3);s.human=Math.min(100,s.human);
+  /* Tank size adds context — larger tanks generally need more infrastructure */
+  var b=tankSize==='large'?12:tankSize==='medium'?5:0;
+  s.water=Math.min(100,s.water+b*.4);
+  s.bio=Math.min(100,s.bio+b*.3);
+  s.env=Math.min(100,s.env+b*.2);
+  s.live=Math.min(100,s.live+b*.3);
+  s.human=Math.min(100,s.human);
   return s;
 }
 
@@ -1030,24 +1197,24 @@ function drawPentagon(s){
 function setStatus(txt,color){}
 
 function getSystemInsight(){
-  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister'];
-  var h=active['heater'],lp=active['light-planted'],sg=active['sub-gravel']||active['sub-sand']||active['sub-soil'];
-  var tk=active['testkit'],sd=active['seed'],soil=active['sub-soil'];
+  /* Community-verified essentials for a healthy freshwater tank:
+     1. Filtration (nitrogen cycle host)
+     2. Heater (temperature stability for tropical species)
+     3. Lighting (photoperiod regulation)
+     4. Substrate (bacterial colonisation surface)
+     5. Test kit (verifying cycle completion)
+     Source: widely accepted in fishkeeping community — API, Seachem guidance,
+     academic work on aquarium nitrogen cycling (Hovanec & DeLong 1996 etc.) */
+  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister']||active['filter-internal']||active['filter-overflow'];
+  var h=active['heater'],lp=active['light-planted'];
   var n=Object.keys(active).length;
-  if(n===0)return{t:'Add equipment from the rack to begin building your system.',c:'rgba(61,214,232,.4)'};
-  if(lp)return{t:'Plant-grade light selected. This produces more light than most fish need — consider Basic LED unless you plan a planted setup.',c:'rgba(220,160,40,.5)'};
-  if(soil&&!lp)return{t:'Aqua soil without plant-grade light is a mismatch. The nutrients will fuel algae instead of plants.',c:'rgba(220,160,40,.6)'};
-  if(sd&&!f)return{t:'Bacteria starter without a filter has nowhere to establish. Add a filter first.',c:'rgba(220,160,40,.6)'};
-  if(active['ammonia-source']&&!f)return{t:'Ammonia source without a filter — bacteria have nowhere to colonise. Add filtration first.',c:'rgba(220,160,40,.6)'};
-  if(f&&h&&sg&&tk&&sd)return{t:'A well-prepared starting system. Expect four to six weeks before parameters stabilise.',c:'rgba(80,190,100,.6)'};
-  if(f&&h&&sg&&tk)return{t:'Solid foundation. Ready to begin cycling. Four to eight weeks — the test kit will make it readable.',c:'rgba(80,190,100,.6)'};
-  if(f&&h&&sg&&!tk)return{t:'Good setup. No test kit yet. Without it, cycling is invisible.',c:'rgba(220,160,40,.6)'};
-  if(!f)return{t:'No filter yet. A filter is the most important piece — it is where your bacterial colony lives.',c:'rgba(200,70,50,.5)'};
-  if(f&&!h)return{t:'Filter running. Without a heater, bacteria work noticeably slower in cool rooms.',c:'rgba(220,160,40,.6)'};
-  return{t:'Keep exploring. Each addition changes what the system can do.',c:'rgba(61,214,232,.4)'};
+  if(n===0)return{t:'Add equipment to begin. A filter is the most important first step.',c:'rgba(61,214,232,.4)'};
+  if(!f)return{t:'No filter selected. Without filtration, the nitrogen cycle cannot establish and ammonia will accumulate.',c:'rgba(220,100,60,.5)'};
+  if(f&&!h)return{t:'Filter added. Consider a heater if you plan to keep tropical fish — most species need 24–28°C.',c:'rgba(220,160,60,.5)'};
+  if(lp)return{t:'Plant light selected. High-output lighting increases algae risk without CO₂ and nutrients to balance it.',c:'rgba(220,160,40,.5)'};
+  return{t:'',c:''};
 }
 
-/* ═══ CONFLICT CHECK ═══ */
 function getStatus(id){
   var eq=EQ[id];
   for(var i=0;i<eq.conflicts.length;i++){if(active[eq.conflicts[i]])return'conflict';}
@@ -1339,6 +1506,7 @@ function generateReport(){
   /* Header */
   html+='<div style="margin-bottom:1.8rem">';
   html+='<span style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:.6rem">Your ARA Report</span>';
+  html+='<p style="font-size:.58rem;color:rgba(255,255,255,.2);font-style:italic;font-family:var(--serif);margin-bottom:1rem;line-height:1.5">This report uses the ARA rhythm model — a qualitative framework based on community knowledge and observed patterns in freshwater fishkeeping. It is a thinking tool, not a scientific assessment.</p>';
   html+='<h1 style="font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,4vw,2.2rem);color:rgba(255,255,255,.88);line-height:1.1;margin-bottom:.5rem">'+tankLabel+' Setup</h1>';
   html+='<p style="font-size:.75rem;color:rgba(255,255,255,.35);font-family:var(--serif);font-style:italic">'+eqNames.length+' pieces of equipment &nbsp;&middot;&nbsp; '+ready+'/5 essentials</p>';
   html+='</div>';
@@ -1430,11 +1598,441 @@ function showReport(){
   },100);
 }
 
-document.getElementById('btn-submit').addEventListener('click',function(){showReport();});
+
 document.getElementById('btn-try-again').addEventListener('click',function(){
   document.getElementById('report-overlay').style.display='none';
+  ph2Style=null;ph2Active={stock:{},plants:{},hard:{}};
 });
 
+
+var ECOSYSTEM={"SETUP_STYLES":{"community":{"label":"Community Tank","desc":"Mixed peaceful fish in a balanced, forgiving environment. The most common freshwater setup. Multiple species that coexist peacefully.","difficulty":"Beginner","color":"rgba(61,214,232,"},"planted":{"label":"Planted Tank","desc":"Live plants as the primary focus. From low-tech java fern with minimal light to high-tech CO₂-injected carpets. Plants shape the chemical and visual environment.","difficulty":"Intermediate","color":"rgba(100,200,82,"},"biotope":{"label":"Biotope","desc":"A specific natural habitat replicated — fish, plants, and hardscape from the same geographic ecosystem. Amazon blackwater, Southeast Asian stream, or African rift lake.","difficulty":"Intermediate","color":"rgba(220,160,60,"},"species":{"label":"Species-Specific","desc":"Built around one species with demanding, unusual, or incompatible requirements. Discus, oscar, puffer, or African cichlid setups where mixing is impractical.","difficulty":"Intermediate–Advanced","color":"rgba(180,120,200,"},"shrimp":{"label":"Shrimp Tank","desc":"Invertebrate-focused. Water parameters must be precise and stable. From beginner-friendly Neocaridina to advanced Caridina bee shrimp.","difficulty":"Beginner (Neo) to Advanced (Caridina)","color":"rgba(255,160,80,"},"coldwater":{"label":"Coldwater / Goldfish","desc":"Species that prefer or require cooler water (15–22°C). Goldfish, white cloud minnow, or temperate fish. No heater — cooling may be required in tropical climates.","difficulty":"Beginner–Intermediate","color":"rgba(139,189,210,"},"paludarium":{"label":"Paludarium","desc":"Half aquatic, half terrestrial. Plants emerge above the waterline. Combines aquarium and terrarium. More complex structure and maintenance.","difficulty":"Advanced","color":"rgba(157,191,154,"},"nano":{"label":"Nano Tank","desc":"Tanks under 30L. Limited to very small species. Requires more precise water management — small volumes fluctuate rapidly.","difficulty":"Beginner–Intermediate","color":"rgba(200,180,255,"},"blackwater":{"label":"Blackwater","desc":"Tannin-rich, deeply amber water replicating Amazonian and Southeast Asian peat swamps. Very low pH, extremely soft water, leaf litter and driftwood. Specific soft-water species only.","difficulty":"Intermediate","color":"rgba(180,130,80,"}},"FISH":{"neon-tetra":{"name":"Neon Tetra","latin":"Paracheirodon innesi","style":["community","planted"],"size_cm":3,"schooling":true,"min_school":6,"temp":[22,26],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Amazon Basin, Peru/Colombia","water_column":"middle","care_level":"Beginner","lifespan_yr":"5–8","diet":"Omnivore — accepts quality flake, micro pellets, frozen daphnia and brine shrimp.","stocking":{"small_40l":"6–8","medium_80l":"10–15","large_150l":"20–30"},"substrate_pref":"Dark substrate intensifies colour. Fine gravel or sand.","notes_detail":"One of the most kept freshwater fish globally. The iconic blue-red stripe is brightest in soft, slightly acidic water with good planting. Extremely sensitive during the first weeks — never add to an uncycled or newly established tank. Cardinal tetra is often considered a more vibrant but more demanding alternative.","caution":"New Tank Syndrome is the #1 killer. Wait until ammonia and nitrite are zero. Prone to Neon Tetra Disease (Pleistophora) — no cure, quarantine new fish.","min_tank_l":40},"cardinal-tetra":{"name":"Cardinal Tetra","latin":"Paracheirodon axelrodi","style":["community","planted","biotope"],"size_cm":4,"schooling":true,"min_school":6,"temp":[23,27],"ph":[4.5,6.8],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Upper Orinoco and Negro rivers, Venezuela/Brazil","water_column":"middle","care_level":"Intermediate","lifespan_yr":"4–5","diet":"Omnivore — micro pellets, quality flake, frozen baby brine shrimp, daphnia.","stocking":{"small_40l":"6","medium_80l":"10–12","large_150l":"20–30"},"substrate_pref":"Dark substrate. Prefers tannin-stained blackwater with leaf litter.","notes_detail":"The full-length red stripe distinguishes it from the neon tetra. Requires genuinely soft, acidic water to show best colour and remain healthy long-term. Wild-caught specimens are more delicate than tank-bred. The upper Negro and Orinoco rivers where it originates have pH as low as 4.0 and almost zero hardness.","caution":"Will not thrive in hard tap water without RO or conditioning. More sensitive than neon tetra — experienced beginners only.","min_tank_l":60},"ember-tetra":{"name":"Ember Tetra","latin":"Hyphessobrycon amandae","style":["community","planted"],"size_cm":2,"schooling":true,"min_school":8,"temp":[23,29],"ph":[5.5,7.0],"hardness":"soft","bioload":"very-low","aggression":"peaceful","region":"Araguaia River basin, Brazil","water_column":"middle","care_level":"Beginner","lifespan_yr":"2–3","diet":"Omnivore — very small mouth. Micro pellets, crushed flake, baby brine shrimp.","stocking":{"small_40l":"8–12","medium_80l":"15–20","large_150l":"30+"},"substrate_pref":"Fine dark substrate. Dense planting with open swimming areas.","notes_detail":"One of the best nano fish available. The orange-amber glow intensifies significantly in soft water against dark substrate and dense planting. Very small bioload — suitable for well-planted 20L setups. Compatible with dwarf shrimp as they are too small to eat adult Neocaridina.","caution":"Very small mouth — most standard flake is too large. Crush finely or use specific nano/micro food.","min_tank_l":20},"rummy-nose-tetra":{"name":"Rummy-nose Tetra","latin":"Hemigrammus rhodostomus","style":["community","planted"],"size_cm":4.5,"schooling":true,"min_school":8,"temp":[24,28],"ph":[5.5,7.0],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Lower Amazon, Brazil","water_column":"middle","care_level":"Intermediate","lifespan_yr":"5–6","diet":"Omnivore — quality flake, micro pellets, frozen daphnia and brine shrimp.","stocking":{"small_40l":"8","medium_80l":"12–15","large_150l":"20–30"},"substrate_pref":"Dark substrate. Open swimming space in centre of tank.","notes_detail":"The red nose is a genuine water quality indicator — it fades and pales when ammonia rises or pH swings occur. Experienced hobbyists watch the nose colour daily. Tight, synchronised schooling behaviour is most visible in schools of 10+. One of the most aesthetically striking schooling fish in the hobby.","caution":"Fading red nose = water quality problem. Check parameters immediately. More sensitive than most tetras.","min_tank_l":60},"black-skirt-tetra":{"name":"Black Skirt Tetra","latin":"Gymnocorymbus ternetzi","style":["community"],"size_cm":6,"schooling":true,"min_school":6,"temp":[20,26],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"semi-aggressive","region":"Paraguay and Guaporé River basins","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen foods. Not fussy.","stocking":{"small_40l":"6","medium_80l":"8–10","large_150l":"15–20"},"substrate_pref":"Not particular. Gravel or sand both acceptable.","notes_detail":"Hardy and adaptable. The flowing black fins fade with age to grey. Known fin-nippers — avoid keeping with fish with long flowing fins like bettas, angelfish, or guppies. Schooling reduces fin-nipping tendency significantly.","caution":"Notorious fin nipper. Avoid tankmates with long flowing fins. Keep in groups of 6+ to redirect attention inward.","min_tank_l":60},"glowlight-tetra":{"name":"Glowlight Tetra","latin":"Hemigrammus erythrozonus","style":["community","planted"],"size_cm":4,"schooling":true,"min_school":6,"temp":[22,28],"ph":[5.8,7.5],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Essequibo River, Guyana","water_column":"middle","care_level":"Beginner","lifespan_yr":"4–5","diet":"Omnivore — flake, micro pellets, frozen daphnia.","stocking":{"small_40l":"6–8","medium_80l":"10–12","large_150l":"15–20"},"substrate_pref":"Dark substrate enhances the orange stripe visibility.","notes_detail":"The orange-red stripe glows especially well under planted tank lighting. Very peaceful — an excellent companion for other small tetras. Hardy and forgiving of a wider pH range than most Amazonian tetras.","caution":"None significant. One of the easiest tetras to keep.","min_tank_l":40},"serpae-tetra":{"name":"Serpae Tetra","latin":"Hyphessobrycon eques","style":["community"],"size_cm":4,"schooling":true,"min_school":8,"temp":[22,28],"ph":[5.5,7.5],"hardness":"soft-medium","bioload":"low","aggression":"semi-aggressive","region":"Amazon and Paraguay River basins","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen bloodworm and brine shrimp.","stocking":{"small_40l":"8","medium_80l":"10–15","large_150l":"20+"},"substrate_pref":"Not fussy. Dense planting helps reduce aggression.","notes_detail":"Vivid blood-red colouration with a distinctive black shoulder spot. Active fin nipper — keeping in large schools of 8+ dilutes aggression significantly as fish focus on each other rather than tankmates. A well-planted tank with hiding spots helps.","caution":"Active fin nipper. Keep in groups of 8+. Avoid long-finned tankmates entirely.","min_tank_l":60},"lemon-tetra":{"name":"Lemon Tetra","latin":"Hyphessobrycon pulchripinnis","style":["community","planted"],"size_cm":4,"schooling":true,"min_school":6,"temp":[23,27],"ph":[5.5,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Tapajós River basin, Brazil","water_column":"middle","care_level":"Beginner","lifespan_yr":"4–5","diet":"Omnivore — fine flake, micro pellets, frozen baby brine shrimp.","stocking":{"small_40l":"6–8","medium_80l":"10–12","large_150l":"15–20"},"substrate_pref":"Dark substrate brings out the yellow colouration.","notes_detail":"Cheerful and peaceful yellow tetra. Often overlooked in favour of brighter species but very rewarding in a planted tank. The yellow fins and red iris are subtle but beautiful.","caution":"None significant. One of the most reliable community tetras.","min_tank_l":40},"diamond-tetra":{"name":"Diamond Tetra","latin":"Moenkhausia pittieri","style":["community","planted"],"size_cm":6,"schooling":true,"min_school":6,"temp":[22,26],"ph":[6.0,7.0],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Lake Valencia basin, Venezuela","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen foods. Not fussy.","stocking":{"small_40l":"6","medium_80l":"8–10","large_150l":"12–18"},"substrate_pref":"Not fussy. Looks spectacular under bright planted tank lighting.","notes_detail":"Each scale reflects light individually — the sparkle effect is most visible under high-output planted tank lighting. Males develop dramatic finnage with age. An underrated and stunning fish.","caution":"None significant. Requires good light to show best colours.","min_tank_l":80},"congo-tetra":{"name":"Congo Tetra","latin":"Phenacogrammus interruptus","style":["community","biotope"],"size_cm":8,"schooling":true,"min_school":6,"temp":[23,27],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"medium","aggression":"peaceful","region":"Congo River basin, DRC","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen bloodworm. May nibble soft plants.","stocking":{"small_40l":"Not recommended","medium_80l":"6","large_150l":"8–12"},"substrate_pref":"Open swimming space needed. Not fussy about substrate.","notes_detail":"The largest commonly kept tetra. Males develop spectacular iridescent blue-orange scales and flowing fins. One of the few African tetras commonly available. Prefers open swimming space — avoid very heavily planted tanks.","caution":"May nibble on soft-leaved plants. Needs horizontal swimming space — not suited to tall narrow tanks.","min_tank_l":100},"pencilfish":{"name":"Pencilfish","latin":"Nannostomus spp.","style":["community","planted","biotope"],"size_cm":3,"schooling":true,"min_school":8,"temp":[23,28],"ph":[5.0,7.0],"hardness":"soft","bioload":"very-low","aggression":"peaceful","region":"Amazon and Orinoco basins","water_column":"upper-middle","care_level":"Intermediate","lifespan_yr":"3–5","diet":"Omnivore — very small mouth. Micro pellets, baby brine shrimp, crushed flake.","stocking":{"small_40l":"8–10","medium_80l":"12–15","large_150l":"20+"},"substrate_pref":"Blackwater setup with leaf litter and tannins ideal. Floating plants appreciated.","notes_detail":"Slender and elegant. Multiple species available — N. marginatus (dwarf pencilfish) and N. beckfordi (golden pencilfish) most common. Top-to-mid water dweller. Horizontal banding pattern displayed differently between species. Male pencilfish can occasionally be aggressive with each other — watch for dominance behaviour.","caution":"Very small mouth — standard flake must be crushed. Males may spar — keep one male to several females or in larger groups.","min_tank_l":40},"hatchetfish":{"name":"Marbled Hatchetfish","latin":"Carnegiella strigata","style":["community","biotope"],"size_cm":3.5,"schooling":true,"min_school":6,"temp":[23,28],"ph":[5.5,7.0],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Amazon basin, Peru/Brazil/Colombia","water_column":"surface","care_level":"Intermediate","lifespan_yr":"2–3","diet":"Insectivore — floating pellets, freeze-dried bloodworm, small insects. Feed at surface.","stocking":{"small_40l":"6","medium_80l":"8–10","large_150l":"12–15"},"substrate_pref":"Not relevant — surface dweller. Floating plants provide security.","notes_detail":"Unique compressed body shape adapted for surface feeding. Can jump remarkable distances when startled. A tight-fitting lid with no gaps is absolutely essential. Adapts pectoral fins to skim-jump short distances — this is normal behaviour. Surface-dwelling fish that rarely goes below the upper third of the tank.","caution":"Exceptional jumpers — lid with NO gaps is mandatory. Wild-caught specimens can be fragile initially.","min_tank_l":60},"harlequin-rasbora":{"name":"Harlequin Rasbora","latin":"Trigonostigma heteromorpha","style":["community","planted","biotope"],"size_cm":4,"schooling":true,"min_school":8,"temp":[23,28],"ph":[5.5,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Thailand, Malaysia, Singapore, Sumatra","water_column":"middle","care_level":"Beginner","lifespan_yr":"5–8","diet":"Omnivore — flake, micro pellets, frozen baby brine shrimp.","stocking":{"small_40l":"8","medium_80l":"12–15","large_150l":"20–30"},"substrate_pref":"Dark substrate and planted setup shows the copper-black triangle pattern best.","notes_detail":"Native to Southeast Asia including Malaysia and Singapore — very relevant to the regional climate. The black triangular marking and copper body are distinctive. One of the most popular aquarium fish globally for decades. Spawns on the underside of broad leaves — anubias is a preferred spawning site. Hardy and adaptable within its temperature range.","caution":"None significant. One of the most beginner-friendly schooling fish.","min_tank_l":40},"chili-rasbora":{"name":"Chili Rasbora","latin":"Boraras brigittae","style":["community","planted"],"size_cm":2,"schooling":true,"min_school":10,"temp":[23,28],"ph":[4.0,7.0],"hardness":"soft","bioload":"very-low","aggression":"peaceful","region":"Southwest Borneo (Kalimantan)","water_column":"middle","care_level":"Intermediate","lifespan_yr":"3–5","diet":"Omnivore — micro pellets, baby brine shrimp nauplii, infusoria. Tiny mouth.","stocking":{"small_40l":"10–15","medium_80l":"20–30","large_150l":"40+"},"substrate_pref":"Blackwater setup with dark substrate and tannins brings out vivid red colouration.","notes_detail":"The vivid scarlet-red colouration makes this one of the most striking nano fish available. Native to the peat swamp forests of Borneo where water is extremely soft and tea-coloured from tannins. In hard tap water the red fades significantly. Best kept in blackwater biotope or well-conditioned soft water. Groups of 15+ show most natural behaviour.","caution":"Standard flake is too large — must use nano or micro food. Not compatible with anything that might eat a 2cm fish.","min_tank_l":20},"galaxy-rasbora":{"name":"Galaxy Rasbora (CPD)","latin":"Danio margaritatus","style":["community","planted"],"size_cm":2,"schooling":true,"min_school":8,"temp":[18,24],"ph":[6.5,7.5],"hardness":"medium","bioload":"very-low","aggression":"peaceful","region":"Inle Lake area, Myanmar","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — micro pellets, crushed flake, baby brine shrimp.","stocking":{"small_40l":"10–15","medium_80l":"20–25","large_150l":"30+"},"substrate_pref":"Dense planting. Dark substrate. Cooler water from their highland origin.","notes_detail":"Discovered only in 2006 and immediately became one of the most sought-after nano fish. The white-spotted blue body and red-striped fins are distinctive. Prefers slightly cooler water than most tropical fish — important consideration in Malaysian/Singapore climate where ambient may be 28°C+. May need cooling to maintain 22–24°C.","caution":"Prefers cooler water — may need cooling in tropical climates. Not suited for warm community tanks above 26°C.","min_tank_l":20},"lambchop-rasbora":{"name":"Lambchop Rasbora","latin":"Trigonostigma espei","style":["community","planted"],"size_cm":3,"schooling":true,"min_school":8,"temp":[23,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"very-low","aggression":"peaceful","region":"Thailand, Cambodia","water_column":"middle","care_level":"Beginner","lifespan_yr":"4–6","diet":"Omnivore — fine flake, micro pellets, baby brine shrimp.","stocking":{"small_40l":"8–10","medium_80l":"12–18","large_150l":"25+"},"substrate_pref":"Dense planted setup with dark substrate.","notes_detail":"Very similar to harlequin but slimmer and the black marking is a diagonal slash rather than a triangle. Often sold interchangeably with harlequin. Highly adaptable and peaceful. Excellent for planted community tanks.","caution":"None significant.","min_tank_l":30},"guppy":{"name":"Guppy","latin":"Poecilia reticulata","style":["community"],"size_cm":5,"schooling":false,"min_school":1,"temp":[22,28],"ph":[6.8,7.8],"hardness":"medium-hard","bioload":"medium","aggression":"peaceful","region":"Caribbean, Venezuela, Trinidad","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"2–3","diet":"Omnivore — flake, micro pellets, live baby brine shrimp. High-quality food prevents nutritional disease.","stocking":{"small_40l":"4–6 (ratio 1M:2F)","medium_80l":"10–15","large_150l":"20–30"},"substrate_pref":"Not fussy. Dense planting gives females refuge from male harassment.","notes_detail":"Among the most commonly kept aquarium fish worldwide. Hundreds of colour and fin variants exist through selective breeding. Males constantly harass females — maintaining a 1:2 or 1:3 male-to-female ratio is essential for female health. Livebearers that drop free-swimming fry — separate fry if you want to raise them. Prefer slightly harder water than most tropical fish.","caution":"Male harassment of females causes stress and shortened lifespan. Minimum ratio: 1 male to 2 females. Dense planting is essential for females to hide.","min_tank_l":40},"platy":{"name":"Platy","latin":"Xiphophorus maculatus","style":["community"],"size_cm":6,"schooling":false,"min_school":1,"temp":[20,26],"ph":[7.0,8.0],"hardness":"medium-hard","bioload":"medium","aggression":"peaceful","region":"Mexico, Guatemala, Honduras","water_column":"middle","care_level":"Beginner","lifespan_yr":"2–4","diet":"Omnivore — flake, pellets, vegetable-based foods. Include algae wafers.","stocking":{"small_40l":"4–6","medium_80l":"8–12","large_150l":"15–20"},"substrate_pref":"Not fussy. Hardy and adaptable.","notes_detail":"One of the hardiest and most adaptable freshwater fish. Many colour variants available. Livebearers — will breed readily, separate fry if space is limited. Slightly lower temperature tolerance makes them suitable for rooms without heating. Prefer harder, more alkaline water than Amazon species.","caution":"Prefer harder water — soft acidic water shortens lifespan. Will over-breed without population management.","min_tank_l":40},"molly":{"name":"Molly","latin":"Poecilia sphenops","style":["community"],"size_cm":8,"schooling":false,"min_school":1,"temp":[22,28],"ph":[7.5,8.5],"hardness":"hard","bioload":"medium-high","aggression":"peaceful","region":"Mexico, Central America, Colombia","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, vegetables, algae wafers. High vegetable content important.","stocking":{"small_40l":"3–4","medium_80l":"6–8","large_150l":"10–15"},"substrate_pref":"Not fussy. Tolerates a small amount of aquarium salt.","notes_detail":"Naturally brackish-tolerant fish that does best in hard, alkaline water. A small amount of aquarium salt (1 teaspoon per 10L) benefits mollies significantly. High bioload for their size — filtration must account for this. Black molly, dalmatian molly, sailfin molly are all variants of the same or closely related species.","caution":"Cannot be kept with soft-water fish like discus or cardinal tetras. High bioload requires good filtration. Prone to Mollies Disease (shimmy) in poor water conditions.","min_tank_l":60},"swordtail":{"name":"Swordtail","latin":"Xiphophorus hellerii","style":["community"],"size_cm":12,"schooling":false,"min_school":1,"temp":[22,28],"ph":[7.0,8.0],"hardness":"medium-hard","bioload":"medium","aggression":"semi-aggressive","region":"Mexico, Guatemala, Belize","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen foods, vegetable matter.","stocking":{"small_40l":"2–3","medium_80l":"4–6","large_150l":"8–12"},"substrate_pref":"Not fussy. Active swimmer — needs horizontal space.","notes_detail":"The elongated lower tail fin on males is distinctive. Active and fast-swimming. Males can be aggressive toward each other — keep one male with several females or in a larger tank with sight-breaking décor. Will jump — lid required.","caution":"Males fight. Keep one male per tank unless tank is 150L+. Active jumpers — lid essential.","min_tank_l":80},"endler-guppy":{"name":"Endler's Livebearer","latin":"Poecilia wingei","style":["community","planted"],"size_cm":3,"schooling":false,"min_school":1,"temp":[22,28],"ph":[6.5,8.0],"hardness":"medium","bioload":"low","aggression":"peaceful","region":"Laguna de Patos, Venezuela","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"2–3","diet":"Omnivore — micro pellets, crushed flake, baby brine shrimp.","stocking":{"small_40l":"6–8","medium_80l":"12–20","large_150l":"30+"},"substrate_pref":"Dense planting appreciated. Dark substrate intensifies colours.","notes_detail":"Originally from a small coastal lagoon in Venezuela. More compact and active than regular guppies. Male colouration often more vivid. Will hybridise with regular guppies if kept together — keep species pure or accept hybrids. Can be kept with small shrimp as they rarely predate adult Neocaridina.","caution":"Will hybridise with guppies. Keep separately if you want to maintain pure strains.","min_tank_l":20},"zebra-danio":{"name":"Zebra Danio","latin":"Danio rerio","style":["community"],"size_cm":5,"schooling":true,"min_school":6,"temp":[18,26],"ph":[6.5,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"South Asia — India, Bangladesh, Nepal","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen foods. Not fussy.","stocking":{"small_40l":"6–8","medium_80l":"10–15","large_150l":"20+"},"substrate_pref":"Not fussy. Needs open horizontal swimming space.","notes_detail":"One of the most studied vertebrates in science — the genome is fully mapped. Extremely hardy and tolerant of poor water conditions compared to most tropical fish. Often recommended for cycling tanks (though fishless cycling is preferred). Very active upper-water swimmer. Longfin variants are popular but more susceptible to fin nipping.","caution":"Active and fast — can stress slower or timid tankmates. Longfin varieties should not be kept with fin-nippers.","min_tank_l":40},"giant-danio":{"name":"Giant Danio","latin":"Devario aequipinnatus","style":["community"],"size_cm":10,"schooling":true,"min_school":5,"temp":[20,26],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"medium","aggression":"peaceful","region":"Sri Lanka, India, Nepal, Myanmar","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, pellets, frozen bloodworm. Enthusiastic eater.","stocking":{"small_40l":"Not suitable","medium_80l":"5–6","large_150l":"8–12"},"substrate_pref":"Not fussy. Needs large open swimming area.","notes_detail":"The larger danio for bigger tanks. Active schooler. The blue-yellow horizontal striping is attractive in motion. Can be a mild fin nipper with slow-moving fish. Prefers cooler water — not ideal for discus or other high-temperature setups.","caution":"Occasional fin nipper. Needs open swimming space. Not suitable for small tanks.","min_tank_l":100},"pearl-danio":{"name":"Pearl Danio","latin":"Danio albolineatus","style":["community"],"size_cm":5,"schooling":true,"min_school":6,"temp":[18,24],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Myanmar, Sumatra, Yunnan China","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — flake, micro pellets, frozen foods.","stocking":{"small_40l":"6–8","medium_80l":"10–15","large_150l":"20+"},"substrate_pref":"Not fussy. Cooler water — consider unheated tank in tropical climate.","notes_detail":"Subtle iridescent lavender-pink sheen that catches light beautifully. Cooler water preference than most tropical fish — suitable for tanks without heaters in temperate rooms, or with cooling in tropical climates.","caution":"Prefers cooler water than most tropical fish. Not suitable for warm community tanks above 24°C.","min_tank_l":40},"corydoras":{"name":"Corydoras Catfish","latin":"Corydoras spp.","style":["community","planted","biotope"],"size_cm":5,"schooling":true,"min_school":6,"temp":[22,26],"ph":[6.0,7.8],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"South America — widespread","water_column":"bottom","care_level":"Beginner","lifespan_yr":"3–10 depending on species","diet":"Omnivore — sinking pellets, algae wafers, frozen bloodworm. Must reach the bottom.","stocking":{"small_40l":"6","medium_80l":"6–8","large_150l":"8–12"},"substrate_pref":"Fine sand or very smooth gravel essential — sharp substrate damages barbels irreversibly.","notes_detail":"Over 160 species described. C. paleatus (pepper cory), C. aeneus (bronze cory), C. panda most commonly available. Social — showing stressed or inactive behaviour in groups below 5. Bottom dwellers that also breathe atmospheric air — normal to dash to the surface periodically. Need sinking food that reaches them before other fish eat it.","caution":"Sharp gravel = damaged barbels = infections. Fine sand is ideal. Barbel damage is irreversible. Never keep fewer than 5.","min_tank_l":40},"pygmy-corydoras":{"name":"Pygmy Corydoras","latin":"Corydoras pygmaeus","style":["community","planted"],"size_cm":2.5,"schooling":true,"min_school":8,"temp":[22,26],"ph":[6.0,7.5],"hardness":"soft","bioload":"very-low","aggression":"peaceful","region":"Madeira River tributaries, Brazil","water_column":"middle-bottom","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — micro pellets, baby brine shrimp, small sinking wafers.","stocking":{"small_40l":"8–10","medium_80l":"12–15","large_150l":"20+"},"substrate_pref":"Fine sand. Dense planting — unlike regular corydoras, pygmies often swim in the water column.","notes_detail":"Unlike most corydoras, pygmy corydoras are mid-water swimmers as well as bottom dwellers. This makes them unusual and interesting to watch. Very small size makes them suitable for nano tanks. Best kept in large groups for natural schooling behaviour.","caution":"Very small — avoid tankmates that might eat a 2.5cm fish. Fine substrate essential.","min_tank_l":30},"sterbai-corydoras":{"name":"Sterbai Corydoras","latin":"Corydoras sterbai","style":["community","planted"],"size_cm":6,"schooling":true,"min_school":6,"temp":[24,30],"ph":[6.0,7.5],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Guaporé River basin, Brazil/Bolivia","water_column":"bottom","care_level":"Beginner","lifespan_yr":"5–10","diet":"Omnivore — sinking pellets, frozen bloodworm, algae wafers.","stocking":{"small_40l":"6","medium_80l":"6–8","large_150l":"8–12"},"substrate_pref":"Fine sand or very smooth substrate. Prefers warm water.","notes_detail":"One of the most popular corydoras species. Distinctive white-spotted dark pattern. Notably tolerates higher temperatures than most corydoras — making it the only cory suitable for discus tanks where temperatures reach 28–30°C. Pectoral fin spines can puncture skin and are mildly venomous — handle with care.","caution":"Pectoral spines are mildly venomous — handle carefully when netting. Fine substrate essential.","min_tank_l":60},"otocinclus":{"name":"Otocinclus Catfish","latin":"Otocinclus spp.","style":["community","planted"],"size_cm":4,"schooling":true,"min_school":4,"temp":[21,26],"ph":[6.0,7.5],"hardness":"soft","bioload":"very-low","aggression":"peaceful","region":"South America — widespread","water_column":"bottom-all","care_level":"Intermediate","lifespan_yr":"3–5","diet":"Herbivore — biofilm, algae, blanched vegetables (zucchini, cucumber), algae wafers. Cannot survive on algae alone.","stocking":{"small_40l":"4–6","medium_80l":"6–8","large_150l":"8–12"},"substrate_pref":"Planted tank with established biofilm. Cannot survive in new tanks.","notes_detail":"The best small algae cleaner for planted tanks. Grazes biofilm and soft green algae from leaves without damaging plants. Critical requirement: only add to a mature, cycled tank with established biofilm — they cannot survive in new tanks. Wild-caught fish may refuse to eat commercially and starve. A staple in the planted tank hobby for decades.","caution":"NEVER add to a new tank — will starve without established biofilm. Most deaths occur from starvation, not disease. Supplement with blanched vegetables from day one.","min_tank_l":40},"bristlenose-pleco":{"name":"Bristlenose Pleco","latin":"Ancistrus spp.","style":["community","planted"],"size_cm":12,"schooling":false,"min_school":1,"temp":[22,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"medium","aggression":"peaceful","region":"South America — widespread","water_column":"bottom","care_level":"Beginner","lifespan_yr":"5–12","diet":"Herbivore/Omnivore — algae, driftwood (essential to rasp), algae wafers, blanched vegetables, occasional protein.","stocking":{"small_40l":"1","medium_80l":"1","large_150l":"1–2"},"substrate_pref":"Driftwood essential — rasping wood is a dietary and digestive necessity.","notes_detail":"The recommended pleco for community tanks — unlike common plecos, stays under 12cm. Males develop whisker-like bristles on their snout. Cave-spawner — males guard eggs enthusiastically. Must have driftwood: the cellulose is part of their diet and digestive process. Will not survive long-term without wood to rasp.","caution":"Must have driftwood — non-negotiable for health. Two males in the same tank will fight. Produces significant waste for its size.","min_tank_l":80},"siamese-algae-eater":{"name":"Siamese Algae Eater","latin":"Crossocheilus oblongus","style":["community","planted"],"size_cm":15,"schooling":false,"min_school":1,"temp":[24,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"medium","aggression":"peaceful","region":"Thailand, Malaysia","water_column":"bottom-middle","care_level":"Intermediate","lifespan_yr":"10+","diet":"Omnivore — algae (including black beard algae), biofilm, sinking pellets.","stocking":{"small_40l":"Not suitable","medium_80l":"1","large_150l":"1–2"},"substrate_pref":"Not fussy. Needs open bottom space to graze.","notes_detail":"One of the very few fish that eats black beard algae (Audouinella) — the most problematic planted tank algae. Grows to 15cm and is very active. Frequently confused with the Flying Fox (Epalzeorhynchos kalopterus) and False Siamese Algae Eater — identification is important. The true SAE has a solid black stripe from snout to tail that extends into the tail fin.","caution":"Frequently mislabelled in fish shops. True SAE has the black stripe extending into the tail fin — verify before purchasing. Grows large for a community fish.","min_tank_l":100},"hillstream-loach":{"name":"Hillstream Loach","latin":"Sewellia / Gastromyzon spp.","style":["community","biotope"],"size_cm":6,"schooling":false,"min_school":2,"temp":[18,24],"ph":[6.5,7.5],"hardness":"medium","bioload":"low","aggression":"peaceful","region":"Fast-flowing streams of Southeast and South Asia","water_column":"bottom","care_level":"Intermediate","lifespan_yr":"5–10","diet":"Herbivore — biofilm, algae, blanched vegetables. Cannot be overfed.","stocking":{"small_40l":"Not suitable","medium_80l":"2–3","large_150l":"4–6"},"substrate_pref":"Smooth rounded river stones. Strong flow essential — use powerhead or wavemaker.","notes_detail":"Flat, disc-like body adapted for fast-flowing oxygenated streams. Requires high oxygen content and strong current — a powerhead or wavemaker aimed at smooth rocks is essential. Grazes biofilm from rock surfaces. Very sensitive to low oxygen — must have vigorous surface agitation. Fascinating and unusual appearance.","caution":"Requires high oxygen and strong current — standard tank conditions are insufficient. Will decline and die without adequate flow over smooth rocks.","min_tank_l":60},"kuhli-loach":{"name":"Kuhli Loach","latin":"Pangio kuhlii","style":["community","planted"],"size_cm":10,"schooling":true,"min_school":5,"temp":[24,30],"ph":[5.5,7.0],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Southeast Asia — Malaysia, Singapore, Java, Sumatra","water_column":"bottom","care_level":"Beginner","lifespan_yr":"10+","diet":"Omnivore — sinking pellets, frozen bloodworm, shrimp pellets. Nocturnal feeder.","stocking":{"small_40l":"5","medium_80l":"5–8","large_150l":"8–12"},"substrate_pref":"Fine sand essential — they burrow. Caves and hiding spots mandatory.","notes_detail":"Native to Malaysia and Singapore. Eel-like and charming. Primarily nocturnal — comes out at night to feed and explore. Very rarely seen during the day unless comfortable in the tank. Social — groups of 5+ feel more secure and are seen more often. May hide under substrate in fine sand. Long-lived when conditions suit.","caution":"Rarely visible during day — normal behaviour, not illness. Needs very fine substrate to burrow safely. Can squeeze through small filter intake gaps — cover intakes.","min_tank_l":60},"clown-loach":{"name":"Clown Loach","latin":"Chromobotia macracanthus","style":["community","biotope"],"size_cm":30,"schooling":true,"min_school":5,"temp":[25,30],"ph":[6.0,7.5],"hardness":"soft","bioload":"high","aggression":"peaceful","region":"Sumatra and Borneo, Indonesia","water_column":"bottom-middle","care_level":"Intermediate","lifespan_yr":"20–25","diet":"Omnivore — sinking pellets, frozen bloodworm, snails (actively hunted), vegetables.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"5 (300L minimum)"},"substrate_pref":"Soft substrate. Caves and hiding spots. Dim areas appreciated.","notes_detail":"One of the most popular aquarium fish for decades, but frequently mistreated through undersizing. Sold at 3–5cm but grows to 30cm over 5–10 years. A school of adult clown loaches requires a tank of 400L+. Extremely long-lived — some specimens exceed 25 years. Native to Sumatra and Borneo. The sharp spines below the eyes can tangle in nets — use a container to catch them.","caution":"Grows to 30cm — most tanks are inadequate long-term. Plan for 400L minimum for a proper group. Sharp eye spines tangle in nets — use container, not net. Very susceptible to Ich (white spot) — first sign of stress.","min_tank_l":300},"yoyo-loach":{"name":"Yoyo Loach","latin":"Botia almorhae","style":["community"],"size_cm":12,"schooling":true,"min_school":4,"temp":[23,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"medium","aggression":"semi-aggressive","region":"Pakistan and northern India","water_column":"bottom-middle","care_level":"Beginner","lifespan_yr":"8–15","diet":"Omnivore — sinking pellets, frozen foods, snails (enthusiastically).","stocking":{"small_40l":"Not suitable","medium_80l":"4","large_150l":"4–6"},"substrate_pref":"Smooth substrate. Caves and PVC pipes appreciated.","notes_detail":"The \"yoyo\" name comes from the yo-yo-like pattern of black lines and silver body. Active and entertaining personality. Social within their group but can chase and harass other fish. Enthusiastic snail hunters — a group will decimate a snail population within weeks.","caution":"Can be aggressive toward slow or docile fish — monitor behaviour. Active snail predator — will eat all snails including mystery and nerite.","min_tank_l":100},"dwarf-chain-loach":{"name":"Dwarf Chain Loach","latin":"Ambastaia sidthimunki","style":["community","planted"],"size_cm":6,"schooling":true,"min_school":6,"temp":[24,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Thailand (endangered in wild)","water_column":"bottom-middle","care_level":"Beginner","lifespan_yr":"5–10","diet":"Omnivore — sinking pellets, frozen bloodworm, small snails.","stocking":{"small_40l":"6","medium_80l":"6–8","large_150l":"10–12"},"substrate_pref":"Fine substrate. Planted setup appreciated.","notes_detail":"The chain-link pattern is distinctive and beautiful. More peaceful and compact than other loaches — suitable for community tanks from 60L. More sociable than clown loaches — often swims in the water column. Wild population in Thailand is endangered — most available fish are tank-bred.","caution":"None significant. One of the better loach choices for community tanks.","min_tank_l":60},"betta-male":{"name":"Betta (Male)","latin":"Betta splendens","style":["species","community"],"size_cm":7,"schooling":false,"min_school":1,"temp":[24,30],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"semi-aggressive","region":"Thailand, Cambodia, Vietnam (rice paddies)","water_column":"all","care_level":"Beginner","lifespan_yr":"2–4","diet":"Carnivore — high-protein pellets, frozen bloodworm, brine shrimp. Avoid pure flake.","stocking":{"small_40l":"1 male only","medium_80l":"1 male + peaceful community","large_150l":"1 male + community"},"substrate_pref":"Not fussy. Floating plants appreciated — rests near surface.","notes_detail":"Native to shallow, warm, slow-moving waters of Southeast Asia. Labyrinth fish — breathes atmospheric air from the surface. Surface access is not optional. Two males will fight to the death. Can be kept with certain peaceful tankmates but fin-nippers (barbs, some tetras) will destroy the fins. The minimum tank recommended by most experienced keepers is 20L for a solo male. Smaller containers are cruel — bettas need space to swim and explore.","caution":"Two males = one dies. Surface access mandatory. 20L minimum — betta bowls and vases are harmful. Fin-nippers will destroy fins within hours.","min_tank_l":20},"pearl-gourami":{"name":"Pearl Gourami","latin":"Trichopodus leerii","style":["community","planted"],"size_cm":12,"schooling":false,"min_school":1,"temp":[24,28],"ph":[6.0,7.5],"hardness":"soft","bioload":"medium","aggression":"peaceful","region":"Thailand, Malaysia, Sumatra, Borneo","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"4–5","diet":"Omnivore — flake, pellets, frozen foods. May eat small shrimp.","stocking":{"small_40l":"Not suitable","medium_80l":"1–2 (1M:1F)","large_150l":"2–4"},"substrate_pref":"Not fussy. Floating plants appreciated for surface coverage.","notes_detail":"One of the most beautiful gourami species. The pearl spotting and red-orange throat on breeding males is striking. Native to Malaysia, Sumatra, and Borneo. Male builds bubble nest at the surface under floating plants. Needs surface access for labyrinth organ. Males may spar — keep one male unless tank is large.","caution":"Males fight. Surface access mandatory. May eat very small shrimp.","min_tank_l":80},"honey-gourami":{"name":"Honey Gourami","latin":"Trichogaster chuna","style":["community","planted"],"size_cm":5,"schooling":false,"min_school":1,"temp":[22,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"India and Bangladesh","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"4–8","diet":"Omnivore — small flake, micro pellets, frozen baby brine shrimp.","stocking":{"small_40l":"1–2","medium_80l":"2–4","large_150l":"4–6"},"substrate_pref":"Planted setup. Floating plants for security.","notes_detail":"The smallest of the commonly kept gouramis. Males become vivid orange-yellow when in breeding condition. Very peaceful — one of the few gouramis that can be kept with shrimp without significant predation. Bubble nest builder. Sold in drab colouration but colours up significantly with good food and clean water.","caution":"Sold in drab juvenile colouration — be patient, colours develop over weeks. Surface access mandatory.","min_tank_l":40},"dwarf-gourami":{"name":"Dwarf Gourami","latin":"Trichogaster lalius","style":["community"],"size_cm":7,"schooling":false,"min_school":1,"temp":[24,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"semi-aggressive","region":"Bangladesh, India, Pakistan (slow rivers)","water_column":"upper-middle","care_level":"Intermediate","lifespan_yr":"2–4","diet":"Omnivore — flake, pellets, frozen foods.","stocking":{"small_40l":"1","medium_80l":"1–2","large_150l":"2–4"},"substrate_pref":"Planted setup. Floating plants for security.","notes_detail":"Vibrant red-blue diagonal striping on males. However, there is a significant welfare concern: Dwarf Gourami Iridovirus (DGIV) is endemic in the mass-market supply chain, with some estimates suggesting 22% of commercially sold dwarf gouramis carry the virus. There is no cure. DGIV causes progressive wasting and death within months to years. Buy only from reputable breeders or local fish shops with healthy stock.","caution":"DGIV (Dwarf Gourami Iridovirus) is widespread in mass-market stock. Buy only from trusted sources with healthy fish. No cure exists — infected fish decline and die.","min_tank_l":60},"moonlight-gourami":{"name":"Moonlight Gourami","latin":"Trichopodus microlepis","style":["community"],"size_cm":12,"schooling":false,"min_school":1,"temp":[24,28],"ph":[6.0,7.0],"hardness":"soft","bioload":"medium","aggression":"peaceful","region":"Cambodia, Thailand, Vietnam","water_column":"upper-middle","care_level":"Beginner","lifespan_yr":"5–7","diet":"Omnivore — flake, pellets, frozen foods.","stocking":{"small_40l":"Not suitable","medium_80l":"1","large_150l":"1–2"},"substrate_pref":"Not fussy. Floating plants appreciated.","notes_detail":"Elegant silver fish with subtle iridescence. Less colourful than pearl gourami but graceful and peaceful. Often overlooked in favour of brighter species but very rewarding in a large planted tank. Needs soft slightly acidic water to thrive.","caution":"Surface access mandatory. Males may build bubble nests — normal behaviour.","min_tank_l":100},"angelfish":{"name":"Angelfish","latin":"Pterophyllum scalare","style":["community","planted","biotope"],"size_cm":15,"schooling":false,"min_school":1,"temp":[25,30],"ph":[6.0,7.5],"hardness":"soft","bioload":"medium-high","aggression":"semi-aggressive","region":"Amazon basin — widespread","water_column":"middle","care_level":"Intermediate","lifespan_yr":"10+","diet":"Carnivore/Omnivore — pellets, flake, frozen bloodworm, shrimp. Eats small fish.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"1–2 (bonded pair preferred)"},"substrate_pref":"Not fussy. Tall tank needed for fin growth.","notes_detail":"An iconic South American cichlid. Tall tank (at least 50cm height) required for full fin development. Will eat any fish that fits in its mouth — small tetras become food in adulthood. Pairs form very strong bonds — rehoming one of a bonded pair causes extreme stress. May become aggressive when guarding eggs or fry. Very long-lived — plan for 10+ years.","caution":"Will eat neon tetras, small rasboras, and anything small enough to swallow when adult. Tall tank mandatory. Pairs are bonded — do not separate.","min_tank_l":120},"discus":{"name":"Discus","latin":"Symphysodon spp.","style":["species","planted"],"size_cm":20,"schooling":false,"min_school":5,"temp":[28,32],"ph":[5.5,7.0],"hardness":"very-soft","bioload":"high","aggression":"peaceful","region":"Amazon basin — flooded forests","water_column":"middle","care_level":"Advanced","lifespan_yr":"10–15","diet":"Carnivore — beef heart mix (traditional), high-protein pellets, frozen bloodworm. Frequent feeding required.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"Not suitable (200L minimum for 5)"},"substrate_pref":"Bare bottom for hygiene, or fine sand. Very sensitive to organic waste.","notes_detail":"Often called the King of the Aquarium. Among the most challenging freshwater fish to keep successfully. Requires exceptionally clean water — many serious keepers do 25–30% water changes daily. Water temperature of 28–30°C is necessary. High temperature accelerates bacterial growth — filtration and water changes must compensate. Not a fish for anyone with less than 2 years of experience.","caution":"Not for beginners or intermediates. Daily or near-daily water changes often necessary. Any parameter fluctuation causes stress and disease. The #1 cause of discus death is poor water quality from inadequate maintenance.","min_tank_l":200},"apistogramma":{"name":"Apistogramma","latin":"Apistogramma spp.","style":["species","planted","biotope"],"size_cm":8,"schooling":false,"min_school":1,"temp":[24,29],"ph":[5.0,7.0],"hardness":"soft","bioload":"low","aggression":"semi-aggressive","region":"South America — widespread","water_column":"bottom-middle","care_level":"Intermediate","lifespan_yr":"3–5","diet":"Carnivore/Omnivore — small pellets, frozen bloodworm, baby brine shrimp.","stocking":{"small_40l":"1M + 1–2F","medium_80l":"1M + 2F or 2 pairs","large_150l":"2–3 pairs"},"substrate_pref":"Fine sand with caves (coconut shells, small pots). Males need territory.","notes_detail":"Over 90 species described. A. cacatuoides (cockatoo dwarf cichlid) and A. agassizii most common. Males are significantly more colourful. Cave-spawning — female fiercely guards eggs and fry in a coconut shell or cave. Males can be aggressive toward other males — provide line-of-sight breaks with planting.","caution":"Male aggression toward other males. Female becomes very aggressive when guarding young — remove male if necessary. Requires soft, slightly acidic water.","min_tank_l":60},"german-blue-ram":{"name":"German Blue Ram","latin":"Mikrogeophagus ramirezi","style":["community","planted"],"size_cm":6,"schooling":false,"min_school":2,"temp":[26,31],"ph":[5.0,7.0],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Orinoco River basin, Venezuela/Colombia","water_column":"bottom-middle","care_level":"Intermediate","lifespan_yr":"2–4","diet":"Carnivore/Omnivore — small pellets, frozen bloodworm, baby brine shrimp.","stocking":{"small_40l":"1 pair","medium_80l":"1–2 pairs","large_150l":"2–3 pairs"},"substrate_pref":"Fine sand. Open bottom area for pair to establish territory.","notes_detail":"Among the most beautiful freshwater fish available. The electric blue and yellow colouration with the black spot is distinctive. Requires warm, pristine, soft water — ammonia spikes that other fish tolerate are often lethal to rams. Many commercially available specimens are hormoned or inbred — buy from reputable breeders. Pairs bond and will spawn on flat stones or in depressions in sand.","caution":"Short-lived by aquarium fish standards — 2–3 years is normal. Very sensitive to water quality. Many commercial specimens are weak from mass-production. Buy from specialist breeders where possible.","min_tank_l":60},"bolivian-ram":{"name":"Bolivian Ram","latin":"Mikrogeophagus altispinosus","style":["community","planted"],"size_cm":8,"schooling":false,"min_school":2,"temp":[22,28],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Bolivia and Mato Grosso, Brazil","water_column":"bottom-middle","care_level":"Beginner","lifespan_yr":"4–6","diet":"Carnivore/Omnivore — small pellets, frozen bloodworm, brine shrimp.","stocking":{"small_40l":"1 pair","medium_80l":"1–2 pairs","large_150l":"2–3 pairs"},"substrate_pref":"Fine sand. Open areas for territory plus planted borders.","notes_detail":"The hardier and longer-lived alternative to the German Blue Ram. Tolerates a wider range of water conditions. Less vibrant colour but still attractive with the red-edged dorsal fin and yellow body. Recommended for beginners who want to try dwarf cichlids.","caution":"None significant relative to other cichlids. A forgiving dwarf cichlid.","min_tank_l":80},"severum":{"name":"Severum","latin":"Heros efasciatus","style":["species","biotope"],"size_cm":25,"schooling":false,"min_school":1,"temp":[24,28],"ph":[6.0,7.5],"hardness":"soft","bioload":"high","aggression":"semi-aggressive","region":"Amazon and Orinoco basins","water_column":"middle","care_level":"Intermediate","lifespan_yr":"10+","diet":"Omnivore — pellets, frozen foods, vegetables, live earthworms. Eats plants.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"1–2"},"substrate_pref":"Robust décor — will rearrange everything. No delicate plants.","notes_detail":"Large, personable cichlid. Frequently recognises its owner and will interact. Will eat or uproot all plants — only compatible with very tough plants like java fern attached to rocks. Can be kept with other large cichlids of similar temperament. Green, gold, and red colour variants available.","caution":"Will destroy all plants. High bioload requires strong filtration. Semi-aggressive to smaller fish.","min_tank_l":200},"oscar":{"name":"Oscar","latin":"Astronotus ocellatus","style":["species"],"size_cm":35,"schooling":false,"min_school":1,"temp":[23,28],"ph":[6.0,8.0],"hardness":"medium","bioload":"very-high","aggression":"aggressive","region":"Amazon basin — widespread","water_column":"all","care_level":"Intermediate","lifespan_yr":"10–15","diet":"Carnivore — large pellets, frozen foods, earthworms, feeder fish (controversially). Avoid feeder fish from unreliable sources.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"Not suitable (300L minimum)"},"substrate_pref":"Robust décor only. Will rearrange everything.","notes_detail":"The most popular large aquarium cichlid. Highly intelligent — recognises owners, learns to hand-feed, and has a genuine personality. Grows from 5cm sold to 35cm+ in 12–18 months. Produces extraordinary amounts of waste — large canister or sump filtration is not optional. Eats everything. Tank must be species-only or with other large robust cichlids.","caution":"Grows to 35cm in 18 months — most buyers are unprepared. Produces massive waste. 300L minimum for a single Oscar. Will eat everything smaller than itself.","min_tank_l":300},"cichlid-african":{"name":"African Cichlid (Mbuna)","latin":"Various — Lake Malawi","style":["species","biotope"],"size_cm":12,"schooling":false,"min_school":6,"temp":[24,28],"ph":[7.8,8.5],"hardness":"hard","bioload":"high","aggression":"aggressive","region":"Lake Malawi, East Africa","water_column":"all","care_level":"Intermediate","lifespan_yr":"6–10","diet":"Herbivore/Omnivore — spirulina-based pellets, algae. Low-protein diet important.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"12–15 (overstock intentionally)"},"substrate_pref":"Rock caves essential — minimum one cave per fish. Crushed coral or aragonite substrate to buffer pH.","notes_detail":"Lake Malawi is a very hard, alkaline lake — pH 7.8–8.5, very high TDS. African cichlids have evolved in this specific chemistry and cannot survive in standard soft tap water without significant buffering. The mbuna group are rock-dwelling and extremely territorial. Counter-intuitively, overstocking reduces aggression by preventing any single fish from establishing exclusive territory.","caution":"Cannot be mixed with any soft-water fish. Extremely aggressive — follow overstocking principle. High-protein diet causes bloat disease. Crushed coral substrate required to maintain high pH.","min_tank_l":200},"peacock-cichlid":{"name":"Peacock Cichlid","latin":"Aulonocara spp.","style":["species","biotope"],"size_cm":15,"schooling":false,"min_school":1,"temp":[24,28],"ph":[7.5,8.5],"hardness":"hard","bioload":"medium-high","aggression":"semi-aggressive","region":"Lake Malawi, East Africa","water_column":"bottom-middle","care_level":"Intermediate","lifespan_yr":"6–10","diet":"Carnivore — sinking pellets, frozen bloodworm, brine shrimp. Hunts invertebrates.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"1M + 3–4F"},"substrate_pref":"Sand bottom — hunts by sifting sand for invertebrates. Rock structures for shelter.","notes_detail":"Less aggressive than mbuna cichlids. Males have spectacular colouration — blues, reds, and oranges depending on species. Sand bottom is important as they naturally sift substrate for invertebrates. Can be mixed with other haplochromine cichlids of similar size but not with mbuna in smaller tanks.","caution":"Requires same hard alkaline water as mbuna. Cannot be kept with soft-water fish. Males may fight — sufficient space and females needed.","min_tank_l":150},"frontosa":{"name":"Frontosa Cichlid","latin":"Cyphotilapia frontosa","style":["species","biotope"],"size_cm":30,"schooling":false,"min_school":6,"temp":[24,27],"ph":[7.8,9.0],"hardness":"hard","bioload":"high","aggression":"semi-aggressive","region":"Lake Tanganyika, East Africa","water_column":"lower-middle","care_level":"Advanced","lifespan_yr":"15–25","diet":"Carnivore — large pellets, frozen fish, shrimp. Ambush predator.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"Not suitable (400L minimum for a group)"},"substrate_pref":"Open sandy bottom with large rocky caves. Calm, dimly lit.","notes_detail":"A truly majestic deep-water cichlid from Lake Tanganyika. The nuchal hump develops with age. Very slow-moving and deliberate — an ambush predator in the wild. Requires a dedicated species tank with similarly sized fish. Lake Tanganyika is one of the oldest and most stable lakes on Earth — water must be very hard, alkaline, and highly oxygenated.","caution":"Exceptionally long lifespan — 20+ years is a serious commitment. Requires 400L minimum for a proper group. Lake Tanganyika chemistry is very specific.","min_tank_l":400},"boesemani-rainbow":{"name":"Boesemani Rainbowfish","latin":"Melanotaenia boesemani","style":["community"],"size_cm":10,"schooling":true,"min_school":6,"temp":[24,28],"ph":[7.0,8.0],"hardness":"medium-hard","bioload":"medium","aggression":"peaceful","region":"Ajamaru Lakes, West Papua (endemic)","water_column":"middle","care_level":"Beginner","lifespan_yr":"5–8","diet":"Omnivore — flake, pellets, frozen foods.","stocking":{"small_40l":"Not suitable","medium_80l":"6","large_150l":"8–12"},"substrate_pref":"Not fussy. Needs open swimming space.","notes_detail":"The half-blue half-orange colouration is one of the most striking of all freshwater fish. Colours only fully develop with age and in proper conditions — juveniles are pale. Endemic to a small area of West Papua — wild populations are threatened. Most available fish are tank-bred. Prefers harder water than many tropical fish.","caution":"Juveniles look nothing like adults — full colour takes 6–12 months to develop. Needs open water to swim.","min_tank_l":100},"turquoise-rainbow":{"name":"Turquoise Rainbowfish","latin":"Melanotaenia lacustris","style":["community"],"size_cm":12,"schooling":true,"min_school":6,"temp":[22,26],"ph":[7.0,8.0],"hardness":"medium-hard","bioload":"medium","aggression":"peaceful","region":"Lake Kutubu, Papua New Guinea (endemic)","water_column":"middle","care_level":"Beginner","lifespan_yr":"5–8","diet":"Omnivore — flake, pellets, frozen foods.","stocking":{"small_40l":"Not suitable","medium_80l":"6","large_150l":"8–12"},"substrate_pref":"Not fussy. Large open swimming area needed.","notes_detail":"Electric blue-turquoise colouration at its brightest. Another Lake endemic from Papua New Guinea with a small natural range. Hardy in captivity. Active and fast-swimming schooler. Cooler water preference than boesemani.","caution":"Active swimmer needs space. Cooler than average tropical setup.","min_tank_l":120},"neon-rainbow":{"name":"Neon Dwarf Rainbowfish","latin":"Melanotaenia praecox","style":["community","planted"],"size_cm":6,"schooling":true,"min_school":6,"temp":[24,28],"ph":[6.5,7.5],"hardness":"soft-medium","bioload":"low","aggression":"peaceful","region":"Mamberamo River system, New Guinea","water_column":"middle","care_level":"Beginner","lifespan_yr":"4–5","diet":"Omnivore — flake, micro pellets, frozen foods.","stocking":{"small_40l":"6","medium_80l":"8–12","large_150l":"15–20"},"substrate_pref":"Not fussy. Dense planting with open swimming corridors.","notes_detail":"The most compact of commonly kept rainbowfish. Blue body with bright red fins on males. More tolerant of softer water than other rainbowfish. Good mid-tank swimming fish for planted setups.","caution":"None significant. One of the easier rainbowfish to keep.","min_tank_l":60},"fundulopanchax-gardneri":{"name":"Steel-blue Killifish","latin":"Fundulopanchax gardneri","style":["species","biotope"],"size_cm":6,"schooling":false,"min_school":2,"temp":[22,26],"ph":[6.0,7.5],"hardness":"soft","bioload":"low","aggression":"semi-aggressive","region":"Nigeria, Cameroon","water_column":"upper-middle","care_level":"Intermediate","lifespan_yr":"2–4","diet":"Carnivore — micro pellets, frozen bloodworm, live brine shrimp.","stocking":{"small_40l":"1M + 2F","medium_80l":"2–3 pairs","large_150l":"3–5 pairs"},"substrate_pref":"Planted setup with floating plants. Peat substrate or blackwater conditions appreciated.","notes_detail":"Stunning annual killifish with iridescent blue-green body and red spotting. Males can be aggressive toward each other and sometimes toward females — provide hiding places and keep sex ratio 1:2 or 1:3. Not annual in captivity as the tank never dries up, but still relatively short-lived.","caution":"Males aggressive to each other and to females. Must have more females than males. Will jump — lid essential.","min_tank_l":40},"aphyosemion":{"name":"Lyretail Killifish","latin":"Aphyosemion australe","style":["species","biotope"],"size_cm":5,"schooling":false,"min_school":2,"temp":[20,24],"ph":[5.5,7.0],"hardness":"soft","bioload":"low","aggression":"peaceful","region":"Gabon, Cameroon, Equatorial Guinea","water_column":"upper-middle","care_level":"Intermediate","lifespan_yr":"2–3","diet":"Carnivore — micro pellets, live brine shrimp, frozen bloodworm.","stocking":{"small_40l":"1M + 2–3F","medium_80l":"2M + 4–6F","large_150l":"Multiple pairs"},"substrate_pref":"Blackwater setup. Floating plants. Leaf litter.","notes_detail":"Gorgeous extension of the lyretail fins on males, with orange-red spotting on a blue-green body. A favourite among killifish enthusiasts. Cooler water preference — not suitable for tanks above 26°C. One of the more peaceful killifish.","caution":"Cooler water preference — unsuitable for tropical tanks above 24°C. Will jump — lid essential.","min_tank_l":40},"dwarf-puffer":{"name":"Dwarf Puffer","latin":"Carinotetraodon travancoricus","style":["species"],"size_cm":2.5,"schooling":false,"min_school":3,"temp":[24,28],"ph":[7.0,8.0],"hardness":"medium","bioload":"medium","aggression":"aggressive","region":"Kerala and Karnataka, India (endemic)","water_column":"all","care_level":"Intermediate","lifespan_yr":"4–5","diet":"Carnivore — live or frozen snails (essential for beak grinding), frozen bloodworm, brine shrimp. Will not eat flake.","stocking":{"small_40l":"3–5","medium_80l":"6–10","large_150l":"12–20"},"substrate_pref":"Heavily planted setup. Many hiding spots — they establish territories.","notes_detail":"The world's smallest puffer. Native to the Western Ghats rivers of India — endemic and increasingly threatened by habitat loss. Full of personality — curious eyes follow movement outside the tank. Snails are essential — ramshorn snails are ideal as they provide food and beak-grinding necessary to prevent beak overgrowth. A species tank or with only the most robust tankmates.","caution":"Will nip fins of any and all tankmates. Best in species-only tanks. Snail supply must be maintained — beak overgrowth without crunchy food is painful and fatal.","min_tank_l":40},"bumblebee-goby":{"name":"Bumblebee Goby","latin":"Brachygobius spp.","style":["species","biotope"],"size_cm":4,"schooling":false,"min_school":4,"temp":[24,28],"ph":[7.0,8.5],"hardness":"hard","bioload":"low","aggression":"semi-aggressive","region":"Southeast Asia — coastal rivers","water_column":"bottom","care_level":"Intermediate","lifespan_yr":"3–4","diet":"Carnivore — live or frozen bloodworm, brine shrimp, daphnia. Will not accept dry food.","stocking":{"small_40l":"4–6","medium_80l":"6–8","large_150l":"10–15"},"substrate_pref":"Sand with rocky caves and hiding spots. Aquatic plants optional.","notes_detail":"Yellow-black banded pattern reminiscent of a bumblebee. Actually a brackish-water species in the wild — tolerates freshwater but thrives with a small amount of aquarium salt (1 teaspoon per 10L). Will only accept live or frozen food — dry food refusal is the norm, not the exception. Establishes small territories around caves.","caution":"Will not eat dry food — live or frozen only. Prefers brackish conditions. Will fight over territory — provide adequate caves.","min_tank_l":40},"goldfish-fancy":{"name":"Fancy Goldfish","latin":"Carassius auratus","style":["coldwater","species"],"size_cm":20,"schooling":false,"min_school":2,"temp":[15,22],"ph":[7.0,8.0],"hardness":"medium-hard","bioload":"very-high","aggression":"peaceful","region":"East Asia (selectively bred domesticated species)","water_column":"middle","care_level":"Intermediate","lifespan_yr":"10–20","diet":"Omnivore — sinking or neutrally buoyant pellets (floating food causes swim bladder issues in fancy varieties). Vegetables.","stocking":{"small_40l":"Not suitable","medium_80l":"Not suitable","large_150l":"1–2 (150L per fish)"},"substrate_pref":"Smooth gravel or bare bottom. No sharp edges. Robust décor only.","notes_detail":"Fancy goldfish (ryukin, oranda, ranchu, etc.) are very different from the common goldfish of garden ponds. They produce approximately three times the waste of equivalent tropical fish. The 10-gallon-per-fish rule frequently cited online is completely inadequate — 60L minimum per fish is a community standard, 75L preferred. Cooling is required in Malaysian/Singapore climate — fancy goldfish cannot tolerate tropical temperatures above 24°C. Very long-lived — a healthy oranda may live 15–20 years.","caution":"Require cooling in tropical climates — cannot survive above 24°C long-term. Massive bioload — powerful filtration essential. Common \"bowl\" or \"vase\" keeping is cruel and causes premature death.","min_tank_l":150},"white-cloud-minnow":{"name":"White Cloud Minnow","latin":"Tanichthys albonubes","style":["coldwater","community"],"size_cm":4,"schooling":true,"min_school":8,"temp":[14,22],"ph":[6.0,8.0],"hardness":"soft-hard","bioload":"very-low","aggression":"peaceful","region":"White Cloud Mountain, Guangdong, China (critically endangered wild population)","water_column":"middle","care_level":"Beginner","lifespan_yr":"3–5","diet":"Omnivore — small flake, micro pellets, frozen daphnia.","stocking":{"small_40l":"8–12","medium_80l":"15–20","large_150l":"25+"},"substrate_pref":"Not fussy. Planted setup appreciated.","notes_detail":"Once called the \"poor man's neon tetra\" — actually a superior fish in many ways. Hardy, active, and beautiful with the red fin tips and lateral stripe. Wild population is critically endangered or possibly extinct — virtually all available fish are tank-bred. Excellent for unheated setups in tropical rooms that don't exceed 24°C.","caution":"Cannot tolerate temperatures above 24°C for extended periods. Not suitable for tropical tanks with heaters.","min_tank_l":40},"weather-loach":{"name":"Weather Loach","latin":"Misgurnus anguillicaudatus","style":["coldwater","community"],"size_cm":25,"schooling":false,"min_school":2,"temp":[15,24],"ph":[6.5,8.0],"hardness":"soft-medium","bioload":"medium","aggression":"peaceful","region":"East Asia — widespread, common in Japan, Korea, China","water_column":"bottom","care_level":"Beginner","lifespan_yr":"10+","diet":"Omnivore — sinking pellets, frozen bloodworm, vegetables. Will eat anything.","stocking":{"small_40l":"Not suitable","medium_80l":"2","large_150l":"2–4"},"substrate_pref":"Soft substrate — they burrow deeply. Fine sand ideal.","notes_detail":"Named for their behaviour of becoming very active and agitated before low-pressure weather systems arrive — they sense barometric pressure changes. Very personable and charming. Grows much larger than often sold. Can breathe atmospheric air when oxygen is low. Extremely hardy — survives conditions that kill most fish.","caution":"Grows to 25cm — plan tank size accordingly. Cannot tolerate warm tropical temperatures. Escapes through any gap — secure lid.","min_tank_l":100}},"INVERTEBRATES":{"neocaridina-shrimp":{"name":"Neocaridina Shrimp (Cherry)","latin":"Neocaridina davidi","style":["shrimp","community","planted"],"size_cm":2.5,"temp":[18,26],"ph":[6.5,8.0],"hardness":"medium","bioload":"very-low","aggression":"peaceful","region":"Taiwan (wild ancestor)","care_level":"Beginner","lifespan_yr":"1–2","diet":"Detritivore/Omnivore — biofilm, algae, leaf litter, shrimp-specific pellets, blanched vegetables.","stocking":{"small_40l":"20–40","medium_80l":"50–80","large_150l":"100+"},"notes_detail":"The most beginner-friendly freshwater shrimp. Bred in many colour variants — red cherry, yellow, orange, blue velvet, green jade, black rose, and more. Each colour morph has a grade system (lower to higher colour quality). Breed readily in good conditions and will sustain population without intervention. Compatible with most small peaceful fish that don't eat shrimp.","caution":"Most fish will eat shrimp — research compatibility carefully. Any copper-based medication is lethal.","min_tank_l":20},"caridina-shrimp":{"name":"Caridina Shrimp (Crystal/Bee)","latin":"Caridina spp.","style":["shrimp"],"size_cm":2,"temp":[20,24],"ph":[5.5,6.8],"hardness":"very-soft","bioload":"very-low","aggression":"peaceful","region":"Southern China, Taiwan","care_level":"Advanced","lifespan_yr":"1.5–2","diet":"Detritivore/Omnivore — biofilm, specialized shrimp food, leaves.","stocking":{"small_40l":"20–30","medium_80l":"40–60","large_150l":"80+"},"notes_detail":"Crystal Red (CRS), Crystal Black (CBS), Taiwan Bee — high-grade shrimp with strict grading systems (C, B, A, S, SS, SSS). Require RO water remineralized with a caridina-specific mineral mix. pH stability is more critical than exact pH — any fluctuation causes mass deaths. Not for anyone without experience. Caridina and Neocaridina cannot be kept together due to different water requirements.","caution":"Any parameter fluctuation = mass deaths. RO water with specialist remineralizer required. Copper = instant death. Not beginner-appropriate under any circumstances.","min_tank_l":30},"amano-shrimp":{"name":"Amano Shrimp","latin":"Caridina multidentata","style":["community","planted","shrimp"],"size_cm":4,"temp":[22,26],"ph":[6.0,7.5],"hardness":"soft-medium","bioload":"very-low","aggression":"peaceful","region":"Japan, Taiwan, Korea — rivers","care_level":"Beginner","lifespan_yr":"2–3","diet":"Herbivore/Detritivore — algae, biofilm, decaying plant matter, blanched vegetables.","stocking":{"small_40l":"5–8","medium_80l":"10–15","large_150l":"20–30"},"notes_detail":"Named after the renowned aquarist Takashi Amano who popularised their use in planted tanks. Significantly larger and more robust than cherry shrimp — can handle tanks with some current and more water movement. Excellent algae eaters. Cannot breed in freshwater — their larvae require brackish water, so populations don't increase. Transparent body shows internal organs.","caution":"Will not breed in freshwater — this is normal. Copper = lethal. Some fish will eat even large amano shrimp.","min_tank_l":40},"ghost-shrimp":{"name":"Ghost Shrimp","latin":"Palaemonetes spp.","style":["community","shrimp"],"size_cm":4,"temp":[18,26],"ph":[6.5,8.0],"hardness":"medium","bioload":"very-low","aggression":"peaceful","region":"North America (various species)","care_level":"Beginner","lifespan_yr":"1–1.5","diet":"Detritivore/Omnivore — biofilm, algae, blanched vegetables, shrimp food.","stocking":{"small_40l":"10–20","medium_80l":"20–40","large_150l":"50+"},"notes_detail":"Fully transparent body reveals internal organs and gut contents. Very cheap and hardy — often sold as feeder shrimp but make interesting display animals. Will breed in freshwater. Females carry visible green eggs. Can be kept with small peaceful fish. Often confused with glass shrimp (a different species).","caution":"Short-lived. Frequently sold as feeders — quality can be poor from some sources.","min_tank_l":20},"bamboo-shrimp":{"name":"Bamboo Shrimp","latin":"Atyopsis moluccensis","style":["community","biotope"],"size_cm":7,"temp":[22,28],"ph":[6.5,7.5],"hardness":"soft-medium","bioload":"very-low","aggression":"peaceful","region":"Southeast Asia — rivers of Malaysia, Thailand, Indonesia","care_level":"Intermediate","lifespan_yr":"2–4","diet":"Filter feeder — particles in water current. Cannot compete for food. Feed by adding liquid fry food or spirulina powder upstream from the shrimp.","stocking":{"small_40l":"2","medium_80l":"2–3","large_150l":"3–5"},"notes_detail":"Native to Southeast Asia including Malaysia. Fans out feathery front appendages in water current to catch particles. Position it in front of a filter output for maximum feeding. Cannot compete with fish for food — must be target-fed. When turning brownish-red and restless, about to moult — provide protein-rich food and hiding places during vulnerability. Fascinating behaviour.","caution":"Cannot compete for food — specialized feeding required. Must have strong current for filter-feeding. Vulnerable during moult.","min_tank_l":60},"mystery-snail":{"name":"Mystery Snail","latin":"Pomacea bridgesii","style":["community","planted","shrimp"],"size_cm":5,"temp":[18,28],"ph":[7.0,8.0],"hardness":"medium-hard","bioload":"low","aggression":"peaceful","region":"South America — river floodplains","care_level":"Beginner","lifespan_yr":"1–3","diet":"Detritivore/Herbivore — algae, biofilm, blanched vegetables, algae wafers, decaying plant matter. Will NOT eat healthy plants.","stocking":{"small_40l":"2–3","medium_80l":"4–6","large_150l":"8–12"},"notes_detail":"One of the most commonly kept aquarium snails. Available in gold, brown, blue, purple, ivory, and other colour variants. Breathes air from the surface using a siphon — it will climb out of water regularly. A secure lid with no gaps is important. Lays egg clutches above the waterline — pink/white clusters on tank lid. Eggs require 2–4 weeks to hatch. Sensitive to copper.","caution":"Lid required — will escape. Needs calcium-rich water (add cuttlebone if needed) or shell deteriorates. Copper in any form = lethal.","min_tank_l":20},"nerite-snail":{"name":"Nerite Snail","latin":"Neritina spp.","style":["community","planted","shrimp"],"size_cm":2.5,"temp":[20,28],"ph":[6.5,8.5],"hardness":"medium","bioload":"very-low","aggression":"peaceful","region":"Tropical freshwater and brackish rivers globally","care_level":"Beginner","lifespan_yr":"1–2","diet":"Herbivore — algae only. One of the most efficient algae grazers available.","stocking":{"small_40l":"2–4","medium_80l":"4–6","large_150l":"6–10"},"notes_detail":"Multiple pattern varieties — zebra, tiger, olive, horned. Cannot breed in freshwater — larvae require brackish water, so there is no population explosion. The best all-round algae-grazing snail for planted and community tanks. Will lay small white pinhead-sized eggs on hard surfaces that do not hatch in freshwater — aesthetically unpleasant but harmless.","caution":"White eggs laid on glass and décor do not hatch in freshwater — normal. Copper = lethal.","min_tank_l":20},"assassin-snail":{"name":"Assassin Snail","latin":"Clea helena","style":["community"],"size_cm":2.5,"temp":[20,28],"ph":[7.0,8.0],"hardness":"medium","bioload":"low","aggression":"predatory","region":"Southeast Asia — Malaysia, Indonesia, Thailand","care_level":"Beginner","lifespan_yr":"2–5","diet":"Carnivore — snails (primary prey), also accepts protein-based sinking foods.","stocking":{"small_40l":"3–5","medium_80l":"5–8","large_150l":"8–15"},"notes_detail":"The biological solution to pest snail infestations. Native to Southeast Asia. Hunts and eats ramshorn, trumpet, and bladder snails efficiently. Will not significantly harm large mystery or nerite snails. Can eliminate a pest snail population within weeks. Once the prey snails are gone they accept alternative foods. Will breed slowly in freshwater.","caution":"Will eat any small snail including ramshorn and trumpet snails you may want. Do not use if pest snails are wanted.","min_tank_l":20},"ramshorn-snail":{"name":"Ramshorn Snail","latin":"Planorbarius corneus / Planorbis spp.","style":["community","planted"],"size_cm":2,"temp":[15,28],"ph":[6.5,8.0],"hardness":"medium","bioload":"very-low","aggression":"peaceful","region":"Europe and Asia — widespread","care_level":"Beginner","lifespan_yr":"1–3","diet":"Omnivore — algae, biofilm, decaying plant matter, blanched vegetables.","stocking":{"small_40l":"Self-regulating","medium_80l":"Self-regulating","large_150l":"Self-regulating"},"notes_detail":"Available in red/pink and brown varieties. Population self-regulates with food availability — if overpopulating, reduce feeding or add assassin snails. Harmless to healthy plants but will consume dying leaves. Excellent cleanup crew. Hermaphroditic — two snails can reproduce without a male.","caution":"Can overpopulate if tank is overfed. Not a problem in a properly maintained tank.","min_tank_l":10},"trumpet-snail":{"name":"Malaysian Trumpet Snail","latin":"Melanoides tuberculata","style":["community","planted"],"size_cm":2,"temp":[18,28],"ph":[7.0,8.0],"hardness":"medium","bioload":"very-low","aggression":"peaceful","region":"Africa, South and Southeast Asia","care_level":"Beginner","lifespan_yr":"2–4","diet":"Detritivore — detritus, algae, uneaten food from substrate.","stocking":{"small_40l":"Self-regulating","medium_80l":"Self-regulating","large_150l":"Self-regulating"},"notes_detail":"Nocturnal burrower. Aerates substrate preventing anaerobic gas pockets from forming in deep substrates. Almost exclusively seen at night. Population visible in large numbers at night or when tank lights are off. Self-regulating population. Beneficial for planted tanks with deep substrate.","caution":"Can reach very high numbers in overfed tanks. Nocturnal — rarely seen but always present once introduced.","min_tank_l":10},"vampire-shrimp":{"name":"Vampire Shrimp","latin":"Atya gabonensis","style":["biotope","community"],"size_cm":8,"temp":[24,28],"ph":[6.5,7.5],"hardness":"soft-medium","bioload":"very-low","aggression":"peaceful","region":"West Africa — Senegal to Angola rivers","care_level":"Intermediate","lifespan_yr":"5+","diet":"Filter feeder — microparticles in current. Target-feed with liquid fry food or spirulina powder.","stocking":{"small_40l":"2","medium_80l":"2–3","large_150l":"3–5"},"notes_detail":"One of the largest freshwater shrimp available. Despite the name, completely harmless — fans out modified front appendages in current to filter food particles. Colour varies from white to blue to grey-brown. Requires strong water flow for filter-feeding. Will hide in caves during moult.","caution":"Filter-feeder — cannot compete for food. Requires dedicated feeding. Strong current needed.","min_tank_l":80},"freshwater-crab":{"name":"Thai Micro Crab","latin":"Limnopilos naiyanetri","style":["planted","shrimp"],"size_cm":1,"temp":[22,28],"ph":[6.5,7.5],"hardness":"soft-medium","bioload":"very-low","aggression":"peaceful","region":"Thailand — single river system (endemic)","care_level":"Intermediate","lifespan_yr":"1.5–2","diet":"Omnivore — biofilm, micro-particles, baby brine shrimp nauplii.","stocking":{"small_40l":"10–15","medium_80l":"20–30","large_150l":"40+"},"notes_detail":"Fully aquatic micro crab — unusual as most freshwater crabs need land access. Discovered only in 2006 from a single river system in Thailand. Tiny at 1cm — needs dense plants to feel secure. Rarely seen as it hides among plants. Compatible with dwarf shrimp and small peaceful fish. Often overlooked but fascinating.","caution":"Extremely small — any fish larger than 3cm will likely eat them. Dense planting mandatory.","min_tank_l":20}},"PLANTS":{"java-fern":{"name":"Java Fern","latin":"Microsorum pteropus","style":["community","planted","biotope","shrimp"],"light":"low","co2":false,"fertiliser":"minimal","growth":"slow","placement":"midground-background","care_level":"Beginner","demand":{"water":5,"bio":8,"env":8,"live":10,"human":6},"notes":"Attach rhizome to hardscape with thread or glue — burying kills it. Reproduces via plantlets on old leaves. Virtually indestructible. Multiple varieties: narrow leaf, windelov (lace), trident, needle leaf.","substrate":"Attached to hardscape — substrate not needed."},"anubias":{"name":"Anubias","latin":"Anubias spp.","style":["community","planted","biotope","shrimp"],"light":"low","co2":false,"fertiliser":"minimal","growth":"very-slow","placement":"midground","care_level":"Beginner","demand":{"water":5,"bio":6,"env":8,"live":8,"human":6},"notes":"Attach rhizome to hardscape. The slowest-growing common aquarium plant. Slow growth means algae often colonises leaves — add otocinclus or nerite snails. Multiple species: barteri, nana, coffeefolia, gigantea. Nana is best for small tanks.","substrate":"Attached to hardscape — substrate not needed."},"java-moss":{"name":"Java Moss","latin":"Taxiphyllum barbieri","style":["community","planted","shrimp","biotope"],"light":"low-medium","co2":false,"fertiliser":"minimal","growth":"medium","placement":"foreground-attachment","care_level":"Beginner","demand":{"water":8,"bio":10,"env":10,"live":12,"human":8},"notes":"Extremely versatile. Tie to mesh for walls, tie to driftwood, or leave free-floating. Excellent refuge for fry and shrimp. Grows faster with more light. One of the most widely used aquarium plants globally.","substrate":"Attached to hardscape or free-floating."},"christmas-moss":{"name":"Christmas Moss","latin":"Vesicularia montagnei","style":["planted","shrimp"],"light":"low-medium","co2":false,"fertiliser":"minimal","growth":"slow-medium","placement":"foreground-attachment","care_level":"Beginner","demand":{"water":10,"bio":10,"env":12,"live":12,"human":10},"notes":"Branches in a feathery pattern resembling Christmas tree branches. Popular for creating moss walls and backgrounds. Grows in a more structured pattern than java moss. Good for shrimp tanks.","substrate":"Attached to hardscape or mesh."},"flame-moss":{"name":"Flame Moss","latin":"Taxiphyllum sp. \"Flame\"","style":["planted","shrimp"],"light":"low-medium","co2":false,"fertiliser":"minimal","growth":"slow","placement":"foreground-midground","care_level":"Beginner","demand":{"water":10,"bio":10,"env":12,"live":12,"human":12},"notes":"Grows upward in twisted spirals resembling flame. Distinctive appearance unlike other mosses. Attach to hardscape. Slower than java moss.","substrate":"Attached to hardscape."},"cryptocoryne":{"name":"Cryptocoryne","latin":"Cryptocoryne spp.","style":["community","planted","biotope"],"light":"low-medium","co2":false,"fertiliser":"root-tabs","growth":"slow-medium","placement":"foreground-midground","care_level":"Beginner","demand":{"water":10,"bio":12,"env":14,"live":12,"human":12},"notes":"Undergoes \"crypt melt\" when moved or conditions change — leaves melt but plant recovers from rhizome if roots remain. Be patient — do not remove. Popular species: wendtii, balansae (very tall), parva (smallest), lucens. Root feeder — nutrient substrate or root tabs beneficial.","substrate":"Nutrient substrate or gravel with root tabs."},"bucephalandra":{"name":"Bucephalandra","latin":"Bucephalandra spp.","style":["planted","shrimp","biotope"],"light":"low-medium","co2":false,"fertiliser":"moderate","growth":"very-slow","placement":"foreground-attachment","care_level":"Intermediate","demand":{"water":14,"bio":12,"env":16,"live":14,"human":18},"notes":"Native to Borneo rivers — relevant to Malaysian/Indonesian hobbyists. Hundreds of cultivated varieties with iridescent blue-purple sheen. Attach rhizome to hardscape. One of the most popular and collectible planted tank plants in Southeast Asia. Slow growth means high collector value.","substrate":"Attached to hardscape."},"vallisneria":{"name":"Vallisneria","latin":"Vallisneria spp.","style":["community","planted","biotope","coldwater"],"light":"medium","co2":false,"fertiliser":"moderate","growth":"fast","placement":"background","care_level":"Beginner","demand":{"water":12,"bio":10,"env":16,"live":14,"human":10},"notes":"Grass-like background plant that spreads via runners. Tall species (V. spiralis, V. americana) can grow 60cm+. Does not tolerate CO2-induced low pH — avoid in high-CO2 planted tanks. Excellent for community and biotope tanks.","substrate":"Gravel, sand, or nutrient soil."},"amazon-sword":{"name":"Amazon Sword","latin":"Echinodorus spp.","style":["community","planted","biotope"],"light":"medium","co2":false,"fertiliser":"root-tabs","growth":"medium","placement":"background-centrepiece","care_level":"Beginner","demand":{"water":12,"bio":12,"env":18,"live":14,"human":14},"notes":"The classic Amazon biotope centrepiece. Heavy root feeder — nutrient substrate or at minimum root tabs are required for healthy growth. Can grow very large (40cm+) in good conditions. Propagates via daughter plants on runner stems sent out from the mother plant.","substrate":"Nutrient substrate strongly recommended. Root tabs in gravel as minimum."},"hygrophila":{"name":"Hygrophila","latin":"Hygrophila spp.","style":["community","planted"],"light":"medium","co2":false,"fertiliser":"moderate","growth":"fast","placement":"background-midground","care_level":"Beginner","demand":{"water":10,"bio":10,"env":14,"live":12,"human":8},"notes":"Fast-growing stem plant. Excellent for new tanks — absorbs excess nutrients and outcompetes algae. Regular trimming required. Multiple species: H. polysperma (fastest, sometimes invasive), H. corymbosa (larger), H. pinnatifida (distinctive deeply lobed leaves with reddish underside).","substrate":"Adaptable — gravel, sand, or soil."},"rotala":{"name":"Rotala","latin":"Rotala spp.","style":["planted"],"light":"medium-high","co2":true,"fertiliser":"high","growth":"fast","placement":"background-midground","care_level":"Intermediate","demand":{"water":22,"bio":14,"env":28,"live":16,"human":28},"notes":"Popular stem plant with pink-red colouration in good light with CO2. Multiple species: R. rotundifolia (most common, easiest), R. wallichii (fine needle leaves, more demanding), R. H'ra (round leaves, rich red in high tech). Pinch tops to encourage bushing.","substrate":"Nutrient substrate recommended."},"ludwigia":{"name":"Ludwigia","latin":"Ludwigia spp.","style":["planted"],"light":"medium-high","co2":false,"fertiliser":"high","growth":"medium-fast","placement":"midground-background","care_level":"Beginner","demand":{"water":18,"bio":12,"env":24,"live":14,"human":20},"notes":"Red-orange stem plant that develops colour without CO2 in good light. More achievable than rotala for lower-tech setups. L. repens is the most common and easiest. L. glandulosa and L. arcuata are more demanding but more vibrant.","substrate":"Nutrient substrate beneficial but not essential."},"monte-carlo":{"name":"Monte Carlo","latin":"Micranthemum tweediei","style":["planted"],"light":"high","co2":true,"fertiliser":"high","growth":"medium","placement":"foreground-carpet","care_level":"Advanced","demand":{"water":30,"bio":20,"env":38,"live":22,"human":45},"notes":"Forms a tight, beautiful green carpet. Requires CO2 and high light to stay compact — without CO2 it grows upward and lanky. Plant in small clumps and allow to spread laterally. One of the most popular Nature Aquarium-style carpet plants.","substrate":"Nutrient soil essential for carpet establishment."},"dwarf-hairgrass":{"name":"Dwarf Hairgrass","latin":"Eleocharis parvula","style":["planted"],"light":"high","co2":true,"fertiliser":"high","growth":"slow-medium","placement":"foreground-carpet","care_level":"Advanced","demand":{"water":28,"bio":18,"env":36,"live":20,"human":42},"notes":"Creates a natural grass-field carpet. Slow to establish — patience required. CO2 and strong light are non-negotiable for a proper carpet. Propagates via lateral runners. Beautiful in an Iwagumi-style layout.","substrate":"Fine nutrient soil — critical for establishment."},"glossostigma":{"name":"Glossostigma","latin":"Glossostigma elatinoides","style":["planted"],"light":"high","co2":true,"fertiliser":"high","growth":"fast","placement":"foreground-carpet","care_level":"Advanced","demand":{"water":32,"bio":20,"env":40,"live":22,"human":48},"notes":"The smallest and most light-demanding carpet plant. Very fast-growing in high tech conditions. Requires intense light to stay low — without it, grows toward the surface. Iconic in Takashi Amano's Nature Aquarium style.","substrate":"Fine nutrient soil."},"pogostemon-helferi":{"name":"Pogostemon Helferi (Downoi)","latin":"Pogostemon helferi","style":["planted"],"light":"medium-high","co2":true,"fertiliser":"high","growth":"slow","placement":"foreground","care_level":"Intermediate","demand":{"water":28,"bio":18,"env":35,"live":20,"human":38},"notes":"Star-shaped crinkled green leaves with a rosette growth form. Unique appearance unlike any other commonly kept aquarium plant. CO2 recommended. Grows very slowly.","substrate":"Nutrient soil preferred."},"blyxa-japonica":{"name":"Blyxa Japonica","latin":"Blyxa japonica","style":["planted"],"light":"medium-high","co2":true,"fertiliser":"high","growth":"medium","placement":"midground","care_level":"Intermediate","demand":{"water":24,"bio":16,"env":32,"live":18,"human":32},"notes":"Grass-like midground plant with slight golden-reddish tint in high light. Very popular in Nature Aquarium style compositions. CO2 recommended for good growth.","substrate":"Nutrient soil."},"hornwort":{"name":"Hornwort","latin":"Ceratophyllum demersum","style":["community","coldwater","planted"],"light":"medium","co2":false,"fertiliser":"minimal","growth":"very-fast","placement":"floating-background","care_level":"Beginner","demand":{"water":8,"bio":10,"env":10,"live":12,"human":6},"notes":"Extremely fast-growing — can absorb large quantities of ammonia and nitrate, beneficial during cycling. No roots — floats or can be weighted. Sheds needle-like leaves constantly, creating maintenance work. Very hardy across a wide temperature range.","substrate":"None needed — floating."},"duckweed":{"name":"Duckweed","latin":"Lemna minor","style":["community","coldwater","shrimp"],"light":"low-high","co2":false,"fertiliser":"none","growth":"very-fast","placement":"floating","care_level":"Beginner","demand":{"water":5,"bio":6,"env":6,"live":8,"human":4},"notes":"Doubles in size every 24 hours in good conditions. Excellent nitrate absorber. Reduces light to lower levels — beneficial for low-light species and bettas. Practically impossible to fully eradicate once introduced — consider this carefully. Fish and shrimp may graze on it.","substrate":"None — floating."},"frogbit":{"name":"Frogbit","latin":"Limnobium laevigatum","style":["community","planted","shrimp"],"light":"medium","co2":false,"fertiliser":"minimal","growth":"fast","placement":"floating","care_level":"Beginner","demand":{"water":8,"bio":10,"env":12,"live":14,"human":8},"notes":"Round lily-pad-like leaves with dangling roots appreciated by shrimp for grazing and refuge. Provides excellent surface cover for labyrinth fish. More manageable than duckweed. Can be removed entirely if needed.","substrate":"None — floating."},"water-wisteria":{"name":"Water Wisteria","latin":"Hygrophila difformis","style":["community","planted"],"light":"medium","co2":false,"fertiliser":"moderate","growth":"very-fast","placement":"background","care_level":"Beginner","demand":{"water":10,"bio":10,"env":14,"live":12,"human":8},"notes":"Fascinating plant — leaf shape changes dramatically based on light intensity, ranging from simple oval to deeply dissected lacy leaves. Very fast growth rate makes it excellent for new tanks and algae control through nutrient competition.","substrate":"Adaptable."},"pennywort":{"name":"Pennywort","latin":"Hydrocotyle leucocephala","style":["community","planted"],"light":"medium","co2":false,"fertiliser":"moderate","growth":"fast","placement":"background-floating","care_level":"Beginner","demand":{"water":10,"bio":10,"env":14,"live":12,"human":10},"notes":"Round bright-green leaves on long stems. Can be planted or left floating. Very adaptable and fast-growing. Provides interesting textural contrast to narrow-leaved plants.","substrate":"Adaptable or floating."},"pearlweed":{"name":"Pearlweed","latin":"Hemianthus glomeratus","style":["planted"],"light":"medium-high","co2":false,"fertiliser":"moderate","growth":"medium-fast","placement":"foreground-midground","care_level":"Intermediate","demand":{"water":18,"bio":12,"env":24,"live":16,"human":20},"notes":"Small round bright-green leaves. Can form a low carpet without CO2 in high light, or grow as a stem plant. More achievable than glossostigma or monte carlo for non-CO2 setups.","substrate":"Nutrient substrate beneficial."}},"HARDSCAPE":{"seiryu-stone":{"name":"Seiryu Stone","effect":{"ph":"+0.3 to +0.8","hardness":"increases significantly over time"},"style":["planted","biotope","community"],"demand":{"water":8,"bio":4,"env":10,"live":6,"human":6},"notes":"Hard grey-blue limestone with white calcite veins. Angular and dramatic — iconic in Iwagumi-style aquascaping. Raises pH and hardness measurably over months. Test water chemistry after adding. Unsuitable for soft-water species, caridina shrimp, or discus."},"dragon-stone":{"name":"Dragon Stone (Ohko)","effect":{"ph":"neutral to slight increase","hardness":"very minimal"},"style":["planted","biotope","community"],"demand":{"water":5,"bio":6,"env":8,"live":5,"human":5},"notes":"Porous volcanic rock with dramatic texture of holes and ridges. Less pH impact than Seiryu. The pores provide some bacterial surface area. Lightweight for its appearance. Very popular in modern aquascaping."},"lava-rock":{"name":"Lava Rock","effect":{"ph":"neutral","hardness":"none"},"style":["community","biotope","planted"],"demand":{"water":6,"bio":10,"env":6,"live":5,"human":5},"notes":"Highly porous volcanic rock. By volume the highest bacterial surface area of any hardscape — genuinely useful as supplementary biological filtration media. Very light. Rough texture may damage delicate fish."},"mopani-driftwood":{"name":"Mopani Driftwood","effect":{"ph":"-0.2 to -0.8","hardness":"slight softening","tannins":true},"style":["community","biotope","planted"],"demand":{"water":8,"bio":8,"env":8,"live":10,"human":10},"notes":"African driftwood that is very dense — sinks without weighting once waterlogged. Long-lasting tannin release turns water amber. Tannins are beneficial for soft-water and blackwater species. Must be thoroughly soaked or boiled before use. Plecos will rasp it."},"spider-wood":{"name":"Spider Wood","effect":{"ph":"-0.1 to -0.4","hardness":"slight","tannins":true},"style":["community","planted","biotope","shrimp"],"demand":{"water":6,"bio":6,"env":8,"live":8,"human":8},"notes":"Intricate branching structure ideal for creating natural-looking layouts. Lighter than mopani — may need initial weighting with stones. Forms a white biofilm initially — normal and harmless, shrimp will graze on it. Popular in iwagumi-style and nature aquarium layouts."},"cholla-wood":{"name":"Cholla Wood","effect":{"ph":"-0.1 to -0.2","hardness":"minimal","tannins":true},"style":["shrimp","community"],"demand":{"water":4,"bio":8,"env":5,"live":8,"human":5},"notes":"Dried cactus skeleton with hollow tube structure. Shrimp explore, hide, and graze on it enthusiastically. Breaks down within 3–6 months. Safe and natural. One of the best additions for a shrimp tank."},"pagoda-stone":{"name":"Pagoda Stone","effect":{"ph":"+0.1 to +0.3","hardness":"slight increase"},"style":["planted","biotope"],"demand":{"water":5,"bio":4,"env":6,"live":5,"human":5},"notes":"Layered natural sandstone with distinctive horizontal stratification. Very photogenic stacked arrangement. Moderate pH effect — test water after adding. Generally safe for most community setups."},"petrified-wood":{"name":"Petrified Wood","effect":{"ph":"neutral to very slight increase","hardness":"minimal"},"style":["biotope","community","planted"],"demand":{"water":5,"bio":4,"env":6,"live":5,"human":5},"notes":"Fossilised wood converted to stone over millions of years. Unique organic texture. Generally inert — less pH impact than limestone-based stones. Varies between pieces — acid test recommended."},"slate":{"name":"Slate","effect":{"ph":"neutral","hardness":"none"},"style":["community","biotope","coldwater"],"demand":{"water":4,"bio":4,"env":5,"live":4,"human":4},"notes":"Flat layered rock that splits into thin sheets. Very easy to stack and arrange. Highly inert — no measurable impact on water chemistry. Safe for all water parameter requirements. Common and affordable."},"river-rock":{"name":"River Rock","effect":{"ph":"neutral to variable","hardness":"variable"},"style":["community","coldwater","biotope"],"demand":{"water":4,"bio":6,"env":5,"live":4,"human":4},"notes":"Smooth rounded stones from riverbeds. Natural look for biotope and natural setups. Chemistry varies significantly by type — always perform an acid test (drop of white vinegar — fizzing = calcium carbonate = raises pH). Source locally for best biotope authenticity."},"malaysian-driftwood":{"name":"Malaysian Driftwood","effect":{"ph":"-0.2 to -0.5","hardness":"softens","tannins":true},"style":["community","biotope","planted","shrimp"],"demand":{"water":7,"bio":8,"env":8,"live":9,"human":8},"notes":"Dense heavy driftwood from Malaysian rainforest swamps. Sinks without weighting once cured. Significant tannin release — beneficial for soft-water species. Very popular in Southeast Asian planted and community setups. Cure by soaking for 1–2 weeks with water changes."},"bamboo-decor":{"name":"Bamboo (Aquarium-safe)","effect":{"ph":"neutral","hardness":"none"},"style":["community","biotope"],"demand":{"water":4,"bio":4,"env":5,"live":4,"human":5},"notes":"Sealed or aquarium-safe bamboo decoration. Must be specifically sold as aquarium-safe — fresh bamboo rots rapidly in water. Does not affect water chemistry. Creates Asian biotope aesthetic."}}};
+
+
+/* ═══ PHASE 2 ═══ */
+var ph2Style=null, ph2Active={stock:{},plants:{},hard:{}};
+
+function openPhase2(){
+  var overlay=document.getElementById('phase2-overlay');
+  overlay.classList.add('open');
+  _ph2Query='';
+  var se=document.getElementById('ph2-search');if(se)se.value='';
+  var ce=document.getElementById('ph2-search-clear');if(ce)ce.className='ph2-search-clear';
+  buildStyleButtons();
+  buildAllGrids();
+  updatePh2Pentagon();
+}
+
+function buildStyleButtons(){
+  var cont=document.getElementById('ph2-styles');
+  if(!cont)return;
+  cont.innerHTML='';
+  Object.keys(ECOSYSTEM.SETUP_STYLES).forEach(function(k){
+    var s=ECOSYSTEM.SETUP_STYLES[k];
+    var btn=document.createElement('div');
+    btn.className='ph2-style-btn'+(ph2Style===k?' active':'');
+    btn.innerHTML='<span class="ph2-style-name">'+s.label+'</span><span class="ph2-style-diff">'+s.difficulty+'</span>';
+    btn.onclick=function(){ph2Style=k;buildStyleButtons();buildAllGrids();updatePh2Pentagon();updatePh2Submit();};
+    cont.appendChild(btn);
+  });
+}
+
+var _ph2Query='';
+
+function filterMatch(item,q){
+  if(!q)return true;
+  var s=(item.name+' '+(item.latin||'')+' '+(item.notes||'')+' '+(item.region||'')).toLowerCase();
+  return s.indexOf(q)>=0;
+}
+
+function buildAllGrids(){
+  var q=_ph2Query.toLowerCase().trim();
+  var stockCont=document.getElementById('ph2-stock-grid');
+  var plantCont=document.getElementById('ph2-plant-grid');
+  var hardCont=document.getElementById('ph2-hard-grid');
+  var stockSec=document.getElementById('ph2-stock-section');
+  var plantSec=document.getElementById('ph2-plant-section');
+  var hardSec=document.getElementById('ph2-hard-section');
+  var countEl=document.getElementById('ph2-count');
+  if(!stockCont)return;
+  stockCont.innerHTML='';plantCont.innerHTML='';hardCont.innerHTML='';
+  var total=0;
+  /* Stock */
+  var all=Object.assign({},ECOSYSTEM.FISH,ECOSYSTEM.INVERTEBRATES);
+  Object.keys(all).forEach(function(k){
+    var item=all[k];
+    if(ph2Style&&item.style.indexOf(ph2Style)<0&&!q)return;
+    if(!filterMatch(item,q))return;
+    buildPh2Card(stockCont,k,item,'stock');total++;
+  });
+  stockSec.style.display=stockCont.children.length?'':'none';
+  if(!stockCont.children.length&&(q||ph2Style)){
+    var e=document.createElement('div');e.className='ph2-empty';e.textContent='No matches';stockCont.appendChild(e);
+    stockSec.style.display='';
+  }
+  /* Plants */
+  Object.keys(ECOSYSTEM.PLANTS).forEach(function(k){
+    var item=ECOSYSTEM.PLANTS[k];
+    if(ph2Style&&item.style.indexOf(ph2Style)<0&&!q)return;
+    if(!filterMatch(item,q))return;
+    buildPh2Card(plantCont,k,item,'plants');total++;
+  });
+  plantSec.style.display=plantCont.children.length?'':'none';
+  /* Hardscape */
+  Object.keys(ECOSYSTEM.HARDSCAPE).forEach(function(k){
+    var item=ECOSYSTEM.HARDSCAPE[k];
+    if(ph2Style&&item.style.indexOf(ph2Style)<0&&!q)return;
+    if(!filterMatch(item,q))return;
+    buildPh2Card(hardCont,k,item,'hard');total++;
+  });
+  hardSec.style.display=hardCont.children.length?'':'none';
+  /* Count */
+  if(countEl){
+    if(q)countEl.textContent=total+' result'+(total===1?'':'s')+' for “'+q+'”';
+    else if(ph2Style)countEl.textContent=total+' entries for '+ECOSYSTEM.SETUP_STYLES[ph2Style].label;
+    else countEl.textContent=total+' total entries';
+  }
+}
+
+function buildStockGrid(){buildAllGrids();}
+function buildPlantGrid(){}
+function buildHardGrid(){}
+
+function buildPh2Card(cont,k,item,cat){
+  var card=document.createElement('div');
+  var isActive=ph2Active[cat][k];
+  card.className='ph2-card'+(isActive?' active':'');
+
+  /* Name + care badge */
+  var nameRow=document.createElement('div');nameRow.style.cssText='display:flex;justify-content:space-between;align-items:flex-start;gap:.3rem;margin-bottom:.06rem';
+  var nm=document.createElement('span');nm.className='ph2-card-name';nm.textContent=item.name;
+  nameRow.appendChild(nm);
+  if(item.care_level){
+    var cl=document.createElement('span');
+    var clcol=item.care_level==='Beginner'?'rgba(100,200,82,.6)':item.care_level==='Advanced'?'rgba(220,100,60,.7)':'rgba(220,160,60,.6)';
+    cl.style.cssText='font-size:.44rem;color:'+clcol+';white-space:nowrap;padding:.08rem .28rem;border:1px solid '+clcol+';border-radius:1px;flex-shrink:0';
+    cl.textContent=item.care_level;
+    nameRow.appendChild(cl);
+  }
+  card.appendChild(nameRow);
+
+  /* Latin */
+  if(item.latin){var lt=document.createElement('span');lt.className='ph2-card-latin';lt.textContent=item.latin;card.appendChild(lt);}
+
+  /* Key stats row */
+  var stats=document.createElement('div');stats.style.cssText='display:flex;flex-wrap:wrap;gap:.15rem;margin:.2rem 0';
+
+  /* Fish/invert stats */
+  if(item.temp){var ts=document.createElement('span');ts.className='ph2-tag';ts.textContent=item.temp[0]+'–'+item.temp[1]+'°C';stats.appendChild(ts);}
+  if(item.ph){var ps=document.createElement('span');ps.className='ph2-tag';ps.textContent='pH '+item.ph[0]+'–'+item.ph[1];stats.appendChild(ps);}
+  if(item.size_cm){var ss=document.createElement('span');ss.className='ph2-tag';ss.textContent=item.size_cm+'cm max';stats.appendChild(ss);}
+  if(item.min_tank_l){var ms=document.createElement('span');ms.className='ph2-tag';ms.textContent=item.min_tank_l+'L min';stats.appendChild(ms);}
+  if(item.schooling&&item.min_school>1){var sch=document.createElement('span');sch.className='ph2-tag ok';sch.textContent='School '+item.min_school+'+';stats.appendChild(sch);}
+  if(item.lifespan_yr){var ls=document.createElement('span');ls.className='ph2-tag';ls.textContent=item.lifespan_yr+' yr';stats.appendChild(ls);}
+  if(item.bioload){var bl=document.createElement('span');bl.className='ph2-tag'+(item.bioload==='very-high'||item.bioload==='high'?' warn':'');bl.textContent=item.bioload+' bioload';stats.appendChild(bl);}
+  if(item.aggression&&item.aggression!=='peaceful'){var ag=document.createElement('span');ag.className='ph2-tag warn';ag.textContent=item.aggression;stats.appendChild(ag);}
+
+  /* Plant stats */
+  if(item.light){var li=document.createElement('span');li.className='ph2-tag';li.textContent=item.light+' light';stats.appendChild(li);}
+  if(item.co2){var co=document.createElement('span');co.className='ph2-tag warn';co.textContent='CO₂ needed';stats.appendChild(co);}
+  if(item.growth){var gr=document.createElement('span');gr.className='ph2-tag';gr.textContent=item.growth+' growth';stats.appendChild(gr);}
+
+  /* Hardscape effects */
+  if(item.effect){
+    if(item.effect.ph&&item.effect.ph!=='neutral'){var ep=document.createElement('span');ep.className='ph2-tag warn';ep.textContent='pH '+item.effect.ph;stats.appendChild(ep);}
+    if(item.effect.tannins){var et=document.createElement('span');et.className='ph2-tag';et.textContent='tannins';stats.appendChild(et);}
+  }
+
+  card.appendChild(stats);
+
+  /* Stocking guide — show when active */
+  var detail=document.createElement('div');detail.className='ph2-card-notes';
+  if(item.notes_detail||item.notes){
+    var noteP=document.createElement('p');noteP.style.cssText='margin:0 0 .35rem';noteP.textContent=item.notes_detail||item.notes;detail.appendChild(noteP);
+  }
+  if(item.stocking){
+    var tankSz=tankSize==='large'?'large_150l':tankSize==='medium'?'medium_80l':'small_40l';
+    var qty=item.stocking[tankSz];
+    if(qty){
+      var sq=document.createElement('div');sq.style.cssText='font-size:.58rem;color:rgba(61,214,232,.65);margin-bottom:.22rem';
+      sq.textContent='For your '+tankSize+' tank: '+qty;detail.appendChild(sq);
+    }
+  }
+  if(item.diet){
+    var dp=document.createElement('div');dp.style.cssText='font-size:.55rem;color:rgba(255,255,255,.3);font-style:italic;margin-bottom:.18rem';dp.textContent='Diet: '+item.diet;detail.appendChild(dp);
+  }
+  if(item.water_column){
+    var wc=document.createElement('div');wc.style.cssText='font-size:.55rem;color:rgba(255,255,255,.25)';wc.textContent='Swims: '+item.water_column.replace(/-/g,' ');detail.appendChild(wc);
+  }
+  if(item.substrate){
+    var sbp=document.createElement('div');sbp.style.cssText='font-size:.55rem;color:rgba(255,255,255,.25)';sbp.textContent='Substrate: '+item.substrate;detail.appendChild(sbp);
+  }
+  if(item.caution){
+    var caut=document.createElement('div');caut.style.cssText='font-size:.6rem;color:rgba(220,100,60,.75);margin-top:.3rem;padding:.3rem .4rem;background:rgba(220,100,60,.06);border-radius:1px;border-left:2px solid rgba(220,100,60,.35)';
+    caut.textContent='\u26a0 '+item.caution;detail.appendChild(caut);
+  }
+  card.appendChild(detail);
+
+  card.onclick=function(){
+    if(ph2Active[cat][k])delete ph2Active[cat][k];
+    else ph2Active[cat][k]=item;
+    buildPh2Card_refresh(card,k,item,cat);
+    updatePh2Pentagon();
+    updateCompatNote();
+    updatePh2Submit();
+  };
+  cont.appendChild(card);
+}
+
+function buildPh2Card_refresh(card,k,item,cat){
+  var isActive=!!ph2Active[cat][k];
+  card.className='ph2-card'+(isActive?' active':'');
+}
+
+function calcEcoRhythms(){
+  /* Start from equipment scores */
+  var base=calcRhythms();
+  /* Add ecosystem demand */
+  var eco={water:0,bio:0,env:0,live:0,human:0};
+  var allSelected=Object.assign({},ph2Active.stock,ph2Active.plants,ph2Active.hard);
+  Object.keys(allSelected).forEach(function(k){
+    var item=allSelected[k];
+    if(item.demand){
+      eco.water+=item.demand.water||0;
+      eco.bio+=item.demand.bio||0;
+      eco.env+=item.demand.env||0;
+      eco.live+=item.demand.live||0;
+      eco.human+=item.demand.human||0;
+    }
+  });
+  return {
+    water:Math.min(100,base.water+eco.water),
+    bio:Math.min(100,base.bio+eco.bio),
+    env:Math.min(100,base.env+eco.env),
+    live:Math.min(100,base.live+eco.live),
+    human:Math.min(100,base.human+eco.human),
+    base:base,
+    eco:eco,
+  };
+}
+
+function updatePh2Pentagon(){
+  var s=calcEcoRhythms();
+  var rc=document.getElementById('ph2-pent-canvas');
+  if(!rc)return;
+  rc.width=rc.offsetWidth||300;rc.height=180;
+  var W=rc.width,H=rc.height,cx=W/2,cy=H/2,r=Math.min(cx,cy)-24;
+  var rctx=rc.getContext('2d');
+  rctx.clearRect(0,0,W,H);
+  var dims=['water','bio','env','live','human'];
+  var clrs={water:[61,214,232],bio:[100,200,82],env:[220,160,60],live:[180,120,200],human:[139,189,210]};
+  var lbls={water:'Water',bio:'Bio',env:'Env',live:'Live',human:'Human'};
+  var vals=[s.water,s.bio,s.env,s.live,s.human];
+  var bvals=[s.base.water,s.base.bio,s.base.env,s.base.live,s.base.human];
+  var angs=dims.map(function(_,i){return -Math.PI/2+i*(2*Math.PI/5);});
+  /* Rings */
+  [.25,.5,.75,1].forEach(function(t){
+    rctx.beginPath();
+    angs.forEach(function(a,i){var x=cx+r*t*Math.cos(a),y=cy+r*t*Math.sin(a);i===0?rctx.moveTo(x,y):rctx.lineTo(x,y);});
+    rctx.closePath();rctx.strokeStyle='rgba(255,255,255,'+(t===1?.1:.05)+')';rctx.lineWidth=t===1?1:.5;rctx.stroke();
+  });
+  /* Spokes */
+  angs.forEach(function(a){rctx.beginPath();rctx.moveTo(cx,cy);rctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));rctx.strokeStyle='rgba(255,255,255,.06)';rctx.lineWidth=.5;rctx.stroke();});
+  /* Base equipment fill (lighter) */
+  rctx.beginPath();
+  angs.forEach(function(a,i){var v=bvals[i]/100,x=cx+r*v*Math.cos(a),y=cy+r*v*Math.sin(a);i===0?rctx.moveTo(x,y):rctx.lineTo(x,y);});
+  rctx.closePath();rctx.fillStyle='rgba(61,214,232,.1)';rctx.fill();
+  rctx.strokeStyle='rgba(61,214,232,.25)';rctx.lineWidth=1;rctx.stroke();
+  /* Ecosystem fill (brighter) */
+  rctx.beginPath();
+  angs.forEach(function(a,i){var v=vals[i]/100,x=cx+r*v*Math.cos(a),y=cy+r*v*Math.sin(a);i===0?rctx.moveTo(x,y):rctx.lineTo(x,y);});
+  rctx.closePath();
+  var g=rctx.createRadialGradient(cx,cy,0,cx,cy,r);
+  g.addColorStop(0,'rgba(61,214,232,.28)');g.addColorStop(1,'rgba(61,214,232,.06)');
+  rctx.fillStyle=g;rctx.fill();
+  rctx.strokeStyle='rgba(61,214,232,.5)';rctx.lineWidth=1.4;rctx.stroke();
+  /* Labels + dots */
+  var fs=Math.max(7,Math.min(9,r/5));
+  rctx.font='600 '+fs+'px DM Sans,system-ui,sans-serif';
+  angs.forEach(function(a,i){
+    var v=vals[i]/100,c=clrs[dims[i]];
+    var dx=cx+r*v*Math.cos(a),dy=cy+r*v*Math.sin(a);
+    rctx.beginPath();rctx.arc(dx,dy,3,0,Math.PI*2);
+    rctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(v>.35?.9:.45)+')';rctx.fill();
+    var lx=cx+(r+14)*Math.cos(a),ly=cy+(r+14)*Math.sin(a);
+    lx=Math.max(fs+2,Math.min(W-fs-2,lx));ly=Math.max(fs+2,Math.min(H-fs-2,ly));
+    var tw=rctx.measureText(lbls[dims[i]]).width;
+    rctx.fillStyle='rgba(2,10,18,.8)';rctx.fillRect(lx-tw/2-2,ly-fs/2-2,tw+4,fs+4);
+    rctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(v>.2?.85:.4)+')';
+    rctx.textAlign='center';rctx.textBaseline='middle';
+    rctx.fillText(lbls[dims[i]],lx,ly);
+  });
+  rctx.textAlign='left';rctx.textBaseline='alphabetic';
+  /* Score label */
+  var score=document.getElementById('ph2-pent-score');
+  if(score){
+    var avg=(s.water+s.bio+s.env+s.live+s.human)/5;
+    var lbl=avg>70?'well-rounded':avg>45?'developing':avg>20?'early stage':'empty system';
+    score.textContent=lbl;
+    score.style.color=avg>60?'rgba(100,200,82,.7)':avg>35?'rgba(220,160,60,.7)':'rgba(220,100,60,.7)';
+  }
+}
+
+function updateCompatNote(){
+  var note=document.getElementById('ph2-compat-note');
+  if(!note)return;
+  var selected=Object.keys(ph2Active.stock);
+  if(selected.length===0){note.textContent='Select fish or invertebrates to see compatibility notes.';return;}
+  var msgs=[];
+  /* Check pH conflicts */
+  var hasSoft=false,hasHard=false;
+  selected.forEach(function(k){
+    var item=ph2Active.stock[k];
+    if(!item)return;
+    if(item.hardness==='soft'||item.hardness==='very-soft'||item.hardness==='soft-medium')hasSoft=true;
+    if(item.hardness==='hard'||item.hardness==='medium-hard')hasHard=true;
+  });
+  if(hasSoft&&hasHard)msgs.push('Water hardness conflict — you have soft-water and hard-water species together.');
+  /* Check temp range */
+  var temps=selected.map(function(k){return ph2Active.stock[k]&&ph2Active.stock[k].temp;}).filter(Boolean);
+  if(temps.length>1){
+    var minHigh=Math.min.apply(null,temps.map(function(t){return t[1];}));
+    var maxLow=Math.max.apply(null,temps.map(function(t){return t[0];}));
+    if(maxLow>minHigh)msgs.push('Temperature conflict — no overlap between selected species temperature ranges.');
+  }
+  /* Coldwater + heater */
+  var hasCold=selected.some(function(k){var item=ph2Active.stock[k];return item&&item.style&&item.style.indexOf('coldwater')>=0;});
+  if(hasCold&&active['heater'])msgs.push('Cold-water species selected with a heater — consider removing heater or choosing tropical fish.');
+  /* High demand with small filter */
+  var eco=calcEcoRhythms();
+  if(eco.bio>85&&!active['filter-canister']&&!active['filter-overflow'])msgs.push('High biological load — consider upgrading to canister or overflow filtration.');
+  if(msgs.length===0)msgs.push('No major compatibility conflicts detected. Check individual species notes for specific requirements.');
+  note.textContent=msgs.join(' \u2022 ');
+}
+
+function updatePh2Submit(){
+  var btn=document.getElementById('ph2-submit');
+  if(!btn)return;
+  var hasStock=Object.keys(ph2Active.stock).length>0;
+  if(hasStock){btn.classList.add('ready');}else{btn.classList.remove('ready');}
+}
+
+/* Wire up buttons */
+document.getElementById('ph2-back').addEventListener('click',function(){
+  document.getElementById('phase2-overlay').classList.remove('open');
+});
+
+/* Search */
+var _ph2SearchEl=document.getElementById('ph2-search');
+var _ph2ClearEl=document.getElementById('ph2-search-clear');
+if(_ph2SearchEl){
+  _ph2SearchEl.addEventListener('input',function(){
+    _ph2Query=this.value;
+    if(_ph2ClearEl)_ph2ClearEl.className='ph2-search-clear'+(_ph2Query?' visible':'');
+    buildAllGrids();
+  });
+}
+if(_ph2ClearEl){
+  _ph2ClearEl.addEventListener('click',function(){
+    _ph2Query='';_ph2SearchEl.value='';
+    this.className='ph2-search-clear';
+    buildAllGrids();
+    _ph2SearchEl.focus();
+  });
+}
+
+document.getElementById('ph2-submit').addEventListener('click',function(){
+  document.getElementById('phase2-overlay').classList.remove('open');
+  showFullReport();
+});
+
+/* Update submit button in phase 1 to open phase 2 instead */
+document.getElementById('btn-submit').addEventListener('click',function(){
+  openPhase2();
+});
+
+function showFullReport(){
+  var s=calcEcoRhythms();
+  var overlay=document.getElementById('report-overlay');
+  var rc=document.getElementById('report-content');
+  if(!overlay||!rc)return;
+  var eqList=Object.keys(active);
+  var stockList=Object.keys(ph2Active.stock);
+  var plantList=Object.keys(ph2Active.plants);
+  var hardList=Object.keys(ph2Active.hard);
+  var tankLabel=tankSize==='large'?'Large (150L+)':tankSize==='medium'?'Medium (60–120L)':'Small (20–40L)';
+  var html='';
+  /* Header */
+  html+='<div style="margin-bottom:1.8rem">';
+  html+='<span style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:.6rem">Your ARA Report</span>';
+  html+='<h1 style="font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,4vw,2.2rem);color:rgba(255,255,255,.88);line-height:1.1;margin-bottom:.4rem">'+tankLabel+'</h1>';
+  if(ph2Style&&ECOSYSTEM.SETUP_STYLES[ph2Style]){html+='<p style="font-size:.75rem;color:rgba(255,255,255,.4);font-family:var(--serif);font-style:italic">'+ECOSYSTEM.SETUP_STYLES[ph2Style].label+' \u00b7 '+eqList.length+' equipment \u00b7 '+stockList.length+' species</p>';}
+  html+='</div>';
+  /* Pentagon */
+  html+='<div style="margin-bottom:1.8rem;padding:1rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.08);border-radius:2px">';
+  html+='<div style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.8rem">Five Rhythm Profile</div>';
+  var rhyData=[
+    {k:'water',label:'Water',color:'rgba(61,214,232,',base:s.base.water,eco:s.water},
+    {k:'bio',label:'Biological',color:'rgba(100,200,82,',base:s.base.bio,eco:s.bio},
+    {k:'env',label:'Environmental',color:'rgba(220,160,60,',base:s.base.env,eco:s.env},
+    {k:'live',label:'Livestock',color:'rgba(180,120,200,',base:s.base.live,eco:s.live},
+    {k:'human',label:'Human',color:'rgba(139,189,210,',base:s.base.human,eco:s.human},
+  ];
+  rhyData.forEach(function(r){
+    var pct=Math.round(r.eco);
+    /* Tension = how much this dimension is being drawn on relative to its presence.
+       This is an ARA model interpretation, not a scientific measurement. */
+    var tension=pct>80?'high demand':pct>55?'moderate':'low';
+    var tcolor=tension==='high demand'?'rgba(220,100,60,.7)':tension==='moderate'?'rgba(220,160,60,.6)':'rgba(100,200,82,.6)';
+    html+='<div style="margin-bottom:.85rem">';
+    html+='<div style="display:flex;justify-content:space-between;margin-bottom:.25rem">';
+    html+='<span style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:'+r.color+'0.7)">'+r.label+'</span>';
+    html+='<span style="font-size:.6rem;color:'+tcolor+'">'+tension+'</span>';
+    html+='</div>';
+    html+='<div style="height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:.28rem">';
+    html+='<div style="height:100%;width:'+pct+'%;background:'+r.color+'0.65);border-radius:2px"></div>';
+    html+='</div>';
+    html+='</div>';
+  });
+  html+='</div>';
+  /* What you have built */
+  var setupNote='';
+  var f=active['filter-sponge']||active['filter-hang']||active['filter-canister']||active['filter-internal']||active['filter-overflow'];
+  if(s.eco.human>60)setupNote='This is a demanding setup. It will ask consistent attention — regular water changes, parameter testing, and careful observation. The reward matches the investment.';
+  else if(s.eco.live>70)setupNote='The livestock demands of this setup are significant. Ensure filtration is properly cycled and parameters are stable before adding any animals.';
+  else if(s.eco.water>75)setupNote='Water management is the critical variable in this setup. Maintain the filtration rhythm and do not skip water changes.';
+  else setupNote='A well-balanced setup. The infrastructure matches the ecosystem demands reasonably well.';
+  html+='<div style="margin-bottom:1.5rem">';
+  html+='<div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.55rem">Assessment</div>';
+  html+='<p style="font-size:.82rem;color:rgba(255,255,255,.55);font-family:var(--serif);line-height:1.7">'+setupNote+'</p>';
+  html+='</div>';
+  /* Equipment */
+  if(eqList.length>0){
+    html+='<div style="margin-bottom:1.2rem">';
+    html+='<div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.5rem">Equipment</div>';
+    html+='<div style="display:flex;flex-wrap:wrap;gap:.28rem">';
+    eqList.forEach(function(k){var brand=selectedBrands[k]?(' \u2014 '+selectedBrands[k]):'';var label=k.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});html+='<div style="font-size:.62rem;padding:.18rem .48rem;background:rgba(61,214,232,.06);border:1px solid rgba(61,214,232,.12);border-radius:1px;color:rgba(255,255,255,.5)">'+label+brand+'</div>';});
+    html+='</div></div>';
+  }
+  /* Stocking */
+  if(stockList.length>0){
+    html+='<div style="margin-bottom:1.2rem">';
+    html+='<div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.5rem">Stocking</div>';
+    html+='<div style="display:flex;flex-wrap:wrap;gap:.28rem">';
+    stockList.forEach(function(k){var item=ph2Active.stock[k];if(!item)return;html+='<div style="font-size:.62rem;padding:.18rem .48rem;background:rgba(180,120,200,.06);border:1px solid rgba(180,120,200,.15);border-radius:1px;color:rgba(255,255,255,.5)">'+item.name+'</div>';});
+    html+='</div></div>';
+  }
+  /* What to expect */
+  html+='<div style="padding:.9rem 1rem;background:rgba(30,75,95,.15);border:1px solid rgba(61,214,232,.12);border-radius:2px;margin-bottom:.8rem">';
+  html+='<div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.5);margin-bottom:.45rem">What to Expect</div>';
+  var expect=f?'Cycle this tank before adding livestock. The nitrogen cycle takes 4\u20138 weeks. Test ammonia and nitrite every 2\u20133 days. Both must read zero for at least 3 consecutive days before fish are safe.':'No filter selected. Add filtration before starting the cycling process.';
+  html+='<p style="font-size:.78rem;color:rgba(255,255,255,.5);font-family:var(--serif);font-style:italic;line-height:1.65">'+expect+'</p>';
+  html+='</div>';
+  /* ARA closing */
+  html+='<p style="font-size:.72rem;color:rgba(255,255,255,.2);font-family:var(--serif);font-style:italic;line-height:1.65;text-align:center;margin-top:1.2rem">A rhythm established with patience becomes self-sustaining. What you have chosen here is not just hardware and livestock \u2014 it is the architecture of a living system.</p>';
+  rc.innerHTML=html;
+  overlay.style.display='block';
+  overlay.scrollTop=0;
+}
 </script>
 </body>
   </html>
