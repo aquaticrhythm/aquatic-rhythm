@@ -336,38 +336,58 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 }
 
 /* ── RESPONSIVE ── */
-@media(max-width:960px){
+/* Desktop large */
+@media(min-width:1200px){
+  .hi{gap:6rem}
+  .pcards{grid-template-columns:repeat(3,1fr)}
+  .aragrid{grid-template-columns:repeat(4,1fr)}
+  .rhyssa-limits-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Tablet */
+@media(max-width:1024px){
+  nav{padding:0 clamp(1.1rem,3.5vw,2.2rem)}
+  .nlinks{gap:1.5rem}
+  .hero{padding-left:clamp(1.1rem,3.5vw,2.2rem);padding-right:clamp(1.1rem,3.5vw,2.2rem)}
+  .pad{padding-left:clamp(1.1rem,3.5vw,2.2rem);padding-right:clamp(1.1rem,3.5vw,2.2rem)}
+  .hi,.arah,.sysin,.araph,.adg,.rhg,.qg,.scn,.aboutg{gap:2.5rem}
+  .pcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aragrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ctab{grid-template-columns:1fr}
+  .stpaths{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pb{grid-template-columns:1fr;gap:1.2rem}
+  .pnl{font-size:2.2rem}
+  .orblg{width:250px;height:250px}
+  .cl2,.spk{display:none}
+  #driftwood-layer{opacity:.55}
+  .mote{opacity:.4!important}
+  .ray{opacity:.4!important}
+  .cl{animation-duration:20s}
+  .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
+  .rhyssa-limits-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .rhyssa-facets{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ara-pillars{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+/* Mobile */
+@media(max-width:720px){
   .nlinks{display:none}.nbg{display:flex}.ncta{display:none}
-  .hi,.arah,.sysin,.araph,.adg,.rhg,.qg,.scn,.aboutg{grid-template-columns:1fr;gap:2.5rem}
+  .nmob{top:64px}
+  .hi,.arah,.sysin,.araph,.adg,.rhg,.qg,.scn,.aboutg{grid-template-columns:1fr;gap:2.1rem}
   .aboutg{margin-top:2rem}
-  .abouth{padding:8rem clamp(1.5rem,5vw,4.5rem) 3rem}
+  .abouth{padding:8rem clamp(1rem,5vw,1.5rem) 3rem}
   .aboutq{font-size:clamp(1.3rem,5.5vw,1.9rem);line-height:1.4}
   .aboutblock p{font-size:.9rem}
   .aboutdiv{gap:2rem}
   .hoz{display:none}
   .hi{padding:6rem 0 4rem}
-  .pcards{grid-template-columns:1fr}
-  .aragrid{grid-template-columns:1fr 1fr}
-  .ctab,.stpaths{grid-template-columns:1fr}
-  .pb{grid-template-columns:1fr;gap:1.2rem}
-  .pnl{font-size:2.2rem}
-  .scn:nth-child(even) .scl{order:unset}.scn:nth-child(even) .scr{order:unset}
+  .pcards,.aragrid,.stpaths,.rhyssa-limits-grid,.rhyssa-facets,.ara-pillars{grid-template-columns:1fr!important}
+  .dxl{font-size:clamp(2.4rem,11vw,3rem)}
+  .bt{font-size:.96rem;line-height:1.85}
+  .btn{width:100%;text-align:center}
   .orblg{width:220px;height:220px}
-  .cl2,.spk{display:none}
-  #driftwood-layer{opacity:.5}
-  .mote{opacity:.35!important}
-  .ray{opacity:.35!important}
-  .cl{animation-duration:20s}
-  .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
-  .rhyssa-limits-grid{grid-template-columns:1fr!important}
-  .ara-pillars{grid-template-columns:1fr!important}
-}
-@media(max-width:560px){
-  .aragrid{grid-template-columns:1fr}
-  .dxl{font-size:2.9rem}
-  .rhyssa-stance-grid{grid-template-columns:1fr!important;gap:2rem!important}
-  .rhyssa-limits-grid{grid-template-columns:1fr!important}
-  .rhyssa-facets{grid-template-columns:1fr}
+  #eco-toggle{bottom:.9rem;right:.9rem;opacity:.72}
+  .scn:nth-child(even) .scl{order:unset}.scn:nth-child(even) .scr{order:unset}
 }
 @media(hover:none),(pointer:coarse){#cd,#cr{display:none!important}}
 @media(hover:hover) and (pointer:fine){body,.btn,.spp,.nbg{cursor:none}}
@@ -398,3 +418,6 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .rd-card-cta{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5)}
 .rd-coming{padding:1.6rem 2rem;border:1px dashed rgba(255,255,255,.07);background:rgba(6,16,13,.3)}
 .rd-coming p{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.22)}
+
+.seo-links{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.seo-links a{color:inherit}
