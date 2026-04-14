@@ -407,6 +407,7 @@ canvas{display:block;width:100%}
 </div><!-- /module-wrap -->
 </main>
 
+<script src="/js/ui.js"></script>
 <script>
 /* ═══════════════════════════════
    MODULE NAVIGATION
@@ -415,6 +416,7 @@ var totalMods = 5;
 var currentMod = 1;
 var canvases = {};
 var animFrames = {};
+var learningUI = null;
 
 function stopAnim(id){
   if(animFrames[id]){cancelAnimationFrame(animFrames[id]);animFrames[id]=null;}
@@ -429,6 +431,7 @@ function goIntro(){
   if(intro){intro.classList.remove('hidden');intro.style.display='';}
   var pw=document.getElementById('mod-progress-wrap');
   if(pw)pw.classList.remove('visible');
+  if (learningUI) learningUI.hide();
   window.scrollTo({top:0,behavior:'auto'});
   currentMod=1;
   updateDots();
@@ -445,6 +448,7 @@ function goMod(n){
   next.classList.add('active');
   setTimeout(function(){next.classList.add('visible');},30);
   updateDots();
+  if (learningUI) learningUI.update(currentMod);
   if(canvases[n])setTimeout(function(){canvases[n]();},120);
 }
 
@@ -463,11 +467,42 @@ function startLearning(){
   if(wrap)wrap.classList.add('active');
   var pw=document.getElementById('mod-progress-wrap');
   if(pw)pw.classList.add('visible');
+  if (learningUI) learningUI.show();
   window.scrollTo({top:0,behavior:'auto'});
   var first=document.getElementById('mod-1');
   if(first){first.classList.add('active');setTimeout(function(){first.classList.add('visible');},30);}
   updateDots();
+  if (learningUI) learningUI.update(1);
   if(canvases[1])setTimeout(function(){canvases[1]();},120);
+}
+
+if (window.ARLearningUI && window.ARLearningUI.initModularArticle) {
+  learningUI = window.ARLearningUI.initModularArticle({
+    totalMods: totalMods,
+    wrapSelector: '#module-wrap',
+    progressMessages: {
+      1: 'Anda dah faham 20% asas tangki matang.',
+      2: 'Anda dah faham 40% asas tangki matang.',
+      3: 'Anda dah faham 60% asas tangki matang.',
+      4: 'Anda dah faham 80% asas tangki matang.',
+      5: 'Anda dah faham 100% asas tangki matang.'
+    },
+    badges: {
+      2: 'Pattern Spotter Unlocked',
+      4: 'Cycle Basics Unlocked',
+      5: 'Systems Reader Unlocked'
+    },
+    checkpoints: {
+      2: { question: 'Soalan ringkas: Apa stressor dominan yang paling konsisten muncul pada tangki anda?' },
+      4: { question: 'Soalan ringkas: Kenapa masalah nitrate boleh “senyap” tetapi kekal menekan ikan?' }
+    },
+    teasers: {
+      1: { fact: 'Fakta mengejutkan: Tangki matang boleh kelihatan stabil walaupun satu tekanan kekal aktif.', nextModule: 2 },
+      2: { fact: 'Fakta mengejutkan: Satu stressor dominan boleh buat simptom lain nampak seperti punca utama.', nextModule: 3 },
+      3: { fact: 'Fakta mengejutkan: Filter yang kuat tidak semestinya seimbang jika beban organik terus meningkat.', nextModule: 4 },
+      4: { fact: 'Fakta mengejutkan: Tingkah laku ikan sering beri amaran lebih awal daripada bacaan angka.', nextModule: 5 }
+    }
+  });
 }
 
 /* Hide intro when hidden class added */

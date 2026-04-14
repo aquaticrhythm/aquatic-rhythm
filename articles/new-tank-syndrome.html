@@ -561,6 +561,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 </div>
 </main>
 
+<script src="/js/ui.js"></script>
 <script>
 /* ═══════════════════════════════════════
    MODULE NAVIGATION
@@ -568,6 +569,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 var totalMods = 7;
 var currentMod = 1;
 var canvases = {};
+var learningUI = null;
 
 function goIntro() {
   var mod = document.getElementById('mod-' + currentMod);
@@ -578,6 +580,7 @@ function goIntro() {
   if (intro) { intro.classList.remove('hidden'); intro.style.display = ''; }
   var pw=document.getElementById('mod-progress-wrap');
   if(pw)pw.classList.remove('visible');
+  if (learningUI) learningUI.hide();
   window.scrollTo({ top: 0, behavior: 'auto' });
   currentMod = 1;
   updateDots();
@@ -602,6 +605,7 @@ function goMod(n) {
   setTimeout(function() { next.classList.add('visible'); }, 30);
 
   updateDots();
+  if (learningUI) learningUI.update(currentMod);
   if (canvases[n]) { setTimeout(function(){ canvases[n](); }, 80); }
 }
 
@@ -612,6 +616,7 @@ function startLearning() {
   if (wrap) wrap.classList.add('active');
   var pw=document.getElementById('mod-progress-wrap');
   if(pw)pw.classList.add('visible');
+  if (learningUI) learningUI.show();
   window.scrollTo({ top: 0, behavior: 'auto' });
   var first = document.getElementById('mod-1');
   if (first) {
@@ -619,6 +624,7 @@ function startLearning() {
     setTimeout(function(){ first.classList.add('visible'); }, 30);
   }
   updateDots();
+  if (learningUI) learningUI.update(1);
   if (canvases[1]) setTimeout(function(){ canvases[1](); }, 150);
 }
 
@@ -633,6 +639,39 @@ function updateDots(){
 
 /* Init — show intro first */
 (function(){
+  if (window.ARLearningUI && window.ARLearningUI.initModularArticle) {
+    learningUI = window.ARLearningUI.initModularArticle({
+      totalMods: totalMods,
+      wrapSelector: '.module-wrap',
+      progressMessages: {
+        1: 'Anda dah faham 14% asas nitrogen cycle.',
+        2: 'Anda dah faham 29% asas nitrogen cycle.',
+        3: 'Anda dah faham 43% asas nitrogen cycle.',
+        4: 'Anda dah faham 57% asas nitrogen cycle.',
+        5: 'Anda dah faham 71% asas nitrogen cycle.',
+        6: 'Anda dah faham 86% asas nitrogen cycle.',
+        7: 'Anda dah faham 100% asas nitrogen cycle.'
+      },
+      badges: {
+        2: 'Cycle Basics Unlocked',
+        4: 'Biofilter Insight Unlocked',
+        7: 'Rhythm Reader Unlocked'
+      },
+      checkpoints: {
+        2: { question: 'Soalan ringkas: Kenapa ammonia cepat naik dalam tangki baru?' },
+        4: { question: 'Soalan ringkas: Koloni bakteria paling penting tinggal di air atau media penapis?' },
+        6: { question: 'Soalan ringkas: Intervensi berlebihan biasanya mempercepat atau melambatkan cycle?' }
+      },
+      teasers: {
+        1: { fact: 'Fakta mengejutkan: Tangki boleh nampak jernih tetapi ammonia masih berbahaya.', nextModule: 2 },
+        2: { fact: 'Fakta mengejutkan: Ikan sering tunjuk stres sebelum test kit beri bacaan tinggi.', nextModule: 3 },
+        3: { fact: 'Fakta mengejutkan: Dalam banyak tangki rumah, Nitrospira lebih dominan berbanding Nitrobacter.', nextModule: 4 },
+        4: { fact: 'Fakta mengejutkan: Tukar air tidak buang biofilm utama kerana ia melekat pada permukaan.', nextModule: 5 },
+        5: { fact: 'Fakta mengejutkan: Suhu rendah boleh panjangkan tempoh cycling hampir dua kali ganda.', nextModule: 6 },
+        6: { fact: 'Fakta mengejutkan: “Membantu” terlalu kerap boleh reset momentum bakteria.', nextModule: 7 }
+      }
+    });
+  }
   updateDots();
 })();
 

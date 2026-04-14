@@ -279,4 +279,89 @@
     if (floraOff) applyFlora(true);
   })();
 
+  /* ── MODULAR ARTICLE LEARNING UI ── */
+  window.ARLearningUI = (function () {
+    function ensurePanel(root) {
+      if (!root) return null;
+      var panel = root.querySelector('.ar-learning-panel');
+      if (panel) return panel;
+      panel = document.createElement('aside');
+      panel.className = 'ar-learning-panel';
+      panel.setAttribute('aria-live', 'polite');
+      panel.style.cssText = 'position:sticky;top:78px;z-index:88;margin:0 auto 1rem;padding:.85rem 1rem;border:1px solid rgba(139,189,210,.2);background:rgba(6,16,13,.88);backdrop-filter:blur(6px);max-width:680px;display:none;';
+      panel.innerHTML = '<div style="display:flex;justify-content:space-between;gap:.8rem;align-items:flex-start;"><div><p class="ar-progress-copy" style="font-size:.8rem;color:rgba(255,255,255,.8);margin:0 0 .25rem 0;"></p><p class="ar-badge-copy" style="font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(61,214,232,.8);margin:0;"></p></div><button type="button" class="ar-dismiss-all" style="background:none;border:0;color:rgba(255,255,255,.4);cursor:pointer;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:0;">Skip hints</button></div>';
+      root.insertBefore(panel, root.firstChild);
+      return panel;
+    }
+
+    function maybeInjectAfterModule(moduleEl, className, html) {
+      if (!moduleEl || moduleEl.querySelector('.' + className)) return;
+      var next = moduleEl.querySelector('.mod-next');
+      var wrap = document.createElement('div');
+      wrap.className = className;
+      wrap.innerHTML = html + '<button type="button" class="ar-item-close" style="background:none;border:0;color:rgba(255,255,255,.42);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0;margin-top:.5rem;">Skip</button>';
+      wrap.style.cssText = 'margin-top:1.1rem;padding:.9rem 1rem;border:1px solid rgba(139,189,210,.15);background:rgba(8,20,16,.65);';
+      if (next) moduleEl.insertBefore(wrap, next);
+      else moduleEl.appendChild(wrap);
+      var close = wrap.querySelector('.ar-item-close');
+      if (close) close.addEventListener('click', function () { wrap.style.display = 'none'; });
+    }
+
+    function initModularArticle(config) {
+      if (!config || !config.totalMods) return null;
+      var wrap = document.querySelector(config.wrapSelector || '.module-wrap');
+      if (!wrap) return null;
+      var panel = ensurePanel(wrap);
+      var dismissedAll = false;
+
+      if (panel) {
+        panel.querySelector('.ar-dismiss-all').addEventListener('click', function () {
+          dismissedAll = true;
+          panel.style.display = 'none';
+          wrap.querySelectorAll('.ar-knowledge-check,.ar-curiosity-teaser').forEach(function (el) { el.style.display = 'none'; });
+        });
+      }
+
+      function update(currentMod) {
+        if (!currentMod || dismissedAll) return;
+        var pct = Math.round((currentMod / config.totalMods) * 100);
+        if (panel) {
+          panel.style.display = '';
+          var progressCopy = (config.progressMessages && config.progressMessages[currentMod]) || ('Anda dah faham ' + pct + '% asas nitrogen cycle.');
+          panel.querySelector('.ar-progress-copy').textContent = progressCopy;
+          var badgeCopy = (config.badges && config.badges[currentMod]) || '';
+          panel.querySelector('.ar-badge-copy').textContent = badgeCopy;
+        }
+
+        if (config.checkpoints && config.checkpoints[currentMod]) {
+          var c = config.checkpoints[currentMod];
+          var modEl = document.getElementById('mod-' + currentMod);
+          maybeInjectAfterModule(modEl, 'ar-knowledge-check', '<p style="font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(157,191,154,.75);margin:0 0 .45rem 0;">Knowledge check</p><p style="font-size:.88rem;color:rgba(255,255,255,.78);margin:0;">' + c.question + '</p>');
+        }
+
+        if (config.teasers && config.teasers[currentMod]) {
+          var t = config.teasers[currentMod];
+          var mod = document.getElementById('mod-' + currentMod);
+          maybeInjectAfterModule(mod, 'ar-curiosity-teaser', '<p style="font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.7);margin:0 0 .45rem 0;">Curiosity teaser</p><p style="font-size:.86rem;color:rgba(255,255,255,.72);margin:0 0 .5rem 0;">' + t.fact + '</p><a href="#mod-' + t.nextModule + '" data-next-module="' + t.nextModule + '" style="font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(61,214,232,.82);text-decoration:none;">Terus ke modul seterusnya →</a>');
+          var teaser = mod && mod.querySelector('.ar-curiosity-teaser');
+          var jump = teaser && teaser.querySelector('[data-next-module]');
+          if (jump) {
+            jump.addEventListener('click', function (e) {
+              if (typeof window.goMod === 'function') {
+                e.preventDefault();
+                window.goMod(parseInt(this.getAttribute('data-next-module'), 10));
+              }
+            });
+          }
+        }
+      }
+
+      function hide() { if (panel) panel.style.display = 'none'; }
+      function show() { if (panel && !dismissedAll) panel.style.display = ''; }
+      return { update: update, hide: hide, show: show };
+    }
+
+    return { initModularArticle: initModularArticle };
+  })();
+
 })();
