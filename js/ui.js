@@ -305,6 +305,7 @@
       else moduleEl.appendChild(wrap);
       var close = wrap.querySelector('.ar-item-close');
       if (close) close.addEventListener('click', function () { wrap.style.display = 'none'; });
+      return wrap;
     }
 
     function initModularArticle(config) {
@@ -312,13 +313,17 @@
       var wrap = document.querySelector(config.wrapSelector || '.module-wrap');
       if (!wrap) return null;
       var panel = ensurePanel(wrap);
+      var storageKey = 'ar_learning_hints_skipped:' + (config.id || location.pathname);
       var dismissedAll = false;
+      try { dismissedAll = sessionStorage.getItem(storageKey) === '1'; } catch (e) {}
 
       if (panel) {
+        panel.style.display = dismissedAll ? 'none' : panel.style.display;
         panel.querySelector('.ar-dismiss-all').addEventListener('click', function () {
           dismissedAll = true;
           panel.style.display = 'none';
           wrap.querySelectorAll('.ar-knowledge-check,.ar-curiosity-teaser').forEach(function (el) { el.style.display = 'none'; });
+          try { sessionStorage.setItem(storageKey, '1'); } catch (e) {}
         });
       }
 
@@ -342,8 +347,8 @@
         if (config.teasers && config.teasers[currentMod]) {
           var t = config.teasers[currentMod];
           var mod = document.getElementById('mod-' + currentMod);
-          maybeInjectAfterModule(mod, 'ar-curiosity-teaser', '<p style="font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.7);margin:0 0 .45rem 0;">Curiosity teaser</p><p style="font-size:.86rem;color:rgba(255,255,255,.72);margin:0 0 .5rem 0;">' + t.fact + '</p><a href="#mod-' + t.nextModule + '" data-next-module="' + t.nextModule + '" style="font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(61,214,232,.82);text-decoration:none;">Terus ke modul seterusnya →</a>');
-          var teaser = mod && mod.querySelector('.ar-curiosity-teaser');
+          var teaser = maybeInjectAfterModule(mod, 'ar-curiosity-teaser', '<p style="font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.7);margin:0 0 .45rem 0;">Curiosity teaser</p><p style="font-size:.86rem;color:rgba(255,255,255,.72);margin:0 0 .5rem 0;">' + t.fact + '</p><a href="#mod-' + t.nextModule + '" data-next-module="' + t.nextModule + '" style="font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(61,214,232,.82);text-decoration:none;">Terus ke modul seterusnya →</a>');
+          if (!teaser) teaser = mod && mod.querySelector('.ar-curiosity-teaser');
           var jump = teaser && teaser.querySelector('[data-next-module]');
           if (jump) {
             jump.addEventListener('click', function (e) {
