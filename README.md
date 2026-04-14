@@ -65,6 +65,11 @@ Current articles:
 ├── sitemap.xml                       — sitemap for search engine indexing
 ├── README.md                         — this file
 │
+
+├── operations/
+│   └── security/
+│       └── post-deploy-header-validation.md  — checklist + snapshot log post-deploy untuk validasi security header
+│
 ├── articles/
 │   ├── new-tank-syndrome.html        — guided article, 5 modules
 │   ├── cycled-tank-problems.html     — guided article, 4 modules
