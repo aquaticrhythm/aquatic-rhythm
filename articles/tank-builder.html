@@ -10,6 +10,26 @@
 <meta name="theme-color" content="#041e28">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<script>
+(function(){
+  try{
+    localStorage.setItem('ar_last_location', JSON.stringify({
+      href: window.location.pathname + window.location.hash,
+      title: document.title,
+      type: window.location.pathname.indexOf('/articles/')===0?'article':'page'
+    }));
+  }catch(e){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target.closest('[data-analytics-event]');
+    if(!el || typeof gtag==='undefined') return;
+    gtag('event', el.getAttribute('data-analytics-event'), {
+      pathway: el.getAttribute('data-pathway') || '',
+      cta: el.getAttribute('data-cta') || '',
+      destination: el.getAttribute('href') || ''
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"></noscript>
@@ -2187,8 +2207,8 @@ function showFullReport(){
   }
   var hasFilter=active['filter-sponge']||active['filter-hang']||active['filter-canister']||active['filter-internal']||active['filter-overflow'];
   html+='<div style="padding:.9rem 1rem;background:rgba(30,75,95,.15);border:1px solid rgba(61,214,232,.12);border-radius:2px;margin-bottom:1rem">';
-  html+='<div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.5);margin-bottom:.4rem">Next steps</div>';
-  html+='<p style="font-size:.75rem;color:rgba(255,255,255,.5);font-family:var(--serif);font-style:italic;line-height:1.65">'+(hasFilter?'Cycle this tank before adding livestock. The nitrogen cycle typically takes 4\u20138 weeks. Test ammonia and nitrite every 2\u20133 days \u2014 both must read zero for at least 3 consecutive days.':'No filter selected. A filter is the single most important piece of equipment \u2014 it hosts the bacterial colony that processes waste.')+'</p></div>';
+  html+='<div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.5);margin-bottom:.4rem">Next best action</div>';
+  html+='<p style="font-size:.75rem;color:rgba(255,255,255,.5);font-family:var(--serif);font-style:italic;line-height:1.65">'+(hasFilter?'Ambil konfigurasi ini, beli hanya komponen kritikal dahulu (filter + heater + test kit), kemudian jalankan fishless cycle 14 hari pertama tanpa tambah ikan.':'Tambah satu filter dulu, kemudian ulang semakan ritma sebelum pilih livestock. Tanpa filter, plan ini belum sedia untuk cycling.')+'</p></div>';
   html+='<p style="font-size:.7rem;color:rgba(255,255,255,.18);font-family:var(--serif);font-style:italic;line-height:1.65;text-align:center;margin-top:1rem">A rhythm established with patience becomes self-sustaining. What you have chosen here is the architecture of a living system.</p>';
   rc.innerHTML=html;overlay.style.display='block';overlay.scrollTop=0;
 }

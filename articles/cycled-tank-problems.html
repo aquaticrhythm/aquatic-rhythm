@@ -17,6 +17,26 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"An Established Tank Is Not a Finished Tank","description":"The nitrogen cycle is done. But problems keep coming back. This gentle guide walks through why.","url":"https://aquaticrhythm.com/articles/cycled-tank-problems","author":{"@type":"Organization","name":"Aquatic Rhythm"},"publisher":{"@type":"Organization","name":"Aquatic Rhythm","url":"https://aquaticrhythm.com"}}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<script>
+(function(){
+  try{
+    localStorage.setItem('ar_last_location', JSON.stringify({
+      href: window.location.pathname + window.location.hash,
+      title: document.title,
+      type: window.location.pathname.indexOf('/articles/')===0?'article':'page'
+    }));
+  }catch(e){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target.closest('[data-analytics-event]');
+    if(!el || typeof gtag==='undefined') return;
+    gtag('event', el.getAttribute('data-analytics-event'), {
+      pathway: el.getAttribute('data-pathway') || '',
+      cta: el.getAttribute('data-cta') || '',
+      destination: el.getAttribute('href') || ''
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
@@ -398,8 +418,9 @@ canvas{display:block;width:100%}
     </div>
 
     <div class="final-cta">
-      <p>If something in your tank feels off and you cannot quite name it — that is not a gap in your knowledge. That is the beginning of learning to read. Stay with it a little longer before reaching for a solution. The answer is often already there.</p>
-      <a href="/reading" class="btn-reading">← Back to Reading</a>
+      <p><strong>Next best action:</strong> Buat log 72 jam: catat 3 perkara setiap hari (tingkah laku ikan, suhu, dan bacaan nitrate). Lepas 3 hari, semak sama ada pattern tekanan datang dari parameter, feeding, atau flow.</p>
+      <a href="/articles/cycled-tank-problems#mod-5" class="btn-reading" data-analytics-event="cta_mature_tank_next_action" data-cta="mature_tank_signal_review">Review behaviour signals →</a>
+      <a href="/reading" class="btn-reading" style="margin-top:.7rem">← Back to Reading</a>
     </div>
 
   </section>

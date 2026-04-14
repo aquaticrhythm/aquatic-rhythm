@@ -17,6 +17,26 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"New Tank Syndrome — What's Actually Happening and Why Waiting Is the Right Answer","description":"New tank syndrome is not a mistake you made. It is a phase every aquarium passes through.","url":"https://aquaticrhythm.com/articles/new-tank-syndrome","author":{"@type":"Organization","name":"Aquatic Rhythm"},"publisher":{"@type":"Organization","name":"Aquatic Rhythm","url":"https://aquaticrhythm.com"}}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<script>
+(function(){
+  try{
+    localStorage.setItem('ar_last_location', JSON.stringify({
+      href: window.location.pathname + window.location.hash,
+      title: document.title,
+      type: window.location.pathname.indexOf('/articles/')===0?'article':'page'
+    }));
+  }catch(e){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target.closest('[data-analytics-event]');
+    if(!el || typeof gtag==='undefined') return;
+    gtag('event', el.getAttribute('data-analytics-event'), {
+      pathway: el.getAttribute('data-pathway') || '',
+      cta: el.getAttribute('data-cta') || '',
+      destination: el.getAttribute('href') || ''
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
@@ -549,6 +569,11 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
     <div class="pq" style="margin-top:2.5rem">
       <p>If you want to see how this unfolds in practice — the ammonia rising, the bacteria arriving, both parameters falling — the simulator on the reading page lets you move through it yourself.</p>
+    </div>
+
+    <div class="pq" style="margin-top:1.5rem">
+      <p><strong>Next best action:</strong> Buka Tank Cycle Simulator dan jalankan satu pusingan <em>fishless</em> sampai muncul <em>Stable ✓</em>. Fokus pada trend ammonia/nitrite selama 3 hari berturut-turut, bukan bacaan sekali lalu.</p>
+      <a href="/articles/tank-simulator" class="art-back-link" data-analytics-event="cta_new_tank_next_action" data-cta="new_tank_simulator" style="font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.7);text-decoration:none;display:inline-block;margin-top:.4rem">Open simulator →</a>
     </div>
 
     <div class="mod-next" style="margin-top:1.5rem">

@@ -10,6 +10,26 @@
 <meta name="theme-color" content="#041e28">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<script>
+(function(){
+  try{
+    localStorage.setItem('ar_last_location', JSON.stringify({
+      href: window.location.pathname + window.location.hash,
+      title: document.title,
+      type: window.location.pathname.indexOf('/articles/')===0?'article':'page'
+    }));
+  }catch(e){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target.closest('[data-analytics-event]');
+    if(!el || typeof gtag==='undefined') return;
+    gtag('event', el.getAttribute('data-analytics-event'), {
+      pathway: el.getAttribute('data-pathway') || '',
+      cta: el.getAttribute('data-cta') || '',
+      destination: el.getAttribute('href') || ''
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
@@ -185,6 +205,7 @@ main{min-height:100vh;padding-top:64px}
       <p class="kyr-note-end">This reflection is not a diagnosis. It is a starting point — one that changes as you do. You can return to it whenever the question feels different.</p>
       <div class="kyr-actions">
         <button class="kyr-btn-restart" id="kyr-btn-restart">Start again</button>
+        <a href="/articles/tank-builder" class="kyr-link-reading" data-analytics-event="cta_rhythm_next_action" data-cta="rhythm_to_builder">Next best action: build a matching tank →</a>
         <a href="/reading" class="kyr-link-reading">← Back to Reading</a>
       </div>
     </div>

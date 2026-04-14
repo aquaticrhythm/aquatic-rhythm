@@ -10,6 +10,26 @@
 <meta name="theme-color" content="#041e28">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<script>
+(function(){
+  try{
+    localStorage.setItem('ar_last_location', JSON.stringify({
+      href: window.location.pathname + window.location.hash,
+      title: document.title,
+      type: window.location.pathname.indexOf('/articles/')===0?'article':'page'
+    }));
+  }catch(e){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target.closest('[data-analytics-event]');
+    if(!el || typeof gtag==='undefined') return;
+    gtag('event', el.getAttribute('data-analytics-event'), {
+      pathway: el.getAttribute('data-pathway') || '',
+      cta: el.getAttribute('data-cta') || '',
+      destination: el.getAttribute('href') || ''
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
@@ -566,8 +586,14 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
       <div id="rpt-verdict" style="margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.07);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6"></div>
     </div>
 
+    <div style="margin:.2rem 0 1rem;padding:.75rem .9rem;border:1px solid rgba(61,214,232,.16);background:rgba(61,214,232,.05)">
+      <div style="font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.62);margin-bottom:.25rem">Next best action</div>
+      <p style="font-size:.76rem;line-height:1.6;color:rgba(255,255,255,.58);margin:0">Ambil tetapan yang stabil dalam simulasi ini, kemudian guna setup sama pada tank sebenar selama 7 hari (feed, water change, dan jadual lampu yang konsisten).</p>
+    </div>
+
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center">
       <button class="obtn op" id="btn-restart">Try again</button>
+      <a href="/articles/new-tank-syndrome" class="obtn os" data-analytics-event="cta_simulator_next_action" data-cta="simulator_to_new_tank">Apply this to real tank →</a>
       <a href="/reading" class="obtn os">Back to Reading</a>
     </div>
   </div>
