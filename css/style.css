@@ -110,6 +110,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .dmd{font-family:var(--serif);font-weight:300;line-height:1.18;font-size:clamp(1.9rem,2.8vw,2.9rem)}
 .bt{font-size:1rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.95}
 .bt+.bt{margin-top:1rem}
+.quick-takeaway{
+  margin-top:1rem;
+  padding:.75rem .95rem;
+  border:1px solid rgba(61,214,232,.2);
+  background:rgba(8,28,34,.7);
+  border-radius:4px;
+  display:flex;
+  align-items:flex-start;
+  gap:.65rem;
+}
+.qt-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:1.25rem;
+  height:1.25rem;
+  font-size:.8rem;
+  flex-shrink:0;
+  margin-top:.1rem;
+}
+.quick-takeaway p{
+  font-size:.82rem;
+  line-height:1.7;
+  color:rgba(255,255,255,.68);
+}
+.quick-takeaway strong{font-weight:500;color:rgba(255,255,255,.82)}
+.jump-next{
+  display:inline-block;
+  margin-top:1rem;
+  font-size:.56rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(61,214,232,.72);
+  text-decoration:none;
+  border-bottom:1px dashed rgba(61,214,232,.4);
+  padding-bottom:.15rem;
+}
+.jump-next:hover{color:rgba(61,214,232,.95);border-bottom-color:rgba(61,214,232,.75)}
 .btn{display:inline-block;text-decoration:none;font-family:var(--sans);font-size:.67rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;transition:all .32s var(--ease)}
 .bf{background:rgba(30,165,185,.88);color:#ffffff;border:1px solid rgba(61,214,232,.55);padding:.9rem 2rem;backdrop-filter:blur(8px);letter-spacing:.01em}
 .bf:hover{background:rgba(40,184,208,.95);border-color:rgba(61,214,232,.8);transform:translateY(-2px);box-shadow:0 12px 36px rgba(40,184,208,.35)}

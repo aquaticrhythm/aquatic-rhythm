@@ -85,6 +85,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 .mod-body p:last-child{margin-bottom:0}
 .mod-body strong{font-weight:400;color:rgba(255,255,255,.85)}
 .mod-body em{font-style:italic;color:rgba(255,255,255,.5)}
+.quick-takeaway{margin:1rem 0;padding:.7rem .9rem;border:1px solid rgba(61,214,232,.2);background:rgba(8,28,34,.7);border-radius:4px;display:flex;gap:.55rem;align-items:flex-start}
+.qt-icon{width:1.2rem;height:1.2rem;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.78rem;margin-top:.1rem}
+.quick-takeaway p{font-size:.84rem;line-height:1.7;color:rgba(255,255,255,.67);margin:0}
+.jump-next{display:inline-block;margin-top:.9rem;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.72);text-decoration:none;border-bottom:1px dashed rgba(61,214,232,.35);padding-bottom:.1rem}
+.jump-next:hover{color:rgba(61,214,232,.9);border-bottom-color:rgba(61,214,232,.7)}
 
 /* VISUAL BLOCKS */
 .vis-block{margin:2.4rem 0;border-radius:3px;overflow:hidden;position:relative}
@@ -340,9 +345,12 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">01 / 07</span><span class="mod-tag">You did not do anything wrong</span></div>
     <h1 class="mod-title">It is not a mistake.<br><em>It is a phase.</em></h1>
     <div class="mod-body">
-      <p>Almost every keeper goes through this. The water turns cloudy. The fish seem off. You test, you adjust, you add something — and it keeps happening. At some point you start to wonder if you are the problem.</p>
-      <p>You are not. What you are watching has a name — new tank syndrome — and it happens to every new aquarium, regardless of how carefully it was set up. It is not a sign of failure. It is a sign that the system is still in its earliest stage of becoming.</p>
-      <p>The water is not broken. It is just not ready yet.</p>
+      <p><strong>Problem:</strong> Almost every keeper goes through this. The water turns cloudy, the fish seem off, and adjustments do not immediately help. After repeated tweaks, it can feel like you are causing the issue yourself.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">💡</span><p><strong>Quick takeaway:</strong> New tank syndrome is common, not proof that you failed.</p></div>
+      <p><strong>Why it happens:</strong> What you are seeing is the biological startup phase, not system collapse. New tank syndrome appears in nearly every new setup because core bacteria populations are still forming. The system is alive, but not mature yet.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🧫</span><p><strong>Quick takeaway:</strong> Early instability is often a sign of growth, not damage.</p></div>
+      <p><strong>What to do now:</strong> Reduce intervention and focus on consistency. Keep feeding conservative, monitor trends, and avoid drastic resets. The water is not broken; it is not ready yet.</p>
+      <a class="jump-next" href="#mod-2">Lompat ke langkah seterusnya →</a>
     </div>
 
     <!-- VISUAL 1: Slider day 1 → week 3 -->
@@ -366,8 +374,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">02 / 07</span><span class="mod-tag">Ammonia</span></div>
     <h2 class="mod-title">The water is not empty.<br><em>Something is building.</em></h2>
     <div class="mod-body">
-      <p>From the moment a fish enters the water, it begins producing waste. That waste — along with uneaten food and organic matter — breaks down into <strong>ammonia</strong>, a compound that is toxic to fish even in small amounts.</p>
-      <p>In a tank that has been running for months or years, ammonia is processed almost as quickly as it appears. But in a new tank, the biological system that does that processing does not exist yet. So the ammonia stays. It builds. And the fish begin to feel it.</p>
+      <p><strong>Problem:</strong> Fish can look stressed very quickly in a new tank. Waste and leftover food break down into <strong>ammonia</strong>, which is toxic even at low concentration. That load can rise before the keeper sees obvious test spikes.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">⚠️</span><p><strong>Quick takeaway:</strong> Ammonia pressure can start before the water looks alarming.</p></div>
+      <p><strong>Why it happens:</strong> Mature tanks process ammonia almost immediately, but new tanks do not yet have that biological capacity. The conversion system is still being built. Until then, ammonia accumulates and fish feel the stress first.</p>
     </div>
 
     <!-- VISUAL 2: Tap to add days -->
@@ -380,7 +389,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="mod-body">
-      <p>Fish feel it before any test kit shows it. Surface breathing, hiding, clamped fins, loss of colour — these are not random. They are the tank speaking. And what it is saying, at this stage, is simply: the water is not ready yet. The solution is not in a bottle. It is in what comes next.</p>
+      <p><strong>What to do now:</strong> Treat behaviour as an early signal. Surface breathing, hiding, clamped fins, and colour loss are meaningful cues, not random events. Respond with steady management and small protective actions while the cycle develops.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🫧</span><p><strong>Quick takeaway:</strong> Behaviour trends can warn you sooner than test kits.</p></div>
+      <a class="jump-next" href="#mod-3">Lompat ke langkah seterusnya →</a>
     </div>
 
     <div class="hn">
@@ -399,8 +410,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">03 / 07</span><span class="mod-tag">The only real answer</span></div>
     <h2 class="mod-title">Bacteria are<br><em>the only answer.</em></h2>
     <div class="mod-body">
-      <p>There is no product that solves new tank syndrome. No water conditioner, no supplement, no trick. The only thing that actually resolves it is time — and specifically, the arrival and growth of beneficial bacteria.</p>
-      <p>These bacteria colonise the surfaces of the tank — the filter media, the substrate, the decor — slowly, over weeks. They cannot be rushed. But once they are established, they process waste continuously and almost invisibly. That is what a stable tank actually is.</p>
+      <p><strong>Problem:</strong> Many products promise fast stability, but the tank still swings. New tank syndrome cannot be solved by a single additive. Keepers often over-correct because they expect instant reversal.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🧪</span><p><strong>Quick takeaway:</strong> Stability comes from biology, not shortcuts.</p></div>
+      <p><strong>Why it happens:</strong> Beneficial bacteria must colonise real surfaces such as filter media, substrate, and decor. This buildup takes weeks and follows a sequence you cannot force. Once established, they process waste continuously and quietly.</p>
     </div>
 
     <!-- VISUAL 3: Toggle bacteria types -->
@@ -409,8 +421,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="mod-body">
-      <p>Two groups do this work. <em>Nitrosomonas</em> arrive first and convert ammonia into nitrite. A second group — most often called <em>Nitrobacter</em> in hobby guides, though current research points to <em>Nitrospira</em> as the dominant genus in most home aquariums — converts nitrite into nitrate, which is far less harmful. When both are working steadily, the cycle is complete.</p>
-      <p>The names matter less than the sequence. Ammonia rises first. Then nitrite. Then both fall. That arc — messy as it looks — means the system is building exactly what it needs.</p>
+      <p><strong>What to do now:</strong> Follow the sequence rather than chasing a perfect daily number. Ammonia rises first, nitrite follows, then both decline as colonies mature. If that arc is unfolding, your system is progressing.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">📈</span><p><strong>Quick takeaway:</strong> Messy readings can still indicate correct biological progress.</p></div>
+      <a class="jump-next" href="#mod-4">Lompat ke langkah seterusnya →</a>
     </div>
 
     <div class="hn ar">
@@ -429,8 +442,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">04 / 07</span><span class="mod-tag">A common misconception</span></div>
     <h2 class="mod-title">Bacteria do not live<br><em>in the water.</em></h2>
     <div class="mod-body">
-      <p>Most people picture bacteria drifting through the water. But they are not swimmers — they are settlers. They attach to surfaces and build up slowly over weeks, forming thin living films. The most important surface in any tank is the filter media. The sponge, the ceramic rings, the bio-balls — that is where the vast majority of the colony lives and does its work.</p>
-      <p>This changes how you think about a lot of things.</p>
+      <p><strong>Problem:</strong> Many keepers worry water changes will remove their bacteria and restart the cycle. That fear can lead to skipping needed maintenance. It also shifts attention away from the true biological core.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🧱</span><p><strong>Quick takeaway:</strong> Most beneficial bacteria live on surfaces, especially filter media.</p></div>
+      <p><strong>Why it happens:</strong> Bacteria are settlers, not free swimmers. They form living films on sponge, ceramic rings, bio-balls, and substrate over time. The filter remains the most important habitat for colony stability.</p>
     </div>
 
     <div class="pq">
@@ -438,8 +452,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="mod-body">
-      <p>It also means that water changes, even large ones, do not wash bacteria out of your filter. You are draining water, not biofilm. The colony stays where it is. That said, very large changes — 50% or more — can still slow things down indirectly. The sudden shift in water chemistry can stress bacterial metabolism. You are also removing the ammonia they were actively processing, which interrupts their feeding for a day or two. It is not catastrophic, but it is a setback.</p>
-      <p>The fastest way to start a new tank is to take some filter media from an established one and put it straight in. You are not adding a product — you are adding the actual living colony, already adapted, already working.</p>
+      <p><strong>What to do now:</strong> Keep maintenance gentle and colony-focused. Water changes do not strip biofilm from filter media, but repeated very large changes can slow bacterial metabolism through abrupt chemistry shifts. If possible, seed with mature filter media from an established tank for the fastest practical start.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🔁</span><p><strong>Quick takeaway:</strong> Protect filter biology first, then tune water changes with restraint.</p></div>
+      <a class="jump-next" href="#mod-5">Lompat ke langkah seterusnya →</a>
     </div>
 
     <div class="hn">
@@ -458,17 +473,16 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">05 / 07</span><span class="mod-tag">The variables</span></div>
     <h2 class="mod-title">Not all cycles<br><em>take the same time.</em></h2>
     <div class="mod-body">
-      <p>Two tanks set up on the same day, with the same fish, can cycle weeks apart. It is not random. There are a few things that make a real difference — and most people only find out about them after the fact.</p>
+      <p><strong>Problem:</strong> Two similar tanks can cycle at very different speeds. That difference often makes keepers think one setup is “wrong.” In reality, timeline variation is normal.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">⏱️</span><p><strong>Quick takeaway:</strong> Different cycle durations do not automatically mean bad care.</p></div>
     </div>
 
     <div class="mod-body">
-      <p><strong>Temperature.</strong> This is the one most people underestimate. Nitrospira — the bacteria doing most of the second-stage work — are slow at the best of times, and noticeably slower when it is cold. At 25–27°C the cycle might take 3–4 weeks. Below 20°C, expect it to take twice as long. A heater is not just for the fish. It matters for the bacteria too.</p>
+      <p><strong>Why it happens:</strong> Temperature, available surface area, and colony seeding all change bacterial speed. Cooler water slows Nitrospira activity, while better media area and mature seeding accelerate establishment. Lighting can also influence stability indirectly through algae pressure.</p>
 
-      <p><strong>Filter surface area.</strong> More surface means more space for bacteria to settle. A sponge filter in a small tank can work just as well as a large canister — what the bacteria need is area, not flow rate. What they do not need is the media being replaced or cleaned too aggressively.</p>
-
-      <p><strong>Seeding.</strong> Adding an existing colony — from a bottle or from established filter media — gives the process a head start. Bottled products are not a shortcut that skips the cycle, but they can shave a week or two off the early phase. Moving filter media from a mature tank is even better, because those bacteria are already adapted to aquarium conditions.</p>
-
-      <p><strong>Light.</strong> Indirectly, yes. Heavy lighting during cycling can encourage algae outbreaks that compete with everything else trying to stabilise. It is a minor factor, but keeping light moderate in the first few weeks is one less thing to manage.</p>
+      <p><strong>What to do now:</strong> Keep temperature in a supportive range, avoid aggressive media cleaning, and seed from mature media when available. Treat bottled bacteria as a boost, not a bypass. Keep early lighting moderate so algae does not add avoidable instability.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">✅</span><p><strong>Quick takeaway:</strong> Manage key variables gently and your cycle becomes more predictable.</p></div>
+      <a class="jump-next" href="#mod-6">Lompat ke langkah seterusnya →</a>
     </div>
 
     <div class="hn ar">
@@ -487,7 +501,8 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">06 / 07</span><span class="mod-tag">When care becomes the obstacle</span></div>
     <h2 class="mod-title">Why doing more<br><em>often makes it worse.</em></h2>
     <div class="mod-body">
-      <p>When the fish look stressed and the water looks wrong, the instinct is to do something. Change the water. Add a product. Adjust something. That impulse is not foolish — it comes from caring. But in a cycling tank, it is often the thing that makes the process take longest.</p>
+      <p><strong>Problem:</strong> When fish look stressed, most keepers intervene repeatedly. That response is caring, but frequent fixes can destabilise a cycling tank. The timeline often stretches because the system cannot settle.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🛑</span><p><strong>Quick takeaway:</strong> Too many good intentions in a row can become a new stressor.</p></div>
     </div>
 
     <!-- VISUAL 4: Intervene vs wait -->
@@ -496,17 +511,12 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="mod-body">
-      <p>The interventions that slow things down most are not dramatic. They are ordinary, well-intentioned, and easy to repeat.</p>
+      <p><strong>Why it happens:</strong> The interventions that slow cycling are usually ordinary and repeatable.</p>
 
-      <p><strong>Overfeeding.</strong> More food means more ammonia. During cycling, the bacteria cannot yet process it fast enough. Every extra pinch is adding to a load that is already straining the system. Feed lightly — or not at all in a fishless cycle — until things stabilise.</p>
-
-      <p><strong>Chemical ammonia removers.</strong> Products like AmQuel or Prime bind ammonia temporarily and make the test kit look better. But bacteria need ammonia as a food source to grow. A tank dosed regularly with ammonia binders can stall the cycle for weeks — the numbers look fine, but the colony is not building. These products have their place, but using them repeatedly during cycling can quietly extend it.</p>
-
-      <p><strong>Replacing filter media.</strong> New media has no bacteria on it. Throwing away old sponge and putting in a fresh one — even if it looks dirty — can set the cycle back significantly. The dirt is often the biofilm. Rinse gently in old tank water if needed, never replace entirely.</p>
-
-      <p><strong>Adding too many fish too early.</strong> More fish before the cycle is complete means more ammonia than the developing colony can handle. The bacteria get overwhelmed, the fish suffer, and the timeline extends. One or two fish in a fish-in cycle. No more until it is done.</p>
-
-      <p><strong>Frequent large water changes.</strong> As you now know, water changes do not remove bacteria from the filter. But doing them repeatedly — especially large ones — keeps disrupting water chemistry and removing the ammonia the colony is trying to process. Small and targeted, only when parameters get dangerous, is the better approach during an active cycle.</p>
+      <p><strong>Overfeeding</strong> raises ammonia load faster than early colonies can process. <strong>Routine ammonia binders</strong> can mask numbers while starving bacterial growth. <strong>Replacing media</strong> removes active colony surface. <strong>Adding many fish early</strong> overwhelms capacity, and <strong>frequent large water changes</strong> can repeatedly disrupt chemistry.</p>
+      <p><strong>What to do now:</strong> Keep interventions minimal and intentional. Feed lightly, preserve filter media, stock slowly, and reserve larger water changes for truly unsafe readings. Let the system build capacity between actions.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🧘</span><p><strong>Quick takeaway:</strong> In early cycling, consistency usually helps more than intensity.</p></div>
+      <a class="jump-next" href="#mod-7">Lompat ke langkah seterusnya →</a>
     </div>
 
     <div class="pq">
@@ -529,8 +539,9 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     <div class="mod-eyebrow"><span class="mod-num">07 / 07</span><span class="mod-tag">The other side of this</span></div>
     <h2 class="mod-title">The tank finds<br><em>its own rhythm.</em></h2>
     <div class="mod-body">
-      <p>Somewhere between four and eight weeks, something shifts. It does not announce itself. Ammonia holds near zero. Nitrite disappears. The water may clear. If there are fish, they begin to move differently — less hunched, less still. They start to look like themselves.</p>
-      <p>A tank that has completed its cycle is not just chemically stable. It has developed something like resilience — the capacity to absorb a missed water change, an extra feeding, a small disruption — and return to balance on its own. That is a different kind of tank than the one you started with.</p>
+      <p><strong>Problem:</strong> Early on, it can feel like the tank will never settle. Progress is gradual and easy to miss day to day. That uncertainty makes many keepers doubt the process.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🌱</span><p><strong>Quick takeaway:</strong> Stability often arrives quietly, then becomes obvious in hindsight.</p></div>
+      <p><strong>Why it happens:</strong> Between roughly week four and week eight, colony function usually becomes steady. Ammonia stays near zero, nitrite fades, and fish behaviour normalises. The system gains resilience and can recover from small disturbances.</p>
     </div>
 
     <!-- VISUAL 5: Day 1 to Day 30 -->
@@ -539,7 +550,8 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
     </div>
 
     <div class="mod-body">
-      <p>This is what all of those difficult early weeks were building toward. Not a perfect system — a living one. One that knows how to handle what comes next, including the imperfect and inconsistent keeper tending it.</p>
+      <p><strong>What to do now:</strong> Transition from emergency mode to rhythm care. Keep routine maintenance, avoid major disruptions, and build slow consistency. You are not aiming for perfection, just a living system that can self-correct.</p>
+      <div class="quick-takeaway"><span class="qt-icon" aria-hidden="true">🎯</span><p><strong>Quick takeaway:</strong> The real milestone is resilience, not flawless numbers every day.</p></div>
     </div>
 
     <div class="hn">
