@@ -2208,7 +2208,7 @@ function showFullReport(){
   var hasFilter=active['filter-sponge']||active['filter-hang']||active['filter-canister']||active['filter-internal']||active['filter-overflow'];
   html+='<div style="padding:.9rem 1rem;background:rgba(30,75,95,.15);border:1px solid rgba(61,214,232,.12);border-radius:2px;margin-bottom:1rem">';
   html+='<div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.5);margin-bottom:.4rem">Next best action</div>';
-  html+='<p style="font-size:.75rem;color:rgba(255,255,255,.5);font-family:var(--serif);font-style:italic;line-height:1.65">'+(hasFilter?'Ambil konfigurasi ini, beli hanya komponen kritikal dahulu (filter + heater + test kit), kemudian jalankan fishless cycle 14 hari pertama tanpa tambah ikan.':'Tambah satu filter dulu, kemudian ulang semakan ritma sebelum pilih livestock. Tanpa filter, plan ini belum sedia untuk cycling.')+'</p></div>';
+  html+='<p style="font-size:.75rem;color:rgba(255,255,255,.5);font-family:var(--serif);font-style:italic;line-height:1.65">'+(hasFilter?'Use this configuration, buy only the critical components first (filter + heater + test kit), then run a fishless cycle for the first 14 days before adding fish.':'Add one filter first, then repeat the rhythm check before choosing livestock. Without a filter, this plan is not ready for cycling yet.')+'</p></div>';
   html+='<p style="font-size:.7rem;color:rgba(255,255,255,.18);font-family:var(--serif);font-style:italic;line-height:1.65;text-align:center;margin-top:1rem">A rhythm established with patience becomes self-sustaining. What you have chosen here is the architecture of a living system.</p>';
   rc.innerHTML=html;overlay.style.display='block';overlay.scrollTop=0;
 }

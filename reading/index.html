@@ -113,25 +113,25 @@ h1 em{font-style:italic;color:rgba(61,214,232,.72)}
 
   <section class="continue" id="continue-reading">
     <h2>Continue where you left off</h2>
-    <p id="continue-copy">Sambung bacaan terakhir anda dengan sekali klik.</p>
+    <p id="continue-copy">Continue your last reading with one click.</p>
     <a href="/reading" class="continue-link" id="continue-link" data-analytics-event="continue_resume_click" data-cta="continue_resume">Continue →</a>
   </section>
 
   <section class="pathways">
-    <h2>Pilih laluan anda</h2>
-    <p>Tiga laluan cepat berdasarkan keadaan tank anda sekarang.</p>
+    <h2>Choose your path</h2>
+    <p>Three quick paths based on your tank's current condition.</p>
     <div class="pathway-list">
-      <a href="/articles/cycled-tank-problems#mod-5" class="pathway-link" data-analytics-event="pathway_stressed_fish_click" data-pathway="ikan_stres_sekarang">
-        <strong>Ikan stres sekarang</strong>
-        <span>Terus ke modul baca signal tingkah laku ikan.</span>
+      <a href="/articles/cycled-tank-problems#mod-5" class="pathway-link" data-analytics-event="pathway_stressed_fish_click" data-pathway="stressed_fish_now">
+        <strong>Stressed fish now</strong>
+        <span>Go straight to the fish behaviour signal module.</span>
       </a>
-      <a href="/articles/new-tank-syndrome" class="pathway-link" data-analytics-event="pathway_new_tank_click" data-pathway="tank_baru">
-        <strong>Tank baru</strong>
-        <span>Mulakan dengan peta lengkap kitaran nitrogen.</span>
+      <a href="/articles/new-tank-syndrome" class="pathway-link" data-analytics-event="pathway_new_tank_click" data-pathway="new_tank">
+        <strong>New tank</strong>
+        <span>Start with the complete nitrogen cycle map.</span>
       </a>
-      <a href="/articles/cycled-tank-problems#mod-3" class="pathway-link" data-analytics-event="pathway_mature_tank_click" data-pathway="stabilkan_tank_matang">
-        <strong>Nak stabilkan tank matang</strong>
-        <span>Fokus pada punca dominan dalam tank lama.</span>
+      <a href="/articles/cycled-tank-problems#mod-3" class="pathway-link" data-analytics-event="pathway_mature_tank_click" data-pathway="stabilise_mature_tank">
+        <strong>Stabilise a mature tank</strong>
+        <span>Focus on dominant stressors in long-running tanks.</span>
       </a>
     </div>
   </section>
@@ -152,7 +152,7 @@ h1 em{font-style:italic;color:rgba(61,214,232,.72)}
       if(last && last.href && last.href!==location.pathname){
         cont.classList.add('show');
         link.href=last.href;
-        copy.textContent='Sambung dari: ' + (last.title || last.href);
+        copy.textContent='Continue from: ' + (last.title || last.href);
       }
     }
   }catch(e){}
