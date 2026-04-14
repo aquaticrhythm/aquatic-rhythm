@@ -70,9 +70,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .nl{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}
 .nl:hover{opacity:.75}
 .nlinks{display:flex;gap:2.6rem;list-style:none}
-.nlinks a{font-size:.63rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s;position:relative}
+.nlinks a{font-size:.63rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.78);text-decoration:none;transition:color .3s;position:relative}
 .nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:rgba(61,214,232,.75);transition:width .35s var(--ease)}
-.nlinks a:hover{color:rgba(255,255,255,.82)}
+.nlinks a:hover{color:rgba(255,255,255,.98)}
 .nlinks a:hover::after{width:100%}
 .ncta{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.92);border:1px solid rgba(61,214,232,.35);padding:.52rem 1.25rem;border-radius:100px;text-decoration:none;transition:background .3s,border-color .3s,color .3s;backdrop-filter:blur(8px)}
 .ncta:hover{background:rgba(61,214,232,.15);border-color:rgba(61,214,232,.6);color:#ffffff}
@@ -87,9 +87,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .nmob ul{list-style:none}
 .nmob li{border-bottom:1px solid rgba(255,255,255,.05)}
 .nmob li:last-child{border-bottom:none}
-.nmob a{display:block;padding:.95rem 0;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .25s,padding-left .3s var(--ease)}
-.nmob a:hover{color:rgba(139,189,210,.85);padding-left:.5rem}
-.nmob .nmc{color:rgba(139,189,210,.6)}
+.nmob a{display:block;padding:.95rem 0;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.74);text-decoration:none;transition:color .25s,padding-left .3s var(--ease)}
+.nmob a:hover{color:rgba(61,214,232,.96);padding-left:.5rem}
+.nmob .nmc{color:rgba(139,189,210,.82)}
 
 /* ── PAGE SYSTEM ── */
 .page{display:none}
@@ -108,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .dxl{font-family:var(--serif);font-weight:300;line-height:1.08;font-size:clamp(3.4rem,6.5vw,6.5rem);letter-spacing:-.01em}
 .dlg{font-family:var(--serif);font-weight:300;line-height:1.1;font-size:clamp(2.4rem,4.2vw,4.4rem)}
 .dmd{font-family:var(--serif);font-weight:300;line-height:1.18;font-size:clamp(1.9rem,2.8vw,2.9rem)}
-.bt{font-size:1rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.95}
+.bt{font-size:1rem;font-weight:300;color:rgba(255,255,255,.88);line-height:1.95}
 .bt+.bt{margin-top:1rem}
 .btn{display:inline-block;text-decoration:none;font-family:var(--sans);font-size:.67rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;transition:all .32s var(--ease)}
 .bf{background:rgba(30,165,185,.88);color:#ffffff;border:1px solid rgba(61,214,232,.55);padding:.9rem 2rem;backdrop-filter:blur(8px);letter-spacing:.01em}
@@ -123,7 +123,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .hi{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;padding:8rem 0 6rem}
 .ht .ey{opacity:0;animation:ru .9s var(--ease) forwards .3s}
 .ht .dxl{color:rgba(255,255,255,.95);opacity:0;animation:ru .9s var(--ease) forwards .48s}
-.hk{opacity:0;animation:ru .9s var(--ease) forwards .66s;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(255,255,255,.58);line-height:1.8;max-width:420px;margin:2rem 0 3rem}
+.hk{opacity:0;animation:ru .9s var(--ease) forwards .66s;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(255,255,255,.8);line-height:1.8;max-width:420px;margin:2rem 0 3rem}
 .hb{opacity:0;animation:ru .9s var(--ease) forwards .84s;display:flex;gap:1rem;flex-wrap:wrap}
 @keyframes ru{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hoz{display:flex;justify-content:center;align-items:center;opacity:0;animation:or 1.4s var(--ease) forwards 1s}
@@ -157,7 +157,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .pc:hover::before{transform:scaleX(1)}
 .pn{font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(61,214,232,.38);line-height:1;margin-bottom:1.4rem}
 .pc h4{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:rgba(255,255,255,.94);margin-bottom:.5rem;line-height:1.3}
-.pc p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.68);line-height:1.85}
+.pc p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.84);line-height:1.85}
 
 /* ── ARA SECTION ── */
 .arasec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
@@ -169,7 +169,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .ac:hover::after{transform:scaleX(1)}
 .an{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:rgba(61,214,232,.4);line-height:1;margin-bottom:1.2rem}
 .ac h4{font-family:var(--serif);font-size:1.02rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.3;margin-bottom:.5rem}
-.ac p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75}
+.ac p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.78);line-height:1.75}
 
 /* ── SYSTEM SECTION ── */
 .syssec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 600px}
@@ -184,7 +184,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .db{background:rgba(139,189,210,.6);box-shadow:0 0 8px rgba(139,189,210,.4)}
 .dw{background:rgba(255,255,255,.22)}
 .sl2 h5{font-family:var(--serif);font-size:1.02rem;font-weight:400;color:rgba(255,255,255,.82);margin-bottom:.25rem}
-.sl2 p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.8}
+.sl2 p{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.76);line-height:1.8}
 .snb{padding:3rem;border:1px solid rgba(139,189,210,.12);background:rgba(6,16,13,.7);position:relative;overflow:hidden}
 .snb::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.25),transparent)}
 .snt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,.58)}
@@ -383,7 +383,9 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
   .hi{padding:6rem 0 4rem}
   .pcards,.aragrid,.stpaths,.rhyssa-limits-grid,.rhyssa-facets,.ara-pillars{grid-template-columns:1fr!important}
   .dxl{font-size:clamp(2.4rem,11vw,3rem)}
-  .bt{font-size:.96rem;line-height:1.85}
+  .bt{font-size:1rem;line-height:1.82;color:rgba(255,255,255,.9)}
+  .hk{color:rgba(255,255,255,.84)}
+  .rd-cat-desc,.rd-card-desc-text,.card p,.intro{color:rgba(255,255,255,.82)}
   .btn{width:100%;text-align:center}
   .orblg{width:220px;height:220px}
   #eco-toggle{bottom:.9rem;right:.9rem;opacity:.72}
@@ -404,20 +406,35 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .rd-cat{margin-bottom:.5rem}
 .rd-cat-header{margin-bottom:1.8rem}
 .rd-cat-label{display:inline-block;font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(61,214,232,.7);border-bottom:1px solid rgba(61,214,232,.25);padding-bottom:.3rem;margin-bottom:.7rem}
-.rd-cat-desc{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.75;max-width:480px}
+.rd-cat-desc{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.75;max-width:480px}
 .rd-card{display:block;text-decoration:none;background:rgba(6,16,13,.55);border:1px solid rgba(139,189,210,.1);transition:border-color .3s;overflow:hidden;margin-bottom:.85rem}
 .rd-card-bar{height:2px;background:linear-gradient(to right,rgba(61,214,232,.5),rgba(157,191,154,.3),transparent)}
 .rd-card-inner{padding:1.8rem 2.2rem 1.6rem}
 .rd-card-tags{display:flex;align-items:center;gap:.5rem;margin-bottom:.9rem;flex-wrap:wrap}
-.rd-tag{font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(139,189,210,.4)}
+.rd-tag{font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(139,189,210,.7)}
 .rd-tag-level{color:rgba(157,191,154,.72);border:1px solid rgba(157,191,154,.2);padding:.14rem .45rem;border-radius:100px}
-.rd-tag-int{color:rgba(61,214,232,.35)}
+.rd-tag-int{color:rgba(61,214,232,.68)}
 .rd-card-title{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.55rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.22;margin-bottom:.65rem}
-.rd-card-title em{font-style:italic;color:rgba(255,255,255,.48);font-size:clamp(.9rem,1.4vw,1.2rem)}
-.rd-card-desc-text{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.8;max-width:520px;margin-bottom:1rem}
-.rd-card-cta{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.5)}
+.rd-card-title em{font-style:italic;color:rgba(255,255,255,.7);font-size:clamp(.9rem,1.4vw,1.2rem)}
+.rd-card-desc-text{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.76);line-height:1.8;max-width:520px;margin-bottom:1rem}
+.rd-card-cta{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.84)}
 .rd-coming{padding:1.6rem 2rem;border:1px dashed rgba(255,255,255,.07);background:rgba(6,16,13,.3)}
 .rd-coming p{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.22)}
 
 .seo-links{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .seo-links a{color:inherit}
+
+/* ── LINK FOCUS + LEGACY READING SELECTORS ── */
+.nlinks a:focus-visible,
+.nmob a:focus-visible,
+.ncta:focus-visible,
+.rd-card:focus-visible,
+.sflink:focus-visible,
+.bl:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  color:rgba(255,255,255,.98);
+}
+.nlinks a:focus-visible::after{width:100%;background:rgba(61,214,232,.95)}
+.intro{font-size:1rem;font-weight:300;color:rgba(255,255,255,.84);line-height:1.85}
+.card p{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.78);line-height:1.6}
