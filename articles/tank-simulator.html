@@ -31,11 +31,11 @@
 })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif;background:#020810;color:rgba(255,255,255,.88)}
+html,body{height:100%;overflow:hidden;font-family:'Nunito',system-ui,sans-serif;background:#020810;color:rgba(255,255,255,.88)}
 :root{--serif:'Cormorant Garamond',Georgia,serif;--accent:#7ca89c}
 
 /* ── APP GRID ── */
@@ -119,7 +119,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
 /* BOTTOM ACTIONS */
 #bbar{display:grid;grid-template-columns:repeat(5,1fr);gap:.38rem;padding:.38rem 0 .48rem;border-top:1px solid rgba(139,189,210,.09);flex-shrink:0}
-.ab{display:flex;flex-direction:column;align-items:center;gap:.18rem;padding:.52rem .28rem;background:rgba(6,16,13,.6);border:1px solid rgba(139,189,210,.1);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;font-family:'DM Sans',system-ui,sans-serif}
+.ab{display:flex;flex-direction:column;align-items:center;gap:.18rem;padding:.52rem .28rem;background:rgba(6,16,13,.6);border:1px solid rgba(139,189,210,.1);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;font-family:'Nunito',system-ui,sans-serif}
 .ab:hover:not(:disabled){background:rgba(9,22,18,.88);border-color:rgba(124,168,156,.25);transform:translateY(-1px)}
 .ab:active:not(:disabled){transform:translateY(0)}
 .ab:disabled{opacity:.25;cursor:not-allowed}
@@ -604,12 +604,12 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   <div id="topbar">
     <a href="/" class="tb-logo" aria-label="Aquatic Rhythm">
       <svg width="115" height="22" viewBox="0 0 175 30" fill="none" aria-hidden="true">
-        <circle cx="13" cy="15" r="11.5" stroke="rgba(124,168,156,0.22)" stroke-width="1" fill="none"/>
+        <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
         <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
         <line x1="19.8" y1="23" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
         <ellipse cx="12" cy="15" rx="4" ry="2.3" fill="rgba(40,120,150,0.85)"/>
         <path d="M8.2 15 L6 12.5 L6 17.5Z" fill="rgba(40,120,150,0.78)"/>
-        <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(124,168,156,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+        <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
         <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
         <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
         <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>

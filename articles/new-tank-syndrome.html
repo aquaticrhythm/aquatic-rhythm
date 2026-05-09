@@ -38,13 +38,13 @@
 })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px;scroll-behavior:smooth}
+html{font-size:17px;scroll-behavior:smooth}
 :root{
-  --abyss:#030b09;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+  --abyss:#030b09;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Nunito',system-ui,sans-serif;
   --accent:#7ca89c;--ease:cubic-bezier(0.19,1,0.22,1);
 }
 body{font-family:var(--sans);background:var(--abyss);color:rgba(255,255,255,.88);overflow-x:hidden;line-height:1.72}
@@ -290,12 +290,12 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 <nav>
   <a href="/" class="nav-logo" aria-label="Aquatic Rhythm">
     <svg width="160" height="26" viewBox="0 0 175 30" fill="none" role="presentation" aria-hidden="true">
-      <circle cx="13" cy="15" r="11.5" stroke="rgba(124,168,156,0.22)" stroke-width="1" fill="none"/>
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
       <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
       <line x1="19.8" y1="23" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
       <ellipse cx="12" cy="15" rx="4" ry="2.3" fill="rgba(40,120,150,0.85)"/>
       <path d="M8.2 15 L6 12.5 L6 17.5Z" fill="rgba(40,120,150,0.78)"/>
-      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(124,168,156,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
       <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
       <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
       <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
@@ -793,11 +793,11 @@ canvases[1] = function() {
 
     /* NH3 indicator if murky */
     if (p < .4) {
-      ctx.font='300 10px DM Sans,system-ui,sans-serif';
+      ctx.font='300 10px Nunito,system-ui,sans-serif';
       ctx.fillStyle='rgba(220,160,40,'+((.4-p)*1.5).toFixed(2)+')';
       ctx.fillText('NH₃ rising', W*.68, 22);
     } else if (p > .7) {
-      ctx.font='300 10px DM Sans,system-ui,sans-serif';
+      ctx.font='300 10px Nunito,system-ui,sans-serif';
       ctx.fillStyle='rgba(80,200,120,.6)';
       var t2='Stabilising';
       ctx.fillText(t2,Math.min(W*.72,W-ctx.measureText(t2).width-8),22);
@@ -891,7 +891,7 @@ canvases[2] = function() {
       var fillH=(p.val/p.max)*barH;
       ctx.fillStyle='rgba(255,255,255,.05)'; ctx.fillRect(bx,barY,barW,barH);
       if(fillH>0){ctx.fillStyle=p.col+'0.6)'; ctx.fillRect(bx,barY+barH-fillH,barW,fillH);}
-      ctx.font='300 10px DM Sans,system-ui,sans-serif'; ctx.textAlign='center';
+      ctx.font='300 10px Nunito,system-ui,sans-serif'; ctx.textAlign='center';
       ctx.fillStyle=p.col+'0.8)'; ctx.fillText(p.label,bx+barW/2,barY+barH+12);
       ctx.fillStyle='rgba(255,255,255,.55)';
       var valY=barY+barH-fillH-4; if(valY<barY+10)valY=barY+10;
@@ -990,7 +990,7 @@ canvases[3] = function() {
     ctx.beginPath(); ctx.moveTo(W*.5,H*.12); ctx.lineTo(W*.5,H-.14); ctx.stroke();
 
     /* Labels */
-    ctx.font='300 11px DM Sans,system-ui,sans-serif';
+    ctx.font='300 11px Nunito,system-ui,sans-serif';
     ctx.fillStyle='rgba(220,140,60,'+(0.3+animP.A*.5).toFixed(2)+')'; ctx.fillText('Nitrosomonas',8,16);
     ctx.fillStyle='rgba(80,200,100,'+(0.3+animP.B*.5).toFixed(2)+')'; ctx.fillText('Nitrobacter / Nitrospira',W*.52+4,16);
     ctx.fillStyle='rgba(255,255,255,.35)';
@@ -1019,7 +1019,7 @@ canvases[3] = function() {
 
     /* Nitrate output label on right side */
     if(animP.B > .4) {
-      ctx.font='300 10px DM Sans,system-ui,sans-serif';
+      ctx.font='300 10px Nunito,system-ui,sans-serif';
       ctx.fillStyle='rgba(80,200,120,'+(animP.B*.6).toFixed(2)+')';
       ctx.textAlign='right';
       ctx.fillText('NO₃ →', W-8, H*.5+4);
@@ -1154,7 +1154,7 @@ canvases[6] = function() {
     /* Axes */
     ctx.strokeStyle='rgba(255,255,255,.1)'; ctx.lineWidth=1; ctx.setLineDash([]);
     ctx.beginPath(); ctx.moveTo(padL,padT); ctx.lineTo(padL,padT+gH); ctx.lineTo(padL+gW,padT+gH); ctx.stroke();
-    ctx.font='300 10px DM Sans,system-ui,sans-serif';
+    ctx.font='300 10px Nunito,system-ui,sans-serif';
     ctx.fillStyle='rgba(255,255,255,.4)'; ctx.fillText('NH₃',2,padT+9);
     ctx.fillStyle='rgba(255,255,255,.3)'; ctx.fillText('Days →',padL+gW-26,padT+gH+14);
 
@@ -1163,7 +1163,7 @@ canvases[6] = function() {
     ctx.strokeStyle='rgba(220,80,60,.2)'; ctx.setLineDash([3,4]);
     ctx.beginPath(); ctx.moveTo(padL,dy); ctx.lineTo(padL+gW,dy); ctx.stroke();
     ctx.setLineDash([]);
-    ctx.fillStyle='rgba(220,80,60,.4)'; ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(220,80,60,.4)'; ctx.font='300 9px Nunito,system-ui,sans-serif';
     ctx.fillText('stress zone',padL+gW*.55,dy-3);
 
     if(!chosen){
@@ -1274,7 +1274,7 @@ canvases[7] = function() {
     /* Axes */
     ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;ctx.setLineDash([]);
     ctx.beginPath();ctx.moveTo(pL,pT);ctx.lineTo(pL,pT+gH);ctx.lineTo(pL+gW,pT+gH);ctx.stroke();
-    ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.font='300 9px Nunito,system-ui,sans-serif';
     ctx.fillStyle='rgba(255,255,255,.3)';
     ctx.fillText('ppm',2,pT+10);
     ctx.fillText('Days →',pL+gW-24,pT+gH+13);
@@ -1302,7 +1302,7 @@ canvases[7] = function() {
         var cv=Math.min(ln.fn(day),maxVal);
         var cy=pT+gH-(cv/maxVal)*gH;
         ctx.fillStyle=ln.col+'0.85)';
-        ctx.font='300 10px DM Sans,system-ui,sans-serif';
+        ctx.font='300 10px Nunito,system-ui,sans-serif';
         ctx.textAlign='left';
         var lx=Math.min(cx+3, pL+gW-ctx.measureText(ln.label).width-4);
         ctx.fillText(ln.label, lx, Math.max(cy-4, pT+12));
