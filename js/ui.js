@@ -77,23 +77,23 @@
   };
 
   var titleMap = {
-    'home':    'Aquatic Rhythm — Aligned with Living Systems',
-    'ara':     'Aquatic Rhythm Alignment — Reading the Rhythm of Living Aquarium Systems',
-    'rhyssa':  'Rhyssa — An Aquarium Companion Shaped by ARA',
-    'about':   'About — Where Aquatic Rhythm Came From',
+    'home':    'Aquatic Rhythm — Ecological Care for Small Aquariums',
+    'ara':     'Aquatic Rhythm Alignment — Reading Aquarium Ecology',
+    'rhyssa':  'Rhyssa — Aquarium Companion (ARA-Shaped)',
+    'about':   'About — Aquatic Rhythm',
     'privacy': 'Privacy Policy — Aquatic Rhythm',
     'terms':   'Terms of Use — Aquatic Rhythm',
-    'reading': 'Reading — Aquatic Rhythm'
+    'reading': 'Reading — Aquarium Ecology Guides'
   };
 
   var descMap = {
-    'home':    'Your aquarium is a living system. Aquatic Rhythm helps you read it — through ARA, a framework for ecological care, and Rhyssa, a companion shaped by it.',
-    'ara':     'Aquatic Rhythm Alignment is a framework for reading living aquarium systems — through phase, rhythm, human capacity, and ecological timing.',
-    'rhyssa':  'Rhyssa is an AI aquarium companion shaped by ARA. She helps you understand what your tank is doing — and what it actually needs.',
-    'about':   'Aquatic Rhythm began with one experience that many aquarium keepers share. This is where that experience led.',
+    'home':    'Plain-language ecology for home aquariums: read water, plants, fish, and bacteria together. Guides, ARA, tools, and optional help from Rhyssa.',
+    'ara':     'ARA is a framework for closed-loop aquariums — phase, ecological tolerance, keeper rhythm, and timing before big moves.',
+    'rhyssa':  'Rhyssa is an AI aquarium companion shaped by ARA. She helps you interpret what your ecosystem is doing — without rushing to a single fix.',
+    'about':   'Why Aquatic Rhythm exists — from uneven advice to a calmer, ecology-first way of reading small tanks.',
     'privacy': 'Privacy Policy for Aquatic Rhythm. What we collect, how it is handled, and what it means for you.',
     'terms':   'Terms of Use for Aquatic Rhythm and Rhyssa. Written plainly, without unnecessary complexity.',
-    'reading': 'Articles and observations from Aquatic Rhythm — on living aquarium systems, ecological care, and the keepers who tend them.'
+    'reading': 'Short aquarium ecology guides — modular, mobile-friendly, grounded in ARA.'
   };
 
   function updateMeta(id) {

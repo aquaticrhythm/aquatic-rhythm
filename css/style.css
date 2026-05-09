@@ -353,6 +353,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 
 @media(max-width:720px){
   .nlinks{display:none}.nbg{display:flex}.ncta{display:none}
+  .hk{font-size:clamp(.98rem,4.2vw,1.08rem);max-width:36rem}
   .nmob{top:64px}
   .hi,.arah,.sysin,.araph,.adg,.rhg,.qg,.scn,.aboutg{grid-template-columns:1fr;gap:2.1rem}
   .aboutg{margin-top:2rem}
