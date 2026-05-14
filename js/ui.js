@@ -129,8 +129,6 @@
       gtag('event', 'page_view', { page_path: path, page_title: id });
     }
 
-    var bar = document.getElementById('progress-bar');
-    if (bar) { bar.style.width = '0%'; bar.classList.remove('visible'); }
     setTimeout(updateWaterLevel, 100);
   }
 
@@ -195,30 +193,6 @@
     if (active) observeScrollReveal(active);
   })();
 
-  /* ── READING PROGRESS BAR ── */
-  (function () {
-    var bar = document.getElementById('progress-bar');
-    if (!bar) return;
-    var ticking = false;
-
-    function updateProgress() {
-      var activePage = hasSpaPages ? document.querySelector('.page.active') : document.documentElement;
-      if (!activePage) { bar.style.width = '0%'; bar.classList.remove('visible'); return; }
-      var pageH = activePage.scrollHeight || document.documentElement.scrollHeight;
-      var viewH = window.innerHeight;
-      var scrolled = window.scrollY;
-      var total = pageH - viewH;
-      if (total <= 0) { bar.classList.remove('visible'); return; }
-      var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
-      bar.style.width = pct + '%';
-      bar.classList.toggle('visible', pct > 0.5 && pct < 99.5);
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
-    }, { passive: true });
-  })();
 
   /* ── WATER LEVEL ── */
   function updateWaterLevel() {
@@ -323,32 +297,6 @@
     hydrateContinueCard();
     saveCurrentLocation();
     document.addEventListener('click', trackIntentClick);
-  })();
-
-  /* ── THEME TOGGLE (aqua / dark) ── */
-  (function () {
-    var btn   = document.getElementById('theme-toggle');
-    var label = document.getElementById('theme-label');
-    if (!btn) return;
-
-    function applyTheme(theme, save) {
-      document.documentElement.setAttribute('data-theme', theme);
-      if (label) label.textContent = theme === 'dark' ? 'AQUA' : 'DEEP';
-      btn.title = theme === 'dark' ? 'Switch to bright aqua mode' : 'Switch to deep ocean mode';
-      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to aqua mode' : 'Switch to deep mode');
-      if (save) {
-        try { localStorage.setItem('ar_theme', theme); } catch (e) {}
-      }
-    }
-
-    var saved = 'dark';
-    try { saved = localStorage.getItem('ar_theme') || 'dark'; } catch (e) {}
-    applyTheme(saved, false);
-
-    btn.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      applyTheme(current === 'dark' ? 'aqua' : 'dark', true);
-    });
   })();
 
 })();
