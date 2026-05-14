@@ -133,100 +133,91 @@
 <main id="app-main">
 
 <!-- ═══════════ HOME ═══════════ -->
-<div id="pg-home" class="page active"><div class="pl">
+<div id=”pg-home” class=”page active”><div class=”pl”>
 
   <!-- ── HERO ── -->
-  <section class="hero pad">
-    <div class="cap" style="max-width:680px">
-      <div class="ht">
-        <h1 class="dxl">Your aquarium is<br>a closed ecosystem.<br><em style="font-style:italic;color:rgba(124,168,156,.92)">Learn to read it calmly.</em></h1>
-        <p class="hk">Water, plants, fish, and microbes share one loop in the glass — and so do you. Aquatic Rhythm helps you read that whole system, including the part you bring to it: your rhythm, your capacity, your attention on a given week.</p>
-        <div style="margin-top:2rem;display:flex;gap:.85rem;flex-wrap:wrap">
-          <a href="/reading" class="btn bf" data-page="reading">Browse ecology guides →</a>
-          <a href="/rhyssa" class="btn bg" data-page="rhyssa">Talk with Rhyssa →</a>
+  <section class=”hero pad”>
+    <div class=”cap” style=”max-width:680px”>
+      <div class=”ht”>
+        <h1 class=”dxl”>Care for your aquarium.<br>And for<br><em style=”font-style:italic;color:rgba(61,214,232,.85)”>the keeper you actually are.</em></h1>
+        <p class=”hk”>Water, plants, fish, and bacteria share one loop — and so do you. Including your rhythm, your capacity, and your attention on a given week.</p>
+        <div style=”margin-top:2rem;display:flex;gap:.85rem;flex-wrap:wrap”>
+          <a href=”/reading” class=”btn bf” data-page=”reading”>Browse ecology guides →</a>
+          <a href=”/ara” class=”btn bg” data-page=”ara”>Explore ARA →</a>
         </div>
-        <p class="ey" style="margin-top:.9rem">Written for keepers who care deeply and don't always have the time to show it. That is not a flaw — it is where honest care begins.</p>
+        <p class=”ey” style=”margin-top:.9rem”>Written for keepers who care deeply and don’t always have the time to show it. That is not a flaw — it is where honest care begins.</p>
       </div>
     </div>
   </section>
 
-  <div class="div"></div>
+  <div class=”wdiv” aria-hidden=”true”><svg viewBox=”0 0 1200 28” preserveAspectRatio=”none” xmlns=”http://www.w3.org/2000/svg” width=”100%” height=”28”><path d=”M0,14 C150,4 300,22 450,14 C600,6 750,22 900,14 C1050,6 1150,20 1200,14” stroke=”rgba(61,214,232,.1)” stroke-width=”1.2” fill=”none”/></svg></div>
 
-  <!-- ── SCIENCE + EMPATHY ── -->
-  <section class="psec pad" style="padding-top:8rem;padding-bottom:8rem">
-    <div class="cap" style="max-width:780px">
-      <span class="ey sr">Ecology in a small space</span>
-      <p class="pst sr d1">An aquarium is a living loop.<br><em>Most of it is invisible at first.</em></p>
+  <!-- ── KEEPER INSIGHT ── -->
+  <section class=”psec psec--lead pad” id=”home-keeper”>
+    <div class=”cap” style=”max-width:780px”>
+      <div class=”sec-ripple sr” aria-hidden=”true”>
+        <svg width=”44” height=”44” viewBox=”0 0 44 44” fill=”none” xmlns=”http://www.w3.org/2000/svg”>
+          <circle cx=”22” cy=”22” r=”3.5” fill=”rgba(61,214,232,.45)”/>
+          <circle cx=”22” cy=”22” r=”9” stroke=”rgba(61,214,232,.2)” stroke-width=”1” fill=”none”/>
+          <circle cx=”22” cy=”22” r=”15.5” stroke=”rgba(61,214,232,.12)” stroke-width=”1” fill=”none”/>
+          <circle cx=”22” cy=”22” r=”21.5” stroke=”rgba(61,214,232,.06)” stroke-width=”.8” fill=”none”/>
+        </svg>
+      </div>
+      <p class=”pst sr d1”>Most aquarium advice<br><em>leaves out one thing.</em></p>
+      <div class=”sr d2” style=”max-width:660px;margin-top:3rem”>
+        <p class=”bt”>It leaves out you.</p>
+        <p class=”bt” style=”margin-top:1.6rem”>The anxiety when something looks wrong and you don’t know what to do. The guilt of a missed water change. The quiet exhaustion of trying to keep something alive when your own days are already full. Most guides talk about the tank. Very few ask how the keeper is holding up.</p>
+        <div class=”apq-wrap sr d3”>
+          <span class=”drop-accent” aria-hidden=”true”><svg width=”14” height=”20” viewBox=”0 0 14 20” fill=”none” xmlns=”http://www.w3.org/2000/svg”><path d=”M7 1 C7 1 1 8 1 12.5 C1 16.1 3.7 19 7 19 C10.3 19 13 16.1 13 12.5 C13 8 7 1 7 1Z” fill=”rgba(61,214,232,.25)” stroke=”rgba(61,214,232,.45)” stroke-width=”.8”/></svg></span>
+          <blockquote class=”apq”>”Caring inconsistently is still caring.”</blockquote>
+          <p class=”bt” style=”margin-top:1.2rem;color:rgba(235,240,236,.52);font-size:.95rem”>A lot of people quietly give up on something they love because no one told them that. Aquatic Rhythm is not built on shame or urgency — those things accelerate overreaction, which is one of the most common sources of aquarium instability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class=”wdiv” aria-hidden=”true”><svg viewBox=”0 0 1200 28” preserveAspectRatio=”none” xmlns=”http://www.w3.org/2000/svg” width=”100%” height=”28”><path d=”M0,14 C200,22 400,6 600,14 C800,22 1000,6 1200,14” stroke=”rgba(61,214,232,.08)” stroke-width=”1.2” fill=”none”/></svg></div>
+
+  <!-- ── ECOLOGY BRIEF ── -->
+  <section class=”psec pad” id=”home-ecology”>
+    <div class=”cap” style=”max-width:780px”>
+      <div class=”sec-plant sr” aria-hidden=”true”>
+        <svg width=”22” height=”34” viewBox=”0 0 22 34” fill=”none” xmlns=”http://www.w3.org/2000/svg”>
+          <line x1=”11” y1=”34” x2=”11” y2=”5” stroke=”rgba(100,190,82,.5)” stroke-width=”1.8” stroke-linecap=”round”/>
+          <line x1=”11” y1=”22” x2=”4” y2=”14” stroke=”rgba(100,190,82,.35)” stroke-width=”1.3” stroke-linecap=”round”/>
+          <line x1=”11” y1=”16” x2=”18” y2=”9” stroke=”rgba(100,190,82,.3)” stroke-width=”1.2” stroke-linecap=”round”/>
+          <ellipse cx=”11” cy=”4” rx=”3” ry=”4” fill=”rgba(100,190,82,.28)”/>
+        </svg>
+      </div>
+      <span class=”ey sr”>Ecology in a small space</span>
+      <p class=”pst sr d1”>An aquarium is a living loop.<br><em>Most of it is invisible at first.</em></p>
       <div class=”sr d2” style=”max-width:660px;margin-top:3rem”>
         <p class=”bt”>You are tending bacteria, plants, fish, and chemistry together in one closed volume. Important shifts often show up in behaviour or growth days before a test strip looks dramatic — in how a fish holds its fins, how a plant roots, how the water smells after a change.</p>
-        <p class=”bt” style=”margin-top:1.6rem”>General advice rarely says which phase your tank is in. Yet phase changes what “safe” means: a value that is fine in a mature tank can be risky while biology is still settling. Reading tests alongside timing — not as a single verdict — is usually more honest than chasing one number in isolation.</p>
-        <p class=”bt” style=”margin-top:1.6rem”>When something feels off, note trends for a few days: feeding response, breathing ease, algae or plant pace. Steady observation usually beats a fast stack of changes.</p>
+        <p class=”bt” style=”margin-top:1.6rem”>Clear water can still sit on top of strain. Small pressures stack quietly until one becomes obvious. When something feels off, note trends for a few days — feeding response, breathing ease, algae pace. Steady observation usually beats a fast stack of changes.</p>
       </div>
     </div>
   </section>
 
-  <div class="div"></div>
+  <div class=”wdiv” aria-hidden=”true”><svg viewBox=”0 0 1200 28” preserveAspectRatio=”none” xmlns=”http://www.w3.org/2000/svg” width=”100%” height=”28”><path d=”M0,14 C150,4 300,22 450,14 C600,6 750,22 900,14 C1050,6 1150,20 1200,14” stroke=”rgba(61,214,232,.07)” stroke-width=”1.2” fill=”none”/></svg></div>
 
-  <!-- ── THE PATTERN ── -->
-  <section class="psec pad" style="padding-top:8rem;padding-bottom:8rem" id="home-pattern">
-    <div class="cap" style="max-width:780px">
-      <span class="ey sr">Signals before symptoms</span>
-      <p class="pst sr d1">“Fine today” is not always<br><em>stable tomorrow.</em></p>
-      <div class="sr d2" style="max-width:660px;margin-top:3rem">
-        <p class="bt">Clear water can still sit on top of strain: slower fish, stalled plants, or nitrate creeping up. Small pressures stack quietly until one of them becomes obvious. What looks clean is not always in balance.</p>
-        <p class="bt" style="margin-top:1.6rem">Biofilm gaps, temperature swings, or uneven feeding all move the system bit by bit. Animals often respond before your kit shows a dramatic shift. Most problems begin as slow drift in one thread of the ecosystem — not one sudden failure.</p>
-        <p class="bt" style="margin-top:1.6rem">Treat unsettled feelings as information. Name recent changes, watch trend direction, then choose one gentle adjustment if needed. Timing usually matters more than strength.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="div"></div>
-
-  <!-- ── THE KEEPER ── -->
-  <section class="psec pad" style="padding-top:8rem;padding-bottom:8rem" id="home-keeper">
-    <div class="cap" style="max-width:780px">
-      <span class="ey sr">The keeper inside the system</span>
-      <p class="pst sr d1">Most aquarium advice<br><em>leaves out one thing.</em></p>
-      <div class="sr d2" style="max-width:660px;margin-top:3rem">
-        <p class="bt">It leaves out you.</p>
-        <p class="bt" style="margin-top:1.6rem">The anxiety when something looks wrong and you don't know what to do. The guilt of a missed water change. The quiet exhaustion of trying to keep something alive when your own days are already full. Most guides talk about the tank. Very few ask how the keeper is holding up.</p>
-        <p class="bt" style="margin-top:1.6rem">ARA does not treat your inconsistency as a failure to overcome. It treats it as part of the system — something to design around honestly, not to apologise for. This site does not use shame, urgency, or fear to guide you. Those things accelerate overreaction — and overreaction is one of the most common sources of aquarium instability.</p>
-        <p style="font-family:var(--serif);font-style:italic;font-size:1.05rem;color:rgba(124,168,156,.72);line-height:1.9;margin-top:1.8rem">Caring inconsistently is still caring. A lot of people quietly give up on something they love because no one told them that.</p>
-        <p class="bt" style="margin-top:1.8rem">Aquatic Rhythm is built for keepers who care deeply and don't always have the time or energy to show it. That is not the barrier to being here. It is the starting point.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="div"></div>
-
-  <!-- ── WHAT THIS IS ── -->
-  <section class="arasec pad" id="home-framework">
-    <div class="cap">
-      <div class="arah">
-        <div class="sr">
-          <span class="ey">What this is</span>
-          <h2 class="dlg" style="color:rgba(255,255,255,.88)">Guides for the glass loop.<br>The ARA lens.<br><em style="font-style:italic;color:rgba(124,168,156,.78)">Optional conversation with Rhyssa.</em></h2>
+  <!-- ── ARA + CTA ── -->
+  <section class=”arasec pad” id=”home-framework”>
+    <div class=”cap”>
+      <div class=”arah”>
+        <div class=”sr”>
+          <span class=”ey”>What this is</span>
+          <h2 class=”dlg” style=”color:rgba(255,255,255,.88)”>Guides. A framework.<br><em style=”font-style:italic;color:rgba(61,214,232,.78)”>An optional conversation.</em></h2>
         </div>
-        <div class="sr d2">
-          <p class="bt">Most keepers hear conflicting tips online. Without a shared picture of how closed ecosystems behave, every bubble or algae patch can feel like a new crisis. One coherent lens turns scattered advice into a sequence you can follow calmly.</p>
-          <p class="bt" style="margin-top:1.4rem">Tanks move through phases — cycling, growing in, maturing — but checklists rarely say which phase you are in. <strong style="color:rgba(255,255,255,.88);font-weight:400">ARA — Aquatic Rhythm Alignment</strong> names those contexts. <strong style="color:rgba(255,255,255,.88);font-weight:400">Rhyssa</strong> helps you interpret what you see at home instead of copy-pasting fixes. Good notes match the ecosystem’s phase — not a generic recipe.</p>
-          <p class="bt" style="margin-top:1.4rem">Pick one door: read an article, learn ARA, or talk with Rhyssa. Stay with one thread long enough for the tank to answer back.</p>
+        <div class=”sr d2”>
+          <p class=”bt”>Most keepers hear conflicting tips online. Without a shared picture of how closed ecosystems behave, every bubble or algae patch can feel like a new crisis. One coherent lens turns scattered advice into a sequence you can follow calmly.</p>
+          <p class=”bt” style=”margin-top:1.4rem”><strong style=”color:rgba(255,255,255,.88);font-weight:400”>ARA — Aquatic Rhythm Alignment</strong> names the phases your tank moves through. <strong style=”color:rgba(255,255,255,.88);font-weight:400”>Rhyssa</strong> helps you interpret what you see at home instead of copy-pasting fixes. Good notes match the ecosystem’s phase — not a generic recipe.</p>
+          <div style=”margin-top:2.4rem;display:flex;gap:.85rem;flex-wrap:wrap;align-items:center”>
+            <a href=”/reading” class=”btn bf” data-page=”reading”>Browse ecology guides →</a>
+            <a href=”/ara” class=”btn bg” data-page=”ara”>Explore ARA →</a>
+          </div>
+          <p class=”bt” style=”margin-top:1.2rem;font-size:.88rem;color:rgba(235,240,236,.38)”>Or <a href=”/rhyssa” data-page=”rhyssa” style=”color:rgba(61,214,232,.6);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.22)”>talk with Rhyssa</a> — an AI companion shaped by ARA.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <div class="div"></div>
-
-  <!-- ── CTA ── -->
-  <section class="ctasec pad" id="home-start">
-    <span class="ey ey-t sr">Where to begin</span>
-    <h2 class="dmd sr d1" style="color:rgba(255,255,255,.88)">You can begin from wherever you are.</h2>
-    <p class="bt sr d2">Mobile-friendly guides break topics into short steps. Use Rhyssa when you want language for what you are seeing. Open ARA when you want the map those guides share.</p>
-    <div class="sr d3" style="margin-top:1.4rem;display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center">
-      <a href="/reading" class="btn bf" data-page="reading">Read the articles →</a>
-      <a href="/rhyssa" class="btn bg" data-page="rhyssa">Talk to Rhyssa →</a>
-      <a href="/ara" class="btn" data-page="ara" style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(124,168,156,.12);color:rgba(124,168,156,.82);border:1px solid rgba(124,168,156,.35);padding:.8rem 1.6rem;border-radius:2px;text-decoration:none;transition:background .25s">Explore ARA →</a>
     </div>
   </section>
   <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true"><circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/><line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/><line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/><ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/><path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/><path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/><circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/><text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text><text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text></svg></div><span class="fm">Aligned with living systems.</span></footer>
