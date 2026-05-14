@@ -184,12 +184,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 /* ── PROBLEM SECTION ── */
 .psec{padding:6rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
 .psec--lead{padding:8rem clamp(1.5rem,5vw,4.5rem)}
-.wdiv{line-height:0;overflow:hidden;margin:0}
-.wdiv svg{display:block;width:100%}
-.sec-ripple{margin-bottom:2.8rem}
-.sec-plant{margin-bottom:1rem}
 .apq-wrap{margin-top:2.8rem}
-.drop-accent{display:block;margin-bottom:.6rem}
 .psec--lead .apq{font-size:clamp(1.8rem,3vw,3rem);color:rgba(61,214,232,.82);border-left:2px solid rgba(61,214,232,.22);padding-left:1.6rem;margin-top:.2rem}
 .pst{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.5rem);font-weight:300;line-height:1.38;color:rgba(255,255,255,.88);max-width:660px;font-optical-sizing:auto}
 .pst em{font-style:italic;color:rgba(61,214,232,.88)}
