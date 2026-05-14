@@ -325,4 +325,30 @@
     document.addEventListener('click', trackIntentClick);
   })();
 
+  /* ── THEME TOGGLE (aqua / dark) ── */
+  (function () {
+    var btn   = document.getElementById('theme-toggle');
+    var label = document.getElementById('theme-label');
+    if (!btn) return;
+
+    function applyTheme(theme, save) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (label) label.textContent = theme === 'dark' ? 'AQUA' : 'DEEP';
+      btn.title = theme === 'dark' ? 'Switch to bright aqua mode' : 'Switch to deep ocean mode';
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to aqua mode' : 'Switch to deep mode');
+      if (save) {
+        try { localStorage.setItem('ar_theme', theme); } catch (e) {}
+      }
+    }
+
+    var saved = 'dark';
+    try { saved = localStorage.getItem('ar_theme') || 'dark'; } catch (e) {}
+    applyTheme(saved, false);
+
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'aqua' : 'dark', true);
+    });
+  })();
+
 })();
