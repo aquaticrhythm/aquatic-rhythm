@@ -181,7 +181,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 @keyframes sd{0%,100%{transform:scaleY(1) translateY(0);opacity:.5}50%{transform:scaleY(.6) translateY(8px);opacity:1}}
 
 /* ── PROBLEM SECTION ── */
-.psec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
+.psec{padding:6rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
+.psec--lead{padding:8rem clamp(1.5rem,5vw,4.5rem)}
+.wdiv{line-height:0;overflow:hidden;margin:0}
+.wdiv svg{display:block;width:100%}
+.sec-ripple{margin-bottom:2.8rem}
+.sec-plant{margin-bottom:1rem}
+.apq-wrap{margin-top:2.8rem}
+.drop-accent{display:block;margin-bottom:.6rem}
+.psec--lead .apq{font-size:clamp(1.8rem,3vw,3rem);color:rgba(61,214,232,.82);border-left:2px solid rgba(61,214,232,.22);padding-left:1.6rem;margin-top:.2rem}
 .pst{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.5rem);font-weight:300;line-height:1.38;color:rgba(255,255,255,.88);max-width:660px;font-optical-sizing:auto}
 .pst em{font-style:italic;color:rgba(61,214,232,.88)}
 .pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:5rem;background:transparent}
@@ -192,7 +200,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .pc p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.84);line-height:1.85}
 
 /* ── ARA SECTION ── */
-.arasec{padding:9rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
+.arasec{padding:6rem clamp(1.5rem,5vw,4.5rem);content-visibility:auto;contain-intrinsic-size:0 500px}
+#home-framework .arah{margin-bottom:0}
 .arah{display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;margin-bottom:6rem;align-items:end}
 .aragrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:transparent;margin-top:1rem}
 .ac{padding:2.4rem 1.8rem;background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--panel-border);border-radius:14px;box-shadow:var(--panel-shadow),var(--panel-inset);position:relative;overflow:hidden;transition:background .35s,transform .3s var(--ease),border-color .35s}
@@ -222,7 +231,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .snt em{font-style:normal;color:rgba(139,189,210,.75)}
 
 /* ── CTA SECTION ── */
-.ctasec{padding:9rem clamp(1.5rem,5vw,4.5rem);text-align:center;content-visibility:auto;contain-intrinsic-size:0 400px}
+.ctasec{padding:5rem clamp(1.5rem,5vw,4.5rem);text-align:center;content-visibility:auto;contain-intrinsic-size:0 400px}
 .ctasec .dmd{color:rgba(255,255,255,.68);max-width:500px;margin:1.2rem auto 1.5rem}
 .ctasec .bt{max-width:380px;margin:0 auto 3rem}
 
