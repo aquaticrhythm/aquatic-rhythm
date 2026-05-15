@@ -150,11 +150,26 @@
     (function () {
       var params = new URLSearchParams(location.search);
       var pParam = params.get('p');
-      var id = (pParam && pageMap['/' + pParam]) ? pageMap['/' + pParam] : pageMap[location.pathname] || 'home';
-      if (pParam) {
-        var cleanPath = '/' + pParam;
-        try { history.replaceState({ page: id }, '', cleanPath); } catch (e) {}
+      var spaSeg = null;
+      try {
+        spaSeg = sessionStorage.getItem('ar_spa_initial');
+        if (spaSeg) sessionStorage.removeItem('ar_spa_initial');
+      } catch (e0) {}
+
+      var id = pageMap[location.pathname] || 'home';
+      var cleanFromQuery = null;
+      if (pParam && pageMap['/' + pParam]) {
+        id = pageMap['/' + pParam];
+        cleanFromQuery = '/' + pParam;
+      } else if (spaSeg && pageMap['/' + spaSeg]) {
+        id = pageMap['/' + spaSeg];
+        cleanFromQuery = '/' + spaSeg;
       }
+
+      if (cleanFromQuery) {
+        try { history.replaceState({ page: id }, '', cleanFromQuery); } catch (e1) {}
+      }
+
       var active = document.querySelector('.page.active');
       if (active) active.classList.remove('active');
       var t = document.getElementById('pg-' + id);
@@ -162,7 +177,7 @@
         t.classList.add('active');
         if (titleMap[id]) document.title = titleMap[id];
         updateMeta(id);
-        try { history.replaceState({ page: id }, '', location.pathname); } catch (e) {}
+        try { history.replaceState({ page: id }, '', location.pathname); } catch (e2) {}
         var path = id === 'home' ? '/' : '/' + id;
         var can = document.querySelector('link[rel="canonical"]');
         if (can) can.setAttribute('href', 'https://aquaticrhythm.com' + path);

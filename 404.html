@@ -9,16 +9,19 @@
 <link rel="canonical" href="https://aquaticrhythm.com/">
 <meta name="theme-color" content="#041e28">
 <script>
-/* GitHub Pages SPA redirect
-   Converts /path to /?p=path so index.html can route correctly */
+/* GitHub Pages SPA redirect: load / then ui.js reads sessionStorage to open the right view.
+   Avoids /?p= URLs (blocked in robots.txt) and keeps one HTML shell (index.html). */
 (function(){
-  var path = window.location.pathname;
-  var search = window.location.search;
-  /* If it's an article file, let it 404 properly */
+  var path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
   if(path.indexOf('/articles/') === 0) return;
-  /* Redirect to index with path as query param */
-  var redirect = '/?p=' + encodeURIComponent(path.replace(/^\//, '')) + (search ? '&' + search.slice(1) : '');
-  window.location.replace(redirect);
+  var segment = path.replace(/^\//, '').split('/')[0] || '';
+  var allowed = { ara:1, rhyssa:1, about:1, privacy:1, terms:1, reading:1 };
+  if(segment && allowed[segment]){
+    try{ sessionStorage.setItem('ar_spa_initial', segment); }catch(e){}
+    window.location.replace('/');
+    return;
+  }
+  window.location.replace('/');
 })();
 </script>
 </head>
