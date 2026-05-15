@@ -59,7 +59,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 }
 .t-status{font-family:var(--serif);font-style:italic;font-size:.75rem;color:rgba(235,240,236,.36);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
 .tb-right{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
-.btn-sm{font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;background:rgba(255,255,255,.88);border:1px solid rgba(235,240,236,.12);border-radius:100px;padding:.26rem .65rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(235,240,236,.44)}
+.btn-sm{font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;background:rgba(235,240,236,.06);border:1px solid rgba(235,240,236,.14);border-radius:100px;padding:.26rem .65rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(235,240,236,.56)}
 .btn-sm:hover{color:rgba(235,240,236,.70);border-color:rgba(235,240,236,.30)}
 .btn-pp{color:rgba(235,240,236,.50)}
 .btn-pp:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
@@ -70,7 +70,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
 /* LEFT PARAMS */
 #pleft{display:flex;flex-direction:column;gap:.32rem;justify-content:space-between}
-.pc{background:rgba(255,255,255,.92);border:1px solid rgba(61,214,232,.15);padding:.48rem .58rem;border-radius:2px}
+.pc{background:rgba(6,22,18,.85);border:1px solid rgba(61,214,232,.15);padding:.48rem .58rem;border-radius:2px}
 .pc-lbl{font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(235,240,236,.36);display:block;margin-bottom:.18rem}
 .pc-val{font-family:var(--serif);font-size:1.28rem;font-weight:300;line-height:1;transition:color .5s}
 .pc-unit{font-size:.44rem;color:rgba(235,240,236,.38);margin-left:.12rem}
@@ -80,7 +80,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
 /* TANK */
 #tcol{position:relative;min-height:0;display:flex;flex-direction:column;gap:.28rem}
-#tank{flex:1;min-height:0;border:1px solid rgba(61,214,232,.18);border-top:2px solid rgba(61,214,232,.28);border-radius:0 0 4px 4px;overflow:hidden;position:relative;background:#eef3ec}
+#tank{flex:1;min-height:0;border:1px solid rgba(61,214,232,.18);border-top:2px solid rgba(61,214,232,.28);border-radius:0 0 4px 4px;overflow:hidden;position:relative;background:#030f18}
 #tsky{position:absolute;inset:0;transition:background 3s ease;pointer-events:none}
 #twater{position:absolute;inset:0;transition:background 2s ease;pointer-events:none}
 #tlight{position:absolute;top:0;left:0;right:0;height:55%;background:radial-gradient(ellipse at 50% 0%,rgba(110,155,138,.12) 0%,transparent 74%);transition:opacity 3s ease;pointer-events:none}
@@ -316,14 +316,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   50%{box-shadow:0 0 0 4px rgba(220,80,60,.15);opacity:.18}
 }
 
-/* Wait button */
-/* #act-skip removed */
-  background:rgba(255,255,255,.95);
-  border:1px solid rgba(61,214,232,.20);
-}
-/* #act-skip.ar-pulse removed */
-  border-color:rgba(61,214,232,.48) !important;
-}
+/* Wait button — #act-skip removed */
 
 
 /* WATER CHANGE PICKER */
@@ -745,7 +738,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   </div>
 
   <!-- Water change picker -->
-  <div id="wc-picker" style="display:none;position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:60;background:rgba(255,255,255,.94);border:1px solid rgba(61,214,232,.26);border-radius:4px;padding:.9rem 1.2rem;backdrop-filter:blur(12px);min-width:220px">
+  <div id="wc-picker" style="display:none;position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:60;background:rgba(4,16,12,.97);border:1px solid rgba(61,214,232,.28);border-radius:4px;padding:.9rem 1.2rem;backdrop-filter:blur(12px);min-width:220px">
     <div style="font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(235,240,236,.46);margin-bottom:.7rem;text-align:center">How much water to change?</div>
     <div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap">
       <button class="wc-opt" onclick="doWaterChange(10)">10%</button>
