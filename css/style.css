@@ -188,6 +188,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:68px;display:flex;ali
 .psec--lead .apq{font-size:clamp(1.8rem,3vw,3rem);color:rgba(61,214,232,.82);border-left:2px solid rgba(61,214,232,.22);padding-left:1.6rem;margin-top:.2rem}
 .pst{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.5rem);font-weight:300;line-height:1.38;color:rgba(255,255,255,.88);max-width:660px;font-optical-sizing:auto}
 .pst em{font-style:italic;color:rgba(61,214,232,.88)}
+.offer-item{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(139,189,210,.08)}
+.offer-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.offer-item-title{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.7);display:block;margin-bottom:.5rem}
+.offer-item p{font-size:.95rem;font-weight:300;color:rgba(235,240,236,.62);line-height:1.85}
 .pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:5rem;background:transparent}
 .pc{padding:2.8rem 2.4rem;background:var(--panel);backdrop-filter:blur(12px);border:1px solid var(--panel-border);border-radius:14px;box-shadow:var(--panel-shadow),var(--panel-inset);position:relative;overflow:hidden;transition:background .4s,transform .35s var(--ease),border-color .35s}
 .pc:hover{background:rgba(16,34,26,.9);transform:translateY(-2px);border-color:rgba(61,214,232,.18)}
