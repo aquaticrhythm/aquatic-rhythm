@@ -601,4 +601,57 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
   .mt-params-grid{grid-template-columns:repeat(3,1fr)}
   .mt-params-form-grid{grid-template-columns:1fr}
 }
+/* ── Modal bottom padding fix: keep save button above bnav ── */
+@media(max-width:720px){.mt-modal-inner{padding-bottom:calc(56px + env(safe-area-inset-bottom) + 1.5rem)}}
+@media(display-mode:standalone){.mt-modal-inner{padding-bottom:calc(56px + env(safe-area-inset-bottom) + 1.5rem)}}
+
+/* ── Tank Setup — Visual Preview ── */
+.mt-tank-preview{display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:.9rem 0 .8rem;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:.9rem}
+.mt-preview-wrap{display:flex;align-items:flex-end;justify-content:center;height:96px}
+.mt-preview-tank{position:relative;height:78px;width:130px;border:1.5px solid rgba(61,214,232,.3);border-bottom-width:2px;border-radius:3px;overflow:hidden;background:rgba(2,14,12,.92);transition:width .35s var(--ease),height .35s var(--ease),border-radius .35s var(--ease)}
+.mt-preview-glare{position:absolute;top:0;left:0;width:28%;height:100%;background:linear-gradient(to right,rgba(255,255,255,.04),transparent);pointer-events:none}
+.mt-preview-water{position:absolute;bottom:5px;left:0;right:0;height:68%;background:linear-gradient(to bottom,rgba(30,130,170,.18) 0%,rgba(15,80,130,.42) 100%);transition:height .3s var(--ease)}
+.mt-preview-water::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:rgba(61,214,232,.28)}
+.mt-preview-gravel{position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,rgba(80,65,50,.55),rgba(110,85,60,.5),rgba(80,65,50,.55))}
+.mt-preview-labels{display:flex;flex-direction:column;align-items:center;gap:.12rem}
+.mt-preview-vol{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:rgba(61,214,232,.9);line-height:1}
+.mt-preview-cat{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+
+/* ── Tank Setup — Tabs ── */
+.mt-setup-tabs{display:flex;gap:.3rem;margin-bottom:.85rem;background:rgba(0,0,0,.22);border-radius:10px;padding:.22rem}
+.mt-stab{flex:1;border:none;background:none;color:rgba(255,255,255,.35);font-size:.6rem;font-family:var(--sans);letter-spacing:.09em;text-transform:uppercase;padding:.42rem .3rem;border-radius:7px;cursor:pointer;transition:background .2s,color .2s}
+.mt-stab.active{background:rgba(61,214,232,.14);color:rgba(61,214,232,.88)}
+
+/* ── Tank Setup — Preset grid ── */
+.mt-stab-panel{min-height:110px}
+.mt-preset-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.38rem}
+.mt-preset-chip{border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.18);border-radius:10px;padding:.55rem .3rem .5rem;color:rgba(255,255,255,.55);font-family:var(--sans);cursor:pointer;text-align:center;transition:border-color .2s,background .2s,color .2s;display:flex;flex-direction:column;align-items:center;gap:.16rem;-webkit-tap-highlight-color:transparent}
+.mt-preset-chip:active,.mt-preset-chip:hover{border-color:rgba(61,214,232,.3);background:rgba(61,214,232,.06);color:rgba(255,255,255,.8)}
+.mt-preset-chip.active{border-color:rgba(61,214,232,.65);background:rgba(61,214,232,.13);color:rgba(61,214,232,.95)}
+.mt-preset-vol{font-size:.82rem;font-weight:500;line-height:1}
+.mt-preset-cat{font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+
+/* ── Tank Setup — Brand selector ── */
+.mt-brand-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:.38rem;margin-bottom:.5rem}
+.mt-brand-btn{border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.18);border-radius:10px;padding:.52rem .3rem;color:rgba(255,255,255,.5);font-family:var(--sans);font-size:.72rem;cursor:pointer;text-align:center;transition:border-color .2s,background .2s,color .2s;-webkit-tap-highlight-color:transparent}
+.mt-brand-btn:active,.mt-brand-btn:hover{border-color:rgba(61,214,232,.3);color:rgba(255,255,255,.82)}
+.mt-brand-btn.active{border-color:rgba(61,214,232,.6);background:rgba(61,214,232,.12);color:rgba(61,214,232,.9)}
+.mt-model-selector{display:flex;flex-wrap:wrap;gap:.35rem;padding:.4rem 0 .2rem}
+.mt-model-chip{border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.18);border-radius:8px;padding:.38rem .65rem;color:rgba(255,255,255,.48);font-family:var(--sans);font-size:.72rem;cursor:pointer;white-space:nowrap;transition:border-color .2s,background .2s,color .2s;-webkit-tap-highlight-color:transparent}
+.mt-model-chip:active,.mt-model-chip:hover{border-color:rgba(61,214,232,.3);color:rgba(255,255,255,.82)}
+.mt-model-chip.active{border-color:rgba(61,214,232,.62);background:rgba(61,214,232,.12);color:rgba(61,214,232,.92)}
+
+/* ── Tank Setup — Custom dimensions ── */
+.mt-dim-unit-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
+.mt-unit-toggle{display:flex;gap:.28rem}
+.mt-unit-btn{border:1px solid rgba(255,255,255,.12);background:none;border-radius:6px;padding:.28rem .62rem;color:rgba(255,255,255,.35);font-size:.62rem;font-family:var(--sans);cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.mt-unit-btn.active{border-color:rgba(61,214,232,.48);background:rgba(61,214,232,.1);color:rgba(61,214,232,.85)}
+.mt-dims-row{gap:.45rem}
+.mt-dims-row .mt-field{flex:1;min-width:0}
+.mt-dim-result{display:flex;align-items:center;justify-content:space-between;padding:.62rem .85rem;background:rgba(0,0,0,.22);border-radius:8px;margin-top:.45rem}
+.mt-dim-vol-out{font-size:1.05rem;font-family:var(--serif);color:rgba(61,214,232,.85)}
+
+/* ── Tank Setup — divider & save ── */
+.mt-setup-divider{height:1px;background:rgba(255,255,255,.06);margin:1rem 0 .9rem}
+.mt-save-btn{width:100%;margin-top:.5rem}
 

@@ -374,6 +374,158 @@
 
     var maintLabels = { water_change: 'Water change', filter: 'Filter', feeding: 'Feeding', treatment: 'Treatment', observation: 'Observation', other: 'Other' };
 
+    /* ── Tank size data ── */
+    var PRESETS = [
+      { v:10,  u:'L', s:'rect',   d:[30,20,20],  cat:'Nano'   },
+      { v:19,  u:'L', s:'rect',   d:[37,22,26],  cat:'Nano'   },
+      { v:30,  u:'L', s:'rect',   d:[45,24,28],  cat:'Nano'   },
+      { v:45,  u:'L', s:'rect',   d:[55,28,30],  cat:'Small'  },
+      { v:60,  u:'L', s:'rect',   d:[60,30,36],  cat:'Small'  },
+      { v:75,  u:'L', s:'rect',   d:[70,35,32],  cat:'Small'  },
+      { v:90,  u:'L', s:'rect',   d:[80,35,32],  cat:'Medium' },
+      { v:120, u:'L', s:'rect',   d:[80,35,44],  cat:'Medium' },
+      { v:150, u:'L', s:'rect',   d:[100,40,38], cat:'Medium' },
+      { v:200, u:'L', s:'rect',   d:[100,40,50], cat:'Large'  },
+      { v:240, u:'L', s:'rect',   d:[120,45,46], cat:'Large'  },
+      { v:300, u:'L', s:'rect',   d:[150,50,40], cat:'XL'     },
+    ];
+
+    var BRANDS = {
+      fluval:   { label:'Fluval', models:[
+        { n:'Flex 9 gal',  v:34,  u:'L', s:'curved', d:[33,21,22] },
+        { n:'Flex 15 gal', v:57,  u:'L', s:'curved', d:[41,25,31] },
+        { n:'Flex 32 gal', v:121, u:'L', s:'curved', d:[64,38,37] },
+        { n:'Spec III',    v:10,  u:'L', s:'rect',   d:[38,22,13] },
+        { n:'Spec V',      v:19,  u:'L', s:'rect',   d:[52,19,30] },
+        { n:'Evo 13.5g',   v:51,  u:'L', s:'rect',   d:[52,27,34] },
+        { n:'Roma 90',     v:90,  u:'L', s:'rect',   d:[80,35,40] },
+        { n:'Roma 125',    v:125, u:'L', s:'rect',   d:[80,35,50] },
+        { n:'Roma 200',    v:200, u:'L', s:'rect',   d:[100,40,55] },
+      ]},
+      ada:      { label:'ADA', models:[
+        { n:'30C Cube',   v:27,  u:'L', s:'cube', d:[30,30,30] },
+        { n:'45P',        v:32,  u:'L', s:'rect', d:[45,27,30] },
+        { n:'60P',        v:65,  u:'L', s:'rect', d:[60,30,36] },
+        { n:'60F (Low)',  v:54,  u:'L', s:'rect', d:[60,30,30] },
+        { n:'90P',        v:182, u:'L', s:'rect', d:[90,45,45] },
+        { n:'120P',       v:324, u:'L', s:'rect', d:[120,45,60] },
+      ]},
+      dennerle: { label:'Dennerle', models:[
+        { n:'Nano Cube 10L', v:10, u:'L', s:'cube', d:[20,20,28] },
+        { n:'Nano Cube 20L', v:20, u:'L', s:'cube', d:[25,25,35] },
+        { n:'Nano Cube 30L', v:30, u:'L', s:'cube', d:[30,30,35] },
+        { n:'Nano Cube 60L', v:60, u:'L', s:'rect', d:[40,35,45] },
+        { n:"Scaper's 35L",  v:35, u:'L', s:'rect', d:[50,30,30] },
+        { n:"Scaper's 55L",  v:55, u:'L', s:'rect', d:[60,35,30] },
+      ]},
+      waterbox: { label:'Waterbox', models:[
+        { n:'Mini 6',  v:23,  u:'L', s:'rect', d:[30,26,38] },
+        { n:'AIO 20',  v:76,  u:'L', s:'rect', d:[50,38,50] },
+        { n:'AIO 45',  v:170, u:'L', s:'rect', d:[70,46,62] },
+      ]},
+      biorb:    { label:'biOrb', models:[
+        { n:'biOrb 15L',  v:15,  u:'L', s:'sphere', d:[28,28,35] },
+        { n:'biOrb 30L',  v:30,  u:'L', s:'sphere', d:[37,37,43] },
+        { n:'biOrb 60L',  v:60,  u:'L', s:'sphere', d:[49,49,56] },
+        { n:'biOrb 105L', v:105, u:'L', s:'sphere', d:[60,60,70] },
+      ]},
+      juwel:    { label:'Juwel', models:[
+        { n:'Primo 70',   v:70,  u:'L', s:'rect',   d:[61,31,47] },
+        { n:'Lido 120',   v:120, u:'L', s:'rect',   d:[61,41,58] },
+        { n:'Rio 125',    v:125, u:'L', s:'rect',   d:[81,36,50] },
+        { n:'Rio 180',    v:180, u:'L', s:'rect',   d:[101,41,50] },
+        { n:'Rio 240',    v:240, u:'L', s:'rect',   d:[121,41,55] },
+        { n:'Vision 180', v:180, u:'L', s:'curved', d:[92,41,55] },
+      ]},
+    };
+
+    var CAT_COLORS = { Nano:'rgba(100,200,82,.7)', Small:'rgba(61,214,232,.7)', Medium:'rgba(100,150,220,.7)', Large:'rgba(200,150,60,.7)', XL:'rgba(200,80,80,.7)' };
+
+    function tankCategory(vol) {
+      if (!vol) return '';
+      if (vol <= 20) return 'Nano';
+      if (vol <= 60) return 'Small';
+      if (vol <= 120) return 'Medium';
+      if (vol <= 250) return 'Large';
+      return 'XL';
+    }
+
+    function setHiddenInputs(vol, unit, shape) {
+      var g = function (id) { return document.getElementById(id); };
+      if (g('mt-inp-volume')) g('mt-inp-volume').value = vol || '';
+      if (g('mt-inp-unit'))   g('mt-inp-unit').value   = unit  || 'L';
+      if (g('mt-inp-shape'))  g('mt-inp-shape').value  = shape || 'rect';
+    }
+
+    function updatePreview(vol, unit, shape, dims) {
+      var tankEl = document.getElementById('mt-preview-tank');
+      var volEl  = document.getElementById('mt-preview-vol');
+      var catEl  = document.getElementById('mt-preview-cat');
+      if (!tankEl) return;
+      var H = 78;
+      var ratio = (dims && dims[0] && dims[2]) ? dims[0] / dims[2] : 1.65;
+      ratio = Math.max(0.45, Math.min(3.5, ratio));
+      var W, br;
+      if (shape === 'sphere') {
+        W = H; br = '50%';
+      } else if (shape === 'cube') {
+        W = H; br = '5px';
+      } else if (shape === 'curved') {
+        W = Math.round(H * ratio);
+        W = Math.max(44, Math.min(210, W));
+        br = '12px 12px 4px 4px';
+      } else {
+        W = Math.round(H * ratio);
+        W = Math.max(44, Math.min(210, W));
+        br = '3px';
+      }
+      tankEl.style.width  = W + 'px';
+      tankEl.style.height = H + 'px';
+      tankEl.style.borderRadius = br;
+      if (vol) {
+        volEl.textContent = vol + ' ' + (unit || 'L');
+        var cat = tankCategory(vol);
+        catEl.textContent = cat;
+        catEl.style.color = CAT_COLORS[cat] || 'rgba(255,255,255,.3)';
+      } else {
+        volEl.textContent = '—';
+        catEl.textContent = 'Choose a size or brand below';
+        catEl.style.color = '';
+      }
+    }
+
+    function recalcCustom() {
+      var g = function (id) { var el = document.getElementById(id); return el ? parseFloat(el.value) || 0 : 0; };
+      var l = g('mt-dim-l'), w = g('mt-dim-w'), h = g('mt-dim-h');
+      var activeUnitBtn = document.querySelector('.mt-unit-btn.active');
+      var dimUnit = activeUnitBtn ? activeUnitBtn.dataset.dimunit : 'cm';
+      var outEl = document.getElementById('mt-dim-vol-out');
+      if (l && w && h) {
+        var vol, unit;
+        if (dimUnit === 'cm') { vol = Math.round(l * w * h / 1000); unit = 'L'; }
+        else { vol = Math.round(l * w * h / 231 * 10) / 10; unit = 'gal'; }
+        if (outEl) outEl.textContent = vol + ' ' + unit;
+        setHiddenInputs(vol, unit, 'rect');
+        updatePreview(vol, unit, 'rect', [l, w, h]);
+        var nameEl = document.getElementById('mt-inp-name');
+        if (nameEl && !nameEl.value) nameEl.value = 'My ' + vol + ' ' + unit + ' Tank';
+      } else {
+        if (outEl) outEl.textContent = '—';
+      }
+    }
+
+    function resetSetupModal() {
+      document.querySelectorAll('.mt-preset-chip,.mt-brand-btn,.mt-model-chip').forEach(function (c) { c.classList.remove('active'); });
+      var modelSel = document.getElementById('mt-model-selector');
+      if (modelSel) { modelSel.style.display = 'none'; modelSel.innerHTML = ''; }
+      var outEl = document.getElementById('mt-dim-vol-out');
+      if (outEl) outEl.textContent = '—';
+      ['mt-dim-l', 'mt-dim-w', 'mt-dim-h'].forEach(function (id) {
+        var el = document.getElementById(id); if (el) el.value = '';
+      });
+      updatePreview(null);
+    }
+
     function renderDashboard() {
       var d = loadData();
       if (!d.profile) {
@@ -498,14 +650,14 @@
       if (target.id === 'mt-tank-edit') {
         var d = loadData();
         var p = d.profile || {};
+        resetSetupModal();
         var inp = function (id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
         inp('mt-inp-name', p.name);
-        inp('mt-inp-volume', p.volume);
         inp('mt-inp-date', p.setupDate);
+        setHiddenInputs(p.volume, p.unit || 'L', p.shape || 'rect');
         var typeEl = document.getElementById('mt-inp-type');
         if (typeEl && p.type) typeEl.value = p.type;
-        var unitEl = document.getElementById('mt-inp-unit');
-        if (unitEl && p.unit) unitEl.value = p.unit;
+        if (p.volume) updatePreview(p.volume, p.unit || 'L', p.shape || 'rect', null);
         openModal('mt-modal-setup');
         return;
       }
@@ -533,15 +685,18 @@
     if (formSetup) {
       formSetup.addEventListener('submit', function (e) {
         e.preventDefault();
+        var g = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
         var d = loadData();
         d.profile = {
-          name:      (document.getElementById('mt-inp-name') || {}).value || 'My Tank',
-          volume:    (document.getElementById('mt-inp-volume') || {}).value || '',
-          unit:      (document.getElementById('mt-inp-unit') || {}).value || 'L',
-          type:      (document.getElementById('mt-inp-type') || {}).value || 'freshwater',
-          setupDate: (document.getElementById('mt-inp-date') || {}).value || ''
+          name:      g('mt-inp-name') || 'My Tank',
+          volume:    g('mt-inp-volume'),
+          unit:      g('mt-inp-unit') || 'L',
+          shape:     g('mt-inp-shape') || 'rect',
+          type:      g('mt-inp-type') || 'freshwater',
+          setupDate: g('mt-inp-date')
         };
         saveData(d);
+        resetSetupModal();
         closeAllModals();
         renderDashboard();
       });
@@ -592,6 +747,129 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeAllModals();
     });
+
+    /* ── Setup UI: populate preset chips ── */
+    var presetGrid = document.getElementById('mt-preset-grid');
+    if (presetGrid) {
+      PRESETS.forEach(function (p) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'mt-preset-chip';
+        btn.dataset.vol   = p.v;
+        btn.dataset.unit  = p.u;
+        btn.dataset.shape = p.s;
+        btn.dataset.dims  = p.d.join(',');
+        btn.innerHTML = '<span class="mt-preset-vol">' + p.v + ' ' + p.u + '</span>'
+          + '<span class="mt-preset-cat" style="color:' + (CAT_COLORS[p.cat] || 'rgba(255,255,255,.4)') + '">' + p.cat + '</span>';
+        presetGrid.appendChild(btn);
+      });
+    }
+
+    /* ── Setup UI: populate brand buttons ── */
+    var brandSel = document.getElementById('mt-brand-selector');
+    if (brandSel) {
+      Object.keys(BRANDS).forEach(function (key) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'mt-brand-btn';
+        btn.dataset.brand = key;
+        btn.textContent = BRANDS[key].label;
+        brandSel.appendChild(btn);
+      });
+    }
+
+    /* ── Setup UI: chip / tab / unit click handler ── */
+    document.addEventListener('click', function (e) {
+      /* Tab switching */
+      var stab = e.target.closest('.mt-stab');
+      if (stab && stab.closest('#mt-modal-setup')) {
+        document.querySelectorAll('#mt-modal-setup .mt-stab').forEach(function (t) {
+          t.classList.remove('active'); t.setAttribute('aria-selected', 'false');
+        });
+        stab.classList.add('active'); stab.setAttribute('aria-selected', 'true');
+        var panel = stab.dataset.stab;
+        ['preset', 'brand', 'custom'].forEach(function (p) {
+          var el = document.getElementById('mt-panel-' + p);
+          if (el) el.style.display = (p === panel) ? '' : 'none';
+        });
+        return;
+      }
+
+      /* Preset chip */
+      var chip = e.target.closest('.mt-preset-chip');
+      if (chip) {
+        document.querySelectorAll('.mt-preset-chip').forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        var vol  = parseFloat(chip.dataset.vol);
+        var unit = chip.dataset.unit  || 'L';
+        var shp  = chip.dataset.shape || 'rect';
+        var dims = chip.dataset.dims  ? chip.dataset.dims.split(',').map(Number) : null;
+        setHiddenInputs(vol, unit, shp);
+        updatePreview(vol, unit, shp, dims);
+        var nameEl = document.getElementById('mt-inp-name');
+        if (nameEl && !nameEl.value) nameEl.value = 'My ' + vol + ' ' + unit + ' Tank';
+        return;
+      }
+
+      /* Brand button */
+      var brandBtn = e.target.closest('.mt-brand-btn');
+      if (brandBtn) {
+        document.querySelectorAll('.mt-brand-btn').forEach(function (b) { b.classList.remove('active'); });
+        brandBtn.classList.add('active');
+        var brand = BRANDS[brandBtn.dataset.brand];
+        var modelSel = document.getElementById('mt-model-selector');
+        if (modelSel && brand) {
+          modelSel.style.display = '';
+          modelSel.innerHTML = brand.models.map(function (m) {
+            return '<button type="button" class="mt-model-chip"'
+              + ' data-vol="' + m.v + '" data-unit="' + m.u + '" data-shape="' + m.s + '"'
+              + ' data-dims="' + m.d.join(',') + '" data-name="' + brand.label + ' ' + m.n + '">'
+              + m.n + '<span style="opacity:.42"> · ' + m.v + ' ' + m.u + '</span></button>';
+          }).join('');
+        }
+        return;
+      }
+
+      /* Model chip */
+      var modelChip = e.target.closest('.mt-model-chip');
+      if (modelChip) {
+        document.querySelectorAll('.mt-model-chip').forEach(function (c) { c.classList.remove('active'); });
+        modelChip.classList.add('active');
+        var vol  = parseFloat(modelChip.dataset.vol);
+        var unit = modelChip.dataset.unit  || 'L';
+        var shp  = modelChip.dataset.shape || 'rect';
+        var dims = modelChip.dataset.dims  ? modelChip.dataset.dims.split(',').map(Number) : null;
+        setHiddenInputs(vol, unit, shp);
+        updatePreview(vol, unit, shp, dims);
+        var mname  = modelChip.dataset.name || '';
+        var nameEl = document.getElementById('mt-inp-name');
+        if (nameEl && !nameEl.value) nameEl.value = mname;
+        return;
+      }
+
+      /* Dimension unit toggle */
+      var unitBtn = e.target.closest('.mt-unit-btn');
+      if (unitBtn && unitBtn.closest('#mt-panel-custom')) {
+        document.querySelectorAll('#mt-panel-custom .mt-unit-btn').forEach(function (b) { b.classList.remove('active'); });
+        unitBtn.classList.add('active');
+        recalcCustom();
+        return;
+      }
+    });
+
+    /* ── Custom dimension inputs ── */
+    ['mt-dim-l', 'mt-dim-w', 'mt-dim-h'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('input', recalcCustom);
+    });
+
+    /* ── Reset setup modal when opened fresh ── */
+    (function () {
+      var openBtn = document.getElementById('mt-setup-open');
+      if (openBtn) {
+        openBtn.addEventListener('click', function () { resetSetupModal(); }, true);
+      }
+    }());
 
     renderDashboard();
   })();
