@@ -124,6 +124,10 @@ main{min-height:100vh;padding-top:64px}
 .kyr-btn-restart:hover{color:rgba(61,214,232,.90);border-color:rgba(61,214,232,.50)}
 .kyr-link-reading{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.24);text-decoration:none;font-family:var(--sans);transition:color .25s}
 .kyr-link-reading:hover{color:rgba(235,240,236,.58)}
+.kyr-phase-note{margin-top:1.6rem;padding:1.4rem 1.8rem;border:1px solid rgba(139,189,210,.14);background:rgba(255,255,255,.03)}
+.kyr-phase-note p{font-size:.88rem;font-weight:300;color:rgba(235,240,236,.55);line-height:1.85;margin:0}
+.kyr-forgiveness-note{margin:2.4rem 0 0;padding:1.6rem 2rem;border-left:2px solid rgba(61,214,232,.28);background:rgba(58,110,140,.05)}
+.kyr-forgiveness-note p{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:rgba(235,240,236,.60);line-height:1.90;margin:0}
 @media(max-width:600px){.kyr-opt-desc{display:none}}
 </style>
 </head>
@@ -201,6 +205,13 @@ main{min-height:100vh;padding-top:64px}
       <div class="kyr-q-close">
         <span class="kyr-q-close-label">A question to sit with</span>
         <p id="kyr-closing-q"></p>
+      </div>
+      <div id="kyr-phase-note" class="kyr-phase-note" style="display:none">
+        <span class="kyr-q-close-label">ARA phase alignment</span>
+        <p id="kyr-phase-text"></p>
+      </div>
+      <div class="kyr-forgiveness-note">
+        <p>Whatever your rhythm — episodic, incremental, irregular, or deeply consistent — ARA holds one principle constant: the ecosystem carries more capacity for forgiveness than most keepers believe. The goal is not perfection. It is honest alignment between what you can offer and what the system actually needs. That alignment is available at every level of care.</p>
       </div>
       <p class="kyr-note-end">This reflection is not a diagnosis. It is a starting point — one that changes as you do. You can return to it whenever the question feels different.</p>
       <div class="kyr-actions">
@@ -359,7 +370,15 @@ function reflect(ans){
   else if(uncertain) closing='This might be the thing that teaches you what you needed to know about yourself as a keeper. What would you want to remember, six months from now, about where you started?';
   else closing='Sitting beside a tank that is genuinely settled — stable, unhurried, clearly alive — what would that feel like? And what would it ask of you, week after week, to stay that way?';
 
-  return{title:title,paras:paras,closing:closing};
+  /* Phase alignment note */
+  var phase;
+  if(committed&&!episodic) phase='Your rhythm suggests readiness for Developing and Mature Phase tanks — systems that respond well to consistent, attentive care sustained over time.';
+  else if(episodic&&!committed) phase='Your rhythm calls for Early Phase awareness — understanding how tanks behave before stability arrives, and designing systems that can absorb your natural gaps without collapse.';
+  else if(grieving) phase='Ecological forgiveness is not just a quality of the tank. ARA suggests it applies to keepers too — the next system does not need to succeed on the same terms as the last.';
+  else if(uncertain) phase='Starting with Early Phase understanding — what a new tank genuinely needs in its first weeks — will teach you more about your own rhythm than anything else can.';
+  else phase='Your rhythm finds alignment at every phase. The key is matching the system honestly to your actual capacity, not your intended one.';
+
+  return{title:title,paras:paras,closing:closing,phase:phase};
 }
 
 /* ═══ CANVAS ═══ */
@@ -483,6 +502,9 @@ function showResult(){
   var re=document.getElementById('kyr-reflection');re.innerHTML='';
   ref.paras.forEach(function(p){var el=document.createElement('p');el.textContent=p;re.appendChild(el);});
   document.getElementById('kyr-closing-q').textContent=ref.closing;
+  var pn=document.getElementById('kyr-phase-note');
+  var pt=document.getElementById('kyr-phase-text');
+  if(pn&&pt&&ref.phase){pn.style.display='block';pt.textContent=ref.phase;}
   window.scrollTo({top:0,behavior:'auto'});
 }
 document.getElementById('kyr-begin-btn').addEventListener('click',function(){showQ(0);});

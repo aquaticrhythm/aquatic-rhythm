@@ -156,6 +156,15 @@ canvas{display:block;width:100%}
 .btn-reading{display:inline-block;text-decoration:none;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(235,240,236,.42);border:1px solid rgba(255,255,255,.12);padding:.75rem 1.8rem;border-radius:2px;transition:color .25s,border-color .25s;font-family:var(--sans)}
 .btn-reading:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
 
+/* RHYTHM GRID */
+.rhythm-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:2rem 0}
+@media(max-width:500px){.rhythm-grid{grid-template-columns:1fr}}
+.rhythm-cell{padding:1.2rem 1.4rem;border:1px solid rgba(61,214,232,.16);background:rgba(4,22,32,.5)}
+.rhythm-cell-num{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(61,214,232,.42);margin-bottom:.45rem}
+.rhythm-cell-name{font-family:var(--serif);font-weight:300;font-size:1.05rem;color:rgba(235,240,236,.88);margin-bottom:.4rem;line-height:1.2}
+.rhythm-cell-desc{font-size:.84rem;font-weight:300;color:rgba(235,240,236,.52);line-height:1.75}
+.rhythm-cell-wide{grid-column:1/-1}
+
 /* MODULE PROGRESS BAR */
 #mod-progress-wrap{
   position:fixed;top:64px;left:0;right:0;z-index:90;
@@ -263,7 +272,7 @@ canvas{display:block;width:100%}
 
   <!-- ═══ MODULE 1 — The cycle was never the finish line ═══ -->
   <section class="module" id="mod-1" data-mod="1">
-    <div class="mod-eyebrow"><span class="mod-num">01 / 05</span><span class="mod-tag">A different kind of learning</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">01 / 06</span><span class="mod-tag">A different kind of learning</span></div>
     <h2 class="mod-title">The cycle was<br><em>never the finish line.</em></h2>
     <div class="mod-body">
       <p>A tank that has been running for six months is a fundamentally different system from one that just completed its cycle. The bacteria are established, the chemistry has found a rhythm, and the fish have settled. The urgent, unstable phase is over.</p>
@@ -278,6 +287,11 @@ canvas{display:block;width:100%}
       <p>An established tank has capacity — the ability to absorb a missed water change, an extra feeding, a small disruption — and return to balance on its own. But that capacity is not unlimited. The keepers who maintain healthy tanks over years are not the ones who never make mistakes. They are the ones who read the system well enough to catch the slow drifts before they become problems.</p>
     </div>
 
+    <div class="hn">
+      <span class="hn-label">ARA · Developing Phase</span>
+      <p>In Aquatic Rhythm Alignment, an established tank has entered the <strong>Developing Phase</strong> — where the ecosystem sustains itself rather than builds. The challenge at this stage is not skill. It is attention. Most problems in established tanks are not failures of the keeper. They are slow drifts — misalignments that any keeper can learn to catch when they know what to observe.</p>
+    </div>
+
     <div class="hn ar">
       <span class="hn-label">Aquatic Rhythm perspective</span>
       <p>Cycling and maintaining are different phases — and they ask for different things. During cycling, the system is building. During maintenance, it is sustaining. What helps during one can be unnecessary or counterproductive during the other. Learning to feel which phase you are in, and what it actually needs, changes how the hobby feels.</p>
@@ -285,13 +299,60 @@ canvas{display:block;width:100%}
 
     <div class="mod-next">
       <button class="btn-prev" onclick="goIntro()">← Intro</button>
-      <button class="btn-next" onclick="goMod(2)">Where to start looking <span>→</span></button>
+      <button class="btn-next" onclick="goMod(2)">The five things to read <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 2 — One thing at a time ═══ -->
   <section class="module" id="mod-2" data-mod="2">
-    <div class="mod-eyebrow"><span class="mod-num">02 / 05</span><span class="mod-tag">Finding the root</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">02 / 06</span><span class="mod-tag">What ARA looks at</span></div>
+    <h2 class="mod-title">Five things the tank<br><em>is always doing.</em></h2>
+    <div class="mod-body">
+      <p>Aquatic Rhythm Alignment organises an aquarium into five ecological rhythms — five layers of the system that are always active, always shifting, and always speaking. Problems in established tanks almost always trace back to drift in one or more of these rhythms.</p>
+      <p>Reading them together gives you a fuller picture than any single test can.</p>
+    </div>
+
+    <div class="rhythm-grid">
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 01</div>
+        <div class="rhythm-cell-name">Water Rhythm</div>
+        <div class="rhythm-cell-desc">Mineral balance, pH stability, and renewal frequency. When misaligned: parameters drift slowly until fish feel it before tests show it.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 02</div>
+        <div class="rhythm-cell-name">Biological Rhythm</div>
+        <div class="rhythm-cell-desc">Bacterial colonies in the filter and substrate processing waste continuously. Disruption here is invisible until ammonia or nitrite reappears.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 03</div>
+        <div class="rhythm-cell-name">Environmental Rhythm</div>
+        <div class="rhythm-cell-desc">Light cycle, temperature stability, and water flow. Chronic low-level misalignment suppresses immune function and reduces resilience.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 04</div>
+        <div class="rhythm-cell-name">Livestock Rhythm</div>
+        <div class="rhythm-cell-desc">Fish behaviour, appetite, and social dynamics. The most sensitive instrument in the tank — fish show misalignment before any test kit does.</div>
+      </div>
+      <div class="rhythm-cell rhythm-cell-wide">
+        <div class="rhythm-cell-num">Rhythm 05</div>
+        <div class="rhythm-cell-name">Keeper Rhythm</div>
+        <div class="rhythm-cell-desc">The keeper's own attention, schedule, and capacity. An irregular or overwhelmed keeper rhythm creates irregular conditions — even when every individual action is technically correct. This rhythm connects all the others.</div>
+      </div>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythm perspective</span>
+      <p>Most established-tank problems are not sudden events. They are the accumulation of small misalignments across one or more of these rhythms. Reading the system well means knowing which rhythm is drifting — before it becomes a visible problem. The next modules examine the most common drift points.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(1)">← Back</button>
+      <button class="btn-next" onclick="goMod(3)">Where to start looking <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 3 — One thing at a time ═══ -->
+  <section class="module" id="mod-3" data-mod="3">
+    <div class="mod-eyebrow"><span class="mod-num">03 / 06</span><span class="mod-tag">Finding the root</span></div>
     <h2 class="mod-title">Most problems have<br><em>one root.</em></h2>
     <div class="mod-body">
       <p>When a tank is struggling — fish getting sick, algae returning, parameters that drift — it can feel like everything is wrong at once. It rarely is. There is almost always one thing that is the primary pressure, and everything else is responding to that.</p>
@@ -314,14 +375,14 @@ canvas{display:block;width:100%}
     </div>
 
     <div class="mod-next">
-      <button class="btn-prev" onclick="goMod(1)">← Back</button>
-      <button class="btn-next" onclick="goMod(3)">What the filter is actually doing <span>→</span></button>
+      <button class="btn-prev" onclick="goMod(2)">← Back</button>
+      <button class="btn-next" onclick="goMod(4)">What the filter is actually doing <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 3 — Filter maintenance ═══ -->
-  <section class="module" id="mod-3" data-mod="3">
-    <div class="mod-eyebrow"><span class="mod-num">03 / 05</span><span class="mod-tag">The thing most guides skip</span></div>
+  <!-- ═══ MODULE 4 — Filter maintenance ═══ -->
+  <section class="module" id="mod-4" data-mod="4">
+    <div class="mod-eyebrow"><span class="mod-num">04 / 06</span><span class="mod-tag">The thing most guides skip</span></div>
     <h2 class="mod-title">The filter is not<br><em>a machine. It is a habitat.</em></h2>
     <div class="mod-body">
       <p>Most people think of the filter as a mechanical device — it moves water, it catches debris, it can be cleaned when it looks dirty. That understanding is incomplete, and it leads to one of the most common mistakes in established tank care.</p>
@@ -348,14 +409,14 @@ canvas{display:block;width:100%}
     </div>
 
     <div class="mod-next">
-      <button class="btn-prev" onclick="goMod(2)">← Back</button>
-      <button class="btn-next" onclick="goMod(4)">The quietest problem of all <span>→</span></button>
+      <button class="btn-prev" onclick="goMod(3)">← Back</button>
+      <button class="btn-next" onclick="goMod(5)">The quietest problem of all <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 4 — Nitrate ═══ -->
-  <section class="module" id="mod-4" data-mod="4">
-    <div class="mod-eyebrow"><span class="mod-num">04 / 05</span><span class="mod-tag">The thing that builds without being seen</span></div>
+  <!-- ═══ MODULE 5 — Nitrate ═══ -->
+  <section class="module" id="mod-5" data-mod="5">
+    <div class="mod-eyebrow"><span class="mod-num">05 / 06</span><span class="mod-tag">The thing that builds without being seen</span></div>
     <h2 class="mod-title">Nitrate.<br><em>It builds without drama.</em></h2>
     <div class="mod-body">
       <p>After the cycle, ammonia and nitrite are handled. That part is working. But nitrate — the end product of the whole process — has nowhere to go. It does not get broken down further. It simply builds, quietly, every day, until something removes it.</p>
@@ -378,14 +439,14 @@ canvas{display:block;width:100%}
     </div>
 
     <div class="mod-next">
-      <button class="btn-prev" onclick="goMod(3)">← Back</button>
-      <button class="btn-next" onclick="goMod(5)">Learning to see what is actually there <span>→</span></button>
+      <button class="btn-prev" onclick="goMod(4)">← Back</button>
+      <button class="btn-next" onclick="goMod(6)">Learning to see what is actually there <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 4 — Reading the tank ═══ -->
-  <section class="module" id="mod-5" data-mod="5">
-    <div class="mod-eyebrow"><span class="mod-num">05 / 05</span><span class="mod-tag">Reading, not just checking</span></div>
+  <!-- ═══ MODULE 6 — Reading the tank ═══ -->
+  <section class="module" id="mod-6" data-mod="6">
+    <div class="mod-eyebrow"><span class="mod-num">06 / 06</span><span class="mod-tag">Reading, not just checking</span></div>
     <h2 class="mod-title">Your fish are<br><em>always telling you something.</em></h2>
     <div class="mod-body">
       <p>A test kit tells you what the water contains at the moment you test it. Your fish tell you what the water has been doing to them — all day, every day, in real time.</p>
@@ -410,10 +471,11 @@ canvas{display:block;width:100%}
       <span class="hn-label">Aquatic Rhythm perspective</span>
       <p>ARA calls this ecological attunement — a quality of attention that develops over time, through presence rather than study. It is not something you can read your way into. But it grows naturally when you spend time at the tank not looking for problems — just looking. Watching how the fish move through the water. Noticing small shifts that you would never have caught before. The difference between checking and seeing.</p>
       <p>Keepers who develop this attention do not spend more time on their tanks. They spend less — because they catch things earlier, respond more calmly, and have earned enough trust in the system to leave it alone when it is doing well. That trust comes from knowing the tank well enough to read it. And it makes the hobby feel very different.</p>
+      <p>In ARA, the fifth ecological rhythm — <strong>Keeper Rhythm</strong> — is what shapes all the others. A keeper who observes consistently, changes water with coherent continuity, and has calibrated their schedule honestly to their actual capacity creates stability that no product can replicate. The tank reflects the keeper. And an attuned keeper, over time, needs less intervention — not more.</p>
     </div>
 
     <div class="mod-next" style="margin-bottom:1.5rem">
-      <button class="btn-prev" onclick="goMod(4)">← Back</button>
+      <button class="btn-prev" onclick="goMod(5)">← Back</button>
       <span></span>
     </div>
 
@@ -432,7 +494,7 @@ canvas{display:block;width:100%}
 /* ═══════════════════════════════
    MODULE NAVIGATION
 ═══════════════════════════════ */
-var totalMods = 5;
+var totalMods = 6;
 var currentMod = 1;
 var canvases = {};
 var animFrames = {};
@@ -511,7 +573,7 @@ function resizeCanvas(id,h){
 }
 
 /* ── VISUAL 1: Dominant stressor selector ── */
-canvases[2]=function(){
+canvases[3]=function(){
   stopAnim('cv-stress');
   var c=resizeCanvas('cv-stress',320);if(!c)return;
   var ctx=c.getContext('2d');
@@ -637,7 +699,7 @@ canvases[2]=function(){
 };
 
 /* ── VISUAL 2: Nitrate toggle ── */
-canvases[3]=function(){
+canvases[4]=function(){
   stopAnim('cv-filter');
   var c=resizeCanvas('cv-filter',245);if(!c)return;
   var ctx=c.getContext('2d');
@@ -755,7 +817,7 @@ canvases[3]=function(){
   window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
 };
 
-canvases[4]=function(){
+canvases[5]=function(){
   stopAnim('cv-nitrate');
   var c=resizeCanvas('cv-nitrate',265);if(!c)return;
   var ctx=c.getContext('2d');
@@ -861,7 +923,7 @@ canvases[4]=function(){
 };
 
 /* ── VISUAL 3: Behaviour signals slider ── */
-canvases[5]=function(){
+canvases[6]=function(){
   stopAnim('cv-behaviour');
   var c=resizeCanvas('cv-behaviour',380);if(!c)return;
   var ctx=c.getContext('2d');
