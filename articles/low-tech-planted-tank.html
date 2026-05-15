@@ -154,8 +154,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 .art-bnav-item.art-bnav-active{color:#3DD6E8}
 .art-bnav-item.art-bnav-active::before{transform:translateX(-50%) scaleX(1);opacity:1}
 .art-bnav-item span{font-size:.48rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:1}
-@media(max-width:720px){.art-bnav{display:flex}.art-burger{display:none!important}.art-nmob{display:none!important}}
-@media(display-mode:standalone){.art-bnav{display:flex}}
+@media(max-width:720px){.art-bnav{display:flex}.art-burger{display:none!important}.art-nmob{display:none!important}body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}}
+@media(display-mode:standalone){.art-bnav{display:flex}body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}}
 </style>
 </head>
 <body>
@@ -403,17 +403,17 @@ function updateDots() {
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="4" y="3" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="7.5" y1="8" x2="14.5" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7.5" y1="11.5" x2="14.5" y2="11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
     <span>Reading</span>
   </a>
-  <a href="/ara" class="art-bnav-item" aria-label="ARA">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 11 C9.5 7 12.5 7 14 11 C15.5 15 11 16.5 11 11" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
-    <span>ARA</span>
+  <a href="/companion" class="art-bnav-item" aria-label="Companion">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.1" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.2" fill="currentColor" opacity=".8"/><line x1="11" y1="3.5" x2="11" y2="1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/><line x1="3.5" y1="11" x2="1.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/><line x1="20.5" y1="11" x2="18.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/></svg>
+    <span>Companion</span>
   </a>
-  <a href="/rhyssa" class="art-bnav-item" aria-label="Rhyssa">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="9" r="4" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M4 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
-    <span>Rhyssa</span>
+  <a href="/tools" class="art-bnav-item" aria-label="Tools">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M8 3v5.5L4.5 15A2 2 0 006.4 18h9.2a2 2 0 001.9-3L14 8.5V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="7" y1="3" x2="15" y2="3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="9.5" cy="13.5" r="1" fill="currentColor" opacity=".6"/><circle cx="13" cy="15" r=".8" fill="currentColor" opacity=".45"/></svg>
+    <span>Tools</span>
   </a>
-  <a href="/about" class="art-bnav-item" aria-label="About">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="11" y1="10" x2="11" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="7.5" r="1" fill="currentColor"/></svg>
-    <span>About</span>
+  <a href="/mytank" class="art-bnav-item" aria-label="My Tank">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="2.5" y="7" width="17" height="12" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="2.5" y1="11" x2="19.5" y2="11" stroke="currentColor" stroke-width="1" opacity=".3"/><path d="M6 9.5 C7 8 8 8 9 9.5 C10 11 11 11 12 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".65"/><line x1="15" y1="13.5" x2="15" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/><line x1="17" y1="14.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".45"/><line x1="7" y1="3" x2="7" y2="7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".5"/><line x1="15" y1="3" x2="15" y2="7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".5"/></svg>
+    <span>My Tank</span>
   </a>
 </nav>
 <script>
