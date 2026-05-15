@@ -8,7 +8,12 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='0' y='0' width='44' height='44' rx='8' fill='%23f5f8f3'/%3E%3Ccircle cx='22' cy='22' r='13.8' stroke='%233dd6e8' stroke-opacity='.22' stroke-width='1' fill='none'/%3E%3Cline x1='26.8' y1='30.5' x2='26.8' y2='13' stroke='%2364c852' stroke-opacity='.82' stroke-width='1.9' stroke-linecap='round'/%3E%3Cline x1='30' y1='29.2' x2='30' y2='21' stroke='%2364c852' stroke-opacity='.65' stroke-width='1.5' stroke-linecap='round'/%3E%3Cellipse cx='18' cy='22' rx='4.5' ry='2.6' fill='%23287896' fill-opacity='.88'/%3E%3Cpath d='M13.5 22 L11 19.5 L11 24.5 Z' fill='%23287896' fill-opacity='.80'/%3E%3Cpath d='M8 22 C11 16 15 16 18 22 C21 28 25 28 28 22' stroke='%233dd6e8' stroke-opacity='.96' stroke-width='2.3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='21.2' cy='21' r='1.1' fill='white' fill-opacity='.96'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='0' y='0' width='44' height='44' rx='8' fill='%23f5f8f3'/%3E%3Ccircle cx='22' cy='22' r='13.8' stroke='%233dd6e8' stroke-opacity='.22' stroke-width='1' fill='none'/%3E%3Cline x1='26.8' y1='30.5' x2='26.8' y2='13' stroke='%2364c852' stroke-opacity='.82' stroke-width='1.9' stroke-linecap='round'/%3E%3Cline x1='30' y1='29.2' x2='30' y2='21' stroke='%2364c852' stroke-opacity='.65' stroke-width='1.5' stroke-linecap='round'/%3E%3Cellipse cx='18' cy='22' rx='4.5' ry='2.6' fill='%23287896' fill-opacity='.88'/%3E%3Cpath d='M13.5 22 L11 19.5 L11 24.5 Z' fill='%23287896' fill-opacity='.80'/%3E%3Cpath d='M8 22 C11 16 15 16 18 22 C21 28 25 28 28 22' stroke='%233dd6e8' stroke-opacity='.96' stroke-width='2.3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='21.2' cy='21' r='1.1' fill='white' fill-opacity='.96'/%3E%3C/svg%3E">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
-<meta name="theme-color" content="#e9f0e4">
+<meta name="theme-color" content="#030b09">
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aquatic Rhythm">
 <meta name="description" id="meta-desc" content="Aquatic Rhythm is built for keepers who care deeply and don't always have the time to show it. Calm, ecology-first guides — with ARA, tools, and Rhyssa as companion.">
 <link rel="canonical" href="https://aquaticrhythm.com/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -128,6 +133,68 @@
     <li><a href="/privacy" data-page="privacy">Privacy Policy</a></li>
     <li><a href="/terms" data-page="terms">Terms of Use</a></li>
   </ul>
+</div>
+
+<!-- ── BOTTOM NAV (PWA / mobile) ── -->
+<nav class="bnav" id="bnav" aria-label="Main navigation">
+  <a href="/" class="bnav-item" data-page="home" data-bnav="home" aria-label="Home">
+    <svg class="bnav-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <path d="M3 9.5L11 3l8 6.5V19a1 1 0 01-1 1H14v-5h-4v5H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <span class="bnav-label">Home</span>
+  </a>
+  <a href="/reading" class="bnav-item" data-page="reading" data-bnav="reading" aria-label="Reading">
+    <svg class="bnav-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="4" y="3" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <line x1="7.5" y1="8" x2="14.5" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="7.5" y1="11.5" x2="14.5" y2="11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="7.5" y1="15" x2="11" y2="15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <span class="bnav-label">Reading</span>
+  </a>
+  <a href="/ara" class="bnav-item" data-page="ara" data-bnav="ara" aria-label="ARA Framework">
+    <svg class="bnav-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M8 11 C9.5 7 12.5 7 14 11 C15.5 15 11 16.5 11 11" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="bnav-label">ARA</span>
+  </a>
+  <a href="/rhyssa" class="bnav-item" data-page="rhyssa" data-bnav="rhyssa" aria-label="Rhyssa">
+    <svg class="bnav-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <circle cx="11" cy="9" r="4" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M4 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="bnav-label">Rhyssa</span>
+  </a>
+  <a href="/about" class="bnav-item" data-page="about" data-bnav="about" aria-label="About">
+    <svg class="bnav-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <line x1="11" y1="10" x2="11" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="11" cy="7.5" r="1" fill="currentColor"/>
+    </svg>
+    <span class="bnav-label">About</span>
+  </a>
+</nav>
+
+<!-- ── PWA INSTALL PROMPT ── -->
+<div id="pwa-prompt" aria-hidden="true">
+  <div class="pip-inner">
+    <div class="pip-icon" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 44 44" fill="none">
+        <rect width="44" height="44" rx="10" fill="rgba(61,214,232,0.12)"/>
+        <path d="M8 22 C11 16 15 16 18 22 C21 28 25 28 28 22" stroke="rgba(61,214,232,0.9)" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+        <circle cx="21.2" cy="21" r="1.1" fill="white" fill-opacity=".9"/>
+      </svg>
+    </div>
+    <div class="pip-text">
+      <strong>Keep your guides offline</strong>
+      <span>Read, reference ARA, and consult Rhyssa without a connection.</span>
+    </div>
+    <div class="pip-actions">
+      <button class="pip-install" id="pip-install">Install</button>
+      <button class="pip-dismiss" id="pip-dismiss" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
 </div>
 
 <main id="app-main">
@@ -1235,6 +1302,54 @@
 <script src="js/ecosystem.js" defer></script>
 <script src="js/fauna.js" defer></script>
 <script src="js/ui.js" defer></script>
+<script>
+/* ── SERVICE WORKER ── */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
 
+/* ── PWA INSTALL PROMPT ── */
+(function () {
+  var deferredPrompt = null;
+  var prompt = document.getElementById('pwa-prompt');
+  var installBtn = document.getElementById('pip-install');
+  var dismissBtn = document.getElementById('pip-dismiss');
+  if (!prompt) return;
+  if (localStorage.getItem('ar_pwa_dismissed')) return;
+  if (window.matchMedia('(display-mode: standalone)').matches) return;
+
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    setTimeout(function () {
+      prompt.classList.add('show');
+      prompt.removeAttribute('aria-hidden');
+    }, 9000);
+  });
+
+  if (installBtn) {
+    installBtn.addEventListener('click', function () {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function (result) {
+        if (result.outcome === 'accepted' && typeof gtag !== 'undefined') {
+          gtag('event', 'pwa_install', { method: 'prompt' });
+        }
+        deferredPrompt = null;
+        prompt.classList.remove('show');
+      });
+    });
+  }
+
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', function () {
+      prompt.classList.remove('show');
+      localStorage.setItem('ar_pwa_dismissed', '1');
+    });
+  }
+})();
+</script>
 </body>
                                                                                                                                                                                                                                                                                                                                                        </html>

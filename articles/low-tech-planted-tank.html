@@ -8,6 +8,10 @@
 <link rel="canonical" href="https://aquaticrhythm.com/articles/low-tech-planted-tank">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <meta name="theme-color" content="#030b09">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aquatic Rhythm">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://aquaticrhythm.com/articles/low-tech-planted-tank">
 <meta property="og:title" content="How to Start a Low-Tech Planted Tank — Aquatic Rhythm">
@@ -142,6 +146,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 #mod-progress-bar{height:2px;background:rgba(235,240,236,.06);position:relative;overflow:hidden}
 #mod-progress-bar::after{content:'';position:absolute;left:0;top:0;height:100%;width:var(--prog,0%);background:linear-gradient(to right,rgba(61,214,232,.66),rgba(157,191,154,.4));transition:width .5s cubic-bezier(0.19,1,0.22,1)}
 #mod-progress-label{position:absolute;right:clamp(1.5rem,5vw,4.5rem);top:6px;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(235,240,236,.34);font-family:var(--sans)}
+
+/* ── BOTTOM NAV (PWA) ── */
+.art-bnav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;height:calc(56px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:rgba(4,12,10,.97);border-top:1px solid rgba(139,189,210,.1);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);flex-direction:row;align-items:stretch;justify-content:space-around;-webkit-user-select:none;user-select:none}
+.art-bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px 4px;text-decoration:none;color:rgba(255,255,255,.35);font-family:'DM Sans',system-ui,sans-serif;-webkit-tap-highlight-color:transparent;position:relative}
+.art-bnav-item::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%) scaleX(0);width:24px;height:2px;border-radius:0 0 3px 3px;background:#3DD6E8;transition:transform .3s,opacity .22s;opacity:0}
+.art-bnav-item.art-bnav-active{color:#3DD6E8}
+.art-bnav-item.art-bnav-active::before{transform:translateX(-50%) scaleX(1);opacity:1}
+.art-bnav-item span{font-size:.48rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+@media(max-width:720px){.art-bnav{display:flex}.art-burger{display:none!important}.art-nmob{display:none!important}}
+@media(display-mode:standalone){.art-bnav{display:flex}}
 </style>
 </head>
 <body>
@@ -377,6 +391,37 @@ function updateDots() {
   });
   window.addEventListener('resize', function(){ if (window.innerWidth > 960) { bg.classList.remove('open'); nm.classList.remove('open'); } });
 })();
+</script>
+
+<!-- ── BOTTOM NAV (PWA) ── -->
+<nav class="art-bnav" aria-label="Main navigation">
+  <a href="/" class="art-bnav-item" aria-label="Home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 9.5L11 3l8 6.5V19a1 1 0 01-1 1H14v-5h-4v5H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="/reading" class="art-bnav-item art-bnav-active" aria-current="page" aria-label="Reading">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="4" y="3" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="7.5" y1="8" x2="14.5" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7.5" y1="11.5" x2="14.5" y2="11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+    <span>Reading</span>
+  </a>
+  <a href="/ara" class="art-bnav-item" aria-label="ARA">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 11 C9.5 7 12.5 7 14 11 C15.5 15 11 16.5 11 11" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+    <span>ARA</span>
+  </a>
+  <a href="/rhyssa" class="art-bnav-item" aria-label="Rhyssa">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="9" r="4" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M4 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+    <span>Rhyssa</span>
+  </a>
+  <a href="/about" class="art-bnav-item" aria-label="About">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="11" y1="10" x2="11" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="7.5" r="1" fill="currentColor"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
 </script>
 </body>
 </html>

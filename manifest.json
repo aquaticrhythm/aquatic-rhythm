@@ -1,0 +1,35 @@
+{
+  "name": "Aquatic Rhythm",
+  "short_name": "Aquatic Rhythm",
+  "description": "Ecology-first guides for home aquarium keepers. ARA framework, interactive tools, and Rhyssa.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#030b09",
+  "theme_color": "#030b09",
+  "lang": "en",
+  "categories": ["education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Aquatic Rhythm — ecological guides for home aquariums"
+    }
+  ]
+}

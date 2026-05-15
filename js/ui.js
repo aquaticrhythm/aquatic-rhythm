@@ -101,6 +101,14 @@
     if (desc && descMap[id]) desc.setAttribute('content', descMap[id]);
   }
 
+  function updateBottomNav(id) {
+    document.querySelectorAll('.bnav-item').forEach(function (item) {
+      var tab = item.getAttribute('data-bnav');
+      item.classList.toggle('active', tab === id);
+      item.setAttribute('aria-current', tab === id ? 'page' : 'false');
+    });
+  }
+
   function go(id, push) {
     var path = id === 'home' ? '/' : '/' + id;
 
@@ -115,6 +123,7 @@
     t.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'auto' });
     closeMenu();
+    updateBottomNav(id);
     setTimeout(function () { observeScrollReveal(t); }, 80);
 
     if (titleMap[id]) document.title = titleMap[id];
@@ -160,6 +169,7 @@
       var t = document.getElementById('pg-' + id);
       if (t) {
         t.classList.add('active');
+        updateBottomNav(id);
         if (titleMap[id]) document.title = titleMap[id];
         updateMeta(id);
         try { history.replaceState({ page: id }, '', location.pathname); } catch (e) {}
