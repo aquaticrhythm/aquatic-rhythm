@@ -1524,38 +1524,96 @@
       <h2 class="mt-modal-title">Set up your tank</h2>
       <button class="mt-modal-close" data-modal-close="mt-modal-setup" aria-label="Close">✕</button>
     </div>
+
+    <!-- Live tank shape preview -->
+    <div class="mt-tank-preview" id="mt-tank-preview">
+      <div class="mt-preview-wrap">
+        <div class="mt-preview-tank" id="mt-preview-tank">
+          <div class="mt-preview-glare"></div>
+          <div class="mt-preview-water"></div>
+          <div class="mt-preview-gravel"></div>
+        </div>
+      </div>
+      <div class="mt-preview-labels">
+        <span class="mt-preview-vol" id="mt-preview-vol">—</span>
+        <span class="mt-preview-cat" id="mt-preview-cat">Choose a size or brand below</span>
+      </div>
+    </div>
+
+    <!-- Selection tabs -->
+    <div class="mt-setup-tabs" role="tablist">
+      <button class="mt-stab active" data-stab="preset" role="tab" aria-selected="true">Popular</button>
+      <button class="mt-stab" data-stab="brand" role="tab" aria-selected="false">Branded</button>
+      <button class="mt-stab" data-stab="custom" role="tab" aria-selected="false">Custom</button>
+    </div>
+
+    <!-- Panel: Popular sizes -->
+    <div class="mt-stab-panel" id="mt-panel-preset" role="tabpanel">
+      <div class="mt-preset-grid" id="mt-preset-grid"><!-- filled by JS --></div>
+    </div>
+
+    <!-- Panel: Branded tanks -->
+    <div class="mt-stab-panel" id="mt-panel-brand" role="tabpanel" style="display:none">
+      <div class="mt-brand-selector" id="mt-brand-selector"><!-- filled by JS --></div>
+      <div class="mt-model-selector" id="mt-model-selector" style="display:none"><!-- filled by JS --></div>
+    </div>
+
+    <!-- Panel: Custom dimensions -->
+    <div class="mt-stab-panel" id="mt-panel-custom" role="tabpanel" style="display:none">
+      <div class="mt-dim-unit-row">
+        <span class="mt-label" style="margin:0">Measurement unit</span>
+        <div class="mt-unit-toggle">
+          <button type="button" class="mt-unit-btn active" data-dimunit="cm">cm</button>
+          <button type="button" class="mt-unit-btn" data-dimunit="in">inches</button>
+        </div>
+      </div>
+      <div class="mt-field-row mt-dims-row">
+        <div class="mt-field">
+          <label class="mt-label" for="mt-dim-l">Length</label>
+          <input class="mt-input" id="mt-dim-l" type="number" placeholder="60" min="1" max="600" step="0.5">
+        </div>
+        <div class="mt-field">
+          <label class="mt-label" for="mt-dim-w">Width</label>
+          <input class="mt-input" id="mt-dim-w" type="number" placeholder="30" min="1" max="300" step="0.5">
+        </div>
+        <div class="mt-field">
+          <label class="mt-label" for="mt-dim-h">Height</label>
+          <input class="mt-input" id="mt-dim-h" type="number" placeholder="36" min="1" max="300" step="0.5">
+        </div>
+      </div>
+      <div class="mt-dim-result">
+        <span class="mt-label" style="margin:0">Calculated volume</span>
+        <strong class="mt-dim-vol-out" id="mt-dim-vol-out">—</strong>
+      </div>
+    </div>
+
+    <div class="mt-setup-divider"></div>
+
+    <!-- Tank details -->
     <form id="mt-form-setup" autocomplete="off">
+      <input type="hidden" id="mt-inp-volume" value="">
+      <input type="hidden" id="mt-inp-unit" value="L">
+      <input type="hidden" id="mt-inp-shape" value="rect">
       <div class="mt-field">
         <label class="mt-label" for="mt-inp-name">Tank name</label>
-        <input class="mt-input" id="mt-inp-name" type="text" placeholder="e.g. My 60L Planted" maxlength="40" required>
-      </div>
-      <div class="mt-field-row">
-        <div class="mt-field" style="flex:1">
-          <label class="mt-label" for="mt-inp-volume">Volume</label>
-          <input class="mt-input" id="mt-inp-volume" type="number" placeholder="60" min="1" max="9999" step="1">
-        </div>
-        <div class="mt-field" style="flex:0 0 90px">
-          <label class="mt-label" for="mt-inp-unit">Unit</label>
-          <select class="mt-input mt-select" id="mt-inp-unit">
-            <option value="L">L</option>
-            <option value="gal">gal</option>
-          </select>
-        </div>
+        <input class="mt-input" id="mt-inp-name" type="text" placeholder="e.g. My Living Room Tank" maxlength="48" required>
       </div>
       <div class="mt-field">
         <label class="mt-label" for="mt-inp-type">Tank type</label>
         <select class="mt-input mt-select" id="mt-inp-type">
           <option value="freshwater">Freshwater</option>
           <option value="planted">Planted</option>
-          <option value="marine">Marine</option>
+          <option value="marine">Marine / Reef</option>
           <option value="brackish">Brackish</option>
+          <option value="coldwater">Coldwater</option>
+          <option value="paludarium">Paludarium</option>
         </select>
       </div>
       <div class="mt-field">
         <label class="mt-label" for="mt-inp-date">Set up date <span style="opacity:.4">(optional)</span></label>
         <input class="mt-input" id="mt-inp-date" type="date">
       </div>
-      <button type="submit" class="btn bf" style="width:100%;margin-top:.5rem">Save tank</button>
+      <button type="submit" class="btn bf mt-save-btn">Save tank</button>
     </form>
   </div>
 </div>
