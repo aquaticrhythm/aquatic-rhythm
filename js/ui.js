@@ -96,7 +96,7 @@
 
   var descMap = {
     'home':      'Aquatic Rhythm — calm ecology guides for home aquariums. ARA (Aquatic Rhythm Alignment) is the reasoning behind Reading, tools, Rhyssa, and your private journal.',
-    'ara':       'ARA is a framework for closed-loop aquariums — phase, ecological tolerance, keeper rhythm, and timing before big moves.',
+    'ara':       'Explore Aquatic Rhythm Alignment (ARA) as a calm, self-paced module — rhythms, phases, keeper care, four guiding questions, and gentle next steps.',
     'companion': 'Rhyssa on ChatGPT — start in one tap. She can explain ARA and how she thinks in the chat itself; this page stays short.',
     'about':     'Why Aquatic Rhythm exists — from uneven advice to a calmer, ecology-first way of reading small tanks.',
     'privacy':   'Privacy Policy for Aquatic Rhythm. What we collect, how it is handled, and what it means for you.',
@@ -158,6 +158,7 @@
     closeMenu();
     updateBottomNav(id);
     setTimeout(function () { observeScrollReveal(t); }, 80);
+    if (window.__araModTick) setTimeout(window.__araModTick, 100);
 
     if (id !== 'reading') closeAllReadingAccordions();
     else {
@@ -181,6 +182,66 @@
   }
 
   window.go = go;
+
+  /* ── ARA page: module nav scroll spy (highlights current section) ── */
+  function initAraModScrollSpy() {
+    if (window.__araModSpyInit) return;
+    var root = document.getElementById('pg-ara');
+    var nav = root && root.querySelector('.ara-mod-nav');
+    if (!root || !nav) return;
+    window.__araModSpyInit = true;
+    var ids = ['ara-frame', 'ara-what', 'ara-lenses', 'ara-keeper', 'ara-shame', 'ara-principles', 'ara-practice'];
+    var links = {};
+    ids.forEach(function (id) {
+      var a = nav.querySelector('a[href="#' + id + '"]');
+      if (a) links[id] = a;
+    });
+    function setActive(id) {
+      ids.forEach(function (i) {
+        var link = links[i];
+        if (!link) return;
+        link.classList.toggle('is-active', i === id);
+        link.setAttribute('aria-current', i === id ? 'true' : 'false');
+      });
+    }
+    function tick() {
+      if (!root.classList.contains('active')) {
+        ids.forEach(function (i) {
+          var link = links[i];
+          if (!link) return;
+          link.classList.remove('is-active');
+          link.setAttribute('aria-current', 'false');
+        });
+        return;
+      }
+      var y = window.scrollY || document.documentElement.scrollTop;
+      var lim = y + 132;
+      var activeId = ids[0];
+      for (var i = 0; i < ids.length; i++) {
+        var el = document.getElementById(ids[i]);
+        if (!el) continue;
+        var docTop = el.getBoundingClientRect().top + y;
+        if (docTop <= lim) activeId = ids[i];
+      }
+      var docEl = document.documentElement;
+      var maxScroll = Math.max(0, (docEl.scrollHeight || 0) - window.innerHeight);
+      if (maxScroll > 0 && y >= maxScroll - 6) activeId = ids[ids.length - 1];
+      setActive(activeId);
+    }
+    window.__araModTick = tick;
+    var raf = null;
+    function onScroll() {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        raf = null;
+        tick();
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    tick();
+  }
+  initAraModScrollSpy();
 
   if (hasSpaPages) {
     document.addEventListener('click', function (e) {
@@ -218,6 +279,7 @@
         if (typeof gtag !== 'undefined') {
           gtag('event', 'page_view', { page_path: path, page_title: titleMap[id] || id });
         }
+        if (window.__araModTick && id === 'ara') setTimeout(window.__araModTick, 120);
       }
     })();
   }

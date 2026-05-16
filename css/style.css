@@ -567,12 +567,52 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .rd-coming{padding:1.6rem 2rem;border:1px dashed rgba(255,255,255,.07);background:rgba(6,16,13,.3)}
 .rd-coming p{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(255,255,255,.22)}
 
-/* ── ARA IN-PAGE NAVIGATION ── */
-.ara-ipnav{position:sticky;top:68px;z-index:90;background:rgba(3,11,9,.92);border-bottom:1px solid rgba(139,189,210,.08);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.ara-ipnav-inner{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 clamp(1.5rem,5vw,4.5rem)}
-.ara-ipnav-inner::-webkit-scrollbar{display:none}
-.ara-iplink{flex-shrink:0;font-size:.53rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.30);text-decoration:none;padding:.78rem 1.1rem .78rem 0;margin-right:.6rem;border-bottom:1px solid transparent;transition:color .25s,border-color .25s;white-space:nowrap}
-.ara-iplink:hover{color:rgba(124,168,156,.85);border-bottom-color:rgba(124,168,156,.28)}
+/* ── ARA PAGE: learning module shell ── */
+#pg-ara .ara-mod-chapter[id]{scroll-margin-top:clamp(5.5rem,12vh,7.25rem)}
+.araph--mod{padding:clamp(6.5rem,14vh,9rem) clamp(1.5rem,5vw,4.5rem) clamp(2.25rem,5vh,3rem);display:block}
+.ara-mod-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start;max-width:1120px;margin:0 auto}
+.ara-mod-leadtag{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(124,168,156,.62);margin:.35rem 0 0;font-family:var(--sans)}
+.ara-mod-title{margin-top:.5rem}
+.ara-mod-api{margin-top:1.25rem}
+.ara-mod-api br{display:none}
+.ara-mod-promise{margin-top:1.75rem;padding:1.15rem 1.25rem;border-radius:14px;border:1px solid rgba(139,189,210,.12);background:rgba(6,16,13,.5);max-width:36rem}
+.ara-mod-promise-h{display:block;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.55);margin-bottom:.65rem}
+.ara-mod-promise-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.ara-mod-promise-list li{font-size:.84rem;font-weight:300;color:rgba(235,240,236,.72);line-height:1.55;padding-left:1.1rem;position:relative}
+.ara-mod-promise-list li::before{content:'';position:absolute;left:0;top:.55rem;width:5px;height:5px;border-radius:50%;background:rgba(61,214,232,.45);box-shadow:0 0 8px rgba(61,214,232,.25)}
+.ara-mod-promise-list em{font-style:italic;color:rgba(139,189,210,.82)}
+.ara-mod-soft{margin-top:1.1rem;font-size:.82rem;font-weight:300;font-style:italic;font-family:var(--serif);color:rgba(255,255,255,.38);line-height:1.6;max-width:32rem}
+.ara-mod-hero-side .bt{color:rgba(235,240,236,.68)}
+.ara-mod-nav{position:sticky;top:68px;z-index:90;background:rgba(3,11,9,.94);border-bottom:1px solid rgba(139,189,210,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ara-mod-nav-inner{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:.65rem clamp(1.25rem,4vw,3rem) .85rem;scroll-snap-type:x proximity}
+.ara-mod-nav-inner::-webkit-scrollbar{display:none}
+.ara-mod-nav-card{flex:0 0 auto;scroll-snap-align:start;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:.65rem;row-gap:.12rem;align-items:start;min-width:148px;max-width:200px;padding:.65rem .85rem;border-radius:12px;border:1px solid rgba(139,189,210,.12);background:rgba(8,18,14,.75);text-decoration:none;transition:background .25s,border-color .25s,transform .22s var(--ease)}
+.ara-mod-nav-card:hover{background:rgba(14,28,22,.92);border-color:rgba(61,214,232,.22);transform:translateY(-1px)}
+.ara-mod-nav-card:focus-visible{outline:2px solid rgba(61,214,232,.5);outline-offset:2px}
+.ara-mod-nav-card.is-active{border-color:rgba(61,214,232,.38);background:rgba(12,32,26,.88);box-shadow:0 0 0 1px rgba(61,214,232,.12)}
+.ara-mod-nav-n{grid-row:1 / span 2;font-family:var(--serif);font-size:1.35rem;font-weight:300;line-height:1;color:rgba(61,214,232,.42)}
+.ara-mod-nav-card.is-active .ara-mod-nav-n{color:rgba(61,214,232,.65)}
+.ara-mod-nav-t{grid-column:2;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.ara-mod-nav-s{grid-column:2;font-size:.62rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.35}
+.ara-mod-linger{max-width:720px;margin:0 auto;padding:1.25rem 1.4rem;border-radius:14px;border:1px dashed rgba(139,189,210,.2);background:rgba(58,110,140,.06)}
+.ara-mod-linger--dim{margin-top:.25rem;border-style:solid;border-color:rgba(139,189,210,.1);background:rgba(6,16,13,.35)}
+.ara-mod-linger-p{margin:0;font-size:.86rem;font-weight:300;color:rgba(235,240,236,.62);line-height:1.72}
+.ara-mod-linger-p strong{font-weight:500;color:rgba(124,168,156,.75)}
+.ara-mod-next{padding:3.5rem clamp(1.5rem,5vw,4.5rem) 2rem}
+.ara-mod-next-inner{max-width:720px;text-align:left}
+.ara-mod-next-row{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.35rem}
+.ara-mod-next-row .btn{width:auto}
+
+@media(max-width:900px){
+  .ara-mod-hero{grid-template-columns:1fr;gap:1.75rem}
+  .ara-mod-nav-card{min-width:132px;max-width:176px}
+}
+@media(max-width:720px){
+  .ara-mod-nav-card{min-width:118px;padding:.55rem .72rem}
+  .ara-mod-nav-t{font-size:.54rem}
+  .ara-mod-nav-s{font-size:.58rem}
+  .ara-mod-next-row .btn{width:100%;text-align:center}
+}
 
 .seo-links{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .seo-links a{color:inherit}
