@@ -2436,76 +2436,178 @@ function showBiEquipmentHero(eqId){
   hero.innerHTML='<span class="bi-hero-icon" aria-hidden="true">'+c.icon+'</span><span class="bi-hero-lbl">'+c.lbl+'</span><span class="bi-hero-sub">Equipment</span>';
 }
 
-function _wikiSpeciesAnchor(latin,name){
-  var raw=(latin||name||'').trim();
-  var parts=raw.split(/[\s/]+/);
-  var stop={dr:1,st:1,mr:1,ms:1,de:1,van:1,le:1,la:1};
-  for(var i=0;i<parts.length;i++){
-    var p=parts[i].replace(/[^a-zA-Z]/g,'').toLowerCase();
-    if(p.length>=4&&!stop[p])return p;
-  }
-  return (parts[0]||'').replace(/[^a-zA-Z]/g,'').toLowerCase();
+function _normalizeWikiTitle(s){
+  return (s||'').split('/')[0].replace(/\s+/g,' ').trim();
 }
 
-function _titleLooksWikiRelevant(title,anchor,ecoCat){
-  var tl=title.toLowerCase();
-  if(anchor&&anchor.length>=4&&tl.indexOf(anchor)>=0)return true;
-  if(ecoCat==='stock'){
-    return /(fish|cichlid|tetra|barb|danio|goby|catfish|loach|shark|ray|guppy|molly|platy|swordtail|betta|goldfish|koi|shrimp|crab|snail|frog|newt|turtle|cyprin|charac|gourami|angelfish|discus|pleco|loricari|livebearer|killifish|rasbora|minnow|dace|chub|perch|carp)/i.test(tl);
+function _latinParts(latin){
+  if(!latin)return{genus:'',epithet:'',weakEpi:true};
+  var parts=latin.split(/[\s/]+/).map(function(w){return w.replace(/[^a-zA-Z.]/g,'').toLowerCase();}).filter(Boolean);
+  var genus=parts[0]||'';
+  var epithet=parts[1]||'';
+  var weak=!epithet||/^(spp?|sp|cf|aff|x)$/i.test(epithet);
+  return{genus:genus,epithet:epithet,weakEpi:weak};
+}
+
+function _wordBoundRe(word){
+  if(!word||word.length<2)return null;
+  return new RegExp('\\b'+word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i');
+}
+
+function _bioTitleBad(t){
+  return /(disambiguation\)|\(disambiguation\)|^list of |^timeline of |^history of the |^history of |wikisource|wiktionary:|^category:|^file:|^template:|draft |\bEIS\b| environmental impact| quarterly | accli[zm]at| management program|\bDCGI\b| magazine for |\bsermons in |\bcover art |\bmagazine cover|\bfrontispiece|\bannual report|\bgovernment printing|\bstate of washington|\bministry of |\bdepartment of |\bacclimat|\bprogrammatic\b)/i.test(t);
+}
+
+function _commonsFileBad(t){
+  return /\.(djvu|pdf)(\b|$)/i.test(t)||/\b(map of|logo|chart diagram|coat of arms|signature|currency|stamp|postage)\b/i.test(t);
+}
+
+function _nameWords(name){
+  return(name||'').toLowerCase().split(/[\s\-]+/).filter(function(w){return w.length>=3;});
+}
+
+function _scoreWikiTitle(title,latin,name,ecoCat){
+  if(!title||_bioTitleBad(title))return 0;
+  var tl=title;
+  var lp=_latinParts(latin);
+  var genus=lp.genus;
+  var epithet=lp.epithet;
+  var weak=lp.weakEpi;
+  if(latin&&genus.length>=2){
+    if(_wordBoundRe(genus).test(tl)){
+      var s=12;
+      if(!weak&&epithet&&epithet.length>=2){
+        if(_wordBoundRe(epithet).test(tl))s+=16;
+        else if(tl.toLowerCase().indexOf(epithet)>=0)s+=11;
+      } else s+=9;
+      var lcn=latin.toLowerCase().replace(/\s+/g,' ');
+      if(tl.toLowerCase().indexOf(lcn)>=0)s+=3;
+      if(ecoCat==='stock'){
+        if(/\b(marine|oceanic|seawater|saltwater|pelagic|trigl|gurnard|sea robin)\b/i.test(tl))s-=10;
+        if(/\b(freshwater|river|amazon|orinoco|aquarium fish|characin|cyprin|tetra|fish species)\b/i.test(tl))s+=2;
+      }
+      if(ecoCat==='plants'){
+        if(/\b(weed control|herbicide|agriculture|crop |farm )\b/i.test(tl))s-=10;
+        if(/\b(aquatic|aquarium|submerged| macrophyte|species)\b/i.test(tl))s+=2;
+      }
+      return s;
+    }
+    var nws=_nameWords(name);
+    if(nws.length>=2){
+      var all=true;
+      for(var i=0;i<nws.length;i++){
+        if(!_wordBoundRe(nws[i]).test(tl)){all=false;break;}
+      }
+      if(all){
+        if(ecoCat==='stock'&&/\b(fish|tetra|characin|danio|barb|gourami|catfish|loach|cichlid|shrimp|snail|species)\b/i.test(tl))return 18;
+        if(ecoCat==='plants'&&/\b(plant|aquatic|species|aquarium| macrophyte)\b/i.test(tl))return 18;
+      }
+    }
+    return 0;
   }
-  if(ecoCat==='plants'){
-    return /(plant|aquatic|algae|moss|fern|lily|weed|cryptocoryne|anubias|echinodorus|potamogeton|bacopa|ludwigia|hygro|rotala|eleocharis|micranthemum|aquarium)/i.test(tl);
+  if(!latin&&(name||'').trim()){
+    var words=_nameWords(name);
+    if(!words.length)return 0;
+    var sc=0;
+    for(var j=0;j<words.length;j++){
+      if(_wordBoundRe(words[j]).test(tl))sc+=7;
+    }
+    if(ecoCat==='stock'&&/\b(fish|species)\b/i.test(tl))sc+=2;
+    if(ecoCat==='plants'&&/\b(plant|species|aquatic)\b/i.test(tl))sc+=2;
+    return sc;
   }
-  return /(aquarium|aquascape|wood|stone|rock|drift|hardscape|substrate|boulder)/i.test(tl);
+  if(ecoCat==='hard'&&(name||'').trim()&&tl.toLowerCase().indexOf(name.toLowerCase())>=0)return 16;
+  return 0;
+}
+
+function _scoreCommonsFileTitle(fileTitle,latin,name,ecoCat){
+  var raw=(fileTitle||'').replace(/^file:/i,'');
+  if(_commonsFileBad(raw.toLowerCase()))return 0;
+  var s=_scoreWikiTitle(raw,latin,name,ecoCat);
+  if(!s)return 0;
+  var tl=raw.toLowerCase();
+  if(/\b(aquarium|submerged|underwater|fish.?tank|freshwater)\b/i.test(tl))s+=5;
+  if(ecoCat==='plants'&&/\b(aquascape|emersed|wet|habitat)\b/i.test(tl))s+=2;
+  return s;
+}
+
+function _pickBestWikiHit(hits,latin,name,ecoCat,minScore){
+  var best=null,bestSc=0;
+  for(var j=0;j<hits.length;j++){
+    var sc=_scoreWikiTitle(hits[j].title,latin,name,ecoCat);
+    if(sc>bestSc){bestSc=sc;best=hits[j].title;}
+  }
+  if(best&&bestSc>=minScore)return best;
+  return null;
 }
 
 function fetchSpeciesOverlayImage(item,ecoCat){
   prepareBiImageForPhoto();
   var latin=(item.latin||'').trim();
   var name=(item.name||'').trim();
-  var qList=[];
-  if(ecoCat==='stock'){
-    if(latin)qList.push(latin+' freshwater fish');
-    if(latin)qList.push(latin+' aquarium fish');
-    if(name&&name!==latin)qList.push(name+' freshwater aquarium fish');
-  } else if(ecoCat==='plants'){
-    if(latin)qList.push(latin+' aquatic plant');
-    if(latin)qList.push(latin+' aquarium plant');
-    if(name)qList.push(name+' aquatic plant');
+  if(!latin&&!name){_noBiImg();return;}
+  var direct=_normalizeWikiTitle(latin);
+  if(direct){
+    _loadWikiPageImageOrCommons(direct,latin,name,ecoCat).then(function(ok){
+      if(ok)return;
+      _runSpeciesImageQueryList(latin,name,ecoCat);
+    });
   } else {
-    if(name)qList.push(name+' aquarium hardscape');
-    if(latin&&latin!==name)qList.push(latin+' aquarium');
+    _runSpeciesImageQueryList(latin,name,ecoCat);
   }
-  if(!qList.length){_noBiImg();return;}
-  var anchor=_wikiSpeciesAnchor(latin,name);
-  _wikiSpeciesImageSearch(qList,0,anchor,ecoCat);
 }
 
-function _advanceSpeciesSearch(queries,idx,anchor,ecoCat){
-  _wikiSpeciesImageSearch(queries,idx+1,anchor,ecoCat);
+function _speciesSearchQueries(latin,name,ecoCat){
+  var q=[];
+  var lp=_latinParts(latin);
+  if(lp.genus&&lp.epithet&&!lp.weakEpi){
+    q.push('"'+lp.genus+' '+lp.epithet+'"');
+    q.push(lp.genus+' '+lp.epithet+' species');
+  }
+  if(ecoCat==='stock'){
+    if(latin)q.push(latin+' freshwater fish');
+    if(latin)q.push(latin);
+    if(name&&name!==latin)q.push(name+' fish species');
+  } else if(ecoCat==='plants'){
+    if(latin)q.push(latin+' genus plant');
+    if(latin)q.push(latin);
+    if(name)q.push(name+' aquarium plant');
+  } else {
+    if(name)q.push(name+' aquarium hardscape');
+    if(latin&&latin!==name)q.push(latin);
+  }
+  var seen={};
+  return q.filter(function(s){if(!s||seen[s])return false;seen[s]=true;return true;});
+}
+
+function _runSpeciesImageQueryList(latin,name,ecoCat){
+  var queries=_speciesSearchQueries(latin,name,ecoCat);
+  if(!queries.length){_noBiImg();return;}
+  _wikiSpeciesImageSearch(queries,0,latin,name,ecoCat);
+}
+
+function _advanceSpeciesSearch(queries,idx,latin,name,ecoCat){
+  _wikiSpeciesImageSearch(queries,idx+1,latin,name,ecoCat);
   return Promise.resolve();
 }
 
-function _wikiSpeciesImageSearch(queries,idx,anchor,ecoCat){
+function _wikiSpeciesImageSearch(queries,idx,latin,name,ecoCat){
   if(idx>=queries.length){_noBiImg();return;}
-  var url='https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(queries[idx])+'&srlimit=8&format=json&origin=*';
+  var url='https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(queries[idx])+'&srlimit=15&format=json&origin=*';
   fetch(url)
     .then(function(r){return r.json();})
     .then(function(data){
       var hits=(data.query&&data.query.search)||[];
-      var title=null;
-      for(var j=0;j<hits.length;j++){
-        if(_titleLooksWikiRelevant(hits[j].title,anchor,ecoCat)){title=hits[j].title;break;}
-      }
-      if(!title)return _advanceSpeciesSearch(queries,idx,anchor,ecoCat);
-      return _fetchWikipediaPageImageThenCommons(title).then(function(ok){
-        if(!ok)return _advanceSpeciesSearch(queries,idx,anchor,ecoCat);
+      var title=_pickBestWikiHit(hits,latin,name,ecoCat,17);
+      if(!title)return _advanceSpeciesSearch(queries,idx,latin,name,ecoCat);
+      return _loadWikiPageImageOrCommons(title,latin,name,ecoCat).then(function(ok){
+        if(!ok)return _advanceSpeciesSearch(queries,idx,latin,name,ecoCat);
       });
     })
-    .catch(function(){return _advanceSpeciesSearch(queries,idx,anchor,ecoCat);});
+    .catch(function(){return _advanceSpeciesSearch(queries,idx,latin,name,ecoCat);});
 }
 
-function _fetchWikipediaPageImageThenCommons(pageTitle){
+function _loadWikiPageImageOrCommons(pageTitle,latin,name,ecoCat){
   var url='https://en.wikipedia.org/w/api.php?action=query&titles='+encodeURIComponent(pageTitle)+'&prop=pageimages&format=json&pithumbsize=640&origin=*';
   return fetch(url)
     .then(function(r){return r.json();})
@@ -2513,37 +2615,58 @@ function _fetchWikipediaPageImageThenCommons(pageTitle){
       var pages=data.query&&data.query.pages;
       if(!pages)return false;
       var page=Object.values(pages)[0];
-      if(page&&page.thumbnail&&page.thumbnail.source){
+      if(!page||page.missing||page.invalid)return false;
+      var ptitle=page.title||'';
+      var sc=_scoreWikiTitle(ptitle,latin,name,ecoCat);
+      if(sc<16)return false;
+      if(page.thumbnail&&page.thumbnail.source){
         _loadBiImg(page.thumbnail.source,'Wikipedia / CC');
         return true;
       }
-      return _commonsSearchPromise(pageTitle);
+      return _commonsSearchBest(latin||ptitle,name,ecoCat,latin);
     })
-    .catch(function(){return _commonsSearchPromise(pageTitle);});
+    .catch(function(){return _commonsSearchBest(latin||pageTitle,name,ecoCat,latin);});
 }
 
-function _commonsSearchPromise(q){
-  return fetch('https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(q)+'&srnamespace=6&srlimit=5&format=json&origin=*')
+function _commonsSearchBest(seedName,name,ecoCat,latin){
+  var queries=[];
+  if(latin)queries.push(latin+' aquarium');
+  if(latin)queries.push(latin);
+  if(seedName&&seedName!==latin)queries.push(seedName+' aquarium');
+  if(name)queries.push(name+' aquarium');
+  var seen={};
+  queries=queries.filter(function(s){if(!s||seen[s])return false;seen[s]=true;return true;});
+  return _commonsTryQueries(queries,0,latin,name,ecoCat);
+}
+
+function _commonsTryQueries(queries,idx,latin,name,ecoCat){
+  if(idx>=queries.length)return Promise.resolve(false);
+  var q=queries[idx];
+  return fetch('https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(q)+'&srnamespace=6&srlimit=12&format=json&origin=*')
     .then(function(r){return r.json();})
     .then(function(data){
-      var results=data.query&&data.query.search;
-      if(!results||!results.length)return false;
-      var ctitle=results[0].title;
-      return fetch('https://commons.wikimedia.org/w/api.php?action=query&titles='+encodeURIComponent(ctitle)+'&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=640&format=json&origin=*').then(function(r){return r.json();});
-    })
-    .then(function(data){
-      if(data===false)return false;
-      var pages=data.query&&data.query.pages;
-      if(!pages)return false;
-      var ii=Object.values(pages)[0].imageinfo;
-      if(ii&&ii[0]&&ii[0].thumburl){
-        var lic=(ii[0].extmetadata&&ii[0].extmetadata.LicenseShortName&&ii[0].extmetadata.LicenseShortName.value)||'Wikimedia Commons';
-        _loadBiImg(ii[0].thumburl,lic);
-        return true;
+      var results=(data.query&&data.query.search)||[];
+      var best=null,bestSc=0;
+      for(var i=0;i<results.length;i++){
+        var sc=_scoreCommonsFileTitle(results[i].title,latin,name,ecoCat);
+        if(sc>bestSc){bestSc=sc;best=results[i].title;}
       }
-      return false;
+      if(!best||bestSc<14)return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);
+      return fetch('https://commons.wikimedia.org/w/api.php?action=query&titles='+encodeURIComponent(best)+'&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=640&format=json&origin=*')
+        .then(function(r){return r.json();})
+        .then(function(imgData){
+          var pages=imgData.query&&imgData.query.pages;
+          if(!pages)return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);
+          var ii=Object.values(pages)[0].imageinfo;
+          if(ii&&ii[0]&&ii[0].thumburl){
+            var lic=(ii[0].extmetadata&&ii[0].extmetadata.LicenseShortName&&ii[0].extmetadata.LicenseShortName.value)||'Wikimedia Commons';
+            _loadBiImg(ii[0].thumburl,lic);
+            return true;
+          }
+          return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);
+        });
     })
-    .catch(function(){return false;});
+    .catch(function(){return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);});
 }
 
 function _loadBiImg(src,creditText){
