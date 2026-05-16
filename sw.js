@@ -1,15 +1,17 @@
 /* ============================================================
    sw.js — Aquatic Rhythm Service Worker
    Cache strategy:
-     Shell (index, css, js) → cache-first + background update
-     Articles              → stale-while-revalidate
+     Shell (index, css, js) → network-first, cache fallback (offline)
+     Articles              → network-first, cache fallback (offline)
      Google Fonts          → cache-first
      Analytics             → network-only (pass through)
      SPA sub-pages         → network-first, fallback to /
+   Network-first on HTML/CSS/JS keeps the live site aligned with the
+   deployed repo; cache is only used when the network request fails.
    ============================================================ */
 
-var SHELL_CACHE   = 'ar-shell-v1';
-var ARTICLE_CACHE = 'ar-articles-v1';
+var SHELL_CACHE   = 'ar-shell-v2';
+var ARTICLE_CACHE = 'ar-articles-v2';
 
 var SHELL_URLS = [
   '/',
@@ -90,36 +92,39 @@ self.addEventListener('fetch', function (event) {
     return;
   }
 
-  /* App shell — cache-first with background update */
-  if (SHELL_URLS.indexOf(url.pathname) !== -1 || url.pathname === '/') {
+  /* App shell — network-first so deploys match the repo immediately */
+  if (SHELL_URLS.indexOf(url.pathname) !== -1) {
     event.respondWith(
       caches.open(SHELL_CACHE).then(function (cache) {
-        return cache.match(event.request).then(function (cached) {
-          var networkFetch = fetch(event.request).then(function (response) {
+        return fetch(event.request)
+          .then(function (response) {
             if (response.ok) cache.put(event.request, response.clone());
             return response;
-          }).catch(function () { return cached || caches.match('/offline.html'); });
-          return cached || networkFetch;
-        });
+          })
+          .catch(function () {
+            return cache.match(event.request).then(function (cached) {
+              return cached || caches.match('/offline.html');
+            });
+          });
       })
     );
     return;
   }
 
-  /* Article pages — stale-while-revalidate */
+  /* Article pages — network-first (same freshness guarantee as shell) */
   if (url.pathname.indexOf('/articles/') === 0) {
     event.respondWith(
       caches.open(ARTICLE_CACHE).then(function (cache) {
-        return cache.match(event.request).then(function (cached) {
-          var networkFetch = fetch(event.request).then(function (response) {
+        return fetch(event.request)
+          .then(function (response) {
             if (response.ok) cache.put(event.request, response.clone());
             return response;
-          }).catch(function () {
-            return cached || caches.match('/offline.html');
+          })
+          .catch(function () {
+            return cache.match(event.request).then(function (cached) {
+              return cached || caches.match('/offline.html');
+            });
           });
-          /* Return cached immediately, update in background */
-          return cached ? (networkFetch.catch(function () {}), cached) : networkFetch;
-        });
       })
     );
     return;
