@@ -61,24 +61,25 @@ html,body{height:100%;overflow:hidden;font-family:var(--sans);background:var(--a
 #app{display:grid;grid-template-rows:auto 1fr auto;height:100dvh;max-width:900px;margin:0 auto;padding:0 clamp(.5rem,2vw,1.2rem)}
 
 /* ── TOPBAR ── */
-#topbar{display:flex;align-items:center;justify-content:space-between;padding:.48rem 0 .4rem;border-bottom:1px solid rgba(61,214,232,.18);gap:.5rem;flex-shrink:0}
+#topbar{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0 .48rem;border-bottom:1px solid rgba(61,214,232,.18);gap:.55rem;flex-shrink:0}
 .tb-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity .3s}
 .tb-logo:hover{opacity:.75}
-.tb-center{display:flex;align-items:center;gap:.45rem;flex:1;justify-content:center;min-width:0;overflow:hidden}
-.t-icon{font-size:.9rem;line-height:1;flex-shrink:0}
-.t-label{font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(235,240,236,.40);flex-shrink:0}
-.t-prog{width:44px;height:2px;background:rgba(235,240,236,.08);border-radius:1px;overflow:hidden;flex-shrink:0}
+.tb-logo svg{display:block;width:132px;height:auto}
+.tb-center{display:flex;align-items:center;gap:.5rem;flex:1;justify-content:center;min-width:0;overflow:hidden}
+.t-icon{font-size:1.05rem;line-height:1;flex-shrink:0}
+.t-label{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(235,240,236,.40);flex-shrink:0}
+.t-prog{width:52px;height:3px;background:rgba(235,240,236,.08);border-radius:1px;overflow:hidden;flex-shrink:0}
 .t-prog-fill{height:100%;border-radius:1px;transition:width .3s ease,background .5s}
 .t-day{
-  font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(61,214,232,.78);border:1px solid rgba(61,214,232,.32);
-  padding:.22rem .6rem;border-radius:100px;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(61,214,232,.82);border:1px solid rgba(61,214,232,.35);
+  padding:.28rem .72rem;border-radius:100px;
   white-space:nowrap;flex-shrink:0;
-  min-width:52px;text-align:center;
+  min-width:58px;text-align:center;font-weight:500;
 }
-.t-status{font-family:var(--serif);font-style:italic;font-size:.75rem;color:rgba(235,240,236,.36);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
-.tb-right{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
-.btn-sm{font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;background:rgba(235,240,236,.06);border:1px solid rgba(235,240,236,.14);border-radius:100px;padding:.26rem .65rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(235,240,236,.56)}
+.t-status{font-family:var(--serif);font-style:italic;font-size:.78rem;color:rgba(235,240,236,.36);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
+.tb-right{display:flex;align-items:center;gap:.4rem;flex-shrink:0}
+.btn-sm{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(235,240,236,.06);border:1px solid rgba(235,240,236,.14);border-radius:100px;padding:.32rem .72rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(235,240,236,.56)}
 .btn-sm:hover{color:rgba(235,240,236,.70);border-color:rgba(235,240,236,.30)}
 .btn-pp{color:rgba(235,240,236,.50)}
 .btn-pp:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
@@ -189,8 +190,8 @@ html,body{height:100%;overflow:hidden;font-family:var(--sans);background:var(--a
   background:var(--panel);box-shadow:var(--panel-shadow),var(--panel-inset);
 }
 .oi{font-size:2.2rem;display:block;margin-bottom:.65rem}
-.ot{font-family:var(--serif);font-weight:300;font-size:1.7rem;color:rgba(235,240,236,.92);margin-bottom:.5rem;line-height:1.2}
-.om{font-family:var(--serif);font-style:italic;font-size:.92rem;color:rgba(235,240,236,.48);line-height:1.78;margin-bottom:1.4rem}
+.ot{font-family:var(--serif);font-weight:300;font-size:clamp(1.55rem,5vw,1.85rem);color:rgba(235,240,236,.92);margin-bottom:.5rem;line-height:1.2}
+.om{font-family:var(--sans);font-style:normal;font-size:.95rem;color:rgba(235,240,236,.55);line-height:1.65;margin-bottom:1.4rem}
 .obtn{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.72rem 1.35rem;border-radius:10px;cursor:pointer;transition:background .2s,transform .2s,border-color .2s;margin:.22rem;display:inline-block;text-decoration:none;font-family:var(--sans)}
 .op{background:rgba(61,214,232,.94);color:#fff;border:1px solid rgba(61,214,232,.54)}
 .op:hover{background:rgba(90,142,130,.92);transform:translateY(-1px)}
@@ -247,25 +248,26 @@ html,body{height:100%;overflow:hidden;font-family:var(--sans);background:var(--a
     height:100dvh;padding:0;gap:0;
   }
 
-  /* Topbar */
-  #topbar{flex-shrink:0;padding:.38rem .6rem;gap:.3rem}
+  /* Topbar — larger tap targets & legibility */
+  #topbar{flex-shrink:0;padding:.52rem .65rem .48rem;gap:.4rem}
+  .tb-logo svg{width:148px;height:auto;max-width:46vw}
   .t-label,.t-status,.t-prog{display:none}
   .ah{display:none}
-  .tb-center{gap:.3rem;justify-content:flex-start;flex:0 0 auto}
-  .t-icon{font-size:.82rem}
+  .tb-center{gap:.38rem;justify-content:flex-start;flex:0 0 auto}
+  .t-icon{font-size:1.12rem}
   .t-day{
-    font-size:.62rem !important;
-    letter-spacing:.08em;
-    padding:.2rem .55rem;
-    color:rgba(61,214,232,.9) !important;
-    border-color:rgba(61,214,232,.48) !important;
-    min-width:52px;flex-shrink:0;
+    font-size:.78rem !important;
+    letter-spacing:.06em;
+    padding:.32rem .75rem !important;
+    color:rgba(61,214,232,.95) !important;
+    border-color:rgba(61,214,232,.5) !important;
+    min-width:60px;flex-shrink:0;
   }
   .btn-art{display:none}
-  .tb-right{gap:.3rem;flex:1;justify-content:flex-end}
-  .btn-sm{padding:.22rem .45rem;font-size:.58rem}
-  .btn-skip-inline{font-size:.58rem;padding:.22rem .45rem}
-  .t-day{font-size:.72rem !important;padding:.22rem .6rem}
+  .tb-right{gap:.38rem;flex:1;justify-content:flex-end;flex-wrap:nowrap}
+  .btn-sm{padding:.34rem .62rem !important;font-size:.64rem !important;min-height:2.35rem}
+  .btn-skip-inline{font-size:.64rem !important;padding:.34rem .58rem !important;min-height:2.35rem}
+  .btn-pp{font-size:.64rem !important;padding:.34rem .72rem !important;min-height:2.35rem;font-weight:500}
 
   /* Middle — flex column, takes remaining space */
   #middle{
@@ -358,6 +360,16 @@ html,body{height:100%;overflow:hidden;font-family:var(--sans);background:var(--a
   }
   .ai{font-size:1.15rem}
   .an{font-size:.58rem;letter-spacing:.05em}
+
+  /* End overlay — comfortable reading on phone */
+  #ov-end .rpt-heading{font-size:.72rem}
+  #ov-end .rpt-lbl{font-size:.88rem;max-width:44%}
+  #ov-end .rpt-val{font-size:1.06rem}
+  #ov-end .rpt-note{font-size:.88rem}
+  #ov-end .rpt-coach-lead{font-size:1.08rem}
+  #ov-end .rpt-coach-body{font-size:.93rem}
+  #ov-end .goal-card-h{font-size:.64rem}
+  #day-prog-wrap{height:3px}
 }
 
 /* DAY PROGRESS BAR */
@@ -516,9 +528,21 @@ details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba
   margin-top:.35rem;padding:.72rem .85rem;background:rgba(61,214,232,.06);border:1px solid rgba(61,214,232,.18);border-radius:12px;
 }
 .goal-card-h{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.68);margin-bottom:.35rem}
-.goal-card p{font-family:var(--sans);font-size:.78rem;font-weight:300;color:rgba(235,240,236,.72);line-height:1.58;margin:0}
-.goal-card p + p{margin-top:.45rem;font-size:.74rem;color:rgba(235,240,236,.48)}
-.rpt-wrap{background:var(--panel-2);border:1px solid rgba(61,214,232,.14);border-radius:12px;padding:.75rem .9rem;margin-bottom:.85rem}
+.goal-card p{font-family:var(--sans);font-size:.84rem;font-weight:400;color:rgba(235,240,236,.74);line-height:1.62;margin:0}
+.goal-card p + p{margin-top:.5rem;font-size:.8rem;color:rgba(235,240,236,.52)}
+.rpt-wrap{background:var(--panel-2);border:1px solid rgba(61,214,232,.14);border-radius:12px;padding:.95rem 1.05rem;margin-bottom:.85rem}
+.rpt-heading{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.65);margin-bottom:.6rem}
+#rpt-rows{display:flex;flex-direction:column;gap:0}
+.rpt-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:.48rem 0;border-bottom:1px solid rgba(235,240,236,.08)}
+.rpt-row:last-child{border-bottom:none}
+.rpt-lbl{font-size:.78rem;font-weight:500;letter-spacing:.03em;color:rgba(235,240,236,.58);flex-shrink:0;padding-top:.08rem;max-width:46%;line-height:1.35}
+.rpt-valwrap{text-align:right;flex:1;min-width:0}
+.rpt-val{font-size:.92rem;font-weight:500;color:rgba(235,240,236,.94);line-height:1.35}
+.rpt-val--warn{color:rgba(240,170,90,.98)}
+.rpt-note{display:block;font-size:.8rem;font-weight:400;color:rgba(235,240,236,.55);margin-top:.3rem;line-height:1.48}
+.rpt-wrap details.ar-disclosure > summary{font-size:.68rem;padding:.55rem .65rem}
+.rpt-coach-lead{display:block;font-size:1.02rem;font-weight:500;font-style:normal;color:rgba(61,214,232,.82);line-height:1.48;margin-bottom:.6rem}
+.rpt-coach-body{font-size:.88rem;color:rgba(235,240,236,.62);line-height:1.65}
 .rpt-actions{display:flex;flex-direction:column;gap:.4rem;align-items:stretch}
 @media(min-width:480px){
   .rpt-actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
@@ -694,7 +718,6 @@ details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba
 
     <div style="display:flex;gap:.6rem;flex-direction:column;margin-top:1.1rem">
       <button class="obtn op" id="btn-brief-go" style="width:100%">Start the simulation →</button>
-      <button id="btn-brief-skip" style="background:none;border:none;color:rgba(235,240,236,.34);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:.4rem;font-family:var(--sans)">Skip — I know this already</button>
     </div>
   </div>
 </div>
@@ -710,25 +733,25 @@ details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba
 
     <!-- Report + optional narrative -->
     <div id="ov-report" class="rpt-wrap">
-      <div style="font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.58);margin-bottom:.65rem">Simulation report</div>
-      <div id="rpt-rows" style="display:flex;flex-direction:column;gap:.4rem"></div>
+      <div class="rpt-heading">Simulation report</div>
+      <div id="rpt-rows"></div>
       <details class="ar-disclosure" style="margin-top:.75rem;margin-bottom:0;border-color:rgba(139,189,210,.12)">
         <summary>Reflection &amp; coaching</summary>
         <div class="ar-disclosure-body" style="padding-bottom:.5rem">
-          <div id="rpt-verdict" style="font-family:var(--sans);font-style:normal;font-size:.8rem;color:rgba(235,240,236,.62);line-height:1.62"></div>
+          <div id="rpt-verdict"></div>
         </div>
       </details>
     </div>
 
     <div class="goal-card" style="margin-bottom:1rem;border-color:rgba(61,214,232,.2);background:rgba(61,214,232,.05)">
       <div class="goal-card-h">Next best action</div>
-      <p style="font-size:.78rem;line-height:1.58;color:rgba(235,240,236,.68);margin:0">Take the stable settings from this simulation, then use the same setup on your real tank for 7 days (feeding, water changes, and a consistent lighting schedule).</p>
+      <p>Take the stable settings from this simulation, then use the same setup on your real tank for 7 days (feeding, water changes, and a consistent lighting schedule).</p>
     </div>
 
     <div class="rpt-actions">
       <button class="obtn op" id="btn-restart" style="width:100%;margin:0">Try again</button>
       <a href="/articles/new-tank-syndrome" class="obtn os" style="width:100%;margin:0;text-align:center;box-sizing:border-box" data-analytics-event="cta_simulator_next_action" data-cta="simulator_to_new_tank">Apply this to real tank →</a>
-      <a href="/reading" class="obtn os" style="width:100%;margin:0;text-align:center;box-sizing:border-box">Back to Reading</a>
+      <a href="/tools" class="obtn os" style="width:100%;margin:0;text-align:center;box-sizing:border-box">Back to tools</a>
     </div>
   </div>
 </div>
@@ -737,7 +760,7 @@ details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba
 <div id="app">
   <div id="topbar">
     <a href="/" class="tb-logo" aria-label="Aquatic Rhythm">
-      <svg width="115" height="22" viewBox="0 0 175 30" fill="none" aria-hidden="true">
+      <svg viewBox="0 0 175 30" fill="none" aria-hidden="true">
         <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
         <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
         <line x1="19.8" y1="23" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
@@ -2044,12 +2067,10 @@ function buildReport(type){
 
   function row(label,value,note,warn){
     var d=document.createElement('div');
-    d.style.cssText='display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;padding:.3rem 0;border-bottom:1px solid rgba(235,240,236,.06)';
-    var col=warn?'rgba(220,140,60,.9)':'rgba(235,240,236,.84)';
-    d.innerHTML='<span style="font-size:.56rem;color:rgba(235,240,236,.44);flex-shrink:0;padding-top:.1rem">'+label+'</span>'
-      +'<div style="text-align:right;max-width:220px"><span style="font-size:.6rem;color:'+col+'">'+value+'</span>'
-      +(note?'<span style="display:block;font-size:.48rem;color:rgba(235,240,236,.36);margin-top:.15rem;line-height:1.4">'+note+'</span>':'')
-      +'</div>';
+    d.className='rpt-row'+(warn?' rpt-row--warn':'');
+    var valClass='rpt-val'+(warn?' rpt-val--warn':'');
+    var noteHtml=note?'<span class="rpt-note">'+note+'</span>':'';
+    d.innerHTML='<span class="rpt-lbl">'+label+'</span><div class="rpt-valwrap"><span class="'+valClass+'">'+value+'</span>'+noteHtml+'</div>';
     rows.appendChild(d);
   }
 
@@ -2103,7 +2124,7 @@ function buildReport(type){
   else advice=type==='won'?'Everything was managed thoughtfully. Stable temperature, filter running, measured water changes. This is what good cycling looks like.':'Keep the filter running, maintain 25-27\u00b0C, and resist large water changes during the early weeks. Those three things account for most cycling problems.';
 
   if(verdict){
-    verdict.innerHTML='<em style="display:block;font-size:.9rem;color:rgba(61,214,232,.74);margin-bottom:.65rem;font-style:normal;line-height:1.5">'+opening+'</em><span style="font-size:.82rem;color:rgba(235,240,236,.58);line-height:1.65">'+advice+'</span>';
+    verdict.innerHTML='<em class="rpt-coach-lead">'+opening+'</em><span class="rpt-coach-body">'+advice+'</span>';
   }
 }
 
@@ -2224,11 +2245,6 @@ document.getElementById('btn-begin').addEventListener('click',function(){
 });
 
 document.getElementById('btn-brief-go').addEventListener('click',function(){
-  document.getElementById('ov-brief').classList.add('hide');
-  beginGame();
-});
-
-document.getElementById('btn-brief-skip').addEventListener('click',function(){
   document.getElementById('ov-brief').classList.add('hide');
   beginGame();
 });
