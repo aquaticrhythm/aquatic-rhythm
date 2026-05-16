@@ -526,7 +526,38 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .tool-card-desc{font-size:.88rem;color:rgba(235,240,236,.58);line-height:1.82}
 .tool-card-cta{position:relative;z-index:1;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.75)}
 
-/* ── MY TANK PAGE ── */
+/* ── JOURNAL PAGE ── */
+.jn-phase-name{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:rgba(61,214,232,.9);margin-bottom:.55rem;line-height:1.2}
+.jn-phase-next{font-size:.78rem;color:rgba(235,240,236,.38);line-height:1.7;margin-top:.55rem;font-style:italic}
+.jn-phase-src{font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);display:block;margin-top:.55rem}
+
+.jn-rhythm-card{margin-bottom:1.1rem}
+.jn-rhythm-weeks{font-size:.52rem;color:rgba(255,255,255,.2);letter-spacing:.1em}
+.jn-rhythm-dots{display:flex;gap:.55rem;flex-direction:row-reverse}
+.jn-rhythm-dot{width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.1);flex-shrink:0;transition:background .3s}
+.jn-rhythm-dot.active{background:rgba(61,214,232,.65)}
+.jn-rhythm-hint{font-size:.62rem;color:rgba(255,255,255,.22);margin-top:.7rem;font-style:italic}
+
+.jn-entry-list{list-style:none;margin:0;padding:0}
+.jn-entry-item{padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.jn-entry-item:last-child{border-bottom:none}
+.jn-entry-meta{display:flex;align-items:center;gap:.6rem;margin-bottom:.45rem}
+.jn-entry-date{font-size:.6rem;color:rgba(255,255,255,.28)}
+.jn-entry-state{font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(61,214,232,.55);background:rgba(61,214,232,.07);border-radius:4px;padding:.2rem .45rem}
+.jn-entry-obs{font-size:.88rem;color:rgba(235,240,236,.72);line-height:1.65;margin:0 0 .4rem}
+.jn-entry-care{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.jn-entry-empty{font-size:.82rem;color:rgba(255,255,255,.22);padding:.5rem 0}
+
+.jn-form-section{margin-bottom:1.3rem}
+.jn-form-question{font-size:.88rem;color:rgba(235,240,236,.65);margin:0 0 .7rem;line-height:1.5;display:block}
+.jn-state-chips,.jn-care-chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.jn-state-chip,.jn-care-chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;color:rgba(235,240,236,.5);font-size:.74rem;padding:.42rem .9rem;cursor:pointer;font-family:var(--sans);transition:all .2s;-webkit-tap-highlight-color:transparent}
+.jn-state-chip:hover,.jn-care-chip:hover{border-color:rgba(61,214,232,.3);color:rgba(235,240,236,.8)}
+.jn-state-chip.active,.jn-care-chip.active{background:rgba(61,214,232,.12);border-color:rgba(61,214,232,.45);color:rgba(61,214,232,.92)}
+.jn-params-toggle-row{margin-bottom:.75rem}
+.jn-params-note{font-size:.72rem;color:rgba(255,255,255,.28);margin-bottom:.9rem;font-style:italic}
+
+/* ── MY TANK / JOURNAL PAGE ── */
 .mt-header{padding:8rem clamp(1.5rem,5vw,4.5rem) 2.5rem}
 .mt-empty{text-align:center;padding:3.5rem 1rem}
 .mt-empty-icon{margin-bottom:1.6rem;display:flex;justify-content:center}

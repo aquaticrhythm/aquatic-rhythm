@@ -78,8 +78,8 @@
     '/reading/':   'reading',
     '/tools':      'tools',
     '/tools/':     'tools',
-    '/mytank':     'mytank',
-    '/mytank/':    'mytank'
+    '/journal':    'journal',
+    '/journal/':   'journal'
   };
 
   var titleMap = {
@@ -91,7 +91,7 @@
     'terms':     'Terms of Use — Aquatic Rhythm',
     'reading':   'Reading — Aquarium Ecology Guides',
     'tools':     'Labs & Tools — Aquatic Rhythm',
-    'mytank':    'My Tank — Aquatic Rhythm'
+    'journal':   'Journal — Aquatic Rhythm'
   };
 
   var descMap = {
@@ -103,7 +103,7 @@
     'terms':     'Terms of Use for Aquatic Rhythm and Rhyssa. Written plainly, without unnecessary complexity.',
     'reading':   'Short aquarium ecology guides — modular, mobile-friendly, grounded in ARA.',
     'tools':     'Interactive aquarium simulators and planners. Try decisions on screen before you make them in the tank.',
-    'mytank':    'Track your aquarium water parameters, log maintenance, and assess your ARA phase — stored privately on your device.'
+    'journal':   'A keeper journal for your aquarium. Observe, reflect, and track your ARA rhythm — stored privately on your device.'
   };
 
   function updateMeta(id) {
@@ -319,27 +319,22 @@
     document.addEventListener('click', trackIntentClick);
   })();
 
-  /* ── MY TANK ── */
+  /* ── JOURNAL ── */
   (function () {
-    var MT_KEY = 'ar_mytank';
+    var JN_KEY = 'ar_journal';
 
     function loadData() {
-      try { return JSON.parse(localStorage.getItem(MT_KEY)) || {}; } catch (e) { return {}; }
+      try { return JSON.parse(localStorage.getItem(JN_KEY)) || {}; } catch (e) { return {}; }
     }
     function saveData(d) {
-      try { localStorage.setItem(MT_KEY, JSON.stringify(d)); } catch (e) {}
+      try { localStorage.setItem(JN_KEY, JSON.stringify(d)); } catch (e) {}
     }
 
-    function fmt(v, decimals) {
-      if (v === null || v === undefined || v === '') return '—';
-      return parseFloat(v).toFixed(decimals !== undefined ? decimals : 1);
-    }
-
-    function assessPhase(entry) {
-      if (!entry) return null;
-      var nh3 = parseFloat(entry.ammonia);
-      var no2 = parseFloat(entry.nitrite);
-      var no3 = parseFloat(entry.nitrate);
+    function assessPhaseFromParams(params) {
+      if (!params) return null;
+      var nh3 = parseFloat(params.nh3);
+      var no2 = parseFloat(params.no2);
+      var no3 = parseFloat(params.no3);
       if (isNaN(nh3) && isNaN(no2)) return null;
       nh3 = isNaN(nh3) ? 0 : nh3;
       no2 = isNaN(no2) ? 0 : no2;
@@ -351,11 +346,43 @@
       return 'sustain';
     }
 
+    function assessPhaseFromState(keeperState, setupDate) {
+      var ageWeeks = 999;
+      if (setupDate) {
+        var days = Math.floor((new Date() - new Date(setupDate)) / 86400000);
+        ageWeeks = days / 7;
+      }
+      if (keeperState === 'just-starting' || ageWeeks < 4) return 'establish';
+      if (keeperState === 'catching-up') return 'stabilise';
+      if (keeperState === 'consistent' && ageWeeks > 8) return 'sustain';
+      return 'optimise';
+    }
+
     var phaseInfo = {
-      establish:  { label: 'Phase 1 — Establishing', desc: 'Your tank is still cycling. Ammonia or nitrite are elevated — give the biology time to establish. Avoid adding fish.', color: 'rgba(220,140,60,.9)' },
-      stabilise:  { label: 'Phase 2 — Stabilising',  desc: 'Cycle is completing. Parameters are dropping toward zero — maintain routine and avoid big changes.', color: 'rgba(200,190,60,.9)' },
-      optimise:   { label: 'Phase 3 — Optimising',   desc: 'Tank is stable. Focus on rhythm: consistent maintenance, observing behaviour, refining conditions.', color: 'rgba(61,214,232,.9)' },
-      sustain:    { label: 'Phase 4 — Sustaining',   desc: 'Ecosystem is mature. Your rhythm is aligned. Maintain, observe, and resist unnecessary interventions.', color: 'rgba(100,200,82,.9)' }
+      establish: {
+        label: 'Establishing',
+        note: 'Tank is building its foundation. Biology is still finding rhythm — give it time, avoid big changes.',
+        next: 'Watch for: ammonia and nitrite dropping toward zero over the coming weeks.',
+        color: 'rgba(220,140,60,.9)'
+      },
+      stabilise: {
+        label: 'Stabilising',
+        note: 'The cycle is completing. Parameters are moving in the right direction — maintain routine.',
+        next: 'Watch for: consistent zero readings and clearer water.',
+        color: 'rgba(200,190,60,.9)'
+      },
+      optimise: {
+        label: 'Optimising',
+        note: 'Tank is stable. Focus on rhythm: consistent care, observing behaviour, small refinements.',
+        next: 'Watch for: how your care rhythm affects livestock behaviour and plant growth.',
+        color: 'rgba(61,214,232,.9)'
+      },
+      sustain: {
+        label: 'Sustaining',
+        note: 'Ecosystem is mature. Your rhythm is aligned. Maintain, observe, resist unnecessary interventions.',
+        next: 'Watch for: the quiet signs — how your tank feels, not just what it reads.',
+        color: 'rgba(100,200,82,.9)'
+      }
     };
 
     function tankAge(dateStr) {
@@ -372,7 +399,8 @@
       return Math.floor(months / 12) + ' years old';
     }
 
-    var maintLabels = { water_change: 'Water change', filter: 'Filter', feeding: 'Feeding', treatment: 'Treatment', observation: 'Observation', other: 'Other' };
+    var keeperStateLabels = { 'consistent': 'Consistent', 'catching-up': 'Catching up', 'occasional': 'Occasional', 'just-starting': 'Just starting' };
+    var careLabels = { 'water_change': 'Water change', 'filter': 'Filter', 'feeding': 'Feeding', 'top_up': 'Topping up', 'treatment': 'Treatment', 'trimming': 'Trimming', 'nothing': 'Just observed' };
 
     /* ── Tank size data ── */
     var PRESETS = [
@@ -526,78 +554,93 @@
       updatePreview(null);
     }
 
+    function rhythmWeeks(entries) {
+      var now = new Date();
+      var result = [false, false, false, false];
+      (entries || []).forEach(function (e) {
+        if (!e.date) return;
+        var days = Math.floor((now - new Date(e.date)) / 86400000);
+        var week = Math.floor(days / 7);
+        if (week >= 0 && week < 4) result[week] = true;
+      });
+      return result;
+    }
+
     function renderDashboard() {
       var d = loadData();
       if (!d.profile) {
-        document.getElementById('mt-empty') && (document.getElementById('mt-empty').style.display = '');
-        document.getElementById('mt-dashboard') && (document.getElementById('mt-dashboard').style.display = 'none');
+        document.getElementById('jn-empty') && (document.getElementById('jn-empty').style.display = '');
+        document.getElementById('jn-dashboard') && (document.getElementById('jn-dashboard').style.display = 'none');
         return;
       }
-      document.getElementById('mt-empty') && (document.getElementById('mt-empty').style.display = 'none');
-      document.getElementById('mt-dashboard') && (document.getElementById('mt-dashboard').style.display = '');
+      document.getElementById('jn-empty') && (document.getElementById('jn-empty').style.display = 'none');
+      document.getElementById('jn-dashboard') && (document.getElementById('jn-dashboard').style.display = '');
 
       var p = d.profile;
-      var nameEl = document.getElementById('mt-tank-name');
-      var infoEl = document.getElementById('mt-tank-info');
+      var nameEl = document.getElementById('jn-tank-name');
+      var infoEl = document.getElementById('jn-tank-info');
       if (nameEl) nameEl.textContent = p.name || 'My Tank';
       if (infoEl) infoEl.textContent = [(p.volume ? p.volume + ' ' + (p.unit || 'L') : ''), p.type, tankAge(p.setupDate)].filter(Boolean).join(' · ');
 
-      var log = d.waterLog || [];
-      var latest = log.length ? log[log.length - 1] : null;
-      var paramsCard = document.getElementById('mt-params-card');
-      var noReadings = document.getElementById('mt-no-readings');
-      if (paramsCard && noReadings) {
-        paramsCard.style.display = latest ? '' : 'none';
-        noReadings.style.display = latest ? 'none' : '';
-      }
-      if (latest) {
-        var setVal = function (id, val, dec) { var el = document.getElementById(id); if (el) el.textContent = fmt(val, dec); };
-        setVal('mt-val-ph', latest.ph, 1);
-        setVal('mt-val-nh3', latest.ammonia, 2);
-        setVal('mt-val-no2', latest.nitrite, 2);
-        setVal('mt-val-no3', latest.nitrate, 0);
-        setVal('mt-val-temp', latest.temp, 1);
-        var dateEl = document.getElementById('mt-params-date');
-        if (dateEl) dateEl.textContent = latest.date || '';
-      }
+      var entries = d.entries || [];
+      var latest = entries.length ? entries[entries.length - 1] : null;
 
-      var phase = assessPhase(latest);
-      var phaseCard = document.getElementById('mt-phase-card');
-      var phaseBadge = document.getElementById('mt-phase-badge');
-      var phaseDesc = document.getElementById('mt-phase-desc');
-      if (phaseCard && phaseBadge && phaseDesc) {
+      var phase = null, fromParams = false;
+      if (latest && latest.params) {
+        phase = assessPhaseFromParams(latest.params);
+        if (phase) fromParams = true;
+      }
+      if (!phase && latest) phase = assessPhaseFromState(latest.keeperState, p.setupDate);
+
+      var phaseNameEl = document.getElementById('jn-phase-name');
+      var phaseNoteEl = document.getElementById('jn-phase-note');
+      var phaseNextEl = document.getElementById('jn-phase-next');
+      var phaseSrcEl  = document.getElementById('jn-phase-src');
+      if (phaseNameEl) {
         if (phase && phaseInfo[phase]) {
           var info = phaseInfo[phase];
-          phaseBadge.textContent = info.label;
-          phaseBadge.style.color = info.color;
-          phaseDesc.textContent = info.desc;
+          phaseNameEl.textContent = info.label;
+          phaseNameEl.style.color = info.color;
+          if (phaseNoteEl) phaseNoteEl.textContent = info.note;
+          if (phaseNextEl) { phaseNextEl.textContent = info.next; phaseNextEl.style.display = ''; }
+          if (phaseSrcEl) { phaseSrcEl.textContent = fromParams ? 'Based on water parameters' : 'Estimated from keeper rhythm'; phaseSrcEl.style.display = ''; }
         } else {
-          phaseBadge.textContent = '—';
-          phaseBadge.style.color = '';
-          phaseDesc.textContent = 'Log a water reading to assess your tank\'s current phase.';
+          phaseNameEl.textContent = '—';
+          phaseNameEl.style.color = '';
+          if (phaseNoteEl) phaseNoteEl.textContent = 'Write your first entry to get an ARA phase reading.';
+          if (phaseNextEl) phaseNextEl.style.display = 'none';
+          if (phaseSrcEl) phaseSrcEl.style.display = 'none';
         }
       }
 
-      var maint = d.maintenanceLog || [];
-      var maintList = document.getElementById('mt-maint-list');
-      if (maintList) {
-        if (!maint.length) {
-          maintList.innerHTML = '<li class="mt-maint-empty">No entries yet.</li>';
-        } else {
-          var sorted = maint.slice().sort(function (a, b) { return b.date > a.date ? 1 : -1; });
-          maintList.innerHTML = sorted.slice(0, 8).map(function (m) {
-            return '<li class="mt-maint-item"><span class="mt-maint-type">' + (maintLabels[m.type] || m.type) + '</span><span class="mt-maint-note">' + (m.note || '') + '</span><span class="mt-maint-date">' + (m.date || '') + '</span></li>';
-          }).join('');
-        }
+      var weeks = rhythmWeeks(entries);
+      var rhythmEl = document.getElementById('jn-rhythm-dots');
+      if (rhythmEl) {
+        var weekLabels = ['This week', 'Last week', '2 weeks ago', '3 weeks ago'];
+        rhythmEl.innerHTML = weeks.map(function (has, i) {
+          return '<div class="jn-rhythm-dot' + (has ? ' active' : '') + '" title="' + weekLabels[i] + '"></div>';
+        }).join('');
       }
 
-      var histList = document.getElementById('mt-history-list');
-      var histWrap = document.getElementById('mt-history-wrap');
-      if (histWrap) histWrap.style.display = log.length > 1 ? '' : 'none';
-      if (histList && log.length) {
-        var rev = log.slice().reverse().slice(1, 8);
-        histList.innerHTML = rev.map(function (e) {
-          return '<li class="mt-history-item"><span class="mt-maint-date">' + (e.date || '') + '</span><span class="mt-history-params">pH ' + fmt(e.ph, 1) + ' · NH₃ ' + fmt(e.ammonia, 2) + ' · NO₂ ' + fmt(e.nitrite, 2) + ' · NO₃ ' + fmt(e.nitrate, 0) + (e.temp ? ' · ' + fmt(e.temp, 1) + '°C' : '') + '</span>' + (e.note ? '<span class="mt-history-note">' + e.note + '</span>' : '') + '</li>';
+      var noEntriesEl = document.getElementById('jn-no-entries');
+      var hasEntriesEl = document.getElementById('jn-has-entries');
+      if (noEntriesEl) noEntriesEl.style.display = entries.length ? 'none' : '';
+      if (hasEntriesEl) hasEntriesEl.style.display = entries.length ? '' : 'none';
+
+      var entryList = document.getElementById('jn-entry-list');
+      if (entryList && entries.length) {
+        var recent = entries.slice().reverse().slice(0, 3);
+        entryList.innerHTML = recent.map(function (e) {
+          var stateLabel = keeperStateLabels[e.keeperState] || '';
+          var careStr = (e.care || []).map(function (c) { return careLabels[c] || c; }).join(', ');
+          return '<li class="jn-entry-item">'
+            + '<div class="jn-entry-meta">'
+            + '<span class="jn-entry-date">' + (e.date || '') + '</span>'
+            + (stateLabel ? '<span class="jn-entry-state">' + stateLabel + '</span>' : '')
+            + '</div>'
+            + (e.observation ? '<p class="jn-entry-obs">' + e.observation + '</p>' : '')
+            + (careStr ? '<span class="jn-entry-care">' + careStr + '</span>' : '')
+            + '</li>';
         }).join('');
       }
     }
@@ -625,29 +668,36 @@
     }
 
     function closeAllModals() {
-      ['mt-modal-setup', 'mt-modal-log', 'mt-modal-maint'].forEach(closeModal);
+      ['mt-modal-setup', 'mt-modal-entry'].forEach(closeModal);
     }
 
     function todayStr() {
       return new Date().toISOString().slice(0, 10);
     }
 
+    function openEntryModal() {
+      document.querySelectorAll('.jn-state-chip,.jn-care-chip').forEach(function (c) { c.classList.remove('active'); });
+      var entryDate = document.getElementById('jn-entry-date');
+      if (entryDate) entryDate.value = todayStr();
+      var obsEl = document.getElementById('jn-entry-obs');
+      if (obsEl) obsEl.value = '';
+      var paramsSection = document.getElementById('jn-params-section');
+      if (paramsSection) paramsSection.style.display = 'none';
+      var paramsToggle = document.getElementById('jn-params-toggle');
+      if (paramsToggle) paramsToggle.textContent = '+ Add water parameters (optional)';
+      ['jn-param-ph','jn-param-nh3','jn-param-no2','jn-param-no3','jn-param-temp'].forEach(function (id) {
+        var el = document.getElementById(id); if (el) el.value = '';
+      });
+      openModal('mt-modal-entry');
+    }
+
     document.addEventListener('click', function (e) {
       var target = e.target;
-      if (target.id === 'mt-setup-open') { openModal('mt-modal-setup'); return; }
-      if (target.id === 'mt-log-open' || target.id === 'mt-log-open-2') {
-        var logDate = document.getElementById('mt-log-date');
-        if (logDate && !logDate.value) logDate.value = todayStr();
-        openModal('mt-modal-log');
-        return;
+      if (target.id === 'mt-setup-open' || target.id === 'jn-setup-open') { openModal('mt-modal-setup'); return; }
+      if (target.id === 'jn-entry-open' || target.id === 'jn-entry-open-2' || target.id === 'jn-entry-open-main') {
+        openEntryModal(); return;
       }
-      if (target.id === 'mt-maint-open') {
-        var maintDate = document.getElementById('mt-maint-date');
-        if (maintDate && !maintDate.value) maintDate.value = todayStr();
-        openModal('mt-modal-maint');
-        return;
-      }
-      if (target.id === 'mt-tank-edit') {
+      if (target.id === 'jn-tank-edit') {
         var d = loadData();
         var p = d.profile || {};
         resetSetupModal();
@@ -661,22 +711,30 @@
         openModal('mt-modal-setup');
         return;
       }
-      if (target.id === 'mt-history-toggle') {
-        var histList = document.getElementById('mt-history-list');
-        var showing = target.textContent.trim() === 'Hide';
-        target.textContent = showing ? 'Show' : 'Hide';
-        if (histList) histList.style.display = showing ? 'none' : '';
-        return;
-      }
-      if (target.id === 'mt-reset-tank') {
-        if (confirm('Delete all tank data? This cannot be undone.')) {
+      if (target.id === 'jn-reset-tank') {
+        if (confirm('Delete all journal data? This cannot be undone.')) {
           saveData({});
           renderDashboard();
         }
         return;
       }
-      if (target.id === 'mt-backdrop' || target.dataset.modalClose) {
-        closeAllModals();
+      if (target.id === 'mt-backdrop' || target.dataset.modalClose) { closeAllModals(); return; }
+
+      var stateChip = target.closest('.jn-state-chip');
+      if (stateChip) {
+        document.querySelectorAll('.jn-state-chip').forEach(function (c) { c.classList.remove('active'); });
+        stateChip.classList.add('active'); return;
+      }
+      var careChip = target.closest('.jn-care-chip');
+      if (careChip) { careChip.classList.toggle('active'); return; }
+
+      if (target.id === 'jn-params-toggle') {
+        var ps = document.getElementById('jn-params-section');
+        if (ps) {
+          var show = ps.style.display === 'none' || !ps.style.display;
+          ps.style.display = show ? '' : 'none';
+          target.textContent = show ? 'Hide parameters' : '+ Add water parameters (optional)';
+        }
         return;
       }
     });
@@ -702,43 +760,27 @@
       });
     }
 
-    var formLog = document.getElementById('mt-form-log');
-    if (formLog) {
-      formLog.addEventListener('submit', function (e) {
+    var formEntry = document.getElementById('jn-form-entry');
+    if (formEntry) {
+      formEntry.addEventListener('submit', function (e) {
         e.preventDefault();
         var d = loadData();
-        if (!d.waterLog) d.waterLog = [];
+        if (!d.entries) d.entries = [];
         var g = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
-        d.waterLog.push({
-          date:     g('mt-log-date') || todayStr(),
-          ph:       g('mt-log-ph'),
-          ammonia:  g('mt-log-nh3'),
-          nitrite:  g('mt-log-no2'),
-          nitrate:  g('mt-log-no3'),
-          temp:     g('mt-log-temp'),
-          note:     g('mt-log-note')
-        });
+        var activeState = document.querySelector('.jn-state-chip.active');
+        var care = Array.prototype.slice.call(document.querySelectorAll('.jn-care-chip.active')).map(function (c) { return c.dataset.care; });
+        var entry = {
+          date: g('jn-entry-date') || todayStr(),
+          keeperState: activeState ? activeState.dataset.state : '',
+          observation: g('jn-entry-obs'),
+          care: care
+        };
+        var ph = g('jn-param-ph'), nh3 = g('jn-param-nh3'), no2 = g('jn-param-no2'), no3 = g('jn-param-no3'), temp = g('jn-param-temp');
+        if (ph || nh3 || no2 || no3 || temp) {
+          entry.params = { ph: ph, nh3: nh3, no2: no2, no3: no3, temp: temp };
+        }
+        d.entries.push(entry);
         saveData(d);
-        document.getElementById('mt-form-log').reset();
-        closeAllModals();
-        renderDashboard();
-      });
-    }
-
-    var formMaint = document.getElementById('mt-form-maint');
-    if (formMaint) {
-      formMaint.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var d = loadData();
-        if (!d.maintenanceLog) d.maintenanceLog = [];
-        var g = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
-        d.maintenanceLog.push({
-          date: g('mt-maint-date') || todayStr(),
-          type: g('mt-maint-type') || 'other',
-          note: g('mt-maint-note')
-        });
-        saveData(d);
-        document.getElementById('mt-form-maint').reset();
         closeAllModals();
         renderDashboard();
       });
