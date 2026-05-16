@@ -67,7 +67,7 @@ nav:not(.bnav){position:fixed;z-index:800}
 .fish svg{display:block}
 
 /* ── TEXT PROTECTION ── */
-.ht,.pst,.bt,.hk,.api,.rhd,.apq,.snt,.sco,.stit,.starr,.stco,.home-ara-lead,.home-ara-card h3,.home-ara-card p,.home-strip q,.home-tile h3,.home-tile p,.home-hero-note,.home-ara-pr-list li,.home-ara-rf p,.home-ara-rf span,.home-tile-tag,.home-tile-cta,.rd-card-hit-text{text-shadow:0 1px 12px rgba(3,9,8,.9),0 0 32px rgba(3,9,8,.7)}
+.ht,.pst,.bt,.hk,.api,.rhd,.apq,.snt,.sco,.stit,.starr,.stco,.home-ara-lead,.home-ara-card h3,.home-ara-card p,.home-strip q,.home-tile h3,.home-tile p,.home-hero-note,.home-ara-pr-list li,.home-ara-rf p,.home-ara-rf span,.home-tile-tag,.home-tile-cta,.rd-card-hit-text,.home-keeper-lead,.home-keeper-body{text-shadow:0 1px 12px rgba(3,9,8,.9),0 0 32px rgba(3,9,8,.7)}
 .dxl,.dlg,.dmd,.rhtit{text-shadow:0 2px 16px rgba(3,9,8,.95),0 0 48px rgba(3,9,8,.8)}
 .pc,.snb,.eg,.scv,.rhr,.qi,.pb{background:rgba(6,14,11,.72)}
 
@@ -172,6 +172,11 @@ nav:not(.bnav){position:fixed;top:0;left:0;right:0;z-index:800;height:68px;displ
 .home-strip-inner{max-width:40rem;margin:0 auto;text-align:center}
 .home-strip q{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,3.2vw,1.45rem);font-weight:300;color:rgba(61,214,232,.78);line-height:1.45;margin-bottom:1rem}
 .home-strip cite{font-size:.68rem;font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.home-keeper{padding:clamp(2.75rem,8vw,4.5rem) clamp(1.5rem,5vw,4.5rem);border-bottom:1px solid rgba(139,189,210,.06)}
+.home-keeper-lead{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.8vw,1.24rem);font-weight:300;color:rgba(235,240,236,.72);line-height:1.78;margin-bottom:1.3rem}
+.home-keeper-body{font-size:.9rem;font-weight:300;color:rgba(235,240,236,.5);line-height:1.95;margin-bottom:.85rem}
+.home-keeper-body:last-child{margin-bottom:0}
+.home-keeper-body em{font-style:italic;color:rgba(124,168,156,.85)}
 .home-ara{padding:clamp(3.25rem,9vw,5.5rem) clamp(1.5rem,5vw,4.5rem)}
 .home-ara-head{max-width:36rem;margin-bottom:clamp(2rem,5vw,3rem)}
 .home-ara-head .pst{font-size:clamp(1.45rem,4vw,2.15rem);margin-top:.5rem}
