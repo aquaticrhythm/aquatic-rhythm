@@ -498,6 +498,11 @@
   /* ── JOURNAL ── */
   (function () {
     var JN_KEY = 'ar_journal';
+    var jnHistoryPage = 1;
+    var JN_PAGE_SIZE  = 10;
+    var STREAK_MILESTONES = [4, 8, 12, 26, 52];
+    var INH_CATS = { fish:'🐟', plant:'🌿', invertebrate:'🦐', coral:'🪸', other:'◈' };
+    var INH_CAT_LABELS = { fish:'Fish', plant:'Plant', invertebrate:'Invertebrate', coral:'Coral', other:'Other' };
 
     function loadData() {
       try { return JSON.parse(localStorage.getItem(JN_KEY)) || {}; } catch (e) { return {}; }
@@ -742,6 +747,250 @@
       return result;
     }
 
+    /* ── P1: Entry list with pagination ── */
+    function renderEntryList(entries, page) {
+      var entryList = document.getElementById('jn-entry-list');
+      if (!entryList) return;
+      if (!entries.length) { entryList.innerHTML = ''; return; }
+      var reversed = entries.slice().reverse();
+      var shown    = reversed.slice(0, page * JN_PAGE_SIZE);
+      var hasMore  = reversed.length > shown.length;
+      entryList.innerHTML = shown.map(function (e) {
+        var stateLabel = keeperStateLabels[e.keeperState] || '';
+        var careStr    = (e.care || []).map(function (c) { return careLabels[c] || c; }).join(', ');
+        var paramsStr  = '';
+        if (e.params) {
+          var parts = [];
+          if (e.params.ph)   parts.push('pH ' + e.params.ph);
+          if (e.params.nh3)  parts.push('NH₃ ' + e.params.nh3);
+          if (e.params.no2)  parts.push('NO₂ ' + e.params.no2);
+          if (e.params.no3)  parts.push('NO₃ ' + e.params.no3);
+          if (e.params.temp) parts.push(e.params.temp + '°C');
+          if (parts.length) paramsStr = parts.join(' · ');
+        }
+        return '<li class="jn-entry-item">'
+          + '<div class="jn-entry-meta">'
+          + '<span class="jn-entry-date">' + (e.date || '') + '</span>'
+          + (stateLabel ? '<span class="jn-entry-state">' + stateLabel + '</span>' : '')
+          + '</div>'
+          + (e.observation ? '<p class="jn-entry-obs">' + e.observation + '</p>' : '')
+          + (careStr ? '<span class="jn-entry-care">' + careStr + '</span>' : '')
+          + (paramsStr ? '<span class="jn-entry-params">' + paramsStr + '</span>' : '')
+          + '</li>';
+      }).join('');
+      var moreEl = document.getElementById('jn-load-more');
+      if (moreEl) moreEl.style.display = hasMore ? '' : 'none';
+    }
+
+    /* ── P2: Streak calculation + milestone toast ── */
+    function calcStreak(entries) {
+      if (!entries || !entries.length) return 0;
+      var now = new Date();
+      var weekSet = {};
+      entries.forEach(function (e) {
+        if (!e.date) return;
+        var days = Math.floor((now - new Date(e.date)) / 86400000);
+        if (days < 0) return;
+        weekSet[Math.floor(days / 7)] = true;
+      });
+      var w = weekSet[0] ? 0 : 1;
+      var streak = 0;
+      while (weekSet[w]) { streak++; w++; }
+      return streak;
+    }
+
+    function showJnToast(msg, type) {
+      var toastEl = document.getElementById('jn-milestone-toast');
+      if (!toastEl) return;
+      var msgEl = toastEl.querySelector('.jn-toast-msg');
+      if (msgEl) msgEl.textContent = msg || '';
+      toastEl.className = 'jn-milestone-toast' + (type ? ' jn-toast--' + type : '');
+      toastEl.classList.add('show');
+      clearTimeout(toastEl._timer);
+      toastEl._timer = setTimeout(function () { toastEl.classList.remove('show'); }, 5000);
+    }
+
+    function checkStreakMilestone(entries) {
+      var streak = calcStreak(entries);
+      if (STREAK_MILESTONES.indexOf(streak) === -1) return;
+      var key = 'ar_jn_milestone_' + streak;
+      if (localStorage.getItem(key)) return;
+      localStorage.setItem(key, '1');
+      var msgs = {
+        4:  'Four weeks in rhythm.',
+        8:  'Eight weeks — your tank knows you.',
+        12: 'Twelve weeks. That\'s real consistency.',
+        26: 'Half a year of keeping. Remarkable.',
+        52: 'One full year. Your rhythm is the tank\'s rhythm.'
+      };
+      showJnToast(msgs[streak] || streak + '-week streak.', 'streak');
+    }
+
+    /* ── P3: Parameter sparklines ── */
+    function buildSparkline(values, color, dangerMax) {
+      if (!values || values.length < 2) return '';
+      var W = 80, H = 28, pad = 2;
+      var min = Math.min.apply(null, values);
+      var max = Math.max.apply(null, values);
+      var range = max - min || 1;
+      var pts = values.map(function (v, i) {
+        var x = pad + (i / (values.length - 1)) * (W - pad * 2);
+        var y = H - pad - ((v - min) / range) * (H - pad * 2);
+        return x.toFixed(1) + ',' + y.toFixed(1);
+      }).join(' ');
+      var lastVal = values[values.length - 1];
+      var lastX   = (W - pad).toFixed(1);
+      var lastY   = (H - pad - ((lastVal - min) / range) * (H - pad * 2)).toFixed(1);
+      var dotColor = (dangerMax !== undefined && lastVal > dangerMax) ? 'rgba(200,80,80,.9)' : color;
+      return '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true">'
+        + '<polyline points="' + pts + '" fill="none" stroke="' + color + '" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" opacity=".6"/>'
+        + '<circle cx="' + lastX + '" cy="' + lastY + '" r="2.2" fill="' + dotColor + '"/>'
+        + '</svg>';
+    }
+
+    function renderParamCharts(entries) {
+      var chartCard = document.getElementById('jn-param-charts');
+      if (!chartCard) return;
+      var paramEntries = (entries || []).filter(function (e) { return e.params; });
+      if (paramEntries.length < 3) { chartCard.style.display = 'none'; return; }
+      chartCard.style.display = '';
+      var recent = paramEntries.slice(-12);
+      var params = [
+        { key:'ph',  label:'pH',        color:'rgba(61,214,232,.75)',  dangerMax:undefined },
+        { key:'nh3', label:'NH₃',  color:'rgba(200,140,60,.85)',  dangerMax:0.5 },
+        { key:'no2', label:'NO₂',  color:'rgba(200,190,60,.85)',  dangerMax:0.25 },
+        { key:'no3', label:'NO₃',  color:'rgba(100,200,82,.75)',  dangerMax:20 }
+      ];
+      var html = params.map(function (p) {
+        var vals = recent.map(function (e) { return parseFloat(e.params[p.key]); }).filter(function (v) { return !isNaN(v); });
+        if (vals.length < 2) return '';
+        var last  = vals[vals.length - 1];
+        var prev  = vals[vals.length - 2];
+        var trend = last > prev ? '↗' : last < prev ? '↘' : '→';
+        var dangerColor = (p.dangerMax !== undefined && last > p.dangerMax) ? 'rgba(200,80,80,.85)' : 'rgba(235,240,236,.55)';
+        return '<div class="jn-spark-row">'
+          + '<span class="jn-spark-label">' + p.label + '</span>'
+          + '<div class="jn-spark-chart">' + buildSparkline(vals, p.color, p.dangerMax) + '</div>'
+          + '<span class="jn-spark-last" style="color:' + dangerColor + '">' + last + '</span>'
+          + '<span class="jn-spark-trend">' + trend + '</span>'
+          + '</div>';
+      }).join('');
+      var bodyEl = document.getElementById('jn-param-charts-body');
+      if (bodyEl) bodyEl.innerHTML = html || '<p class="jn-entry-empty">Log parameters in more entries to see trends.</p>';
+    }
+
+    /* ── P4: Contextual entry prompt ── */
+    function buildContextPrompt(data) {
+      var lines = [];
+      var entries = (data.entries || []).slice().reverse();
+      var latest  = entries[0];
+      if (latest) {
+        var phase = assessPhaseFromParams(latest.params) ||
+                    assessPhaseFromState(latest.keeperState, (data.profile || {}).setupDate);
+        var phasePrompts = {
+          establish:  'Watch for cloudy water, unusual behaviour, or ammonia smell.',
+          stabilise:  'Are your parameters moving in the right direction this week?',
+          optimise:   'Notice any changes in plant growth, fish behaviour, or water clarity?',
+          sustain:    'Your ecosystem is mature — what quiet signs are you reading today?'
+        };
+        if (phase && phasePrompts[phase]) lines.push(phasePrompts[phase]);
+      }
+      for (var i = 0; i < entries.length; i++) {
+        if ((entries[i].care || []).indexOf('water_change') !== -1 && entries[i].date) {
+          var daysSince = Math.floor((new Date() - new Date(entries[i].date)) / 86400000);
+          if (daysSince >= 7) lines.push('Last water change: ' + daysSince + ' days ago.');
+          break;
+        }
+      }
+      return lines.join(' ');
+    }
+
+    /* ── P5: Data export ── */
+    function exportJournal() {
+      var d    = loadData();
+      var json = JSON.stringify(d, null, 2);
+      var blob = new Blob([json], { type: 'application/json' });
+      var url  = URL.createObjectURL(blob);
+      var a    = document.createElement('a');
+      var name = (d.profile && d.profile.name ? d.profile.name.replace(/[^a-z0-9]/gi, '-') : 'aquatic-rhythm');
+      a.href     = url;
+      a.download = name + '-journal-' + new Date().toISOString().slice(0, 10) + '.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    /* ── P6: Tank inhabitants ── */
+    function renderInhabitants(data) {
+      var card = document.getElementById('jn-inhabitants');
+      if (!card) return;
+      var inhs = (data.inhabitants || []).filter(function (i) { return i.status === 'active'; });
+      var bodyEl = document.getElementById('jn-inh-body');
+      if (!bodyEl) return;
+      if (!inhs.length) {
+        bodyEl.innerHTML = '<p class="jn-entry-empty">No residents recorded yet.</p>';
+        return;
+      }
+      var grouped = {};
+      inhs.forEach(function (i) {
+        var cat = i.category || 'other';
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(i);
+      });
+      var order = ['fish', 'plant', 'invertebrate', 'coral', 'other'];
+      bodyEl.innerHTML = order.filter(function (cat) { return grouped[cat]; }).map(function (cat) {
+        return grouped[cat].map(function (i) {
+          var icon     = INH_CATS[cat] || '◈';
+          var label    = i.commonName || i.species || INH_CAT_LABELS[cat] || cat;
+          var nameTag  = i.name ? ' <em class="jn-inh-alias">“' + i.name + '”</em>' : '';
+          var countTag = i.count > 1 ? '<span class="jn-inh-count">' + i.count + '×</span> ' : '';
+          return '<div class="jn-inh-row">'
+            + '<span class="jn-inh-icon">' + icon + '</span>'
+            + '<span class="jn-inh-info">' + countTag + label + nameTag + '</span>'
+            + '<div class="jn-inh-actions">'
+            + '<button class="jn-inh-status-btn" data-inh-id="' + i.id + '" data-action="rehomed">rehomed</button>'
+            + '<button class="jn-inh-status-btn" data-inh-id="' + i.id + '" data-action="passed">passed</button>'
+            + '</div>'
+            + '</div>';
+        }).join('');
+      }).join('');
+    }
+
+    function showInhabitantToast(inh, action) {
+      var displayName = inh.name || inh.commonName || inh.species || (INH_CAT_LABELS[inh.category] || 'Resident');
+      var count = inh.count > 1 ? inh.count + '× ' : '';
+      var msg, type;
+      if (action === 'added') {
+        msg  = 'Welcome to the tank, ' + count + displayName + '.';
+        type = 'welcome';
+      } else if (action === 'passed') {
+        msg  = count + displayName + ' has left the tank. We remember them.';
+        type = 'passed';
+      } else if (action === 'rehomed') {
+        msg  = count + displayName + ' has found a new home.';
+        type = 'rehomed';
+      } else { return; }
+      showJnToast(msg, type);
+    }
+
+    function updateInhabitantStatus(id, status, note) {
+      var d = loadData();
+      var inhs = d.inhabitants || [];
+      for (var i = 0; i < inhs.length; i++) {
+        if (inhs[i].id === id) {
+          var inh = inhs[i];
+          inh.status      = status;
+          inh.removedDate = todayStr();
+          inh.removedNote = note || '';
+          saveData(d);
+          renderDashboard();
+          showInhabitantToast(inh, status);
+          break;
+        }
+      }
+    }
+
     function renderDashboard() {
       var d = loadData();
       if (!d.profile) {
@@ -798,27 +1047,27 @@
         }).join('');
       }
 
+      var streak = calcStreak(entries);
+      var streakEl = document.getElementById('jn-streak-count');
+      if (streakEl) {
+        if (streak >= 1) {
+          streakEl.textContent = streak === 1 ? 'Week 1 — keep going' : streak + '-week streak';
+          streakEl.style.display = '';
+        } else {
+          streakEl.style.display = 'none';
+        }
+      }
+
+      renderParamCharts(entries);
+      renderInhabitants(d);
+
       var noEntriesEl = document.getElementById('jn-no-entries');
       var hasEntriesEl = document.getElementById('jn-has-entries');
       if (noEntriesEl) noEntriesEl.style.display = entries.length ? 'none' : '';
       if (hasEntriesEl) hasEntriesEl.style.display = entries.length ? '' : 'none';
 
-      var entryList = document.getElementById('jn-entry-list');
-      if (entryList && entries.length) {
-        var recent = entries.slice().reverse().slice(0, 3);
-        entryList.innerHTML = recent.map(function (e) {
-          var stateLabel = keeperStateLabels[e.keeperState] || '';
-          var careStr = (e.care || []).map(function (c) { return careLabels[c] || c; }).join(', ');
-          return '<li class="jn-entry-item">'
-            + '<div class="jn-entry-meta">'
-            + '<span class="jn-entry-date">' + (e.date || '') + '</span>'
-            + (stateLabel ? '<span class="jn-entry-state">' + stateLabel + '</span>' : '')
-            + '</div>'
-            + (e.observation ? '<p class="jn-entry-obs">' + e.observation + '</p>' : '')
-            + (careStr ? '<span class="jn-entry-care">' + careStr + '</span>' : '')
-            + '</li>';
-        }).join('');
-      }
+      jnHistoryPage = 1;
+      renderEntryList(entries, jnHistoryPage);
     }
 
     function openModal(id) {
@@ -844,7 +1093,7 @@
     }
 
     function closeAllModals() {
-      ['mt-modal-setup', 'mt-modal-entry'].forEach(closeModal);
+      ['mt-modal-setup', 'mt-modal-entry', 'mt-modal-inhabitant'].forEach(closeModal);
     }
 
     function todayStr() {
@@ -864,6 +1113,12 @@
       ['jn-param-ph','jn-param-nh3','jn-param-no2','jn-param-no3','jn-param-temp'].forEach(function (id) {
         var el = document.getElementById(id); if (el) el.value = '';
       });
+      var promptText = buildContextPrompt(loadData());
+      var promptEl = document.getElementById('jn-context-prompt');
+      if (promptEl) {
+        promptEl.textContent = promptText;
+        promptEl.style.display = promptText ? '' : 'none';
+      }
       openModal('mt-modal-entry');
     }
 
@@ -913,6 +1168,59 @@
         }
         return;
       }
+
+      if (target.id === 'jn-load-more') {
+        jnHistoryPage += 1;
+        renderEntryList((loadData().entries || []), jnHistoryPage);
+        return;
+      }
+
+      if (target.id === 'jn-toast-dismiss') {
+        var toastEl = document.getElementById('jn-milestone-toast');
+        if (toastEl) toastEl.classList.remove('show');
+        return;
+      }
+
+      if (target.id === 'jn-export') { exportJournal(); return; }
+
+      if (target.id === 'jn-inh-add') {
+        document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
+        var firstCat = document.querySelector('.jn-inh-cat-chip');
+        if (firstCat) firstCat.classList.add('active');
+        ['jn-inh-common', 'jn-inh-species', 'jn-inh-name'].forEach(function (id) {
+          var el = document.getElementById(id); if (el) el.value = '';
+        });
+        var cntEl = document.getElementById('jn-inh-count');
+        if (cntEl) cntEl.value = '1';
+        var inhDate = document.getElementById('jn-inh-date');
+        if (inhDate) inhDate.value = todayStr();
+        openModal('mt-modal-inhabitant');
+        return;
+      }
+
+      var catChip = target.closest('.jn-inh-cat-chip');
+      if (catChip && catChip.closest('#mt-modal-inhabitant')) {
+        document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
+        catChip.classList.add('active');
+        return;
+      }
+
+      var inhStatusBtn = target.closest('.jn-inh-status-btn');
+      if (inhStatusBtn) {
+        var inhId  = inhStatusBtn.dataset.inhId;
+        var action = inhStatusBtn.dataset.action;
+        var d2 = loadData();
+        var inhs2 = d2.inhabitants || [];
+        var inh2 = null;
+        for (var ii = 0; ii < inhs2.length; ii++) { if (inhs2[ii].id === inhId) { inh2 = inhs2[ii]; break; } }
+        if (!inh2) return;
+        var name2 = inh2.name || inh2.commonName || INH_CAT_LABELS[inh2.category] || 'this resident';
+        var confirmMsg = action === 'passed'
+          ? 'Mark ' + name2 + ' as passed away?'
+          : 'Mark ' + name2 + ' as rehomed?';
+        if (confirm(confirmMsg)) updateInhabitantStatus(inhId, action, '');
+        return;
+      }
     });
 
     var formSetup = document.getElementById('mt-form-setup');
@@ -959,6 +1267,35 @@
         saveData(d);
         closeAllModals();
         renderDashboard();
+        checkStreakMilestone(d.entries);
+      });
+    }
+
+    var formInhabitant = document.getElementById('jn-form-inhabitant');
+    if (formInhabitant) {
+      formInhabitant.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var d = loadData();
+        if (!d.inhabitants) d.inhabitants = [];
+        var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+        var activeCat = document.querySelector('.jn-inh-cat-chip.active');
+        var inh = {
+          id:         'inh_' + Date.now(),
+          category:   activeCat ? activeCat.dataset.cat : 'fish',
+          commonName: g('jn-inh-common'),
+          species:    g('jn-inh-species'),
+          name:       g('jn-inh-name'),
+          count:      parseInt(g('jn-inh-count'), 10) || 1,
+          addedDate:  g('jn-inh-date') || todayStr(),
+          status:     'active',
+          removedDate: null,
+          removedNote: null
+        };
+        d.inhabitants.push(inh);
+        saveData(d);
+        closeModal('mt-modal-inhabitant');
+        renderDashboard();
+        showInhabitantToast(inh, 'added');
       });
     }
 

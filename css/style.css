@@ -852,3 +852,49 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .mt-setup-divider{height:1px;background:rgba(255,255,255,.06);margin:1rem 0 .9rem}
 .mt-save-btn{width:100%;margin-top:.5rem}
 
+/* ── P1: Entry params line ── */
+.jn-entry-params{display:block;font-size:.56rem;letter-spacing:.08em;font-family:monospace;color:rgba(255,255,255,.25);margin-top:.3rem}
+
+/* ── P2: Streak counter ── */
+.jn-streak-row{margin-top:.7rem}
+.jn-streak-count{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(100,200,82,.72);font-family:var(--sans)}
+
+/* ── P2: Milestone / inhabitant toast ── */
+.jn-milestone-toast{position:fixed;bottom:calc(64px + env(safe-area-inset-bottom));left:1rem;right:1rem;z-index:860;background:rgba(5,15,12,.98);border:1px solid rgba(61,214,232,.18);border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transform:translateY(130%);opacity:0;transition:transform .48s var(--ease),opacity .36s;pointer-events:none;display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem;max-width:480px;margin:0 auto}
+.jn-milestone-toast.show{transform:translateY(0);opacity:1;pointer-events:all}
+.jn-toast--passed{border-color:rgba(200,80,80,.25)}
+.jn-toast--welcome{border-color:rgba(100,200,82,.28)}
+.jn-toast--rehomed{border-color:rgba(61,214,232,.22)}
+.jn-toast-msg{flex:1;font-size:.82rem;color:rgba(235,240,236,.82);font-family:var(--serif);font-style:italic;line-height:1.5}
+#jn-toast-dismiss{background:none;border:none;color:rgba(255,255,255,.28);font-size:.9rem;cursor:pointer;padding:.3rem;line-height:1;transition:color .2s;flex-shrink:0}
+#jn-toast-dismiss:hover{color:rgba(255,255,255,.6)}
+@media(min-width:721px){.jn-milestone-toast{bottom:2rem;left:auto;right:2rem;max-width:360px;margin:0}}
+@media(display-mode:standalone){.jn-milestone-toast{bottom:calc(56px + env(safe-area-inset-bottom) + 1rem)}}
+
+/* ── P3: Parameter sparklines ── */
+.jn-spark-row{display:grid;grid-template-columns:2.8rem 1fr 3rem 1.4rem;align-items:center;gap:.5rem;padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.jn-spark-row:last-child{border-bottom:none}
+.jn-spark-label{font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+.jn-spark-chart{display:flex;align-items:center}
+.jn-spark-last{font-size:.76rem;font-family:monospace;text-align:right;line-height:1}
+.jn-spark-trend{font-size:.82rem;color:rgba(255,255,255,.28);text-align:center}
+
+/* ── P4: Context prompt ── */
+.jn-context-prompt{font-size:.74rem;color:rgba(61,214,232,.5);font-style:italic;line-height:1.65;margin-top:.5rem;padding:.45rem .75rem;border-left:2px solid rgba(61,214,232,.2);background:rgba(61,214,232,.05);border-radius:0 6px 6px 0}
+
+/* ── P6: Tank inhabitants ── */
+.jn-inh-cat-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.jn-inh-cat-chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;color:rgba(235,240,236,.5);font-size:.74rem;padding:.38rem .85rem;cursor:pointer;font-family:var(--sans);transition:all .2s;-webkit-tap-highlight-color:transparent}
+.jn-inh-cat-chip:hover{border-color:rgba(61,214,232,.3);color:rgba(235,240,236,.8)}
+.jn-inh-cat-chip.active{background:rgba(61,214,232,.12);border-color:rgba(61,214,232,.45);color:rgba(61,214,232,.92)}
+.jn-inh-row{display:flex;align-items:center;gap:.65rem;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.jn-inh-row:last-child{border-bottom:none}
+.jn-inh-icon{font-size:1rem;flex-shrink:0;line-height:1}
+.jn-inh-info{flex:1;font-size:.84rem;color:rgba(235,240,236,.72);line-height:1.4;min-width:0}
+.jn-inh-count{font-size:.72rem;color:rgba(255,255,255,.38);font-family:monospace}
+.jn-inh-alias{font-style:italic;color:rgba(61,214,232,.5);font-size:.8rem}
+.jn-inh-actions{display:flex;gap:.35rem;flex-shrink:0;opacity:0;transition:opacity .2s}
+.jn-inh-row:hover .jn-inh-actions,.jn-inh-row:focus-within .jn-inh-actions{opacity:1}
+.jn-inh-status-btn{background:none;border:1px solid rgba(255,255,255,.1);border-radius:5px;color:rgba(255,255,255,.3);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .5rem;cursor:pointer;font-family:var(--sans);transition:all .2s;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+.jn-inh-status-btn:hover{border-color:rgba(200,80,80,.4);color:rgba(200,80,80,.7)}
+

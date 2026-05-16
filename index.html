@@ -1511,6 +1511,26 @@
           </div>
           <div class="jn-rhythm-dots" id="jn-rhythm-dots"></div>
           <p class="jn-rhythm-hint">Each dot = one week. Lit means you wrote an entry.</p>
+          <div class="jn-streak-row">
+            <span class="jn-streak-count" id="jn-streak-count" style="display:none"></span>
+          </div>
+        </div>
+
+        <!-- Parameter trend charts -->
+        <div class="mt-phase-card" id="jn-param-charts" style="display:none">
+          <div class="mt-params-header" style="margin-bottom:.9rem">
+            <span class="mt-section-label">Parameter trends</span>
+          </div>
+          <div id="jn-param-charts-body"></div>
+        </div>
+
+        <!-- Tank family / inhabitants -->
+        <div class="mt-phase-card" id="jn-inhabitants">
+          <div class="mt-params-header" style="margin-bottom:.85rem">
+            <span class="mt-section-label">Tank family</span>
+            <button class="mt-text-btn" id="jn-inh-add">+ Add resident</button>
+          </div>
+          <div id="jn-inh-body"><p class="jn-entry-empty">No residents recorded yet.</p></div>
         </div>
 
         <!-- No entries yet -->
@@ -1519,18 +1539,22 @@
           <button class="btn bf" id="jn-entry-open-2">Write your first entry</button>
         </div>
 
-        <!-- Recent entries -->
+        <!-- Entries -->
         <div id="jn-has-entries" style="display:none">
           <div class="mt-params-header" style="margin-bottom:.85rem">
-            <span class="mt-section-label">Recent entries</span>
+            <span class="mt-section-label">Entries</span>
             <button class="mt-text-btn" id="jn-entry-open">+ New entry</button>
           </div>
           <ul class="jn-entry-list" id="jn-entry-list"></ul>
+          <div style="text-align:center;padding:.8rem 0">
+            <button class="mt-text-btn" id="jn-load-more" style="display:none">Show older entries</button>
+          </div>
         </div>
 
         <div style="margin-top:2rem">
           <button class="btn bf" style="width:100%;margin-bottom:1.1rem" id="jn-entry-open-main">Write today's entry</button>
-          <div style="text-align:center">
+          <div style="text-align:center;display:flex;justify-content:center;gap:1.4rem">
+            <button class="mt-text-btn" id="jn-export">Export data</button>
             <button class="mt-text-btn mt-danger" id="jn-reset-tank">Reset all journal data</button>
           </div>
         </div>
@@ -1672,6 +1696,7 @@
       <div class="jn-form-section">
         <label class="jn-form-question" for="jn-entry-obs">What did you notice?</label>
         <textarea class="mt-input mt-textarea" id="jn-entry-obs" placeholder="Fish are active today. Plants growing well. Water looks slightly green…" rows="3" maxlength="600"></textarea>
+        <p class="jn-context-prompt" id="jn-context-prompt" style="display:none"></p>
       </div>
 
       <div class="jn-form-section">
@@ -1717,6 +1742,63 @@
       </div>
 
       <button type="submit" class="btn bf" style="width:100%;margin-top:1.2rem">Save entry</button>
+    </form>
+  </div>
+</div>
+
+<!-- ── MILESTONE / INHABITANT TOAST ── -->
+<div id="jn-milestone-toast" class="jn-milestone-toast" aria-live="polite" aria-atomic="true">
+  <span class="jn-toast-msg"></span>
+  <button id="jn-toast-dismiss" aria-label="Dismiss">✕</button>
+</div>
+
+<!-- ── MODAL: Add Inhabitant ── -->
+<div class="mt-modal" id="mt-modal-inhabitant" aria-modal="true" role="dialog" aria-label="Add tank resident" aria-hidden="true">
+  <div class="mt-modal-inner">
+    <div class="mt-modal-header">
+      <h2 class="mt-modal-title">Add a resident</h2>
+      <button class="mt-modal-close" data-modal-close="mt-modal-inhabitant" aria-label="Close">✕</button>
+    </div>
+    <form id="jn-form-inhabitant" autocomplete="off">
+
+      <div class="jn-form-section">
+        <p class="jn-form-question">Category</p>
+        <div class="jn-inh-cat-chips">
+          <button type="button" class="jn-inh-cat-chip active" data-cat="fish">Fish</button>
+          <button type="button" class="jn-inh-cat-chip" data-cat="plant">Plant</button>
+          <button type="button" class="jn-inh-cat-chip" data-cat="invertebrate">Invertebrate</button>
+          <button type="button" class="jn-inh-cat-chip" data-cat="coral">Coral</button>
+          <button type="button" class="jn-inh-cat-chip" data-cat="other">Other</button>
+        </div>
+      </div>
+
+      <div class="mt-field">
+        <label class="mt-label" for="jn-inh-common">Common name <span style="opacity:.38">(required)</span></label>
+        <input class="mt-input" id="jn-inh-common" type="text" placeholder="e.g. Neon Tetra" required>
+      </div>
+
+      <div class="mt-field-row">
+        <div class="mt-field" style="flex:1">
+          <label class="mt-label" for="jn-inh-count">Quantity</label>
+          <input class="mt-input" id="jn-inh-count" type="number" value="1" min="1" max="9999">
+        </div>
+        <div class="mt-field" style="flex:2">
+          <label class="mt-label" for="jn-inh-name">Personal name <span style="opacity:.38">(optional)</span></label>
+          <input class="mt-input" id="jn-inh-name" type="text" placeholder="e.g. Nemo, Goldie…">
+        </div>
+      </div>
+
+      <div class="mt-field">
+        <label class="mt-label" for="jn-inh-species">Species <span style="opacity:.38">(optional)</span></label>
+        <input class="mt-input" id="jn-inh-species" type="text" placeholder="e.g. Paracheirodon innesi">
+      </div>
+
+      <div class="mt-field">
+        <label class="mt-label" for="jn-inh-date">Date added</label>
+        <input class="mt-input" id="jn-inh-date" type="date">
+      </div>
+
+      <button type="submit" class="btn bf" style="width:100%;margin-top:1.2rem">Add to tank</button>
     </form>
   </div>
 </div>
