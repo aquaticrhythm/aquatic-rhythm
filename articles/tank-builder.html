@@ -104,10 +104,10 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
 #top-band{
   flex-shrink:0;
-  height:30vh;
-  min-height:180px;
+  height:28vh;
+  min-height:160px;
   display:grid;
-  grid-template-columns:1fr 170px;
+  grid-template-columns:1fr 128px;
   grid-template-rows:1fr;
   background:rgba(2,8,14,.97);
   border-bottom:none;
@@ -142,8 +142,11 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 }
 /* TANK */
 #tank-canvas{width:100%;height:100%;display:block}
-.size-bar{position:absolute;top:.42rem;left:50%;transform:translateX(-50%);display:flex;gap:.18rem;z-index:50;pointer-events:none}
-.sz-btn{font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .42rem;pointer-events:all;border-radius:1px;cursor:pointer;border:1px solid rgba(61,214,232,.24);background:rgba(3,12,10,.92);color:rgba(235,240,236,.42);transition:all .18s;font-family:var(--sans);backdrop-filter:blur(4px);white-space:nowrap}
+.size-bar{position:absolute;top:.38rem;left:50%;transform:translateX(-50%);display:flex;gap:.14rem;z-index:50;pointer-events:none;align-items:center}
+.size-bar-scroll{max-width:calc(100% - .6rem);overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;justify-content:flex-start;padding:0 .1rem .12rem;mask-image:linear-gradient(90deg,transparent,#000 10px,#000 calc(100% - 10px),transparent)}
+.size-bar-scroll::-webkit-scrollbar{height:3px}
+.size-bar-scroll::-webkit-scrollbar-thumb{background:rgba(61,214,232,.22);border-radius:2px}
+.sz-btn{font-size:.52rem;letter-spacing:.04em;text-transform:uppercase;padding:.18rem .34rem;pointer-events:all;border-radius:1px;cursor:pointer;border:1px solid rgba(61,214,232,.24);background:rgba(3,12,10,.92);color:rgba(235,240,236,.42);transition:all .18s;font-family:var(--sans);backdrop-filter:blur(4px);white-space:nowrap;flex-shrink:0}
 .sz-btn:hover{border-color:rgba(61,214,232,.3);color:rgba(235,240,236,.74)}
 .sz-btn.active{background:rgba(61,214,232,.14);border-color:rgba(61,214,232,.62);color:rgba(61,214,232,.90)}
 
@@ -153,13 +156,13 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
   grid-row:1;
   display:flex;
   flex-direction:column;
-  padding:.35rem .4rem .3rem;
-  gap:.15rem;
+  padding:.28rem .32rem .25rem;
+  gap:.1rem;
   background:rgba(2,6,12,.85);
   border-left:1px solid rgba(139,189,210,.08);
   overflow:hidden;
 }
-.rhy-hdr{font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.1rem}
+.rhy-hdr{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.06rem}
 #readiness-badge{font-family:var(--serif);font-size:.95rem;font-weight:300;color:rgba(235,240,236,.30);line-height:1;transition:color .5s}
 .rhy-row{display:grid;grid-template-columns:7px 38px 1fr 34px;align-items:center;gap:.18rem;flex-shrink:0;padding:.05rem 0}
 .rhy-dot{width:6px;height:6px;border-radius:50%;transition:background .6s,box-shadow .6s}
@@ -221,7 +224,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 @media(max-width:680px){
   #top-band{
     grid-template-columns:1fr;
-    grid-template-rows:minmax(148px,30vh) minmax(188px,34vh);
+    grid-template-rows:minmax(140px,28vh) minmax(104px,22vh);
     height:auto;
     min-height:0;
     overflow:hidden;
@@ -231,16 +234,16 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     grid-column:1;grid-row:2;
     flex-direction:column;
     flex-wrap:nowrap;
-    gap:.2rem;
-    padding:.45rem .5rem .5rem;
+    gap:.12rem;
+    padding:.32rem .42rem .38rem;
     border-left:none;
     border-top:none;
     min-height:0;
   }
-  .rhy-hdr{width:100%;margin-bottom:.12rem}
+  .rhy-hdr{width:100%;margin-bottom:.08rem}
   .rhy-row{grid-template-columns:8px 40px 1fr 34px}
   #rdy-section,.rack-grid{grid-template-columns:1fr 1fr}
-  .sz-btn{padding:.26rem .48rem;font-size:.56rem}
+  .sz-btn{padding:.22rem .4rem;font-size:.54rem}
   .lab-tab{font-size:.62rem;padding:.62rem .5rem}
   .ph2-tag{font-size:.62rem;padding:.16rem .38rem}
   .eq-item{padding:.42rem .5rem}
@@ -817,10 +820,19 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 <!-- TOP BAND: tank visual + pentagon -->
 <div id="top-band">
   <div id="tank-zone">
-    <div class="size-bar">
-      <button class="sz-btn active" data-size="small">Small 20&#x2013;40L</button>
-      <button class="sz-btn" data-size="medium">Medium 60&#x2013;120L</button>
-      <button class="sz-btn" data-size="large">Large 150L+</button>
+    <div class="size-bar size-bar-scroll">
+      <button class="sz-btn" data-liters="20">20L</button>
+      <button class="sz-btn" data-liters="30">30L</button>
+      <button class="sz-btn active" data-liters="40">40L</button>
+      <button class="sz-btn" data-liters="54">54L</button>
+      <button class="sz-btn" data-liters="60">60L</button>
+      <button class="sz-btn" data-liters="75">75L</button>
+      <button class="sz-btn" data-liters="90">90L</button>
+      <button class="sz-btn" data-liters="120">120L</button>
+      <button class="sz-btn" data-liters="150">150L</button>
+      <button class="sz-btn" data-liters="180">180L</button>
+      <button class="sz-btn" data-liters="240">240L</button>
+      <button class="sz-btn" data-liters="300">300L</button>
     </div>
     <canvas id="tank-canvas"></canvas>
   </div>
@@ -1104,7 +1116,8 @@ function drawTank(){
   var W=cvs.width,H=cvs.height;
   ctx.clearRect(0,0,W,H);
   tick++;
-  var sc=tankSize==='large'?.88:tankSize==='medium'?.82:.74;
+  var tz=tankTier();
+  var sc=tz==='large'?.88:tz==='medium'?.82:.74;
   var tw=W*sc,th=H*.74*sc,tx=(W-tw)/2,ty=(H-th)/2+10;
   /* Background */
   ctx.fillStyle='rgba(3,18,28,.95)';ctx.fillRect(0,0,W,H);
@@ -1395,7 +1408,7 @@ function drawTank(){
   }
   /* Tank frame on top */
   ctx.strokeStyle='rgba(61,214,232,.32)';ctx.lineWidth=1.5;rr(tx,ty,tw,th);ctx.stroke();
-  var slbl=tankSize==='large'?'150L+':tankSize==='medium'?'60\u201360L':'20\u201340L';
+  var slbl=tankLiters+'L';
   ctx.font='300 9px DM Sans,sans-serif';ctx.fillStyle='rgba(255,255,255,.12)';ctx.textAlign='right';
   ctx.fillText(slbl,tx+tw-5,ty+th-5);ctx.textAlign='left';
   /* Filter hint when no filter selected */
@@ -1489,8 +1502,8 @@ function drawPentagon(s){
   var sz=Math.min(pw,ph);
   rc.width=pw; rc.height=ph;
   var cx=pw/2, cy=ph/2;
-  var r=sz/2-20;
-  if(r<12)return;
+  var r=sz/2-(pw<200?12:15);
+  if(r<10)return;
   var rctx=rc.getContext('2d');
   rctx.clearRect(0,0,rc.width,rc.height);
   var dims=['water','bio','env','live','human'];
@@ -1529,8 +1542,8 @@ function drawPentagon(s){
     rctx.beginPath();rctx.arc(dx,dy,2.5,0,Math.PI*2);
     rctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(v>.3?.9:.4)+')';rctx.fill();
     /* Label at spoke tip, inside canvas bounds */
-    var lx=cx+(r+14)*Math.cos(a);
-    var ly=cy+(r+14)*Math.sin(a);
+    var lx=cx+(r+11)*Math.cos(a);
+    var ly=cy+(r+11)*Math.sin(a);
     lx=Math.max(fs,Math.min(pw-fs,lx));
     ly=Math.max(fs,Math.min(ph-fs,ly));
     var txt=lbls[dims[i]];
@@ -1547,7 +1560,9 @@ function drawPentagon(s){
 }
 
 /* ═══ STATE ═══ */
-var active={}, selectedBrands={}, tankSize='small', _currentTab='equipment';
+var active={}, selectedBrands={}, tankLiters=40, _currentTab='equipment';
+function tankTier(){return tankLiters<=45?'small':tankLiters<=130?'medium':'large';}
+function stockingKeyFromLiters(){return tankLiters<=52?'small_40l':tankLiters<=132?'medium_80l':'large_150l';}
 var ph2Active={stock:{},plants:{},hard:{}};
 var ph2Style=null, _ph2Query='';
 var cvs,ctx,tick=0,animFrame=null;
@@ -1576,7 +1591,7 @@ window.addEventListener('load',function(){
   document.querySelectorAll('.sz-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       document.querySelectorAll('.sz-btn').forEach(function(b){b.classList.remove('active');});
-      btn.classList.add('active'); tankSize=btn.dataset.size;
+      btn.classList.add('active'); tankLiters=parseInt(btn.dataset.liters,10)||40;
       updateRackStates(); updateRhythms(); updateSubmitBtn();
       checkAnimNeeded(); scheduleRedraw();
     });
@@ -1613,6 +1628,10 @@ window.addEventListener('load',function(){
   if(resetBtn)resetBtn.addEventListener('click',function(){
     active={}; selectedBrands={}; ph2Active={stock:{},plants:{},hard:{}};
     ph2Style=null; _ph2Query='';
+    tankLiters=40;
+    document.querySelectorAll('.sz-btn').forEach(function(b){
+      b.classList.toggle('active',parseInt(b.dataset.liters,10)===40);
+    });
     document.querySelectorAll('.eq-item').forEach(function(i){
       i.classList.remove('active','disabled','warn-state','size-warn');
     });
@@ -1708,7 +1727,8 @@ function calcRhythms(){
     s.water+=e.water||0; s.bio+=e.bio||0; s.env+=e.env||0;
     s.live+=e.live||0; s.human+=e.human||0;
   });
-  var b=tankSize==='large'?12:tankSize==='medium'?5:0;
+  var tz=tankTier();
+  var b=tz==='large'?12:tz==='medium'?5:0;
   s.water=Math.min(100,s.water+b*.4); s.bio=Math.min(100,s.bio+b*.3);
   s.env=Math.min(100,s.env+b*.2); s.live=Math.min(100,s.live+b*.3);
   s.human=Math.min(100,s.human);
@@ -1762,7 +1782,7 @@ function updateSubmitBtn(){
 function getStatus(id){
   var eq=EQ[id];if(!eq)return'ok';
   if(eq.conflicts){for(var i=0;i<eq.conflicts.length;i++){if(active[eq.conflicts[i]])return'conflict';}}
-  if(eq.sizeWarn&&eq.sizeWarn.indexOf(tankSize)>=0)return'sizeWarn';
+  if(eq.sizeWarn&&eq.sizeWarn.indexOf(tankTier())>=0)return'sizeWarn';
   return'ok';
 }
 function updateRackStates(){
@@ -2155,7 +2175,7 @@ function buildEcoCard(cont,k,item,cat){
     var qrow=document.createElement('div');qrow.className='ph2-qty';
     var minQ=item.min_school||1;
     var curQ=ph2Active.stock[k]?ph2Active.stock[k]._qty:minQ;
-    var szKey=tankSize==='large'?'large_150l':tankSize==='medium'?'medium_80l':'small_40l';
+    var szKey=stockingKeyFromLiters();
     var sInfo=item.stocking&&item.stocking[szKey];
     var qlbl=document.createElement('span');qlbl.className='ph2-qty-label';qlbl.textContent='Quantity';
     var qminus=document.createElement('button');qminus.className='ph2-qty-btn';qminus.textContent='\u2212';
@@ -2230,7 +2250,7 @@ function updateCompatStrip(){
   var hasSoft=stockKeys.some(function(k){var i=ph2Active.stock[k];return i&&(i.hardness==='soft'||i.hardness==='very-soft');});
   var hasHard=stockKeys.some(function(k){var i=ph2Active.stock[k];return i&&(i.hardness==='hard'||i.hardness==='medium-hard');});
   if(hasSoft&&hasHard)msgs.push('Hardness conflict \u2014 soft and hard water species together.');
-  var tankL=tankSize==='large'?200:tankSize==='medium'?80:35;
+  var tankL=tankLiters;
   stockKeys.forEach(function(k){
     var item=ph2Active.stock[k];
     if(item&&item.min_tank_l&&item.min_tank_l>tankL)msgs.push(item.name+' needs '+item.min_tank_l+'L minimum.');
@@ -2265,7 +2285,7 @@ function showFullReport(){
   if(!overlay||!rc)return;
   var eqList=Object.keys(active);
   var stockList=Object.keys(ph2Active.stock);
-  var tankLabel=tankSize==='large'?'Large (150L+)':tankSize==='medium'?'Medium (60\u2013120L)':'Small (20\u201340L)';
+  var tankLabel=tankLiters+'\u00a0L';
   var html='<div class="tb-rpt-head">';
   html+='<span class="tb-rpt-eyebrow">ARA Report</span>';
   html+='<p class="tb-rpt-disclaimer">The ARA rhythm model is a qualitative framework \u2014 a thinking tool, not a scientific measurement.</p>';
