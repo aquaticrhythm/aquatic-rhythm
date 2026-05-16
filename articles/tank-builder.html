@@ -750,6 +750,7 @@ body.eq-dd-open{overflow:hidden}
   opacity:0;transition:opacity .4s;
   display:block;
 }
+.bi-img-wrap.bi-has-carousel #bi-img{display:none!important}
 .bi-img-wrap img.loaded{opacity:1}
 .bi-img-skeleton{
   position:absolute;inset:0;
@@ -765,7 +766,40 @@ body.eq-dd-open{overflow:hidden}
   background:linear-gradient(155deg,rgba(6,32,38,.97) 0%,rgba(4,12,20,.94) 48%,rgba(8,22,28,.9) 100%);
 }
 .bi-img-wrap.bi-hero-native #bi-img{display:none!important}
+.bi-img-wrap.bi-hero-native .bi-carousel-viewport{display:none!important}
 .bi-img-wrap.bi-hero-native .bi-img-skeleton{display:none!important}
+.bi-carousel-viewport{
+  position:absolute;inset:0;overflow:hidden;touch-action:pan-y;
+}
+.bi-carousel-viewport[hidden]{display:none!important}
+.bi-carousel-track{
+  display:flex;height:100%;transition:transform .38s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+.bi-carousel-slide{
+  flex:0 0 100%;width:100%;min-width:100%;height:100%;position:relative;
+  background:rgba(4,14,22,.6);
+}
+.bi-carousel-slide img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  opacity:0;transition:opacity .45s;
+}
+.bi-carousel-slide img.loaded{opacity:1}
+.bi-carousel-dots{
+  position:absolute;bottom:.35rem;left:0;right:0;display:flex;justify-content:center;
+  align-items:center;gap:5px;padding:.2rem .35rem .35rem;z-index:3;pointer-events:auto;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.38));
+  border-radius:10px;margin:0 .5rem;
+}
+.bi-carousel-dots[hidden]{display:none!important}
+.bi-carousel-dot{
+  width:5px;height:5px;border-radius:50%;padding:0;border:none;cursor:pointer;
+  background:rgba(235,240,236,.28);-webkit-tap-highlight-color:transparent;
+  transition:background .2s,transform .2s;
+}
+.bi-carousel-dot[aria-current='true']{
+  background:rgba(61,214,232,.92);transform:scale(1.15);
+}
 #bi-hero-native{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:.28rem;padding:.85rem 1rem;text-align:center;
@@ -789,6 +823,7 @@ body.eq-dd-open{overflow:hidden}
   font-size:.42rem;color:rgba(235,240,236,.34);
   padding:.15rem .3rem;background:rgba(0,0,0,.45);
   font-family:var(--sans);
+  z-index:5;
 }
 
 /* Brand item selected state */
@@ -1038,6 +1073,10 @@ body.eq-dd-open{overflow:hidden}
     <div class="bi-img-wrap" id="bi-img-wrap">
       <div class="bi-hero-native" id="bi-hero-native" hidden></div>
       <div class="bi-img-skeleton" id="bi-img-skeleton">Loading image&#x2026;</div>
+      <div class="bi-carousel-viewport" id="bi-carousel-viewport" hidden>
+        <div class="bi-carousel-track" id="bi-carousel-track"></div>
+        <div class="bi-carousel-dots" id="bi-carousel-dots" hidden></div>
+      </div>
       <img id="bi-img" src="" alt="" aria-hidden="true">
       <div class="bi-img-credit" id="bi-img-credit"></div>
     </div>
@@ -1590,6 +1629,7 @@ var ph2Active={stock:{},plants:{},hard:{}};
 var ph2Style=null, _ph2Query='';
 var cvs,ctx,tick=0,animFrame=null;
 var _biCurrentEq=null,_biCurrentBrand=null;
+var _biCarouselIdx=0,_biCarouselSlides=[],_biCarouselResizeHandler=null;
 
 /* ═══ INIT ═══ */
 window.addEventListener('load',function(){
@@ -2397,6 +2437,7 @@ function prepareBiImageForPhoto(){
   var img=document.getElementById('bi-img');
   var skeleton=document.getElementById('bi-img-skeleton');
   var credit=document.getElementById('bi-img-credit');
+  _biCarouselTeardown();
   if(wrap){
     wrap.classList.remove('bi-hero-native');
     wrap.removeAttribute('data-eq-cat');
@@ -2460,6 +2501,12 @@ function _bioTitleBad(t){
 
 function _commonsFileBad(t){
   return /\.(djvu|pdf)(\b|$)/i.test(t)||/\b(map of|logo|chart diagram|coat of arms|signature|currency|stamp|postage)\b/i.test(t);
+}
+
+function _mediaFilenameSuspicious(fileTitle){
+  var t=(fileTitle||'').toLowerCase().replace(/^file:/,'');
+  if(/\.svg(\b|$)/i.test(t))return true;
+  return /(navel|belly.?button|bellybutton|piercing|tattoo|selfie|bikini|underwear|lingerie|iphone|press.?photo|favicon|diagram_?only|crop_?circle|logo_)/i.test(t);
 }
 
 function _nameWords(name){
@@ -2608,7 +2655,7 @@ function _wikiSpeciesImageSearch(queries,idx,latin,name,ecoCat){
 }
 
 function _loadWikiPageImageOrCommons(pageTitle,latin,name,ecoCat){
-  var url='https://en.wikipedia.org/w/api.php?action=query&titles='+encodeURIComponent(pageTitle)+'&prop=pageimages&format=json&pithumbsize=640&origin=*';
+  var url='https://en.wikipedia.org/w/api.php?action=query&titles='+encodeURIComponent(pageTitle)+'&prop=pageimages|images&imlimit=35&pithumbsize=960&format=json&origin=*';
   return fetch(url)
     .then(function(r){return r.json();})
     .then(function(data){
@@ -2616,80 +2663,357 @@ function _loadWikiPageImageOrCommons(pageTitle,latin,name,ecoCat){
       if(!pages)return false;
       var page=Object.values(pages)[0];
       if(!page||page.missing||page.invalid)return false;
-      var ptitle=page.title||'';
-      var sc=_scoreWikiTitle(ptitle,latin,name,ecoCat);
-      if(sc<16)return false;
-      if(page.thumbnail&&page.thumbnail.source){
-        _loadBiImg(page.thumbnail.source,'Wikipedia / CC');
-        return true;
-      }
-      return _commonsSearchBest(latin||ptitle,name,ecoCat,latin);
+      if(_scoreWikiTitle(page.title||'',latin,name,ecoCat)<16)return false;
+      return _wikiCommonsAggregateSlides(page,latin,name,ecoCat);
     })
-    .catch(function(){return _commonsSearchBest(latin||pageTitle,name,ecoCat,latin);});
+    .catch(function(){return _commonsOnlySlides(latin,name,ecoCat);});
 }
 
-function _commonsSearchBest(seedName,name,ecoCat,latin){
+function _wikiFileTitlesFromPage(page,latin,name,ecoCat){
+  var titles=[];
+  var seen={};
+  function pushT(t){
+    if(!t||seen[t])return;
+    var norm=t.charAt(0)==='F'?t:'File:'+t.replace(/^file:/i,'');
+    if(/\.svg$/i.test(norm))return;
+    if(_mediaFilenameSuspicious(norm))return;
+    if(_scoreCommonsFileTitle(norm,latin,name,ecoCat)<9)return;
+    seen[norm]=1;titles.push(norm);
+  }
+  if(page.pageimages&&page.pageimages.pageimage){
+    pushT('File:'+String(page.pageimages.pageimage).replace(/^file:/i,''));
+  }
+  if(page.images&&page.images.length){
+    for(var i=0;i<page.images.length;i++){
+      var im=page.images[i];
+      if(im&&im.ns===6&&im.title)pushT(im.title);
+    }
+  }
+  return titles.slice(0,28);
+}
+
+function _batchFetchWikiFileInfos(fileTitles,latin,name,ecoCat){
+  if(!fileTitles||!fileTitles.length)return Promise.resolve([]);
+  var pipe=fileTitles.slice(0,48).map(encodeURIComponent).join('|');
+  return fetch('https://en.wikipedia.org/w/api.php?action=query&titles='+pipe+'&prop=imageinfo&iiprop=url|size|extmetadata&iiurlwidth=960&format=json&origin=*')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var slides=[];
+      var pages=data.query&&data.query.pages;
+      if(!pages)return slides;
+      Object.keys(pages).forEach(function(pid){
+        var p=pages[pid];
+        if(!p||p.missing)return;
+        var ii=p.imageinfo&&p.imageinfo[0];
+        if(!ii||!ii.thumburl)return;
+        var w=ii.thumbwidth||ii.width||0;
+        if(w>0&&w<200)return;
+        if(_mediaFilenameSuspicious(p.title||''))return;
+        var lic=(ii.extmetadata&&ii.extmetadata.LicenseShortName&&ii.extmetadata.LicenseShortName.value)||'Wikipedia / CC';
+        slides.push({src:ii.thumburl,credit:lic,w:w,score:_scoreCommonsFileTitle(p.title||'',latin,name,ecoCat)});
+      });
+      return slides;
+    })
+    .catch(function(){return [];});
+}
+
+function _commonsCollectFileTitles(latin,name,ecoCat){
   var queries=[];
   if(latin)queries.push(latin+' aquarium');
   if(latin)queries.push(latin);
-  if(seedName&&seedName!==latin)queries.push(seedName+' aquarium');
-  if(name)queries.push(name+' aquarium');
-  var seen={};
-  queries=queries.filter(function(s){if(!s||seen[s])return false;seen[s]=true;return true;});
-  return _commonsTryQueries(queries,0,latin,name,ecoCat);
+  if(name&&name!==latin)queries.push(name+' aquarium');
+  var seenQ={};
+  queries=queries.filter(function(s){if(!s||seenQ[s])return false;seenQ[s]=true;return true;});
+  var agg={};
+  function addResults(results){
+    for(var i=0;i<results.length;i++){
+      var r=results[i];
+      if(!r||!r.title)continue;
+      var sc=_scoreCommonsFileTitle(r.title,latin,name,ecoCat);
+      if(sc<12)continue;
+      if(_mediaFilenameSuspicious(r.title))continue;
+      if(!agg[r.title]||agg[r.title]<sc)agg[r.title]=sc;
+    }
+  }
+  function step(qi){
+    if(qi>=queries.length){
+      var arr=Object.keys(agg).map(function(t){return {t:t,s:agg[t]};});
+      arr.sort(function(a,b){return b.s-a.s;});
+      return arr.slice(0,12).map(function(x){return x.t;});
+    }
+    return fetch('https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(queries[qi])+'&srnamespace=6&srlimit=18&format=json&origin=*')
+      .then(function(r){return r.json();})
+      .then(function(data){
+        addResults((data.query&&data.query.search)||[]);
+        if(Object.keys(agg).length>=10)return step(queries.length);
+        return step(qi+1);
+      })
+      .catch(function(){return step(qi+1);});
+  }
+  return Promise.resolve().then(function(){return step(0);});
 }
 
-function _commonsTryQueries(queries,idx,latin,name,ecoCat){
-  if(idx>=queries.length)return Promise.resolve(false);
-  var q=queries[idx];
-  return fetch('https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(q)+'&srnamespace=6&srlimit=12&format=json&origin=*')
+function _batchFetchCommonsImageInfos(fileTitles,latin,name,ecoCat){
+  if(!fileTitles||!fileTitles.length)return Promise.resolve([]);
+  var pipe=fileTitles.slice(0,48).map(encodeURIComponent).join('|');
+  return fetch('https://commons.wikimedia.org/w/api.php?action=query&titles='+pipe+'&prop=imageinfo&iiprop=url|size|extmetadata&iiurlwidth=960&format=json&origin=*')
     .then(function(r){return r.json();})
     .then(function(data){
-      var results=(data.query&&data.query.search)||[];
-      var best=null,bestSc=0;
-      for(var i=0;i<results.length;i++){
-        var sc=_scoreCommonsFileTitle(results[i].title,latin,name,ecoCat);
-        if(sc>bestSc){bestSc=sc;best=results[i].title;}
-      }
-      if(!best||bestSc<14)return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);
-      return fetch('https://commons.wikimedia.org/w/api.php?action=query&titles='+encodeURIComponent(best)+'&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=640&format=json&origin=*')
-        .then(function(r){return r.json();})
-        .then(function(imgData){
-          var pages=imgData.query&&imgData.query.pages;
-          if(!pages)return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);
-          var ii=Object.values(pages)[0].imageinfo;
-          if(ii&&ii[0]&&ii[0].thumburl){
-            var lic=(ii[0].extmetadata&&ii[0].extmetadata.LicenseShortName&&ii[0].extmetadata.LicenseShortName.value)||'Wikimedia Commons';
-            _loadBiImg(ii[0].thumburl,lic);
-            return true;
-          }
-          return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);
-        });
+      var slides=[];
+      var pages=data.query&&data.query.pages;
+      if(!pages)return slides;
+      Object.keys(pages).forEach(function(pid){
+        var p=pages[pid];
+        if(!p||p.missing)return;
+        var ii=p.imageinfo&&p.imageinfo[0];
+        if(!ii||!ii.thumburl)return;
+        var w=ii.thumbwidth||ii.width||0;
+        if(w>0&&w<200)return;
+        if(_mediaFilenameSuspicious(p.title||''))return;
+        var lic=(ii.extmetadata&&ii.extmetadata.LicenseShortName&&ii.extmetadata.LicenseShortName.value)||'Wikimedia Commons';
+        slides.push({src:ii.thumburl,credit:lic,w:w,score:_scoreCommonsFileTitle(p.title||'',latin,name,ecoCat)});
+      });
+      return slides;
     })
-    .catch(function(){return _commonsTryQueries(queries,idx+1,latin,name,ecoCat);});
+    .catch(function(){return [];});
 }
 
-function _loadBiImg(src,creditText){
-  var img=document.getElementById('bi-img');
-  var wrap=document.getElementById('bi-img-wrap');
-  var skeleton=document.getElementById('bi-img-skeleton');
-  var credit=document.getElementById('bi-img-credit');
-  var hero=document.getElementById('bi-hero-native');
-  if(!img)return;
-  if(wrap){
-    wrap.classList.remove('bi-hero-native');
-    wrap.removeAttribute('data-eq-cat');
+function _mergeSortDedupeSlides(a,b){
+  var map={};
+  function addList(lst){
+    for(var i=0;i<(lst||[]).length;i++){
+      var s=lst[i];
+      if(!s||!s.src)continue;
+      var key=s.src.split('?')[0];
+      var prev=map[key];
+      if(!prev||((s.w||0)>(prev.w||0)))map[key]=s;
+    }
   }
+  addList(a);addList(b);
+  var out=[];
+  Object.keys(map).forEach(function(k){out.push(map[k]);});
+  out.sort(function(x,y){
+    var dw=(y.w||0)-(x.w||0);
+    if(dw!==0)return dw;
+    return(y.score||0)-(x.score||0);
+  });
+  return out.slice(0,10);
+}
+
+function _filterRankSlides(slides){
+  return(slides||[]).filter(function(s){
+    if(!s||!s.src)return false;
+    if((s.w||0)>0&&s.w<200)return false;
+    return true;
+  });
+}
+
+function _wikiCommonsAggregateSlides(page,latin,name,ecoCat){
+  var fileTitles=_wikiFileTitlesFromPage(page,latin,name,ecoCat);
+  return _batchFetchWikiFileInfos(fileTitles,latin,name,ecoCat)
+    .then(function(wikiSlides){
+      return _commonsCollectFileTitles(latin,name,ecoCat).then(function(ctitles){
+        if(!ctitles.length)return wikiSlides;
+        return _batchFetchCommonsImageInfos(ctitles,latin,name,ecoCat).then(function(cs){
+          return _mergeSortDedupeSlides(wikiSlides,cs);
+        });
+      });
+    })
+    .then(function(merged){
+      var fin=_filterRankSlides(merged);
+      if(fin.length)return fin;
+      if(page.thumbnail&&page.thumbnail.source){
+        var w=page.thumbnail.width||0;
+        if(w>=200)return[{src:page.thumbnail.source,credit:'Wikipedia / CC',w:w,score:14}];
+      }
+      return[];
+    })
+    .then(function(fin){
+      if(fin&&fin.length)return _finalizeBiSlides(fin);
+      return _commonsOnlySlides(latin,name,ecoCat);
+    });
+}
+
+function _commonsOnlySlides(latin,name,ecoCat){
+  return _commonsCollectFileTitles(latin,name,ecoCat).then(function(ctitles){
+    if(!ctitles.length){_noBiImg();return false;}
+    return _batchFetchCommonsImageInfos(ctitles,latin,name,ecoCat).then(function(cs){
+      var fin=_filterRankSlides(_mergeSortDedupeSlides(cs,[]));
+      return _finalizeBiSlides(fin);
+    });
+  });
+}
+
+function _finalizeBiSlides(slides){
+  if(!slides||!slides.length){_noBiImg();return false;}
+  _loadBiCarousel(slides);
+  return true;
+}
+
+function _biCarouselTeardown(){
+  var wrap=document.getElementById('bi-img-wrap');
+  var vp=document.getElementById('bi-carousel-viewport');
+  var track=document.getElementById('bi-carousel-track');
+  var dots=document.getElementById('bi-carousel-dots');
+  if(track){
+    if(track._biTouchStart){
+      track.removeEventListener('touchstart',track._biTouchStart);
+      track.removeEventListener('touchend',track._biTouchEnd);
+      try{delete track._biTouchStart;delete track._biTouchEnd;}catch(e){track._biTouchStart=null;track._biTouchEnd=null;}
+    }
+    track.innerHTML='';
+  }
+  if(_biCarouselResizeHandler&&typeof window!=='undefined'){
+    window.removeEventListener('resize',_biCarouselResizeHandler);
+    _biCarouselResizeHandler=null;
+  }
+  _biCarouselSlides=[];_biCarouselIdx=0;
+  if(dots){dots.innerHTML='';dots.hidden=true;}
+  if(vp)vp.hidden=true;
+  if(wrap)wrap.classList.remove('bi-has-carousel');
+}
+
+function _biCarouselApplyTransform(){
+  var wrap=document.getElementById('bi-img-wrap');
+  var track=document.getElementById('bi-carousel-track');
+  if(!wrap||!track||!_biCarouselSlides.length)return;
+  var w=wrap.clientWidth||1;
+  track.style.transform='translate3d('+(-_biCarouselIdx*w)+'px,0,0)';
+}
+
+function _biCarouselSetCredit(){
+  var credit=document.getElementById('bi-img-credit');
+  var s=_biCarouselSlides[_biCarouselIdx];
+  if(credit)credit.textContent=s&&s.credit?s.credit:'';
+}
+
+function _biCarouselGo(delta){
+  var n=_biCarouselSlides.length;
+  if(n<=1)return;
+  _biCarouselIdx=(_biCarouselIdx+delta+n)%n;
+  _biCarouselApplyTransform();
+  _biCarouselSetCredit();
+  _biCarouselSyncDots();
+  _biCarouselLazyEnsure(_biCarouselIdx);
+}
+
+function _biCarouselLazyEnsure(idx){
+  var track=document.getElementById('bi-carousel-track');
+  if(!track)return;
+  var slide=track.children[idx];
+  if(!slide)return;
+  var im=slide.querySelector('img');
+  if(!im)return;
+  var lazy=im.getAttribute('data-lazy-src');
+  if(lazy&&!im.getAttribute('src')){
+    im.onload=function(){
+      im.classList.add('loaded');
+      var w=document.getElementById('bi-img-wrap');
+      var sk=document.getElementById('bi-img-skeleton');
+      if(sk)sk.style.display='none';
+      if(w)w.classList.add('img-loaded');
+    };
+    im.onerror=function(){
+      im.classList.add('loaded');
+      var w=document.getElementById('bi-img-wrap');
+      var sk=document.getElementById('bi-img-skeleton');
+      if(sk)sk.style.display='none';
+      if(w)w.classList.add('img-loaded');
+    };
+    im.src=lazy;
+    im.removeAttribute('data-lazy-src');
+  }
+}
+
+function _biCarouselSyncDots(){
+  var dots=document.getElementById('bi-carousel-dots');
+  if(!dots)return;
+  var ch=dots.children;
+  for(var i=0;i<ch.length;i++){
+    ch[i].setAttribute('aria-current',i===_biCarouselIdx?'true':'false');
+  }
+}
+
+function _loadBiCarousel(slides){
+  _biCarouselTeardown();
+  if(!slides||!slides.length){_noBiImg();return;}
+  var wrap=document.getElementById('bi-img-wrap');
+  var vp=document.getElementById('bi-carousel-viewport');
+  var track=document.getElementById('bi-carousel-track');
+  var dots=document.getElementById('bi-carousel-dots');
+  var skeleton=document.getElementById('bi-img-skeleton');
+  var hero=document.getElementById('bi-hero-native');
+  var leg=document.getElementById('bi-img');
+  if(!wrap||!vp||!track)return;
   if(hero){hero.hidden=true;hero.innerHTML='';}
-  img.style.display='';
-  img.onload=function(){
-    img.classList.add('loaded');
-    if(wrap)wrap.classList.add('img-loaded');
-    if(skeleton)skeleton.style.display='none';
+  if(leg){leg.style.display='none';leg.removeAttribute('src');leg.className='';}
+  wrap.classList.remove('bi-hero-native');
+  wrap.classList.add('bi-has-carousel');
+  _biCarouselSlides=slides.slice(0,10);
+  _biCarouselIdx=0;
+  for(var i=0;i<_biCarouselSlides.length;i++){
+    (function(idx){
+      var s=_biCarouselSlides[idx];
+      var slide=document.createElement('div');
+      slide.className='bi-carousel-slide';
+      var im=document.createElement('img');
+      im.alt='';
+      im.draggable=false;
+      if(idx===0){
+        im.onload=function(){im.classList.add('loaded');if(skeleton)skeleton.style.display='none';wrap.classList.add('img-loaded');};
+        im.onerror=function(){
+          im.classList.add('loaded');
+          if(_biCarouselSlides.length>1)_biCarouselGo(1);
+          else _noBiImg();
+        };
+        im.src=s.src;
+      } else {
+        im.setAttribute('data-lazy-src',s.src);
+      }
+      slide.appendChild(im);
+      track.appendChild(slide);
+    })(i);
+  }
+  vp.hidden=false;
+  if(_biCarouselSlides.length>1&&dots){
+    dots.hidden=false;
+    for(var j=0;j<_biCarouselSlides.length;j++){
+      (function(jj){
+        var b=document.createElement('button');
+        b.type='button';
+        b.className='bi-carousel-dot';
+        b.setAttribute('aria-label','Photo '+(jj+1));
+        b.addEventListener('click',function(){
+          _biCarouselIdx=jj;
+          _biCarouselApplyTransform();
+          _biCarouselSetCredit();
+          _biCarouselSyncDots();
+          _biCarouselLazyEnsure(_biCarouselIdx);
+        });
+        dots.appendChild(b);
+      })(j);
+    }
+  } else if(dots){dots.hidden=true;}
+  _biCarouselSetCredit();
+  _biCarouselSyncDots();
+  track.style.transform='translate3d(0,0,0)';
+  _biCarouselResizeHandler=function(){_biCarouselApplyTransform();};
+  if(typeof window!=='undefined')window.addEventListener('resize',_biCarouselResizeHandler);
+  var tx0=0,drag=false;
+  var ts=function(e){
+    if(_biCarouselSlides.length<2)return;
+    drag=true;tx0=e.changedTouches[0].clientX;
   };
-  img.onerror=function(){_noBiImg();};
-  img.src=src;
-  if(credit)credit.textContent=creditText||'';
+  var te=function(e){
+    if(!drag)return;drag=false;
+    var dx=e.changedTouches[0].clientX-tx0;
+    if(dx>48)_biCarouselGo(-1);
+    else if(dx<-48)_biCarouselGo(1);
+  };
+  track._biTouchStart=ts;
+  track._biTouchEnd=te;
+  track.addEventListener('touchstart',ts,{passive:true});
+  track.addEventListener('touchend',te,{passive:true});
 }
 
 function _noBiImg(){
@@ -2697,6 +3021,7 @@ function _noBiImg(){
   var wrap=document.getElementById('bi-img-wrap');
   var hero=document.getElementById('bi-hero-native');
   var img=document.getElementById('bi-img');
+  _biCarouselTeardown();
   if(wrap){
     wrap.classList.remove('bi-hero-native');
     wrap.removeAttribute('data-eq-cat');
