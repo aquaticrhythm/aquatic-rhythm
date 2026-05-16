@@ -781,7 +781,6 @@ details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba
     </div>
     <div class="tb-right">
       <a href="/articles/new-tank-syndrome" class="btn-sm btn-art" style="text-decoration:none">← Article</a>
-      <button class="btn-sm" id="btn-reset" title="Restart">↺</button>
       <button class="btn-skip-inline" id="btn-skip" onclick="skipDay()" title="Skip one day">+1d</button>
       <button class="btn-sm btn-pp" id="btn-pp">⏸ Pause</button>
     </div>
@@ -2252,10 +2251,6 @@ document.getElementById('btn-brief-go').addEventListener('click',function(){
 document.getElementById('btn-pp').addEventListener('click',function(){
   running=!running;
   var btn=this;btn.textContent=running?'⏸ Pause':'▶ Resume';btn.classList.toggle('paused',!running);
-});
-document.getElementById('btn-reset').addEventListener('click',function(){
-  if(subTimer){clearInterval(subTimer);subTimer=null;}
-  reset();
 });
 document.getElementById('btn-restart').addEventListener('click',function(){
   if(subTimer){clearInterval(subTimer);subTimer=null;}
