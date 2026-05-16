@@ -109,6 +109,7 @@ nav:not(.bnav){position:fixed;top:0;left:0;right:0;z-index:800;height:68px;displ
 /* ── SHARED UTILITIES ── */
 .cap{max-width:1160px;margin:0 auto}
 .pad{padding-left:clamp(1.5rem,5vw,4.5rem);padding-right:clamp(1.5rem,5vw,4.5rem)}
+.pg-sub-hero{padding-top:clamp(5.5rem,14vw,7rem);padding-bottom:2.2rem}
 .ey{display:block;font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(163,196,162,.88);margin-bottom:1.6rem}
 .ey-t{color:rgba(61,214,232,.72)}
 .div{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(139,189,210,.12),transparent)}
@@ -710,7 +711,6 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .jn-params-note{font-size:.72rem;color:rgba(255,255,255,.28);margin-bottom:.9rem;font-style:italic}
 
 /* ── MY TANK / JOURNAL PAGE ── */
-.mt-header{padding:8rem clamp(1.5rem,5vw,4.5rem) 2.5rem}
 .mt-empty{text-align:center;padding:3.5rem 1rem}
 .mt-empty-icon{margin-bottom:1.6rem;display:flex;justify-content:center}
 .mt-empty-title{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:rgba(255,255,255,.7);margin-bottom:.7rem}
