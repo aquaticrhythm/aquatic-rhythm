@@ -62,7 +62,7 @@ body{
 body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#052535 0%,#073040 18%,#062a38 38%,#041e28 58%,#030f18 78%,#020810 100%)}
 
 /* NAV — fixed */
-#topnav:not(.art-bnav){position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);background:rgba(3,11,9,.96);border-bottom:1px solid rgba(139,189,210,.07);backdrop-filter:blur(8px)}
+#topnav:not(.art-bnav){position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,2rem);padding-top:max(0px, env(safe-area-inset-top));background:rgba(3,11,9,.96);border-bottom:1px solid rgba(139,189,210,.07);backdrop-filter:blur(8px)}
 .nav-logo{display:flex;align-items:center;text-decoration:none;transition:opacity .3s}.nav-logo:hover{opacity:.7}
 .nav-title{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2)}
 .nav-back{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(61,214,232,.58);text-decoration:none;display:flex;align-items:center;gap:.35rem;transition:color .25s}.nav-back:hover{color:rgba(61,214,232,.90)}
@@ -181,14 +181,47 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.9}}
 
-@media(max-width:680px){
-  #top-band{grid-template-columns:1fr 160px;height:28vh;min-height:180px;overflow:hidden}
+@media(max-width:720px){
+  #top-band{grid-template-columns:1fr 150px;height:26vh;min-height:160px;max-height:min(320px,42dvh);overflow:hidden}
   #tank-zone{border-right:none}
-  #rhy-panel{flex-direction:row;flex-wrap:wrap;gap:.18rem;padding:.4rem .45rem}
+  #rhy-panel{flex-direction:row;flex-wrap:wrap;gap:.18rem;padding:.35rem .4rem;min-height:0}
   .rhy-hdr{width:100%;margin-bottom:0}
-  .rhy-row{grid-template-columns:8px 38px 1fr 32px}
-  #rdy-section,  .rack-grid{grid-template-columns:1fr 1fr}
-  .sz-btn{padding:.24rem .45rem}
+  .rhy-row{grid-template-columns:8px 36px 1fr 30px}
+  #rdy-section,.rack-grid{grid-template-columns:1fr 1fr}
+  .sz-btn{padding:.28rem .5rem;font-size:.5rem;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  #lab-tabs{-webkit-overflow-scrolling:touch}
+  .lab-tab{min-height:46px;padding:.65rem .5rem;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  .eq-item{padding:.42rem .5rem;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+}
+@media(max-width:520px){
+  .brief-grid-2{grid-template-columns:1fr!important}
+}
+@media(max-width:640px){
+  #top-band{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:minmax(130px, min(240px, 38dvh)) minmax(96px, min(200px, 32dvh));
+    height:auto;
+    min-height:0;
+    max-height:min(520px, 58dvh);
+    overflow:hidden;
+  }
+  .size-bar{grid-row:1;grid-column:1}
+  #tank-zone{grid-row:1;grid-column:1;min-height:0;border-right:none}
+  #rhy-panel{
+    grid-row:2;grid-column:1;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    gap:.2rem;
+    padding:.35rem .5rem .45rem;
+    border-left:none;
+    border-top:1px solid rgba(139,189,210,.1);
+    overflow:hidden;
+    min-height:0;
+    max-height:min(220px, 34dvh);
+  }
+  #rhy-canvas{max-height:min(180px, 28dvh)}
+  .rack-grid{grid-template-columns:1fr}
 }
 
 /* ── BRAND INFO PANEL ── */
@@ -256,7 +289,6 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 }
 .dq-btn-about.ready{opacity:1;pointer-events:all;color:rgba(61,214,232,.75);border-color:rgba(61,214,232,.35)}
 .dq-btn-about.ready:hover{background:rgba(139,189,210,.08);border-color:rgba(61,214,232,.55);color:rgba(139,189,210,.95)}
-)}
 
 .bi-actions{
   display:flex;flex-direction:column;gap:.5rem;
@@ -664,7 +696,6 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 @media(display-mode:standalone){.art-bnav{display:flex}body{height:calc(100dvh - 56px - env(safe-area-inset-bottom))}}
 </style>
 <body>
-<body>
 <!-- TOPNAV -->
 <div id="topnav">
   <a href="/" class="nav-logo" aria-label="Aquatic Rhythm">
@@ -690,7 +721,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <span class="brief-eyebrow">Aquatic Rhythm Lab</span>
     <h1 class="brief-title">Build your<br><em>first tank.</em></h1>
     <p class="brief-body">Start anywhere. Choose fish you love and discover what they need — or build your equipment setup and see what it can support. The two panels work together, and the tank visual responds to both.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.2rem">
+    <div class="brief-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.2rem">
       <div style="padding:.7rem .85rem;background:rgba(6,18,14,.5);border:1px solid rgba(61,214,232,.20);border-radius:2px">
         <span style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.66);display:block;margin-bottom:.28rem">Start with fish</span>
         <span style="font-size:.72rem;color:rgba(235,240,236,.46);font-family:var(--serif);font-style:italic;line-height:1.5">Pick species you want to keep. See what equipment they need.</span>

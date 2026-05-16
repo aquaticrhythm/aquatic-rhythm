@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tank Cycle Simulator — Interactive Nitrogen Cycle — Aquatic Rhythm</title>
 <meta name="description" content="An interactive simulation of the nitrogen cycle. Choose your setup, learn what to expect, and watch how the tank responds to your decisions.">
 <link rel="canonical" href="https://aquaticrhythm.com/articles/tank-simulator">
@@ -179,16 +179,18 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 .expected-box p{font-size:.82rem;font-weight:300;color:rgba(235,240,236,.50);line-height:1.7}
 .expected-box strong{color:rgba(61,214,232,.74);font-weight:400}
 
-/* ── MOBILE ── */
-@media(max-width:600px){
+/* ── MOBILE (align with art-bnav ≤720px) ── */
+@media(max-width:720px){
   /* App — full height flex column */
   #app{
     display:flex;flex-direction:column;
     height:100dvh;padding:0;gap:0;
+    padding-left:max(0px, env(safe-area-inset-left));
+    padding-right:max(0px, env(safe-area-inset-right));
   }
 
   /* Topbar */
-  #topbar{flex-shrink:0;padding:.38rem .6rem;gap:.3rem}
+  #topbar{flex-shrink:0;padding:.38rem max(.55rem, env(safe-area-inset-left)) .38rem max(.55rem, env(safe-area-inset-right));gap:.3rem}
   .t-label,.t-status,.t-prog{display:none}
   .ah{display:none}
   .tb-center{gap:.3rem;justify-content:flex-start;flex:0 0 auto}
@@ -216,14 +218,14 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   /* Hide desktop left params */
   #pleft{display:none}
 
-  /* Tank col — fixed height, no gap (param-bar below) */
+  /* Tank col — responsive height, no gap (param-bar below) */
   #tcol{
     flex-shrink:0;
-    height:210px;
+    height:clamp(150px, 32dvh, 260px);
     display:flex;
     flex-direction:column;
     gap:0;
-    padding:.3rem .75rem 0;
+    padding:.3rem max(.55rem, env(safe-area-inset-left)) 0 max(.55rem, env(safe-area-inset-right));
   }
   #tank{flex:1;min-height:0}
 
@@ -232,12 +234,15 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
     flex-shrink:0;
     display:flex;flex-wrap:nowrap;
     overflow-x:auto;-webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
     gap:0 .5rem;
-    padding:.2rem .75rem;
+    padding:.22rem max(.55rem, env(safe-area-inset-left)) .22rem max(.55rem, env(safe-area-inset-right));
     border-top:1px solid rgba(139,189,210,.08);
     border-bottom:1px solid rgba(139,189,210,.08);
     background:rgba(6,16,13,.35);
+    scrollbar-width:none;
   }
+  #param-bar::-webkit-scrollbar{display:none}
   .pi{flex-shrink:0;gap:.18rem;min-width:auto}
   .pi-lbl{font-size:.75rem;letter-spacing:.04em}
   .pi-val{font-size:1.05rem;min-width:28px}
@@ -251,7 +256,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   #pright{
     flex:1;min-height:0;
     display:flex;flex-direction:column;
-    padding:.28rem .75rem 0;
+    padding:.28rem max(.55rem, env(safe-area-inset-left)) 0 max(.55rem, env(safe-area-inset-right));
     overflow:hidden;
   }
   .insight-box{flex-shrink:0;padding:.3rem .5rem}
@@ -261,23 +266,64 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   .le{font-size:.88rem;padding:.32rem .5rem;line-height:1.52}
   .ld{font-size:.72rem;min-width:34px}
 
-  /* Equipment */
-  #equip-bar{padding:.25rem .75rem}
-  .eq-btn{padding:.25rem .6rem}
+  /* Equipment — scroll when narrow */
+  #equip-bar{
+    padding:.28rem max(.45rem, env(safe-area-inset-left)) .28rem max(.45rem, env(safe-area-inset-right));
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    gap:.15rem;
+    scrollbar-width:none;
+  }
+  #equip-bar::-webkit-scrollbar{display:none}
+  .eq-btn{padding:.32rem .65rem;flex-shrink:0;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   .eq-icon{font-size:1rem}
   .eq-lbl{font-size:.72rem}
   .eq-temp{font-size:.72rem}
 
-  /* Actions */
+  /* Actions — horizontal scroll so each tap target stays readable */
   #bbar{
     flex-shrink:0;
-    padding:.3rem .75rem .4rem;
-    gap:.3rem;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    padding:.32rem max(.45rem, env(safe-area-inset-left)) .42rem max(.45rem, env(safe-area-inset-right));
+    gap:.35rem;
     border-top:1px solid rgba(61,214,232,.15);
+    scrollbar-width:none;
   }
-  .ab{padding:.55rem .15rem;gap:.14rem}
+  #bbar::-webkit-scrollbar{display:none}
+  .ab{
+    flex:0 0 auto;
+    min-width:4.6rem;
+    max-width:5.5rem;
+    padding:.55rem .35rem;
+    gap:.14rem;
+    min-height:52px;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
   .ai{font-size:1.2rem}
   .an{font-size:.65rem;letter-spacing:.04em}
+  .btn-sm,.btn-skip-inline,.btn-pp{min-height:40px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  #wc-picker{
+    left:max(.5rem, env(safe-area-inset-left));
+    right:max(.5rem, env(safe-area-inset-right));
+    transform:none;
+    width:auto;
+    max-width:22rem;
+    margin:0 auto;
+    bottom:calc(5.25rem + 56px + env(safe-area-inset-bottom));
+  }
+}
+
+@media(max-width:520px){
+  .setup-options{flex-direction:column;gap:.5rem}
+  .sopt{flex:none;width:100%;max-width:none}
 }
 
 /* DAY PROGRESS BAR */
@@ -324,6 +370,20 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
 
 
 /* WATER CHANGE PICKER */
+#wc-picker{
+  display:none;
+  position:fixed;
+  bottom:5.5rem;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:60;
+  background:rgba(4,16,12,.97);
+  border:1px solid rgba(61,214,232,.28);
+  border-radius:4px;
+  padding:.9rem 1.2rem;
+  backdrop-filter:blur(12px);
+  min-width:220px;
+}
 .wc-opt{
   display:flex;align-items:center;justify-content:center;
   background:rgba(6,22,18,.8);border:1px solid rgba(61,214,232,.28);
@@ -752,7 +812,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',system-ui,sans-serif
   </div>
 
   <!-- Water change picker -->
-  <div id="wc-picker" style="display:none;position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:60;background:rgba(4,16,12,.97);border:1px solid rgba(61,214,232,.28);border-radius:4px;padding:.9rem 1.2rem;backdrop-filter:blur(12px);min-width:220px">
+  <div id="wc-picker">
     <div style="font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(235,240,236,.46);margin-bottom:.7rem;text-align:center">How much water to change?</div>
     <div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap">
       <button class="wc-opt" onclick="doWaterChange(10)">10%</button>
