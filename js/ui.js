@@ -188,6 +188,29 @@
 
   window.go = go;
 
+  /* ── Home hero: override .hero min-height on mobile (cache-resilient) ── */
+  (function () {
+    var hero = document.querySelector('.home-hero');
+    if (!hero) return;
+    function applyHeroFix() {
+      if (window.innerWidth < 900) {
+        hero.style.minHeight = 'auto';
+        hero.style.display = 'block';
+        hero.style.alignItems = 'flex-start';
+        hero.style.paddingTop = 'calc(68px + clamp(1.75rem, 7vh, 3.5rem))';
+        hero.style.paddingBottom = 'clamp(2rem, 6vh, 3.25rem)';
+      } else {
+        hero.style.minHeight = '100svh';
+        hero.style.display = 'flex';
+        hero.style.alignItems = 'center';
+        hero.style.paddingTop = '68px';
+        hero.style.paddingBottom = '0';
+      }
+    }
+    applyHeroFix();
+    window.addEventListener('resize', applyHeroFix, { passive: true });
+  }());
+
   /* ── ARA page: module nav scroll spy (highlights current section) ── */
   function initAraModScrollSpy() {
     if (window.__araModSpyInit) return;
@@ -915,7 +938,8 @@
       var sel = document.getElementById('jn-tank-selector');
       if (!sel) return;
       if (!d.tanks || d.tanks.length <= 1) { sel.style.display = 'none'; return; }
-      sel.style.display = '';
+      sel.classList.add('jn-tank-selector');
+      sel.style.display = 'flex';
       sel.innerHTML = d.tanks.map(function (t) {
         var active = t.id === d.activeTankId;
         var icon = tankTypeIcon((t.profile || {}).type, (t.profile || {}).shape);
