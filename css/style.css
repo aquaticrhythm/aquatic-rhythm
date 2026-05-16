@@ -908,7 +908,6 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .jn-inh-status-btn:hover{border-color:rgba(200,80,80,.4);color:rgba(200,80,80,.7)}
 
 /* ── Keeper's Log overview ── */
-.jn-ov-hero{padding-bottom:2.5rem}
 .jn-tank-cards{display:flex;flex-direction:column;gap:.85rem}
 .jn-tank-card{display:flex;align-items:center;gap:1.2rem;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.25rem 1.4rem;cursor:pointer;text-align:left;font-family:var(--sans);width:100%;transition:background .22s,border-color .22s,transform .18s;-webkit-tap-highlight-color:transparent}
 .jn-tank-card:hover{background:rgba(61,214,232,.06);border-color:rgba(61,214,232,.22);transform:translateY(-1px)}
@@ -930,7 +929,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .jn-ov-empty-desc{font-size:.84rem;color:rgba(235,240,236,.38);line-height:1.75;margin:0 0 1.6rem;max-width:380px;margin-left:auto;margin-right:auto}
 
 /* ── Tank log detail page ── */
-.jn-tl-topbar{display:flex;align-items:center;padding:.9rem 1.4rem .4rem;max-width:760px;margin:0 auto;width:100%}
+.jn-tl-topbar{display:flex;align-items:center;padding:clamp(5rem,13vw,6.5rem) 1.4rem .4rem;max-width:760px;margin:0 auto;width:100%}
 .jn-back-btn{display:inline-flex;align-items:center;gap:.45rem;color:rgba(61,214,232,.55);font-size:.78rem;font-family:var(--sans);letter-spacing:.05em;background:none;border:none;padding:.3rem 0;cursor:pointer;text-decoration:none;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .jn-back-btn:hover{color:rgba(61,214,232,.9)}
 .jn-back-btn svg{flex-shrink:0}
