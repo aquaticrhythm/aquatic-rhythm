@@ -97,7 +97,7 @@
   var descMap = {
     'home':      'Aquatic Rhythm — calm ecology guides for home aquariums. ARA (Aquatic Rhythm Alignment) is the reasoning behind Reading, tools, Rhyssa, and your private journal.',
     'ara':       'ARA is a framework for closed-loop aquariums — phase, ecological tolerance, keeper rhythm, and timing before big moves.',
-    'companion': 'Rhyssa is an AI aquarium companion shaped by ARA. She helps you interpret what your ecosystem is doing — without rushing to a single fix.',
+    'companion': 'Rhyssa on ChatGPT — start in one tap. She can explain ARA and how she thinks in the chat itself; this page stays short.',
     'about':     'Why Aquatic Rhythm exists — from uneven advice to a calmer, ecology-first way of reading small tanks.',
     'privacy':   'Privacy Policy for Aquatic Rhythm. What we collect, how it is handled, and what it means for you.',
     'terms':     'Terms of Use for Aquatic Rhythm and Rhyssa. Written plainly, without unnecessary complexity.',
@@ -242,7 +242,61 @@
     if (active) observeScrollReveal(active);
   })();
 
+  var RHYSSA_GPT_URL = 'https://chatgpt.com/g/g-699693b8fd4881919538441b15f73c2c-rhyssa-aquarium-companion';
+
+  function rhCopyToClipboard(text, onOk, onFail) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onOk).catch(function () { if (onFail) onFail(); });
+      return;
+    }
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      onOk();
+    } catch (err) {
+      if (onFail) onFail();
+    }
+  }
+
+  function rhFlashLabel(el, labelText, ms) {
+    var lbl = el.querySelector('.rh-copy-lbl, .rh-chip-lbl');
+    if (!lbl) return;
+    if (!lbl.getAttribute('data-rh-orig')) lbl.setAttribute('data-rh-orig', lbl.textContent);
+    lbl.textContent = labelText;
+    clearTimeout(el._rhFlashT);
+    el._rhFlashT = setTimeout(function () {
+      lbl.textContent = lbl.getAttribute('data-rh-orig') || '';
+    }, ms || 1800);
+  }
+
   document.addEventListener('click', function (e) {
+    var pasteEl = e.target.closest('[data-rh-paste]');
+    if (pasteEl) {
+      e.preventDefault();
+      var pasteText = pasteEl.getAttribute('data-rh-paste');
+      if (!pasteText) return;
+      rhCopyToClipboard(pasteText, function () {
+        pasteEl.classList.add('rh-copied');
+        rhFlashLabel(pasteEl, 'Copied', 2000);
+        setTimeout(function () { pasteEl.classList.remove('rh-copied'); }, 2000);
+      });
+      return;
+    }
+    var copyGpt = e.target.closest('[data-copy-rhyssa]');
+    if (copyGpt) {
+      e.preventDefault();
+      rhCopyToClipboard(RHYSSA_GPT_URL, function () {
+        rhFlashLabel(copyGpt, 'Copied', 2000);
+      });
+      return;
+    }
     if (e.target.closest('.rd-card-go')) return;
     var hit = e.target.closest('.rd-card-hit');
     if (!hit) return;
