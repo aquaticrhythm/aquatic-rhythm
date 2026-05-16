@@ -618,10 +618,14 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
   .ara-mod-nav-card{min-width:118px;padding:.55rem .72rem}
   .ara-mod-nav-t{font-size:.54rem}
   .ara-mod-nav-s{font-size:.58rem}
-  .ara-mod-outro-nav .btn{width:100%;text-align:center}
-  /* Keep intro copy clear of the fixed bottom nav (PWA / narrow screens) */
+  /* Bottom nav provides the same navigation on mobile — hide the redundant outro CTA */
+  .ara-mod-outro-nav{display:none}
+  /* Keep intro copy and outro text clear of the fixed bottom nav (PWA / narrow screens) */
   #pg-ara .araph--mod{
     padding-bottom:calc(clamp(2.25rem,5vh,3rem) + 56px + env(safe-area-inset-bottom));
+  }
+  .ara-mod-outro{
+    padding-bottom:calc(3.5rem + 56px + env(safe-area-inset-bottom));
   }
 }
 
