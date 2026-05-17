@@ -39,8 +39,7 @@
     /* ── 2. BACK-BUTTON INTERCEPT ──────────────────────────────── */
     var sheet = document.getElementById('rh-sheet');
     if (sheet) {
-      var rhInHistory  = false;
-      var rhIgnoreNext = false;
+      var rhInHistory = false;
 
       function closeRhSheet() {
         if (window.__rhCloseSheet) {
@@ -58,28 +57,26 @@
           rhInHistory = true;
           history.pushState({ rhSheet: true }, '');
         } else if (!open && rhInHistory) {
-          /* Sheet closed normally (not via back) — pop the orphaned entry */
-          rhInHistory  = false;
-          rhIgnoreNext = true;
-          window.__rhSuppressSpaNav = true;
+          /* Sheet closed via UI — clean up the pushed entry.
+             rhInHistory stays true so the popstate handler can identify and
+             suppress the resulting navigation rather than treating it as a
+             genuine user back-press. */
           history.back();
         }
       }).observe(sheet, { attributes: true, attributeFilter: ['class'] });
 
-      /* Intercept popstate before the SPA router sees it */
+      /* Intercept popstate before the SPA router sees it.
+         e.state is the DESTINATION state (entry navigated to), not the source.
+         We detect our sheet intercept via rhInHistory, not via e.state.rhSheet. */
       window.addEventListener('popstate', function (e) {
-        if (rhIgnoreNext) {
-          /* This popstate is our own history.back() cleanup — swallow it */
-          rhIgnoreNext = false;
-          window.__rhSuppressSpaNav = true;
-          return;
-        }
-        if (e.state && e.state.rhSheet) {
-          /* User pressed the hardware/browser back button while sheet was open */
-          rhInHistory = false;
-          window.__rhSuppressSpaNav = true;
+        if (!rhInHistory) return; /* not ours — let SPA router handle */
+        rhInHistory = false;
+        window.__rhSuppressSpaNav = true;
+        if (sheet.classList.contains('open')) {
+          /* Back pressed while sheet was open — close it */
           closeRhSheet();
         }
+        /* else: popstate from our own history.back() cleanup — just suppress SPA */
       }, true); /* capture: fires before ui.js bubble-phase SPA handler */
     }
 
