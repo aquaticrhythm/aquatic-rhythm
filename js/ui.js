@@ -1993,9 +1993,15 @@
       sendMsg(chip.dataset.rhSend);
     });
 
-    /* data-rh-open on any element anywhere opens the sheet */
+    /* data-rh-open on any element anywhere opens the sheet (skip native links inside) */
     document.addEventListener('click', function (e) {
+      if (e.target.closest('a[href]')) return;
       if (e.target.closest('[data-rh-open]')) { e.preventDefault(); openSheet(); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('[data-rh-open]') && !e.target.closest('a[href]')) {
+        e.preventDefault(); openSheet();
+      }
     });
 
     /* Mobile keyboard resize */

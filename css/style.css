@@ -214,6 +214,9 @@ nav:not(.bnav){position:fixed;top:0;left:0;right:0;z-index:800;height:68px;displ
 .home-tile:hover .home-tile-cta,.home-tile:focus-visible .home-tile-cta{color:rgba(61,214,232,.95)}
 .home-tile--soon{pointer-events:none;opacity:.55}
 .home-tile--soon .home-tile-cta{color:rgba(255,255,255,.22)}
+.home-tile[data-rh-open]{cursor:pointer}
+.home-tile-ext{color:rgba(61,214,232,.55);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.2);transition:color .2s,border-color .2s}
+.home-tile-ext:hover{color:rgba(61,214,232,.9);border-bottom-color:rgba(61,214,232,.55)}
 @media(max-width:720px){
   .home-ara-grid,.home-offers-grid{grid-template-columns:1fr}
   .home-ara-reframe{grid-template-columns:1fr}
