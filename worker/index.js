@@ -13,7 +13,7 @@
 
 const ALLOWED_ORIGIN = 'https://aquaticrhythm.com';
 const MODEL          = 'claude-haiku-4-5-20251001';
-const MAX_TOKENS     = 512;
+const MAX_TOKENS     = 1024;
 const MAX_MSG_CHARS  = 800;
 const MAX_HISTORY    = 10;
 

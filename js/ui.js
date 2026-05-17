@@ -1859,7 +1859,8 @@
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
-      s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      /* Bold first: non-greedy so pairs match in order; allow * inside bold text */
+      s = s.replace(/\*\*([\s\S]*?)\*\*/g, '<strong>$1</strong>');
       s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
       var paras = s.split(/\n{2,}/);
       if (paras.length > 1) {
@@ -2059,9 +2060,27 @@
         var decoder = new TextDecoder();
         var buf = '';
 
+        function feedSseLine(line) {
+          if (!line.startsWith('data: ')) return;
+          var d = line.slice(6).trim();
+          if (d === '[DONE]') return;
+          try {
+            var parsed = JSON.parse(d);
+            var delta = (parsed.delta && parsed.delta.text) ? parsed.delta.text : '';
+            if (delta) {
+              responseText += delta;
+              p.innerHTML = mdToHTML(responseText);
+              thread.scrollTop = thread.scrollHeight;
+            }
+          } catch (e2) {}
+        }
+
         function read() {
           return reader.read().then(function (chunk) {
             if (chunk.done) {
+              buf += decoder.decode(chunk.value || new Uint8Array(0), { stream: false });
+              buf.split('\n').forEach(feedSseLine);
+              buf = '';
               var s2 = getThread();
               s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
               saveThread(s2);
@@ -2071,17 +2090,9 @@
               return;
             }
             buf += decoder.decode(chunk.value, { stream: true });
-            var lines = buf.split('\n'); buf = lines.pop();
-            lines.forEach(function (line) {
-              if (!line.startsWith('data: ')) return;
-              var d = line.slice(6).trim();
-              if (d === '[DONE]') return;
-              try {
-                var parsed = JSON.parse(d);
-                var delta = (parsed.delta && parsed.delta.text) ? parsed.delta.text : '';
-                if (delta) { responseText += delta; p.innerHTML = mdToHTML(responseText); thread.scrollTop = thread.scrollHeight; }
-              } catch (e2) {}
-            });
+            var lines = buf.split('\n');
+            buf = lines.pop() || '';
+            lines.forEach(feedSseLine);
             return read();
           });
         }
