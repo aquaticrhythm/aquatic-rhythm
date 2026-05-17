@@ -5,45 +5,51 @@
   var PEEK_PX        = 14; /* px of circle visible when edge-collapsed */
 
   /* ── Inject CSS ──────────────────────────────────────────────────
-     Articles use inline <style>, not style.css, and the <button>
-     itself has inline style="..." (highest specificity).
-     Every shape property needs !important to win. */
+     Articles use inline <style> + inline style="" on the <button>.
+     Every shape-overriding property needs !important. */
   if (!document.getElementById('rh-fab-ext-css')) {
     var s = document.createElement('style');
     s.id = 'rh-fab-ext-css';
     s.textContent =
-      /* Round jelly shape — override inline button styles */
+      '@keyframes rh-fab-breathe{' +
+        '0%,100%{opacity:.18}' +
+        '50%{opacity:.32}' +
+      '}' +
       '.rh-fab{' +
         'width:52px!important;height:52px!important;border-radius:50%!important;' +
         'padding:0!important;gap:0!important;' +
         'align-items:center!important;justify-content:center!important;' +
         'background:radial-gradient(ellipse at 38% 32%,rgba(255,255,255,.08) 0%,transparent 52%),' +
-          'radial-gradient(ellipse at 50% 50%,rgba(61,214,232,.14) 0%,transparent 66%),' +
-          'rgba(6,18,14,.95)!important;' +
-        'border:1.5px solid rgba(61,214,232,.4)!important;' +
-        'box-shadow:0 0 16px rgba(61,214,232,.14),0 6px 22px rgba(0,0,0,.5),' +
+          'radial-gradient(ellipse at 50% 50%,rgba(61,214,232,.13) 0%,transparent 66%),' +
+          'rgba(6,18,14,.88)!important;' +
+        'border:1.5px solid rgba(61,214,232,.38)!important;' +
+        'box-shadow:0 0 16px rgba(61,214,232,.13),0 6px 22px rgba(0,0,0,.48),' +
           'inset 0 1px 0 rgba(255,255,255,.07)!important;' +
         'touch-action:none!important;will-change:transform;' +
         'transition:border-color .25s,background .25s,' +
-          'transform .45s cubic-bezier(0.34,1.56,0.64,1),' +
+          'transform .5s cubic-bezier(0.22,1.8,0.36,1),' +
           'opacity .4s ease,box-shadow .3s!important}' +
       '.rh-fab-lbl{display:none!important}' +
+      '.rh-fab:active{transform:scale(.85)!important}' +
       '.rh-fab:hover{' +
-        'border-color:rgba(61,214,232,.65)!important;' +
-        'box-shadow:0 0 24px rgba(61,214,232,.22),0 6px 22px rgba(0,0,0,.5),' +
+        'border-color:rgba(61,214,232,.62)!important;' +
+        'box-shadow:0 0 24px rgba(61,214,232,.2),0 6px 22px rgba(0,0,0,.48),' +
           'inset 0 1px 0 rgba(255,255,255,.07)!important}' +
       '.rh-fab.active{' +
-        'border-color:rgba(61,214,232,.65)!important;' +
+        'border-color:rgba(61,214,232,.62)!important;' +
         'background:radial-gradient(ellipse at 38% 32%,rgba(255,255,255,.1) 0%,transparent 52%),' +
           'radial-gradient(ellipse at 50% 50%,rgba(61,214,232,.2) 0%,transparent 66%),' +
-          'rgba(10,28,20,.97)!important;' +
-        'box-shadow:0 0 28px rgba(61,214,232,.28),0 6px 22px rgba(0,0,0,.5),' +
+          'rgba(10,28,20,.96)!important;' +
+        'box-shadow:0 0 28px rgba(61,214,232,.26),0 6px 22px rgba(0,0,0,.48),' +
           'inset 0 1px 0 rgba(255,255,255,.09)!important}' +
-      '.rh-fab.idle{opacity:.75}' +
+      '.rh-fab.idle{' +
+        'animation:rh-fab-breathe 2.8s ease-in-out infinite}' +
       '.rh-fab.idle[data-side="right"]{transform:translateX(calc(100% - ' + PEEK_PX + 'px))}' +
       '.rh-fab.idle[data-side="left"]{transform:translateX(calc(-100% + ' + PEEK_PX + 'px))}' +
-      '.rh-fab.snapping{transform:scale(.82)}' +
-      '.rh-fab.dragging{transition:none!important;opacity:1!important;transform:none!important;cursor:grabbing}';
+      '.rh-fab.snapping{transform:scale(.82)!important}' +
+      '.rh-fab.dragging{' +
+        'transition:none!important;opacity:1!important;' +
+        'transform:none!important;animation:none!important;cursor:grabbing}';
     document.head.appendChild(s);
   }
 
@@ -51,14 +57,17 @@
     var fab = document.getElementById('rh-fab');
     if (!fab) return;
 
-    /* Read saved side early so armIdle collapses the right way from the start */
+    /* Ensure touch-action is set even before CSS cascade resolves */
+    fab.style.touchAction = 'none';
+
+    /* Read saved side so first idle collapse goes the right direction */
     var currentSide = 'right';
     try {
       var _pre = JSON.parse(localStorage.getItem(STORE_KEY));
       if (_pre && _pre.side) currentSide = _pre.side;
     } catch (e) {}
 
-    /* dragging declared at init scope so armIdle can guard against it */
+    /* dragging at init scope so armIdle guard works correctly */
     var dragging = false;
 
     /* ── 1. IDLE EDGE-COLLAPSE ─────────────────────────────────────── */
@@ -98,35 +107,28 @@
         }
       }
 
-      /* Watch for .open toggling on the sheet */
       new MutationObserver(function () {
         var open = sheet.classList.contains('open');
         if (open && !rhInHistory) {
           rhInHistory = true;
           history.pushState({ rhSheet: true }, '');
         } else if (!open && rhInHistory) {
-          /* Sheet closed via UI — clean up the pushed entry.
-             rhInHistory stays true so the popstate handler can identify and
-             suppress the resulting navigation. */
           history.back();
         }
       }).observe(sheet, { attributes: true, attributeFilter: ['class'] });
 
-      /* Intercept popstate before the SPA router sees it.
-         e.state is the DESTINATION state (entry navigated to), not the source.
-         We detect our intercept via rhInHistory, not via e.state.rhSheet. */
       window.addEventListener('popstate', function (e) {
         if (!rhInHistory) return;
         rhInHistory = false;
         window.__rhSuppressSpaNav = true;
-        if (sheet.classList.contains('open')) {
-          closeRhSheet();
-        }
+        if (sheet.classList.contains('open')) closeRhSheet();
       }, true);
     }
 
-    /* ── 3. DRAG + POSITION (touch / coarse-pointer only) ─────────── */
-    var isTouch = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+    /* ── 3. DRAG + POSITION ────────────────────────────────────────── */
+
+    /* More reliable than (hover:none)&&(pointer:coarse) — catches all touch-capable devices */
+    var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     if (!isTouch) return;
 
     var safeAreaCache = null;
@@ -171,7 +173,6 @@
       try { localStorage.setItem(STORE_KEY, JSON.stringify({ side: side, bottom: bottom })); } catch (e) {}
     }
 
-    /* Re-clamp on orientation change */
     window.addEventListener('resize', function () {
       safeAreaCache = null;
       try {
@@ -181,60 +182,83 @@
     });
 
     /* ── 4. DRAG EVENTS ────────────────────────────────────────────── */
-    var moved = false;
-    var dragStartX, dragStartY, fabStartX, fabStartY;
+    var moved      = false;
+    var pointerDown = false; /* reliable flag instead of hasPointerCapture */
+    var dragStartX, dragStartY;
+    var fabStartX,  fabStartY; /* set when drag activates, not on pointerdown */
 
     fab.addEventListener('pointerdown', function (e) {
       cancelIdle();
-      dragging = false;
-      moved    = false;
-      dragStartX = e.clientX;
-      dragStartY = e.clientY;
-      var rect = fab.getBoundingClientRect();
-      fabStartX = rect.left;
-      fabStartY = rect.top;
+      dragging    = false;
+      moved       = false;
+      pointerDown = true;
+      dragStartX  = e.clientX;
+      dragStartY  = e.clientY;
+      /* fabStartX/Y are captured in pointermove when drag activates —
+         recording here would be mid-animation if coming from idle state */
       fab.setPointerCapture(e.pointerId);
     });
 
     fab.addEventListener('pointermove', function (e) {
-      if (!fab.hasPointerCapture(e.pointerId)) return;
+      if (!pointerDown) return;
+
       var dx = e.clientX - dragStartX;
       var dy = e.clientY - dragStartY;
       if (!moved && Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
-      moved = true;
-      if (!dragging) {
+
+      if (!moved) {
+        moved = true;
+        /* FIX: read current VISUAL position (including any active CSS transform)
+           and immediately lock it into left/top BEFORE adding .dragging.
+           This prevents the FAB from jumping when transform:none is applied. */
+        var rect = fab.getBoundingClientRect();
+        fab.style.left   = rect.left + 'px';
+        fab.style.top    = rect.top  + 'px';
+        fab.style.right  = '';
+        fab.style.bottom = '';
+        /* NOW remove transform via .dragging — visual position unchanged */
         dragging = true;
         fab.classList.add('dragging');
+        /* Re-anchor reference points to this moment */
+        fabStartX  = rect.left;
+        fabStartY  = rect.top;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        return; /* dx/dy are 0 from new reference — skip this frame */
       }
+
       var vw = window.innerWidth, vh = window.innerHeight;
-      var newLeft = Math.max(0, Math.min(vw - fab.offsetWidth,  fabStartX + dx));
-      var newTop  = Math.max(60, Math.min(vh - fab.offsetHeight, fabStartY + dy));
-      fab.style.right  = '';
-      fab.style.bottom = '';
-      fab.style.left   = newLeft + 'px';
-      fab.style.top    = newTop  + 'px';
-    });
+      var newLeft = Math.max(0, Math.min(vw - fab.offsetWidth,  fabStartX + (e.clientX - dragStartX)));
+      var newTop  = Math.max(60, Math.min(vh - fab.offsetHeight, fabStartY + (e.clientY - dragStartY)));
+      fab.style.left = newLeft + 'px';
+      fab.style.top  = newTop  + 'px';
+
+      e.preventDefault(); /* stop browser claiming touch for scroll */
+    }, { passive: false });
 
     fab.addEventListener('pointerup', function (e) {
+      pointerDown = false;
       fab.classList.remove('dragging');
       if (!dragging) { armIdle(); return; }
       dragging = false;
 
-      /* Snap to nearest edge */
       var rect   = fab.getBoundingClientRect();
       var side   = (rect.left + rect.width / 2) < window.innerWidth / 2 ? 'left' : 'right';
       var bottom = clamp(window.innerHeight - rect.bottom);
       applyPos(side, bottom);
       savePos(side, bottom);
 
-      /* Jelly bloop on snap: briefly squish then spring back */
+      /* Jelly bloop: squish → spring back */
       fab.classList.add('snapping');
-      void fab.offsetWidth; /* force reflow so browser sees the 'from' state */
-      fab.classList.remove('snapping');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          fab.classList.remove('snapping');
+        });
+      });
 
       armIdle();
 
-      /* Suppress the ghost click Android fires after pointerup */
+      /* Suppress ghost click Android fires after drag */
       fab.addEventListener('click', function suppress(ev) {
         ev.stopImmediatePropagation();
         fab.removeEventListener('click', suppress, true);
@@ -242,6 +266,7 @@
     });
 
     fab.addEventListener('pointercancel', function () {
+      pointerDown = false;
       if (dragging) {
         dragging = false;
         fab.classList.remove('dragging');
