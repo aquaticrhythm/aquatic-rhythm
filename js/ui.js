@@ -286,6 +286,7 @@
     });
 
     window.addEventListener('popstate', function (e) {
+      if (window.__rhSuppressSpaNav) { window.__rhSuppressSpaNav = false; return; }
       var id = (e.state && e.state.page) ? e.state.page : pageMap[location.pathname] || 'home';
       go(id, false);
     });

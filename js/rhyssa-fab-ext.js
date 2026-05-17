@@ -36,7 +36,54 @@
     fab.addEventListener('pointerleave', armIdle);
     armIdle();
 
-    /* ── 2. DRAG (touch / coarse-pointer devices only) ─────────── */
+    /* ── 2. BACK-BUTTON INTERCEPT ──────────────────────────────── */
+    var sheet = document.getElementById('rh-sheet');
+    if (sheet) {
+      var rhInHistory  = false;
+      var rhIgnoreNext = false;
+
+      function closeRhSheet() {
+        if (window.__rhCloseSheet) {
+          window.__rhCloseSheet();
+        } else {
+          var bd = document.getElementById('rh-backdrop');
+          if (bd) bd.click();
+        }
+      }
+
+      /* Watch for .open toggling on the sheet */
+      new MutationObserver(function () {
+        var open = sheet.classList.contains('open');
+        if (open && !rhInHistory) {
+          rhInHistory = true;
+          history.pushState({ rhSheet: true }, '');
+        } else if (!open && rhInHistory) {
+          /* Sheet closed normally (not via back) — pop the orphaned entry */
+          rhInHistory  = false;
+          rhIgnoreNext = true;
+          window.__rhSuppressSpaNav = true;
+          history.back();
+        }
+      }).observe(sheet, { attributes: true, attributeFilter: ['class'] });
+
+      /* Intercept popstate before the SPA router sees it */
+      window.addEventListener('popstate', function (e) {
+        if (rhIgnoreNext) {
+          /* This popstate is our own history.back() cleanup — swallow it */
+          rhIgnoreNext = false;
+          window.__rhSuppressSpaNav = true;
+          return;
+        }
+        if (e.state && e.state.rhSheet) {
+          /* User pressed the hardware/browser back button while sheet was open */
+          rhInHistory = false;
+          window.__rhSuppressSpaNav = true;
+          closeRhSheet();
+        }
+      }, true); /* capture: fires before ui.js bubble-phase SPA handler */
+    }
+
+    /* ── 3. DRAG (touch / coarse-pointer devices only) ─────────── */
     var isTouch = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
     if (!isTouch) return;
 
