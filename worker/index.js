@@ -11,7 +11,7 @@
      api.aquaticrhythm.com/* → aquatic-rhythm-rhyssa
    ============================================================ */
 
-const ALLOWED_ORIGIN = 'https://aquaticrhythm.com';
+const DEFAULT_ORIGIN = 'https://aquaticrhythm.com';
 const MODEL          = 'claude-haiku-4-5-20251001';
 const MAX_TOKENS     = 1024;
 const MAX_MSG_CHARS  = 800;
@@ -19,17 +19,24 @@ const MAX_HISTORY    = 10;
 
 export default {
   async fetch(request, env) {
+    const allowedOrigin = env.ALLOWED_ORIGIN || DEFAULT_ORIGIN;
     const origin = request.headers.get('Origin');
 
-    if (request.method === 'OPTIONS') {
-      return corsResponse(204, origin === ALLOWED_ORIGIN ? origin : null);
+    /* Health check — no auth needed */
+    const url = new URL(request.url);
+    if (request.method === 'GET' && url.pathname === '/health') {
+      return new Response(JSON.stringify({ ok: true, origin: origin || 'none' }), {
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
-    if (origin !== ALLOWED_ORIGIN) {
+    if (request.method === 'OPTIONS') {
+      return corsResponse(204, origin === allowedOrigin ? origin : null);
+    }
+
+    if (origin !== allowedOrigin) {
       return new Response('Forbidden', { status: 403 });
     }
-
-    const url = new URL(request.url);
 
     if (request.method === 'POST' && url.pathname === '/chat') {
       return handleChat(request, env, origin);
@@ -188,7 +195,7 @@ function errorResponse(message, status, origin) {
     status,
     headers: {
       'Content-Type':                'application/json',
-      'Access-Control-Allow-Origin': origin || ALLOWED_ORIGIN,
+      'Access-Control-Allow-Origin': origin || DEFAULT_ORIGIN,
     },
   });
 }

@@ -1815,7 +1815,7 @@
 
   /* ── RHYSSA BOTTOM SHEET ── */
   (function () {
-    var WORKER_URL = 'https://aquatic-rhythm-rhyssa.hazim-project.workers.dev/chat';
+    var WORKER_URL = 'https://api.aquaticrhythm.com/chat';
     var STORE_KEY  = 'rh_thread';
     var isStreaming = false;
     var isTouch     = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
@@ -2051,7 +2051,10 @@
       })
       .then(function (res) {
         hideTyping();
-        if (!res.ok || !res.body) throw new Error('bad response');
+        if (!res.ok || !res.body) {
+          console.error('[Rhyssa] Worker error', res.status, res.statusText);
+          throw new Error('status ' + res.status);
+        }
 
         var replyTs = Date.now();
         var p = appendBubble('assistant', '');
@@ -2098,8 +2101,9 @@
         }
         return read();
       })
-      .catch(function () {
+      .catch(function (err) {
         hideTyping();
+        console.error('[Rhyssa] fetch failed', err && err.message);
         appendBubble('assistant', 'Something went wrong — please try again in a moment.');
         sendBtn.disabled = false;
         isStreaming = false;
