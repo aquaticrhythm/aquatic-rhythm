@@ -1939,12 +1939,16 @@
     }
 
     /* ── Visual Viewport fit (Android Chrome address bar fix, mobile only) ── */
+    /* ── Visual Viewport fit — keeps sheet inside visible area on mobile ──
+       top:0 is correct — Chrome's layout viewport already starts below the
+       URL bar (innerHeight excludes it). We only need to fix height so the
+       sheet shrinks above the keyboard. bottom:auto releases the CSS
+       inset:0 bottom:0 constraint so the explicit height can take effect. */
     function fitSheet() {
-      if (!window.visualViewport) return;
-      if (window.innerWidth >= 721) return;
-      var vp = window.visualViewport;
-      sheet.style.top    = Math.round(vp.offsetTop) + 'px';
-      sheet.style.height = Math.round(vp.height) + 'px';
+      if (!window.visualViewport || window.innerWidth >= 721) return;
+      sheet.style.top    = '0px';
+      sheet.style.bottom = 'auto';
+      sheet.style.height = Math.round(window.visualViewport.height) + 'px';
       thread.scrollTop = thread.scrollHeight;
     }
 
@@ -1959,7 +1963,6 @@
       fitSheet();
       if (window.visualViewport) {
         window.visualViewport.addEventListener('resize', fitSheet);
-        window.visualViewport.addEventListener('scroll', fitSheet);
       }
       renderThread();
       setTimeout(function () { if (inp) inp.focus(); }, 80);
@@ -1973,11 +1976,11 @@
       document.body.style.overflow = '';
       if (window.innerWidth < 721) {
         sheet.style.top    = '';
+        sheet.style.bottom = '';
         sheet.style.height = '';
       }
       if (window.visualViewport) {
         window.visualViewport.removeEventListener('resize', fitSheet);
-        window.visualViewport.removeEventListener('scroll', fitSheet);
       }
       fab.focus();
     }
