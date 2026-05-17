@@ -409,10 +409,6 @@ function updateDots() {
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="4" y="3" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="7.5" y1="8" x2="14.5" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7.5" y1="11.5" x2="14.5" y2="11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
     <span>Reading</span>
   </a>
-  <a href="/companion" class="art-bnav-item" aria-label="Companion">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.1" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.2" fill="currentColor" opacity=".8"/><line x1="11" y1="3.5" x2="11" y2="1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/><line x1="3.5" y1="11" x2="1.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/><line x1="20.5" y1="11" x2="18.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/></svg>
-    <span>Companion</span>
-  </a>
   <a href="/tools" class="art-bnav-item" aria-label="Tools">
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M8 3v5.5L4.5 15A2 2 0 006.4 18h9.2a2 2 0 001.9-3L14 8.5V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="7" y1="3" x2="15" y2="3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="9.5" cy="13.5" r="1" fill="currentColor" opacity=".6"/><circle cx="13" cy="15" r=".8" fill="currentColor" opacity=".45"/></svg>
     <span>Tools</span>
@@ -422,6 +418,164 @@ function updateDots() {
     <span>Journal</span>
   </a>
 </nav>
+<!-- ── RHYSSA FAB + SHEET ── -->
+<style>
+.rh-fab{position:fixed;right:1rem;bottom:calc(56px + env(safe-area-inset-bottom) + .8rem);z-index:870;display:flex;flex-direction:column;align-items:center;gap:.18rem;background:rgba(6,18,14,.95);border:1px solid rgba(61,214,232,.32);border-radius:14px;padding:.55rem .68rem .42rem;color:rgba(61,214,232,.9);cursor:pointer;transition:border-color .2s,background .2s,transform .15s;-webkit-tap-highlight-color:transparent;box-shadow:0 4px 24px rgba(0,0,0,.55);visibility:visible;font-family:inherit}
+.rh-fab:hover{border-color:rgba(61,214,232,.65);background:rgba(6,18,14,1)}
+.rh-fab:active{transform:scale(.93)}
+.rh-fab.active{border-color:rgba(61,214,232,.6);background:rgba(10,28,20,.98)}
+.rh-fab-lbl{font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.5);line-height:1}
+.rh-backdrop{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .3s}
+.rh-backdrop.open{opacity:1;pointer-events:auto}
+.rh-sheet{position:fixed;left:0;right:0;bottom:0;z-index:910;height:min(76svh,700px);background:rgba(4,12,9,.99);border-top:1px solid rgba(61,214,232,.13);border-radius:20px 20px 0 0;display:flex;flex-direction:column;overflow:hidden;transform:translateY(100%);transition:transform .38s cubic-bezier(.32,.72,0,1)}
+.rh-sheet.open{transform:translateY(0)}
+.rh-sheet-bar{flex-shrink:0;width:36px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;margin:.72rem auto .1rem}
+.rh-sheet-head{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem .6rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.rh-sheet-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:300;color:rgba(255,255,255,.86);display:block;line-height:1.1}
+.rh-sheet-sub{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-top:.1rem}
+.rh-sheet-head-btns{display:flex;align-items:center;gap:.2rem}
+.rh-sheet-action{background:none;border:none;color:rgba(255,255,255,.28);cursor:pointer;padding:.35rem;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:color .2s,background .2s;-webkit-tap-highlight-color:transparent}
+.rh-sheet-action:hover{color:rgba(255,255,255,.65);background:rgba(255,255,255,.06)}
+.rh-sheet-thread{flex:1;overflow-y:auto;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.55rem;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.rh-bubble{padding:.72rem .95rem;border-radius:14px;max-width:82%}
+.rh-bubble-you{align-self:flex-end;background:rgba(61,214,232,.13);border:1px solid rgba(61,214,232,.18)}
+.rh-bubble-rh{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);max-width:92%}
+.rh-bubble-who{font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+.rh-bubble-you .rh-bubble-who{text-align:right;color:rgba(61,214,232,.45)}
+.rh-bubble-rh .rh-bubble-who{color:rgba(124,168,156,.6)}
+.rh-bubble p{font-size:.9rem;line-height:1.72;margin:0;color:rgba(235,240,236,.88)}
+.rh-bubble-rh p{color:rgba(235,240,236,.85)}
+.rh-date-sep{display:flex;align-items:center;gap:.6rem;margin:.3rem 0;flex-shrink:0}
+.rh-date-sep::before,.rh-date-sep::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
+.rh-date-sep span{font-size:.46rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap}
+.rh-sheet-welcome{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.4rem .5rem .6rem;gap:.7rem}
+.rh-sheet-welcome-txt{font-size:.88rem;line-height:1.68;color:rgba(235,240,236,.65);max-width:280px;margin:0;font-weight:300}
+.rh-sheet-chips{display:flex;flex-wrap:wrap;gap:.38rem;justify-content:center}
+.rh-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.35rem .75rem;color:rgba(255,255,255,.55);font-size:.75rem;cursor:pointer;transition:border-color .2s,color .2s;-webkit-tap-highlight-color:transparent;font-family:inherit}
+.rh-chip:hover{border-color:rgba(61,214,232,.35);color:rgba(61,214,232,.8)}
+.rh-chip-lbl{font-size:.72rem}
+.rh-sheet-foot{flex-shrink:0;border-top:1px solid rgba(255,255,255,.07);background:rgba(4,11,9,.97);padding:.6rem .85rem calc(.6rem + env(safe-area-inset-bottom))}
+.rh-sheet-form{display:flex;align-items:flex-end;gap:.5rem}
+.rh-sheet-inp{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.6rem .9rem;color:rgba(235,240,236,.92);font-size:.95rem;font-family:inherit;resize:none;max-height:120px;overflow-y:auto;line-height:1.5;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.rh-sheet-inp:focus{outline:none;border-color:rgba(61,214,232,.4)}
+.rh-sheet-inp::placeholder{color:rgba(255,255,255,.2)}
+.rh-sheet-send{flex-shrink:0;width:38px;height:38px;background:rgba(61,214,232,.18);border:1px solid rgba(61,214,232,.32);border-radius:11px;color:rgba(61,214,232,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;-webkit-tap-highlight-color:transparent}
+.rh-sheet-send:hover{background:rgba(61,214,232,.28);border-color:rgba(61,214,232,.55)}
+.rh-sheet-send:disabled{opacity:.3;cursor:default}
+.rh-sheet-note{font-size:.48rem;color:rgba(255,255,255,.18);text-align:center;margin:.4rem 0 0;line-height:1.5}
+.rh-typing{display:flex;gap:.35rem;align-items:center;padding:.65rem 1rem;align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);border-radius:14px}
+.rh-typing span{width:6px;height:6px;border-radius:50%;background:rgba(61,214,232,.5);animation:rh-pulse 1.2s infinite}
+.rh-typing span:nth-child(2){animation-delay:.2s}
+.rh-typing span:nth-child(3){animation-delay:.4s}
+@keyframes rh-pulse{0%,60%,100%{opacity:.3;transform:scale(.85)}30%{opacity:1;transform:scale(1)}}
+@media(min-width:721px){.rh-fab{bottom:1.6rem;right:1.5rem}.rh-sheet{left:auto;right:1.5rem;width:400px;height:min(78vh,700px);border-radius:16px 16px 0 0}.rh-sheet-bar{display:none}}
+@media(display-mode:standalone){.rh-fab{bottom:calc(56px + env(safe-area-inset-bottom) + .8rem)}}
+</style>
+<button id="rh-fab" class="rh-fab" aria-label="Chat with Rhyssa" aria-expanded="false" style="position:fixed;right:1rem;bottom:calc(56px + env(safe-area-inset-bottom) + .8rem);z-index:870;display:flex;flex-direction:column;align-items:center;gap:.18rem;background:rgba(6,18,14,.95);border:1px solid rgba(61,214,232,.32);border-radius:14px;padding:.55rem .68rem .42rem;color:rgba(61,214,232,.9);cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,.55);visibility:visible;font-family:inherit;-webkit-tap-highlight-color:transparent">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+    <circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="1.4" fill="none"/>
+    <circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.1" fill="none" opacity=".55"/>
+    <circle cx="11" cy="11" r="1.2" fill="currentColor" opacity=".8"/>
+    <line x1="11" y1="3.5" x2="11" y2="1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+    <line x1="3.5" y1="11" x2="1.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+    <line x1="20.5" y1="11" x2="18.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+  </svg>
+  <span class="rh-fab-lbl" style="font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.5);line-height:1">Rhyssa</span>
+</button>
+<div id="rh-backdrop" class="rh-backdrop"></div>
+<div id="rh-sheet" class="rh-sheet" role="dialog" aria-label="Chat with Rhyssa" aria-modal="true" aria-hidden="true">
+  <div class="rh-sheet-bar"></div>
+  <div class="rh-sheet-head">
+    <div>
+      <span class="rh-sheet-name">Rhyssa</span>
+      <span class="rh-sheet-sub">Aquarium Companion</span>
+    </div>
+    <div class="rh-sheet-head-btns">
+      <button class="rh-sheet-action" id="rh-sheet-clear" aria-label="Clear conversation" title="Clear conversation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3.5l1 9.5h8l1-9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><line x1="1.5" y1="3.5" x2="14.5" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M6 3.5V2.5h4v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </button>
+      <button class="rh-sheet-action" id="rh-sheet-cls" aria-label="Close chat">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="rh-sheet-thread" id="rh-sheet-thread" role="log" aria-live="polite" aria-label="Conversation with Rhyssa">
+    <div class="rh-sheet-welcome" id="rh-sheet-welcome">
+      <svg width="36" height="36" viewBox="0 0 22 22" fill="none" aria-hidden="true" style="opacity:.8"><circle cx="11" cy="11" r="7.5" stroke="rgba(61,214,232,.55)" stroke-width="1.4" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="rgba(61,214,232,.3)" stroke-width="1.1" fill="none"/><circle cx="11" cy="11" r="1.2" fill="rgba(61,214,232,.75)"/><line x1="11" y1="3.5" x2="11" y2="1.5" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/><line x1="3.5" y1="11" x2="1.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/><line x1="20.5" y1="11" x2="18.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <p class="rh-sheet-welcome-txt">Tell me what you see — water, behaviour, anything that changed — and we can read it together before we fix anything.</p>
+      <div class="rh-sheet-chips">
+        <button class="rh-chip" data-rh-send="Something in my tank feels off but I cannot quite name it yet. Can we notice together before we choose fixes?"><span class="rh-chip-lbl">Notice first</span></button>
+        <button class="rh-chip" data-rh-send="Help me work out what phase my system is in — age, stocking, recent changes — before we chase symptoms."><span class="rh-chip-lbl">Which phase?</span></button>
+        <button class="rh-chip" data-rh-send="I am getting conflicting advice online. Can you help me weigh what might fit this tank once I share details?"><span class="rh-chip-lbl">Conflicting advice</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="rh-sheet-foot">
+    <form class="rh-sheet-form" id="rh-sheet-form" autocomplete="off">
+      <textarea id="rh-sheet-inp" class="rh-sheet-inp" placeholder="Ask about your tank…" rows="1" maxlength="1200" aria-label="Message to Rhyssa"></textarea>
+      <button type="submit" class="rh-sheet-send" id="rh-sheet-send" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15 9H3M15 9L9.5 4M15 9L9.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+    <p class="rh-sheet-note">AI can be wrong — for fish emergencies, consult a specialist</p>
+  </div>
+</div>
+<script>
+(function(){
+  var W='https://aquatic-rhythm-rhyssa.hazim-project.workers.dev/chat';
+  var K='rh_thread';
+  var busy=false,touch=window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+  var fab=document.getElementById('rh-fab'),bd=document.getElementById('rh-backdrop'),sh=document.getElementById('rh-sheet');
+  var thr=document.getElementById('rh-sheet-thread'),frm=document.getElementById('rh-sheet-form');
+  var inp=document.getElementById('rh-sheet-inp'),snd=document.getElementById('rh-sheet-send');
+  var clr=document.getElementById('rh-sheet-clear'),cls=document.getElementById('rh-sheet-cls');
+  var wel=document.getElementById('rh-sheet-welcome');
+  if(!fab||!sh)return;
+  function gt(){try{return JSON.parse(localStorage.getItem(K)||'null')||{messages:[]};}catch(e){return{messages:[]};}}
+  function st(s){try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}}
+  function dk(ts){return new Date(ts).toDateString();}
+  function fd(ts){var d=new Date(ts),n=new Date();if(d.toDateString()===n.toDateString())return'Today';var y=new Date(n);y.setDate(n.getDate()-1);if(d.toDateString()===y.toDateString())return'Yesterday';var o={day:'numeric',month:'long'};if(d.getFullYear()!==n.getFullYear())o.year='numeric';return d.toLocaleDateString(undefined,o);}
+  function sep(ts){var s=document.createElement('div');s.className='rh-date-sep';s.innerHTML='<span>'+fd(ts)+'</span>';thr.appendChild(s);}
+  function bub(role,text){var w=document.createElement('div');w.className='rh-bubble '+(role==='assistant'?'rh-bubble-rh':'rh-bubble-you');var wh=document.createElement('span');wh.className='rh-bubble-who';wh.textContent=role==='assistant'?'Rhyssa':'You';var p=document.createElement('p');if(text)p.textContent=text;w.appendChild(wh);w.appendChild(p);thr.appendChild(w);return p;}
+  function typ(){var d=document.createElement('div');d.className='rh-typing';d.id='rh-ti';d.innerHTML='<span></span><span></span><span></span>';thr.appendChild(d);thr.scrollTop=thr.scrollHeight;}
+  function utyp(){var t=document.getElementById('rh-ti');if(t)t.remove();}
+  function tc(){try{var d=JSON.parse(localStorage.getItem('ar_journal')||'{}');var ts=d.tanks||[];if(!ts.length)return null;var a=ts.find(function(t){return t.id===d.activeTankId;})||ts[0];if(!a||!a.profile)return null;var p=a.profile;return{volume:p.volume||null,unit:p.unit||'L',type:p.type||null,maturity:p.maturity||null};}catch(e){return null;}}
+  function render(){var msgs=gt().messages;Array.from(thr.children).forEach(function(el){if(el.id!=='rh-sheet-welcome')el.remove();});if(!msgs.length){if(wel)wel.style.display='';return;}if(wel)wel.style.display='none';var ld=null;msgs.forEach(function(m){var md=dk(m.ts||Date.now());if(md!==ld){sep(m.ts||Date.now());ld=md;}bub(m.role,m.content);});thr.scrollTop=thr.scrollHeight;}
+  function open(){sh.classList.add('open');sh.removeAttribute('aria-hidden');bd.classList.add('open');fab.setAttribute('aria-expanded','true');fab.classList.add('active');document.body.style.overflow='hidden';render();setTimeout(function(){if(inp)inp.focus();},80);}
+  function close(){sh.classList.remove('open');sh.setAttribute('aria-hidden','true');bd.classList.remove('open');fab.setAttribute('aria-expanded','false');fab.classList.remove('active');document.body.style.overflow='';fab.focus();}
+  fab.addEventListener('click',function(){sh.classList.contains('open')?close():open();});
+  bd.addEventListener('click',close);
+  if(cls)cls.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&sh.classList.contains('open'))close();});
+  if(clr)clr.addEventListener('click',function(){st({messages:[]});render();if(inp){inp.value='';inp.style.height='auto';inp.focus();}});
+  var sy=0;
+  sh.addEventListener('touchstart',function(e){sy=e.touches[0].clientY;},{passive:true});
+  sh.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-sy>80)close();},{passive:true});
+  if(inp){inp.addEventListener('input',function(){inp.style.height='auto';inp.style.height=Math.min(inp.scrollHeight,120)+'px';});if(!touch){inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sub();}});}}
+  if(frm)frm.addEventListener('submit',function(e){e.preventDefault();sub();});
+  function sub(){var t=inp?inp.value.trim():'';if(!t)return;inp.value='';inp.style.height='auto';send(t);}
+  thr.addEventListener('click',function(e){var c=e.target.closest('[data-rh-send]');if(!c)return;e.preventDefault();send(c.dataset.rhSend);});
+  if(window.visualViewport){window.visualViewport.addEventListener('resize',function(){thr.scrollTop=thr.scrollHeight;});}
+  function send(text){
+    if(busy||!text.trim())return;
+    if(wel)wel.style.display='none';
+    var now=Date.now(),s=gt(),pl=s.messages.length;
+    s.messages.push({role:'user',content:text,ts:now});st(s);
+    if(pl===0||dk((s.messages[pl-1]||{}).ts||0)!==dk(now))sep(now);
+    bub('user',text);thr.scrollTop=thr.scrollHeight;
+    typ();snd.disabled=true;busy=true;
+    var mh=s.messages.map(function(m){return{role:m.role,content:m.content};});
+    fetch(W,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:mh,tankContext:tc()})})
+    .then(function(res){utyp();if(!res.ok||!res.body)throw new Error('bad');
+      var rt=Date.now(),p=bub('assistant',''),rt2='',rd=res.body.getReader(),dc=new TextDecoder(),buf='';
+      function rd2(){return rd.read().then(function(c){if(c.done){var s2=gt();s2.messages.push({role:'assistant',content:rt2,ts:rt});st(s2);snd.disabled=false;busy=false;if(inp)inp.focus();return;}
+        buf+=dc.decode(c.value,{stream:true});var ls=buf.split('\n');buf=ls.pop();
+        ls.forEach(function(l){if(!l.startsWith('data: '))return;var d=l.slice(6).trim();if(d==='[DONE]')return;try{var pr=JSON.parse(d);var dl=(pr.delta&&pr.delta.text)?pr.delta.text:'';if(dl){rt2+=dl;p.textContent=rt2;thr.scrollTop=thr.scrollHeight;}}catch(e){}});return rd2();});}
+      return rd2();})
+    .catch(function(){utyp();bub('assistant','Something went wrong — please try again in a moment.');snd.disabled=false;busy=false;});
+  }
+})();
+</script>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
