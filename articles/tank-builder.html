@@ -1362,15 +1362,17 @@ function getAffiliateRegion(){
   else if(tz==='Asia/Jakarta'||tz==='Asia/Makassar'||tz==='Asia/Jayapura'||tz==='Asia/Pontianak')_affRegion='ID';
   else if(tz==='Asia/Singapore')_affRegion='AMAZON';
   else if(/^Asia\//.test(tz))_affRegion='LAZADA';
+  else if(/^Europe\//.test(tz))_affRegion='UK';
   else _affRegion='AMAZON';
   return _affRegion;
 }
-var _affPlatLabel={MY:'Shopee Malaysia',ID:'Shopee Indonesia',SG:'Shopee Singapore',LAZADA:'Lazada',AMAZON:'Amazon'};  // SG→AMAZON via geo
+var _affPlatLabel={MY:'Shopee Malaysia',ID:'Shopee Indonesia',SG:'Shopee Singapore',LAZADA:'Lazada',AMAZON:'Amazon',UK:'Amazon UK'};
 
 function buildAffiliateBuyBox(links){
   if(!links)return null;
   var r=getAffiliateRegion();
   var url=links[r];
+  if(!url&&r==='UK')url=links.AMAZON?links.AMAZON.replace('www.amazon.com','www.amazon.co.uk').replace('tag=aquaticrhythm-20','tag=aquaticrhythm-21'):null;
   if(!url&&(r==='SG'||r==='LAZADA'))url=links.AMAZON;
   if(!url)return null;
   var isPlaceholder=url.indexOf('#PLACEHOLDER')===0;
