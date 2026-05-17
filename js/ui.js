@@ -1828,6 +1828,7 @@
     var inp      = document.getElementById('rh-sheet-inp');
     var sendBtn  = document.getElementById('rh-sheet-send');
     var clsBtn   = document.getElementById('rh-sheet-cls');
+    var clearBtn = document.getElementById('rh-sheet-clear');
     var welcome  = document.getElementById('rh-sheet-welcome');
 
     if (!fab || !sheet) return;
@@ -1966,6 +1967,11 @@
     });
     backdrop.addEventListener('click', closeSheet);
     if (clsBtn) clsBtn.addEventListener('click', closeSheet);
+    if (clearBtn) clearBtn.addEventListener('click', function () {
+      saveThread({ messages: [] });
+      renderThread();
+      if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
+    });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet();
     });
