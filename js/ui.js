@@ -1809,7 +1809,7 @@
 
   /* ── RHYSSA CHAT WIDGET ── */
   (function () {
-    var WORKER_URL  = 'https://api.aquaticrhythm.com/chat';
+    var WORKER_URL  = 'https://aquatic-rhythm-rhyssa.hazim-project.workers.dev/chat';
     var messages    = [];
     var isStreaming = false;
 
