@@ -1844,9 +1844,33 @@
 
     if (closeBtn) closeBtn.addEventListener('click', closeChat);
 
+    /* data-rh-open: any button/link that should open the widget */
+    document.addEventListener('click', function (e) {
+      var opener = e.target.closest('[data-rh-open]');
+      if (opener) { e.preventDefault(); openChat(); return; }
+
+      /* data-rh-start: open widget and pre-fill textarea with starter text */
+      var starter = e.target.closest('[data-rh-start]');
+      if (starter) {
+        e.preventDefault();
+        var text = starter.dataset.rhStart || '';
+        openChat();
+        if (inp && text) {
+          setTimeout(function () {
+            inp.value = text;
+            inp.style.height = 'auto';
+            inp.style.height = Math.min(inp.scrollHeight, 90) + 'px';
+            inp.focus();
+          }, 60);
+        }
+        return;
+      }
+    });
+
     document.addEventListener('click', function (e) {
       if (!chat.classList.contains('open')) return;
       if (chat.contains(e.target) || trigger.contains(e.target)) return;
+      if (e.target.closest('[data-rh-open]') || e.target.closest('[data-rh-start]')) return;
       closeChat();
     });
 
