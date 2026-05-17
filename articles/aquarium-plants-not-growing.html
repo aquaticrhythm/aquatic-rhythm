@@ -507,7 +507,9 @@ function updateDots() {
       <span class="rh-sheet-name">Rhyssa</span>
       <span class="rh-sheet-sub">Aquarium Companion</span>
     </div>
-    <div class="rh-sheet-head-spacer"></div>
+    <button class="rh-sheet-back" id="rh-sheet-clear" aria-label="Reset conversation" title="Reset conversation">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.5 4.5l1 10h9l1-10" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="4.5" x2="16" y2="4.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><path d="M6.5 4.5V3.5h5v1" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>
+    </button>
   </div>
   <div class="rh-sheet-thread" id="rh-sheet-thread" role="log" aria-live="polite" aria-label="Conversation with Rhyssa">
     <div class="rh-sheet-welcome" id="rh-sheet-welcome">
@@ -539,7 +541,7 @@ function updateDots() {
   var fab=document.getElementById('rh-fab'),bd=document.getElementById('rh-backdrop'),sh=document.getElementById('rh-sheet');
   var thr=document.getElementById('rh-sheet-thread'),frm=document.getElementById('rh-sheet-form');
   var inp=document.getElementById('rh-sheet-inp'),snd=document.getElementById('rh-sheet-send');
-  var cls=document.getElementById('rh-sheet-cls');
+  var cls=document.getElementById('rh-sheet-cls'),clr=document.getElementById('rh-sheet-clear');
   var wel=document.getElementById('rh-sheet-welcome');
   if(!fab||!sh)return;
   function gt(){try{return JSON.parse(localStorage.getItem(K)||'null')||{messages:[]};}catch(e){return{messages:[]};}}
@@ -557,7 +559,7 @@ function bub(role,text){var w=document.createElement('div');w.className='rh-bubb
   function close(){sh.classList.remove('open');sh.setAttribute('aria-hidden','true');bd.classList.remove('open');fab.setAttribute('aria-expanded','false');fab.classList.remove('active');document.body.style.overflow='';fab.focus();}
   fab.addEventListener('click',function(){sh.classList.contains('open')?close():open();});
   bd.addEventListener('click',close);
-  if(cls)cls.addEventListener('click',close);
+  if(cls)cls.addEventListener('click',close);if(clr)clr.addEventListener('click',function(){st({messages:[]});render();if(inp){inp.value='';inp.style.height='auto';inp.focus();}});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&sh.classList.contains('open'))close();});
 
 

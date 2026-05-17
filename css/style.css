@@ -1139,7 +1139,6 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .rh-sheet-back{width:44px;height:44px;background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:12px;transition:color .2s,background .2s;-webkit-tap-highlight-color:transparent;flex-shrink:0}
 .rh-sheet-back:hover{color:rgba(255,255,255,.78);background:rgba(255,255,255,.07)}
 .rh-sheet-title-group{text-align:center}
-.rh-sheet-head-spacer{width:44px;flex-shrink:0}
 .rh-sheet-name{font-family:var(--serif);font-size:1rem;font-weight:300;color:rgba(255,255,255,.86);display:block;line-height:1.1}
 .rh-sheet-sub{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-top:.1rem}
 .rh-sheet-thread{flex:1;overflow-y:auto;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.55rem;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
