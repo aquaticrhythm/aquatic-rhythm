@@ -1827,7 +1827,6 @@
     var form     = document.getElementById('rh-sheet-form');
     var inp      = document.getElementById('rh-sheet-inp');
     var sendBtn  = document.getElementById('rh-sheet-send');
-    var clearBtn = document.getElementById('rh-sheet-clear');
     var clsBtn   = document.getElementById('rh-sheet-cls');
     var welcome  = document.getElementById('rh-sheet-welcome');
 
@@ -1949,19 +1948,6 @@
       if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet();
     });
 
-    /* Clear */
-    if (clearBtn) clearBtn.addEventListener('click', function () {
-      saveThread({ messages: [] });
-      renderThread();
-      if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
-    });
-
-    /* Swipe-to-dismiss */
-    var swipeY = 0;
-    sheet.addEventListener('touchstart', function (e) { swipeY = e.touches[0].clientY; }, { passive: true });
-    sheet.addEventListener('touchend', function (e) {
-      if (e.changedTouches[0].clientY - swipeY > 80) closeSheet();
-    }, { passive: true });
 
     /* Input auto-grow */
     if (inp) {

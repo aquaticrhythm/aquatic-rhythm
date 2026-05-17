@@ -2310,10 +2310,10 @@ render();renderTime(0);
 .rh-fab-lbl{font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.5);line-height:1}
 .rh-backdrop{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .3s}
 .rh-backdrop.open{opacity:1;pointer-events:auto}
-.rh-sheet{position:fixed;left:0;right:0;bottom:0;z-index:910;height:min(76svh,700px);background:rgba(4,12,9,.99);border-top:1px solid rgba(61,214,232,.13);border-radius:20px 20px 0 0;display:flex;flex-direction:column;overflow:hidden;transform:translateY(100%);transition:transform .38s cubic-bezier(.32,.72,0,1)}
+.rh-sheet{position:fixed;left:0;right:0;top:0;bottom:0;z-index:910;height:100dvh;background:rgba(4,12,9,.99);border:none;border-radius:0;display:flex;flex-direction:column;overflow:hidden;transform:translateY(100%);transition:transform .38s cubic-bezier(.32,.72,0,1)}
 .rh-sheet.open{transform:translateY(0)}
-.rh-sheet-bar{flex-shrink:0;width:36px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;margin:.72rem auto .1rem}
-.rh-sheet-head{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem .6rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.rh-sheet-back{width:44px;height:44px;background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:12px;transition:color .2s,background .2s;-webkit-tap-highlight-color:transparent;flex-shrink:0}.rh-sheet-back:active{color:rgba(255,255,255,.78)}.rh-sheet-title-group{text-align:center}.rh-sheet-head-spacer{width:44px;flex-shrink:0}
+.rh-sheet-head{display:flex;align-items:center;justify-content:space-between;padding:calc(.75rem + env(safe-area-inset-top)) .75rem .75rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
 .rh-sheet-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:300;color:rgba(255,255,255,.86);display:block;line-height:1.1}
 .rh-sheet-sub{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-top:.1rem}
 .rh-sheet-head-btns{display:flex;align-items:center;gap:.2rem}
@@ -2351,7 +2351,7 @@ render();renderTime(0);
 .rh-typing span:nth-child(2){animation-delay:.2s}
 .rh-typing span:nth-child(3){animation-delay:.4s}
 @keyframes rh-pulse{0%,60%,100%{opacity:.3;transform:scale(.85)}30%{opacity:1;transform:scale(1)}}
-@media(min-width:721px){.rh-fab{bottom:1.6rem;right:1.5rem}.rh-sheet{left:auto;right:1.5rem;width:400px;height:min(78vh,700px);border-radius:16px 16px 0 0}.rh-sheet-bar{display:none}}
+@media(min-width:721px){.rh-fab{bottom:1.6rem;right:1.5rem}.rh-sheet{left:auto;right:1.5rem;top:auto;bottom:0;width:400px;height:min(78vh,700px);border-radius:16px 16px 0 0;border-top:1px solid rgba(61,214,232,.13)}.rh-sheet-head{padding:.65rem .75rem .65rem}}
 @media(display-mode:standalone){.rh-fab{bottom:calc(56px + env(safe-area-inset-bottom) + .8rem)}}
 </style>
 <button id="rh-fab" class="rh-fab" aria-label="Chat with Rhyssa" aria-expanded="false" style="position:fixed;right:1rem;bottom:calc(56px + env(safe-area-inset-bottom) + .8rem);z-index:870;display:flex;flex-direction:column;align-items:center;gap:.18rem;background:rgba(6,18,14,.95);border:1px solid rgba(61,214,232,.32);border-radius:14px;padding:.55rem .68rem .42rem;color:rgba(61,214,232,.9);cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,.55);visibility:visible;font-family:inherit;-webkit-tap-highlight-color:transparent">
@@ -2367,20 +2367,15 @@ render();renderTime(0);
 </button>
 <div id="rh-backdrop" class="rh-backdrop"></div>
 <div id="rh-sheet" class="rh-sheet" role="dialog" aria-label="Chat with Rhyssa" aria-modal="true" aria-hidden="true">
-  <div class="rh-sheet-bar"></div>
   <div class="rh-sheet-head">
-    <div>
+    <button class="rh-sheet-back" id="rh-sheet-cls" aria-label="Close chat">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M6 9L11 14L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="rh-sheet-title-group">
       <span class="rh-sheet-name">Rhyssa</span>
       <span class="rh-sheet-sub">Aquarium Companion</span>
     </div>
-    <div class="rh-sheet-head-btns">
-      <button class="rh-sheet-action" id="rh-sheet-clear" aria-label="Clear conversation" title="Clear conversation">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3.5l1 9.5h8l1-9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><line x1="1.5" y1="3.5" x2="14.5" y2="3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M6 3.5V2.5h4v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-      </button>
-      <button class="rh-sheet-action" id="rh-sheet-cls" aria-label="Close chat">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-    </div>
+    <div class="rh-sheet-head-spacer"></div>
   </div>
   <div class="rh-sheet-thread" id="rh-sheet-thread" role="log" aria-live="polite" aria-label="Conversation with Rhyssa">
     <div class="rh-sheet-welcome" id="rh-sheet-welcome">
@@ -2412,7 +2407,7 @@ render();renderTime(0);
   var fab=document.getElementById('rh-fab'),bd=document.getElementById('rh-backdrop'),sh=document.getElementById('rh-sheet');
   var thr=document.getElementById('rh-sheet-thread'),frm=document.getElementById('rh-sheet-form');
   var inp=document.getElementById('rh-sheet-inp'),snd=document.getElementById('rh-sheet-send');
-  var clr=document.getElementById('rh-sheet-clear'),cls=document.getElementById('rh-sheet-cls');
+  var cls=document.getElementById('rh-sheet-cls');
   var wel=document.getElementById('rh-sheet-welcome');
   if(!fab||!sh)return;
   function gt(){try{return JSON.parse(localStorage.getItem(K)||'null')||{messages:[]};}catch(e){return{messages:[]};}}
@@ -2431,10 +2426,8 @@ render();renderTime(0);
   bd.addEventListener('click',close);
   if(cls)cls.addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&sh.classList.contains('open'))close();});
-  if(clr)clr.addEventListener('click',function(){st({messages:[]});render();if(inp){inp.value='';inp.style.height='auto';inp.focus();}});
-  var sy=0;
-  sh.addEventListener('touchstart',function(e){sy=e.touches[0].clientY;},{passive:true});
-  sh.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-sy>80)close();},{passive:true});
+
+
   if(inp){inp.addEventListener('input',function(){inp.style.height='auto';inp.style.height=Math.min(inp.scrollHeight,120)+'px';});if(!touch){inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sub();}});}}
   if(frm)frm.addEventListener('submit',function(e){e.preventDefault();sub();});
   function sub(){var t=inp?inp.value.trim():'';if(!t)return;inp.value='';inp.style.height='auto';send(t);}
