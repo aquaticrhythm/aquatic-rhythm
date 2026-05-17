@@ -1153,6 +1153,9 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .rh-sheet-welcome{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.4rem .5rem .6rem;gap:.7rem}
 .rh-sheet-welcome-txt{font-size:.88rem;line-height:1.68;color:rgba(235,240,236,.65);max-width:280px;margin:0;font-weight:300}
 .rh-sheet-chips{display:flex;flex-wrap:wrap;gap:.38rem;justify-content:center}
+.rh-sheet-also{font-size:.5rem;color:rgba(255,255,255,.22);text-align:center;margin:.5rem 0 0;line-height:1.6}
+.rh-sheet-also a{color:rgba(61,214,232,.4);text-decoration:none;transition:color .2s}
+.rh-sheet-also a:hover{color:rgba(61,214,232,.75)}
 .rh-sheet-foot{flex-shrink:0;border-top:1px solid rgba(255,255,255,.07);background:rgba(4,11,9,.97);padding:.6rem .85rem calc(.6rem + env(safe-area-inset-bottom))}
 .rh-sheet-form{display:flex;align-items:flex-end;gap:.5rem}
 .rh-sheet-inp{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.6rem .9rem;color:rgba(235,240,236,.92);font-size:.95rem;font-family:var(--sans);resize:none;max-height:120px;overflow-y:auto;line-height:1.5;transition:border-color .2s;-webkit-appearance:none;appearance:none}
