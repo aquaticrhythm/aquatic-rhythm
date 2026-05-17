@@ -1118,7 +1118,7 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .rh-page-thread .rh-typing{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.65rem 1rem}
 
 /* ── Rhyssa FAB ── */
-.rh-fab{position:fixed;right:1rem;bottom:calc(56px + env(safe-area-inset-bottom) + .8rem);z-index:800;display:flex;flex-direction:column;align-items:center;gap:.18rem;background:rgba(6,18,14,.95);border:1px solid rgba(61,214,232,.32);border-radius:14px;padding:.55rem .68rem .42rem;color:rgba(61,214,232,.9);cursor:pointer;transition:border-color .2s,background .2s,transform .15s var(--ease);-webkit-tap-highlight-color:transparent;box-shadow:0 4px 24px rgba(0,0,0,.55)}
+.rh-fab{position:fixed;right:1rem;bottom:calc(56px + env(safe-area-inset-bottom) + .8rem);z-index:870;display:flex;flex-direction:column;align-items:center;gap:.18rem;background:rgba(6,18,14,.95);border:1px solid rgba(61,214,232,.32);border-radius:14px;padding:.55rem .68rem .42rem;color:rgba(61,214,232,.9);cursor:pointer;transition:border-color .2s,background .2s,transform .15s var(--ease);-webkit-tap-highlight-color:transparent;box-shadow:0 4px 24px rgba(0,0,0,.55);visibility:visible}
 .rh-fab:hover{border-color:rgba(61,214,232,.65);background:rgba(6,18,14,1)}
 .rh-fab:active{transform:scale(.93)}
 .rh-fab.active{border-color:rgba(61,214,232,.6);background:rgba(10,28,20,.98)}

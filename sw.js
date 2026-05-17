@@ -10,8 +10,8 @@
    deployed repo; cache is only used when the network request fails.
    ============================================================ */
 
-var SHELL_CACHE   = 'ar-shell-v2';
-var ARTICLE_CACHE = 'ar-articles-v2';
+var SHELL_CACHE   = 'ar-shell-v3';
+var ARTICLE_CACHE = 'ar-articles-v3';
 
 var SHELL_URLS = [
   '/',
