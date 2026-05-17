@@ -2025,13 +2025,6 @@
       sendMsg(text);
     }
 
-    /* Starter chips */
-    thread.addEventListener('click', function (e) {
-      var chip = e.target.closest('[data-rh-send]');
-      if (!chip) return;
-      e.preventDefault();
-      sendMsg(chip.dataset.rhSend);
-    });
 
     /* data-rh-open on any element anywhere opens the sheet (skip native links inside) */
     document.addEventListener('click', function (e) {
