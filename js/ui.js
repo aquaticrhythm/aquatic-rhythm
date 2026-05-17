@@ -1853,6 +1853,23 @@
       return d.toLocaleDateString(undefined, opts);
     }
 
+    /* ── Markdown → HTML (safe) ── */
+    function mdToHTML(raw) {
+      var s = raw
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      var paras = s.split(/\n{2,}/);
+      if (paras.length > 1) {
+        return paras.filter(function (p) { return p.trim(); }).map(function (p) {
+          return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+        }).join('');
+      }
+      return '<p>' + s.replace(/\n/g, '<br>') + '</p>';
+    }
+
     /* ── Render full thread from storage ── */
     function renderThread() {
       var msgs = getThread().messages;
@@ -1886,12 +1903,17 @@
       var who = document.createElement('span');
       who.className = 'rh-bubble-who';
       who.textContent = role === 'assistant' ? 'Rhyssa' : 'You';
-      var p = document.createElement('p');
-      if (text) p.textContent = text;
+      var body = document.createElement('div');
+      body.className = 'rh-bubble-body';
+      if (text) {
+        body.innerHTML = role === 'assistant'
+          ? mdToHTML(text)
+          : '<p>' + text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') + '</p>';
+      }
       wrap.appendChild(who);
-      wrap.appendChild(p);
+      wrap.appendChild(body);
       thread.appendChild(wrap);
-      return p;
+      return body;
     }
 
     function showTyping() {
@@ -2057,7 +2079,7 @@
               try {
                 var parsed = JSON.parse(d);
                 var delta = (parsed.delta && parsed.delta.text) ? parsed.delta.text : '';
-                if (delta) { responseText += delta; p.textContent = responseText; thread.scrollTop = thread.scrollHeight; }
+                if (delta) { responseText += delta; p.innerHTML = mdToHTML(responseText); thread.scrollTop = thread.scrollHeight; }
               } catch (e2) {}
             });
             return read();
