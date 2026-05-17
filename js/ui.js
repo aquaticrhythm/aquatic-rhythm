@@ -148,6 +148,12 @@
   }
 
   function go(id, push) {
+    /* Companion is now a bottom sheet — intercept and open it */
+    if (id === 'companion') {
+      if (typeof window.__rhOpenSheet === 'function') window.__rhOpenSheet();
+      return;
+    }
+
     var path = id === 'home' ? '/' : '/' + id;
 
     if (!hasSpaPages) {
@@ -1807,127 +1813,74 @@
     renderDashboard();
   })();
 
-  /* ── RHYSSA COMPANION PAGE ── */
+  /* ── RHYSSA BOTTOM SHEET ── */
   (function () {
-    var WORKER_URL  = 'https://aquatic-rhythm-rhyssa.hazim-project.workers.dev/chat';
-    var STORE_KEY   = 'rh_conversations';
-    var isStreaming  = false;
-    var isTouch      = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
-    var abortCtrl    = null;
+    var WORKER_URL = 'https://aquatic-rhythm-rhyssa.hazim-project.workers.dev/chat';
+    var STORE_KEY  = 'rh_thread';
+    var isStreaming = false;
+    var isTouch     = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
 
-    /* ── DOM refs ── */
-    var page     = document.getElementById('pg-companion');
-    var thread   = document.getElementById('rh-page-thread');
-    var form     = document.getElementById('rh-page-form');
-    var inp      = document.getElementById('rh-page-inp');
-    var sendBtn  = document.getElementById('rh-page-send');
-    var welcome  = document.getElementById('rh-welcome');
-    var convTitle = document.getElementById('rh-conv-title');
-    var newBtn   = document.getElementById('rh-new-btn');
-    var histBtn  = document.getElementById('rh-hist-btn');
-    var histPanel = document.getElementById('rh-hist-panel');
-    var histList  = document.getElementById('rh-hist-list');
-    var histCls  = document.getElementById('rh-hist-cls');
+    var fab      = document.getElementById('rh-fab');
+    var backdrop = document.getElementById('rh-backdrop');
+    var sheet    = document.getElementById('rh-sheet');
+    var thread   = document.getElementById('rh-sheet-thread');
+    var form     = document.getElementById('rh-sheet-form');
+    var inp      = document.getElementById('rh-sheet-inp');
+    var sendBtn  = document.getElementById('rh-sheet-send');
+    var clearBtn = document.getElementById('rh-sheet-clear');
+    var clsBtn   = document.getElementById('rh-sheet-cls');
+    var welcome  = document.getElementById('rh-sheet-welcome');
 
-    if (!page || !thread) return;
+    if (!fab || !sheet) return;
 
-    /* ── Storage helpers ── */
-    function getStore() {
-      try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null') || { convs: [], activeId: null }; }
-      catch (e) { return { convs: [], activeId: null }; }
+    /* ── Storage ── */
+    function getThread() {
+      try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null') || { messages: [] }; }
+      catch (e) { return { messages: [] }; }
     }
-    function saveStore(s) {
+    function saveThread(s) {
       try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch (e) {}
     }
-    function uid() { return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
-    function autoTitle(text) {
-      var t = text.trim().split(/\s+/).slice(0, 8).join(' ');
-      return t.length > 55 ? t.slice(0, 55) + '…' : t;
-    }
-    function fmtDate(ts) {
+
+    /* ── Date helpers ── */
+    function dayKey(ts) { return new Date(ts).toDateString(); }
+    function fmtDay(ts) {
       var d = new Date(ts), now = new Date();
       if (d.toDateString() === now.toDateString()) return 'Today';
-      var y = d.getFullYear() === now.getFullYear() ? '' : ' ' + d.getFullYear();
-      return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + y;
+      var yest = new Date(now); yest.setDate(now.getDate() - 1);
+      if (d.toDateString() === yest.toDateString()) return 'Yesterday';
+      var opts = { day: 'numeric', month: 'long' };
+      if (d.getFullYear() !== now.getFullYear()) opts.year = 'numeric';
+      return d.toLocaleDateString(undefined, opts);
     }
 
-    /* ── Active conversation ── */
-    function activeConv() {
-      var s = getStore();
-      return s.convs.find(function (c) { return c.id === s.activeId; }) || null;
-    }
-
-    function createConv() {
-      var s = getStore();
-      var conv = { id: uid(), title: 'New conversation', messages: [], createdAt: Date.now(), updatedAt: Date.now() };
-      s.convs.unshift(conv);
-      s.activeId = conv.id;
-      saveStore(s);
-      return conv;
-    }
-
-    function ensureConv() {
-      var s = getStore();
-      if (!s.activeId || !s.convs.find(function (c) { return c.id === s.activeId; })) {
-        return createConv();
-      }
-      return activeConv();
-    }
-
-    /* ── Render history panel ── */
-    function renderHistory() {
-      if (!histList) return;
-      var s = getStore();
-      if (!s.convs.length) {
-        histList.innerHTML = '<p class="rh-hist-empty">No conversations yet.</p>';
-        return;
-      }
-      histList.innerHTML = '';
-      s.convs.forEach(function (c) {
-        var btn = document.createElement('button');
-        btn.className = 'rh-hist-item' + (c.id === s.activeId ? ' active' : '');
-        btn.innerHTML = '<span class="rh-hist-title">' + (c.title || 'Untitled') + '</span>'
-                      + '<span class="rh-hist-date">' + fmtDate(c.updatedAt) + '</span>';
-        btn.addEventListener('click', function () {
-          switchConv(c.id);
-          closeHist();
-        });
-        histList.appendChild(btn);
-      });
-    }
-
-    /* ── Render thread ── */
+    /* ── Render full thread from storage ── */
     function renderThread() {
-      if (!thread) return;
-      var conv = activeConv();
-      var msgs = conv ? conv.messages : [];
-
-      /* Remove all bubbles except welcome */
+      var msgs = getThread().messages;
       Array.from(thread.children).forEach(function (el) {
-        if (el.id !== 'rh-welcome') el.remove();
+        if (el.id !== 'rh-sheet-welcome') el.remove();
       });
-
-      if (msgs.length === 0) {
+      if (!msgs.length) {
         if (welcome) welcome.style.display = '';
-        if (convTitle) convTitle.textContent = 'Aquarium Companion';
         return;
       }
       if (welcome) welcome.style.display = 'none';
-      if (convTitle) convTitle.textContent = conv.title || 'Aquarium Companion';
-
-      msgs.forEach(function (m) { appendBubble(m.role, m.content); });
+      var lastDay = null;
+      msgs.forEach(function (m) {
+        var mDay = dayKey(m.ts || Date.now());
+        if (mDay !== lastDay) { appendSep(m.ts || Date.now()); lastDay = mDay; }
+        appendBubble(m.role, m.content);
+      });
       thread.scrollTop = thread.scrollHeight;
     }
 
-    function switchConv(id) {
-      var s = getStore();
-      s.activeId = id;
-      saveStore(s);
-      renderThread();
-      renderHistory();
+    function appendSep(ts) {
+      var sep = document.createElement('div');
+      sep.className = 'rh-date-sep';
+      sep.innerHTML = '<span>' + fmtDay(ts) + '</span>';
+      thread.appendChild(sep);
     }
 
-    /* ── DOM helpers ── */
     function appendBubble(role, text) {
       var wrap = document.createElement('div');
       wrap.className = 'rh-bubble ' + (role === 'assistant' ? 'rh-bubble-rh' : 'rh-bubble-you');
@@ -1963,33 +1916,118 @@
       } catch (e) { return null; }
     }
 
+    /* ── Open / close ── */
+    function openSheet() {
+      sheet.classList.add('open');
+      sheet.removeAttribute('aria-hidden');
+      backdrop.classList.add('open');
+      fab.setAttribute('aria-expanded', 'true');
+      fab.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      renderThread();
+      setTimeout(function () { if (inp) inp.focus(); }, 80);
+    }
+    function closeSheet() {
+      sheet.classList.remove('open');
+      sheet.setAttribute('aria-hidden', 'true');
+      backdrop.classList.remove('open');
+      fab.setAttribute('aria-expanded', 'false');
+      fab.classList.remove('active');
+      document.body.style.overflow = '';
+      fab.focus();
+    }
+
+    window.__rhOpenSheet  = openSheet;
+    window.__rhCloseSheet = closeSheet;
+
+    fab.addEventListener('click', function () {
+      sheet.classList.contains('open') ? closeSheet() : openSheet();
+    });
+    backdrop.addEventListener('click', closeSheet);
+    if (clsBtn) clsBtn.addEventListener('click', closeSheet);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet();
+    });
+
+    /* Clear */
+    if (clearBtn) clearBtn.addEventListener('click', function () {
+      saveThread({ messages: [] });
+      renderThread();
+      if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
+    });
+
+    /* Swipe-to-dismiss */
+    var swipeY = 0;
+    sheet.addEventListener('touchstart', function (e) { swipeY = e.touches[0].clientY; }, { passive: true });
+    sheet.addEventListener('touchend', function (e) {
+      if (e.changedTouches[0].clientY - swipeY > 80) closeSheet();
+    }, { passive: true });
+
+    /* Input auto-grow */
+    if (inp) {
+      inp.addEventListener('input', function () {
+        inp.style.height = 'auto';
+        inp.style.height = Math.min(inp.scrollHeight, 120) + 'px';
+      });
+      if (!isTouch) {
+        inp.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doSubmit(); }
+        });
+      }
+    }
+
+    if (form) form.addEventListener('submit', function (e) { e.preventDefault(); doSubmit(); });
+
+    function doSubmit() {
+      var text = inp ? inp.value.trim() : '';
+      if (!text) return;
+      inp.value = ''; inp.style.height = 'auto';
+      sendMsg(text);
+    }
+
+    /* Starter chips */
+    thread.addEventListener('click', function (e) {
+      var chip = e.target.closest('[data-rh-send]');
+      if (!chip) return;
+      e.preventDefault();
+      sendMsg(chip.dataset.rhSend);
+    });
+
+    /* data-rh-open on any element anywhere opens the sheet */
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-rh-open]')) { e.preventDefault(); openSheet(); }
+    });
+
+    /* Mobile keyboard resize */
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', function () {
+        thread.scrollTop = thread.scrollHeight;
+      });
+    }
+
     /* ── Send message ── */
     function sendMsg(text) {
       if (isStreaming || !text.trim()) return;
-
-      var conv = ensureConv();
-      var isFirst = conv.messages.length === 0;
-
-      /* User bubble */
       if (welcome) welcome.style.display = 'none';
-      var userBubble = appendBubble('user', text);  // eslint-disable-line no-unused-vars
+
+      var now = Date.now();
+      var s = getThread();
+      var prevLen = s.messages.length;
+      s.messages.push({ role: 'user', content: text, ts: now });
+      saveThread(s);
+
+      /* Date separator if day changed or first message */
+      if (prevLen === 0 || dayKey((s.messages[prevLen - 1] || {}).ts || 0) !== dayKey(now)) {
+        appendSep(now);
+      }
+      appendBubble('user', text);
       thread.scrollTop = thread.scrollHeight;
 
-      /* Save user message */
-      var s = getStore();
-      var c = s.convs.find(function (x) { return x.id === s.activeId; });
-      if (!c) return;
-      c.messages.push({ role: 'user', content: text });
-      if (isFirst) { c.title = autoTitle(text); if (convTitle) convTitle.textContent = c.title; }
-      c.updatedAt = Date.now();
-      saveStore(s);
-
-      /* Typing + fetch */
       showTyping();
       sendBtn.disabled = true;
       isStreaming = true;
 
-      var msgHistory = c.messages.slice();
+      var msgHistory = s.messages.map(function (m) { return { role: m.role, content: m.content }; });
 
       fetch(WORKER_URL, {
         method: 'POST',
@@ -2000,6 +2038,7 @@
         hideTyping();
         if (!res.ok || !res.body) throw new Error('bad response');
 
+        var replyTs = Date.now();
         var p = appendBubble('assistant', '');
         var responseText = '';
         var reader = res.body.getReader();
@@ -2009,10 +2048,9 @@
         function read() {
           return reader.read().then(function (chunk) {
             if (chunk.done) {
-              /* Persist assistant message */
-              var s2 = getStore();
-              var c2 = s2.convs.find(function (x) { return x.id === s2.activeId; });
-              if (c2) { c2.messages.push({ role: 'assistant', content: responseText }); c2.updatedAt = Date.now(); saveStore(s2); }
+              var s2 = getThread();
+              s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
+              saveThread(s2);
               sendBtn.disabled = false;
               isStreaming = false;
               if (inp) inp.focus();
@@ -2041,89 +2079,6 @@
         sendBtn.disabled = false;
         isStreaming = false;
       });
-    }
-
-    /* ── History panel open/close ── */
-    function openHist() {
-      if (!histPanel) return;
-      renderHistory();
-      histPanel.classList.add('open');
-      histPanel.removeAttribute('aria-hidden');
-    }
-    function closeHist() {
-      if (!histPanel) return;
-      histPanel.classList.remove('open');
-      histPanel.setAttribute('aria-hidden', 'true');
-    }
-
-    /* ── Wire up events ── */
-    if (histBtn) histBtn.addEventListener('click', openHist);
-    if (histCls) histCls.addEventListener('click', closeHist);
-    if (histPanel) {
-      histPanel.addEventListener('click', function (e) { if (e.target === histPanel) closeHist(); });
-    }
-
-    if (newBtn) newBtn.addEventListener('click', function () {
-      createConv();
-      renderThread();
-      renderHistory();
-      if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
-    });
-
-    /* Input grow */
-    if (inp) {
-      inp.addEventListener('input', function () {
-        inp.style.height = 'auto';
-        inp.style.height = Math.min(inp.scrollHeight, 120) + 'px';
-      });
-      /* Desktop: Enter sends; mobile: button only */
-      if (!isTouch) {
-        inp.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doSubmit(); }
-        });
-      }
-    }
-
-    if (form) form.addEventListener('submit', function (e) { e.preventDefault(); doSubmit(); });
-
-    function doSubmit() {
-      var text = inp ? inp.value.trim() : '';
-      if (!text) return;
-      inp.value = ''; inp.style.height = 'auto';
-      sendMsg(text);
-    }
-
-    /* data-rh-send: starter chips send directly */
-    thread.addEventListener('click', function (e) {
-      var chip = e.target.closest('[data-rh-send]');
-      if (!chip) return;
-      e.preventDefault();
-      sendMsg(chip.dataset.rhSend);
-    });
-
-    /* Mobile keyboard: scroll to bottom when viewport resizes */
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', function () {
-        thread.scrollTop = thread.scrollHeight;
-      });
-    }
-
-    /* SPA lifecycle: re-render when companion page becomes active */
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (m) {
-        if (m.attributeName === 'class' && page.classList.contains('active')) {
-          renderThread();
-          renderHistory();
-          setTimeout(function () { if (inp) inp.focus(); }, 120);
-        }
-      });
-    });
-    observer.observe(page, { attributes: true, attributeFilter: ['class'] });
-
-    /* Initial render if companion is the starting page */
-    if (page.classList.contains('active')) {
-      renderThread();
-      renderHistory();
     }
   })();
 

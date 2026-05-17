@@ -1116,3 +1116,59 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 
 /* Typing indicator reuse */
 .rh-page-thread .rh-typing{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.65rem 1rem}
+
+/* ── Rhyssa FAB ── */
+.rh-fab{position:fixed;right:1rem;bottom:calc(56px + env(safe-area-inset-bottom) + .8rem);z-index:800;display:flex;flex-direction:column;align-items:center;gap:.18rem;background:rgba(6,18,14,.95);border:1px solid rgba(61,214,232,.32);border-radius:14px;padding:.55rem .68rem .42rem;color:rgba(61,214,232,.9);cursor:pointer;transition:border-color .2s,background .2s,transform .15s var(--ease);-webkit-tap-highlight-color:transparent;box-shadow:0 4px 24px rgba(0,0,0,.55)}
+.rh-fab:hover{border-color:rgba(61,214,232,.65);background:rgba(6,18,14,1)}
+.rh-fab:active{transform:scale(.93)}
+.rh-fab.active{border-color:rgba(61,214,232,.6);background:rgba(10,28,20,.98)}
+.rh-fab-icon{flex-shrink:0}
+.rh-fab-lbl{font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(61,214,232,.5);line-height:1}
+
+/* ── Backdrop ── */
+.rh-backdrop{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.rh-backdrop.open{opacity:1;pointer-events:auto}
+
+/* ── Bottom sheet ── */
+.rh-sheet{position:fixed;left:0;right:0;bottom:0;z-index:910;height:min(76svh,700px);background:rgba(4,12,9,.99);border-top:1px solid rgba(61,214,232,.13);border-radius:20px 20px 0 0;display:flex;flex-direction:column;overflow:hidden;transform:translateY(100%);transition:transform .38s var(--ease);will-change:transform}
+.rh-sheet.open{transform:translateY(0)}
+.rh-sheet-bar{flex-shrink:0;width:36px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;margin:.72rem auto .1rem;cursor:grab}
+.rh-sheet-head{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem .6rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.rh-sheet-name{font-family:var(--serif);font-size:1rem;font-weight:300;color:rgba(255,255,255,.86);display:block;line-height:1.1}
+.rh-sheet-sub{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-top:.1rem}
+.rh-sheet-head-btns{display:flex;align-items:center;gap:.2rem}
+.rh-sheet-action{background:none;border:none;color:rgba(255,255,255,.28);cursor:pointer;padding:.35rem;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:color .2s,background .2s;-webkit-tap-highlight-color:transparent}
+.rh-sheet-action:hover{color:rgba(255,255,255,.65);background:rgba(255,255,255,.06)}
+.rh-sheet-thread{flex:1;overflow-y:auto;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.55rem;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.rh-sheet-thread .rh-bubble{border-left:none;border-radius:14px;max-width:82%;padding:.72rem .95rem}
+.rh-sheet-thread .rh-bubble-you{align-self:flex-end;background:rgba(61,214,232,.13);border:1px solid rgba(61,214,232,.18)}
+.rh-sheet-thread .rh-bubble-rh{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);max-width:92%}
+.rh-sheet-thread .rh-bubble-you .rh-bubble-who{text-align:right;color:rgba(61,214,232,.45)}
+.rh-sheet-thread .rh-bubble p{font-size:.9rem;line-height:1.72;margin:0;color:rgba(235,240,236,.88)}
+.rh-sheet-thread .rh-bubble-rh p{color:rgba(235,240,236,.85)}
+.rh-sheet-thread .rh-typing{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.65rem 1rem}
+.rh-date-sep{display:flex;align-items:center;gap:.6rem;margin:.3rem 0;flex-shrink:0}
+.rh-date-sep::before,.rh-date-sep::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
+.rh-date-sep span{font-size:.46rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap}
+.rh-sheet-welcome{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.4rem .5rem .6rem;gap:.7rem}
+.rh-sheet-welcome-txt{font-size:.88rem;line-height:1.68;color:rgba(235,240,236,.65);max-width:280px;margin:0;font-weight:300}
+.rh-sheet-chips{display:flex;flex-wrap:wrap;gap:.38rem;justify-content:center}
+.rh-sheet-foot{flex-shrink:0;border-top:1px solid rgba(255,255,255,.07);background:rgba(4,11,9,.97);padding:.6rem .85rem calc(.6rem + env(safe-area-inset-bottom))}
+.rh-sheet-form{display:flex;align-items:flex-end;gap:.5rem}
+.rh-sheet-inp{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.6rem .9rem;color:rgba(235,240,236,.92);font-size:.95rem;font-family:var(--sans);resize:none;max-height:120px;overflow-y:auto;line-height:1.5;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.rh-sheet-inp:focus{outline:none;border-color:rgba(61,214,232,.4)}
+.rh-sheet-inp::placeholder{color:rgba(255,255,255,.2)}
+.rh-sheet-send{flex-shrink:0;width:38px;height:38px;background:rgba(61,214,232,.18);border:1px solid rgba(61,214,232,.32);border-radius:11px;color:rgba(61,214,232,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;-webkit-tap-highlight-color:transparent}
+.rh-sheet-send:hover{background:rgba(61,214,232,.28);border-color:rgba(61,214,232,.55)}
+.rh-sheet-send:disabled{opacity:.3;cursor:default}
+.rh-sheet-note{font-size:.48rem;color:rgba(255,255,255,.18);text-align:center;margin:.4rem 0 0;line-height:1.5}
+
+/* Desktop: panel anchored bottom-right */
+@media(min-width:721px){
+  .rh-fab{bottom:1.6rem;right:1.5rem}
+  .rh-sheet{left:auto;right:1.5rem;width:400px;height:min(78vh,700px);border-radius:16px 16px 0 0}
+  .rh-sheet-bar{display:none}
+}
+@media(display-mode:standalone){
+  .rh-fab{bottom:calc(56px + env(safe-area-inset-bottom) + .8rem)}
+}
