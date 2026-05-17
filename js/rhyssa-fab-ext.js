@@ -2,15 +2,48 @@
   var STORE_KEY      = 'rh_fab_pos';
   var IDLE_MS        = 4000;
   var DRAG_THRESHOLD = 5;
+  var PEEK_PX        = 14; /* px of circle visible when edge-collapsed */
 
-  /* Inject CSS for .idle and .dragging — articles use inline <style>, not style.css */
+  /* ── Inject CSS ──────────────────────────────────────────────────
+     Articles use inline <style>, not style.css, and the <button>
+     itself has inline style="..." (highest specificity).
+     Every shape property needs !important to win. */
   if (!document.getElementById('rh-fab-ext-css')) {
     var s = document.createElement('style');
     s.id = 'rh-fab-ext-css';
     s.textContent =
-      '.rh-fab{touch-action:none;transition-property:border-color,background,transform,opacity!important;transition-duration:.2s,.2s,.15s,.6s!important}' +
-      '.rh-fab.idle{opacity:.28}' +
-      '.rh-fab.dragging{transition:none!important;opacity:1!important;cursor:grabbing}';
+      /* Round jelly shape — override inline button styles */
+      '.rh-fab{' +
+        'width:52px!important;height:52px!important;border-radius:50%!important;' +
+        'padding:0!important;gap:0!important;' +
+        'align-items:center!important;justify-content:center!important;' +
+        'background:radial-gradient(ellipse at 38% 32%,rgba(255,255,255,.08) 0%,transparent 52%),' +
+          'radial-gradient(ellipse at 50% 50%,rgba(61,214,232,.14) 0%,transparent 66%),' +
+          'rgba(6,18,14,.95)!important;' +
+        'border:1.5px solid rgba(61,214,232,.4)!important;' +
+        'box-shadow:0 0 16px rgba(61,214,232,.14),0 6px 22px rgba(0,0,0,.5),' +
+          'inset 0 1px 0 rgba(255,255,255,.07)!important;' +
+        'touch-action:none!important;will-change:transform;' +
+        'transition:border-color .25s,background .25s,' +
+          'transform .45s cubic-bezier(0.34,1.56,0.64,1),' +
+          'opacity .4s ease,box-shadow .3s!important}' +
+      '.rh-fab-lbl{display:none!important}' +
+      '.rh-fab:hover{' +
+        'border-color:rgba(61,214,232,.65)!important;' +
+        'box-shadow:0 0 24px rgba(61,214,232,.22),0 6px 22px rgba(0,0,0,.5),' +
+          'inset 0 1px 0 rgba(255,255,255,.07)!important}' +
+      '.rh-fab.active{' +
+        'border-color:rgba(61,214,232,.65)!important;' +
+        'background:radial-gradient(ellipse at 38% 32%,rgba(255,255,255,.1) 0%,transparent 52%),' +
+          'radial-gradient(ellipse at 50% 50%,rgba(61,214,232,.2) 0%,transparent 66%),' +
+          'rgba(10,28,20,.97)!important;' +
+        'box-shadow:0 0 28px rgba(61,214,232,.28),0 6px 22px rgba(0,0,0,.5),' +
+          'inset 0 1px 0 rgba(255,255,255,.09)!important}' +
+      '.rh-fab.idle{opacity:.75}' +
+      '.rh-fab.idle[data-side="right"]{transform:translateX(calc(100% - ' + PEEK_PX + 'px))}' +
+      '.rh-fab.idle[data-side="left"]{transform:translateX(calc(-100% + ' + PEEK_PX + 'px))}' +
+      '.rh-fab.snapping{transform:scale(.82)}' +
+      '.rh-fab.dragging{transition:none!important;opacity:1!important;transform:none!important;cursor:grabbing}';
     document.head.appendChild(s);
   }
 
@@ -18,25 +51,40 @@
     var fab = document.getElementById('rh-fab');
     if (!fab) return;
 
-    /* ── 1. IDLE AUTO-DIM ──────────────────────────────────────── */
+    /* Read saved side early so armIdle collapses the right way from the start */
+    var currentSide = 'right';
+    try {
+      var _pre = JSON.parse(localStorage.getItem(STORE_KEY));
+      if (_pre && _pre.side) currentSide = _pre.side;
+    } catch (e) {}
+
+    /* dragging declared at init scope so armIdle can guard against it */
+    var dragging = false;
+
+    /* ── 1. IDLE EDGE-COLLAPSE ─────────────────────────────────────── */
     var idleTimer = null;
 
     function armIdle() {
       clearTimeout(idleTimer);
       idleTimer = setTimeout(function () {
-        if (!fab.classList.contains('active')) fab.classList.add('idle');
+        if (!fab.classList.contains('active') && !dragging) {
+          fab.dataset.side = currentSide;
+          fab.classList.add('idle');
+        }
       }, IDLE_MS);
     }
+
     function cancelIdle() {
       clearTimeout(idleTimer);
       fab.classList.remove('idle');
+      fab.removeAttribute('data-side');
     }
 
     fab.addEventListener('pointerenter', cancelIdle);
     fab.addEventListener('pointerleave', armIdle);
     armIdle();
 
-    /* ── 2. BACK-BUTTON INTERCEPT ──────────────────────────────── */
+    /* ── 2. BACK-BUTTON INTERCEPT ──────────────────────────────────── */
     var sheet = document.getElementById('rh-sheet');
     if (sheet) {
       var rhInHistory = false;
@@ -59,28 +107,25 @@
         } else if (!open && rhInHistory) {
           /* Sheet closed via UI — clean up the pushed entry.
              rhInHistory stays true so the popstate handler can identify and
-             suppress the resulting navigation rather than treating it as a
-             genuine user back-press. */
+             suppress the resulting navigation. */
           history.back();
         }
       }).observe(sheet, { attributes: true, attributeFilter: ['class'] });
 
       /* Intercept popstate before the SPA router sees it.
          e.state is the DESTINATION state (entry navigated to), not the source.
-         We detect our sheet intercept via rhInHistory, not via e.state.rhSheet. */
+         We detect our intercept via rhInHistory, not via e.state.rhSheet. */
       window.addEventListener('popstate', function (e) {
-        if (!rhInHistory) return; /* not ours — let SPA router handle */
+        if (!rhInHistory) return;
         rhInHistory = false;
         window.__rhSuppressSpaNav = true;
         if (sheet.classList.contains('open')) {
-          /* Back pressed while sheet was open — close it */
           closeRhSheet();
         }
-        /* else: popstate from our own history.back() cleanup — just suppress SPA */
-      }, true); /* capture: fires before ui.js bubble-phase SPA handler */
+      }, true);
     }
 
-    /* ── 3. DRAG (touch / coarse-pointer devices only) ─────────── */
+    /* ── 3. DRAG + POSITION (touch / coarse-pointer only) ─────────── */
     var isTouch = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
     if (!isTouch) return;
 
@@ -103,6 +148,7 @@
     function clamp(px)   { return Math.max(minBottom(), Math.min(maxBottom(), px)); }
 
     function applyPos(side, bottom) {
+      currentSide = side;
       fab.style.top    = '';
       fab.style.left   = '';
       fab.style.right  = '';
@@ -114,7 +160,10 @@
     function loadPos() {
       try {
         var saved = JSON.parse(localStorage.getItem(STORE_KEY));
-        if (saved && saved.side) applyPos(saved.side, clamp(saved.bottom));
+        if (saved && saved.side) {
+          currentSide = saved.side;
+          applyPos(saved.side, clamp(saved.bottom));
+        }
       } catch (e) {}
     }
 
@@ -131,8 +180,8 @@
       } catch (e) {}
     });
 
-    /* ── 3. DRAG EVENTS ────────────────────────────────────────── */
-    var dragging = false, moved = false;
+    /* ── 4. DRAG EVENTS ────────────────────────────────────────────── */
+    var moved = false;
     var dragStartX, dragStartY, fabStartX, fabStartY;
 
     fab.addEventListener('pointerdown', function (e) {
@@ -157,12 +206,9 @@
         dragging = true;
         fab.classList.add('dragging');
       }
-      var fabW = fab.offsetWidth;
-      var fabH = fab.offsetHeight;
-      var vw = window.innerWidth;
-      var vh = window.innerHeight;
-      var newLeft = Math.max(0, Math.min(vw - fabW, fabStartX + dx));
-      var newTop  = Math.max(60, Math.min(vh - fabH, fabStartY + dy));
+      var vw = window.innerWidth, vh = window.innerHeight;
+      var newLeft = Math.max(0, Math.min(vw - fab.offsetWidth,  fabStartX + dx));
+      var newTop  = Math.max(60, Math.min(vh - fab.offsetHeight, fabStartY + dy));
       fab.style.right  = '';
       fab.style.bottom = '';
       fab.style.left   = newLeft + 'px';
@@ -174,14 +220,21 @@
       if (!dragging) { armIdle(); return; }
       dragging = false;
 
-      var rect = fab.getBoundingClientRect();
+      /* Snap to nearest edge */
+      var rect   = fab.getBoundingClientRect();
       var side   = (rect.left + rect.width / 2) < window.innerWidth / 2 ? 'left' : 'right';
       var bottom = clamp(window.innerHeight - rect.bottom);
       applyPos(side, bottom);
       savePos(side, bottom);
+
+      /* Jelly bloop on snap: briefly squish then spring back */
+      fab.classList.add('snapping');
+      void fab.offsetWidth; /* force reflow so browser sees the 'from' state */
+      fab.classList.remove('snapping');
+
       armIdle();
 
-      /* Suppress the ghost click Android fires after a drag */
+      /* Suppress the ghost click Android fires after pointerup */
       fab.addEventListener('click', function suppress(ev) {
         ev.stopImmediatePropagation();
         fab.removeEventListener('click', suppress, true);
@@ -197,7 +250,7 @@
       armIdle();
     });
 
-    /* ── 4. RESTORE SAVED POSITION ─────────────────────────────── */
+    /* ── 5. RESTORE SAVED POSITION ─────────────────────────────────── */
     loadPos();
   }
 
