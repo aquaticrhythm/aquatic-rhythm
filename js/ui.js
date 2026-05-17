@@ -1939,6 +1939,16 @@
       } catch (e) { return null; }
     }
 
+    /* ── Visual Viewport fit (Android Chrome address bar fix, mobile only) ── */
+    function fitSheet() {
+      if (!window.visualViewport) return;
+      if (window.innerWidth >= 721) return;
+      var vp = window.visualViewport;
+      sheet.style.top    = Math.round(vp.offsetTop) + 'px';
+      sheet.style.height = Math.round(vp.height) + 'px';
+      thread.scrollTop = thread.scrollHeight;
+    }
+
     /* ── Open / close ── */
     function openSheet() {
       sheet.classList.add('open');
@@ -1947,6 +1957,11 @@
       fab.setAttribute('aria-expanded', 'true');
       fab.classList.add('active');
       document.body.style.overflow = 'hidden';
+      fitSheet();
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', fitSheet);
+        window.visualViewport.addEventListener('scroll', fitSheet);
+      }
       renderThread();
       setTimeout(function () { if (inp) inp.focus(); }, 80);
     }
@@ -1957,6 +1972,14 @@
       fab.setAttribute('aria-expanded', 'false');
       fab.classList.remove('active');
       document.body.style.overflow = '';
+      if (window.innerWidth < 721) {
+        sheet.style.top    = '';
+        sheet.style.height = '';
+      }
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', fitSheet);
+        window.visualViewport.removeEventListener('scroll', fitSheet);
+      }
       fab.focus();
     }
 
@@ -2019,12 +2042,6 @@
       }
     });
 
-    /* Mobile keyboard resize */
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', function () {
-        thread.scrollTop = thread.scrollHeight;
-      });
-    }
 
     /* ── Send message ── */
     function sendMsg(text) {
