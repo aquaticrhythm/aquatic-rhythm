@@ -459,18 +459,8 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 #water-bubble{position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(61,214,232,.85);left:0;box-shadow:0 0 5px rgba(61,214,232,.45),0 0 10px rgba(61,214,232,.22);animation:wbrise 3.4s ease-in-out infinite;opacity:0}
 @keyframes wbrise{0%{opacity:0;transform:translateY(0) scale(1)}15%{opacity:1}70%{opacity:.6;transform:translateY(-22px) scale(.6)}100%{opacity:0;transform:translateY(-34px) scale(.3)}}
 
-/* ── ECOSYSTEM TOGGLE (in nav header) ── */
-#eco-toggle{display:flex;gap:4px;align-items:center;background:rgba(6,16,13,.55);border:1px solid rgba(139,189,210,.1);border-radius:100px;padding:.28rem .45rem;opacity:.45;transition:opacity .3s,border-color .3s}
-#eco-toggle:hover{opacity:.9;border-color:rgba(139,189,210,.25)}
-.eco-btn{width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:none;border:none;border-radius:50%;cursor:pointer!important;padding:0;transition:background .25s,opacity .25s;position:relative;pointer-events:all}
-.eco-btn:hover{background:rgba(139,189,210,.1)}
-.eco-btn svg{display:block}
-.eco-btn .eco-slash{transition:opacity .2s}
-.eco-btn.off .eco-slash{opacity:1}
-.eco-btn:not(.off) .eco-slash{opacity:0}
-
 /* ── SETTINGS PANEL ── */
-.ar-settings-btn{display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:none;border:none;border-radius:50%;cursor:pointer;padding:0;color:rgba(139,189,210,.72);opacity:.45;transition:background .25s,opacity .3s}
+.ar-settings-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:none;border:none;border-radius:50%;cursor:pointer!important;padding:0;color:rgba(139,189,210,.72);opacity:.52;transition:background .25s,opacity .3s;pointer-events:all!important;-webkit-tap-highlight-color:transparent;flex-shrink:0}
 .ar-settings-btn:hover{background:rgba(139,189,210,.1);opacity:.92}
 .ar-settings-backdrop{position:fixed;inset:0;z-index:1040;background:rgba(2,8,6,.65);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity .32s}
 .ar-settings-backdrop.open{opacity:1;pointer-events:all}

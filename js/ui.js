@@ -476,32 +476,35 @@
     var fishLayer = document.getElementById('fish-layer');
     var plants    = document.getElementById('plants');
     var driftwood = document.getElementById('driftwood-layer');
-    if (!faunaBtn || !floraBtn) return;
 
     var faunaOff = localStorage.getItem('ar_fauna') === '0';
     var floraOff = localStorage.getItem('ar_flora') === '0';
 
     function applyFauna(off) {
       faunaOff = off;
-      faunaBtn.classList.toggle('off', off);
-      faunaBtn.setAttribute('aria-pressed', off ? 'true' : 'false');
-      faunaBtn.title = off ? 'Show fish' : 'Hide fish';
+      if (faunaBtn) {
+        faunaBtn.classList.toggle('off', off);
+        faunaBtn.setAttribute('aria-pressed', off ? 'true' : 'false');
+        faunaBtn.title = off ? 'Show fish' : 'Hide fish';
+      }
       if (fishLayer) { fishLayer.style.transition = 'opacity .6s'; fishLayer.style.opacity = off ? '0' : ''; }
       localStorage.setItem('ar_fauna', off ? '0' : '1');
     }
 
     function applyFlora(off) {
       floraOff = off;
-      floraBtn.classList.toggle('off', off);
-      floraBtn.setAttribute('aria-pressed', off ? 'true' : 'false');
-      floraBtn.title = off ? 'Show plants' : 'Hide plants';
+      if (floraBtn) {
+        floraBtn.classList.toggle('off', off);
+        floraBtn.setAttribute('aria-pressed', off ? 'true' : 'false');
+        floraBtn.title = off ? 'Show plants' : 'Hide plants';
+      }
       if (plants)    { plants.style.transition    = 'opacity .6s'; plants.style.opacity    = off ? '0' : ''; }
       if (driftwood) { driftwood.style.transition = 'opacity .6s'; driftwood.style.opacity = off ? '0' : ''; }
       localStorage.setItem('ar_flora', off ? '0' : '1');
     }
 
-    faunaBtn.addEventListener('click', function (e) { e.stopPropagation(); applyFauna(!faunaOff); });
-    floraBtn.addEventListener('click', function (e) { e.stopPropagation(); applyFlora(!floraOff); });
+    if (faunaBtn) faunaBtn.addEventListener('click', function (e) { e.stopPropagation(); applyFauna(!faunaOff); });
+    if (floraBtn) floraBtn.addEventListener('click', function (e) { e.stopPropagation(); applyFlora(!floraOff); });
 
     if (faunaOff) applyFauna(true);
     if (floraOff) applyFlora(true);
@@ -3814,12 +3817,12 @@
     var stgWcDays    = document.getElementById('stg-wc-days');
 
     function openPanel() {
-      syncToggles();
       panel.classList.add('open');
       panel.removeAttribute('aria-hidden');
       if (backdrop) { backdrop.classList.add('open'); backdrop.removeAttribute('aria-hidden'); }
       openBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      try { syncToggles(); } catch (e) {}
     }
 
     function closePanel() {
