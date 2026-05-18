@@ -1830,6 +1830,16 @@
     var _gearStockList = [];
     var _gearStockCat = 'fish';
 
+    var CAT_LABELS = {
+      filtration: 'Filtration',
+      environment: 'Lighting & Environment',
+      substrate: 'Substrate',
+      cooling: 'Temperature & Cooling',
+      additions: 'Additions & Monitoring',
+      sterilization: 'Sterilization',
+      circulation: 'Circulation'
+    };
+
     function openGearModal() {
       var AR_EQ = window.AR_EQ;
       if (!AR_EQ) { openModal('mt-modal-gear'); return; }
@@ -1837,16 +1847,15 @@
       var saved = (tank && tank.setup) || {};
       _gearEqState = {};
       _gearBrandState = {};
-      _gearStockList = [];
+      var _gearCustomNotes = saved.customNotes ? Object.assign({}, saved.customNotes) : {};
 
       if (saved.equipment) Object.keys(saved.equipment).forEach(function (k) { _gearEqState[k] = true; });
       if (saved.brands) Object.keys(saved.brands).forEach(function (k) { _gearBrandState[k] = saved.brands[k]; });
-      if (saved.stock) _gearStockList = saved.stock.slice();
 
       var rowsEl = document.getElementById('jn-setup-eq-rows');
       if (rowsEl) {
         rowsEl.innerHTML = '';
-        var CAT_ORDER = ['filtration', 'environment', 'substrate', 'cooling', 'additions'];
+        var CAT_ORDER = ['filtration', 'environment', 'substrate', 'cooling', 'additions', 'sterilization', 'circulation'];
         var bycat = {};
         Object.keys(AR_EQ).forEach(function (k) {
           var cat = AR_EQ[k].cat || 'other';
@@ -1856,10 +1865,15 @@
         var cats = CAT_ORDER.filter(function (c) { return bycat[c]; });
         Object.keys(bycat).forEach(function (c) { if (cats.indexOf(c) < 0) cats.push(c); });
         cats.forEach(function (cat) {
+          if (!bycat[cat] || !bycat[cat].length) return;
+          var catHeader = document.createElement('div');
+          catHeader.className = 'jn-eq-cat-header';
+          catHeader.textContent = CAT_LABELS[cat] || cat;
+          rowsEl.appendChild(catHeader);
           (bycat[cat] || []).forEach(function (k) {
             var eq = AR_EQ[k];
             var row = document.createElement('div');
-            row.className = 'jn-setup-eq-row';
+            row.className = 'jn-setup-eq-row' + (!!_gearEqState[k] ? ' active' : '');
             var tog = document.createElement('input');
             tog.type = 'checkbox';
             tog.className = 'jn-setup-eq-toggle';
@@ -1883,15 +1897,26 @@
               if (_gearBrandState[k] === b) opt.selected = true;
               sel.appendChild(opt);
             });
+            var note = document.createElement('input');
+            note.type = 'text';
+            note.className = 'jn-setup-eq-note' + (tog.checked ? ' visible' : '');
+            note.dataset.eq = k;
+            note.placeholder = 'Custom brand / model…';
+            note.maxLength = 80;
+            note.value = _gearCustomNotes[k] || '';
             tog.addEventListener('change', function () {
               if (tog.checked) {
                 _gearEqState[k] = true;
                 sel.classList.add('visible');
+                note.classList.add('visible');
+                row.classList.add('active');
               } else {
                 delete _gearEqState[k];
                 delete _gearBrandState[k];
                 sel.classList.remove('visible');
                 sel.value = '';
+                note.classList.remove('visible');
+                row.classList.remove('active');
               }
             });
             sel.addEventListener('change', function () {
@@ -1901,42 +1926,13 @@
             row.appendChild(tog);
             row.appendChild(lbl);
             row.appendChild(sel);
+            row.appendChild(note);
             rowsEl.appendChild(row);
           });
         });
       }
 
-      _gearStockCat = 'fish';
-      syncGearCatBtns();
-      renderGearStockRows();
-
-      var nameInp = document.getElementById('jn-setup-stock-name');
-      var qtyInp = document.getElementById('jn-setup-stock-qty');
-      if (nameInp) nameInp.value = '';
-      if (qtyInp) qtyInp.value = '1';
       openModal('mt-modal-gear');
-    }
-
-    function syncGearCatBtns() {
-      document.querySelectorAll('.jn-setup-cat-btn').forEach(function (b) {
-        b.classList.toggle('active', b.dataset.cat === _gearStockCat);
-      });
-    }
-
-    function renderGearStockRows() {
-      var el = document.getElementById('jn-setup-stock-rows');
-      if (!el) return;
-      el.innerHTML = '';
-      var catEmoji = { fish: '🐟', plant: '🌿', invertebrate: '🦐', coral: '🪸', other: '◈' };
-      _gearStockList.forEach(function (s, idx) {
-        var row = document.createElement('div');
-        row.className = 'jn-setup-stock-row';
-        row.innerHTML = '<span class="jn-setup-stock-row-qty">' + escHtml(s.qty > 1 ? s.qty + '×' : '1×') + '</span>'
-          + escHtml(s.name)
-          + '<span class="jn-setup-stock-row-cat">' + escHtml((catEmoji[s.cat] || '') + ' ' + (s.cat || '')) + '</span>'
-          + '<button type="button" class="jn-setup-stock-row-del" data-idx="' + idx + '" aria-label="Remove">×</button>';
-        el.appendChild(row);
-      });
     }
 
     function saveGearModal() {
@@ -1951,7 +1947,11 @@
       document.querySelectorAll('.jn-setup-brand-select').forEach(function (sel) {
         if (sel.dataset.eq && sel.value) brands[sel.dataset.eq] = sel.value;
       });
-      tank.setup = { equipment: eq, brands: brands, stock: _gearStockList.slice(), savedAt: Date.now() };
+      var customNotes = {};
+      document.querySelectorAll('.jn-setup-eq-note').forEach(function (inp) {
+        if (inp.dataset.eq && inp.value.trim()) customNotes[inp.dataset.eq] = inp.value.trim();
+      });
+      tank.setup = { equipment: eq, brands: brands, customNotes: customNotes, savedAt: Date.now() };
       saveData(d);
       closeModal('mt-modal-gear');
       renderSetupCard(tank);
@@ -2637,7 +2637,7 @@
         setHiddenInputs(vol, unit, shp);
         updatePreview(vol, unit, shp, dims);
         var nameEl = document.getElementById('mt-inp-name');
-        if (nameEl && !nameEl.value) nameEl.value = 'My ' + vol + ' ' + unit + ' Tank';
+        if (nameEl) nameEl.value = 'My ' + vol + ' ' + unit + ' Tank';
         return;
       }
 
@@ -2673,7 +2673,7 @@
         updatePreview(vol, unit, shp, dims);
         var mname  = modelChip.dataset.name || '';
         var nameEl = document.getElementById('mt-inp-name');
-        if (nameEl && !nameEl.value) nameEl.value = mname;
+        if (nameEl && mname) nameEl.value = mname;
         return;
       }
 

@@ -1508,28 +1508,6 @@
           </div>
         </div>
 
-        <!-- 2. QUICK SNAPSHOT STRIP -->
-        <div class="tl-snapshot-strip">
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-entries">—</span>
-            <span class="tl-snap-label">entries</span>
-          </div>
-          <div class="tl-snap-divider" aria-hidden="true"></div>
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-residents">—</span>
-            <span class="tl-snap-label">residents</span>
-          </div>
-          <div class="tl-snap-divider" aria-hidden="true"></div>
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-streak">—</span>
-            <span class="tl-snap-label">wk streak</span>
-          </div>
-          <div class="tl-snap-divider" aria-hidden="true"></div>
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-age">—</span>
-            <span class="tl-snap-label">days old</span>
-          </div>
-        </div>
 
         <!-- 2b. ALERT STRIP (proactive alerts) -->
         <div id="jn-alert-strip" class="jn-alert-strip" style="display:none"></div>
@@ -1541,7 +1519,6 @@
             <button id="jn-setup-edit-btn" class="jn-setup-edit-btn" aria-label="Edit setup">Edit</button>
           </div>
           <div id="jn-setup-eq-list" class="jn-setup-eq-list"></div>
-          <div id="jn-setup-stock-list" class="jn-setup-stock-list"></div>
           <div id="jn-setup-empty" class="jn-setup-empty" hidden>
             <span>No setup recorded yet.</span>
             <button id="jn-setup-start-btn" class="jn-setup-start-btn">Record your equipment →</button>
@@ -1577,18 +1554,6 @@
           <button class="rh-inline-btn" data-rh-msg=""><svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Discuss with Rhyssa →</button>
         </div>
 
-        <!-- 4. RHYTHM CARD (8 weeks) -->
-        <div class="tl-card tl-rhythm-card">
-          <div class="tl-card-header">
-            <span class="tl-card-eyebrow">Your Rhythm</span>
-            <span style="font-size:.52rem;color:rgba(255,255,255,.22)">last 8 weeks</span>
-          </div>
-          <div class="tl-rhythm-grid" id="jn-rhythm-dots"></div>
-          <div class="tl-rhythm-footer">
-            <p class="jn-rhythm-hint">Each dot = one week. Lit = you wrote an entry.</p>
-            <span class="tl-streak-badge" id="jn-streak-count" style="display:none"></span>
-          </div>
-        </div>
 
         <!-- 5. PARAMETER SPARKLINES (conditional) -->
         <div class="tl-card" id="jn-param-charts" style="display:none">
@@ -1981,21 +1946,6 @@
         <div id="jn-setup-eq-rows" class="jn-setup-eq-rows"></div>
       </div>
 
-      <div class="jn-form-section">
-        <div class="jn-form-section-label">Livestock &amp; Plants</div>
-        <div id="jn-setup-stock-rows" class="jn-setup-stock-rows"></div>
-        <div class="jn-setup-stock-add-row">
-          <input type="text" id="jn-setup-stock-name" class="jn-setup-stock-name-inp" placeholder="e.g. Neon Tetra" maxlength="80" autocomplete="off">
-          <input type="number" id="jn-setup-stock-qty" class="jn-setup-stock-qty-inp" value="1" min="1" max="999">
-          <div class="jn-setup-stock-cats" id="jn-setup-stock-cats">
-            <button type="button" class="jn-setup-cat-btn active" data-cat="fish">Fish</button>
-            <button type="button" class="jn-setup-cat-btn" data-cat="plant">Plant</button>
-            <button type="button" class="jn-setup-cat-btn" data-cat="invertebrate">Invert</button>
-            <button type="button" class="jn-setup-cat-btn" data-cat="other">Other</button>
-          </div>
-          <button type="button" id="jn-setup-stock-add-btn" class="btn jn-setup-stock-add-btn">+ Add</button>
-        </div>
-      </div>
 
       <button type="submit" class="btn bf" style="width:100%;margin-top:1.2rem">Save Setup</button>
     </form>
