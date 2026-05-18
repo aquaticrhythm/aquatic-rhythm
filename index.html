@@ -1508,31 +1508,14 @@
           </div>
         </div>
 
-        <!-- 2. QUICK SNAPSHOT STRIP -->
-        <div class="tl-snapshot-strip">
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-entries">—</span>
-            <span class="tl-snap-label">entries</span>
-          </div>
-          <div class="tl-snap-divider" aria-hidden="true"></div>
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-residents">—</span>
-            <span class="tl-snap-label">residents</span>
-          </div>
-          <div class="tl-snap-divider" aria-hidden="true"></div>
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-streak">—</span>
-            <span class="tl-snap-label">wk streak</span>
-          </div>
-          <div class="tl-snap-divider" aria-hidden="true"></div>
-          <div class="tl-snap-stat">
-            <span class="tl-snap-num" id="jn-snap-age">—</span>
-            <span class="tl-snap-label">days old</span>
-          </div>
-        </div>
 
         <!-- 2b. ALERT STRIP (proactive alerts) -->
         <div id="jn-alert-strip" class="jn-alert-strip" style="display:none"></div>
+
+        <!-- 2d. WRITE ENTRY CTA -->
+        <div class="tl-write-cta" id="jn-write-cta">
+          <button class="btn bf tl-write-cta-btn" id="jn-entry-open-main">Write today's entry</button>
+        </div>
 
         <!-- 2c. MY SETUP CARD -->
         <div id="jn-setup-card" class="tl-card jn-setup-card" hidden>
@@ -1541,7 +1524,6 @@
             <button id="jn-setup-edit-btn" class="jn-setup-edit-btn" aria-label="Edit setup">Edit</button>
           </div>
           <div id="jn-setup-eq-list" class="jn-setup-eq-list"></div>
-          <div id="jn-setup-stock-list" class="jn-setup-stock-list"></div>
           <div id="jn-setup-empty" class="jn-setup-empty" hidden>
             <span>No setup recorded yet.</span>
             <button id="jn-setup-start-btn" class="jn-setup-start-btn">Record your equipment →</button>
@@ -1577,18 +1559,6 @@
           <button class="rh-inline-btn" data-rh-msg=""><svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Discuss with Rhyssa →</button>
         </div>
 
-        <!-- 4. RHYTHM CARD (8 weeks) -->
-        <div class="tl-card tl-rhythm-card">
-          <div class="tl-card-header">
-            <span class="tl-card-eyebrow">Your Rhythm</span>
-            <span style="font-size:.52rem;color:rgba(255,255,255,.22)">last 8 weeks</span>
-          </div>
-          <div class="tl-rhythm-grid" id="jn-rhythm-dots"></div>
-          <div class="tl-rhythm-footer">
-            <p class="jn-rhythm-hint">Each dot = one week. Lit = you wrote an entry.</p>
-            <span class="tl-streak-badge" id="jn-streak-count" style="display:none"></span>
-          </div>
-        </div>
 
         <!-- 5. PARAMETER SPARKLINES (conditional) -->
         <div class="tl-card" id="jn-param-charts" style="display:none">
@@ -1676,11 +1646,6 @@
       </div><!-- /jn-dashboard -->
     </div>
   </section>
-
-  <!-- STICKY CTA: single button, replaces duplicate buttons -->
-  <div class="tl-sticky-cta" id="jn-sticky-cta">
-    <button class="btn bf tl-sticky-btn" id="jn-entry-open-main">Write today's entry</button>
-  </div>
 
   <footer><div style="opacity:.5;pointer-events:none;display:flex;align-items:center;justify-content:center"><svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true"><circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/><line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/><line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/><ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/><path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/><path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/><circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/><text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text><text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text></svg></div><span class="fm">Aligned with living systems.</span></footer>
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="https://ko-fi.com/aquaticrhythm" class="sflink" data-kofi-open rel="noopener noreferrer">Support</a></div>
@@ -1936,7 +1901,9 @@
 
       <div class="mt-field">
         <label class="mt-label" for="jn-inh-common">Common name <span style="opacity:.38">(required)</span></label>
-        <input class="mt-input" id="jn-inh-common" type="text" placeholder="e.g. Neon Tetra" required>
+        <div id="jn-inh-common-wrap">
+          <input class="mt-input" id="jn-inh-common" type="text" placeholder="e.g. Neon Tetra" required autocomplete="off">
+        </div>
       </div>
 
       <div class="mt-field-row">
@@ -1950,11 +1917,10 @@
         </div>
       </div>
 
-      <div class="mt-field jn-species-row" id="jn-species-row" style="display:none">
-        <label class="mt-label" for="jn-inh-species">Scientific name</label>
-        <input class="mt-input" id="jn-inh-species" type="text" placeholder="e.g. Paracheirodon innesi">
+      <div class="mt-field" id="jn-species-row">
+        <label class="mt-label" for="jn-inh-species">Scientific name <span style="opacity:.38">(auto-fills on suggestion)</span></label>
+        <input class="mt-input" id="jn-inh-species" type="text" placeholder="e.g. Paracheirodon innesi" autocomplete="off">
       </div>
-      <button type="button" class="jn-species-toggle" id="jn-species-toggle">+ Add scientific name</button>
 
       <div class="mt-field">
         <label class="mt-label" for="jn-inh-date">Date added</label>
@@ -1981,21 +1947,6 @@
         <div id="jn-setup-eq-rows" class="jn-setup-eq-rows"></div>
       </div>
 
-      <div class="jn-form-section">
-        <div class="jn-form-section-label">Livestock &amp; Plants</div>
-        <div id="jn-setup-stock-rows" class="jn-setup-stock-rows"></div>
-        <div class="jn-setup-stock-add-row">
-          <input type="text" id="jn-setup-stock-name" class="jn-setup-stock-name-inp" placeholder="e.g. Neon Tetra" maxlength="80" autocomplete="off">
-          <input type="number" id="jn-setup-stock-qty" class="jn-setup-stock-qty-inp" value="1" min="1" max="999">
-          <div class="jn-setup-stock-cats" id="jn-setup-stock-cats">
-            <button type="button" class="jn-setup-cat-btn active" data-cat="fish">Fish</button>
-            <button type="button" class="jn-setup-cat-btn" data-cat="plant">Plant</button>
-            <button type="button" class="jn-setup-cat-btn" data-cat="invertebrate">Invert</button>
-            <button type="button" class="jn-setup-cat-btn" data-cat="other">Other</button>
-          </div>
-          <button type="button" id="jn-setup-stock-add-btn" class="btn jn-setup-stock-add-btn">+ Add</button>
-        </div>
-      </div>
 
       <button type="submit" class="btn bf" style="width:100%;margin-top:1.2rem">Save Setup</button>
     </form>
@@ -2117,6 +2068,14 @@ if ('serviceWorker' in navigator) {
         <line x1="20.5" y1="11" x2="18.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/>
       </svg>
       <p class="rh-sheet-welcome-txt">Tell me what you see — water, behaviour, anything that changed — and we can read it together before we fix anything.</p>
+
+      <div class="rh-suggest-chips" id="rh-suggest-chips">
+        <button type="button" class="rh-suggest-chip" data-msg="How is my tank doing overall?">How is my tank doing?</button>
+        <button type="button" class="rh-suggest-chip" data-msg="What should I focus on or improve next in my tank?">What's next for my tank?</button>
+        <button type="button" class="rh-suggest-chip" data-msg="Give me care tips and a maintenance schedule for my tank setup.">Care tips &amp; schedule</button>
+        <button type="button" class="rh-suggest-chip" data-msg="What fish or plants would be compatible with my current residents?">Compatible species?</button>
+        <button type="button" class="rh-suggest-chip" data-msg="I noticed something unusual in my tank. Help me diagnose it.">Diagnose an issue</button>
+      </div>
 
       <p class="rh-sheet-also">Same Rhyssa — also on <a href="https://chatgpt.com/g/g-6a09401c8ef48191b18deb53565a7fe1-rhyssa-aquarium-companion" target="_blank" rel="noopener">ChatGPT ↗</a> if you prefer.</p>
     </div>

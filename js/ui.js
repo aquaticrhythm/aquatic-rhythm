@@ -564,6 +564,75 @@
     var INH_CATS = { fish:'🐟', plant:'🌿', invertebrate:'🦐', coral:'🪸', other:'◈' };
     var INH_CAT_LABELS = { fish:'Fish', plant:'Plant', invertebrate:'Invertebrate', coral:'Coral', other:'Other' };
 
+    var FISH_SPECIES = [
+      { common: 'Neon Tetra',          sci: 'Paracheirodon innesi' },
+      { common: 'Cardinal Tetra',      sci: 'Paracheirodon axelrodi' },
+      { common: 'Guppy',               sci: 'Poecilia reticulata' },
+      { common: 'Betta',               sci: 'Betta splendens' },
+      { common: 'Goldfish',            sci: 'Carassius auratus' },
+      { common: 'Platy',               sci: 'Xiphophorus maculatus' },
+      { common: 'Molly',               sci: 'Poecilia sphenops' },
+      { common: 'Swordtail',           sci: 'Xiphophorus hellerii' },
+      { common: 'Corydoras',           sci: 'Corydoras paleatus' },
+      { common: 'Otocinclus',          sci: 'Otocinclus affinis' },
+      { common: 'Bristlenose Pleco',   sci: 'Ancistrus cirrhosus' },
+      { common: 'Tiger Barb',          sci: 'Puntigrus tetrazona' },
+      { common: 'Cherry Barb',         sci: 'Puntius titteya' },
+      { common: 'Zebra Danio',         sci: 'Danio rerio' },
+      { common: 'Pearl Gourami',       sci: 'Trichopodus leerii' },
+      { common: 'Dwarf Gourami',       sci: 'Trichogaster lalius' },
+      { common: 'Angelfish',           sci: 'Pterophyllum scalare' },
+      { common: 'Discus',              sci: 'Symphysodon aequifasciatus' },
+      { common: 'Oscar',               sci: 'Astronotus ocellatus' },
+      { common: 'Harlequin Rasbora',   sci: 'Trigonostigma heteromorpha' },
+      { common: 'Rummy-nose Tetra',    sci: 'Hemigrammus rhodostomus' },
+      { common: 'Black Skirt Tetra',   sci: 'Gymnocorymbus ternetzi' },
+      { common: 'White Cloud Minnow',  sci: 'Tanichthys albonubes' },
+      { common: 'Kuhli Loach',         sci: 'Pangio kuhlii' },
+      { common: 'Clown Loach',         sci: 'Chromobotia macracanthus' },
+      { common: 'Yoyo Loach',          sci: 'Botia almorhae' },
+      { common: 'Amano Shrimp',        sci: 'Caridina multidentata' },
+      { common: 'Cherry Shrimp',       sci: 'Neocaridina davidi' },
+      { common: 'Nerite Snail',        sci: 'Neritina natalensis' },
+      { common: 'Mystery Snail',       sci: 'Pomacea bridgesii' },
+      { common: 'Java Fern',           sci: 'Microsorum pteropus' },
+      { common: 'Anubias',             sci: 'Anubias barteri' },
+      { common: 'Vallisneria',         sci: 'Vallisneria spiralis' },
+      { common: 'Hornwort',            sci: 'Ceratophyllum demersum' },
+      { common: 'Clownfish',           sci: 'Amphiprion ocellaris' },
+      { common: 'Blue Tang',           sci: 'Paracanthurus hepatus' },
+      { common: 'Yellow Tang',         sci: 'Zebrasoma flavescens' },
+      { common: 'Royal Gramma',        sci: 'Gramma loreto' },
+      { common: 'Damselfish',          sci: 'Chrysiptera parasema' },
+      { common: 'Firefish',            sci: 'Nemateleotris magnifica' },
+      { common: 'Mandarin Fish',       sci: 'Synchiropus splendidus' },
+      { common: 'Foxface',             sci: 'Siganus vulpinus' },
+      { common: 'Hawkfish',            sci: 'Oxycirrhites typus' },
+      { common: 'Watchman Goby',       sci: 'Cryptocentrus cinctus' },
+      { common: 'Blue Lobster',        sci: 'Procambarus alleni' },
+      { common: 'Ghost Shrimp',        sci: 'Palaemonetes paludosus' },
+      { common: 'Red Crystal Shrimp',  sci: 'Caridina cantonensis' },
+      { common: 'Ember Tetra',         sci: 'Hyphessobrycon amandae' },
+      { common: 'Chili Rasbora',       sci: 'Boraras brigittae' },
+      { common: 'Pygmy Corydoras',     sci: 'Corydoras pygmaeus' },
+      { common: 'Endlers Livebearer',  sci: 'Poecilia wingei' },
+      { common: 'Celestial Pearl Danio', sci: 'Danio margaritatus' },
+      { common: 'Electric Blue Acara', sci: 'Andinoacara pulcher' },
+      { common: 'German Blue Ram',     sci: 'Mikrogeophagus ramirezi' },
+      { common: 'Bolivian Ram',        sci: 'Mikrogeophagus altispinosus' },
+      { common: 'Peacock Cichlid',     sci: 'Aulonocara nyassae' },
+      { common: 'African Cichlid',     sci: 'Labidochromis caeruleus' },
+      { common: 'Rosy Barb',          sci: 'Pethia conchonius' },
+      { common: 'Bleeding Heart Tetra', sci: 'Hyphessobrycon erythrostigma' },
+      { common: 'Buenos Aires Tetra',  sci: 'Hyphessobrycon anisitsi' },
+      { common: 'Serpae Tetra',        sci: 'Hyphessobrycon eques' },
+      { common: 'Flame Tetra',         sci: 'Hyphessobrycon flammeus' },
+      { common: 'Glowlight Tetra',     sci: 'Hemigrammus erythrozonus' },
+      { common: 'Honey Gourami',       sci: 'Trichogaster chuna' },
+      { common: 'Kissing Gourami',     sci: 'Helostoma temminkii' },
+      { common: 'Paradise Fish',       sci: 'Macropodus opercularis' }
+    ];
+
     function escHtml(s) {
       return String(s == null ? '' : s)
         .replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -1614,14 +1683,11 @@
       renderTankSelector(d);
       var tank = getActiveTank(d);
 
-      var stickyCTA = document.getElementById('jn-sticky-cta');
       if (!tank) {
         var tlPage = document.getElementById('pg-tank-log');
         if (tlPage && tlPage.classList.contains('active')) window.go('journal', false);
-        if (stickyCTA) stickyCTA.classList.remove('visible');
         return;
       }
-      if (stickyCTA) stickyCTA.classList.add('visible');
 
       var p = tank.profile;
       var nameEl = document.getElementById('jn-tank-name');
@@ -1793,33 +1859,40 @@
       var setup = tank && tank.setup;
       card.removeAttribute('hidden');
       var eqList = document.getElementById('jn-setup-eq-list');
-      var stockList = document.getElementById('jn-setup-stock-list');
       var emptyEl = document.getElementById('jn-setup-empty');
       if (eqList) eqList.innerHTML = '';
-      if (stockList) stockList.innerHTML = '';
       var hasEq = setup && setup.equipment && Object.keys(setup.equipment).length;
-      var hasStock = setup && setup.stock && setup.stock.length;
-      if (!hasEq && !hasStock) {
+      if (!hasEq) {
         if (emptyEl) emptyEl.removeAttribute('hidden');
         return;
       }
       if (emptyEl) emptyEl.setAttribute('hidden', '');
       if (hasEq && eqList) {
+        var AR_EQ = window.AR_EQ;
+        var CAT_ORDER = ['filtration', 'environment', 'substrate', 'cooling', 'additions', 'sterilization', 'circulation'];
+        var bycat = {};
         Object.keys(setup.equipment).forEach(function (k) {
-          var brand = (setup.brands || {})[k] || '';
-          var chip = document.createElement('span');
-          chip.className = 'jn-setup-eq-chip';
-          chip.textContent = fmtEqLabel(k) + (brand ? ' — ' + brand : '');
-          eqList.appendChild(chip);
+          var cat = (AR_EQ && AR_EQ[k]) ? (AR_EQ[k].cat || 'other') : 'other';
+          if (!bycat[cat]) bycat[cat] = [];
+          bycat[cat].push(k);
         });
-      }
-      if (hasStock && stockList) {
-        var catEmoji = { fish: '🐟', plant: '🌿', invertebrate: '🦐', coral: '🪸', other: '◈' };
-        setup.stock.forEach(function (s) {
-          var chip = document.createElement('span');
-          chip.className = 'jn-setup-stock-chip';
-          chip.textContent = (catEmoji[s.cat] || '') + ' ' + (s.qty > 1 ? s.qty + '× ' : '') + s.name;
-          stockList.appendChild(chip);
+        var cats = CAT_ORDER.filter(function (c) { return bycat[c]; });
+        Object.keys(bycat).forEach(function (c) { if (cats.indexOf(c) < 0) cats.push(c); });
+        cats.forEach(function (cat) {
+          if (!bycat[cat] || !bycat[cat].length) return;
+          var hdr = document.createElement('div');
+          hdr.className = 'jn-setup-card-cat-hdr';
+          hdr.textContent = CAT_LABELS[cat] || cat;
+          eqList.appendChild(hdr);
+          (bycat[cat] || []).forEach(function (k) {
+            var customNote = (setup.customNotes || {})[k] || '';
+            var brand = (setup.brands || {})[k] || '';
+            var note = customNote || brand;
+            var chip = document.createElement('span');
+            chip.className = 'jn-setup-eq-chip';
+            chip.textContent = fmtEqLabel(k) + (note ? ' — ' + note : '');
+            eqList.appendChild(chip);
+          });
         });
       }
     }
@@ -1827,8 +1900,16 @@
     /* ── Gear modal state ── */
     var _gearEqState = {};
     var _gearBrandState = {};
-    var _gearStockList = [];
-    var _gearStockCat = 'fish';
+
+    var CAT_LABELS = {
+      filtration: 'Filtration',
+      environment: 'Lighting & Environment',
+      substrate: 'Substrate',
+      cooling: 'Temperature & Cooling',
+      additions: 'Additions & Monitoring',
+      sterilization: 'Sterilization',
+      circulation: 'Circulation'
+    };
 
     function openGearModal() {
       var AR_EQ = window.AR_EQ;
@@ -1837,16 +1918,15 @@
       var saved = (tank && tank.setup) || {};
       _gearEqState = {};
       _gearBrandState = {};
-      _gearStockList = [];
+      var _gearCustomNotes = saved.customNotes ? Object.assign({}, saved.customNotes) : {};
 
       if (saved.equipment) Object.keys(saved.equipment).forEach(function (k) { _gearEqState[k] = true; });
       if (saved.brands) Object.keys(saved.brands).forEach(function (k) { _gearBrandState[k] = saved.brands[k]; });
-      if (saved.stock) _gearStockList = saved.stock.slice();
 
       var rowsEl = document.getElementById('jn-setup-eq-rows');
       if (rowsEl) {
         rowsEl.innerHTML = '';
-        var CAT_ORDER = ['filtration', 'environment', 'substrate', 'cooling', 'additions'];
+        var CAT_ORDER = ['filtration', 'environment', 'substrate', 'cooling', 'additions', 'sterilization', 'circulation'];
         var bycat = {};
         Object.keys(AR_EQ).forEach(function (k) {
           var cat = AR_EQ[k].cat || 'other';
@@ -1856,10 +1936,15 @@
         var cats = CAT_ORDER.filter(function (c) { return bycat[c]; });
         Object.keys(bycat).forEach(function (c) { if (cats.indexOf(c) < 0) cats.push(c); });
         cats.forEach(function (cat) {
+          if (!bycat[cat] || !bycat[cat].length) return;
+          var catHeader = document.createElement('div');
+          catHeader.className = 'jn-eq-cat-header';
+          catHeader.textContent = CAT_LABELS[cat] || cat;
+          rowsEl.appendChild(catHeader);
           (bycat[cat] || []).forEach(function (k) {
             var eq = AR_EQ[k];
             var row = document.createElement('div');
-            row.className = 'jn-setup-eq-row';
+            row.className = 'jn-setup-eq-row' + (!!_gearEqState[k] ? ' active' : '');
             var tog = document.createElement('input');
             tog.type = 'checkbox';
             tog.className = 'jn-setup-eq-toggle';
@@ -1883,15 +1968,26 @@
               if (_gearBrandState[k] === b) opt.selected = true;
               sel.appendChild(opt);
             });
+            var note = document.createElement('input');
+            note.type = 'text';
+            note.className = 'jn-setup-eq-note' + (tog.checked ? ' visible' : '');
+            note.dataset.eq = k;
+            note.placeholder = 'Custom brand / model…';
+            note.maxLength = 80;
+            note.value = _gearCustomNotes[k] || '';
             tog.addEventListener('change', function () {
               if (tog.checked) {
                 _gearEqState[k] = true;
                 sel.classList.add('visible');
+                note.classList.add('visible');
+                row.classList.add('active');
               } else {
                 delete _gearEqState[k];
                 delete _gearBrandState[k];
                 sel.classList.remove('visible');
                 sel.value = '';
+                note.classList.remove('visible');
+                row.classList.remove('active');
               }
             });
             sel.addEventListener('change', function () {
@@ -1901,42 +1997,13 @@
             row.appendChild(tog);
             row.appendChild(lbl);
             row.appendChild(sel);
+            row.appendChild(note);
             rowsEl.appendChild(row);
           });
         });
       }
 
-      _gearStockCat = 'fish';
-      syncGearCatBtns();
-      renderGearStockRows();
-
-      var nameInp = document.getElementById('jn-setup-stock-name');
-      var qtyInp = document.getElementById('jn-setup-stock-qty');
-      if (nameInp) nameInp.value = '';
-      if (qtyInp) qtyInp.value = '1';
       openModal('mt-modal-gear');
-    }
-
-    function syncGearCatBtns() {
-      document.querySelectorAll('.jn-setup-cat-btn').forEach(function (b) {
-        b.classList.toggle('active', b.dataset.cat === _gearStockCat);
-      });
-    }
-
-    function renderGearStockRows() {
-      var el = document.getElementById('jn-setup-stock-rows');
-      if (!el) return;
-      el.innerHTML = '';
-      var catEmoji = { fish: '🐟', plant: '🌿', invertebrate: '🦐', coral: '🪸', other: '◈' };
-      _gearStockList.forEach(function (s, idx) {
-        var row = document.createElement('div');
-        row.className = 'jn-setup-stock-row';
-        row.innerHTML = '<span class="jn-setup-stock-row-qty">' + escHtml(s.qty > 1 ? s.qty + '×' : '1×') + '</span>'
-          + escHtml(s.name)
-          + '<span class="jn-setup-stock-row-cat">' + escHtml((catEmoji[s.cat] || '') + ' ' + (s.cat || '')) + '</span>'
-          + '<button type="button" class="jn-setup-stock-row-del" data-idx="' + idx + '" aria-label="Remove">×</button>';
-        el.appendChild(row);
-      });
     }
 
     function saveGearModal() {
@@ -1951,7 +2018,11 @@
       document.querySelectorAll('.jn-setup-brand-select').forEach(function (sel) {
         if (sel.dataset.eq && sel.value) brands[sel.dataset.eq] = sel.value;
       });
-      tank.setup = { equipment: eq, brands: brands, stock: _gearStockList.slice(), savedAt: Date.now() };
+      var customNotes = {};
+      document.querySelectorAll('.jn-setup-eq-note').forEach(function (inp) {
+        if (inp.dataset.eq && inp.value.trim()) customNotes[inp.dataset.eq] = inp.value.trim();
+      });
+      tank.setup = { equipment: eq, brands: brands, customNotes: customNotes, savedAt: Date.now() };
       saveData(d);
       closeModal('mt-modal-gear');
       renderSetupCard(tank);
@@ -2070,10 +2141,6 @@
           s('jn-inh-common', inh.commonName); s('jn-inh-species', inh.species); s('jn-inh-name', inh.name);
           var cEl = document.getElementById('jn-inh-count'); if (cEl) cEl.value = inh.count || 1;
           var dEl = document.getElementById('jn-inh-date'); if (dEl) dEl.value = inh.addedDate || todayStr();
-          var speciesRowE = document.getElementById('jn-species-row');
-          var speciesTogE = document.getElementById('jn-species-toggle');
-          if (speciesRowE) speciesRowE.style.display = inh.species ? '' : 'none';
-          if (speciesTogE) speciesTogE.textContent = inh.species ? '− Hide scientific name' : '+ Add scientific name';
           var submitBtn = document.querySelector('#mt-modal-inhabitant [type="submit"]');
           if (submitBtn) submitBtn.textContent = 'Save changes';
           openModal('mt-modal-inhabitant');
@@ -2081,14 +2148,65 @@
         }
       }
       if (titleEl) titleEl.textContent = 'Who joined your tank?';
-      var speciesRowN = document.getElementById('jn-species-row');
-      var speciesTogN = document.getElementById('jn-species-toggle');
-      if (speciesRowN) speciesRowN.style.display = 'none';
-      if (speciesTogN) speciesTogN.textContent = '+ Add scientific name';
       var submitBtn2 = document.querySelector('#mt-modal-inhabitant [type="submit"]');
       if (submitBtn2) submitBtn2.textContent = 'Add to tank';
       openModal('mt-modal-inhabitant');
     }
+
+    /* ── Resident autocomplete ── */
+    (function () {
+      var commonInp = document.getElementById('jn-inh-common');
+      var speciesInp = document.getElementById('jn-inh-species');
+      var wrap = document.getElementById('jn-inh-common-wrap');
+      if (!commonInp || !wrap) return;
+      var suggestBox = null;
+
+      function removeSuggest() {
+        if (suggestBox) { suggestBox.remove(); suggestBox = null; }
+      }
+
+      function showSuggestions(query) {
+        removeSuggest();
+        var q = query.trim().toLowerCase();
+        if (!q) return;
+        var matches = FISH_SPECIES.filter(function (f) {
+          return f.common.toLowerCase().indexOf(q) >= 0;
+        }).slice(0, 6);
+        if (!matches.length) return;
+        suggestBox = document.createElement('div');
+        suggestBox.id = 'jn-inh-suggest';
+        suggestBox.className = 'jn-inh-suggest';
+        matches.forEach(function (f) {
+          var item = document.createElement('div');
+          item.className = 'jn-inh-suggest-item';
+          item.setAttribute('tabindex', '-1');
+          var nameSpan = document.createElement('span');
+          nameSpan.textContent = f.common;
+          var sciSpan = document.createElement('span');
+          sciSpan.className = 'jn-inh-suggest-sci';
+          sciSpan.textContent = f.sci;
+          item.appendChild(nameSpan);
+          item.appendChild(sciSpan);
+          item.addEventListener('mousedown', function (e) {
+            e.preventDefault();
+            commonInp.value = f.common;
+            if (speciesInp) speciesInp.value = f.sci;
+            removeSuggest();
+            commonInp.focus();
+          });
+          suggestBox.appendChild(item);
+        });
+        wrap.appendChild(suggestBox);
+      }
+
+      commonInp.addEventListener('input', function () {
+        showSuggestions(commonInp.value);
+      });
+
+      commonInp.addEventListener('blur', function () {
+        setTimeout(removeSuggest, 150);
+      });
+    })();
 
     document.addEventListener('click', function (e) {
       var target = e.target;
@@ -2216,16 +2334,6 @@
         return;
       }
 
-      if (target.id === 'jn-species-toggle') {
-        var sRow = document.getElementById('jn-species-row');
-        var sTog = document.getElementById('jn-species-toggle');
-        if (sRow && sTog) {
-          var sHidden = sRow.style.display === 'none' || !sRow.style.display;
-          sRow.style.display = sHidden ? '' : 'none';
-          sTog.textContent = sHidden ? '− Hide scientific name' : '+ Add scientific name';
-        }
-        return;
-      }
 
       if (target.id === 'jn-load-more') {
         jnHistoryPage += 1;
@@ -2526,34 +2634,6 @@
         openGearModal();
         return;
       }
-      /* Stock row remove button */
-      var delBtn = t.closest('.jn-setup-stock-row-del');
-      if (delBtn && delBtn.closest('#mt-modal-gear')) {
-        var idx = parseInt(delBtn.dataset.idx, 10);
-        if (!isNaN(idx)) { _gearStockList.splice(idx, 1); renderGearStockRows(); }
-        return;
-      }
-      /* Stock category buttons */
-      var catBtn = t.closest('.jn-setup-cat-btn');
-      if (catBtn && catBtn.closest('#mt-modal-gear')) {
-        _gearStockCat = catBtn.dataset.cat || 'fish';
-        syncGearCatBtns();
-        return;
-      }
-      /* Add stock button */
-      if (t.id === 'jn-setup-stock-add-btn' || t.closest('#jn-setup-stock-add-btn')) {
-        var nameEl = document.getElementById('jn-setup-stock-name');
-        var qtyEl = document.getElementById('jn-setup-stock-qty');
-        var name = nameEl ? nameEl.value.trim() : '';
-        if (!name) return;
-        var qty = parseInt(qtyEl ? qtyEl.value : '1', 10) || 1;
-        _gearStockList.push({ name: name, qty: qty, cat: _gearStockCat });
-        renderGearStockRows();
-        if (nameEl) nameEl.value = '';
-        if (qtyEl) qtyEl.value = '1';
-        if (nameEl) nameEl.focus();
-        return;
-      }
     });
 
     /* ── Gear modal: form submit ── */
@@ -2563,15 +2643,6 @@
         e.preventDefault();
         saveGearModal();
       });
-      var stockNameInp = document.getElementById('jn-setup-stock-name');
-      if (stockNameInp) {
-        stockNameInp.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            document.getElementById('jn-setup-stock-add-btn') && document.getElementById('jn-setup-stock-add-btn').click();
-          }
-        });
-      }
     }
 
     document.addEventListener('keydown', function (e) {
@@ -2637,7 +2708,7 @@
         setHiddenInputs(vol, unit, shp);
         updatePreview(vol, unit, shp, dims);
         var nameEl = document.getElementById('mt-inp-name');
-        if (nameEl && !nameEl.value) nameEl.value = 'My ' + vol + ' ' + unit + ' Tank';
+        if (nameEl) nameEl.value = 'My ' + vol + ' ' + unit + ' Tank';
         return;
       }
 
@@ -2673,7 +2744,7 @@
         updatePreview(vol, unit, shp, dims);
         var mname  = modelChip.dataset.name || '';
         var nameEl = document.getElementById('mt-inp-name');
-        if (nameEl && !nameEl.value) nameEl.value = mname;
+        if (nameEl && mname) nameEl.value = mname;
         return;
       }
 
@@ -2774,6 +2845,13 @@
     }
 
     /* ── Render full thread from storage ── */
+    function renderSuggestions() {
+      var chips = document.getElementById('rh-suggest-chips');
+      if (!chips) return;
+      var msgs = getThread().messages;
+      chips.style.display = msgs.length ? 'none' : '';
+    }
+
     function renderThread() {
       var msgs = getThread().messages;
       Array.from(thread.children).forEach(function (el) {
@@ -2781,6 +2859,7 @@
       });
       if (!msgs.length) {
         if (welcome) welcome.style.display = '';
+        renderSuggestions();
         return;
       }
       if (welcome) welcome.style.display = 'none';
@@ -2791,6 +2870,29 @@
         appendBubble(m.role, m.content);
       });
       thread.scrollTop = thread.scrollHeight;
+      renderSuggestions();
+    }
+
+    /* ── Suggestion chips click handler ── */
+    var suggestChipsEl = document.getElementById('rh-suggest-chips');
+    if (suggestChipsEl) {
+      suggestChipsEl.addEventListener('click', function (e) {
+        var chip = e.target.closest('.rh-suggest-chip');
+        if (!chip) return;
+        var msg = chip.dataset.msg;
+        if (!msg) return;
+        var chips = document.getElementById('rh-suggest-chips');
+        if (chips) chips.style.display = 'none';
+        if (inp) {
+          inp.value = msg;
+          inp.style.height = 'auto';
+          inp.style.height = Math.min(inp.scrollHeight, 120) + 'px';
+        }
+        if (typeof sendMsg === 'function') {
+          sendMsg(msg);
+          if (inp) { inp.value = ''; inp.style.height = 'auto'; }
+        }
+      });
     }
 
     function appendSep(ts) {
