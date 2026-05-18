@@ -598,7 +598,8 @@ body.ar-reduce-motion #driftwood-layer{opacity:0!important;transition:opacity .5
 .rd-card--acc.is-expanded .rd-card-hit{border-color:rgba(61,214,232,.32);border-bottom-left-radius:0;border-bottom-right-radius:0}
 .rd-card-hit .rd-card-bar{display:block}
 .rd-card-hit-row{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;padding:.68rem .95rem .75rem;text-align:left}
-.rd-card-hit-text{font-family:var(--serif);font-size:clamp(.86rem,3.3vw,1.04rem);font-weight:400;line-height:1.28;color:rgba(255,255,255,.9);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;min-width:0;padding:2px 0}
+.rd-card-hit-text{font-family:var(--serif);font-size:clamp(.86rem,3.3vw,1.04rem);font-weight:400;line-height:1.28;color:rgba(255,255,255,.9);display:block;flex:1;min-width:0;padding:2px 0}
+.rd-hit-sub{display:block;font-style:italic;font-size:clamp(.7rem,2.4vw,.8rem);font-weight:300;color:rgba(255,255,255,.48);line-height:1.3;margin-top:.18rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rd-card-chevron{flex-shrink:0;width:.42rem;height:.42rem;border-right:2px solid rgba(124,168,156,.55);border-bottom:2px solid rgba(124,168,156,.55);transform:rotate(45deg);margin-top:.4rem;margin-right:.1rem;transition:transform .28s var(--ease)}
 .rd-card--acc.is-expanded .rd-card-chevron{transform:rotate(-135deg);margin-top:.5rem}
 .rd-card-panel{background:rgba(5,12,10,.58);border:1px solid var(--panel-border);border-top:none;border-radius:0 0 12px 12px;margin-top:-1px}
@@ -612,6 +613,7 @@ body.ar-reduce-motion #driftwood-layer{opacity:0!important;transition:opacity .5
 .rd-tag-int{color:rgba(61,214,232,.68)}
 .rd-card-title{font-family:var(--serif);font-size:clamp(1.05rem,1.65vw,1.45rem);font-weight:400;color:rgba(255,255,255,.88);line-height:1.22;margin-bottom:.55rem}
 .rd-card-title em{font-style:italic;color:rgba(255,255,255,.7);font-size:clamp(.85rem,1.35vw,1.1rem)}
+.rd-card--acc .rd-card-title{display:none}
 .rd-card-desc-text{font-size:.88rem;font-weight:400;color:rgba(235,240,236,.72);line-height:1.85;max-width:520px;margin-bottom:.85rem}
 .rd-card-cta{font-size:.54rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(61,214,232,.78)}
 .rd-coming{padding:1.6rem 2rem;border:1px dashed rgba(255,255,255,.07);background:rgba(6,16,13,.3)}

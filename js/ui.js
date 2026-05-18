@@ -164,8 +164,24 @@
     root.querySelectorAll('.rd-card--acc').forEach(function (card) {
       var hitText = card.querySelector('.rd-card-hit-text');
       var h2 = card.querySelector('.rd-card-panel .rd-card-title');
-      if (!hitText || !h2 || hitText.textContent.trim()) return;
-      hitText.textContent = h2.textContent.replace(/\s+/g, ' ').trim();
+      if (!hitText || !h2 || hitText.childNodes.length) return;
+      var mainTitle = '';
+      var subtitle = '';
+      h2.childNodes.forEach(function (node) {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() && !mainTitle) {
+          mainTitle = node.textContent.trim();
+        } else if (node.nodeName === 'EM') {
+          subtitle = node.textContent.trim();
+        }
+      });
+      if (!mainTitle) mainTitle = h2.textContent.replace(/\s+/g, ' ').trim();
+      hitText.appendChild(document.createTextNode(mainTitle));
+      if (subtitle) {
+        var sub = document.createElement('span');
+        sub.className = 'rd-hit-sub';
+        sub.textContent = subtitle;
+        hitText.appendChild(sub);
+      }
     });
   }
 
