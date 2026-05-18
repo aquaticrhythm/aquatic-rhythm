@@ -638,8 +638,66 @@
   <div class="subfooter"><a href="/privacy" data-page="privacy" class="sflink">Privacy Policy</a><span class="sfdot">·</span><a href="/terms" data-page="terms" class="sflink">Terms of Use</a><span class="sfdot">·</span><a href="/about" data-page="about" class="sflink">About</a><span class="sfdot">·</span><a href="https://ko-fi.com/aquaticrhythm" class="sflink" data-kofi-open rel="noopener noreferrer">Support</a><span class="sfdot">·</span><a href="mailto:hello@aquaticrhythm.com" class="sflink">Contact</a></div>
 </div></div>
 
-<!-- ═══════════ RHYSSA (shell — sheet UI lives outside pages) ═══════════ -->
-<div id="pg-companion" class="page"></div>
+<!-- ═══════════ RHYSSA COMPANION PAGE ═══════════ -->
+<div id="pg-companion" class="page">
+  <div class="rh-page">
+
+    <!-- Top bar -->
+    <div class="rh-page-head">
+      <button class="rh-hist-btn" id="rh-cp-back" aria-label="Go back">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M12 5L7 10l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="rh-page-title-wrap">
+        <span class="rh-page-name">Rhyssa</span>
+        <span class="rh-page-sub">Aquarium Companion</span>
+      </div>
+      <button class="rh-new-btn" id="rh-cp-new" aria-label="New conversation" title="New conversation">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Thread -->
+    <div class="rh-page-thread" id="rh-cp-thread" role="log" aria-live="polite" aria-label="Conversation with Rhyssa">
+      <div class="rh-welcome" id="rh-cp-welcome">
+        <div class="rh-welcome-icon">
+          <svg width="46" height="46" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7.5" stroke="rgba(61,214,232,.55)" stroke-width="1.4" fill="none"/>
+            <circle cx="11" cy="11" r="3.5" stroke="rgba(61,214,232,.3)" stroke-width="1.1" fill="none"/>
+            <circle cx="11" cy="11" r="1.2" fill="rgba(61,214,232,.75)"/>
+            <line x1="11" y1="3.5" x2="11" y2="1.5" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="3.5" y1="11" x2="1.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="20.5" y1="11" x2="18.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="rh-welcome-text">Tell me what you see — water, behaviour, anything that changed — and we can read it together before we fix anything.</p>
+        <div class="rh-welcome-chips">
+          <button class="rh-starter-chip" data-starter="Something looks off in my tank — I'm not sure where to start reading it">Something looks off</button>
+          <button class="rh-starter-chip" data-starter="Can you explain the nitrogen cycle in plain terms?">Nitrogen cycle</button>
+          <button class="rh-starter-chip" data-starter="I'm setting up my first aquarium — what should I know?">First tank setup</button>
+          <button class="rh-starter-chip" data-starter="My fish seem stressed. Where do I start?">Fish seem stressed</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input foot -->
+    <div class="rh-page-foot">
+      <form class="rh-page-form" id="rh-cp-form" autocomplete="off">
+        <textarea id="rh-cp-inp" class="rh-page-inp" placeholder="Ask about your tank…" rows="1" maxlength="1200" aria-label="Message to Rhyssa"></textarea>
+        <button type="submit" class="rh-page-send" id="rh-cp-send" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M15 9H3M15 9L9.5 4M15 9L9.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+      <p class="rh-page-note">AI can be wrong — for fish emergencies, consult a specialist</p>
+    </div>
+
+  </div>
+</div>
 
 <!-- ═══════════ TERMS ═══════════ -->
 <div id="pg-terms" class="page"><div class="pl">
