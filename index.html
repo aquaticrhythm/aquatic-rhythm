@@ -1534,6 +1534,20 @@
         <!-- 2b. ALERT STRIP (proactive alerts) -->
         <div id="jn-alert-strip" class="jn-alert-strip" style="display:none"></div>
 
+        <!-- 2c. MY SETUP CARD -->
+        <div id="jn-setup-card" class="tl-card jn-setup-card" hidden>
+          <div class="tl-card-header">
+            <span class="tl-card-eyebrow">My Setup</span>
+            <button id="jn-setup-edit-btn" class="jn-setup-edit-btn" aria-label="Edit setup">Edit</button>
+          </div>
+          <div id="jn-setup-eq-list" class="jn-setup-eq-list"></div>
+          <div id="jn-setup-stock-list" class="jn-setup-stock-list"></div>
+          <div id="jn-setup-empty" class="jn-setup-empty" hidden>
+            <span>No setup recorded yet.</span>
+            <button id="jn-setup-start-btn" class="jn-setup-start-btn">Record your equipment →</button>
+          </div>
+        </div>
+
         <!-- 3. ARA PHASE CARD -->
         <div class="tl-card tl-phase-card" id="jn-phase-card">
           <div class="tl-card-eyebrow">ARA Phase</div>
@@ -1952,9 +1966,46 @@
   </div>
 </div>
 
+<!-- ── GEAR MODAL (My Tank Setup: equipment + livestock) ── -->
+<div class="mt-modal" id="mt-modal-gear" aria-modal="true" role="dialog" aria-label="My tank setup" aria-hidden="true">
+  <div class="mt-modal-inner">
+    <div class="mt-modal-header">
+      <h2 class="mt-modal-title">My Tank Setup</h2>
+      <button class="mt-modal-close" data-modal-close="mt-modal-gear" aria-label="Close">✕</button>
+    </div>
+    <form id="jn-form-setup" autocomplete="off">
+
+      <div class="jn-form-section">
+        <div class="jn-form-section-label">Equipment</div>
+        <p class="jn-setup-modal-hint">Select what you actually have in this tank.</p>
+        <div id="jn-setup-eq-rows" class="jn-setup-eq-rows"></div>
+      </div>
+
+      <div class="jn-form-section">
+        <div class="jn-form-section-label">Livestock &amp; Plants</div>
+        <div id="jn-setup-stock-rows" class="jn-setup-stock-rows"></div>
+        <div class="jn-setup-stock-add-row">
+          <input type="text" id="jn-setup-stock-name" class="jn-setup-stock-name-inp" placeholder="e.g. Neon Tetra" maxlength="80" autocomplete="off">
+          <input type="number" id="jn-setup-stock-qty" class="jn-setup-stock-qty-inp" value="1" min="1" max="999">
+          <div class="jn-setup-stock-cats" id="jn-setup-stock-cats">
+            <button type="button" class="jn-setup-cat-btn active" data-cat="fish">Fish</button>
+            <button type="button" class="jn-setup-cat-btn" data-cat="plant">Plant</button>
+            <button type="button" class="jn-setup-cat-btn" data-cat="invertebrate">Invert</button>
+            <button type="button" class="jn-setup-cat-btn" data-cat="other">Other</button>
+          </div>
+          <button type="button" id="jn-setup-stock-add-btn" class="btn jn-setup-stock-add-btn">+ Add</button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn bf" style="width:100%;margin-top:1.2rem">Save Setup</button>
+    </form>
+  </div>
+</div>
+
 <!-- ── MODAL BACKDROP ── -->
 <div class="mt-backdrop" id="mt-backdrop" aria-hidden="true"></div>
 
+<script src="js/tank-data.js" defer></script>
 <script src="js/ecosystem.js" defer></script>
 <script src="js/fauna.js" defer></script>
 <script src="js/ui.js" defer></script>

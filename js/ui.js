@@ -1737,6 +1737,9 @@
       jnHistoryPage = 1;
       renderEntryList(jnFilteredEntries, jnHistoryPage);
 
+      /* My Setup card */
+      renderSetupCard(tank);
+
       /* Rhyssa weekly insight (async, non-blocking) */
       if (entries.length >= 2) fetchWeeklyInsight(tank);
       else { var wc = document.getElementById('jn-weekly-insight-card'); if (wc) wc.style.display = 'none'; }
@@ -1775,7 +1778,183 @@
     }
 
     function closeAllModals() {
-      ['mt-modal-setup', 'mt-modal-entry', 'mt-modal-inhabitant'].forEach(closeModal);
+      ['mt-modal-setup', 'mt-modal-entry', 'mt-modal-inhabitant', 'mt-modal-gear'].forEach(closeModal);
+    }
+
+    /* ── EQ label helper ── */
+    function fmtEqLabel(key) {
+      return key.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    }
+
+    /* ── renderSetupCard ── */
+    function renderSetupCard(tank) {
+      var card = document.getElementById('jn-setup-card');
+      if (!card) return;
+      var setup = tank && tank.setup;
+      card.removeAttribute('hidden');
+      var eqList = document.getElementById('jn-setup-eq-list');
+      var stockList = document.getElementById('jn-setup-stock-list');
+      var emptyEl = document.getElementById('jn-setup-empty');
+      if (eqList) eqList.innerHTML = '';
+      if (stockList) stockList.innerHTML = '';
+      var hasEq = setup && setup.equipment && Object.keys(setup.equipment).length;
+      var hasStock = setup && setup.stock && setup.stock.length;
+      if (!hasEq && !hasStock) {
+        if (emptyEl) emptyEl.removeAttribute('hidden');
+        return;
+      }
+      if (emptyEl) emptyEl.setAttribute('hidden', '');
+      if (hasEq && eqList) {
+        Object.keys(setup.equipment).forEach(function (k) {
+          var brand = (setup.brands || {})[k] || '';
+          var chip = document.createElement('span');
+          chip.className = 'jn-setup-eq-chip';
+          chip.textContent = fmtEqLabel(k) + (brand ? ' — ' + brand : '');
+          eqList.appendChild(chip);
+        });
+      }
+      if (hasStock && stockList) {
+        var catEmoji = { fish: '🐟', plant: '🌿', invertebrate: '🦐', coral: '🪸', other: '◈' };
+        setup.stock.forEach(function (s) {
+          var chip = document.createElement('span');
+          chip.className = 'jn-setup-stock-chip';
+          chip.textContent = (catEmoji[s.cat] || '') + ' ' + (s.qty > 1 ? s.qty + '× ' : '') + s.name;
+          stockList.appendChild(chip);
+        });
+      }
+    }
+
+    /* ── Gear modal state ── */
+    var _gearEqState = {};
+    var _gearBrandState = {};
+    var _gearStockList = [];
+    var _gearStockCat = 'fish';
+
+    function openGearModal() {
+      var AR_EQ = window.AR_EQ;
+      if (!AR_EQ) { openModal('mt-modal-gear'); return; }
+      var tank = getActiveTank(loadData());
+      var saved = (tank && tank.setup) || {};
+      _gearEqState = {};
+      _gearBrandState = {};
+      _gearStockList = [];
+
+      if (saved.equipment) Object.keys(saved.equipment).forEach(function (k) { _gearEqState[k] = true; });
+      if (saved.brands) Object.keys(saved.brands).forEach(function (k) { _gearBrandState[k] = saved.brands[k]; });
+      if (saved.stock) _gearStockList = saved.stock.slice();
+
+      var rowsEl = document.getElementById('jn-setup-eq-rows');
+      if (rowsEl) {
+        rowsEl.innerHTML = '';
+        var CAT_ORDER = ['filtration', 'environment', 'substrate', 'cooling', 'additions'];
+        var bycat = {};
+        Object.keys(AR_EQ).forEach(function (k) {
+          var cat = AR_EQ[k].cat || 'other';
+          if (!bycat[cat]) bycat[cat] = [];
+          bycat[cat].push(k);
+        });
+        var cats = CAT_ORDER.filter(function (c) { return bycat[c]; });
+        Object.keys(bycat).forEach(function (c) { if (cats.indexOf(c) < 0) cats.push(c); });
+        cats.forEach(function (cat) {
+          (bycat[cat] || []).forEach(function (k) {
+            var eq = AR_EQ[k];
+            var row = document.createElement('div');
+            row.className = 'jn-setup-eq-row';
+            var tog = document.createElement('input');
+            tog.type = 'checkbox';
+            tog.className = 'jn-setup-eq-toggle';
+            tog.dataset.eq = k;
+            tog.checked = !!_gearEqState[k];
+            var lbl = document.createElement('span');
+            lbl.className = 'jn-setup-eq-row-label';
+            lbl.textContent = fmtEqLabel(k);
+            var sel = document.createElement('select');
+            sel.className = 'jn-setup-brand-select' + (tog.checked ? ' visible' : '');
+            sel.dataset.eq = k;
+            var defaultOpt = document.createElement('option');
+            defaultOpt.value = '';
+            defaultOpt.textContent = 'Select brand…';
+            sel.appendChild(defaultOpt);
+            var brandExamples = (eq.brands && eq.brands.examples) ? eq.brands.examples : [];
+            brandExamples.forEach(function (b) {
+              var opt = document.createElement('option');
+              opt.value = b;
+              opt.textContent = b;
+              if (_gearBrandState[k] === b) opt.selected = true;
+              sel.appendChild(opt);
+            });
+            tog.addEventListener('change', function () {
+              if (tog.checked) {
+                _gearEqState[k] = true;
+                sel.classList.add('visible');
+              } else {
+                delete _gearEqState[k];
+                delete _gearBrandState[k];
+                sel.classList.remove('visible');
+                sel.value = '';
+              }
+            });
+            sel.addEventListener('change', function () {
+              if (sel.value) _gearBrandState[k] = sel.value;
+              else delete _gearBrandState[k];
+            });
+            row.appendChild(tog);
+            row.appendChild(lbl);
+            row.appendChild(sel);
+            rowsEl.appendChild(row);
+          });
+        });
+      }
+
+      _gearStockCat = 'fish';
+      syncGearCatBtns();
+      renderGearStockRows();
+
+      var nameInp = document.getElementById('jn-setup-stock-name');
+      var qtyInp = document.getElementById('jn-setup-stock-qty');
+      if (nameInp) nameInp.value = '';
+      if (qtyInp) qtyInp.value = '1';
+      openModal('mt-modal-gear');
+    }
+
+    function syncGearCatBtns() {
+      document.querySelectorAll('.jn-setup-cat-btn').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.cat === _gearStockCat);
+      });
+    }
+
+    function renderGearStockRows() {
+      var el = document.getElementById('jn-setup-stock-rows');
+      if (!el) return;
+      el.innerHTML = '';
+      var catEmoji = { fish: '🐟', plant: '🌿', invertebrate: '🦐', coral: '🪸', other: '◈' };
+      _gearStockList.forEach(function (s, idx) {
+        var row = document.createElement('div');
+        row.className = 'jn-setup-stock-row';
+        row.innerHTML = '<span class="jn-setup-stock-row-qty">' + escHtml(s.qty > 1 ? s.qty + '×' : '1×') + '</span>'
+          + escHtml(s.name)
+          + '<span class="jn-setup-stock-row-cat">' + escHtml((catEmoji[s.cat] || '') + ' ' + (s.cat || '')) + '</span>'
+          + '<button type="button" class="jn-setup-stock-row-del" data-idx="' + idx + '" aria-label="Remove">×</button>';
+        el.appendChild(row);
+      });
+    }
+
+    function saveGearModal() {
+      var d = loadData();
+      var tank = getActiveTank(d);
+      if (!tank) return;
+      var eq = {};
+      document.querySelectorAll('.jn-setup-eq-toggle:checked').forEach(function (tog) {
+        if (tog.dataset.eq) eq[tog.dataset.eq] = true;
+      });
+      var brands = {};
+      document.querySelectorAll('.jn-setup-brand-select').forEach(function (sel) {
+        if (sel.dataset.eq && sel.value) brands[sel.dataset.eq] = sel.value;
+      });
+      tank.setup = { equipment: eq, brands: brands, stock: _gearStockList.slice(), savedAt: Date.now() };
+      saveData(d);
+      closeModal('mt-modal-gear');
+      renderSetupCard(tank);
     }
 
     function todayStr() {
@@ -2340,6 +2519,61 @@
       });
     }
 
+    /* ── Gear modal: open from setup card ── */
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.id === 'jn-setup-edit-btn' || t.id === 'jn-setup-start-btn') {
+        openGearModal();
+        return;
+      }
+      /* Stock row remove button */
+      var delBtn = t.closest('.jn-setup-stock-row-del');
+      if (delBtn && delBtn.closest('#mt-modal-gear')) {
+        var idx = parseInt(delBtn.dataset.idx, 10);
+        if (!isNaN(idx)) { _gearStockList.splice(idx, 1); renderGearStockRows(); }
+        return;
+      }
+      /* Stock category buttons */
+      var catBtn = t.closest('.jn-setup-cat-btn');
+      if (catBtn && catBtn.closest('#mt-modal-gear')) {
+        _gearStockCat = catBtn.dataset.cat || 'fish';
+        syncGearCatBtns();
+        return;
+      }
+      /* Add stock button */
+      if (t.id === 'jn-setup-stock-add-btn' || t.closest('#jn-setup-stock-add-btn')) {
+        var nameEl = document.getElementById('jn-setup-stock-name');
+        var qtyEl = document.getElementById('jn-setup-stock-qty');
+        var name = nameEl ? nameEl.value.trim() : '';
+        if (!name) return;
+        var qty = parseInt(qtyEl ? qtyEl.value : '1', 10) || 1;
+        _gearStockList.push({ name: name, qty: qty, cat: _gearStockCat });
+        renderGearStockRows();
+        if (nameEl) nameEl.value = '';
+        if (qtyEl) qtyEl.value = '1';
+        if (nameEl) nameEl.focus();
+        return;
+      }
+    });
+
+    /* ── Gear modal: form submit ── */
+    var formGear = document.getElementById('jn-form-setup');
+    if (formGear) {
+      formGear.addEventListener('submit', function (e) {
+        e.preventDefault();
+        saveGearModal();
+      });
+      var stockNameInp = document.getElementById('jn-setup-stock-name');
+      if (stockNameInp) {
+        stockNameInp.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('jn-setup-stock-add-btn') && document.getElementById('jn-setup-stock-add-btn').click();
+          }
+        });
+      }
+    }
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeAllModals();
     });
@@ -2645,6 +2879,23 @@
             params: e.params || null
           };
         });
+        var equipment = null;
+        var stockedSpecies = null;
+        if (active.setup) {
+          var _setup = active.setup;
+          if (_setup.equipment && Object.keys(_setup.equipment).length) {
+            equipment = Object.keys(_setup.equipment).map(function (k) {
+              var brand = (_setup.brands || {})[k] || '';
+              return k.replace(/-/g, ' ') + (brand ? ' — ' + brand : '');
+            });
+          }
+          if (_setup.stock && _setup.stock.length) {
+            stockedSpecies = _setup.stock.map(function (s) {
+              return (s.qty > 1 ? s.qty + '× ' : '') + s.name;
+            });
+          }
+        }
+        if (!residents.length && stockedSpecies) residents = stockedSpecies;
         return {
           volume: p.volume || null,
           unit: p.unit || 'L',
@@ -2652,6 +2903,7 @@
           ageWeeks: ageWeeks,
           phase: phase,
           residents: residents.length ? residents : null,
+          equipment: equipment,
           recentEntries: recentEntries.length ? recentEntries : null
         };
       } catch (e) { return null; }

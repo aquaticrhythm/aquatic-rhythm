@@ -1289,3 +1289,48 @@ body[data-active-page="companion"] #rh-backdrop{display:none!important}
 /* ── Inhabitant: species toggle ── */
 .jn-species-toggle{background:none;border:none;color:rgba(61,214,232,.45);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.15rem 0;cursor:pointer;font-family:var(--sans);transition:color .15s;display:block;margin-top:.1rem}
 .jn-species-toggle:hover{color:rgba(61,214,232,.78)}
+
+/* ── My Setup card ── */
+.jn-setup-card .tl-card-header{margin-bottom:.7rem}
+.jn-setup-edit-btn{background:none;border:1px solid rgba(157,191,154,.28);color:rgba(157,191,154,.7);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .62rem;border-radius:20px;cursor:pointer;font-family:var(--sans);transition:border-color .15s,color .15s}
+.jn-setup-edit-btn:hover{border-color:rgba(157,191,154,.58);color:rgba(157,191,154,1)}
+.jn-setup-eq-list{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:.5rem}
+.jn-setup-eq-list:empty{display:none}
+.jn-setup-eq-chip{font-size:.72rem;font-family:var(--sans);color:rgba(157,191,154,.88);background:rgba(157,191,154,.07);border:1px solid rgba(157,191,154,.22);border-radius:20px;padding:.22rem .65rem;line-height:1.4}
+.jn-setup-stock-list{display:flex;flex-wrap:wrap;gap:.38rem}
+.jn-setup-stock-list:empty{display:none}
+.jn-setup-stock-chip{font-size:.72rem;font-family:var(--sans);color:rgba(180,120,200,.88);background:rgba(180,120,200,.07);border:1px solid rgba(180,120,200,.22);border-radius:20px;padding:.22rem .65rem;line-height:1.4}
+.jn-setup-empty{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;padding:.2rem 0}
+.jn-setup-empty>span{font-size:.8rem;color:rgba(235,240,236,.3);font-family:var(--sans)}
+.jn-setup-start-btn{background:none;border:1px solid rgba(157,191,154,.3);color:rgba(157,191,154,.7);font-size:.72rem;font-family:var(--sans);padding:.3rem .8rem;border-radius:20px;cursor:pointer;transition:border-color .15s,color .15s}
+.jn-setup-start-btn:hover{border-color:rgba(157,191,154,.6);color:rgba(157,191,154,1)}
+
+/* ── Setup modal: equipment rows ── */
+.jn-setup-modal-hint{font-size:.76rem;color:rgba(235,240,236,.36);font-family:var(--sans);margin-bottom:.8rem;margin-top:-.25rem}
+.jn-setup-eq-rows{display:flex;flex-direction:column;gap:.55rem}
+.jn-setup-eq-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.jn-setup-eq-row-label{font-size:.74rem;font-family:var(--sans);color:rgba(235,240,236,.6);min-width:90px;flex-shrink:0}
+.jn-setup-eq-toggle{appearance:none;width:36px;height:20px;border-radius:10px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.18);cursor:pointer;position:relative;flex-shrink:0;transition:background .2s,border-color .2s}
+.jn-setup-eq-toggle::after{content:'';position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.5);transition:transform .2s,background .2s}
+.jn-setup-eq-toggle:checked{background:rgba(157,191,154,.35);border-color:rgba(157,191,154,.6)}
+.jn-setup-eq-toggle:checked::after{transform:translateX(16px);background:rgba(157,191,154,1)}
+.jn-setup-brand-select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:rgba(235,240,236,.82);font-size:.74rem;font-family:var(--sans);padding:.28rem .55rem;border-radius:8px;cursor:pointer;max-width:200px;flex:1;min-width:0;transition:border-color .15s;display:none}
+.jn-setup-brand-select.visible{display:block}
+.jn-setup-brand-select:focus{outline:none;border-color:rgba(157,191,154,.5)}
+
+/* ── Setup modal: stock rows ── */
+.jn-setup-stock-rows{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.65rem}
+.jn-setup-stock-row{display:flex;align-items:center;gap:.5rem;background:rgba(180,120,200,.05);border:1px solid rgba(180,120,200,.15);border-radius:8px;padding:.38rem .65rem;font-size:.78rem;font-family:var(--sans);color:rgba(235,240,236,.75)}
+.jn-setup-stock-row-qty{color:rgba(180,120,200,.75);margin-right:.15rem}
+.jn-setup-stock-row-cat{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-left:.25rem}
+.jn-setup-stock-row-del{margin-left:auto;background:none;border:none;color:rgba(255,255,255,.22);font-size:.9rem;cursor:pointer;padding:0 .15rem;line-height:1;transition:color .15s}
+.jn-setup-stock-row-del:hover{color:rgba(255,100,100,.6)}
+.jn-setup-stock-add-row{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-top:.2rem}
+.jn-setup-stock-name-inp{flex:1;min-width:120px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:rgba(235,240,236,.9);font-size:.8rem;font-family:var(--sans);padding:.35rem .6rem;border-radius:8px;transition:border-color .15s}
+.jn-setup-stock-name-inp:focus{outline:none;border-color:rgba(180,120,200,.5)}
+.jn-setup-stock-qty-inp{width:52px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:rgba(235,240,236,.9);font-size:.8rem;font-family:var(--sans);padding:.35rem .4rem;border-radius:8px;text-align:center;transition:border-color .15s}
+.jn-setup-stock-qty-inp:focus{outline:none;border-color:rgba(180,120,200,.5)}
+.jn-setup-stock-cats{display:flex;gap:.3rem;flex-wrap:wrap}
+.jn-setup-cat-btn{background:none;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.36);font-size:.64rem;font-family:var(--sans);padding:.24rem .55rem;border-radius:20px;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.jn-setup-cat-btn.active{background:rgba(180,120,200,.15);border-color:rgba(180,120,200,.5);color:rgba(180,120,200,.9)}
+.jn-setup-stock-add-btn{font-size:.74rem;padding:.32rem .75rem}
