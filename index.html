@@ -1512,27 +1512,26 @@
         <!-- 2b. ALERT STRIP (proactive alerts) -->
         <div id="jn-alert-strip" class="jn-alert-strip" style="display:none"></div>
 
-        <!-- MY SETUP + TANK FAMILY — side by side below tank name -->
-        <div class="jn-overview-pair">
-          <div id="jn-setup-card" class="tl-card jn-setup-card">
-            <div class="tl-card-header">
-              <span class="tl-card-eyebrow">My Setup</span>
-              <button id="jn-setup-edit-btn" class="jn-setup-edit-btn" aria-label="Edit setup">Edit</button>
-            </div>
-            <div id="jn-setup-eq-list" class="jn-setup-eq-list"></div>
-            <div id="jn-setup-empty" class="jn-setup-empty" style="display:none">
-              <span>No setup recorded yet.</span>
-              <button id="jn-setup-start-btn" class="jn-setup-start-btn">Record →</button>
-            </div>
+        <!-- MY SETUP -->
+        <div id="jn-setup-card" class="tl-card jn-setup-card">
+          <div class="tl-card-header">
+            <span class="tl-card-eyebrow">My Setup</span>
+            <button id="jn-setup-edit-btn" class="jn-setup-edit-btn" aria-label="Edit setup">Edit</button>
           </div>
+          <div id="jn-setup-eq-list" class="jn-setup-eq-list"></div>
+          <div id="jn-setup-empty" class="jn-setup-empty" style="display:none">
+            <span>No setup recorded yet.</span>
+            <button id="jn-setup-start-btn" class="jn-setup-start-btn">Record →</button>
+          </div>
+        </div>
 
-          <div class="tl-card" id="jn-inhabitants">
-            <div class="tl-card-header">
-              <span class="tl-card-eyebrow">Tank Family</span>
-              <button class="mt-text-btn" id="jn-inh-add">+ Add</button>
-            </div>
-            <div id="jn-inh-body"><p class="jn-entry-empty">No residents yet.</p></div>
+        <!-- TANK FAMILY — below My Setup -->
+        <div class="tl-card" id="jn-inhabitants">
+          <div class="tl-card-header">
+            <span class="tl-card-eyebrow">Tank Family</span>
+            <button class="mt-text-btn" id="jn-inh-add">+ Add</button>
           </div>
+          <div id="jn-inh-body"><p class="jn-entry-empty">No residents yet.</p></div>
         </div>
 
         <!-- ARA PHASE CARD — below overview pair -->

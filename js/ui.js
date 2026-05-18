@@ -1022,9 +1022,14 @@
         var entries = t.entries || [];
         var inhs = t.inhabitants || [];
         var lastEntry = entries.length ? entries[entries.length - 1] : null;
+        var _activeInhOv = inhs.filter(function (i) { return i.status === 'active'; }).length;
+        var _hasParamEnt = entries.some(function (e) { return e.params && (e.params.nh3 || e.params.no2 || e.params.no3); });
+        var _sufficient  = _hasParamEnt || (entries.length >= 3 && (!!p.setupDate || _activeInhOv > 0));
         var phase = null;
-        if (lastEntry && lastEntry.params) phase = assessPhaseFromParams(lastEntry.params);
-        if (!phase && lastEntry) phase = assessPhaseFromState(lastEntry.keeperState, p.setupDate);
+        if (_sufficient && lastEntry) {
+          if (lastEntry.params) phase = assessPhaseFromParams(lastEntry.params);
+          if (!phase) phase = assessPhaseFromState(lastEntry.keeperState, p.setupDate);
+        }
         var phData = phase ? phaseInfo[phase] : null;
         var age = tankAge(p.setupDate);
         var meta = [(p.volume ? p.volume + ' ' + (p.unit || 'L') : ''), p.type, age].filter(Boolean).join(' · ');
@@ -2142,6 +2147,7 @@
       setupObsHint();
       openModal('mt-modal-entry');
     }
+    window.__jnOpenEntryModal = openEntryModal;
 
     function openInhabitantModal(inhId) {
       document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
@@ -2986,7 +2992,10 @@
           return 'optimise';
         }
 
-        var phaseKey = latest ? (_phaseFromParams(latest.params) || _phaseFromState(latest.keeperState, p.setupDate)) : null;
+        var _ctxActiveInhs = (active.inhabitants || []).filter(function (i) { return i.status === 'active'; }).length;
+        var _ctxHasParam   = entries.some(function (e) { return e.params && (e.params.nh3 || e.params.no2 || e.params.no3); });
+        var _ctxSufficient = _ctxHasParam || (entries.length >= 3 && (!!p.setupDate || _ctxActiveInhs > 0));
+        var phaseKey = (_ctxSufficient && latest) ? (_phaseFromParams(latest.params) || _phaseFromState(latest.keeperState, p.setupDate)) : null;
         var phase    = phaseKey ? (_phaseLabels[phaseKey] || phaseKey) : null;
 
         var residents = (active.inhabitants || [])
@@ -3220,6 +3229,27 @@
               var s2 = getThread();
               s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
               saveThread(s2);
+              /* Save-to-log button: only when a tank log is active */
+              if (getTankContext() && responseText.length > 40) {
+                var saveBtn = document.createElement('button');
+                saveBtn.className = 'rh-save-log-btn';
+                saveBtn.innerHTML = '<svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 12l5 5L18 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Save to log';
+                saveBtn.addEventListener('click', function () {
+                  saveBtn.remove();
+                  var obsEl = document.getElementById('jn-entry-obs');
+                  if (typeof window.__jnOpenEntryModal === 'function') {
+                    if (typeof window.__rhCloseSheet === 'function') window.__rhCloseSheet();
+                    setTimeout(function () {
+                      window.__jnOpenEntryModal();
+                      setTimeout(function () {
+                        var obs = document.getElementById('jn-entry-obs');
+                        if (obs) { obs.value = responseText.replace(/<[^>]+>/g, '').replace(/\*\*/g, '').replace(/\*/g, '').trim().slice(0, 800); obs.dispatchEvent(new Event('input')); }
+                      }, 80);
+                    }, 200);
+                  }
+                });
+                p.parentNode && p.parentNode.appendChild(saveBtn);
+              }
               sendBtn.disabled = false;
               isStreaming = false;
               if (inp) inp.focus();

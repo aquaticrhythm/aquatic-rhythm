@@ -977,12 +977,9 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
 .tl-streak-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(100,200,82,.85);background:rgba(100,200,82,.09);border:1px solid rgba(100,200,82,.18);border-radius:100px;padding:.2rem .6rem;flex-shrink:0}
 .tl-streak-badge::before{content:'↑';font-size:.5rem;opacity:.6}
 
-/* OVERVIEW PAIR: My Setup + Tank Family side by side */
-.jn-overview-pair{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1rem}
-.jn-overview-pair>.tl-card,.jn-overview-pair>.jn-setup-card{margin-bottom:0}
-.jn-overview-pair .tl-card-eyebrow{font-size:.44rem}
-.jn-overview-pair .tl-card-header{margin-bottom:.55rem}
-.jn-overview-pair .tl-card{padding:1rem .95rem}
+/* Rhyssa save-to-log action */
+.rh-save-log-btn{display:inline-flex;align-items:center;gap:.32rem;margin-top:.6rem;padding:.28rem .7rem;background:rgba(61,214,232,.07);border:1px solid rgba(61,214,232,.2);border-radius:20px;color:rgba(61,214,232,.75);font-size:.62rem;font-family:var(--sans);letter-spacing:.04em;cursor:pointer;transition:all .15s}
+.rh-save-log-btn:hover{background:rgba(61,214,232,.14);border-color:rgba(61,214,232,.35);color:rgba(61,214,232,.95)}
 
 /* TANK FAMILY: row list */
 .tl-inh-rows{display:flex;flex-direction:column;gap:.35rem}
