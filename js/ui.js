@@ -100,7 +100,7 @@
   var descMap = {
     'home':      'Aquatic Rhythm — calm ecology guides for home aquariums. ARA (Aquatic Rhythm Alignment) is the reasoning behind Reading, tools, Rhyssa, and your private keeper\'s log.',
     'ara':       'Explore Aquatic Rhythm Alignment (ARA) as a self-paced module on this site — rhythms, phases, keeper care, four guiding questions, and practical next steps without leaving the framework page.',
-    'companion': 'Rhyssa on ChatGPT — start in one tap. She can explain ARA and how she thinks in the chat itself; this page stays short.',
+    'companion': 'Rhyssa — AI aquarium companion on Aquatic Rhythm, shaped by ARA. Chat in the site; optional ChatGPT link for keepers who prefer it.',
     'about':     'Why Aquatic Rhythm exists — from uneven advice to a calmer, ecology-first way of reading small tanks.',
     'privacy':   'Privacy Policy for Aquatic Rhythm. What we collect, how it is handled, and what it means for you.',
     'terms':     'Terms of Use for Aquatic Rhythm and Rhyssa. Written plainly, without unnecessary complexity.',
@@ -113,6 +113,28 @@
   function updateMeta(id) {
     var desc = document.getElementById('meta-desc');
     if (desc && descMap[id]) desc.setAttribute('content', descMap[id]);
+  }
+
+  function setMetaTag(selector, content) {
+    if (!content) return;
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute('content', content);
+  }
+
+  /** Keeps og:* and twitter:* in sync with SPA route (crawlers and shares). */
+  function updateSocialMeta(id) {
+    var title = titleMap[id];
+    var desc = descMap[id];
+    if (!title || !desc) return;
+    var path = id === 'home' ? '/' : '/' + id;
+    var url = 'https://aquaticrhythm.com' + path;
+    setMetaTag('meta[property="og:type"]', 'website');
+    setMetaTag('meta[property="og:url"]', url);
+    setMetaTag('meta[property="og:title"]', title);
+    setMetaTag('meta[property="og:description"]', desc);
+    setMetaTag('meta[name="twitter:url"]', url);
+    setMetaTag('meta[name="twitter:title"]', title);
+    setMetaTag('meta[name="twitter:description"]', desc);
   }
 
   function updateBottomNav(id) {
@@ -179,6 +201,7 @@
 
     if (titleMap[id]) document.title = titleMap[id];
     updateMeta(id);
+    updateSocialMeta(id);
 
     if (push !== false) history.pushState({ page: id }, '', path);
 
@@ -307,6 +330,7 @@
         updateBottomNav(id);
         if (titleMap[id]) document.title = titleMap[id];
         updateMeta(id);
+        updateSocialMeta(id);
         try { history.replaceState({ page: id }, '', location.pathname); } catch (e) {}
         var path = id === 'home' ? '/' : '/' + id;
         var can = document.querySelector('link[rel="canonical"]');
