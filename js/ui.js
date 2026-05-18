@@ -1613,45 +1613,81 @@
       var inhs = (data.inhabitants || []).filter(function (i) { return i.status === 'active'; });
       var bodyEl = document.getElementById('jn-inh-body');
       if (!bodyEl) return;
+      bodyEl.innerHTML = '';
       if (!inhs.length) {
-        bodyEl.innerHTML = '<p class=”jn-entry-empty” style=”font-size:.75rem;margin:.1rem 0”>No residents yet.</p>';
+        var ep = document.createElement('p');
+        ep.className = 'jn-entry-empty';
+        ep.style.cssText = 'font-size:.75rem;margin:.1rem 0';
+        ep.textContent = 'No residents yet.';
+        bodyEl.appendChild(ep);
         return;
       }
+      var container = document.createElement('div');
+      container.className = 'tl-inh-rows';
+      container.style.cssText = 'display:flex;flex-direction:column;gap:.35rem';
+      var btnBaseCSS = 'background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:rgba(255,255,255,.52);font-size:.55rem;letter-spacing:.04em;text-transform:uppercase;padding:.18rem .42rem;cursor:pointer;white-space:nowrap;line-height:1.2;display:block;width:100%;text-align:center;font-family:inherit';
       var order = ['fish', 'plant', 'invertebrate', 'coral', 'other'];
-      var rows = [];
-      var rowStyle = 'display:flex;align-items:flex-start;gap:.4rem;padding:.42rem 0;border-bottom:1px solid rgba(255,255,255,.05)';
-      var iconStyle = 'font-size:.85rem;line-height:1.2;flex-shrink:0;margin-top:.05rem';
-      var infoStyle = 'flex:1;min-width:0';
-      var nameStyle = 'display:block;font-size:.75rem;color:rgba(235,240,236,.82);line-height:1.3';
-      var countStyle = 'font-size:.6rem;color:rgba(255,255,255,.38);margin-left:.25rem;font-family:monospace';
-      var sciStyle = 'display:block;font-size:.58rem;color:rgba(255,255,255,.28);font-style:italic;line-height:1.3;margin-top:.05rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap';
-      var actsStyle = 'display:flex;flex-direction:column;gap:.22rem;flex-shrink:0';
-      var btnBase = 'appearance:none;-webkit-appearance:none;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:rgba(255,255,255,.52);font-size:.55rem;letter-spacing:.04em;text-transform:uppercase;padding:.18rem .42rem;cursor:pointer;white-space:nowrap;line-height:1.2;display:block;width:100%;text-align:center;font-family:inherit';
-      var btnRehomed = btnBase + ';color:rgba(255,200,80,.7);border-color:rgba(255,200,80,.22);background:rgba(255,200,80,.06)';
-      var btnPassed = btnBase + ';color:rgba(200,80,80,.7);border-color:rgba(200,80,80,.22);background:rgba(200,80,80,.06)';
       order.forEach(function (cat) {
-        inhs.filter(function (i) { return (i.category || 'other') === cat; }).forEach(function (i) {
-          var icon  = INH_CATS[cat] || '◈';
-          var label = escHtml(i.commonName || i.species || INH_CAT_LABELS[cat] || cat);
-          var sciHtml = i.species ? '<span class=”tl-inh-row-sci” style=”' + sciStyle + '”>' + escHtml(i.species) + '</span>' : '';
-          var countHtml = i.count > 1 ? '<span class=”tl-inh-row-count” style=”' + countStyle + '”>×' + i.count + '</span>' : '';
-          var iid = escHtml(i.id);
-          rows.push(
-            '<div class=”tl-inh-row” data-inh-id=”' + iid + '” style=”' + rowStyle + '”>'
-            + '<span class=”tl-inh-row-icon” style=”' + iconStyle + '”>' + icon + '</span>'
-            + '<div class=”tl-inh-row-info” style=”' + infoStyle + '”>'
-            + '<span class=”tl-inh-row-name” style=”' + nameStyle + '”>' + label + '</span>' + countHtml + sciHtml
-            + '</div>'
-            + '<div class=”tl-inh-row-acts” style=”' + actsStyle + '”>'
-            + '<button class=”tl-inh-act-btn jn-inh-edit-btn” data-inh-id=”' + iid + '” aria-label=”Edit” style=”' + btnBase + '”>Edit</button>'
-            + '<button class=”tl-inh-act-btn tl-inh-act-rehomed jn-inh-status-btn” data-inh-id=”' + iid + '” data-action=”rehomed” aria-label=”Rehomed” style=”' + btnRehomed + '”>Rehomed</button>'
-            + '<button class=”tl-inh-act-btn tl-inh-act-passed jn-inh-status-btn” data-inh-id=”' + iid + '” data-action=”passed” aria-label=”Passed” style=”' + btnPassed + '”>Passed</button>'
-            + '</div>'
-            + '</div>'
-          );
+        inhs.filter(function (i) { return (i.category || 'other') === cat; }).forEach(function (inh) {
+          var row = document.createElement('div');
+          row.className = 'tl-inh-row';
+          row.setAttribute('data-inh-id', inh.id);
+          row.style.cssText = 'display:flex;align-items:flex-start;gap:.4rem;padding:.42rem 0;border-bottom:1px solid rgba(255,255,255,.05)';
+
+          var iconSp = document.createElement('span');
+          iconSp.className = 'tl-inh-row-icon';
+          iconSp.textContent = INH_CATS[cat] || '◈';
+          iconSp.style.cssText = 'font-size:.85rem;line-height:1.2;flex-shrink:0;margin-top:.05rem';
+          row.appendChild(iconSp);
+
+          var infoDiv = document.createElement('div');
+          infoDiv.className = 'tl-inh-row-info';
+          infoDiv.style.cssText = 'flex:1;min-width:0';
+
+          var nameSp = document.createElement('span');
+          nameSp.className = 'tl-inh-row-name';
+          nameSp.textContent = inh.commonName || inh.species || INH_CAT_LABELS[cat] || cat;
+          nameSp.style.cssText = 'display:block;font-size:.75rem;color:rgba(235,240,236,.82);line-height:1.3';
+          if (inh.count > 1) {
+            var countSp = document.createElement('span');
+            countSp.className = 'tl-inh-row-count';
+            countSp.textContent = ' ×' + inh.count;
+            countSp.style.cssText = 'font-size:.6rem;color:rgba(255,255,255,.38);font-family:monospace';
+            nameSp.appendChild(countSp);
+          }
+          infoDiv.appendChild(nameSp);
+
+          if (inh.species) {
+            var sciSp = document.createElement('span');
+            sciSp.className = 'tl-inh-row-sci';
+            sciSp.textContent = inh.species;
+            sciSp.style.cssText = 'display:block;font-size:.58rem;color:rgba(255,255,255,.28);font-style:italic;line-height:1.3;margin-top:.05rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap';
+            infoDiv.appendChild(sciSp);
+          }
+          row.appendChild(infoDiv);
+
+          var actsDiv = document.createElement('div');
+          actsDiv.className = 'tl-inh-row-acts';
+          actsDiv.style.cssText = 'display:flex;flex-direction:column;gap:.22rem;flex-shrink:0';
+          [
+            { cls: 'jn-inh-edit-btn',                             lbl: 'Edit',    extra: '' },
+            { cls: 'jn-inh-status-btn tl-inh-act-rehomed', act: 'rehomed', lbl: 'Rehomed', extra: 'color:rgba(255,200,80,.7);border-color:rgba(255,200,80,.22);background:rgba(255,200,80,.06)' },
+            { cls: 'jn-inh-status-btn tl-inh-act-passed',  act: 'passed',  lbl: 'Passed',  extra: 'color:rgba(200,80,80,.7);border-color:rgba(200,80,80,.22);background:rgba(200,80,80,.06)' }
+          ].forEach(function (b) {
+            var btn = document.createElement('button');
+            btn.className = 'tl-inh-act-btn ' + b.cls;
+            btn.setAttribute('data-inh-id', inh.id);
+            if (b.act) btn.setAttribute('data-action', b.act);
+            btn.setAttribute('aria-label', b.lbl);
+            btn.textContent = b.lbl;
+            btn.style.cssText = (b.extra ? b.extra + ';' : '') + btnBaseCSS;
+            actsDiv.appendChild(btn);
+          });
+          row.appendChild(actsDiv);
+          container.appendChild(row);
         });
       });
-      bodyEl.innerHTML = '<div class=”tl-inh-rows” style=”display:flex;flex-direction:column;gap:.35rem”>' + rows.join('') + '</div>';
+      bodyEl.appendChild(container);
     }
 
     function showInhabitantToast(inh, action) {
@@ -2148,6 +2184,25 @@
       openModal('mt-modal-entry');
     }
     window.__jnOpenEntryModal = openEntryModal;
+
+    window.__jnAutoSaveEntry = function (obsText) {
+      var d = loadData();
+      var tank = getActiveTank(d);
+      if (!tank) return false;
+      var today = todayStr();
+      var existing = (tank.entries || []).find(function (e) { return e.date === today; });
+      if (existing) {
+        existing.observation = existing.observation
+          ? existing.observation + '\n\n' + obsText
+          : obsText;
+      } else {
+        if (!tank.entries) tank.entries = [];
+        tank.entries.push({ id: Date.now().toString(), date: today, observation: obsText, care: [], keeperState: '', params: {}, ts: Date.now() });
+      }
+      saveData(d);
+      renderDashboard();
+      return true;
+    };
 
     function openInhabitantModal(inhId) {
       document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
@@ -3151,10 +3206,128 @@
     });
 
 
+    var _lastUserObs = ''; // stores observation text to offer logging after Rhyssa responds
+
+    function isObservationLike(text) {
+      if (!text || text.length < 20) return false;
+      var t = text.toLowerCase().trim();
+      if (/^(what|how|why|when|where|who|is |are |can |should |does |do |did |will |would |which )/.test(t)) return false;
+      var words = ['notic','saw ','look','seem','appear','eating','not eat','swim','hiding','hide','sick','dead','died','fin ','tail','colou','color','water','cloud','clear','dirt','smell','foam','bubble','algae','spot ','letharg','activ','aggress','behav','filter','heater','light','feeding','today','yesterday','morning','night','hour','week','since','start','usual','strange','weird','different','open','close','surfac','bottom','float'];
+      return words.some(function (w) { return t.indexOf(w) !== -1; });
+    }
+
+    function showLogOffer(obsText, bubbleWrap) {
+      var clean = obsText.trim().replace(/\n+/g, ' ').slice(0, 180);
+      var offer = document.createElement('div');
+      offer.style.cssText = 'display:flex;align-items:flex-start;gap:.5rem;margin-top:.55rem;padding:.5rem .65rem;background:rgba(61,214,232,.04);border:1px solid rgba(61,214,232,.13);border-radius:8px';
+
+      var icon = document.createElement('span');
+      icon.textContent = '📋';
+      icon.style.cssText = 'font-size:.75rem;flex-shrink:0;margin-top:.05rem';
+      offer.appendChild(icon);
+
+      var mid = document.createElement('div');
+      mid.style.cssText = 'flex:1;min-width:0';
+      var lbl = document.createElement('p');
+      lbl.style.cssText = 'margin:0 0 .35rem;font-size:.62rem;color:rgba(255,255,255,.38);font-family:var(--sans)';
+      lbl.textContent = 'Save this to today\'s log?';
+      var preview = document.createElement('p');
+      preview.style.cssText = 'margin:0;font-size:.65rem;color:rgba(235,240,236,.55);font-family:var(--serif);font-style:italic;line-height:1.5';
+      preview.textContent = '"' + clean + '"';
+      mid.appendChild(lbl);
+      mid.appendChild(preview);
+      offer.appendChild(mid);
+
+      var btns = document.createElement('div');
+      btns.style.cssText = 'display:flex;flex-direction:column;gap:.25rem;flex-shrink:0';
+
+      var saveBtn = document.createElement('button');
+      saveBtn.textContent = 'Save';
+      saveBtn.style.cssText = 'font-size:.58rem;padding:.22rem .6rem;background:rgba(61,214,232,.12);border:1px solid rgba(61,214,232,.3);border-radius:12px;color:rgba(61,214,232,.85);cursor:pointer;font-family:inherit;white-space:nowrap';
+      var dimBtn = document.createElement('button');
+      dimBtn.textContent = 'Dismiss';
+      dimBtn.style.cssText = 'font-size:.56rem;padding:.18rem .5rem;background:none;border:none;color:rgba(255,255,255,.22);cursor:pointer;font-family:inherit';
+
+      btns.appendChild(saveBtn);
+      btns.appendChild(dimBtn);
+      offer.appendChild(btns);
+      bubbleWrap && bubbleWrap.appendChild(offer);
+
+      saveBtn.addEventListener('click', function () {
+        offer.remove();
+        if (typeof window.__jnAutoSaveEntry === 'function' && window.__jnAutoSaveEntry(clean)) {
+          var conf = document.createElement('p');
+          conf.style.cssText = 'margin:.4rem 0 0;font-size:.6rem;color:rgba(61,214,232,.55);font-family:var(--sans)';
+          conf.textContent = 'Logged ✓';
+          bubbleWrap && bubbleWrap.appendChild(conf);
+          sendAutoReply('The keeper just saved an observation to their tank log: "' + clean.slice(0, 120) + '". Acknowledge in one warm sentence and share one brief actionable tip related to what they observed.');
+        }
+      });
+      dimBtn.addEventListener('click', function () { offer.remove(); });
+    }
+
+    function sendAutoReply(triggerContent) {
+      if (isStreaming) return;
+      var s = getThread();
+      var msgHistory = s.messages.map(function (m) { return { role: m.role, content: m.content }; });
+      msgHistory.push({ role: 'user', content: triggerContent });
+      showTyping();
+      sendBtn.disabled = true;
+      isStreaming = true;
+      fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: msgHistory, tankContext: getTankContext() })
+      }).then(function (res) {
+        hideTyping();
+        if (!res.ok || !res.body) { sendBtn.disabled = false; isStreaming = false; return; }
+        var replyTs = Date.now();
+        var bodyEl = appendBubble('assistant', '');
+        var responseText = '';
+        var reader = res.body.getReader();
+        var decoder = new TextDecoder();
+        var buf = '';
+        function feedLine(line) {
+          if (!line.startsWith('data: ')) return;
+          var d = line.slice(6).trim();
+          if (d === '[DONE]') return;
+          try {
+            var parsed = JSON.parse(d);
+            var delta = (parsed.delta && parsed.delta.text) ? parsed.delta.text : '';
+            if (delta) { responseText += delta; bodyEl.innerHTML = mdToHTML(responseText); thread.scrollTop = thread.scrollHeight; }
+          } catch (e) {}
+        }
+        function readStream() {
+          return reader.read().then(function (chunk) {
+            if (chunk.done) {
+              buf += decoder.decode(chunk.value || new Uint8Array(0), { stream: false });
+              buf.split('\n').forEach(feedLine);
+              buf = '';
+              if (!responseText) { responseText = '—'; bodyEl.innerHTML = mdToHTML(responseText); }
+              var s2 = getThread();
+              s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
+              saveThread(s2);
+              sendBtn.disabled = false;
+              isStreaming = false;
+              if (inp) inp.focus();
+              return;
+            }
+            buf += decoder.decode(chunk.value, { stream: true });
+            var lines = buf.split('\n');
+            buf = lines.pop() || '';
+            lines.forEach(feedLine);
+            return readStream();
+          });
+        }
+        return readStream();
+      }).catch(function () { hideTyping(); sendBtn.disabled = false; isStreaming = false; });
+    }
+
     /* ── Send message ── */
     function sendMsg(text) {
       if (isStreaming || !text.trim()) return;
       if (welcome) welcome.style.display = 'none';
+      _lastUserObs = isObservationLike(text) ? text : '';
 
       var now = Date.now();
       var s = getThread();
@@ -3229,26 +3402,10 @@
               var s2 = getThread();
               s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
               saveThread(s2);
-              /* Save-to-log button: only when a tank log is active */
-              if (getTankContext() && responseText.length > 40) {
-                var saveBtn = document.createElement('button');
-                saveBtn.className = 'rh-save-log-btn';
-                saveBtn.innerHTML = '<svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 12l5 5L18 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Save to log';
-                saveBtn.addEventListener('click', function () {
-                  saveBtn.remove();
-                  var obsEl = document.getElementById('jn-entry-obs');
-                  if (typeof window.__jnOpenEntryModal === 'function') {
-                    if (typeof window.__rhCloseSheet === 'function') window.__rhCloseSheet();
-                    setTimeout(function () {
-                      window.__jnOpenEntryModal();
-                      setTimeout(function () {
-                        var obs = document.getElementById('jn-entry-obs');
-                        if (obs) { obs.value = responseText.replace(/<[^>]+>/g, '').replace(/\*\*/g, '').replace(/\*/g, '').trim().slice(0, 800); obs.dispatchEvent(new Event('input')); }
-                      }, 80);
-                    }, 200);
-                  }
-                });
-                p.parentNode && p.parentNode.appendChild(saveBtn);
+              /* Offer to log the user's observation if the message looks like one */
+              if (_lastUserObs && getTankContext()) {
+                showLogOffer(_lastUserObs, p.parentNode);
+                _lastUserObs = '';
               }
               sendBtn.disabled = false;
               isStreaming = false;
