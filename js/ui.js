@@ -552,6 +552,14 @@
         delete d.profile; delete d.entries; delete d.inhabitants;
       }
       if (!d.tanks) d.tanks = [];
+      if (!d._entryIdsMigrated) {
+        d.tanks.forEach(function (tank) {
+          (tank.entries || []).forEach(function (e, i) {
+            if (!e.id) e.id = 'e_' + (tank.id || 'x') + '_' + i;
+          });
+        });
+        d._entryIdsMigrated = true;
+      }
       return d;
     }
 
@@ -640,7 +648,7 @@
     }
 
     var keeperStateLabels = { 'consistent': 'Consistent', 'catching-up': 'Catching up', 'occasional': 'Occasional', 'just-starting': 'Just starting' };
-    var careLabels = { 'water_change': 'Water change', 'filter': 'Filter', 'feeding': 'Feeding', 'top_up': 'Topping up', 'treatment': 'Treatment', 'trimming': 'Trimming', 'nothing': 'Just observed' };
+    var careLabels = { 'water_change': 'Water change', 'filter': 'Filter', 'feeding': 'Feeding', 'top_up': 'Topping up', 'treatment': 'Treatment', 'dosing': 'Dosing', 'media': 'Media change', 'trimming': 'Trimming', 'nothing': 'Just observed' };
 
     /* ── Tank size data ── */
     var PRESETS = [
@@ -981,8 +989,12 @@
           if (e.params.no2)  parts.push('NO₂ ' + e.params.no2);
           if (e.params.no3)  parts.push('NO₃ ' + e.params.no3);
           if (e.params.temp) parts.push(e.params.temp + '°C');
+          if (e.params.gh)   parts.push('GH ' + e.params.gh);
+          if (e.params.kh)   parts.push('KH ' + e.params.kh);
+          if (e.params.sg)   parts.push('SG ' + e.params.sg);
           if (parts.length) paramsStr = parts.join(' · ');
         }
+        var rhMsg = encodeURIComponent('On ' + (e.date || 'a recent day') + ' I wrote: "' + (e.observation || '').slice(0, 120) + '". What do you think?');
         var nodeClass = 'tl-entry-node' + (e.keeperState ? ' state-' + e.keeperState : '');
         return '<li class="tl-entry-item">'
           + '<div class="' + nodeClass + '" aria-hidden="true"></div>'
@@ -990,9 +1002,14 @@
           + '<div class="tl-entry-meta">'
           + '<span class="tl-entry-date">' + (e.date || '') + '</span>'
           + (stateLabel ? '<span class="tl-entry-state-tag">' + stateLabel + '</span>' : '')
+          + '<div class="tl-entry-actions">'
+          + (e.id ? '<button class="tl-entry-edit-btn" data-entry-id="' + e.id + '" aria-label="Edit entry">Edit</button>' : '')
+          + '<button class="rh-inline-btn tl-entry-rh-btn" data-rh-msg="' + rhMsg + '" aria-label="Discuss with Rhyssa"><svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Rhyssa</button>'
+          + '</div>'
           + '</div>'
           + (e.observation ? '<p class="tl-entry-obs">' + e.observation + '</p>' : '')
           + (careStr ? '<span class="tl-entry-care">' + careStr + '</span>' : '')
+          + (e.treatmentNote ? '<span class="tl-entry-treatment">' + e.treatmentNote + '</span>' : '')
           + (paramsStr ? '<span class="tl-entry-params">' + paramsStr + '</span>' : '')
           + '</div>'
           + '</li>';
@@ -1067,7 +1084,7 @@
         + '</svg>';
     }
 
-    function renderParamCharts(entries) {
+    function renderParamCharts(entries, tankType) {
       var chartCard = document.getElementById('jn-param-charts');
       if (!chartCard) return;
       var paramEntries = (entries || []).filter(function (e) { return e.params; });
@@ -1075,11 +1092,18 @@
       chartCard.style.display = '';
       var recent = paramEntries.slice(-12);
       var params = [
-        { key:'ph',  label:'pH',        color:'rgba(61,214,232,.75)',  dangerMax:undefined },
+        { key:'ph',  label:'pH',   color:'rgba(61,214,232,.75)',  dangerMax:undefined },
         { key:'nh3', label:'NH₃',  color:'rgba(200,140,60,.85)',  dangerMax:0.5 },
         { key:'no2', label:'NO₂',  color:'rgba(200,190,60,.85)',  dangerMax:0.25 },
         { key:'no3', label:'NO₃',  color:'rgba(100,200,82,.75)',  dangerMax:20 }
       ];
+      if (tankType === 'marine' || tankType === 'brackish') {
+        params.push({ key:'sg', label:'SG', color:'rgba(163,130,200,.75)', dangerMax:undefined });
+      } else {
+        params.push({ key:'gh', label:'GH', color:'rgba(130,180,200,.75)', dangerMax:undefined });
+        params.push({ key:'kh', label:'KH', color:'rgba(100,160,220,.75)', dangerMax:undefined });
+      }
+      var latestParams = [];
       var html = params.map(function (p) {
         var vals = recent.map(function (e) { return parseFloat(e.params[p.key]); }).filter(function (v) { return !isNaN(v); });
         if (vals.length < 2) return '';
@@ -1087,6 +1111,7 @@
         var prev  = vals[vals.length - 2];
         var trend = last > prev ? '↗' : last < prev ? '↘' : '→';
         var dangerColor = (p.dangerMax !== undefined && last > p.dangerMax) ? 'rgba(200,80,80,.85)' : 'rgba(235,240,236,.55)';
+        latestParams.push(p.label + ' ' + last);
         return '<div class="jn-spark-row">'
           + '<span class="jn-spark-label">' + p.label + '</span>'
           + '<div class="jn-spark-chart">' + buildSparkline(vals, p.color, p.dangerMax) + '</div>'
@@ -1094,8 +1119,10 @@
           + '<span class="jn-spark-trend">' + trend + '</span>'
           + '</div>';
       }).join('');
+      var rhMsg = latestParams.length ? encodeURIComponent('My latest water parameters: ' + latestParams.join(', ') + '. What do you think about these readings?') : '';
+      var rhBtn = rhMsg ? '<button class="rh-inline-btn" data-rh-msg="' + rhMsg + '" style="margin-top:.6rem"><svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Ask Rhyssa about these trends</button>' : '';
       var bodyEl = document.getElementById('jn-param-charts-body');
-      if (bodyEl) bodyEl.innerHTML = html || '<p class="jn-entry-empty">Log parameters in more entries to see trends.</p>';
+      if (bodyEl) bodyEl.innerHTML = (html || '<p class="jn-entry-empty">Log parameters in more entries to see trends.</p>') + rhBtn;
     }
 
     /* ── P4: Contextual entry prompt ── */
@@ -1125,6 +1152,41 @@
     }
 
     /* ── P5: Data export ── */
+    function exportParamsCSV() {
+      var d = loadData();
+      var tank = getActiveTank(d);
+      if (!tank) return;
+      var cols = ['date','keeper_state','observation','care','ph','nh3','no2','no3','temp','gh','kh','sg'];
+      var rows = [cols.join(',')];
+      (tank.entries || []).forEach(function (e) {
+        var obs = (e.observation || '').replace(/"/g, '""');
+        var care = (e.care || []).map(function (c) { return careLabels[c] || c; }).join('; ');
+        var row = [
+          e.date || '',
+          keeperStateLabels[e.keeperState] || e.keeperState || '',
+          '"' + obs + '"',
+          '"' + care + '"',
+          e.params ? (e.params.ph || '') : '',
+          e.params ? (e.params.nh3 || '') : '',
+          e.params ? (e.params.no2 || '') : '',
+          e.params ? (e.params.no3 || '') : '',
+          e.params ? (e.params.temp || '') : '',
+          e.params ? (e.params.gh || '') : '',
+          e.params ? (e.params.kh || '') : '',
+          e.params ? (e.params.sg || '') : ''
+        ];
+        rows.push(row.join(','));
+      });
+      var blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      var pName = tank.profile && tank.profile.name;
+      a.href = url;
+      a.download = (pName ? pName.replace(/[^a-z0-9]/gi, '-') : 'aquatic-rhythm') + '-params-' + new Date().toISOString().slice(0,10) + '.csv';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
     function exportJournal() {
       var d    = loadData();
       var tank = getActiveTank(d);
@@ -1140,6 +1202,207 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    }
+
+    /* ── Rhyssa integration helpers ── */
+    function openRhyssaWith(msg) {
+      if (typeof window.__rhOpenWith === 'function') { window.__rhOpenWith(msg); return; }
+      if (typeof window.__rhOpenSheet === 'function') window.__rhOpenSheet();
+    }
+
+    function buildDashboardAlerts(tank) {
+      var alerts = [];
+      var entries = (tank.entries || []).slice().reverse();
+      var latest = entries[0];
+      if (latest && latest.params) {
+        var nh3 = parseFloat(latest.params.nh3);
+        var no3 = parseFloat(latest.params.no3);
+        if (!isNaN(nh3) && nh3 > 0.5) {
+          alerts.push({ severity: 'danger', msg: 'Ammonia elevated in last test (' + latest.params.nh3 + ' mg/L)', rhMsg: 'My ammonia was ' + latest.params.nh3 + ' mg/L on ' + (latest.date || 'the last test') + '. What should I do?' });
+        }
+        if (!isNaN(no3) && no3 > 40) {
+          alerts.push({ severity: 'warn', msg: 'Nitrate high at ' + latest.params.no3 + ' mg/L — water change recommended', rhMsg: 'My nitrate is ' + latest.params.no3 + ' mg/L. Should I be concerned for my tank?' });
+        }
+      }
+      if (latest && latest.date) {
+        var daysSince = Math.floor((new Date() - new Date(latest.date)) / 86400000);
+        if (daysSince >= 7) {
+          alerts.push({ severity: 'soft', msg: 'No entry in ' + daysSince + ' days — how\'s the tank doing?', rhMsg: 'I haven\'t logged anything in ' + daysSince + ' days. Just wanted to check in — tank seems okay.' });
+        }
+      }
+      for (var i = 0; i < entries.length; i++) {
+        if ((entries[i].care || []).indexOf('water_change') !== -1 && entries[i].date) {
+          var days = Math.floor((new Date() - new Date(entries[i].date)) / 86400000);
+          if (days > 14) alerts.push({ severity: 'warn', msg: 'Last water change: ' + days + ' days ago', rhMsg: 'I haven\'t done a water change in ' + days + ' days. Should I be concerned for my ' + ((tank.profile && tank.profile.volume) ? tank.profile.volume + (tank.profile.unit || 'L') + ' ' : '') + 'tank?' });
+          break;
+        }
+      }
+      return alerts;
+    }
+
+    function renderAlertStrip(tank) {
+      var el = document.getElementById('jn-alert-strip');
+      if (!el) return;
+      var alerts = buildDashboardAlerts(tank);
+      if (!alerts.length) { el.innerHTML = ''; el.style.display = 'none'; return; }
+      el.style.display = '';
+      el.innerHTML = alerts.map(function (a) {
+        var rhBtn = '<button class="rh-inline-btn jn-alert-rh-btn" data-rh-msg="' + encodeURIComponent(a.rhMsg) + '"><svg width="11" height="11" viewBox="0 0 22 22" fill="none" aria-hidden="true" style="flex-shrink:0"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Ask Rhyssa</button>';
+        return '<div class="jn-alert-item jn-alert--' + a.severity + '"><span class="jn-alert-msg">' + a.msg + '</span>' + rhBtn + '</div>';
+      }).join('');
+    }
+
+    var rhInsightDebounce = null;
+    function fetchWeeklyInsight(tank) {
+      if (!tank || !tank.id) return;
+      var key = 'rh_weekly_' + tank.id;
+      var cached = null;
+      try { cached = JSON.parse(localStorage.getItem(key)); } catch (e) {}
+      var weekStart = new Date(); weekStart.setHours(0,0,0,0); weekStart.setDate(weekStart.getDate() - weekStart.getDay());
+      var weekKey = weekStart.toISOString().slice(0,10);
+      var latestEntryDate = (tank.entries || []).length ? (tank.entries[tank.entries.length - 1].date || '') : '';
+      if (cached && cached.week === weekKey && cached.lastEntry === latestEntryDate && cached.text) {
+        renderWeeklyInsightCard(cached.text, cached.ts);
+        return;
+      }
+      var entries7 = (tank.entries || []).slice().reverse().filter(function (e) {
+        if (!e.date) return false;
+        var days = Math.floor((new Date() - new Date(e.date)) / 86400000);
+        return days <= 7;
+      });
+      if (!entries7.length) return;
+      var summaryParts = entries7.map(function (e) {
+        var careStr = (e.care || []).map(function (c) { return careLabels[c] || c; }).join(', ');
+        var obs = (e.observation || '').slice(0, 120);
+        var params = '';
+        if (e.params) {
+          var ps = [];
+          if (e.params.ph) ps.push('pH ' + e.params.ph);
+          if (e.params.nh3) ps.push('NH₃ ' + e.params.nh3);
+          if (e.params.no3) ps.push('NO₃ ' + e.params.no3);
+          if (ps.length) params = ' [' + ps.join(', ') + ']';
+        }
+        return '[' + (e.date || '?') + '] ' + (keeperStateLabels[e.keeperState] || '') + (careStr ? ' | ' + careStr : '') + (obs ? ' | "' + obs + '"' : '') + params;
+      }).join('\n');
+      var prompt = 'From this keeper\'s last 7 days of log entries:\n' + summaryParts + '\n\nWrite a 2–3 sentence weekly observation as Rhyssa. Be specific, warm, and brief. Point out one pattern or detail that might be easy to miss.';
+      var insightEl = document.getElementById('jn-weekly-insight-card');
+      if (insightEl) {
+        insightEl.style.display = '';
+        var bodyEl = insightEl.querySelector('.jn-weekly-insight-body');
+        if (bodyEl) bodyEl.textContent = '…';
+      }
+      fetch('https://api.aquaticrhythm.com/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [{ role: 'user', content: prompt }], tankContext: getTankContext() })
+      }).then(function (res) {
+        if (!res.ok || !res.body) return;
+        var reader = res.body.getReader();
+        var decoder = new TextDecoder();
+        var buf = ''; var result = '';
+        var bodyEl = insightEl ? insightEl.querySelector('.jn-weekly-insight-body') : null;
+        function read() {
+          return reader.read().then(function (chunk) {
+            if (chunk.done) {
+              if (result.trim()) {
+                try { localStorage.setItem(key, JSON.stringify({ week: weekKey, lastEntry: latestEntryDate, text: result.trim(), ts: Date.now() })); } catch (e) {}
+                renderWeeklyInsightCard(result.trim(), Date.now());
+              }
+              return;
+            }
+            buf += decoder.decode(chunk.value, { stream: true });
+            var lines = buf.split('\n'); buf = lines.pop() || '';
+            lines.forEach(function (line) {
+              if (!line.startsWith('data: ')) return;
+              var d = line.slice(6).trim(); if (d === '[DONE]') return;
+              try {
+                var parsed = JSON.parse(d);
+                var delta = (parsed.delta && parsed.delta.text) ? parsed.delta.text : '';
+                result += delta;
+                if (bodyEl) bodyEl.textContent = result;
+              } catch (e2) {}
+            });
+            return read();
+          });
+        }
+        return read();
+      }).catch(function () {
+        var insightEl2 = document.getElementById('jn-weekly-insight-card');
+        if (insightEl2) insightEl2.style.display = 'none';
+      });
+    }
+
+    function renderWeeklyInsightCard(text, ts) {
+      var card = document.getElementById('jn-weekly-insight-card');
+      if (!card) return;
+      card.style.display = '';
+      var bodyEl = card.querySelector('.jn-weekly-insight-body');
+      var tsEl = card.querySelector('.jn-weekly-insight-ts');
+      if (bodyEl) bodyEl.textContent = text;
+      if (tsEl && ts) {
+        var d = new Date(ts);
+        tsEl.textContent = 'Updated ' + d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+      }
+    }
+
+    var obsHintDebounce = null;
+    var obsHintAbort = null;
+    function setupObsHint() {
+      var obsEl = document.getElementById('jn-entry-obs');
+      if (!obsEl || obsEl._rhHintWired) return;
+      obsEl._rhHintWired = true;
+      obsEl.addEventListener('input', function () {
+        clearTimeout(obsHintDebounce);
+        var text = obsEl.value.trim();
+        var promptEl = document.getElementById('jn-context-prompt');
+        if (text.length < 25) {
+          if (promptEl) {
+            var staticHint = buildContextPrompt(getActiveTank(loadData()) || {});
+            promptEl.textContent = staticHint;
+            promptEl.style.display = staticHint ? '' : 'none';
+          }
+          return;
+        }
+        obsHintDebounce = setTimeout(function () {
+          var tank = getActiveTank(loadData());
+          if (!tank) return;
+          var tankInfo = tank.profile ? ((tank.profile.volume || '') + (tank.profile.unit || 'L') + ' ' + (tank.profile.type || '')) : '';
+          var msg = 'My tank is ' + tankInfo + '. I just wrote in my log: "' + text.slice(0, 150) + '". Ask me one short follow-up question to help me observe more carefully.';
+          if (promptEl) { promptEl.textContent = '…'; promptEl.style.display = ''; }
+          fetch('https://api.aquaticrhythm.com/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: [{ role: 'user', content: msg }], tankContext: getTankContext() })
+          }).then(function (res) {
+            if (!res.ok || !res.body) { if (promptEl) promptEl.style.display = 'none'; return; }
+            var reader = res.body.getReader();
+            var decoder = new TextDecoder();
+            var buf2 = ''; var result = '';
+            function readHint() {
+              return reader.read().then(function (chunk) {
+                if (chunk.done) {
+                  if (promptEl) { promptEl.textContent = result.trim(); promptEl.style.display = result.trim() ? '' : 'none'; }
+                  return;
+                }
+                buf2 += decoder.decode(chunk.value, { stream: true });
+                var lines = buf2.split('\n'); buf2 = lines.pop() || '';
+                lines.forEach(function (line) {
+                  if (!line.startsWith('data: ')) return;
+                  var d = line.slice(6).trim(); if (d === '[DONE]') return;
+                  try {
+                    var parsed = JSON.parse(d);
+                    var delta = (parsed.delta && parsed.delta.text) ? parsed.delta.text : '';
+                    result += delta;
+                    if (promptEl) promptEl.textContent = result;
+                  } catch (e2) {}
+                });
+                return readHint();
+              });
+            }
+            return readHint();
+          }).catch(function () { if (promptEl) promptEl.style.display = 'none'; });
+        }, 1500);
+      });
     }
 
     /* ── P6: Tank inhabitants ── */
@@ -1170,6 +1433,8 @@
               + '<span class=”tl-inh-chip-icon”>' + icon + '</span>'
               + '<span>' + label + '</span>' + count
               + '<div class=”tl-inh-chip-actions”>'
+              + '<button class=”tl-inh-chip-btn jn-inh-edit-btn”'
+              + ' data-inh-id=”' + i.id + '”>edit</button>'
               + '<button class=”tl-inh-chip-btn jn-inh-status-btn”'
               + ' data-inh-id=”' + i.id + '” data-action=”rehomed”>rehomed</button>'
               + '<button class=”tl-inh-chip-btn jn-inh-status-btn”'
@@ -1327,7 +1592,8 @@
         }
       }
 
-      renderParamCharts(entries);
+      renderAlertStrip(tank);
+      renderParamCharts(entries, p.type);
       renderInhabitants(tank);
 
       var noEntriesEl = document.getElementById('jn-no-entries');
@@ -1337,6 +1603,20 @@
 
       jnHistoryPage = 1;
       renderEntryList(entries, jnHistoryPage);
+
+      /* Rhyssa weekly insight (async, non-blocking) */
+      if (entries.length >= 2) fetchWeeklyInsight(tank);
+      else { var wc = document.getElementById('jn-weekly-insight-card'); if (wc) wc.style.display = 'none'; }
+
+      /* ARA phase card: Rhyssa touchpoint */
+      var phaseRhEl = document.getElementById('jn-phase-rh-btn');
+      if (phaseRhEl && info) {
+        var phaseRhMsg = encodeURIComponent('My tank is in the ' + info.label + ' phase. ' + info.next + ' What should I be watching for?');
+        phaseRhEl.setAttribute('data-rh-msg', phaseRhMsg);
+        phaseRhEl.style.display = '';
+      } else if (phaseRhEl) {
+        phaseRhEl.style.display = 'none';
+      }
     }
 
     function openModal(id) {
@@ -1369,26 +1649,122 @@
       return new Date().toISOString().slice(0, 10);
     }
 
-    function openEntryModal() {
+    function openEntryModal(entryId) {
       document.querySelectorAll('.jn-state-chip,.jn-care-chip').forEach(function (c) { c.classList.remove('active'); });
-      var entryDate = document.getElementById('jn-entry-date');
-      if (entryDate) entryDate.value = todayStr();
-      var obsEl = document.getElementById('jn-entry-obs');
-      if (obsEl) obsEl.value = '';
+      var editingIdEl = document.getElementById('jn-entry-editing-id');
+      if (editingIdEl) editingIdEl.value = '';
+      var titleEl = document.querySelector('#mt-modal-entry .mt-modal-title');
+      var deleteBtn = document.getElementById('jn-entry-delete-btn');
+      var treatRow = document.getElementById('jn-treatment-note-row');
+      var treatEl = document.getElementById('jn-treatment-note');
       var paramsSection = document.getElementById('jn-params-section');
-      if (paramsSection) paramsSection.style.display = 'none';
       var paramsToggle = document.getElementById('jn-params-toggle');
+      var allParamIds = ['jn-param-ph','jn-param-nh3','jn-param-no2','jn-param-no3','jn-param-temp','jn-param-gh','jn-param-kh','jn-param-sg'];
+
+      /* Show/hide extended params based on tank type */
+      var tank = getActiveTank(loadData());
+      var tankType = tank && tank.profile ? (tank.profile.type || '') : '';
+      var ghRow = document.getElementById('jn-param-gh-row');
+      var khRow = document.getElementById('jn-param-kh-row');
+      var sgRow = document.getElementById('jn-param-sg-row');
+      var isMarine = (tankType === 'marine' || tankType === 'brackish');
+      if (ghRow) ghRow.style.display = isMarine ? 'none' : '';
+      if (khRow) khRow.style.display = isMarine ? 'none' : '';
+      if (sgRow) sgRow.style.display = isMarine ? '' : 'none';
+
+      if (paramsSection) paramsSection.style.display = 'none';
       if (paramsToggle) paramsToggle.textContent = '+ Add water parameters (optional)';
-      ['jn-param-ph','jn-param-nh3','jn-param-no2','jn-param-no3','jn-param-temp'].forEach(function (id) {
-        var el = document.getElementById(id); if (el) el.value = '';
-      });
-      var promptText = buildContextPrompt(getActiveTank(loadData()) || {});
-      var promptEl = document.getElementById('jn-context-prompt');
-      if (promptEl) {
-        promptEl.textContent = promptText;
-        promptEl.style.display = promptText ? '' : 'none';
+      allParamIds.forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ''; });
+      if (treatRow) treatRow.style.display = 'none';
+      if (treatEl) treatEl.value = '';
+
+      if (entryId && tank) {
+        var entry = null;
+        for (var ei = 0; ei < (tank.entries || []).length; ei++) {
+          if (tank.entries[ei].id === entryId) { entry = tank.entries[ei]; break; }
+        }
+        if (entry) {
+          if (editingIdEl) editingIdEl.value = entryId;
+          if (titleEl) titleEl.textContent = 'Edit entry';
+          if (deleteBtn) deleteBtn.style.display = '';
+          var entryDate = document.getElementById('jn-entry-date');
+          if (entryDate) entryDate.value = entry.date || todayStr();
+          var obsEl = document.getElementById('jn-entry-obs');
+          if (obsEl) obsEl.value = entry.observation || '';
+          if (entry.keeperState) {
+            var stateChip = document.querySelector('.jn-state-chip[data-state="' + entry.keeperState + '"]');
+            if (stateChip) stateChip.classList.add('active');
+          }
+          (entry.care || []).forEach(function (c) {
+            var chip = document.querySelector('.jn-care-chip[data-care="' + c + '"]');
+            if (chip) chip.classList.add('active');
+          });
+          if (entry.treatmentNote && treatRow && treatEl) {
+            treatRow.style.display = '';
+            treatEl.value = entry.treatmentNote;
+          }
+          if (entry.params) {
+            if (paramsSection) paramsSection.style.display = '';
+            if (paramsToggle) paramsToggle.textContent = '− Hide water parameters';
+            ['ph','nh3','no2','no3','temp','gh','kh','sg'].forEach(function (k) {
+              var el = document.getElementById('jn-param-' + k);
+              if (el && entry.params[k]) el.value = entry.params[k];
+            });
+          }
+          openModal('mt-modal-entry');
+          return;
+        }
       }
+
+      /* New entry mode */
+      if (titleEl) titleEl.textContent = 'Today\'s entry';
+      if (deleteBtn) deleteBtn.style.display = 'none';
+      var entryDate2 = document.getElementById('jn-entry-date');
+      if (entryDate2) entryDate2.value = todayStr();
+      var obsEl2 = document.getElementById('jn-entry-obs');
+      if (obsEl2) obsEl2.value = '';
+      var promptText = buildContextPrompt(tank || {});
+      var promptEl = document.getElementById('jn-context-prompt');
+      if (promptEl) { promptEl.textContent = promptText; promptEl.style.display = promptText ? '' : 'none'; }
+      setupObsHint();
       openModal('mt-modal-entry');
+    }
+
+    function openInhabitantModal(inhId) {
+      document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
+      var firstCat = document.querySelector('.jn-inh-cat-chip');
+      if (firstCat) firstCat.classList.add('active');
+      var editingEl = document.getElementById('jn-inh-editing-id');
+      if (editingEl) editingEl.value = '';
+      var titleEl = document.querySelector('#mt-modal-inhabitant .mt-modal-title');
+      var g = function (id) { var el = document.getElementById(id); if (el) el.value = ''; };
+      g('jn-inh-common'); g('jn-inh-species'); g('jn-inh-name');
+      var countEl = document.getElementById('jn-inh-count'); if (countEl) countEl.value = '1';
+      var dateEl = document.getElementById('jn-inh-date'); if (dateEl) dateEl.value = todayStr();
+      if (inhId) {
+        var d = loadData(); var tank = getActiveTank(d);
+        var inh = null;
+        if (tank) { for (var ii = 0; ii < (tank.inhabitants || []).length; ii++) { if (tank.inhabitants[ii].id === inhId) { inh = tank.inhabitants[ii]; break; } } }
+        if (inh) {
+          if (editingEl) editingEl.value = inhId;
+          if (titleEl) titleEl.textContent = 'Edit resident';
+          var catChip = document.querySelector('.jn-inh-cat-chip[data-cat="' + (inh.category || 'fish') + '"]');
+          document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
+          if (catChip) catChip.classList.add('active');
+          var s = function (id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
+          s('jn-inh-common', inh.commonName); s('jn-inh-species', inh.species); s('jn-inh-name', inh.name);
+          var cEl = document.getElementById('jn-inh-count'); if (cEl) cEl.value = inh.count || 1;
+          var dEl = document.getElementById('jn-inh-date'); if (dEl) dEl.value = inh.addedDate || todayStr();
+          var submitBtn = document.querySelector('#mt-modal-inhabitant [type="submit"]');
+          if (submitBtn) submitBtn.textContent = 'Save changes';
+          openModal('mt-modal-inhabitant');
+          return;
+        }
+      }
+      if (titleEl) titleEl.textContent = 'Add to tank';
+      var submitBtn2 = document.querySelector('#mt-modal-inhabitant [type="submit"]');
+      if (submitBtn2) submitBtn2.textContent = 'Add to tank';
+      openModal('mt-modal-inhabitant');
     }
 
     document.addEventListener('click', function (e) {
@@ -1530,21 +1906,59 @@
         return;
       }
 
-      if (target.id === 'jn-export') { exportJournal(); return; }
-
-      if (target.id === 'jn-inh-add') {
-        document.querySelectorAll('.jn-inh-cat-chip').forEach(function (c) { c.classList.remove('active'); });
-        var firstCat = document.querySelector('.jn-inh-cat-chip');
-        if (firstCat) firstCat.classList.add('active');
-        ['jn-inh-common', 'jn-inh-species', 'jn-inh-name'].forEach(function (id) {
-          var el = document.getElementById(id); if (el) el.value = '';
-        });
-        var cntEl = document.getElementById('jn-inh-count');
-        if (cntEl) cntEl.value = '1';
-        var inhDate = document.getElementById('jn-inh-date');
-        if (inhDate) inhDate.value = todayStr();
-        openModal('mt-modal-inhabitant');
+      /* Rhyssa prefill (data-rh-msg attribute) */
+      var rhBtn = target.closest('[data-rh-msg]');
+      if (rhBtn && !target.closest('a[href]')) {
+        e.preventDefault();
+        var msg = decodeURIComponent(rhBtn.dataset.rhMsg || '');
+        if (msg) openRhyssaWith(msg);
+        else if (typeof window.__rhOpenSheet === 'function') window.__rhOpenSheet();
         return;
+      }
+
+      if (target.id === 'jn-export') { exportJournal(); return; }
+      if (target.id === 'jn-export-csv') { exportParamsCSV(); return; }
+
+      /* Entry edit button */
+      var entryEditBtn = target.closest('.tl-entry-edit-btn');
+      if (entryEditBtn && entryEditBtn.dataset.entryId) {
+        openEntryModal(entryEditBtn.dataset.entryId);
+        return;
+      }
+
+      /* Entry delete button (inside edit modal) */
+      if (target.id === 'jn-entry-delete-btn') {
+        var editId = document.getElementById('jn-entry-editing-id');
+        if (!editId || !editId.value) return;
+        if (!confirm('Delete this entry? This cannot be undone.')) return;
+        var d = loadData();
+        var tank = getActiveTank(d);
+        if (!tank) return;
+        tank.entries = tank.entries.filter(function (en) { return en.id !== editId.value; });
+        saveData(d);
+        closeAllModals();
+        renderDashboard();
+        showJnToast('Entry removed.', 'passed');
+        return;
+      }
+
+      /* Inhabitant edit button */
+      var inhEditBtn = target.closest('.jn-inh-edit-btn');
+      if (inhEditBtn && inhEditBtn.dataset.inhId) {
+        openInhabitantModal(inhEditBtn.dataset.inhId);
+        return;
+      }
+
+      if (target.id === 'jn-inh-add') { openInhabitantModal(); return; }
+
+      /* Treatment/dosing note toggle */
+      var careChipTreat = target.closest('.jn-care-chip[data-care="treatment"],.jn-care-chip[data-care="dosing"]');
+      if (careChipTreat) {
+        var treatRow2 = document.getElementById('jn-treatment-note-row');
+        if (treatRow2) {
+          var anyTreat = document.querySelector('.jn-care-chip[data-care="treatment"].active, .jn-care-chip[data-care="dosing"].active');
+          treatRow2.style.display = anyTreat ? '' : 'none';
+        }
       }
 
       var catChip = target.closest('.jn-inh-cat-chip');
@@ -1555,7 +1969,7 @@
       }
 
       var inhChip = target.closest('.tl-inh-chip');
-      if (inhChip && !target.closest('.jn-inh-status-btn')) {
+      if (inhChip && !target.closest('.jn-inh-status-btn') && !target.closest('.jn-inh-edit-btn')) {
         document.querySelectorAll('.tl-inh-chip').forEach(function (c) {
           if (c !== inhChip) c.classList.remove('expanded');
         });
@@ -1626,17 +2040,43 @@
         var g = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
         var activeState = document.querySelector('.jn-state-chip.active');
         var care = Array.prototype.slice.call(document.querySelectorAll('.jn-care-chip.active')).map(function (c) { return c.dataset.care; });
-        var entry = {
-          date: g('jn-entry-date') || todayStr(),
-          keeperState: activeState ? activeState.dataset.state : '',
-          observation: g('jn-entry-obs'),
-          care: care
-        };
+        var editingId = g('jn-entry-editing-id');
         var ph = g('jn-param-ph'), nh3 = g('jn-param-nh3'), no2 = g('jn-param-no2'), no3 = g('jn-param-no3'), temp = g('jn-param-temp');
-        if (ph || nh3 || no2 || no3 || temp) {
-          entry.params = { ph: ph, nh3: nh3, no2: no2, no3: no3, temp: temp };
+        var gh = g('jn-param-gh'), kh = g('jn-param-kh'), sg = g('jn-param-sg');
+        var treatmentNote = g('jn-treatment-note');
+        var params = null;
+        if (ph || nh3 || no2 || no3 || temp || gh || kh || sg) {
+          params = { ph: ph, nh3: nh3, no2: no2, no3: no3, temp: temp };
+          if (gh) params.gh = gh;
+          if (kh) params.kh = kh;
+          if (sg) params.sg = sg;
         }
-        tank.entries.push(entry);
+        if (editingId) {
+          for (var ei = 0; ei < tank.entries.length; ei++) {
+            if (tank.entries[ei].id === editingId) {
+              tank.entries[ei].date = g('jn-entry-date') || todayStr();
+              tank.entries[ei].keeperState = activeState ? activeState.dataset.state : tank.entries[ei].keeperState;
+              tank.entries[ei].observation = g('jn-entry-obs');
+              tank.entries[ei].care = care;
+              tank.entries[ei].params = params;
+              if (treatmentNote) tank.entries[ei].treatmentNote = treatmentNote;
+              else delete tank.entries[ei].treatmentNote;
+              break;
+            }
+          }
+          tank.entries.sort(function (a, b) { return (a.date || '') < (b.date || '') ? -1 : (a.date || '') > (b.date || '') ? 1 : 0; });
+        } else {
+          var entry = {
+            id: 'e_' + Date.now(),
+            date: g('jn-entry-date') || todayStr(),
+            keeperState: activeState ? activeState.dataset.state : '',
+            observation: g('jn-entry-obs'),
+            care: care,
+            params: params
+          };
+          if (treatmentNote) entry.treatmentNote = treatmentNote;
+          tank.entries.push(entry);
+        }
         saveData(d);
         closeAllModals();
         renderDashboard();
@@ -1654,23 +2094,42 @@
         if (!tank.inhabitants) tank.inhabitants = [];
         var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
         var activeCat = document.querySelector('.jn-inh-cat-chip.active');
-        var inh = {
-          id:         'inh_' + Date.now(),
-          category:   activeCat ? activeCat.dataset.cat : 'fish',
-          commonName: g('jn-inh-common'),
-          species:    g('jn-inh-species'),
-          name:       g('jn-inh-name'),
-          count:      parseInt(g('jn-inh-count'), 10) || 1,
-          addedDate:  g('jn-inh-date') || todayStr(),
-          status:     'active',
-          removedDate: null,
-          removedNote: null
-        };
-        tank.inhabitants.push(inh);
-        saveData(d);
-        closeModal('mt-modal-inhabitant');
-        renderDashboard();
-        showInhabitantToast(inh, 'added');
+        var editingId = g('jn-inh-editing-id');
+        if (editingId) {
+          for (var ii = 0; ii < tank.inhabitants.length; ii++) {
+            if (tank.inhabitants[ii].id === editingId) {
+              tank.inhabitants[ii].category  = activeCat ? activeCat.dataset.cat : tank.inhabitants[ii].category;
+              tank.inhabitants[ii].commonName = g('jn-inh-common') || tank.inhabitants[ii].commonName;
+              tank.inhabitants[ii].species    = g('jn-inh-species');
+              tank.inhabitants[ii].name       = g('jn-inh-name');
+              tank.inhabitants[ii].count      = parseInt(g('jn-inh-count'), 10) || tank.inhabitants[ii].count;
+              tank.inhabitants[ii].addedDate  = g('jn-inh-date') || tank.inhabitants[ii].addedDate;
+              break;
+            }
+          }
+          saveData(d);
+          closeModal('mt-modal-inhabitant');
+          renderDashboard();
+          showJnToast('Resident updated.', 'welcome');
+        } else {
+          var inh = {
+            id:         'inh_' + Date.now(),
+            category:   activeCat ? activeCat.dataset.cat : 'fish',
+            commonName: g('jn-inh-common'),
+            species:    g('jn-inh-species'),
+            name:       g('jn-inh-name'),
+            count:      parseInt(g('jn-inh-count'), 10) || 1,
+            addedDate:  g('jn-inh-date') || todayStr(),
+            status:     'active',
+            removedDate: null,
+            removedNote: null
+          };
+          tank.inhabitants.push(inh);
+          saveData(d);
+          closeModal('mt-modal-inhabitant');
+          renderDashboard();
+          showInhabitantToast(inh, 'added');
+        }
       });
     }
 
@@ -1936,7 +2395,36 @@
         var active = tanks.find(function (t) { return t.id === data.activeTankId; }) || tanks[0];
         if (!active || !active.profile) return null;
         var p = active.profile;
-        return { volume: p.volume || null, unit: p.unit || 'L', type: p.type || null, maturity: p.maturity || null };
+        var ageWeeks = null;
+        if (p.setupDate) ageWeeks = Math.floor((new Date() - new Date(p.setupDate)) / (86400000 * 7));
+        var entries = active.entries || [];
+        var latest = entries.length ? entries[entries.length - 1] : null;
+        var phase = null;
+        if (latest) {
+          var ph = assessPhaseFromParams(latest.params) || assessPhaseFromState(latest.keeperState, p.setupDate);
+          phase = (ph && phaseInfo[ph]) ? phaseInfo[ph].label : null;
+        }
+        var residents = (active.inhabitants || [])
+          .filter(function (i) { return i.status === 'active'; })
+          .map(function (i) { return (i.count > 1 ? i.count + '× ' : '') + (i.commonName || i.species || 'Unknown'); });
+        var recentEntries = entries.slice(-3).map(function (e) {
+          return {
+            date: e.date || '',
+            state: keeperStateLabels[e.keeperState] || e.keeperState || '',
+            care: (e.care || []).map(function (c) { return careLabels[c] || c; }),
+            obs: (e.observation || '').slice(0, 200),
+            params: e.params || null
+          };
+        });
+        return {
+          volume: p.volume || null,
+          unit: p.unit || 'L',
+          type: p.type || null,
+          ageWeeks: ageWeeks,
+          phase: phase,
+          residents: residents.length ? residents : null,
+          recentEntries: recentEntries.length ? recentEntries : null
+        };
       } catch (e) { return null; }
     }
 
@@ -1989,6 +2477,17 @@
 
     window.__rhOpenSheet  = openSheet;
     window.__rhCloseSheet = closeSheet;
+    window.__rhOpenWith   = function (msg) {
+      openSheet();
+      setTimeout(function () {
+        if (inp) {
+          inp.value = msg;
+          inp.style.height = 'auto';
+          inp.style.height = Math.min(inp.scrollHeight, 120) + 'px';
+          inp.focus();
+        }
+      }, 100);
+    };
 
     fab.addEventListener('click', function () {
       sheet.classList.contains('open') ? closeSheet() : openSheet();

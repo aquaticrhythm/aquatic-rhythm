@@ -1191,6 +1191,34 @@ footer{padding:3.5rem clamp(1.5rem,5vw,4.5rem);display:flex;align-items:center;j
   .rh-fab{bottom:calc(56px + env(safe-area-inset-bottom) + .8rem)}
 }
 
+/* ── Keeper Log: Rhyssa integration & new UX elements ── */
+
+/* Rhyssa inline touchpoint button */
+.rh-inline-btn{display:inline-flex;align-items:center;gap:.32rem;background:none;border:none;padding:.22rem 0;color:rgba(61,214,232,.62);font-size:.5rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);transition:color .2s;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+.rh-inline-btn:hover{color:rgba(61,214,232,.95)}
+.rh-inline-btn svg{flex-shrink:0}
+
+/* Dashboard alert strip */
+.jn-alert-strip{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem}
+.jn-alert-item{display:flex;align-items:center;justify-content:space-between;gap:.7rem;padding:.6rem .85rem;border-radius:10px;border-left:3px solid;font-size:.72rem}
+.jn-alert--danger{background:rgba(200,80,80,.07);border-color:rgba(200,80,80,.55)}
+.jn-alert--warn{background:rgba(200,160,60,.07);border-color:rgba(200,160,60,.5)}
+.jn-alert--soft{background:rgba(61,214,232,.05);border-color:rgba(61,214,232,.2)}
+.jn-alert-msg{color:rgba(235,240,236,.68);flex:1;line-height:1.4}
+.jn-alert-rh-btn{flex-shrink:0}
+
+/* Rhyssa Weekly Insight card */
+.tl-rhyssa-insight-card{border-left:3px solid rgba(61,214,232,.32)}
+.tl-rhyssa-insight-card::before{content:'';position:absolute;inset:0;background:rgba(61,214,232,.025);border-radius:inherit;pointer-events:none}
+
+/* Entry timeline: action buttons */
+.tl-entry-meta{flex-wrap:wrap}
+.tl-entry-actions{display:flex;align-items:center;gap:.4rem;margin-left:auto;flex-shrink:0}
+.tl-entry-edit-btn{background:none;border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.28);font-size:.42rem;letter-spacing:.06em;text-transform:uppercase;padding:.16rem .4rem;cursor:pointer;font-family:var(--sans);transition:all .15s}
+.tl-entry-edit-btn:hover{border-color:rgba(61,214,232,.4);color:rgba(61,214,232,.72)}
+.tl-entry-rh-btn{font-size:.42rem;letter-spacing:.06em}
+.tl-entry-treatment{font-size:.52rem;font-family:monospace;color:rgba(200,160,60,.55);display:block;margin-bottom:.2rem}
+
 /* Reading tab (index only): optional Ko-fi line — not on individual article pages */
 .rd-kofi-note{margin-top:1.35rem;padding-top:1.15rem;border-top:1px solid rgba(255,255,255,.06);font-size:.72rem;line-height:1.75;color:rgba(235,240,236,.36);max-width:540px}
 .rd-kofi-note a{color:rgba(61,214,232,.58);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.2);transition:color .2s,border-color .2s}

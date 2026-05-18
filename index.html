@@ -1472,6 +1472,9 @@
           </div>
         </div>
 
+        <!-- 2b. ALERT STRIP (proactive alerts) -->
+        <div id="jn-alert-strip" class="jn-alert-strip" style="display:none"></div>
+
         <!-- 3. ARA PHASE CARD -->
         <div class="tl-card tl-phase-card" id="jn-phase-card">
           <div class="tl-card-eyebrow">ARA Phase</div>
@@ -1479,6 +1482,17 @@
           <p class="mt-phase-desc" id="jn-phase-note">Write your first entry to get an ARA phase reading.</p>
           <p class="jn-phase-next" id="jn-phase-next" style="display:none"></p>
           <span class="jn-phase-src" id="jn-phase-src" style="display:none"></span>
+          <button class="rh-inline-btn" id="jn-phase-rh-btn" data-rh-msg="" style="display:none;margin-top:.8rem"><svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Ask Rhyssa about this phase</button>
+        </div>
+
+        <!-- 3b. RHYSSA WEEKLY INSIGHT CARD -->
+        <div class="tl-card tl-rhyssa-insight-card" id="jn-weekly-insight-card" style="display:none">
+          <div class="tl-card-header">
+            <span class="tl-card-eyebrow">Rhyssa's Read</span>
+            <span class="jn-weekly-insight-ts" style="font-size:.46rem;color:rgba(255,255,255,.22)"></span>
+          </div>
+          <p class="jn-weekly-insight-body" style="font-size:.88rem;color:rgba(235,240,236,.68);line-height:1.7;margin:0 0 .85rem;font-family:var(--serif);font-style:italic;font-weight:300"></p>
+          <button class="rh-inline-btn" data-rh-msg=""><svg width="10" height="10" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55"/><circle cx="11" cy="11" r="1.4" fill="currentColor" opacity=".8"/></svg>Discuss with Rhyssa →</button>
         </div>
 
         <!-- 4. RHYTHM CARD (8 weeks) -->
@@ -1530,7 +1544,8 @@
 
         <!-- SECONDARY ACTIONS -->
         <div class="tl-secondary-actions">
-          <button class="mt-text-btn" id="jn-export">Export data</button>
+          <button class="mt-text-btn" id="jn-export">Export JSON</button>
+          <button class="mt-text-btn" id="jn-export-csv">Export CSV</button>
           <button class="mt-text-btn mt-danger" id="jn-reset-tank">Delete this tank</button>
         </div>
 
@@ -1680,6 +1695,7 @@
       <button class="mt-modal-close" data-modal-close="mt-modal-entry" aria-label="Close">✕</button>
     </div>
     <form id="jn-form-entry" autocomplete="off">
+      <input type="hidden" id="jn-entry-editing-id">
       <div class="mt-field">
         <label class="mt-label" for="jn-entry-date">Date</label>
         <input class="mt-input" id="jn-entry-date" type="date" required>
@@ -1709,9 +1725,16 @@
           <button type="button" class="jn-care-chip" data-care="feeding">Feeding</button>
           <button type="button" class="jn-care-chip" data-care="top_up">Topping up</button>
           <button type="button" class="jn-care-chip" data-care="treatment">Treatment</button>
+          <button type="button" class="jn-care-chip" data-care="dosing">Dosing</button>
+          <button type="button" class="jn-care-chip" data-care="media">Media change</button>
           <button type="button" class="jn-care-chip" data-care="trimming">Trimming</button>
           <button type="button" class="jn-care-chip" data-care="nothing">Just observed</button>
         </div>
+      </div>
+
+      <div id="jn-treatment-note-row" class="mt-field" style="display:none">
+        <label class="mt-label" for="jn-treatment-note">Product / dose <span style="opacity:.38">(optional)</span></label>
+        <input class="mt-input" id="jn-treatment-note" type="text" placeholder="e.g. Easy Carbo 5ml, Seachem Prime 2ml" maxlength="120">
       </div>
 
       <div class="jn-params-toggle-row">
@@ -1740,10 +1763,25 @@
             <label class="mt-label" for="jn-param-temp">Temp (°C)</label>
             <input class="mt-input" id="jn-param-temp" type="number" placeholder="26" min="0" max="40" step="0.5">
           </div>
+          <div class="mt-field" id="jn-param-gh-row">
+            <label class="mt-label" for="jn-param-gh">GH (°dH)</label>
+            <input class="mt-input" id="jn-param-gh" type="number" placeholder="8" min="0" max="30" step="0.5">
+          </div>
+          <div class="mt-field" id="jn-param-kh-row">
+            <label class="mt-label" for="jn-param-kh">KH (°dH)</label>
+            <input class="mt-input" id="jn-param-kh" type="number" placeholder="4" min="0" max="20" step="0.5">
+          </div>
+          <div class="mt-field" id="jn-param-sg-row" style="display:none">
+            <label class="mt-label" for="jn-param-sg">Salinity / SG</label>
+            <input class="mt-input" id="jn-param-sg" type="number" placeholder="1.025" min="1.000" max="1.035" step="0.001">
+          </div>
         </div>
       </div>
 
-      <button type="submit" class="btn bf" style="width:100%;margin-top:1.2rem">Save entry</button>
+      <div style="display:flex;gap:.6rem;margin-top:1.2rem;align-items:center">
+        <button type="submit" class="btn bf" style="flex:1">Save entry</button>
+        <button type="button" id="jn-entry-delete-btn" class="mt-text-btn mt-danger" style="display:none;flex-shrink:0">Delete</button>
+      </div>
     </form>
   </div>
 </div>
@@ -1762,6 +1800,7 @@
       <button class="mt-modal-close" data-modal-close="mt-modal-inhabitant" aria-label="Close">✕</button>
     </div>
     <form id="jn-form-inhabitant" autocomplete="off">
+      <input type="hidden" id="jn-inh-editing-id">
 
       <div class="jn-form-section">
         <p class="jn-form-question">Category</p>

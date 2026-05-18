@@ -107,7 +107,38 @@ async function handleChat(request, env, origin) {
 function buildSystemPrompt(tankContext) {
   let ctx = '';
   if (tankContext) {
-    ctx = '\n\nUser tank context:\n' + JSON.stringify(tankContext, null, 2);
+    const lines = [];
+    const vol = tankContext.volume ? tankContext.volume + (tankContext.unit || 'L') : null;
+    const age = (tankContext.ageWeeks !== null && tankContext.ageWeeks !== undefined) ? tankContext.ageWeeks + ' weeks old' : null;
+    const header = [vol, tankContext.type, age].filter(Boolean).join(', ');
+    if (header) lines.push('Tank: ' + header);
+    if (tankContext.phase) lines.push('Current ARA phase: ' + tankContext.phase);
+    if (tankContext.residents && tankContext.residents.length) {
+      lines.push('Residents: ' + tankContext.residents.join(', '));
+    }
+    if (tankContext.recentEntries && tankContext.recentEntries.length) {
+      lines.push('Recent log entries:');
+      tankContext.recentEntries.forEach(e => {
+        let entry = '  [' + (e.date || '?') + '] ' + (e.state || '') + ' | care: ' + (e.care || []).join(', ');
+        if (e.obs) entry += '\n    Observed: "' + e.obs + '"';
+        if (e.params) {
+          const ps = [];
+          if (e.params.ph)   ps.push('pH ' + e.params.ph);
+          if (e.params.nh3)  ps.push('NH₃ ' + e.params.nh3);
+          if (e.params.no2)  ps.push('NO₂ ' + e.params.no2);
+          if (e.params.no3)  ps.push('NO₃ ' + e.params.no3);
+          if (e.params.temp) ps.push(e.params.temp + '°C');
+          if (e.params.gh)   ps.push('GH ' + e.params.gh);
+          if (e.params.kh)   ps.push('KH ' + e.params.kh);
+          if (e.params.sg)   ps.push('SG ' + e.params.sg);
+          if (ps.length) entry += '\n    Parameters: ' + ps.join(', ');
+        }
+        lines.push(entry);
+      });
+    }
+    if (lines.length) {
+      ctx = '\n\nKeeper\'s current log context (use this to give personalised responses without requiring re-explanation):\n' + lines.join('\n');
+    }
   }
 
   return `You are Rhyssa, the aquarium companion for Aquatic Rhythm (aquaticrhythm.com). You are not a search engine or a checklist. You are a companion who reads the full picture before suggesting action. You live here — not on ChatGPT. The platform changed; you did not.
