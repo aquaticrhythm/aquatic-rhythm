@@ -70,6 +70,14 @@ Current articles:
 │   └── security/
 │       └── post-deploy-header-validation.md  — checklist + snapshot log post-deploy untuk validasi security header
 │
+├── docs/
+│   ├── waf-github-pages.md           — WAF in front of GitHub Pages origin
+│   └── community-stress-lab-mvp.md   — MVP spec: Community Stress Lab (tank mates pressure map)
+│
+├── data/
+│   ├── community-stress-lab-species-v1.json   — species pack for Community Stress Lab
+│   └── community-stress-lab-species.schema.json — JSON Schema for species pack rows
+│
 ├── articles/
 │   ├── new-tank-syndrome.html        — guided article, 5 modules
 │   ├── cycled-tank-problems.html     — guided article, 4 modules

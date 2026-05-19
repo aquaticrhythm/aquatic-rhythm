@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aquaticrhythm.com/schemas/community-stress-lab-species.schema.json",
+  "title": "Community Stress Lab species pack",
+  "type": "object",
+  "required": ["packId", "packVersion", "species"],
+  "properties": {
+    "packId": { "type": "string", "const": "community-stress-species-v1" },
+    "packVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+    "species": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/species" }
+    }
+  },
+  "$defs": {
+    "species": {
+      "type": "object",
+      "required": [
+        "id",
+        "displayName",
+        "scientificName",
+        "tempMinC",
+        "tempMaxC",
+        "zone",
+        "bodyMmAdult",
+        "mouthPredatorLevel",
+        "finNipper",
+        "schoolingMin",
+        "bioloadUnits",
+        "tags",
+        "citationNote"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "displayName": { "type": "string", "minLength": 1 },
+        "scientificName": { "type": "string", "minLength": 1 },
+        "tempMinC": { "type": "integer" },
+        "tempMaxC": { "type": "integer" },
+        "phMin": { "type": ["number", "null"] },
+        "phMax": { "type": ["number", "null"] },
+        "zone": {
+          "type": "string",
+          "enum": ["surface", "mid", "bottom", "benthic"]
+        },
+        "bodyMmAdult": { "type": "integer", "minimum": 1 },
+        "mouthPredatorLevel": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "finNipper": { "type": "boolean" },
+        "schoolingMin": { "type": ["integer", "null"], "minimum": 2 },
+        "bioloadUnits": { "type": "number", "minimum": 0 },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "citationNote": { "type": "string" },
+        "sources": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
