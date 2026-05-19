@@ -225,29 +225,7 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 
 
 /* BACK BAR */
-.art-back-bar{
-  position:sticky;top:64px;z-index:80;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.5rem clamp(1.5rem,5vw,3rem);
-  background:rgba(3,11,9,.85);
-  border-bottom:1px solid rgba(139,189,210,.08);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-}
-.art-back-link{
-  display:flex;align-items:center;gap:.45rem;
-  text-decoration:none;
-  font-size:.6rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(61,214,232,.66);
-  transition:color .25s;
-}
-.art-back-link:hover{color:rgba(61,214,232,.9)}
-.art-back-arrow{font-size:.75rem}
-.art-back-meta{
-  font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.2);
-}
-@media(max-width:600px){.art-back-meta{display:none}}
+@media(max-width:600px){}
 
 
 /* MODULE PROGRESS BAR */
@@ -340,13 +318,6 @@ canvas.vis-canvas{display:block;width:100%;border-radius:3px}
 <main>
 
 <!-- BACK BAR — always visible -->
-<div class="art-back-bar">
-  <a href="/reading" class="art-back-link">
-    <span class="art-back-arrow">←</span>
-    <span>Reading</span>
-  </a>
-  <span class="art-back-meta">Practical · 7 modules · ~14 min</span>
-</div>
 
 <!-- ARTICLE INTRO -->
 <div class="art-intro">
