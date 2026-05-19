@@ -604,7 +604,7 @@ body.ar-reduce-motion #driftwood-layer{opacity:0!important;transition:opacity .5
 .rd-card--acc.is-expanded .rd-card-chevron{transform:rotate(-135deg);margin-top:.5rem}
 .rd-card-panel{background:rgba(5,12,10,.58);border:1px solid var(--panel-border);border-top:none;border-radius:0 0 12px 12px;margin-top:-1px}
 .rd-card--acc .rd-card-inner{padding:1.05rem 1.15rem .95rem}
-.rd-card-go{display:block;margin:0 .85rem 1rem;padding:.7rem 1rem;text-align:center;text-decoration:none;border-radius:10px}
+.rd-card-go{display:inline-flex;align-items:center;margin:.1rem .85rem .85rem;padding:.45rem .95rem;text-align:center;text-decoration:none;border-radius:8px;font-size:.72rem;letter-spacing:.06em}
 .rd-reading-h1{font-size:clamp(2rem,5.2vw,3.35rem)!important;line-height:1.08!important}
 .rd-card-bar{height:2px;background:linear-gradient(to right,rgba(61,214,232,.5),rgba(157,191,154,.3),transparent)}
 .rd-card-tags{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap}
