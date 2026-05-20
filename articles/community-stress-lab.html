@@ -51,369 +51,199 @@
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
   --accent:#3DD6E8;
+  --accent-dim:#28B8C8;
+  --accent-glow:rgba(61,214,232,0.18);
   --deep:#070f0d;
+  --deep-2:#0c1814;
   --abyss:#050a08;
+  --reader-soft:rgba(233,238,233,.78);
+  --panel:rgba(12,26,20,.82);
   --panel-2:rgba(8,20,16,.92);
-  --panel-shadow:0 10px 36px rgba(0,0,0,.42);
+  --panel-border:rgba(255,255,255,.1);
   --panel-inset:inset 0 1px 0 rgba(255,255,255,.07);
+  --panel-shadow:0 10px 36px rgba(0,0,0,.42);
 }
 html,body{height:100%;overflow:hidden;font-family:var(--sans);background:var(--abyss);color:rgba(235,240,236,.94)}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#052535 0%,#073040 18%,#062a38 38%,#041e28 58%,#030f18 78%,#020810 100%)}
 
-/* ── APP SHELL ── */
-#app{display:grid;grid-template-rows:auto 1fr auto;height:100dvh;max-width:900px;margin:0 auto;padding:0 clamp(.5rem,2vw,1.1rem)}
+/* ── APP (matches Tank Cycle Simulator shell) ── */
+#app{display:grid;grid-template-rows:auto 1fr auto;height:100dvh;max-width:900px;margin:0 auto;padding:0 clamp(.5rem,2vw,1.2rem)}
 
-/* Topbar */
-#topbar{display:flex;align-items:center;justify-content:space-between;padding:.52rem 0 .46rem;border-bottom:1px solid rgba(61,214,232,.16);gap:.5rem;flex-shrink:0}
+/* Topbar — same pattern as tank-simulator */
+#topbar{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0 .48rem;border-bottom:1px solid rgba(61,214,232,.18);gap:.55rem;flex-shrink:0}
 .tb-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity .3s}
 .tb-logo:hover{opacity:.75}
 .tb-logo svg{display:block;width:132px;height:auto}
-.tb-center{display:flex;align-items:center;gap:.45rem;flex:1;justify-content:center;min-width:0;overflow:hidden}
-.t-icon{font-size:1rem;line-height:1;flex-shrink:0;opacity:.8}
-.t-label{font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(235,240,236,.38);flex-shrink:0}
-.t-status{font-family:var(--serif);font-style:italic;font-size:.76rem;color:rgba(235,240,236,.32);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:min(200px,28vw)}
-.tb-right{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
-.btn-sm{font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(235,240,236,.05);border:1px solid rgba(235,240,236,.13);border-radius:100px;padding:.3rem .68rem;cursor:pointer;transition:color .18s,border-color .18s;color:rgba(235,240,236,.52);text-decoration:none;font-family:var(--sans);display:inline-block;white-space:nowrap}
-.btn-sm:hover{color:rgba(235,240,236,.72);border-color:rgba(235,240,236,.28)}
-.btn-sm.btn-accent{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
+.tb-center{display:flex;align-items:center;gap:.5rem;flex:1;justify-content:center;min-width:0;overflow:hidden}
+.t-icon{font-size:1.05rem;line-height:1;flex-shrink:0;opacity:.9}
+.t-label{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(235,240,236,.40);flex-shrink:0}
+.t-status{font-family:var(--serif);font-style:italic;font-size:.78rem;color:rgba(235,240,236,.36);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:min(200px,28vw)}
+.tb-right{display:flex;align-items:center;gap:.4rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.btn-sm{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(235,240,236,.06);border:1px solid rgba(235,240,236,.14);border-radius:100px;padding:.32rem .72rem;cursor:pointer;transition:color .2s,border-color .2s;color:rgba(235,240,236,.56);text-decoration:none;font-family:var(--sans);display:inline-block}
+.btn-sm:hover{color:rgba(235,240,236,.70);border-color:rgba(235,240,236,.30)}
+.btn-sm.btn-accent{color:rgba(61,214,232,.82);border-color:rgba(61,214,232,.32)}
 .btn-sm.btn-accent:hover{color:rgba(61,214,232,.95);border-color:rgba(61,214,232,.5)}
 
-/* ── MAIN CONTENT ── */
-#csl-middle{display:flex;flex-direction:column;min-height:0;overflow:hidden}
-
-/* Tank canvas */
-#csl-tank{flex-shrink:0;display:block;width:100%;height:210px;background:rgba(4,14,20,.92)}
-
-/* Compact lane strip */
-#csl-lanes{
-  flex-shrink:0;display:flex;align-items:center;
-  height:46px;padding:0 .62rem;gap:.38rem;
-  overflow-x:auto;scrollbar-width:none;
-  border-bottom:1px solid rgba(61,214,232,.07);
-  background:rgba(3,10,8,.55);
-}
-#csl-lanes::-webkit-scrollbar{display:none}
-
-.csl-lane{
-  display:flex;align-items:center;gap:.26rem;flex-shrink:0;
-  padding:.2rem .48rem;border-radius:100px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  transition:border-color .2s,background .2s;cursor:default;
-}
-.csl-lane--elevated{border-color:rgba(200,170,60,.32);background:rgba(200,170,60,.08)}
-.csl-lane--high{border-color:rgba(220,90,70,.38);background:rgba(220,90,70,.1)}
-.csl-lane-dot{width:6px;height:6px;border-radius:50%;background:rgba(80,200,120,.72);flex-shrink:0}
-.csl-lane--elevated .csl-lane-dot{background:rgba(200,170,60,.9)}
-.csl-lane--high .csl-lane-dot{background:rgba(220,90,70,.9);box-shadow:0 0 5px rgba(220,90,70,.45);animation:pdot 1.5s ease-in-out infinite}
-@keyframes pdot{0%,100%{opacity:1}50%{opacity:.42}}
-.csl-lane-nm{font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(235,240,236,.45)}
-.csl-lane--elevated .csl-lane-nm{color:rgba(200,170,60,.88)}
-.csl-lane--high .csl-lane-nm{color:rgba(220,120,100,.9)}
-
-/* Findings scroll */
-#csl-scroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:.42rem .62rem .3rem}
-
-/* Findings list — tappable cards */
-#csl-findings{list-style:none;display:flex;flex-direction:column;gap:.3rem}
-.csl-no-findings{
-  text-align:center;font-family:var(--serif);font-style:italic;
-  color:rgba(61,214,232,.2);font-size:.95rem;padding:2.2rem .5rem;
-}
-.csl-finding{
-  display:flex;align-items:center;gap:.48rem;
-  background:rgba(8,22,16,.88);border:1px solid rgba(61,214,232,.1);
-  border-radius:10px;padding:.58rem .68rem;
-  cursor:pointer;-webkit-tap-highlight-color:transparent;
-  transition:border-color .18s,background .18s;
-}
-.csl-finding:hover{border-color:rgba(61,214,232,.26);background:rgba(10,28,20,.95)}
-.csl-finding:focus{outline:none;border-color:rgba(61,214,232,.38)}
-.csl-finding:active{background:rgba(12,32,22,.98)}
-.csl-finding-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:rgba(80,200,120,.65)}
-.csl-finding--elevated .csl-finding-dot{background:rgba(200,170,60,.88)}
-.csl-finding--high .csl-finding-dot{background:rgba(220,90,70,.9);box-shadow:0 0 6px rgba(220,90,70,.4)}
-.csl-finding-text{flex:1;min-width:0}
-.csl-finding-name{display:block;font-size:.8rem;font-weight:500;color:rgba(235,240,236,.82);letter-spacing:.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.csl-finding--high .csl-finding-name{color:rgba(255,158,138,.92)}
-.csl-finding--elevated .csl-finding-name{color:rgba(228,198,118,.88)}
-.csl-finding-sub{display:block;font-size:.7rem;color:rgba(235,240,236,.34);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.csl-finding-arr{flex-shrink:0;color:rgba(61,214,232,.3);font-size:1.05rem;line-height:1}
-
-/* ── BOTTOM PANEL ── */
-#csl-bot{
-  background:rgba(3,10,8,.97);
-  border-top:1px solid rgba(61,214,232,.12);
-  padding:.42rem .62rem calc(.42rem + env(safe-area-inset-bottom,0));
-  flex-shrink:0;
+/* Scrollable lab body */
+#csl-middle{min-height:0;display:flex;flex-direction:column;overflow:hidden}
+#csl-scroll{
+  flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:.5rem 0 1rem;
 }
 
-/* Tank context (collapsible within bottom panel) */
-#csl-ctx{max-height:0;overflow:hidden;transition:max-height .28s ease,opacity .22s;opacity:0}
-#csl-ctx.open{max-height:230px;opacity:1}
-.csl-ctx-inner{
-  padding:.48rem 0 .5rem;display:flex;flex-direction:column;gap:.4rem;
-  border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:.42rem;
+/* Intro + disclaimer (simulator insight / setup-note) */
+.insight-box{
+  background:rgba(61,214,232,.06);border:1px solid rgba(61,214,232,.14);
+  border-radius:12px;padding:.55rem .65rem;margin-bottom:.55rem;
 }
-.csl-ctx-row{display:flex;align-items:center;gap:.48rem}
-.csl-ctx-lbl{font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(235,240,236,.36);flex-shrink:0;width:44px}
-.csl-ctx-row input[type=range]{flex:1;accent-color:var(--accent);min-width:0}
-.csl-ctx-val{
-  font-size:.62rem;letter-spacing:.07em;color:rgba(61,214,232,.82);
-  border:1px solid rgba(61,214,232,.28);padding:.18rem .44rem;
-  border-radius:100px;min-width:3rem;text-align:center;flex-shrink:0;
+.ib-lbl{font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.52);display:block;margin-bottom:.22rem}
+.ib-txt{font-size:.78rem;font-weight:400;color:rgba(235,240,236,.68);line-height:1.55}
+.ib-txt em{font-style:italic;color:rgba(61,214,232,.72)}
+
+.setup-note{
+  padding:.55rem .72rem;margin-bottom:.65rem;
+  background:rgba(80,180,100,.07);border:1px solid rgba(80,180,100,.2);border-radius:12px;
 }
-.csl-seg{display:flex;gap:.18rem}
-.csl-seg-btn{
-  font-size:.52rem;letter-spacing:.07em;text-transform:uppercase;
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-  color:rgba(235,240,236,.42);border-radius:6px;padding:.26rem .55rem;
-  cursor:pointer;font-family:var(--sans);transition:all .18s;
+.setup-note p{font-size:.78rem;font-weight:300;color:rgba(80,180,100,.78);line-height:1.65}
+.setup-note a{color:rgba(61,214,232,.85);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.25)}
+.setup-note a:hover{border-color:rgba(61,214,232,.5)}
+
+/* Section panels — log-box + panel-2 like simulator */
+.csl-section{
+  background:var(--panel-2);border:1px solid rgba(61,214,232,.1);
+  border-radius:12px;padding:.55rem .62rem;margin-bottom:.45rem;
+  box-shadow:var(--panel-shadow),var(--panel-inset);
 }
-.csl-seg-btn.csl-seg-active{
-  background:rgba(61,214,232,.16);border-color:rgba(61,214,232,.42);color:rgba(61,214,232,.9);
+.csl-sh{
+  font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,214,232,.52);
+  display:block;margin-bottom:.48rem;font-weight:500;
+}
+.csl-hint{font-size:.72rem;font-weight:300;color:rgba(235,240,236,.42);line-height:1.55;margin-bottom:.55rem}
+
+/* Volume row — param-bar + pc feel */
+.csl-vol-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.12rem}
+.csl-vol-row label{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(235,240,236,.42)}
+#csl-volume{flex:1;min-width:120px;accent-color:var(--accent)}
+#csl-volume-val{
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(61,214,232,.82);border:1px solid rgba(61,214,232,.35);
+  padding:.28rem .72rem;border-radius:100px;min-width:3.75rem;text-align:center;font-weight:500;
 }
 
-/* Species search row */
-#csl-bot-head{display:flex;gap:.3rem;align-items:center}
+/* Search row — sopt-adjacent controls */
+.csl-search-row{display:flex;gap:.38rem;flex-wrap:wrap;margin-top:.12rem}
 #csl-search{
-  flex:1;min-width:0;background:rgba(6,18,14,.65);
-  border:1px solid rgba(61,214,232,.18);border-radius:10px;
-  padding:.44rem .58rem;color:rgba(235,240,236,.9);font-size:.82rem;font-family:var(--sans);
-  transition:border-color .2s;
+  flex:1;min-width:140px;background:rgba(6,18,14,.55);border:1px solid rgba(61,214,232,.16);
+  border-radius:12px;padding:.52rem .65rem;color:rgba(235,240,236,.9);font-size:.82rem;font-family:var(--sans);
+  transition:border-color .2s,box-shadow .2s;
 }
-#csl-search::placeholder{color:rgba(235,240,236,.26)}
-#csl-search:focus{outline:none;border-color:rgba(61,214,232,.46)}
+#csl-search::placeholder{color:rgba(235,240,236,.28)}
+#csl-search:focus{outline:none;border-color:rgba(61,214,232,.55);box-shadow:0 0 0 2px rgba(61,214,232,.15)}
 #csl-add{
-  font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;
-  background:rgba(61,214,232,.15);border:1px solid rgba(61,214,232,.38);
-  color:rgba(61,214,232,.9);border-radius:8px;padding:.42rem .82rem;
-  cursor:pointer;font-family:var(--sans);flex-shrink:0;min-height:2.35rem;
-  transition:background .18s;
+  font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(61,214,232,.14);border:1px solid rgba(61,214,232,.4);color:rgba(61,214,232,.95);
+  border-radius:100px;padding:.45rem 1rem;cursor:pointer;font-family:var(--sans);transition:background .2s,border-color .2s;
 }
-#csl-add:hover{background:rgba(61,214,232,.24)}
-#csl-ctx-btn{
-  width:35px;height:35px;flex-shrink:0;
-  border-radius:8px;background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  color:rgba(235,240,236,.42);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:border-color .18s,color .18s,background .18s;
-}
-#csl-ctx-btn.active{border-color:rgba(61,214,232,.42);color:rgba(61,214,232,.8);background:rgba(61,214,232,.08)}
+#csl-add:hover{background:rgba(61,214,232,.22);border-color:rgba(61,214,232,.55)}
 
-#csl-status{font-size:.66rem;color:rgba(235,240,236,.36);min-height:.75rem;margin:.16rem 0 .08rem}
+#csl-status{min-height:1.1rem;font-size:.72rem;margin-top:.38rem;color:rgba(235,240,236,.38)}
 
-/* Chips horizontal scroll */
-#csl-chips-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:.28rem;position:relative}
-#csl-chips-scroll::after{content:'';position:absolute;top:0;right:0;height:100%;width:28px;pointer-events:none;background:linear-gradient(to right,rgba(3,10,8,0),rgba(3,10,8,.85))}
-#csl-chips-scroll::-webkit-scrollbar{display:none}
-#csl-chips{display:flex;gap:.28rem;align-items:center;min-height:1.85rem;padding-bottom:.05rem}
-.csl-empty{font-size:.72rem;color:rgba(61,214,232,.2);font-family:var(--serif);font-style:italic;white-space:nowrap}
+/* Chips — pc cards */
+#csl-chips{display:flex;flex-direction:column;gap:.32rem;margin-top:.45rem;min-height:2rem}
+.csl-empty{font-size:.78rem;color:rgba(235,240,236,.38);font-family:var(--serif);font-style:italic}
 .csl-chip{
-  display:flex;align-items:center;gap:.22rem;flex-shrink:0;
-  background:rgba(6,22,18,.9);border:1px solid rgba(61,214,232,.2);
-  border-radius:8px;padding:.26rem .38rem .26rem .5rem;white-space:nowrap;
+  display:flex;align-items:center;flex-wrap:wrap;gap:.45rem;
+  background:rgba(6,22,18,.85);border:1px solid rgba(61,214,232,.15);
+  border-radius:10px;padding:.42rem .55rem;
 }
-.csl-chip-name{font-size:.74rem;color:rgba(235,240,236,.8);max-width:80px;overflow:hidden;text-overflow:ellipsis}
-.csl-chip-ctl{display:flex;align-items:center;gap:.14rem}
-.csl-count{font-size:.7rem;min-width:.9rem;text-align:center;color:rgba(61,214,232,.85);font-variant-numeric:tabular-nums}
+.csl-chip-name{flex:1;font-size:.8rem;color:rgba(235,240,236,.82)}
+.csl-chip-ctl{display:flex;align-items:center;gap:.28rem}
+.csl-count{font-size:.78rem;min-width:1.4rem;text-align:center;color:rgba(61,214,232,.88);font-variant-numeric:tabular-nums}
 .csl-count-btn{
-  width:20px;height:20px;border-radius:4px;
-  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);
-  color:rgba(235,240,236,.7);cursor:pointer;font-size:.82rem;line-height:1;
-  display:flex;align-items:center;justify-content:center;transition:border-color .15s;
+  width:30px;height:30px;border-radius:8px;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);color:rgba(235,240,236,.82);cursor:pointer;font-size:1.05rem;line-height:1;
+  transition:border-color .2s,background .2s;
 }
-.csl-count-btn:hover{border-color:rgba(61,214,232,.4)}
-.csl-remove{
-  width:20px;height:20px;background:none;border:none;
-  color:rgba(220,100,80,.6);cursor:pointer;font-size:.9rem;line-height:1;
-  display:flex;align-items:center;justify-content:center;transition:color .15s;
-}
-.csl-remove:hover{color:rgba(220,100,80,.92)}
+.csl-count-btn:hover{border-color:rgba(61,214,232,.4);background:rgba(61,214,232,.06)}
+.csl-remove{margin-left:auto;background:none;border:none;color:rgba(220,100,80,.72);cursor:pointer;font-size:1.15rem;line-height:1;padding:.15rem;opacity:.85;transition:opacity .2s}
+.csl-remove:hover{opacity:1}
 
-/* ── FINDING DETAIL (bottom sheet) ── */
-#csl-detail{position:fixed;inset:0;z-index:500;display:none}
-#csl-detail.open{display:block}
-.csl-detail-bd{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px)}
-.csl-detail-sheet{
-  position:absolute;bottom:0;left:0;right:0;
-  max-width:900px;margin:0 auto;
-  background:rgba(4,14,12,.98);
-  border-top:1px solid rgba(61,214,232,.2);
-  border-radius:16px 16px 0 0;
-  padding:1rem 1.1rem calc(1.1rem + env(safe-area-inset-bottom,0));
-  max-height:78vh;overflow-y:auto;
-  transform:translateY(100%);
-  transition:transform .3s cubic-bezier(.22,1,.36,1);
+/* Lanes — Tank Builder rhythm meter look */
+#csl-lanes{display:flex;flex-direction:column;gap:.38rem}
+.csl-lane{display:flex;flex-direction:column;gap:.18rem}
+.csl-lane-head{display:flex;align-items:center;justify-content:space-between;width:100%;gap:.5rem}
+.csl-lane-name{
+  font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(235,240,236,.5);
+  flex:1;min-width:0;
 }
-#csl-detail.open .csl-detail-sheet{transform:translateY(0)}
-.csl-detail-handle{
-  width:36px;height:4px;border-radius:2px;
-  background:rgba(255,255,255,.14);margin:0 auto .8rem;display:block;
+.csl-lane-meter{flex:1;display:flex;align-items:center;width:100%}
+.csl-lane-track{
+  flex:1;height:6px;background:rgba(235,240,236,.1);border-radius:4px;overflow:hidden;min-width:48px;
 }
-.csl-detail-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
-.csl-detail-badge{
-  font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;
-  padding:.18rem .6rem;border-radius:100px;font-weight:600;
+.csl-lane-fill{
+  display:block;height:100%;border-radius:4px;background:rgba(80,200,120,.55);
+  transition:width .35s ease,background .25s;
 }
-.csl-detail-badge--high{background:rgba(220,90,70,.18);color:rgba(255,158,138,.92);border:1px solid rgba(220,90,70,.28)}
-.csl-detail-badge--elevated{background:rgba(200,170,60,.16);color:rgba(228,200,120,.9);border:1px solid rgba(200,170,60,.28)}
-.csl-detail-badge--low,.csl-detail-badge--info{background:rgba(61,214,232,.08);color:rgba(61,214,232,.72);border:1px solid rgba(61,214,232,.18)}
-.csl-detail-close{
-  width:30px;height:30px;border-radius:50%;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  color:rgba(235,240,236,.62);cursor:pointer;font-size:1rem;line-height:1;
-  display:flex;align-items:center;justify-content:center;transition:color .18s;
+.csl-lane--elevated .csl-lane-fill{background:rgba(200,170,60,.78);width:55%!important}
+.csl-lane--high .csl-lane-fill{background:rgba(220,90,70,.82);width:92%!important}
+.csl-lane-lbl{
+  flex-shrink:0;width:4.25rem;text-align:right;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(235,240,236,.38);
 }
-.csl-detail-close:hover{color:rgba(235,240,236,.9)}
-.csl-detail-h2{
-  font-family:var(--serif);font-weight:400;
-  font-size:1.14rem;color:rgba(235,240,236,.92);line-height:1.3;margin-bottom:.58rem;
+.csl-lane--elevated .csl-lane-lbl{color:rgba(200,170,60,.88)}
+.csl-lane--high .csl-lane-lbl{color:rgba(220,120,100,.92)}
+
+/* Findings — log entries */
+#csl-findings{list-style:none}
+.csl-finding{margin-bottom:.65rem;padding-bottom:.62rem;border-bottom:1px solid rgba(235,240,236,.06)}
+.csl-finding:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.csl-finding strong{display:block;font-size:.8rem;font-weight:500;margin-bottom:.28rem;color:rgba(235,240,236,.88);letter-spacing:.02em}
+.csl-finding p{font-size:.74rem;color:rgba(235,240,236,.52);font-weight:300;line-height:1.55}
+.csl-finding--high strong{color:rgba(255,160,140,.95)}
+.csl-finding--elevated strong{color:rgba(230,200,120,.88)}
+.csl-finding--low strong{color:rgba(124,168,156,.72)}
+
+#csl-checklist{padding-left:1rem;margin:0}
+#csl-checklist li{margin-bottom:.38rem;font-size:.74rem;color:rgba(235,240,236,.52);line-height:1.5}
+
+/* Bottom bar — bbar rhythm from simulator */
+#csl-bbar{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;
+  padding:.4rem 0 calc(.48rem + env(safe-area-inset-bottom,0));
+  border-top:1px solid rgba(61,214,232,.12);flex-shrink:0;
 }
-.csl-detail-desc{
-  font-size:.83rem;font-weight:300;color:rgba(235,240,236,.54);
-  line-height:1.65;margin-bottom:.88rem;
-}
-.csl-detail-ara{
-  background:rgba(61,214,232,.04);border:1px solid rgba(61,214,232,.1);
-  border-radius:8px;padding:.68rem .82rem;margin-bottom:.78rem;
-}
-.csl-detail-ara-eye,.csl-detail-tips-eye{
-  font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(61,214,232,.46);display:block;margin-bottom:.38rem;
-}
-.csl-detail-tips-eye{color:rgba(157,191,154,.52)}
-#csl-detail-ara-p{
-  font-size:.82rem;font-weight:300;color:rgba(235,240,236,.6);
-  line-height:1.72;font-family:var(--serif);font-style:italic;
-}
-#csl-detail-tips-list{padding-left:1.1rem;margin:0}
-#csl-detail-tips-list li{
-  font-size:.78rem;color:rgba(235,240,236,.5);
-  line-height:1.58;margin-bottom:.3rem;font-weight:300;
+#csl-bbar .btn-sm{white-space:nowrap}
+
+.csl-foot{
+  margin-top:.85rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.05);
+  font-size:.68rem;color:rgba(235,240,236,.28);font-style:italic;font-family:var(--serif);text-align:center;line-height:1.55;
 }
 
-/* ── WELCOME OVERLAY ── */
-#csl-welcome{
-  position:fixed;inset:0;z-index:600;
-  background:rgba(2,8,14,.97);
-  display:flex;align-items:flex-start;justify-content:center;
-  padding:max(3.5rem,env(safe-area-inset-top,3.5rem)) 1.2rem 2rem;
-  overflow-y:auto;transition:opacity .4s;
-}
-.cslw-inner{max-width:520px;width:100%;padding:1.8rem clamp(.9rem,4vw,2.2rem) 3rem}
-.cslw-eye{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(61,214,232,.5);display:block;margin-bottom:1rem}
-.cslw-h1{font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,5vw,2.6rem);color:rgba(235,240,236,.92);line-height:1.1;margin-bottom:1.1rem}
-.cslw-h1 em{font-style:italic;color:rgba(61,214,232,.76)}
-.cslw-body{font-size:.88rem;font-weight:300;color:rgba(235,240,236,.52);line-height:1.8;margin-bottom:1.2rem}
-.cslw-body em{font-style:italic;color:rgba(61,214,232,.7)}
-.cslw-grid{display:grid;grid-template-columns:1fr 1fr;gap:.48rem;margin-bottom:1.15rem}
-.cslw-cell{padding:.58rem .7rem;background:rgba(6,18,14,.52);border:1px solid rgba(61,214,232,.09);border-radius:8px}
-.cslw-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:.36rem;vertical-align:middle}
-.cslw-lname{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(235,240,236,.7);font-weight:500}
-.cslw-ldesc{display:block;margin-top:.18rem;font-size:.79rem;font-weight:300;color:rgba(235,240,236,.36);font-family:var(--serif);font-style:italic;line-height:1.42}
-.cslw-disclaimer{
-  padding:.6rem .72rem;margin-bottom:1.35rem;
-  background:rgba(80,180,100,.06);border:1px solid rgba(80,180,100,.15);
-  border-radius:8px;font-size:.78rem;font-weight:300;color:rgba(80,180,100,.72);line-height:1.65;
-}
-.cslw-disclaimer a{color:rgba(61,214,232,.8);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.22)}
-.cslw-note{font-size:.74rem;color:rgba(235,240,236,.24);font-style:italic;font-family:var(--serif);line-height:1.65;margin-bottom:1.8rem;padding-left:.8rem;border-left:1px solid rgba(255,255,255,.07)}
-.cslw-btn{
-  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  background:rgba(61,214,232,.9);color:#fff;border:1px solid rgba(61,214,232,.5);
-  padding:.8rem 1.9rem;border-radius:4px;cursor:pointer;
-  font-family:var(--sans);transition:background .25s,transform .2s;display:inline-block;
-}
-.cslw-btn:hover{background:rgba(65,168,152,.95);transform:translateY(-1px)}
-@media(max-width:420px){.cslw-grid{grid-template-columns:1fr}}
+code{font-size:.74rem;color:rgba(61,214,232,.7)}
 
-/* ── ROOT WIDTH FIX ── */
-#csl-root{width:100%;min-width:0}
-
-/* ── QUICK-START CARDS ── */
-.csl-qs-wrap{padding:.6rem 0 .3rem}
-.csl-qs-label{font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(235,240,236,.22);display:block;margin-bottom:.48rem}
-.csl-qs-cards{display:flex;flex-direction:column;gap:.3rem}
-.csl-qs-card{display:flex;align-items:center;gap:.5rem;background:rgba(6,18,14,.72);border:1px solid rgba(61,214,232,.1);border-radius:10px;padding:.55rem .68rem;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .18s,background .18s}
-.csl-qs-card:hover{border-color:rgba(61,214,232,.26);background:rgba(10,26,20,.9)}
-.csl-qs-card-icon{font-size:1.15rem;flex-shrink:0;line-height:1}
-.csl-qs-card-text{flex:1;min-width:0}
-.csl-qs-card-name{display:block;font-size:.8rem;font-weight:500;color:rgba(235,240,236,.72);letter-spacing:.01em}
-.csl-qs-card-hint{display:block;font-size:.7rem;color:rgba(235,240,236,.28);font-family:var(--serif);font-style:italic;margin-top:.08rem}
-.csl-qs-card-arr{color:rgba(61,214,232,.25);font-size:1rem;flex-shrink:0}
-
-/* ── ALL-CLEAR STATE ── */
-.csl-all-clear{display:flex;align-items:flex-start;gap:.62rem;background:rgba(61,214,232,.03);border:1px solid rgba(61,214,232,.1);border-radius:10px;padding:.88rem .82rem;list-style:none}
-.csl-ac-icon{font-size:1.4rem;color:rgba(61,214,232,.3);flex-shrink:0;line-height:1;padding-top:.05rem}
-.csl-ac-text{flex:1;min-width:0}
-.csl-ac-title{display:block;font-size:.82rem;font-weight:500;color:rgba(61,214,232,.62);margin-bottom:.28rem}
-.csl-ac-body{display:block;font-size:.76rem;font-weight:300;color:rgba(235,240,236,.36);font-family:var(--serif);font-style:italic;line-height:1.65}
-
-/* ── CTX BUTTON PULSE (first-visit hint) ── */
-#csl-ctx-btn:not(.active){animation:ctxpulse 3s ease-in-out 1.5s 2}
-@keyframes ctxpulse{0%,100%{border-color:rgba(255,255,255,.1);box-shadow:none}50%{border-color:rgba(61,214,232,.38);box-shadow:0 0 0 3px rgba(61,214,232,.08)}}
-
-/* ── MOBILE ── */
+/* Mobile — align with tank-simulator breakpoints */
 @media(max-width:600px){
-  #app{padding:0;max-width:none}
-  #topbar{padding:.5rem .62rem .44rem}
-  .tb-logo svg{width:148px;max-width:46vw}
+  #app{display:flex;flex-direction:column;height:100dvh;padding:0;gap:0;max-width:none}
+  #topbar{flex-shrink:0;padding:.52rem .65rem .48rem;gap:.4rem}
+  .tb-logo svg{width:148px;height:auto;max-width:46vw}
   .t-status{display:none}
-  .tb-center{gap:.36rem;justify-content:flex-start;flex:1}
-  .t-label{font-size:.52rem}
-  .tb-right{gap:.28rem;flex-wrap:nowrap}
-  .btn-sm{padding:.3rem .55rem!important;font-size:.58rem!important;min-height:2.3rem}
-  #csl-tank{height:185px}
-  #csl-scroll{padding:.38rem .58rem .3rem}
-  #csl-bot{padding:.38rem .58rem calc(.4rem + env(safe-area-inset-bottom,0))}
+  .tb-center{gap:.38rem;justify-content:flex-start;flex:1;min-width:0}
+  .t-label{font-size:.54rem;letter-spacing:.1em}
+  .tb-right{gap:.32rem;flex-wrap:nowrap}
+  .btn-sm{padding:.34rem .58rem!important;font-size:.6rem!important;min-height:2.35rem}
+  #csl-scroll{padding:.45rem .65rem 1rem}
+  .csl-section{border-radius:10px;padding:.48rem .55rem}
+  .csl-lane-name{flex-basis:auto}
+  .csl-lane-meter{width:100%}
+  #csl-bbar{
+    flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    justify-content:flex-start;padding:.32rem .65rem calc(.35rem + env(safe-area-inset-bottom,0));
+    scrollbar-width:thin;
+  }
+  #csl-bbar::-webkit-scrollbar{height:3px}
 }
 </style>
 </head>
 <body>
-
-<!-- Welcome overlay -->
-<div id="csl-welcome" role="dialog" aria-modal="true" aria-labelledby="cslw-title">
-  <div class="cslw-inner">
-    <span class="cslw-eye">Aquatic Rhythm Lab</span>
-    <h1 class="cslw-h1" id="cslw-title">Community<br><em>Stress Lab</em></h1>
-    <p class="cslw-body">Map <em>overlapping pressures</em> when mixing freshwater species — thermal window, chemistry, space &amp; load, predation, social tension, and invert safety. A planning lens, not a compatibility verdict.</p>
-    <div class="cslw-grid">
-      <div class="cslw-cell"><span class="cslw-dot" style="background:rgba(230,115,45,.9)"></span><span class="cslw-lname">Thermal</span><span class="cslw-ldesc">Temperature window overlap</span></div>
-      <div class="cslw-cell"><span class="cslw-dot" style="background:rgba(61,214,232,.82)"></span><span class="cslw-lname">Chemistry</span><span class="cslw-ldesc">pH range compatibility</span></div>
-      <div class="cslw-cell"><span class="cslw-dot" style="background:rgba(100,200,82,.8)"></span><span class="cslw-lname">Space</span><span class="cslw-ldesc">Bioload vs. tank volume</span></div>
-      <div class="cslw-cell"><span class="cslw-dot" style="background:rgba(218,78,62,.9)"></span><span class="cslw-lname">Predation</span><span class="cslw-ldesc">Mouth-to-body size risk</span></div>
-      <div class="cslw-cell"><span class="cslw-dot" style="background:rgba(200,162,52,.88)"></span><span class="cslw-lname">Social</span><span class="cslw-ldesc">Nipping, schooling, territory</span></div>
-      <div class="cslw-cell"><span class="cslw-dot" style="background:rgba(118,192,224,.82)"></span><span class="cslw-lname">Inverts</span><span class="cslw-ldesc">Shrimp and snail safety</span></div>
-    </div>
-    <div class="cslw-disclaimer">Simplified ranges only. Does not predict individual behaviour, aggression, or disease. Your real tank and daily observations always come first — use the <a href="/journal">Keeper's Log</a> for what actually happens at home.</div>
-    <p class="cslw-note">No compatibility score — pressures, not predictions.</p>
-    <button class="cslw-btn" id="csl-welcome-enter">Enter the lab &#x2192;</button>
-  </div>
-</div>
-
-<!-- Finding detail bottom sheet -->
-<div id="csl-detail" aria-hidden="true">
-  <div class="csl-detail-bd" id="csl-detail-bd"></div>
-  <div class="csl-detail-sheet">
-    <span class="csl-detail-handle"></span>
-    <div class="csl-detail-head">
-      <span class="csl-detail-badge" id="csl-detail-badge"></span>
-      <button class="csl-detail-close" id="csl-detail-close" aria-label="Close">&#x00D7;</button>
-    </div>
-    <h2 class="csl-detail-h2" id="csl-detail-title"></h2>
-    <p class="csl-detail-desc" id="csl-detail-desc"></p>
-    <div class="csl-detail-ara">
-      <span class="csl-detail-ara-eye">ARA perspective</span>
-      <p id="csl-detail-ara-p"></p>
-    </div>
-    <div id="csl-detail-tips-wrap">
-      <span class="csl-detail-tips-eye">What to watch</span>
-      <ul id="csl-detail-tips-list"></ul>
-    </div>
-  </div>
-</div>
-
 <div id="app">
   <div id="topbar">
     <a href="/" class="tb-logo" aria-label="Aquatic Rhythm" data-analytics-event="csl_nav_home" data-cta="logo">
@@ -431,65 +261,76 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     </a>
     <div class="tb-center">
       <span class="t-icon" aria-hidden="true">◇</span>
-      <span class="t-label">Stress Lab</span>
-      <span class="t-status">Pressure map · educational</span>
+      <span class="t-label">Community Stress Lab</span>
+      <span class="t-status">Pressure map · educational MVP</span>
     </div>
     <div class="tb-right">
       <a href="/tools" class="btn-sm btn-accent" data-analytics-event="csl_nav_tools" data-cta="tools">Tools</a>
       <a href="/journal" class="btn-sm" data-analytics-event="csl_nav_journal" data-cta="journal">Log</a>
-      <a href="/articles/community-fish-tank" class="btn-sm" data-analytics-event="csl_nav_article" data-cta="community_fish_tank">&#x2190; Article</a>
+      <a href="/articles/community-fish-tank" class="btn-sm" data-analytics-event="csl_nav_article" data-cta="community_fish_tank">← Article</a>
     </div>
   </div>
 
   <div id="csl-middle">
-    <canvas id="csl-tank" aria-hidden="true"></canvas>
-    <div id="csl-lanes" aria-label="Pressure overview"></div>
     <div id="csl-scroll">
-      <div id="csl-root" data-pack="/data/community-stress-lab-species-v1.json">
-        <ul id="csl-findings" aria-live="polite"></ul>
+      <div class="insight-box">
+        <span class="ib-lbl">What this lab does</span>
+        <p class="ib-txt">Map <em>overlapping pressures</em> for a hypothetical freshwater mix — thermal window, chemistry, space/load, predation, social tension, and dwarf shrimp safety. For planning and learning, not for declaring fish “compatible.”</p>
       </div>
+
+      <div class="setup-note" role="note">
+        <p>Simplified ranges and rules only. Does not predict individual behaviour, aggression, or disease. Your real tank and your observations come first — use the <a href="/journal">Keeper’s Log</a> for what actually happens at home.</p>
+      </div>
+
+      <div id="csl-root" data-pack="/data/community-stress-lab-species-v1.json">
+        <div class="csl-section">
+          <span class="csl-sh">Tank context</span>
+          <div class="csl-vol-row">
+            <label for="csl-volume">Volume</label>
+            <input type="range" id="csl-volume" min="20" max="240" value="80" step="5" aria-valuemin="20" aria-valuemax="240" aria-valuenow="80">
+            <span id="csl-volume-val" aria-live="polite">80 L</span>
+          </div>
+        </div>
+
+        <div class="csl-section">
+          <span class="csl-sh">Species</span>
+          <p class="csl-hint">Up to 6 species · 24 individuals total. Search by name or id (e.g. <code>neon_tetra</code>).</p>
+          <div class="csl-search-row">
+            <input type="search" id="csl-search" list="csl-species-datalist" placeholder="Search species…" autocomplete="off" aria-label="Search species to add">
+            <datalist id="csl-species-datalist"></datalist>
+            <button type="button" id="csl-add">Add</button>
+          </div>
+          <div id="csl-status" aria-live="polite"></div>
+          <div id="csl-chips"></div>
+        </div>
+
+        <div class="csl-section">
+          <span class="csl-sh">Pressure map</span>
+          <div id="csl-lanes" aria-label="Pressure by category"></div>
+        </div>
+
+        <div class="csl-section">
+          <span class="csl-sh">Findings</span>
+          <ul id="csl-findings"></ul>
+        </div>
+
+        <div class="csl-section">
+          <span class="csl-sh">Observation checklist</span>
+          <ul id="csl-checklist"></ul>
+        </div>
+      </div>
+
+      <p class="csl-foot">Aligned with living systems. All tools grow from ARA — they simulate and plan, but they do not replace observation.</p>
     </div>
   </div>
 
-  <div id="csl-bot">
-    <div id="csl-ctx">
-      <div class="csl-ctx-inner">
-        <div class="csl-ctx-row">
-          <label class="csl-ctx-lbl" for="csl-volume">Volume</label>
-          <input type="range" id="csl-volume" min="20" max="240" value="80" step="5" aria-valuemin="20" aria-valuemax="240" aria-valuenow="80">
-          <span id="csl-volume-val" class="csl-ctx-val">80 L</span>
-        </div>
-        <div class="csl-ctx-row">
-          <label class="csl-ctx-lbl" for="csl-temp">Heater</label>
-          <input type="range" id="csl-temp" min="22" max="32" value="26" step="1" aria-valuemin="22" aria-valuemax="32" aria-valuenow="26">
-          <span id="csl-temp-val" class="csl-ctx-val">26 &#x00B0;C</span>
-        </div>
-        <div class="csl-ctx-row">
-          <span class="csl-ctx-lbl">Plants</span>
-          <div class="csl-seg" id="csl-plants" role="group" aria-label="Plant cover">
-            <button class="csl-seg-btn" data-val="low">Low</button>
-            <button class="csl-seg-btn csl-seg-active" data-val="med">Medium</button>
-            <button class="csl-seg-btn" data-val="high">High</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="csl-bot-head">
-      <input type="search" id="csl-search" list="csl-species-datalist" placeholder="Search species&#x2026;" autocomplete="off" aria-label="Search species to add">
-      <datalist id="csl-species-datalist"></datalist>
-      <button type="button" id="csl-add">Add</button>
-      <button type="button" id="csl-ctx-btn" aria-label="Tank context" title="Tank context">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <circle cx="8" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <div id="csl-status" aria-live="polite"></div>
-    <div id="csl-chips-scroll">
-      <div id="csl-chips"></div>
-    </div>
-  </div>
+  <nav id="csl-bbar" aria-label="Related guides">
+    <a href="/articles/community-fish-tank" class="btn-sm" data-analytics-event="csl_link_community_article" data-cta="community_fish_tank">Community fish</a>
+    <a href="/articles/adding-new-fish" class="btn-sm" data-analytics-event="csl_link_adding_fish" data-cta="adding_new_fish">Adding fish</a>
+    <a href="/articles/tank-builder" class="btn-sm" data-analytics-event="csl_link_tank_builder" data-cta="tank_builder">Tank Builder</a>
+    <a href="/articles/tank-simulator" class="btn-sm" data-analytics-event="csl_link_tank_sim" data-cta="tank_simulator">Cycle simulator</a>
+    <a href="/ara" class="btn-sm btn-accent" data-analytics-event="csl_link_ara" data-cta="ara">ARA</a>
+  </nav>
 </div>
 
 <script src="/js/community-stress-lab.js" defer></script>
