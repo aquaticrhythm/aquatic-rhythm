@@ -165,6 +165,10 @@
         if (saved && saved.side) {
           currentSide = saved.side;
           applyPos(saved.side, clamp(saved.bottom));
+          /* Restore idle state immediately — don't wait 4s after page load */
+          clearTimeout(idleTimer);
+          fab.dataset.side = currentSide;
+          fab.classList.add('idle');
         }
       } catch (e) {}
     }

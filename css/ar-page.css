@@ -36,6 +36,11 @@ nav:not(.bnav){position:fixed;top:0;left:0;right:0;z-index:800;height:68px;displ
 .nmob a{display:block;padding:.95rem 0;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.74);text-decoration:none;transition:color .25s,padding-left .3s var(--ease)}
 .nmob a:hover{color:rgba(61,214,232,.96);padding-left:.5rem}
 
+/* Match SPA nav padding reduction at mid-viewport widths */
+@media(max-width:1024px){
+  nav:not(.bnav){padding:0 clamp(1.1rem,3.5vw,2.2rem)}
+}
+
 /* Show hamburger at intermediate widths; bottom nav handles mobile */
 @media(max-width:960px){
   .nlinks{display:none}
