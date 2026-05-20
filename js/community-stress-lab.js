@@ -199,7 +199,7 @@
         var bb = speciesById[picks[pj].id];
         if (!a || !bb) continue;
         if ((a.mouthPredatorLevel || 0) < 2) continue;
-        if ((bb.bodyMmAdult || 999) > 35) continue;
+        if ((bb.bodyMmAdult || 999) > 45) continue;
         var sev = (a.mouthPredatorLevel >= 3 && bb.bodyMmAdult <= 30) ? 'high' : 'elevated';
         findings.push({
           id: 'R_PREDATION_' + a.id + '_' + bb.id,
@@ -213,7 +213,9 @@
 
     var shrimpLike = false;
     for (var sh = 0; sh < picks.length; sh++) {
-      if (picks[sh].id === 'cherry_shrimp' || picks[sh].id === 'amano_shrimp') {
+      var shr = speciesById[picks[sh].id];
+      if (!shr) continue;
+      if (isInvert(shr) && !hasTag(shr, 'snail') && (shr.bodyMmAdult || 999) <= 55) {
         shrimpLike = true;
         break;
       }
@@ -294,6 +296,19 @@
     }
 
     var bettaMale = picks.some(function (x) { return x.id === 'betta_male'; });
+    var bettaMaleCount = 0;
+    for (var bm = 0; bm < picks.length; bm++) {
+      if (picks[bm].id === 'betta_male') bettaMaleCount += picks[bm].count || 0;
+    }
+    if (bettaMaleCount > 1) {
+      findings.push({
+        id: 'R_BETTA_MALE_MULTI',
+        title: 'Multiple male bettas — fighting near-certain',
+        body: 'Male bettas are strongly territorial and will fight if housed together. Fin damage, stress, and death are the typical outcome in all but very large, heavily-divided setups.',
+        severity: 'high',
+        lanes: ['social']
+      });
+    }
     if (bettaMale) {
       var fast = picks.some(function (x) {
         var sx = speciesById[x.id];
@@ -309,7 +324,9 @@
         });
       }
       var gourami = picks.some(function (x) {
-        return x.id === 'dwarf_gourami' || x.id === 'pearl_gourami' || x.id === 'honey_gourami';
+        if (x.id === 'betta_male') return false;
+        var sx2 = speciesById[x.id];
+        return sx2 && hasTag(sx2, 'labyrinth');
       });
       if (gourami) {
         findings.push({
@@ -341,7 +358,7 @@
     var discusHere = picks.some(function (x) { return x.id === 'discus'; });
     if (discusHere) {
       var clash = picks.some(function (x) {
-        return x.id === 'goldfish' || x.id === 'zebra_danio' || x.id === 'tiger_barb' || x.id === 'mbuna_generic';
+        return x.id === 'goldfish' || x.id === 'zebra_danio' || x.id === 'tiger_barb' || x.id === 'mbuna_generic' || x.id === 'molly';
       });
       if (clash) {
         findings.push({
@@ -352,6 +369,85 @@
           lanes: ['chemistry', 'social']
         });
       }
+    }
+
+    // R_SNAIL_LOACH: snails with snail-eating or aggressive species
+    var snailPresent = false;
+    var mysterySnailPresent = false;
+    for (var sl = 0; sl < picks.length; sl++) {
+      var slS = speciesById[picks[sl].id];
+      if (slS && hasTag(slS, 'snail') && isInvert(slS)) {
+        snailPresent = true;
+        if (picks[sl].id === 'mystery_snail') mysterySnailPresent = true;
+      }
+    }
+    if (snailPresent) {
+      for (var sl2 = 0; sl2 < picks.length; sl2++) {
+        var slF = speciesById[picks[sl2].id];
+        if (!slF || hasTag(slF, 'snail')) continue;
+        if (hasTag(slF, 'snail_eater')) {
+          findings.push({
+            id: 'R_SNAIL_LOACH',
+            title: 'Snails with snail-eating species',
+            body: 'Loaches and similar fish actively hunt snails — snail populations will likely decline over time.',
+            severity: 'info',
+            lanes: ['inverts']
+          });
+          break;
+        }
+      }
+      if (mysterySnailPresent) {
+        for (var sl3 = 0; sl3 < picks.length; sl3++) {
+          var slA = speciesById[picks[sl3].id];
+          if (slA && (hasTag(slA, 'cichlid_aggressive') || hasTag(slA, 'mbuna'))) {
+            findings.push({
+              id: 'R_SNAIL_LOACH_CICHLID',
+              title: 'Mystery snail with aggressive cichlid',
+              body: 'Aggressive cichlids may harass or injure mystery snails — antennas and soft parts are vulnerable.',
+              severity: 'elevated',
+              lanes: ['inverts']
+            });
+            break;
+          }
+        }
+      }
+    }
+
+    // R_INVERT_ASSASSIN: assassin snail with small soft-bodied inverts
+    var assassinPresent = picks.some(function (x) { return x.id === 'assassin_snail'; });
+    if (assassinPresent) {
+      for (var ai = 0; ai < picks.length; ai++) {
+        var aiS = speciesById[picks[ai].id];
+        if (!aiS || picks[ai].id === 'assassin_snail') continue;
+        if (isInvert(aiS) && !hasTag(aiS, 'snail')) {
+          findings.push({
+            id: 'R_INVERT_ASSASSIN',
+            title: 'Assassin snail with small inverts',
+            body: 'Assassin snails prey on pest snails and may also take dwarf shrimp, especially juveniles — monitor closely in a mixed invert setup.',
+            severity: 'elevated',
+            lanes: ['inverts']
+          });
+          break;
+        }
+      }
+    }
+
+    // R_ZONE_BENTHIC_CROWD: multiple heavy benthic/bottom species in a small tank
+    var benthicSpp = [];
+    for (var zb = 0; zb < picks.length; zb++) {
+      var zbS = speciesById[picks[zb].id];
+      if (zbS && (zbS.zone === 'benthic' || zbS.zone === 'bottom') && (zbS.bioloadUnits || 0) >= 2) {
+        benthicSpp.push(zbS.displayName);
+      }
+    }
+    if (benthicSpp.length >= 2 && volumeL < SMALL_TANK_L) {
+      findings.push({
+        id: 'R_ZONE_BENTHIC_CROWD',
+        title: 'Multiple bottom-dwellers in a small tank',
+        body: 'Several benthic species (' + benthicSpp.join(', ') + ') compete for substrate territory — friction increases in tanks under ' + SMALL_TANK_L + ' L.',
+        severity: 'elevated',
+        lanes: ['space', 'social']
+      });
     }
 
     dedupeFindings(findings);
