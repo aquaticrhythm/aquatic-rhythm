@@ -569,12 +569,55 @@ details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba
   .ab.ar-pulse,.ab.ar-warn,.ab.ar-stop{animation:none!important}
   #tsurf{animation:none!important}
 }
+
+/* ── BRIEFING (design identity — matches tank-builder) ── */
+#briefing{position:fixed;inset:0;z-index:500;background:rgba(2,8,14,.97);display:flex;align-items:flex-start;justify-content:center;padding-top:max(4rem,env(safe-area-inset-top,4rem));padding-left:1.2rem;padding-right:1.2rem;padding-bottom:2rem;overflow-y:auto;transition:opacity .5s}
+.brief-inner{max-width:540px;width:100%;padding:2rem clamp(1.2rem,4vw,2.5rem) 3rem}
+.brief-eyebrow{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(157,191,154,.7);display:block;margin-bottom:1.2rem}
+.brief-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,4.5vw,2.5rem);color:rgba(235,240,236,.92);line-height:1.1;margin-bottom:1.4rem}
+.brief-title em{font-style:italic;color:rgba(61,214,232,.74)}
+.brief-body{font-size:.92rem;font-weight:300;color:rgba(235,240,236,.56);line-height:1.8;margin-bottom:1.4rem}
+.brief-rhythms{display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.4rem;padding:1rem 1.2rem;background:rgba(6,18,14,.5);border:1px solid rgba(139,189,210,.08);border-radius:2px}
+.brief-rhy-item{display:flex;align-items:flex-start;gap:.7rem}
+.brief-rhy-name{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;flex-shrink:0;width:100px}
+.brief-rhy-desc{font-size:.82rem;font-weight:300;color:rgba(235,240,236,.46);font-family:var(--serif);font-style:italic;line-height:1.55}
+.brief-note{font-size:.78rem;color:rgba(235,240,236,.30);font-style:italic;font-family:var(--serif);line-height:1.65;margin-bottom:2rem;padding-left:.9rem;border-left:1px solid rgba(255,255,255,.1)}
+.brief-btn{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(61,214,232,.92);color:#fff;border:1px solid rgba(61,214,232,.54);padding:.85rem 2.2rem;border-radius:2px;cursor:pointer;font-family:var(--sans);transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
+.brief-btn:hover{background:rgba(110,165,155,.95);transform:translateY(-1px)}
 </style>
 </head>
 <body>
 
+<!-- ── BRIEFING (design identity — matches tank-builder) ── -->
+<div id="briefing">
+  <div class="brief-inner">
+    <span class="brief-eyebrow">Aquatic Rhythm Lab</span>
+    <h1 class="brief-title">Cycle your<br><em>first tank.</em></h1>
+    <p class="brief-body">Every new aquarium goes through the same invisible process — bacteria slowly building up, ammonia and nitrite rising then falling, the water finding its balance. Choose your setup and watch it happen at your own pace.</p>
+    <div class="brief-rhythms">
+      <div class="brief-rhy-item"><span class="brief-rhy-name" style="color:rgba(220,80,60,.8)">Ammonia</span><span class="brief-rhy-desc">Fish waste breaks down into toxic ammonia — the cycle begins here</span></div>
+      <div class="brief-rhy-item"><span class="brief-rhy-name" style="color:rgba(200,160,40,.8)">Nitrite</span><span class="brief-rhy-desc">Bacteria convert ammonia — nitrite rises before it falls</span></div>
+      <div class="brief-rhy-item"><span class="brief-rhy-name" style="color:rgba(100,200,82,.7)">Nitrate</span><span class="brief-rhy-desc">The safer end product — removed with regular water changes</span></div>
+      <div class="brief-rhy-item"><span class="brief-rhy-name" style="color:rgba(61,214,232,.74)">Bacteria</span><span class="brief-rhy-desc">The colony that drives the cycle — needs time to establish</span></div>
+      <div class="brief-rhy-item"><span class="brief-rhy-name" style="color:rgba(139,189,210,.7)">Fish</span><span class="brief-rhy-desc">Optional from day one — higher stakes, closer attention needed</span></div>
+    </div>
+    <p class="brief-note">A simplified model for learning — real tanks vary. Use this to understand the process, not predict exact timelines.</p>
+    <button class="brief-btn" id="btn-briefing-enter">Set up your simulation &#x2192;</button>
+  </div>
+</div>
+<script>
+(function(){
+  document.getElementById('btn-briefing-enter').addEventListener('click',function(){
+    var b=document.getElementById('briefing');
+    b.style.opacity='0';b.style.pointerEvents='none';
+    setTimeout(function(){b.style.display='none'},500);
+    document.getElementById('ov-setup').classList.remove('hide');
+  });
+})();
+</script>
+
 <!-- ── SETUP OVERLAY ── -->
-<div class="ov" id="ov-setup" style="align-items:flex-start;padding:1rem">
+<div class="ov hide" id="ov-setup" style="align-items:flex-start;padding:1rem">
   <div class="oc" style="max-width:440px;text-align:left;margin-top:auto;margin-bottom:auto;width:100%">
     <div style="text-align:center;margin-bottom:1.1rem">
       <span class="oi">🌊</span>
