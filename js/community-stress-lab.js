@@ -14,6 +14,15 @@
 
   var LANES = ['thermal', 'chemistry', 'space', 'predation', 'social', 'inverts'];
 
+  var LANE_COLORS = {
+    thermal:   '230,120,50',
+    chemistry: '61,214,232',
+    space:     '100,200,82',
+    predation: '218,78,62',
+    social:    '200,162,52',
+    inverts:   '118,192,224'
+  };
+
   function hasTag(s, tag) {
     return s.tags && s.tags.indexOf(tag) !== -1;
   }
@@ -509,7 +518,7 @@
   }
 
   /* ── Tank canvas visualisation ── */
-  var _tk = { picks: [], byId: {}, findings: [], time: 0 };
+  var _tk = { picks: [], byId: {}, findings: [], time: 0, bubbles: [] };
   var _tkCvs = null, _tkCtx = null;
 
   function initTankCanvas() {
@@ -522,6 +531,19 @@
       _tkCvs.height = Math.round(_tkCvs.offsetHeight * dpr);
     };
     doPx();
+    function initBubbles() {
+      _tk.bubbles = [];
+      for (var bi = 0; bi < 14; bi++) {
+        _tk.bubbles.push({
+          x: Math.random(),
+          y: 0.3 + Math.random() * 0.7,
+          r: 0.8 + Math.random() * 2.2,
+          speed: 0.0004 + Math.random() * 0.0006,
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+    }
+    initBubbles();
     window.addEventListener('resize', doPx);
     (function loop() {
       requestAnimationFrame(loop);
@@ -574,13 +596,91 @@
     var picks = _tk.picks, byId = _tk.byId;
 
     if (!picks || !picks.length) {
+      var t = _tk.time;
+
+      // Animated light rays from upper-left
       ctx.save();
-      ctx.font = 'normal ' + (10 * dpr) + 'px DM Sans,system-ui,sans-serif';
-      ctx.fillStyle = 'rgba(61,214,232,.2)';
+      for (var ri = 0; ri < 3; ri++) {
+        var rayAlpha = 0.022 + 0.010 * Math.sin(t * 0.22 + ri * 1.2);
+        var rayAngle = 0.28 + ri * 0.14;
+        var grad = ctx.createLinearGradient(w * 0.15, 0, w * (0.15 + Math.sin(rayAngle) * 1.2), h * 1.1);
+        grad.addColorStop(0, 'rgba(61,214,232,' + (rayAlpha * 2.2).toFixed(3) + ')');
+        grad.addColorStop(0.45, 'rgba(61,214,232,' + rayAlpha.toFixed(3) + ')');
+        grad.addColorStop(1, 'rgba(61,214,232,0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        var bw = w * (0.04 + ri * 0.025);
+        ctx.moveTo(w * 0.12 - bw, 0);
+        ctx.lineTo(w * 0.12 + bw, 0);
+        ctx.lineTo(w * (0.12 + Math.sin(rayAngle) * 1.4) + bw, h * 1.2);
+        ctx.lineTo(w * (0.12 + Math.sin(rayAngle) * 1.4) - bw, h * 1.2);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+
+      // Zone labels on left edge
+      ctx.save();
+      ctx.font = (6 * dpr) + 'px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle = 'rgba(61,214,232,.16)';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      var zLabels = [{ f: 0.11, name: 'SURFACE' }, { f: 0.44, name: 'MID-WATER' }, { f: 0.73, name: 'BOTTOM' }, { f: 0.89, name: 'BENTHIC' }];
+      for (var zi = 0; zi < zLabels.length; zi++) {
+        ctx.fillText(zLabels[zi].name, 7 * dpr, zLabels[zi].f * h);
+      }
+      ctx.restore();
+
+      // Ghost fish silhouettes
+      ctx.save();
+      ctx.strokeStyle = 'rgba(61,214,232,.09)';
+      ctx.lineWidth = dpr * 0.8;
+      var ghosts = [
+        { xf: 0.42, yf: 0.11, sz: 11, r: true }, { xf: 0.66, yf: 0.13, sz: 8, r: false },
+        { xf: 0.30, yf: 0.44, sz: 14, r: true }, { xf: 0.58, yf: 0.47, sz: 10, r: false }, { xf: 0.76, yf: 0.42, sz: 9, r: true },
+        { xf: 0.44, yf: 0.73, sz: 12, r: false },
+        { xf: 0.36, yf: 0.89, sz: 8, r: true }, { xf: 0.62, yf: 0.88, sz: 7, r: false }
+      ];
+      for (var ghi = 0; ghi < ghosts.length; ghi++) {
+        var gf = ghosts[ghi];
+        var gs = gf.sz * dpr;
+        ctx.save();
+        ctx.translate(gf.xf * w, gf.yf * h);
+        if (!gf.r) ctx.scale(-1, 1);
+        ctx.beginPath(); ctx.ellipse(0, 0, gs, gs * 0.5, 0, 0, Math.PI * 2); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(-gs * 0.78, 0); ctx.lineTo(-gs * 1.46, -gs * 0.44); ctx.lineTo(-gs * 1.46, gs * 0.44); ctx.closePath(); ctx.stroke();
+        ctx.restore();
+      }
+      ctx.restore();
+
+      // Rising bubbles
+      var bubbles = _tk.bubbles || [];
+      for (var bi2 = 0; bi2 < bubbles.length; bi2++) {
+        var bub = bubbles[bi2];
+        bub.y -= bub.speed;
+        if (bub.y < -0.05) { bub.y = 0.9 + Math.random() * 0.15; bub.x = Math.random(); }
+        var bAlpha = 0.06 + 0.04 * Math.sin(t * 1.2 + bub.phase);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc((bub.x + Math.sin(t * 0.5 + bub.phase) * 0.012) * w, bub.y * h, bub.r * dpr, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(61,214,232,' + bAlpha.toFixed(3) + ')';
+        ctx.lineWidth = dpr * 0.7;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // CTA text
+      ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('Add species to populate your tank', w * 0.5, h * 0.5);
+      ctx.font = 'italic ' + (13 * dpr) + 'px Cormorant Garamond,Georgia,serif';
+      ctx.fillStyle = 'rgba(235,240,236,.24)';
+      ctx.fillText('Build your community below', w * 0.5, h * 0.52);
+      ctx.font = (10 * dpr) + 'px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle = 'rgba(61,214,232,.2)';
+      ctx.fillText('▾', w * 0.5, h * 0.52 + 17 * dpr);
       ctx.restore();
+
       return;
     }
 
@@ -783,23 +883,75 @@
         var lane = LANES[i];
         var score = laneLevel[lane] || 0;
         var lab = laneLabel(score);
+        var rgb = LANE_COLORS[lane] || '61,214,232';
+        var borderAlpha, bgAlpha, dotAlpha, dotGlow;
+        if (lab === 'high') {
+          borderAlpha = '0.48'; bgAlpha = '0.13'; dotAlpha = '0.95'; dotGlow = '0 0 6px rgba(' + rgb + ',.55)';
+        } else if (lab === 'elevated') {
+          borderAlpha = '0.32'; bgAlpha = '0.09'; dotAlpha = '0.88'; dotGlow = '';
+        } else {
+          borderAlpha = '0.18'; bgAlpha = '0.05'; dotAlpha = '0.45'; dotGlow = '';
+        }
         var pill = document.createElement('div');
-        pill.className = 'csl-lane csl-lane--' + lab;
+        pill.className = 'csl-lane';
         pill.title = (shortName[lane] || lane) + ': ' + lab;
-        pill.innerHTML = '<span class=”csl-lane-dot”></span><span class=”csl-lane-nm”>' + escapeHtml(shortName[lane] || lane) + '</span>';
+        pill.style.borderColor = 'rgba(' + rgb + ',' + borderAlpha + ')';
+        pill.style.background = 'rgba(' + rgb + ',' + bgAlpha + ')';
+        var dotEl = document.createElement('span');
+        dotEl.className = 'csl-lane-dot';
+        dotEl.style.background = 'rgba(' + rgb + ',' + dotAlpha + ')';
+        if (dotGlow) dotEl.style.boxShadow = dotGlow;
+        if (lab === 'high') dotEl.style.animation = 'pdot 1.5s ease-in-out infinite';
+        var nmEl = document.createElement('span');
+        nmEl.className = 'csl-lane-nm';
+        nmEl.textContent = shortName[lane] || lane;
+        nmEl.style.color = 'rgba(' + rgb + ',' + (lab === 'low' ? '0.58' : '0.92') + ')';
+        pill.appendChild(dotEl);
+        pill.appendChild(nmEl);
         lanesEl.appendChild(pill);
       }
     }
+
+    var QUICK_START = [
+      { icon: '🌿', name: 'Classic Amazonian', hint: 'Discus · Cardinal Tetra · Corydoras', ids: ['discus', 'cardinal_tetra', 'corydoras_sterbai'] },
+      { icon: '🐠', name: 'Betta Community',   hint: 'Betta · Neon Tetra · Otocinclus',     ids: ['betta_male', 'neon_tetra', 'otocinclus'] },
+      { icon: '🦐', name: 'Planted Nano',       hint: 'Cherry Shrimp · Ember Tetra · Kuhli', ids: ['cherry_shrimp', 'ember_tetra', 'kuhli_loach'] }
+    ];
 
     function renderFindings(findings) {
       if (!findingsEl) return;
       findingsEl.innerHTML = '';
       if (!picks.length) {
-        findingsEl.innerHTML = '<li class=”csl-no-findings”>Add species to map overlapping pressures.</li>';
+        var qsWrap = document.createElement('div');
+        qsWrap.className = 'csl-qs-wrap';
+        var cardsHtml = '<span class=”csl-qs-label”>Try a starter community</span><div class=”csl-qs-cards”>';
+        findingsEl.appendChild(qsWrap);
+        qsWrap.innerHTML = '<span class=”csl-qs-label”>Try a starter community</span><div class=”csl-qs-cards” id=”csl-qs-list”></div>';
+        var qsList = qsWrap.querySelector('#csl-qs-list');
+        QUICK_START.forEach(function (qs) {
+          var card = document.createElement('div');
+          card.className = 'csl-qs-card';
+          card.setAttribute('role', 'button');
+          card.setAttribute('tabindex', '0');
+          card.innerHTML =
+            '<span class=”csl-qs-card-icon”>' + qs.icon + '</span>' +
+            '<span class=”csl-qs-card-text”><span class=”csl-qs-card-name”>' + escapeHtml(qs.name) + '</span>' +
+            '<span class=”csl-qs-card-hint”>' + escapeHtml(qs.hint) + '</span></span>' +
+            '<span class=”csl-qs-card-arr”>&#x203A;</span>';
+          card.addEventListener('click', function () { qs.ids.forEach(function (id) { addSpeciesById(id); }); });
+          card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); qs.ids.forEach(function (id) { addSpeciesById(id); }); } });
+          qsList.appendChild(card);
+        });
         return;
       }
       if (!findings.length) {
-        findingsEl.innerHTML = '<li class=”csl-no-findings”>No major pressures flagged — still observe your real tank.</li>';
+        var allClear = document.createElement('li');
+        allClear.className = 'csl-all-clear';
+        allClear.innerHTML =
+          '<span class=”csl-ac-icon”>◎</span>' +
+          '<span class=”csl-ac-text”><span class=”csl-ac-title”>No pressure flags</span>' +
+          '<span class=”csl-ac-body”>Parameters align well on paper — still observe your real tank closely in the first weeks.</span></span>';
+        findingsEl.appendChild(allClear);
         return;
       }
       for (var i = 0; i < findings.length; i++) {
