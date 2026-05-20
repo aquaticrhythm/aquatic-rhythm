@@ -200,6 +200,7 @@
         if (!a || !bb) continue;
         if ((a.mouthPredatorLevel || 0) < 2) continue;
         if ((bb.bodyMmAdult || 999) > 45) continue;
+        if (hasTag(bb, 'snail')) continue;
         var sev = (a.mouthPredatorLevel >= 3 && bb.bodyMmAdult <= 30) ? 'high' : 'elevated';
         findings.push({
           id: 'R_PREDATION_' + a.id + '_' + bb.id,
@@ -389,11 +390,14 @@
         var slF = speciesById[picks[sl2].id];
         if (!slF || hasTag(slF, 'snail')) continue;
         if (hasTag(slF, 'snail_eater')) {
+          var snailSev = (slF.mouthPredatorLevel || 0) > 0 ? 'elevated' : 'info';
           findings.push({
             id: 'R_SNAIL_LOACH',
-            title: 'Snails with snail-eating species',
-            body: 'Loaches and similar fish actively hunt snails — snail populations will likely decline over time.',
-            severity: 'info',
+            title: snailSev === 'elevated' ? 'Snails with a dedicated snail hunter' : 'Snails with a potential snail eater',
+            body: snailSev === 'elevated'
+              ? slF.displayName + ' actively hunts snails — shell populations will decline noticeably over time.'
+              : 'Some reports of ' + slF.displayName + ' disturbing snails — monitor over several weeks.',
+            severity: snailSev,
             lanes: ['inverts']
           });
           break;

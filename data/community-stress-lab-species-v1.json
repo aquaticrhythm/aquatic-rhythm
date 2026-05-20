@@ -1,6 +1,6 @@
 {
   "packId": "community-stress-species-v1",
-  "packVersion": "1.1",
+  "packVersion": "1.2",
   "species": [
     {
       "id": "neon_tetra",
@@ -209,7 +209,7 @@
     {
       "id": "otocinclus",
       "displayName": "Otocinclus",
-      "scientificName": "Macrotocinclus affinis (trade)",
+      "scientificName": "Otocinclus sp.",
       "tempMinC": 22,
       "tempMaxC": 26,
       "phMin": 6.0,
@@ -221,7 +221,7 @@
       "schoolingMin": 4,
       "bioloadUnits": 1.5,
       "tags": [],
-      "citationNote": "Hobby consensus ranges — verify before stocking."
+      "citationNote": "Trade identity uncertain — sold as several Otocinclus spp. Hobby consensus ranges."
     },
     {
       "id": "kuhli_loach",
@@ -335,7 +335,7 @@
       "phMax": 8.0,
       "zone": "surface",
       "bodyMmAdult": 65,
-      "mouthPredatorLevel": 2,
+      "mouthPredatorLevel": 1,
       "finNipper": true,
       "schoolingMin": null,
       "bioloadUnits": 3,
@@ -386,7 +386,7 @@
       "phMax": 7.0,
       "zone": "mid",
       "bodyMmAdult": 200,
-      "mouthPredatorLevel": 2,
+      "mouthPredatorLevel": 1,
       "finNipper": false,
       "schoolingMin": 4,
       "bioloadUnits": 10,
@@ -710,7 +710,7 @@
       "zone": "surface",
       "bodyMmAdult": 75,
       "mouthPredatorLevel": 1,
-      "finNipper": false,
+      "finNipper": true,
       "schoolingMin": null,
       "bioloadUnits": 3.0,
       "tags": ["labyrinth", "coldwater", "long_finned"],
