@@ -220,6 +220,41 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 
 code{font-size:.74rem;color:rgba(61,214,232,.7)}
 
+/* ── Welcome overlay ── */
+#csl-welcome{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(2,8,14,.97);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:max(3.5rem,env(safe-area-inset-top,3.5rem)) 1.2rem 2rem;
+  overflow-y:auto;transition:opacity .4s;
+}
+.cslw-inner{max-width:520px;width:100%;padding:1.8rem clamp(.9rem,4vw,2.2rem) 3rem}
+.cslw-eye{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(61,214,232,.5);display:block;margin-bottom:1rem}
+.cslw-h1{font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,5vw,2.6rem);color:rgba(235,240,236,.92);line-height:1.1;margin-bottom:1.1rem}
+.cslw-h1 em{font-style:italic;color:rgba(61,214,232,.76)}
+.cslw-body{font-size:.88rem;font-weight:300;color:rgba(235,240,236,.52);line-height:1.8;margin-bottom:1.35rem}
+.cslw-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.35rem}
+.cslw-cell{padding:.6rem .72rem;background:rgba(6,18,14,.52);border:1px solid rgba(61,214,232,.09);border-radius:8px}
+.cslw-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:.38rem;vertical-align:middle;flex-shrink:0}
+.cslw-lname{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(235,240,236,.70);font-weight:500}
+.cslw-ldesc{display:block;margin-top:.2rem;font-size:.8rem;font-weight:300;color:rgba(235,240,236,.36);font-family:var(--serif);font-style:italic;line-height:1.42}
+.cslw-note{font-size:.76rem;color:rgba(235,240,236,.26);font-style:italic;font-family:var(--serif);line-height:1.65;margin-bottom:1.85rem;padding-left:.8rem;border-left:1px solid rgba(255,255,255,.07)}
+.cslw-btn{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(61,214,232,.9);color:#fff;border:1px solid rgba(61,214,232,.5);padding:.8rem 1.9rem;border-radius:4px;cursor:pointer;font-family:var(--sans);transition:background .25s,transform .2s;display:inline-block}
+.cslw-btn:hover{background:rgba(65,168,152,.95);transform:translateY(-1px)}
+@media(max-width:420px){.cslw-grid{grid-template-columns:1fr}}
+
+/* ── Tank canvas ── */
+.csl-tank-wrap{margin-bottom:.45rem;position:relative}
+#csl-tank{
+  display:block;width:100%;height:155px;
+  border-radius:10px;border:1px solid rgba(61,214,232,.1);
+  background:rgba(4,14,20,.92);
+}
+.csl-tank-hint{
+  display:block;text-align:center;font-size:.56rem;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(61,214,232,.2);margin-top:.25rem;
+}
+
 /* Mobile — align with tank-simulator breakpoints */
 @media(max-width:600px){
   #app{display:flex;flex-direction:column;height:100dvh;padding:0;gap:0;max-width:none}
@@ -240,10 +275,47 @@ code{font-size:.74rem;color:rgba(61,214,232,.7)}
     scrollbar-width:thin;
   }
   #csl-bbar::-webkit-scrollbar{height:3px}
+  #csl-tank{height:128px}
 }
 </style>
 </head>
 <body>
+<div id="csl-welcome" role="dialog" aria-modal="true" aria-labelledby="cslw-title">
+  <div class="cslw-inner">
+    <span class="cslw-eye">Aquatic Rhythm Lab</span>
+    <h1 class="cslw-h1" id="cslw-title">Community<br><em>Stress Lab</em></h1>
+    <p class="cslw-body">Pick species and tank volume — the lab maps where ecological pressures overlap. No compatibility verdict: a pressure map for planning with open eyes.</p>
+    <div class="cslw-grid">
+      <div class="cslw-cell">
+        <span class="cslw-dot" style="background:rgba(230,115,45,.9)"></span><span class="cslw-lname">Thermal</span>
+        <span class="cslw-ldesc">Temperature window overlap</span>
+      </div>
+      <div class="cslw-cell">
+        <span class="cslw-dot" style="background:rgba(61,214,232,.82)"></span><span class="cslw-lname">Chemistry</span>
+        <span class="cslw-ldesc">pH range compatibility</span>
+      </div>
+      <div class="cslw-cell">
+        <span class="cslw-dot" style="background:rgba(100,200,82,.8)"></span><span class="cslw-lname">Space</span>
+        <span class="cslw-ldesc">Bioload vs. tank volume</span>
+      </div>
+      <div class="cslw-cell">
+        <span class="cslw-dot" style="background:rgba(218,78,62,.9)"></span><span class="cslw-lname">Predation</span>
+        <span class="cslw-ldesc">Mouth-to-body size risk</span>
+      </div>
+      <div class="cslw-cell">
+        <span class="cslw-dot" style="background:rgba(200,162,52,.88)"></span><span class="cslw-lname">Social</span>
+        <span class="cslw-ldesc">Nipping, schooling, territory</span>
+      </div>
+      <div class="cslw-cell">
+        <span class="cslw-dot" style="background:rgba(118,192,224,.82)"></span><span class="cslw-lname">Inverts</span>
+        <span class="cslw-ldesc">Shrimp and snail safety</span>
+      </div>
+    </div>
+    <p class="cslw-note">No compatibility score — the lab shows pressures, not predictions. Your real tank and daily observations always come first.</p>
+    <button class="cslw-btn" id="csl-welcome-enter">Enter the lab &#x2192;</button>
+  </div>
+</div>
+
 <div id="app">
   <div id="topbar">
     <a href="/" class="tb-logo" aria-label="Aquatic Rhythm" data-analytics-event="csl_nav_home" data-cta="logo">
@@ -302,6 +374,11 @@ code{font-size:.74rem;color:rgba(61,214,232,.7)}
           </div>
           <div id="csl-status" aria-live="polite"></div>
           <div id="csl-chips"></div>
+        </div>
+
+        <div class="csl-tank-wrap">
+          <canvas id="csl-tank" aria-hidden="true"></canvas>
+          <span class="csl-tank-hint">Virtual tank preview</span>
         </div>
 
         <div class="csl-section">
