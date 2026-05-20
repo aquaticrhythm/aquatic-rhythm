@@ -509,6 +509,179 @@
     return 'low';
   }
 
+  /* ── Tank canvas visualisation ── */
+  var _tk = { picks: [], byId: {}, findings: [], time: 0 };
+  var _tkCvs = null, _tkCtx = null;
+
+  function initTankCanvas() {
+    _tkCvs = document.getElementById('csl-tank');
+    if (!_tkCvs) return;
+    _tkCtx = _tkCvs.getContext('2d');
+    var doPx = function () {
+      var dpr = window.devicePixelRatio || 1;
+      _tkCvs.width = Math.round(_tkCvs.offsetWidth * dpr);
+      _tkCvs.height = Math.round(_tkCvs.offsetHeight * dpr);
+    };
+    doPx();
+    window.addEventListener('resize', doPx);
+    (function loop() {
+      requestAnimationFrame(loop);
+      if (document.hidden) return;
+      _tk.time += 0.016;
+      drawTank();
+    })();
+  }
+
+  function drawTank() {
+    if (!_tkCvs || !_tkCtx) return;
+    var cvs = _tkCvs, ctx = _tkCtx;
+    var w = cvs.width, h = cvs.height;
+    var dpr = window.devicePixelRatio || 1;
+
+    ctx.clearRect(0, 0, w, h);
+
+    var bg = ctx.createLinearGradient(0, 0, 0, h);
+    bg.addColorStop(0, '#071c2e');
+    bg.addColorStop(0.45, '#052232');
+    bg.addColorStop(1, '#031018');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.save();
+    ctx.strokeStyle = 'rgba(61,214,232,.05)';
+    ctx.lineWidth = dpr;
+    ctx.setLineDash([3 * dpr, 7 * dpr]);
+    [0.22, 0.65, 0.82].forEach(function (f) {
+      ctx.beginPath();
+      ctx.moveTo(0, f * h);
+      ctx.lineTo(w, f * h);
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+    ctx.restore();
+
+    var sg = ctx.createLinearGradient(0, 0, 0, 0.22 * h);
+    sg.addColorStop(0, 'rgba(61,214,232,.07)');
+    sg.addColorStop(1, 'rgba(61,214,232,0)');
+    ctx.fillStyle = sg;
+    ctx.fillRect(0, 0, w, 0.22 * h);
+
+    var sub = ctx.createLinearGradient(0, 0.82 * h, 0, h);
+    sub.addColorStop(0, 'rgba(22,12,6,0)');
+    sub.addColorStop(1, 'rgba(22,12,6,.6)');
+    ctx.fillStyle = sub;
+    ctx.fillRect(0, 0.82 * h, w, h);
+
+    var picks = _tk.picks, byId = _tk.byId;
+
+    if (!picks || !picks.length) {
+      ctx.save();
+      ctx.font = 'normal ' + (10 * dpr) + 'px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle = 'rgba(61,214,232,.2)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('Add species to populate your tank', w * 0.5, h * 0.5);
+      ctx.restore();
+      return;
+    }
+
+    var maxSev = 0;
+    var findings = _tk.findings || [];
+    for (var fi = 0; fi < findings.length; fi++) {
+      var sv = severityRank(findings[fi].severity);
+      if (sv > maxSev) maxSev = sv;
+    }
+
+    if (maxSev >= 3) {
+      var pulse = 0.05 + 0.025 * Math.sin(_tk.time * 1.6);
+      ctx.fillStyle = 'rgba(210,65,45,' + pulse.toFixed(3) + ')';
+      ctx.fillRect(0, 0, w, h);
+    } else if (maxSev >= 2) {
+      ctx.fillStyle = 'rgba(185,138,28,.045)';
+      ctx.fillRect(0, 0, w, h);
+    }
+
+    var Z = {
+      surface: { y0: 0.02, y1: 0.20 },
+      mid:     { y0: 0.25, y1: 0.63 },
+      bottom:  { y0: 0.66, y1: 0.80 },
+      benthic: { y0: 0.83, y1: 0.95 }
+    };
+
+    var groups = { surface: [], mid: [], bottom: [], benthic: [] };
+    for (var pi = 0; pi < picks.length; pi++) {
+      var s = byId[picks[pi].id];
+      if (!s) continue;
+      var zone = Z[s.zone] ? s.zone : 'mid';
+      var cnt = Math.min(picks[pi].count || 1, 5);
+      for (var ci = 0; ci < cnt; ci++) {
+        groups[zone].push({ s: s, pi: pi, ci: ci });
+      }
+    }
+
+    var zoneNames = ['surface', 'mid', 'bottom', 'benthic'];
+    for (var z = 0; z < zoneNames.length; z++) {
+      var zn = zoneNames[z];
+      var grp = groups[zn];
+      if (!grp.length) continue;
+      var zDef = Z[zn];
+      var zMid = (zDef.y0 + zDef.y1) * 0.5;
+      var zHalf = (zDef.y1 - zDef.y0) * 0.28;
+
+      for (var gi = 0; gi < grp.length; gi++) {
+        var entry = grp[gi];
+        var sp = entry.s;
+        var n = grp.length;
+        var seed = (sp.id.charCodeAt(0) || 65) * 0.1 + entry.ci * 0.5;
+        var xFrac = (gi + 0.75) / (n + 0.5);
+        var wobX = Math.sin(_tk.time * 0.42 + seed + gi * 1.1) * 10 * dpr;
+        var wobY = Math.sin(_tk.time * 0.68 + seed + gi * 0.9) * 2.5 * dpr;
+        var x = Math.max(18 * dpr, Math.min(w - 18 * dpr, xFrac * w + wobX));
+        var rowOff = ((gi % 3) - 1) * zHalf;
+        var y = (zMid + rowOff) * h + wobY;
+        var size = Math.max(4 * dpr, Math.min(20 * dpr, ((sp.bodyMmAdult || 35) / 180) * 28 * dpr));
+
+        var col;
+        if (maxSev >= 3) col = 'rgba(215,88,58,.84)';
+        else if (maxSev >= 2) col = 'rgba(200,158,48,.82)';
+        else if (zn === 'surface') col = 'rgba(105,215,235,.72)';
+        else if (zn === 'benthic') col = 'rgba(135,178,128,.70)';
+        else if (zn === 'bottom') col = 'rgba(100,178,162,.72)';
+        else col = 'rgba(78,185,225,.72)';
+
+        var facingRight = Math.sin(_tk.time * 0.28 + gi * 0.85 + entry.pi * 0.6) > 0;
+        drawFishShape(ctx, x, y, size, col, facingRight, dpr);
+      }
+    }
+  }
+
+  function drawFishShape(ctx, x, y, size, color, facingRight, dpr) {
+    ctx.save();
+    ctx.translate(x, y);
+    if (!facingRight) ctx.scale(-1, 1);
+    ctx.shadowColor = color;
+    ctx.shadowBlur = size * 0.9;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, size, size * 0.5, 0, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.beginPath();
+    ctx.moveTo(-size * 0.78, 0);
+    ctx.lineTo(-size * 1.46, -size * 0.44);
+    ctx.lineTo(-size * 1.46, size * 0.44);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.globalAlpha = 0.62;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.beginPath();
+    ctx.arc(size * 0.44, -size * 0.08, size * 0.12, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,.88)';
+    ctx.fill();
+    ctx.restore();
+  }
+
   function init() {
     var root = document.getElementById('csl-root');
     if (!root) return;
@@ -594,6 +767,9 @@
       renderLanes(result.laneLevel);
       renderFindings(result.findings);
       renderChecklist(result.findings);
+      _tk.picks = picks;
+      _tk.byId = speciesById;
+      _tk.findings = result.findings;
     }
 
     function renderLanes(laneLevel) {
@@ -703,6 +879,17 @@
         setTimeout(function () { setStatus(''); }, 2400);
       }
     }
+
+    var wElm = document.getElementById('csl-welcome');
+    var wBtn = document.getElementById('csl-welcome-enter');
+    if (wBtn && wElm) {
+      wBtn.addEventListener('click', function () {
+        wElm.style.opacity = '0';
+        setTimeout(function () { wElm.style.display = 'none'; }, 420);
+      });
+    }
+
+    initTankCanvas();
 
     volumeEl.addEventListener('input', refresh);
     addBtn.addEventListener('click', tryAddFromSearch);
