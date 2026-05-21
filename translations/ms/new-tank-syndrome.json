@@ -135,7 +135,12 @@
         "Pada peringkat awal, ia boleh terasa seperti tangki tidak akan pernah stabil. Kemajuan berlaku secara beransur dan mudah terlepas pandang dari hari ke hari. Ketidakpastian itu membuatkan ramai penjaga meragui proses ini.",
         "Di antara minggu keempat dan kelapan lebih kurang, fungsi koloni biasanya menjadi stabil. Amonia kekal hampir sifar, nitrit surut, dan tingkah laku ikan kembali kepada yang biasa. Sistem mendapat daya tahan dan boleh pulih daripada gangguan kecil."
       ],
-      "pullQuote": null,
+      "pullQuote": "ARA menyebut ini sebagai <strong>pengampunan ekologi</strong> — keupayaan sistem hidup untuk menyerap ketidakseimbangan kecil dan kembali kepada kesepaduan tanpa campur tangan penjaga. Apa yang tangki baru sedang bina semasa Fasa Awal bukan sekadar bakteria. Ia adalah pengampunan yang akan melindungi semua yang anda tambah kemudian.",
+      "additionalPullQuotes": [
+        "Jika anda ingin melihat bagaimana ini berlaku dalam praktik — amonia meningkat, bakteria tiba, kedua-dua parameter jatuh — simulator di halaman reading membolehkan anda melaluinya sendiri.",
+        "<strong>Tindakan terbaik seterusnya:</strong> Buka Tank Cycle Simulator dan jalankan satu kitaran <em>tanpa ikan</em> sehingga <em>Stable ✓</em> muncul. Fokus pada trend amonia/nitrit selama 3 hari berturut-turut, bukan satu bacaan."
+      ],
+      "simulatorLinkText": "Buka simulator →",
       "hintLabel": "Perspektif Aquatic Rhythm",
       "hintText": [
         "Sindrom tangki baru bukan halangan kepada hobi ini. Ia adalah pelajaran sebenar pertama daripadanya — perbezaan antara isyarat yang memerlukan tindak balas dan yang sekadar memerlukan ruang untuk diselesaikan sendiri."

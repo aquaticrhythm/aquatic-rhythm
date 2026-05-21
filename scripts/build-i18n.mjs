@@ -236,10 +236,25 @@ function buildArticle(slug, lang, t) {
         });
       }
 
-      // Pull quote (optional)
-      if (mod.pullQuote) {
-        c = replaceOnce(c, /(<div class="pq">\s*<p>)([\s\S]*?)(<\/p>)/,
-          (_, open, _inner, close) => `${open}${mod.pullQuote}${close}`);
+      // Pull quotes — pullQuote for first block, additionalPullQuotes for the rest.
+      // Regex matches <div class="pq"> with or without inline style/attrs.
+      {
+        const allPq = [];
+        if (mod.pullQuote) allPq.push(mod.pullQuote);
+        if (mod.additionalPullQuotes && mod.additionalPullQuotes.length) allPq.push(...mod.additionalPullQuotes);
+        if (allPq.length) {
+          let pqIdx = 0;
+          c = c.replace(/(<div class="pq"[^>]*>\s*<p>)([\s\S]*?)(<\/p>)/g, (m, open, _inner, close) => {
+            if (pqIdx < allPq.length) return `${open}${allPq[pqIdx++]}${close}`;
+            return m;
+          });
+        }
+      }
+
+      // Simulator / CTA link text inside a pq block (optional)
+      if (mod.simulatorLinkText) {
+        c = c.replace(/(href="\/articles\/tank-simulator"[^>]*>)[^<]*/,
+          (m, prefix) => `${prefix}${mod.simulatorLinkText}`);
       }
 
       // Hint box label (optional)
@@ -248,10 +263,11 @@ function buildArticle(slug, lang, t) {
           (_, a, b) => `${a}${mod.hintLabel}${b}`);
       }
 
-      // Hint box paragraphs (optional — hintText is array of strings)
+      // Hint box paragraphs (optional — hintText is array of strings).
+      // Regex matches class="hn" with or without additional classes (e.g. "hn ar").
       if (mod.hintText && mod.hintText.length) {
         c = replaceOnce(c,
-          /(<div class="hn">[\s\S]*?<span[^>]*>[^<]*<\/span>)([\s\S]*?)(<\/div>)/,
+          /(<div class="hn[^"]*">[\s\S]*?<span[^>]*>[^<]*<\/span>)([\s\S]*?)(<\/div>)/,
           (_, head, _body, tail) => {
             const paras = mod.hintText.map(p => `\n      <p>${p}</p>`).join('');
             return `${head}${paras}\n    ${tail}`;
