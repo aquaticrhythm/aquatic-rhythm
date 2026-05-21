@@ -45,6 +45,8 @@ The framework remains style-agnostic and non-prescriptive. It does not tell you 
 - S10: Limits and Ethics
 - S11: ARA as a Living Framework
 
+**Companion document:** *ARA-psychology-foundations.md* — the psychological grounding of the framework (Attention Restoration Theory, Self-Compassion, Self-Determination Theory, Biophilia). Read alongside this document; it explains why several of ARA's design choices are structured the way they are.
+
 ---
 
 ## S1: Reframing the Question
@@ -591,8 +593,22 @@ What has not changed: the five ecological rhythms, the three-phase system, the a
 
 The framework aspires to become more useful with each version — not by becoming more prescriptive, but by more accurately describing what actually happens in living systems and what keepers can do to participate in those systems well.
 
+### S11.5: Psychological Foundations
+
+A significant addition in v2.0 is the formal grounding of ARA's design choices in psychological research. The companion document (*ARA-psychology-foundations.md*) documents this grounding in full. The summary for this document:
+
+ARA's structure — the observation practice, the rejection of shame, the competence-building over rule-prescribing approach, the keeper-as-participant framing — is not arbitrary. Each is supported by a body of psychological research:
+
+- **Attention Restoration Theory** (Kaplan & Kaplan): aquarium observation is a genuine restorative practice, not just methodology. The observation practice has dual function: it reads the tank and it restores the keeper.
+- **Self-Compassion research** (Neff): shame produces disengagement and impairs learning. Self-compassion after failure produces better learning outcomes, more honest self-assessment, and more durable re-engagement. The "no shame" ethic is practically superior, not just kinder.
+- **Self-Determination Theory** (Deci & Ryan): rule-based approaches undermine intrinsic motivation over time. Competence-building, autonomy-supporting approaches produce sustained engagement. ARA's non-prescriptive structure follows from this.
+- **Biophilia** (Wilson) and nature connectedness research: the keeper-tank relationship is a form of human-living system contact that serves genuine psychological needs. The aquarium, particularly in urban contexts, provides nature connection with documented wellbeing effects.
+
+These foundations explain why ARA is a distinguishable approach from technical aquarium frameworks — not just in what it says about ecology, but in what it understands about the keeper.
+
 ---
 
 *Aquatic Rhythm Alignment (ARA): A behaviour-aware ecological conceptual framework articulated through ecological reasoning for closed aquatic micro-ecosystems.*
 *Version 2.0 — Aquatic Rhythm editorial team, 2025.*
+*Companion: ARA-psychology-foundations.md*
 *aquaticrhythm.com*
