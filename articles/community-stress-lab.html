@@ -226,16 +226,6 @@ code{font-size:.74rem;color:rgba(61,214,232,.7)}
   .csl-lane-meter{width:100%}
 }
 
-/* ── LAB NAV SHEET ── */
-#lab-nav{position:fixed;inset:0;z-index:850;background:rgba(4,12,10,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;padding:max(1.2rem,env(safe-area-inset-top,1.2rem)) clamp(1.2rem,5vw,2.5rem) 2rem;transform:translateY(-100%);transition:transform .38s cubic-bezier(0.19,1,0.22,1);pointer-events:none}
-#lab-nav.open{transform:translateY(0);pointer-events:all}
-.lab-nav-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.2rem;flex-shrink:0}
-.lab-nav-close{background:none;border:none;color:rgba(255,255,255,.45);cursor:pointer;padding:.3rem;line-height:1;font-size:1.4rem;-webkit-tap-highlight-color:transparent}
-#lab-nav ul{list-style:none}
-#lab-nav li{border-bottom:1px solid rgba(255,255,255,.05)}
-#lab-nav li:last-child{border-bottom:none}
-#lab-nav a{display:block;padding:.9rem 0;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .25s,padding-left .28s}
-#lab-nav a:hover{color:rgba(61,214,232,.96);padding-left:.4rem}
 
 /* ── BRIEFING (design identity — matches tank-builder) ── */
 #briefing{position:fixed;inset:0;z-index:500;background:rgba(2,8,14,.97);display:flex;align-items:flex-start;justify-content:center;padding-top:max(4rem,env(safe-area-inset-top,4rem));padding-left:1.2rem;padding-right:1.2rem;padding-bottom:2rem;overflow-y:auto;transition:opacity .5s}
@@ -482,42 +472,11 @@ code{font-size:.74rem;color:rgba(61,214,232,.7)}
 </div>
 
 <!-- ── LAB NAV SHEET ── -->
-<div id="lab-nav" aria-modal="true" aria-hidden="true">
-  <div class="lab-nav-head">
-    <svg viewBox="0 0 175 30" fill="none" width="132" height="23" aria-hidden="true">
-      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1" fill="none"/>
-      <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
-      <line x1="19.8" y1="23" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
-      <ellipse cx="12" cy="15" rx="4" ry="2.3" fill="rgba(40,120,150,0.85)"/>
-      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
-      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
-      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(235,240,236,.48)" letter-spacing="2.5">AQUATIC</text>
-      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(235,240,236,.86)">Rhythm</text>
-    </svg>
-    <button class="lab-nav-close" id="lab-nav-close" aria-label="Close menu">&#x2715;</button>
-  </div>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/reading">Reading</a></li>
-    <li><a href="/tools">Tools</a></li>
-    <li><a href="/journal">Log</a></li>
-    <li><a href="/companion">Companion</a></li>
-    <li><a href="/about">About</a></li>
-  </ul>
-</div>
 <script src="/js/ar-page.js" defer></script>
 <script>
 (function(){
   var btn = document.getElementById('tb-settings-btn');
-  var nav = document.getElementById('lab-nav');
-  var cls = document.getElementById('lab-nav-close');
-  if (!btn || !nav) return;
-  function openNav(){ nav.classList.add('open'); nav.removeAttribute('aria-hidden'); btn.setAttribute('aria-expanded','true'); }
-  function closeNav(){ nav.classList.remove('open'); nav.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); }
-  btn.addEventListener('click', function(){ nav.classList.contains('open') ? closeNav() : openNav(); });
-  if (cls) cls.addEventListener('click', closeNav);
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeNav(); });
+  if (btn) btn.addEventListener('click', function(){ if (typeof window.__arOpenSettings === 'function') window.__arOpenSettings(); });
 })();
 </script>
 <script src="/js/rhyssa-fab-ext.js" defer></script>
