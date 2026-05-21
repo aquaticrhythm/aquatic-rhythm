@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "slug": "low-tech-planted-tank",
+    "lang": "ms",
+    "sourceFile": "articles/low-tech-planted-tank.html"
+  },
+  "head": {
+    "title": "How to Start a Low-Tech Planted Tank — Aquatic Rhythm",
+    "description": "Low-tech planted tanks are not just cheaper — they are ecologically honest. A guide to starting a planted tank that matches your actual keeper rhythm, not an idealised version of it.",
+    "ogTitle": "How to Start a Low-Tech Planted Tank — Aquatic Rhythm",
+    "ogDescription": "Low-tech planted tanks are not just cheaper — they are ecologically honest. A guide to starting a planted tank that matches your actual keeper rhythm, not an idealised version of it."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "How to Start a<br><em>Low-Tech Planted Tank</em>",
+    "subtitle": "Low-tech is not the budget choice. It is the honest one.",
+    "texts": [
+      "The low-tech planted tank is often framed as a compromise — something you graduate out of when you are ready for CO2 injection and high-output lighting. That framing is wrong.",
+      "A low-tech tank is a tank whose demands match the keeper's actual capacity. This guide walks through what that means ecologically, which plants align with an honest keeper rhythm, how light functions as Environmental Rhythm, and why starting small is the most aligned path."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "All levels",
+    "metaLevel": "~8 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "What low-tech actually means",
+      "titleHtml": "What <em>\"low-tech\" actually means</em> ecologically",
+      "body": [
+        "Most hobbyists think of low-tech as the budget option: no CO2 injection, cheaper lights, simpler substrate. In ARA terms, low-tech is something more meaningful — it is a planted tank whose demands fall within the keeper's actual capacity.",
+        "High-tech planted tanks (pressurised CO2, high-output lighting, daily dosing) are not harder because the plants are picky. They are harder because they demand more frequent, more precise intervention from the keeper. If the keeper's rhythm does not match those demands, the plants will decline — not because they are in a low-tech tank, but because the system is misaligned with the person maintaining it.",
+        "A low-tech tank reduces the gap between what the plants need and what the keeper can realistically provide. For most keepers, especially those earlier in the hobby, this is not a compromise. It is the correct alignment."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Capacity before Ambition",
+      "hintText": [
+        "In ARA, \"Capacity before Ambition\" means understanding what you can actually sustain before choosing what to build. A high-tech planted tank maintained inconsistently will almost always drift toward decline. A low-tech tank maintained consistently — even imperfectly — will almost always succeed. The aligned starting point is honest about time, attention, and what happens when life gets busy."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "Plants that match your rhythm"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Plants that match your rhythm",
+      "titleHtml": "Plants that match <em>an honest keeper rhythm</em>",
+      "body": [
+        "Not all aquarium plants have the same demands. Some require CO2, high light, and precise nutrient balance to do anything at all. Others have evolved in low-light, fluctuating environments and will grow in almost anything stable. The key is matching plant selection to keeper rhythm — not to aquascape aspiration.",
+        "<strong>Rhizome plants</strong> (Anubias, Java Fern, Bucephalandra): Attach to hardscape, do not need substrate nutrients, grow slowly, tolerate low-to-medium light. Cannot be planted in substrate — the rhizome will rot if buried. Extremely forgiving of inconsistent fertilisation, and among the most aligned plants for a keeper whose rhythm involves longer gaps between maintenance.",
+        "<strong>Stem plants with low demands</strong> (Hygrophila polysperma, Limnophila sessiliflora, Vallisneria): Grow in substrate, do well under moderate light without CO2, benefit from occasional liquid fertiliser. Fast-growing, which helps outcompete algae by consuming excess nutrients before they become an Environmental Rhythm problem.",
+        "<strong>Floating plants</strong> (Salvinia minima, Frogbit, Duckweed): No substrate needed, fast growth, absorb nutrients directly from the water column, and reduce light reaching lower plants — useful if algae is appearing as a signal of excess. Excellent for low-tech because they are self-regulating and respond visibly to changes in nutrient load.",
+        "<strong>Plants to avoid in low-tech</strong> (Glossostigma, HC Cuba, many foreground carpets): These require CO2 and high light to remain alive. In low-tech conditions they decline slowly and create an algae problem as they release nutrients during decay — a compounding misalignment rather than a simple absence of growth."
+      ],
+      "pullQuote": "The question is not which plants are beautiful. It is which plants will still be alive in three months with the care you can actually give.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Light as Environmental Rhythm"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Light as Environmental Rhythm",
+      "titleHtml": "Light as <em>Environmental Rhythm</em>, not just fixture",
+      "body": [
+        "In a planted tank, light is the primary driver of the Environmental Rhythm. The question most keepers ask is \"how many lumens?\" or \"which LED brand?\" In ARA, the more important question is: how consistent is the photoperiod?",
+        "Plants evolved with a predictable daily light cycle. Inconsistency — turning lights on at different times, skipping days, varying intensity — disrupts the Environmental Rhythm more than insufficient light does. A planted tank that gets 6 hours of consistent light daily will outperform one that gets 10 hours on some days and nothing on others. The drift introduced by an inconsistent photoperiod registers in the plants before it becomes visible to the keeper.",
+        "For low-tech, the practical guidance: use a timer. 6–8 hours per day, same time every day. Moderate-output LED (PAR 20–50 at the substrate for low-light plants). Do not raise intensity to compensate for plant problems — this almost always produces an algae response before it helps plants. If plants are not growing as expected, the first question is photoperiod consistency, not intensity."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Environmental Rhythm",
+      "hintText": [
+        "Light is not just the fixture — it is the Environmental Rhythm the plants are synchronised with. In nature, aquatic plants experience predictable daily cycles. A timer recreates that predictability. A manually switched light, adjusted by mood or convenience, creates Environmental Rhythm drift that the plants register before you see any visible sign of misalignment."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Starting small, reading before expanding"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Starting small",
+      "titleHtml": "Starting small, <em>reading before expanding</em>",
+      "body": [
+        "The most common drift pattern in low-tech planted tanks is starting with too many variables at once: new substrate, multiple plant species, new fertiliser regime, new light schedule, new fish, all in the same week. When problems emerge — and they will — it is impossible to know which variable caused them.",
+        "The aligned approach is to start with one or two forgiving species (a rhizome plant and a fast-growing stem plant), establish stability over four to six weeks, and observe before adding more. The tank will tell you what it needs: if algae is appearing, light is too high or nutrients are out of balance. If plants are melting, water chemistry or temperature may be off. If growth is slow but healthy, the tank is stable at a low metabolic rate — which is exactly what a low-tech tank is designed to be.",
+        "The second aligned practice: before adding any new plant species, research its actual demands. If it needs CO2, it is not a low-tech plant regardless of what the shop says. If it needs high light, it will produce an algae response under low-light conditions as it declines. Matching plant demands to your setup — honestly — is what makes a low-tech tank succeed over years, not just months."
+      ],
+      "pullQuote": "A stable, slow-growing planted tank is not failing. It is succeeding at a pace that matches the system it lives in.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Back to Reading"
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/aquarium-plants-not-growing",
+      "text": "Why Won't My Aquarium Plants Grow? →"
+    },
+    {
+      "href": "/articles/algae-in-aquarium",
+      "text": "Algae in My Aquarium →"
+    },
+    {
+      "href": "/ara",
+      "text": "Aquatic Rhythm Alignment →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

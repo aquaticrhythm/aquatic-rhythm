@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "slug": "why-is-my-aquarium-water-cloudy",
+    "lang": "ms",
+    "sourceFile": "articles/why-is-my-aquarium-water-cloudy.html"
+  },
+  "head": {
+    "title": "Why Is My Aquarium Water Cloudy? — Aquatic Rhythm",
+    "description": "Cloudy aquarium water is one of the most common experiences in the hobby — and usually not a sign that something has gone wrong. Learn to read what your tank is actually doing.",
+    "ogTitle": "Why Is My Aquarium Water Cloudy? — Aquatic Rhythm",
+    "ogDescription": "Cloudy water is one of the most common experiences in the hobby — and usually not a sign that something has gone wrong."
+  },
+  "intro": {
+    "eyebrow": "Reading · Water &amp; Clarity",
+    "titleHtml": "Why Is My Aquarium<br><em>Water Cloudy?</em>",
+    "subtitle": "It is one of the most common things to see. And it is almost never what it looks like.",
+    "texts": [
+      "The water turned white, or green, or slightly hazy. You checked everything you could think of. Nothing seems obviously wrong — but the tank looks wrong.",
+      "This guide explains what cloudy water is actually signalling, why the type of cloudiness matters more than the cloudiness itself, and what an aligned response looks like when it is not an emergency."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "All levels",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "You are not alone in this",
+      "titleHtml": "Cloudy water is one of<br><em>the most common things to see.</em>",
+      "body": [
+        "Almost every keeper has seen it. The water changes colour or loses its clarity, often with no obvious cause. The fish seem fine, or maybe slightly off. The tank looks wrong in a way that is hard to describe.",
+        "The impulse is to do something — a large water change, a treatment, a restart. That impulse is understandable. But cloudiness is not a verdict. It is information. And the first question is not \"what do I do?\" It is \"what kind of cloudy is this?\""
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm note",
+      "hintText": [
+        "Cloudy water is one of those situations where the type matters more than the presence. White cloudiness and green cloudiness are completely different biological events — and they call for different responses. Reading the type first is the most important step."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "What is actually happening"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Three kinds of cloudy",
+      "titleHtml": "The water is not dirty.<br><em>It is busy.</em>",
+      "body": [
+        "<strong>White or milky cloudiness</strong> is almost always a bacterial bloom — a rapid multiplication of free-floating heterotrophic bacteria. It happens most often in new tanks, but also after large water changes, filter cleaning, adding new substrate, or any significant disruption to the system. These bacteria are not harmful. They are part of the biology that will eventually make the water clear and stable. The tank is working, not failing.",
+        "In ARA terms, this is an Early Phase signal — the system is establishing itself, and small disruptions can have visible effects. The bacterial bloom usually resolves on its own within one to two weeks if care stays steady and no new stressors are added."
+      ],
+      "pullQuote": "The bacteria that turn the water white are the same biology that will eventually keep it clear. They are not the problem. They are the beginning of the solution — visible for a moment before they settle into the biofilm where they belong.",
+      "hintLabel": "Aquatic Rhythm note",
+      "hintText": [
+        "Each type of cloudiness comes from a different ecological rhythm being active. White is biological rhythm. Green is environmental rhythm. Brown is chemistry from materials in the tank. Reading the type is how you decide whether to act, wait, or simply observe."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What ARA suggests"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Observation before action",
+      "titleHtml": "Read the type<br><em>before you act.</em>",
+      "body": [
+        "The most common response to cloudy water is an immediate large water change. This feels productive — but for bacterial blooms, it often extends the cloudiness by removing the bacteria before they have settled and established. The system gets disrupted again, the bloom restarts, and the keeper becomes more anxious.",
+        "ARA calls this the intervention trap: when caring becomes the obstacle. The impulse to act is not wrong — it is caring. But in most cloudiness situations, the most aligned response is to identify the type first, make at most one small adjustment, and then observe for several days before doing anything else."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA principle",
+      "hintText": [
+        "Observation before correction is one of ARA's four core principles. Not every visible change is a signal to intervene. Some are transitional, some are adaptive, and some need to be watched before they can be read honestly. Cloudy water is usually one of these."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What to do now"
+    },
+    {
+      "id": "mod-4",
+      "tag": "One step at a time",
+      "titleHtml": "One small adjustment.<br><em>Then watch what happens.</em>",
+      "body": [
+        "The clearest thing ARA offers here is this: before you reach for a product or make a large change, spend one day just observing. Watch when the cloudiness is worse and when it clears slightly. Watch how the fish are behaving. Check your parameters once — ammonia, nitrite, and nitrate — to rule out a water quality problem underneath the cloudiness.",
+        "If parameters are safe and fish are behaving normally, you are almost certainly looking at something that will resolve on its own. The cloudiness feels urgent, but it is usually the system doing something it was always going to do."
+      ],
+      "pullQuote": "Problems in closed systems do not begin with moral failures. They begin with rhythm misalignments — gradual, structural, often invisible until they are not. Cloudy water is usually the system catching up with something that drifted slowly — and now becoming briefly visible.",
+      "hintLabel": "If it is a new tank",
+      "hintText": [
+        "White cloudiness in a tank that is less than eight weeks old is almost always a normal part of the biological startup phase. The guide on New Tank Syndrome walks through exactly what is happening and why patience is the most aligned response during this period."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/new-tank-syndrome",
+      "text": "New tank syndrome →"
+    },
+    {
+      "href": "/ara",
+      "text": "The ARA framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

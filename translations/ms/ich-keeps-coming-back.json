@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "slug": "ich-keeps-coming-back",
+    "lang": "ms",
+    "sourceFile": "articles/ich-keeps-coming-back.html"
+  },
+  "head": {
+    "title": "Ich Keeps Coming Back — Aquatic Rhythm",
+    "description": "Ich returns in tanks where the underlying stress was never addressed. Treatment clears the parasite. Only an aligned tank keeps it away.",
+    "ogTitle": "Ich Keeps Coming Back — Aquatic Rhythm",
+    "ogDescription": "Ich returns in tanks where the underlying stress was never addressed. Treatment clears the parasite. Only an aligned tank keeps it away."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "Ich Keeps<br><em>Coming Back</em>",
+    "subtitle": "Treating ich is not the same as understanding why it keeps returning.",
+    "texts": [
+      "The spots cleared. You did everything right. Then a few weeks later they appeared again. The fish are flashing, the white spots are back, and it feels like the cycle will not end.",
+      "This guide explains why ich recurs in tanks where treatment has already worked, what the Livestock Rhythm is actually signalling during an outbreak, and what an aligned response looks like when the goal is not just clearing the parasite but understanding what the tank is saying."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~7 min",
+    "metaLevel": "Practical",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Why treatment alone doesn't work",
+      "titleHtml": "Why treatment <em>alone doesn't work</em>",
+      "body": [
+        "Ich (<em>Ichthyophthirius multifiliis</em>) is a parasite that most experienced keepers have dealt with. The frustrating part is not the first outbreak — it is the return. Treatment works: heat, salt, and medication all clear the free-swimming stage effectively. But keepers who experience recurring ich are often addressing the same symptom repeatedly without addressing what made the fish vulnerable in the first place.",
+        "Ich is everywhere. It exists at low levels in most aquariums, most of the time. Fish that are healthy and unstressed have immune responses that suppress it. Ich becomes visible — white spots, flashing behaviour — when fish are suppressed enough that the parasite can establish. This is the biological reality that explains recurrence: if the tank returns to the same stressful conditions after clearing an outbreak, the parasite returns when the immune system is suppressed again.",
+        "The cycle continues not because the treatment was inadequate but because the underlying conditions that allowed the parasite to gain a foothold were never changed. The drift that produced the first outbreak continues to produce subsequent ones."
+      ],
+      "pullQuote": "\"Ich doesn't come back because treatment failed. It comes back because the tank it lives in didn't change.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Ich as a Livestock Rhythm signal"
+    },
+    {
+      "id": "mod-2",
+      "tag": "A Livestock Rhythm signal",
+      "titleHtml": "Ich as a <em>Livestock Rhythm signal</em>",
+      "body": [
+        "In ARA, an ich outbreak is a Livestock Rhythm signal — it is the tank's way of making visible a stress that was already present. The signal is not the ich itself but what the ich reveals: that the fish in this tank have been under sufficient chronic stress to allow a normally suppressed parasite to proliferate.",
+        "The ARA question after an ich outbreak is not only \"how do I clear the spots?\" It is: \"what is suppressing the immune response of my fish?\" Several stressors commonly predispose tanks to ich outbreaks, each in a distinct way:",
+        "<strong>Temperature instability</strong> — the most common overlooked cause. A heater that cycles, a room that changes temperature seasonally, or a tank placed near a window can create daily temperature swings that chronically stress fish without producing a test-kit-readable problem. The misalignment is invisible until the Livestock Rhythm reveals it.",
+        "<strong>Overcrowding</strong> — too many fish produces ongoing aggression, competition for food, and elevated background ammonia from bioload. All of these are chronic stressors that suppress immunity over weeks. The keeper rhythm may have been consistent, but the tank's carrying capacity has been exceeded.",
+        "<strong>New fish introduction without quarantine</strong> — introducing new fish without a quarantine period is the most direct route for ich introduction. But even quarantined fish introduced to a stressed tank can trigger an outbreak in fish that were already compromised. The introduction becomes the visible trigger; the existing suppression is the underlying cause.",
+        "<strong>Post-water-change shock</strong> — large, infrequent water changes with significantly different temperature or chemistry can trigger ich outbreaks in the days following. The change itself stresses the fish, and a population of ich that was suppressed briefly finds the immune window it needed.",
+        "<strong>Elevated nitrate over time</strong> — not the emergency of ammonia or nitrite, but chronic high nitrate above 40–50 ppm suppresses immune function in many fish over months. A tank where water changes have slipped is a tank where fish are chronically stressed in a way that standard test results may obscure until the Livestock Rhythm signals it."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "In ARA, the Livestock Rhythm is the ongoing pattern of fish behaviour, colour, appetite, and social dynamics that reflects the state of the whole system. A fish that was healthy before an ich outbreak and healthy after clearing it is not giving you useful information. The fish that were suppressed enough to show spots are telling you something the water tests are not."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Finding what the tank is actually saying"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Finding the dominant stressor",
+      "titleHtml": "Finding what <em>the tank is actually saying</em>",
+      "body": [
+        "The first step after clearing an ich outbreak is observation, not immediate change. List what you know: when did the outbreak appear? What changed in the two to four weeks before it? New fish? New food? Seasonal temperature change? Room temperature shift? A large water change? A filter cleaning?",
+        "Once the most likely recent change is identified, that is the dominant stressor to address. If nothing changed externally, the next question is what has been accumulating: has the cleaning routine slipped? Is the tank overcrowded relative to what it was six months ago — fish grow? Is the heater still working accurately, not just \"the light is on\" but measured with a separate thermometer?",
+        "Get a second thermometer and log tank temperature at the same time each day for one week. Temperature instability shows up in this log far more often than keepers expect — a swing of two or three degrees across a day can be enough to suppress immune function chronically without ever looking like an obvious problem. The keeper rhythm felt consistent; the thermal environment had been drifting.",
+        "Also test nitrate, not just ammonia and nitrite. A nitrate reading above 40 ppm in a community tank with recurring ich is nearly always part of the picture. It will not appear as an emergency on a test kit, but it is the kind of background misalignment that the Livestock Rhythm will eventually surface."
+      ],
+      "pullQuote": "\"The ich is not the problem. The ich is the reading. The problem is what suppressed the fish enough to let it appear.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Aligned response to recurring disease"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Aligned response",
+      "titleHtml": "Aligned response <em>to recurring disease</em>",
+      "body": [
+        "An aligned response to recurring ich is different from a treatment response. Treatment asks: \"How do I clear the spots?\" An aligned response asks: \"What does this tank need to stop producing outbreaks?\"",
+        "The practical sequence works in four steps. First, address the current outbreak: raise temperature to 30°C over 48 hours and hold for 10 days (the heat method), add salt at 1–2 tbsp per 10 gallons, or use medication if fish are sensitive to heat. Second, during the clearing period, identify the dominant stressor using the approach from Module 3 — do not wait until the spots are gone to begin this observation. Third, after the tank has cleared, address the dominant stressor: stabilise temperature, reduce stocking density, restore the water change rhythm, or establish a quarantine process for new arrivals. Fourth, watch for six to eight weeks.",
+        "If no recurrence appears within that window, the dominant stressor was identified and addressed. If it returns, something was missed or there is a second stressor layered beneath the first. Do not return to the same keeper rhythm that produced the outbreak and expect a different result. The Livestock Rhythm will keep signalling until the signal is read.",
+        "The aligned response also means accepting that some tanks require structural change — not just a return to previous routines. A tank that has been producing ich outbreaks every few months may need a genuine reduction in stocking density, a new heater, or a change to the water change frequency. These are not admissions of past drift so much as they are the practical steps of an ecological forgiveness: releasing the conditions that produced the pattern and building the ones that will not."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Ecological Forgiveness",
+      "hintText": [
+        "A tank that has had recurring ich can become a stable tank. Fish immune systems recover when chronic stress is removed. Ecological forgiveness means that the past pattern does not determine the future — but only if the underlying stressor is changed, not just the symptom cleared. The history of outbreaks is not a verdict. It is a record of what the tank was asking for."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/perfect-parameters-fish-dying",
+      "text": "My Fish Are Dying But My Water Looks Fine →"
+    },
+    {
+      "href": "/articles/fish-hiding-what-does-it-mean",
+      "text": "My Fish Are Hiding →"
+    },
+    {
+      "href": "/ara",
+      "text": "Aquatic Rhythm Alignment →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

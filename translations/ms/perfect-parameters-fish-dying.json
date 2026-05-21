@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "slug": "perfect-parameters-fish-dying",
+    "lang": "ms",
+    "sourceFile": "articles/perfect-parameters-fish-dying.html"
+  },
+  "head": {
+    "title": "My Fish Are Dying — But My Water Parameters Look Fine — Aquatic Rhythm",
+    "description": "Perfect ammonia, zero nitrite, reasonable nitrate — and fish still dying or struggling. What parameters don't measure, and how to find what is actually wrong.",
+    "ogTitle": "My Fish Are Dying — But My Water Parameters Look Fine — Aquatic Rhythm",
+    "ogDescription": "Perfect ammonia, zero nitrite, reasonable nitrate — and fish still dying or struggling. What parameters don't measure, and how to find what is actually wrong."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "My Fish Are Dying —<br><em>But My Water Parameters Look Fine</em>",
+    "subtitle": "A test kit measures one layer of the system. Your fish are reading all of them.",
+    "texts": [
+      "Ammonia at zero. Nitrite at zero. Nitrate at a manageable level. The numbers look right — and yet something is clearly wrong. Fish are fading, hiding, not eating, or dying with no obvious cause.",
+      "This guide covers what a test kit actually measures, what it misses entirely, how to read the signals your fish are already giving you, and how to find the one thing that is most likely driving what you are seeing."
+    ],
+    "metaModules": "Practical",
+    "metaTime": "4 modules",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "The limits of the test kit",
+      "titleHtml": "Your test kit is right.<br><em>And it is also incomplete.</em>",
+      "body": [
+        "A water test that shows ammonia at zero, nitrite at zero, and nitrate at a manageable level is a good sign. It means the biological cycle is running. But it is measuring one specific layer of the system — the nitrogen cycle layer. It says nothing about several other things that fish experience constantly.",
+        "Understanding what a standard test kit does not measure is not about finding more things to worry about. It is about knowing where to look when the numbers say one thing and your fish say another."
+      ],
+      "pullQuote": "Parameters measure the water at the moment you test it. Your fish are measuring the water all day, every day. Those are different things.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "What fish show before tests do"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Reading the Livestock Rhythm",
+      "titleHtml": "Fish behaviour is earlier<br><em>than any test kit.</em>",
+      "body": [
+        "In Aquatic Rhythm Alignment, fish behavior is called the Livestock Rhythm — the ongoing pattern of how fish move, feed, position themselves, and interact. This rhythm is the most sensitive instrument in the tank. Fish respond to changes in their environment continuously, in real time, at a resolution no instrument can match.",
+        "Learning to read the Livestock Rhythm means knowing each fish's baseline well enough that a departure from it is visible before it becomes a crisis. These departures often appear days or weeks before any water parameter shifts."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "ARA treats fish behavior as a rhythm — an ongoing signal that reflects the state of the whole system. The skill is knowing each fish's baseline, so that departures from it are visible. A fish that has always been slightly shy is different from a fish that has recently become shy. The change is the signal."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Finding the one thing"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Looking for the one thing",
+      "titleHtml": "Almost every struggling tank<br><em>has one root.</em>",
+      "body": [
+        "When fish are declining despite clean parameters, it helps to think in terms of the dominant stressor — the single pressure that is placing the most strain on the system at any given time. Everything else in the tank is responding to that one thing. Identify it and the rest becomes clearer.",
+        "This is not always easy to see. Dominant stressors are often invisible to a test kit, operate slowly, and are easy to normalise once they've been present for a while. But they are almost always findable."
+      ],
+      "pullQuote": "The question is not \"what test am I missing?\" It is \"what is the one thing that, if it changed, would change everything else?\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "What to do now"
+    },
+    {
+      "id": "mod-4",
+      "tag": "What to do now",
+      "titleHtml": "Slow down.<br><em>Look at everything once.</em>",
+      "body": [
+        "The impulse when fish are struggling is to act — add something, change something, do something. But the most useful thing right now is a single, calm, systematic read of the whole system. Not a panic checklist. Not multiple interventions at once. One honest look."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/fish-hiding-what-does-it-mean",
+      "text": "Fish hiding guide →"
+    },
+    {
+      "href": "/articles/cycled-tank-problems",
+      "text": "Cycled tank problems →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    },
+    {
+      "href": "/ara",
+      "text": "The ARA framework →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

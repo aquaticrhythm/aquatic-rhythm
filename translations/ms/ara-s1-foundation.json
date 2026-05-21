@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "slug": "ara-s1-foundation",
+    "lang": "ms",
+    "sourceFile": "articles/ara-s1-foundation.html"
+  },
+  "head": {
+    "title": "Foundation — ARA Framework · Aquatic Rhythm",
+    "description": "What ARA is, who it is for, and what it assumes about aquariums and keepers.",
+    "ogTitle": "Foundation — ARA Framework · Aquatic Rhythm",
+    "ogDescription": "What ARA is, who it is for, and what it assumes about aquariums and keepers."
+  },
+  "intro": {
+    "eyebrow": "",
+    "titleHtml": "",
+    "subtitle": "",
+    "texts": [],
+    "metaModules": "",
+    "metaTime": "",
+    "metaLevel": "",
+    "cta": "Start reading"
+  },
+  "modules": [],
+  "relatedLinks": [],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

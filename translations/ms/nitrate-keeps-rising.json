@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "slug": "nitrate-keeps-rising",
+    "lang": "ms",
+    "sourceFile": "articles/nitrate-keeps-rising.html"
+  },
+  "head": {
+    "title": "Why Nitrate Keeps Rising — Aquatic Rhythm",
+    "description": "A cycled tank still accumulates nitrate. Understanding why it rises — and what it signals — is different from simply doing more water changes.",
+    "ogTitle": "Why Nitrate Keeps Rising — Aquatic Rhythm",
+    "ogDescription": "A cycled tank still accumulates nitrate. Understanding why it rises — and what it signals — is different from simply doing more water changes."
+  },
+  "intro": {
+    "eyebrow": "All levels",
+    "titleHtml": "Why Nitrate<br><em>Keeps Rising</em>",
+    "subtitle": "A cycled tank is not a balanced tank.",
+    "texts": [
+      "The cycle is done. Ammonia is zero. Nitrite is zero. But every time you test, nitrate keeps climbing. You do a water change, it drops, then it climbs again. After a while the question shifts from \"how do I lower nitrate\" to \"why does it keep rising this fast.\"",
+      "This guide explains what nitrate actually is, why it accumulates even in well-maintained tanks, what levels matter and for which fish, and how to read rising nitrate as a Chemical Rhythm signal rather than a failure to correct."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~8 min",
+    "metaLevel": "All levels",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "What nitrate is and where it comes from",
+      "titleHtml": "What nitrate is <em>and where it comes from</em>",
+      "body": [
+        "Nitrate (NO₃) is the end product of the nitrogen cycle — bacteria convert ammonia to nitrite, then nitrite to nitrate, but stop there. Unlike ammonia and nitrite, nitrate doesn't spike suddenly; it accumulates slowly and steadily as long as the tank has a biological load.",
+        "Fish waste, uneaten food, and decaying plant matter all feed the ammonia → nitrite → nitrate chain continuously. The more biological load the tank carries — fish, food, organic matter — the faster nitrate accumulates.",
+        "In a tank with no plants, nothing removes nitrate except water changes. In a planted tank, plants absorb nitrate as fertiliser, which can slow the climb significantly. This is why the same water change frequency produces very different nitrate readings in a heavily stocked bare tank versus a lightly stocked planted one: the variables are stocking density, feeding rate, organic load, and plant uptake — not just how often you change the water."
+      ],
+      "pullQuote": "\"Nitrate doesn't signal a problem the way ammonia does. It signals what has been accumulating — quietly, continuously — since the last time you changed the water.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "What levels actually matter"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What levels actually matter",
+      "titleHtml": "What levels <em>actually matter</em>",
+      "body": [
+        "Most fishkeeping advice says \"keep nitrate below 20–40 ppm.\" That range is real, but it matters differently depending on what you keep. Soft water fish like discus, cardinal tetras, and many Apistogramma species can show chronic suppression at levels that appear acceptable to hardier fish.",
+        "Shrimp, particularly Neocaridina and Caridina, are sensitive to nitrate trends and can decline slowly in tanks where the number looks acceptable but never truly drops. Community tanks with livebearers and hardier tetras can tolerate higher levels without obvious distress — but \"without obvious distress\" is not the same as \"without suppression.\"",
+        "The ARA lens reads nitrate differently: the question is not just \"is the number acceptable?\" but \"what is this number telling me about the balance between load and maintenance in this tank?\" A nitrate reading of 80 ppm in a tank that was last changed two weeks ago tells you something different from 80 ppm in a tank changed yesterday. The trend matters as much as the number."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Chemical Rhythm",
+      "hintText": [
+        "In ARA, a consistently high or rising nitrate is a Chemical Rhythm reading — it reflects the relationship between biological load, plant uptake, and keeper rhythm. The number on the test kit is the output. The signal is what produced it."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Reading the rise as information"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Reading the rise as information",
+      "titleHtml": "Reading the rise <em>as information</em>",
+      "body": [
+        "When nitrate rises faster than expected, the useful question is: what changed? Four things drive faster accumulation: more fish or larger fish producing more waste, higher feeding rate, reduced plant density (plants removed, melting, or not thriving), and reduced water change frequency.",
+        "If none of these changed and nitrate is still rising faster, the filter may need servicing — a clogged filter passes water over bacterial colonies less efficiently, which can reduce nitrate processing. But more often, the cause is gradual: fish grew, feeding crept up slightly, a plant died and wasn't replaced. The tank changed in small increments that the keeper rhythm didn't track, and the Chemical Rhythm eventually surfaced the accumulated drift.",
+        "Testing nitrate after every water change for four consecutive weeks creates a simple trend picture. If nitrate is back to 40 ppm within 5 days of a change in a lightly stocked tank, that's a load problem. If it takes 14 days in a heavily stocked tank, that's within the expected range for that load. The trend tells you whether your maintenance rhythm is matched to your tank's biology — or whether the biology has quietly outpaced the rhythm."
+      ],
+      "pullQuote": "\"A nitrate test taken right after a water change tells you almost nothing. A test taken the same number of days after each change, over four consecutive weeks, tells you whether the rhythm is matched to the load.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Aligned response to rising nitrate"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Aligned response to rising nitrate",
+      "titleHtml": "Aligned response <em>to rising nitrate</em>",
+      "body": [
+        "The aligned response to rising nitrate is not simply more frequent water changes — though that may be part of it. The full response reads the cause. If stocking density has crept up, the aligned response is honest assessment of load capacity. If feeding has increased, a two-week trial of reduced feeding often produces a measurable drop in nitrate rise rate. If plants have died back, replacing or supplementing them addresses the uptake side of the equation. If water changes have slipped, restoring the rhythm before adding other interventions shows whether that alone is sufficient.",
+        "Water changes remain the most reliable way to reduce nitrate in the short term. But the goal is not to do more changes — it is to find the rhythm that maintains acceptable levels given this specific tank's biology and load. A tank with lower stocking density and live plants may maintain healthy nitrate with a weekly 20% change. A heavily stocked tank without plants may need 30–40% weekly to achieve the same result.",
+        "Neither is wrong. They are different tanks requiring different rhythms. The aligned keeper reads what the tank needs and builds a rhythm around it, rather than applying a universal rule and wondering why it doesn't work."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Ecological Forgiveness",
+      "hintText": [
+        "A tank with chronically high nitrate can recover. Reducing load, increasing plant coverage, and restoring a consistent water change rhythm all shift the Chemical Rhythm over weeks. The past accumulation is not a permanent state — it is the result of a previous alignment. Change the alignment, and the reading changes."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/cycled-tank-problems",
+      "text": "An Established Tank Isn't Finished →"
+    },
+    {
+      "href": "/articles/how-often-water-changes",
+      "text": "How Often Should I Change Water? →"
+    },
+    {
+      "href": "/articles/aquarium-plants-not-growing",
+      "text": "Why Won't My Plants Grow? →"
+    },
+    {
+      "href": "/ara",
+      "text": "Aquatic Rhythm Alignment →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "slug": "aquarium-not-a-project",
+    "lang": "ms",
+    "sourceFile": "articles/aquarium-not-a-project.html"
+  },
+  "head": {
+    "title": "The Aquarium Is Not a Project — Aquatic Rhythm",
+    "description": "Knowing when to stop improving is part of the practice. The difference between changes that serve the ecosystem and changes that serve the keeper's restlessness.",
+    "ogTitle": "The Aquarium Is Not a Project — Aquatic Rhythm",
+    "ogDescription": "Knowing when to stop improving is part of the practice. The difference between changes that serve the ecosystem and changes that serve the keeper's restlessness."
+  },
+  "intro": {
+    "eyebrow": "Reflection",
+    "titleHtml": "The Aquarium<br><em>Is Not a Project</em>",
+    "subtitle": "Knowing when to stop improving is part of the practice.",
+    "texts": [
+      "There is a particular kind of keeper who is never quite finished with their tank. Equipment gets upgraded before it fails. Fish get added before the existing community has settled. Decorations shift. Lighting profiles change. The tank is perpetually mid-revision — stable, but never rested.",
+      "This is not a character flaw. It is a natural consequence of caring. But it is worth examining, because a tank in genuine alignment asks for less intervention than most keepers give it — and the impulse to improve can itself be a form of disruption."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~8 min",
+    "metaLevel": "Reflection",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "The project mindset",
+      "titleHtml": "The <em>project mindset</em>",
+      "body": [
+        "A project has a destination. You gather materials, you build toward a vision, you complete it and move to the next thing. This frame works well for setting up a tank — cycling it, stocking it, establishing the hardscape. During those early phases, the keeper's active involvement is genuinely required. The tank is in flux and it needs guidance.",
+        "The project mindset becomes a liability when the tank has finished its early phase and entered genuine stability. A stable, cycled tank with established fish, functioning filtration, and consistent chemistry is not an unfinished project. It is a living system in balance. The keeper's role shifts from builder to observer — and that shift is harder to make than it sounds, because observation feels passive and building feels like care.",
+        "Many of the changes keepers make to established tanks are driven not by the tank's needs but by the keeper's restlessness. A new filter because the current one is \"old.\" A substrate swap because of something seen online. A new fish because the tank \"has room.\" These interventions are not always harmful, but they are worth examining before acting: is this for the tank, or for you?"
+      ],
+      "pullQuote": "\"A stable tank is not a waiting tank. It is an arrived tank. The work of maintenance is different from the work of completion — and recognising that difference is a Keeper Rhythm skill.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "How improvement becomes disruption"
+    },
+    {
+      "id": "mod-2",
+      "tag": "How improvement becomes disruption",
+      "titleHtml": "How improvement <em>becomes disruption</em>",
+      "body": [
+        "Every change to a stable tank is a perturbation. Some perturbations are necessary and managed — a scheduled water change, a filter media replacement in tank water, a slow temperature adjustment. These are maintenance rhythms that the tank has adapted around. The biological and chemical systems have incorporated them as predictable inputs.",
+        "Non-routine changes are different. A new fish introduces pathogens the existing livestock has no immunity to, and disrupts social dynamics that may have taken months to settle. A new filter, even a superior one, means cycling a new media colony from scratch — and during that period, biological filtration is compromised. A new substrate stirs anaerobic pockets, releases trapped gases, and suspends particles that shade plants and clog gills. A lighting change can trigger an algae bloom or suppress plants that had adapted to the previous spectrum.",
+        "None of these effects are catastrophic in isolation, but they compound. A keeper who is continuously improving a tank is continuously introducing perturbations — and a tank under chronic low-level perturbation cannot build the kind of deep alignment that makes it resilient. The fish are always adjusting. The bacteria are always re-establishing. The chemistry never quite stabilises."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Environmental + Biological Rhythm",
+      "hintText": [
+        "Frequent voluntary disruptions prevent the Environmental and Biological rhythms from deepening. A tank that has been stable for six months without intervention is qualitatively more resilient than one that has been \"optimised\" monthly. The biology needs uninterrupted time to mature."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Capacity before Ambition"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Capacity before Ambition",
+      "titleHtml": "Capacity before <em>Ambition</em>",
+      "body": [
+        "One of the four principles of ARA is <strong>Capacity before Ambition</strong>. It means that the right question before any change is not \"is this a good idea in principle?\" but \"does this system currently have the capacity to absorb this change?\" A tank that is running at its biological and social limits — full stocking, established territories, mature plants at peak growth — has very little spare capacity. A change that might work well in an under-stocked, recently disrupted tank can destabilise one that was genuinely thriving.",
+        "Capacity is not only biological. It includes the keeper's available time and attention. An upgrade that requires two weeks of careful monitoring during a period when the keeper is busy travels, working long hours, or otherwise depleted is an upgrade without capacity. The tank will not wait for you to become less busy. It will respond to the disruption in your absence.",
+        "Ambition in fishkeeping is not inherently problematic. It is what drives keepers toward more complex and more beautiful tanks. But ambition that outpaces capacity — the tank's, the keeper's, or both — reliably produces the opposite of what it intends. More disruption, not less. More instability, not more beauty."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Knowing when the tank is enough"
+    },
+    {
+      "id": "mod-4",
+      "tag": "When the tank is already enough",
+      "titleHtml": "When the tank is <em>already enough</em>",
+      "body": [
+        "A tank tells you when it has arrived. The fish are visible, not hiding. They move through the full water column. Feeding response is confident and immediate. Parameters test consistently within range, week after week. Algae stays minor and manageable. Plants are growing, even slowly. Nothing is asking for attention — not because you've stopped watching, but because there is nothing to notice.",
+        "This is what alignment looks like from the outside. It is quiet. It is unremarkable. And for keepers trained to equate activity with care, it can feel like neglect. The instinct is to do something — add a fish, move a plant, upgrade the lighting. But a tank in this state is not asking for improvement. It is asking to be allowed to continue.",
+        "The practice of noticing this — recognising the difference between a tank that needs intervention and a tank that is simply being watched — is a skill. It develops the same way observation does: slowly, with repetition, and only if you are looking for it. The aquarium is not a project to be completed. It is a rhythm to be maintained. And sometimes maintaining a rhythm means setting down the tools and letting the water be still."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/ara-full-framework",
+      "text": "The ARA Framework →"
+    },
+    {
+      "href": "/articles/know-your-rhythm",
+      "text": "Know Your Rhythm →"
+    },
+    {
+      "href": "/articles/when-hobby-stops-feeling-good",
+      "text": "When the Hobby Stops Feeling Good →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

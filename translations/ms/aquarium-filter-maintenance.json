@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "slug": "aquarium-filter-maintenance",
+    "lang": "ms",
+    "sourceFile": "articles/aquarium-filter-maintenance.html"
+  },
+  "head": {
+    "title": "Your Filter Is Not What You Think — Aquatic Rhythm",
+    "description": "Most keepers clean their filter to keep it working. The ones who crash their tanks do the same thing. The difference is understanding what the filter actually is.",
+    "ogTitle": "Your Filter Is Not What You Think — Aquatic Rhythm",
+    "ogDescription": "Most keepers clean their filter to keep it working. The ones who crash their tanks do the same thing. The difference is understanding what the filter actually is."
+  },
+  "intro": {
+    "eyebrow": "Beginner &amp; Intermediate",
+    "titleHtml": "Your Filter Is<br><em>Not What You Think</em>",
+    "subtitle": "Cleaning it the wrong way is worse than not cleaning it at all.",
+    "texts": [
+      "You clean your filter because it looks dirty, or because it's been a few months, or because the flow has slowed down. Three days later the ammonia spikes and you can't explain why. The tank looked fine. You did everything right.",
+      "This guide explains what an aquarium filter actually does, why cleaning it at the wrong time or in the wrong way can crash an established tank, and how to read your filter's state as part of the Biological Rhythm rather than treating it as maintenance to tick off."
+    ],
+    "metaModules": "5 modules",
+    "metaTime": "~10 min",
+    "metaLevel": "Beginner &amp; Intermediate",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "What the filter actually is",
+      "titleHtml": "What the filter <em>actually is</em>",
+      "body": [
+        "Most keepers think of the filter as a cleaning machine — it removes waste from the water. That is partly true: mechanical filtration traps particles. But the biological function of the filter is more important and more fragile than the mechanical one.",
+        "The filter media — sponge, ceramic rings, bio-balls, lava rock — is the primary home of the nitrifying bacteria that run the nitrogen cycle. These bacteria convert ammonia (fish waste) into nitrite, then nitrite into nitrate. Without them, ammonia and nitrite accumulate to toxic levels. The colony that does this work lives inside the filter. It took weeks to establish during your tank's cycle. It is maintained every day by the water passing through it.",
+        "Understanding this changes what \"filter maintenance\" means. You are not just cleaning a machine. You are managing a living ecosystem that exists inside a piece of plastic and ceramic. The decisions you make about when and how to service it either preserve that ecosystem or disrupt it."
+      ],
+      "pullQuote": "\"The filter is not where the dirty water goes. It is where the bacteria live that make the tank survivable.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Why tap water crashes tanks"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Why tap water crashes tanks",
+      "titleHtml": "Why tap water <em>crashes tanks</em>",
+      "body": [
+        "Tap water contains chlorine and chloramine — compounds added by water treatment facilities to kill bacteria. This is excellent for drinking water and fatal for filter media. Rinsing filter sponges under a running tap, or soaking ceramic media in tap water, kills a significant portion of the bacterial colony that took weeks to establish.",
+        "The crash doesn't always happen immediately. If a portion of the colony survives, it may recover over days. But during that recovery window, the filter's processing capacity is reduced. Ammonia and nitrite rise, usually gradually at first, then more sharply as the surviving bacteria are overwhelmed by normal waste production.",
+        "Keepers who experience a crash after filter cleaning often attribute it to the cleaning happening \"at the wrong time\" or to a disease. The actual cause is simpler: the water used for cleaning destroyed the biology. The fix is equally simple: always rinse filter media in water taken from the tank during a water change. Tank water is dechlorinated, temperature-matched, and already contains the compounds the bacteria need. A gentle rinse in a bucket of tank water removes trapped debris without disrupting the colony."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Biological Rhythm",
+      "hintText": [
+        "In ARA, the Biological Rhythm includes the bacterial colony in your filter — it is as much a living part of the tank as the fish and plants. Managing the filter means reading the state of that colony: when it is established and stable, when it needs servicing, and what kind of servicing preserves rather than disrupts it."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "When to clean — and when not to"
+    },
+    {
+      "id": "mod-3",
+      "tag": "When to clean — and when not to",
+      "titleHtml": "When to clean — <em>and when not to</em>",
+      "body": [
+        "The timing of filter cleaning matters as much as the method. Several situations make filter cleaning riskier than usual: immediately after adding new fish (the bacterial load increases for several weeks while the colony adjusts — cleaning during this window removes processing capacity exactly when more is needed); during or just after a disease treatment (many medications kill bacteria as well as pathogens — adding a cleaning that removes more colony capacity compounds the disruption); during temperature instability (bacterial growth rates are temperature-dependent — a tank that has experienced heater issues or seasonal temperature changes may already have a suppressed colony).",
+        "The signs that a filter needs servicing are flow reduction (the pump is working against blocked media) and visible compaction of the sponge. These are mechanical signals, not biological ones — the bacterial colony doesn't announce when it needs cleaning. But a filter that passes water freely and has been in place less than three months almost certainly doesn't need cleaning yet.",
+        "The instinct to clean because time has passed is less useful than reading the actual filter state."
+      ],
+      "pullQuote": "\"A filter that is working — passing water freely, in a stable tank — is doing its job. The impulse to clean it because it 'has been a while' is a Keeper Rhythm signal, not a tank signal.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "How to clean without crashing"
+    },
+    {
+      "id": "mod-4",
+      "tag": "How to clean without crashing",
+      "titleHtml": "How to clean <em>without crashing</em>",
+      "body": [
+        "The method that preserves the bacterial colony while removing mechanical waste: remove filter media one section at a time, not all at once; rinse each piece gently in a bucket of water taken from the tank during that session's water change; squeeze sponges once or twice to remove trapped debris, not repeatedly; do not scrub ceramic or bio-media — a gentle rinse is sufficient; replace cleaned media before moving to the next piece; never replace all media at once.",
+        "If you are replacing old media with new media (sponge that has finally disintegrated, ceramic that has cracked), run old and new media simultaneously for four to six weeks before removing the old piece entirely. The old media seeds the new with bacteria. Removing old media immediately leaves the new piece bare and your filter significantly under-capacity.",
+        "This is also why the advice to \"replace filter cartridges monthly\" — common in the instructions for branded hang-on filters — can destabilise established tanks. The cartridge is the biological media. Replacing it monthly is a slow way of repeatedly partially cycling a tank."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Timing before Technique",
+      "hintText": [
+        "The ARA principle of Timing before Technique applies directly to filter maintenance. A filter cleaned at the wrong time with the right technique can still crash a tank. A filter cleaned at the right time with the right technique preserves the Biological Rhythm. Read the timing first."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Reading the filter's state"
+    },
+    {
+      "id": "mod-5",
+      "tag": "Reading the filter's state",
+      "titleHtml": "Reading the filter's <em>state</em>",
+      "body": [
+        "An established filter in a stable tank has a characteristic look and feel: the sponge is brown-tinged from bacterial colonisation, the ceramic media may have a thin biofilm, flow is strong and consistent. None of these are signs of a dirty filter — they are signs of a live filter. The brown colour is bacteria. The biofilm is biology. A filter that looks like that is working.",
+        "The situations that genuinely require attention: flow has measurably decreased and the sponge compresses under pressure into a solid mass rather than yielding; the tank has been treated with medication that kills bacteria (test ammonia 24–48 hours after treatment; a rise indicates the colony was affected); the filter ran dry due to a power cut or pump failure (restarting a filter that ran dry may require re-establishing the colony — test daily for a week).",
+        "Beyond these, the most useful filter habit is not cleaning frequency — it is observation. Watch the flow. Watch the tank's readings after any maintenance. Give the biology space to work. The Biological Rhythm is more stable than most keepers realise, and more fragile than most cleaning habits account for."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/new-tank-syndrome",
+      "text": "New Tank Syndrome →"
+    },
+    {
+      "href": "/articles/cycled-tank-problems",
+      "text": "An Established Tank Isn't Finished →"
+    },
+    {
+      "href": "/articles/nitrate-keeps-rising",
+      "text": "Why Nitrate Keeps Rising →"
+    },
+    {
+      "href": "/ara",
+      "text": "Aquatic Rhythm Alignment →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

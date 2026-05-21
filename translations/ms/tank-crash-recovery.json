@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "slug": "tank-crash-recovery",
+    "lang": "ms",
+    "sourceFile": "articles/tank-crash-recovery.html"
+  },
+  "head": {
+    "title": "When the Tank Crashes — Aquatic Rhythm",
+    "description": "A tank crash is more than a technical emergency. It is the tank communicating, loudly, something it has been saying quietly for some time.",
+    "ogTitle": "When the Tank Crashes — Aquatic Rhythm",
+    "ogDescription": "A tank crash is more than a technical emergency. It is the tank communicating, loudly, something it has been saying quietly for some time."
+  },
+  "intro": {
+    "eyebrow": "All levels",
+    "titleHtml": "When the Tank<br><em>Crashes</em>",
+    "subtitle": "What to do, what to feel, and what to decide.",
+    "texts": [
+      "You come home to find fish on the surface. Or you wake up and the water has turned opaque overnight. Or you notice the fish are all at the bottom, barely moving. The tank crashed. In the first few minutes, the instinct is to act — change the water, add something, fix something. But the first step is to read what happened.",
+      "This guide covers the immediate response to a crash, how to assess whether the tank is recoverable, how to read a crash as information rather than catastrophe, and — for those who need it — how to process the grief of losing fish."
+    ],
+    "metaModules": "5 modules",
+    "metaTime": "~10 min",
+    "metaLevel": "All levels",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "The first thirty minutes",
+      "titleHtml": "The first <em>thirty minutes</em>",
+      "body": [
+        "In the first thirty minutes, two things matter: stabilise what is survivable, and do not add to the disruption. Test ammonia, nitrite, and if possible pH. These three numbers tell you what kind of crash this is. High ammonia (above 2 ppm) or detectable nitrite means the biological system has failed — the bacterial colony is overwhelmed or absent. Low pH with high CO2 is a different crisis from high ammonia with zero CO2. Understanding the type of crash shapes the response.",
+        "A 20–25% water change with dechlorinated, temperature-matched water is the safest universal first action — it dilutes whatever is elevated without shocking the system further. Do not do a large emergency change (50%+) unless ammonia is above 4 ppm or pH has dropped below 6.5; large rapid changes are a second shock layered on the first.",
+        "Remove dead or clearly dying fish — decomposing bodies add to the ammonia load. Move surviving fish only if you have a suitable emergency container with dechlorinated water; the stress of netting and transfer may be greater than the stress of remaining in the crash tank during recovery.",
+        "Hold the first water change. Test again in two hours. The trend is more useful than the single reading."
+      ],
+      "pullQuote": "\"In a crash, the instinct is to act. The aligned response is to read — and act on what the reading says, not on what the panic suggests.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "What caused it"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What caused it",
+      "titleHtml": "What <em>caused it</em>",
+      "body": [
+        "Crashes have recognisable patterns. Knowing which pattern occurred guides both the immediate response and the longer recovery.",
+        "<strong>Ammonia spike from filter failure or cleaning</strong> — the bacterial colony was disrupted (filter ran dry, was cleaned with tap water, or the power was out for more than 24 hours). Ammonia rises sharply over 24–48 hours. The tank may have appeared fine until it didn't.",
+        "<strong>New tank syndrome in an established tank</strong> — a large water change, medication course, or significant filter disturbance partially re-cycled the tank. The colony was smaller than the load, and the remaining load tipped it.",
+        "<strong>Overstocking tipping point</strong> — a tank that had been gradually adding fish finally exceeded the colony's processing capacity. The crash appears sudden but was the last step of a long drift.",
+        "<strong>Disease cascade</strong> — a disease introduced by new arrivals suppressed fish immune function, which triggered secondary bacterial infections, which raised ammonia from gill damage and decomposition.",
+        "<strong>Chemical poisoning</strong> — cleaning products near the tank, a treated wood or decor introduction, or a CO2 overdose. No biological recovery is possible until the chemical is removed or diluted.",
+        "Identifying the type matters because the response to a chemical crash is different from the response to an ammonia crash — and treating one with the other's protocol can accelerate the failure."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Is it recoverable"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Is it recoverable",
+      "titleHtml": "Is it <em>recoverable</em>",
+      "body": [
+        "Most crashes are recoverable given sufficient time and consistent response. The question is whether the biology can re-establish faster than the remaining survivors can tolerate continued stress.",
+        "The factors that favour recovery: the bacterial colony was partially disrupted, not eliminated (the filter was running throughout, even if overwhelmed); there are surviving fish that are not in severe distress; ammonia, while elevated, is below 4 ppm and trending down after water changes; the cause has been identified and addressed.",
+        "The factors that complicate recovery: the filter ran dry or was replaced entirely — the colony must rebuild from scratch, which takes weeks; multiple species died and the remaining bioload dropped suddenly, meaning the new balance will re-establish at a different setpoint; the cause was chemical and requires full water changes to eliminate; surviving fish are severely stressed with clamped fins, surface breathing, and not responding to food.",
+        "If the cause was chemical or the filter colony was completely eliminated, the tank will need to be managed like a new cycle for three to six weeks — ammonia and nitrite will rise and fall before the colony re-establishes. This is survivable with consistent water changes and patience. Restarting versus recovering is a decision about the surviving fish, the keeper's capacity for intensive management, and honest assessment of what the tank can do now."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Ecological Forgiveness",
+      "hintText": [
+        "ARA's concept of ecological forgiveness applies directly to crashes. A tank that has crashed can rebuild. The past state does not determine the future state. The crash is information — it reveals what the previous alignment was not sustaining. The rebuilding is the opportunity to create alignment that can be sustained."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What the crash is saying"
+    },
+    {
+      "id": "mod-4",
+      "tag": "What the crash is saying",
+      "titleHtml": "What the crash <em>is saying</em>",
+      "body": [
+        "A crash is rarely a completely random event. In most cases, looking backward reveals a series of signals the tank had been giving that did not cross the threshold of visible crisis until the crash occurred. Parameters that were stable but elevated. Fish that were not thriving but not obviously failing. Filter flow that had gradually decreased. Feeding that had increased incrementally. A disease that was treated but produced residual stress that was never fully cleared.",
+        "The crash reads as sudden because the visible threshold was crossed suddenly. The conditions that produced it were often weeks or months in development.",
+        "After the immediate crisis has stabilised, the most useful question is not \"how do I prevent this from happening again?\" but \"what was the tank saying before this happened that I didn't read as clearly as it intended?\" This is not self-blame. It is the forensic ecology that makes future keeping more attuned.",
+        "Every experienced keeper has lost fish to a crash. The ones who learn from it are not the ones who beat themselves up — they are the ones who read the crash as information."
+      ],
+      "pullQuote": "\"The crash is the loudest signal the tank gives. The question is not how to silence it. The question is what it was trying to say.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "The loss"
+    },
+    {
+      "id": "mod-5",
+      "tag": "The loss",
+      "titleHtml": "The <em>loss</em>",
+      "body": [
+        "Losing fish in a crash is a grief that is often not acknowledged because fish are not always treated as animals that merit grief. But keepers who have cared for a tank for months or years have watched particular fish grow, develop personalities, establish relationships with other fish. Losing them to a crash can produce genuine sadness, guilt, and a questioning of whether to continue. These responses are valid. Caring for living animals involves their deaths. The crash accelerates that process and takes away the gradual and natural arc.",
+        "There is no fixed protocol for processing this. Some keepers take a week before re-establishing the tank. Some find that the work of rebuilding — the careful water changes, the daily testing, the gradual return of biology — is itself a process of meaning-making. Some decide the crash was the signal to simplify: fewer fish, a lower-maintenance approach, a different relationship with the hobby. None of these are failures. They are the Keeper Rhythm responding to its own experience and adjusting accordingly.",
+        "Aquatic Rhythm is built on the observation that keepers are part of the system. What happens to the keeper — the loss, the grief, the reassessment — is part of what the tank produces and what it teaches. Reading the crash means reading what it asked of you as well as what it asked of the biology."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/new-tank-syndrome",
+      "text": "New Tank Syndrome →"
+    },
+    {
+      "href": "/articles/aquarium-filter-maintenance",
+      "text": "Your Filter Is Not What You Think →"
+    },
+    {
+      "href": "/articles/caring-without-guilt",
+      "text": "Caring Without Guilt →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

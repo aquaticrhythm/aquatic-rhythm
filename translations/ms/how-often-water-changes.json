@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "slug": "how-often-water-changes",
+    "lang": "ms",
+    "sourceFile": "articles/how-often-water-changes.html"
+  },
+  "head": {
+    "title": "How Often Should I Do Water Changes? — Aquatic Rhythm",
+    "description": "There is no single right answer — and that is not the problem you think it is. ARA looks at your keeper rhythm first, then asks what kind of continuity your system actually needs.",
+    "ogTitle": "How Often Should I Do Water Changes? — Aquatic Rhythm",
+    "ogDescription": "There is no single right answer — and that is not the problem you think it is. ARA looks at your keeper rhythm first."
+  },
+  "intro": {
+    "eyebrow": "Reading · Keeper &amp; Rhythm",
+    "titleHtml": "How Often Should I<br><em>Do Water Changes?</em>",
+    "subtitle": "There is no single right answer. And that is not the problem you think it is.",
+    "texts": [
+      "Weekly 25%. Monthly 50%. When nitrates hit a certain number. The advice varies so much that it starts to feel like everyone is guessing — and you are the one getting it wrong.",
+      "The question itself might be the problem. ARA does not start with frequency. It starts with your keeper rhythm — the actual pattern of care you can sustain — and works from there."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "All levels",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "The question behind the question",
+      "titleHtml": "There are as many answers<br><em>as there are keepers.</em>",
+      "body": [
+        "Ask ten experienced aquarists and you will get ten different answers. Weekly. Every two weeks. Monthly. 10%. 30%. 50%. Based on nitrates. Based on the calendar. Based on how the tank looks.",
+        "The disagreement is not because some of them are wrong. It is because water change frequency is genuinely dependent on things that differ between every tank and every keeper: bioload, plant mass, filter capacity, tank phase, and — the part most advice leaves out — the pattern of care the keeper can actually sustain."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm note",
+      "hintText": [
+        "ARA does not give a universal water change schedule because there is not one. What it does instead is ask two prior questions: what does your system actually need, and what rhythm can you honestly maintain? The answer to the second shapes the answer to the first."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "What water changes actually do"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What is actually happening",
+      "titleHtml": "Water changes are not<br><em>about removing bad things.</em>",
+      "body": [
+        "The common framing is that water changes remove toxins and waste. That is partly true. But in a well-functioning tank, the biological filter handles most of the toxic load. What water changes primarily do is something subtler: they dilute accumulated compounds that biology cannot break down — nitrates, dissolved organics, trace mineral depletion — and they renew the Water Rhythm of the tank.",
+        "The Water Rhythm, in ARA terms, is the pattern of movement and renewal in the system. When that rhythm becomes too irregular — too long between changes, or too large when they happen — the system has to absorb a sudden shift. Biology does not respond well to sudden shifts."
+      ],
+      "pullQuote": "A water change is not a reset. It is a renewal — a moment when the system's accumulated load is reduced gently, and the chemistry that living things depend on is brought back into range. Renewals work best when they are part of a rhythm, not a reaction to a crisis.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Rhythm before frequency"
+    },
+    {
+      "id": "mod-3",
+      "tag": "The ARA approach",
+      "titleHtml": "Rhythm before frequency.<br><em>Coherent continuity above all.</em>",
+      "body": [
+        "ARA's answer to \"how often?\" is: start with what you can actually sustain. Not what you aspire to do when life is uncomplicated. What you will do when you are tired, when work is heavy, when you travel for a week. That is your real keeper rhythm.",
+        "A keeper who reliably does 15% every two weeks creates better long-term conditions than one who plans 40% weekly but misses every third or fourth change. The plan sounds better on paper, but the inconsistency creates larger swings than the smaller, reliable rhythm."
+      ],
+      "pullQuote": "Living systems usually respond better to coherent continuity than to bursts of intervention. Doing a little, regularly, with honest attention, creates more stability than doing a great deal occasionally. This is as true for water changes as it is for any other form of care.",
+      "hintLabel": "ARA principle",
+      "hintText": [
+        "Capacity before ambition. A system should not be built on imagined consistency. ARA brings your real life into the frame — because sustainability depends on what can actually be maintained, not what sounds correct in theory."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "How to calibrate your rhythm"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Design a rhythm you can keep",
+      "titleHtml": "Start honest.<br><em>Then calibrate.</em>",
+      "body": [
+        "A practical starting point for most home tanks: pick the most frequent interval you know you will actually maintain — weekly, every ten days, fortnightly — and do 15–25% at each change. That range is gentle enough not to shock the system but frequent enough to keep nitrates from accumulating significantly in most moderately stocked tanks.",
+        "Then test nitrates two or three weeks in. If they are staying below 20 ppm between changes, your rhythm is working. If they are consistently higher, either increase volume slightly, reduce feeding, or add plants. If they are very low with live plants and light stocking, you may be able to extend the interval without consequence."
+      ],
+      "pullQuote": "The rhythm between you and the tank is a real thing. When care is coherent and continuous — even if modest — the system learns to hold within it. That is not metaphor. It is ecology.",
+      "hintLabel": "A note on tank phase",
+      "hintText": [
+        "New tanks (Early Phase) generally need more attention — smaller but more frequent changes, especially while cycling. As the tank matures and biology stabilises, you will find you can do less and the system will hold more. That increasing forgiveness is something you earn through time and consistent care — not something you can shortcut."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/know-your-rhythm",
+      "text": "Know your rhythm →"
+    },
+    {
+      "href": "/ara",
+      "text": "The ARA framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

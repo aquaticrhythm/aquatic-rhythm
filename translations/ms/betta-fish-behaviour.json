@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "slug": "betta-fish-behaviour",
+    "lang": "ms",
+    "sourceFile": "articles/betta-fish-behaviour.html"
+  },
+  "head": {
+    "title": "Betta Fish Behaviour — What Your Betta Is Telling You — Aquatic Rhythm",
+    "description": "Betta fish behaviour is one of the clearest expressions of the Livestock Rhythm in the hobby. Learn to read your betta's signals — inactivity, colour change, surface breathing — before they become urgent.",
+    "ogTitle": "Betta Fish Behaviour — What Your Betta Is Telling You — Aquatic Rhythm",
+    "ogDescription": "Betta fish behaviour is one of the clearest expressions of the Livestock Rhythm in the hobby. Learn to read your betta's signals before they become urgent."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "Betta Fish Behaviour —<br><em>What Your Betta Is Telling You</em>",
+    "subtitle": "A betta in a corner is not being dramatic. It is giving you a reading.",
+    "texts": [
+      "Betta fish are one of the most personally kept fish in the hobby — and one of the most legible. When a betta changes its behaviour, there is no school to hide in, no other species to compare against. There is just one fish, and it is telling you something.",
+      "This guide covers what the key signals actually mean, what commonly causes them, and what an aligned response looks like — before the situation becomes urgent."
+    ],
+    "metaModules": "Practical",
+    "metaTime": "4 modules",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Your betta as a living signal",
+      "titleHtml": "One fish.<br><em>Completely readable.</em>",
+      "body": [
+        "Betta fish are kept alone. That is actually one of the things that makes them one of the most informative fish a keeper can have — because when a betta changes, there is no school of fish to observe, no other species to compare to. There is just one individual, and its behaviour is the whole signal.",
+        "Most betta keepers develop a relationship with their fish that is more personal than any other type of fish keeping. They know when the betta greets them at the glass, when it explores the whole tank, when it builds a bubble nest. They notice when it stops doing these things.",
+        "In Aquatic Rhythm Alignment, this is the Livestock Rhythm — the ongoing pattern of an animal's behaviour that reflects the state of the whole system. In a betta, this rhythm is easier to read than almost any other fish, because the individual is so legible. A change in a betta's behaviour is almost always telling you something before anything else in the system makes it visible."
+      ],
+      "pullQuote": "A betta that has always greeted you at feeding time and now stays low — that change is information. It arrived before anything in your water test will.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Reading the signals"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Reading the signals",
+      "titleHtml": "What each behaviour<br><em>actually means.</em>",
+      "body": [
+        "<strong>Inactivity / resting near the bottom or surface</strong>",
+        "Bettas rest at the surface or on leaves — that is normal. What is not normal is a betta that was previously active now spending most of its time motionless near the bottom. This often signals water quality stress (temperature drop, ammonia drift, low oxygen) or early illness. Check temperature first — bettas are very sensitive to temperature below 24°C and will become sluggish as the water cools.",
+        "<strong>Clamped fins (fins held tight against the body)</strong>",
+        "A betta with open, flowing fins is a comfortable betta. Clamped fins — held tight, not spreading — is one of the clearest stress signals the fish can give. It almost always indicates water quality stress or early parasitic/bacterial presence. It is a signal to observe closely and check parameters.",
+        "<strong>Loss of colour intensity</strong>",
+        "A betta's colour is partly controlled by its stress response — cortisol (the stress hormone) suppresses pigmentation over time. A betta that was vivid and is now faded has been under stress for some time, not just today. This is a slow drift signal, not an acute event.",
+        "<strong>Increased surface breathing / gasping</strong>",
+        "A betta occasionally visiting the surface is normal — they breathe atmospheric air via a labyrinth organ. A betta spending unusual amounts of time at the surface, or visibly gasping, signals low dissolved oxygen, very warm water, or gill irritation from water chemistry.",
+        "<strong>Bubble nest building</strong>",
+        "A betta building a bubble nest is a betta that feels secure enough to behave reproductively. It is one of the clearest positive signals a betta can give — the fish is comfortable, well-fed, and not under stress. Some bettas build constantly; some rarely. What matters is change from your individual fish's baseline.",
+        "<strong>Flaring at its own reflection or at nothing</strong>",
+        "Occasional flaring is normal and actually good for betta health — it provides exercise and stimulation. Constant, frantic flaring at a reflection or at nothing suggests the fish is stressed, possibly from seeing a perceived competitor too often (reflection, another betta or similar-shaped fish nearby).",
+        "<strong>Not eating</strong>",
+        "A betta that refuses food for 1–2 days is showing early stress or illness. Bettas can refuse food for a day occasionally — but a fish that was enthusiastic at feeding time and now consistently ignores food is showing something has changed."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "In ARA, the Livestock Rhythm is read by comparing behaviour to baseline — not to a generic standard of what a betta \"should\" do. A naturally shy betta that has always been quiet is not showing a problem. A previously active betta that has become quiet is. The signal is change, not trait."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What causes betta drift"
+    },
+    {
+      "id": "mod-3",
+      "tag": "What commonly causes betta drift",
+      "titleHtml": "Most betta problems<br><em>trace back to one of these.</em>",
+      "body": [
+        "<strong>Temperature out of range or unstable</strong>",
+        "Bettas are tropical fish from shallow warm waters. Their optimal temperature is 25–28°C. Below 24°C, metabolism slows and immune function is suppressed. A cheap heater that swings 3°C through a day creates chronic stress. Temperature is the most commonly overlooked betta stressor — check it first.",
+        "<strong>Small tank or inadequate water volume</strong>",
+        "Bettas are often sold in very small containers, which creates the misconception that they prefer small spaces. They do not. A betta in a 2-litre bowl lives in water that changes chemistry rapidly — a small feeding, a day of warming, and the parameters have shifted significantly. A betta in 15–20L of well-filtered water lives in a much more stable system. Tank size is not about swimming space; it is about water stability.",
+        "<strong>Ammonia or nitrite in the water</strong>",
+        "A betta showing clamped fins and inactivity in a new or recently disrupted tank is almost certainly experiencing ammonia or nitrite stress. Test the water if the tank is under 8 weeks old or if the filter was recently cleaned with tap water. This is Early Phase territory.",
+        "<strong>Water too cold after a partial water change</strong>",
+        "One of the most common acute stressors — adding water that is several degrees cooler than the tank creates a sudden temperature shock. Always match water change temperature to tank temperature before adding.",
+        "<strong>Loneliness vs. overstimulation</strong>",
+        "Bettas need some visual stimulation but not constant threat. A betta in a completely bare tank with nothing to explore or hide behind may show low-level chronic stress. A betta that can see another betta, or whose tank has a strong reflection from one side, may show constant flaring stress. Both are Environmental Rhythm issues — the tank's physical structure is part of what the betta is experiencing."
+      ],
+      "pullQuote": "Before you add anything to the tank, identify which of these is most likely the root. One aligned change — usually temperature or water quality — often resolves what looks like a complex betta health problem.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Creating conditions for a thriving betta"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Creating conditions for a thriving betta",
+      "titleHtml": "Your betta is readable.<br><em>Give it conditions worth reading.</em>",
+      "body": [
+        "A betta that is genuinely thriving shows a specific pattern: it explores the whole tank regularly (not just one corner), greets the keeper at feeding time, flares briefly when stimulated then relaxes, holds its fins open at rest, and maintains vivid colour. This is not a high bar — it is what happens naturally when the conditions are right.",
+        "What creates this:",
+        "<strong>Stable warm temperature</strong> (25–28°C, less than 1°C variation)<br>\n      <strong>Adequate tank volume</strong> (15L minimum; 20–30L is comfortable)<br>\n      <strong>A cycled filter</strong> — not a new tank<br>\n      <strong>Regular partial water changes</strong> (weekly or fortnightly depending on tank size and feeding load)<br>\n      <strong>Some structure in the tank</strong> — plants, hides, surfaces to rest on and explore near<br>\n      <strong>A photoperiod</strong> (lights on/off on a timer) so the fish has a day/night cycle",
+        "These are not luxury conditions. They are the baseline ecological requirements for a fish that evolved in warm, structured, seasonally varying habitats.",
+        "If your betta is showing any of the signals in Module 2, the guides on fish hiding and water parameters may help narrow down what to check. And if you want to understand the broader ecological signals your tank is giving — not just the betta's — the Five Rhythms article covers all five layers."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/fish-hiding-what-does-it-mean",
+      "text": "Why is my fish hiding? →"
+    },
+    {
+      "href": "/articles/perfect-parameters-fish-dying",
+      "text": "Perfect parameters, fish dying →"
+    },
+    {
+      "href": "/ara",
+      "text": "The ARA framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
