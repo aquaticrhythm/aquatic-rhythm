@@ -168,6 +168,22 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .csl-count-btn:hover{border-color:rgba(61,214,232,.4);background:rgba(61,214,232,.06)}
 .csl-remove{margin-left:auto;background:none;border:none;color:rgba(220,100,80,.72);cursor:pointer;font-size:1.15rem;line-height:1;padding:.15rem;opacity:.85;transition:opacity .2s}
 .csl-remove:hover{opacity:1}
+.csl-chip-sci{display:block;font-size:.66rem;font-style:italic;color:rgba(235,240,236,.38);font-weight:300;line-height:1.3;margin-top:.1rem}
+.csl-chip-note{display:block;width:100%;font-size:.64rem;font-style:italic;font-family:var(--serif);color:rgba(235,240,236,.34);line-height:1.45;padding-left:.1rem}
+.csl-chip-sources{display:block;width:100%;font-size:.6rem;color:rgba(61,214,232,.38);line-height:1.4;padding-left:.1rem}
+.csl-chip-src-link{color:rgba(61,214,232,.5);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.18);transition:color .2s,border-color .2s}
+.csl-chip-src-link:hover{color:rgba(61,214,232,.82);border-bottom-color:rgba(61,214,232,.4)}
+
+/* ar-disclosure — methodology toggle (shared pattern from tank-simulator) */
+details.ar-disclosure{margin:.35rem 0 0;border:1px solid rgba(61,214,232,.14);border-radius:12px;background:rgba(6,18,14,.4);overflow:hidden}
+details.ar-disclosure > summary{display:flex;justify-content:space-between;align-items:center;padding:.62rem .75rem;font-size:.72rem;font-family:var(--sans);font-weight:500;color:rgba(235,240,236,.58);cursor:pointer;list-style:none;user-select:none;transition:color .2s,background .2s}
+details.ar-disclosure > summary::-webkit-details-marker{display:none}
+details.ar-disclosure > summary::after{content:'▾';font-size:.9em;flex-shrink:0;line-height:1;transition:transform .22s ease;opacity:.7}
+details.ar-disclosure[open] > summary::after{transform:rotate(-180deg)}
+details.ar-disclosure[open] > summary{color:rgba(61,214,232,.88);background:rgba(61,214,232,.06)}
+.ar-disclosure-body{padding:0 .75rem .65rem;font-family:var(--sans)}
+.ar-disclosure-body p{font-size:.78rem;font-weight:300;color:rgba(235,240,236,.52);line-height:1.62;margin:0}
+.ar-disclosure-body p+p{margin-top:.55rem}
 
 /* Lanes — Tank Builder rhythm meter look */
 #csl-lanes{display:flex;flex-direction:column;gap:.38rem}
@@ -305,6 +321,15 @@ code{font-size:.74rem;color:rgba(61,214,232,.7)}
       <div class="setup-note" role="note">
         <p>Simplified ranges and rules only. Does not predict individual behaviour, aggression, or disease. Your real tank and your observations come first — use the <a href="/journal">Keeper’s Log</a> for what actually happens at home.</p>
       </div>
+
+      <details class="ar-disclosure" style="margin-bottom:.55rem">
+        <summary>How this lab works</summary>
+        <div class="ar-disclosure-body">
+          <p>Species parameters (temperature, pH, body size, and behavioural tags) come from the Aquatic Rhythm species pack — hobby-consensus ranges cross-referenced against <a href="https://fishbase.se" target="_blank" rel="noopener noreferrer" style="color:rgba(61,214,232,.6);text-decoration:none">FishBase</a> and <a href="https://www.seriouslyfish.com" target="_blank" rel="noopener noreferrer" style="color:rgba(61,214,232,.6);text-decoration:none">SeriouslyFish</a>. Each species entry carries a citation note.</p>
+          <p>The pressure engine checks thermal overlap, pH range intersection, bioload coefficient, predation mouth-size matching, fin-nipping pairing, and dwarf shrimp safety. It does not model individual personality, aggression history, or disease. "Elevated" and "High" labels mean the parameter warrants attention — they are not predictions of failure.</p>
+          <p>Verify species parameters against current sources before stocking. Your real tank and your observations always come first.</p>
+        </div>
+      </details>
 
       <div id="csl-root" data-pack="/data/community-stress-lab-species-v1.json">
         <div class="csl-section">
