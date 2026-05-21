@@ -21,6 +21,30 @@
     });
   }
 
+  /* ── SETTINGS BUTTON — inject into nav if not present ── */
+  (function(){
+    var nav = document.querySelector('nav:not(.bnav)');
+    if (!nav || nav.querySelector('.ar-settings-btn')) return;
+    var btn = document.createElement('button');
+    btn.className = 'ar-settings-btn';
+    btn.id = 'ar-settings-btn';
+    btn.setAttribute('aria-label', 'Menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.title = 'Menu';
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="2.2" stroke="currentColor" stroke-width="1.35"/><path d="M9 2v1.2M9 14.8V16M2 9h1.2M14.8 9H16M3.7 3.7l.85.85M13.45 13.45l.85.85M14.3 3.7l-.85.85M4.55 13.45l-.85.85" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>';
+    var bg = nav.querySelector('.nbg');
+    if (bg) nav.insertBefore(btn, bg); else nav.appendChild(btn);
+    btn.addEventListener('click', function(){
+      var nmob = document.getElementById('nmob');
+      if (!nmob) return;
+      var open = nmob.classList.toggle('open');
+      nmob.setAttribute('aria-hidden', String(!open));
+      btn.setAttribute('aria-expanded', String(open));
+      var bg2 = document.getElementById('burger');
+      if (bg2) { bg2.classList.toggle('open', open); bg2.setAttribute('aria-expanded', String(open)); }
+    });
+  })();
+
   /* ── RHYSSA FAB + SHEET ── */
   var W   = 'https://api.aquaticrhythm.com/chat';
   var KEY = 'rh_thread';
