@@ -47,6 +47,13 @@ nav:not(.bnav){position:fixed;top:0;left:0;right:0;z-index:800;height:68px;displ
   .nbg{display:flex}
 }
 
+/* ── LANGUAGE SWITCHER ── */
+.lang-sw{display:flex;align-items:center;gap:.3rem;margin-right:.5rem}
+.lang-sw-cur{font-size:.5rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.78);cursor:default;line-height:1}
+.lang-sw-sep{font-size:.44rem;color:rgba(255,255,255,.15);user-select:none;line-height:1}
+.lang-sw-opt{font-size:.5rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.34);text-decoration:none;transition:color .2s;line-height:1}
+.lang-sw-opt:hover{color:rgba(61,214,232,.68)}
+
 /* ── SETTINGS BUTTON ── */
 .ar-settings-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:none;border:none;border-radius:50%;cursor:pointer;padding:0;color:rgba(139,189,210,.72);opacity:.52;transition:background .25s,opacity .3s;-webkit-tap-highlight-color:transparent;flex-shrink:0}
 .ar-settings-btn:hover{background:rgba(139,189,210,.1);opacity:.92}

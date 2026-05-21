@@ -29,6 +29,38 @@ const slugArg   = slugIdx !== -1 ? args[slugIdx + 1] : undefined;
 const doAll     = args.includes('--all');
 const patchEn   = args.includes('--patch-english');
 
+// ── Language switcher ─────────────────────────────────────────────────────────
+
+const LANG_LABELS = { en: 'EN', ms: 'MS', id: 'ID', ja: 'JA' };
+
+function buildLangSwitcher(slug, currentLang) {
+  // Collect available lang → URL pairs
+  const options = [{ lang: 'en', url: `${BASE_URL}/articles/${slug}` }];
+  for (const lang of LANGUAGES) {
+    const tPath = path.join(TRANS_DIR, lang, `${slug}.json`);
+    if (!fs.existsSync(tPath)) continue;
+    try {
+      const t = JSON.parse(fs.readFileSync(tPath, 'utf8'));
+      if (t._meta && t._meta.status === 'ready') {
+        options.push({ lang, url: `${BASE_URL}/${lang}/articles/${slug}` });
+      }
+    } catch { /* skip */ }
+  }
+
+  // Only inject switcher if more than one language is available
+  if (options.length < 2) return '';
+
+  const parts = options.map(({ lang, url }) => {
+    if (lang === currentLang) {
+      return `<span class="lang-sw-cur" aria-current="page">${LANG_LABELS[lang]}</span>`;
+    }
+    return `<a href="${url}" class="lang-sw-opt" hreflang="${lang}">${LANG_LABELS[lang]}</a>`;
+  });
+
+  const inner = parts.join('<span class="lang-sw-sep" aria-hidden="true">·</span>');
+  return `<div class="lang-sw" aria-label="Language">${inner}</div>`;
+}
+
 // ── SEO helpers ───────────────────────────────────────────────────────────────
 
 /** Return hreflang <link> tags for all available language versions of a slug. */
@@ -115,6 +147,13 @@ function buildArticle(slug, lang, t) {
   const hreflang = buildHreflangTags(slug, lang);
   h = replaceOnce(h, /(<link rel="canonical"[^>]*>)/,
     (_, canon) => `${canon}\n${hreflang}`);
+
+  // ── 4b. Language switcher (inject before burger button in nav) ────────────
+  const switcher = buildLangSwitcher(slug, lang);
+  if (switcher) {
+    h = replaceOnce(h, /(<button class="nbg")/,
+      (_, btn) => `${switcher}\n${btn}`);
+  }
 
   // ── 5. JSON-LD ────────────────────────────────────────────────────────────
   h = replaceOnce(h, /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
@@ -272,19 +311,32 @@ function patchEnglishArticle(slug) {
   if (!fs.existsSync(srcPath)) return;
 
   let h = fs.readFileSync(srcPath, 'utf8');
+  let changed = false;
 
-  // Skip if hreflang already injected
-  if (h.includes('hreflang="en"')) {
-    console.log(`  already patched: articles/${slug}.html`);
-    return;
+  // Inject hreflang if missing
+  if (!h.includes('hreflang="en"')) {
+    const hreflang = buildHreflangTags(slug, 'en');
+    h = replaceOnce(h, /(<link rel="canonical"[^>]*>)/,
+      (_, canon) => `${canon}\n${hreflang}`);
+    changed = true;
   }
 
-  const hreflang = buildHreflangTags(slug, 'en');
-  h = replaceOnce(h, /(<link rel="canonical"[^>]*>)/,
-    (_, canon) => `${canon}\n${hreflang}`);
+  // Inject language switcher if missing
+  if (!h.includes('class="lang-sw"')) {
+    const switcher = buildLangSwitcher(slug, 'en');
+    if (switcher) {
+      h = replaceOnce(h, /(<button class="nbg")/,
+        (_, btn) => `${switcher}\n${btn}`);
+      changed = true;
+    }
+  }
 
-  fs.writeFileSync(srcPath, h, 'utf8');
-  console.log(`  patched: articles/${slug}.html`);
+  if (changed) {
+    fs.writeFileSync(srcPath, h, 'utf8');
+    console.log(`  patched: articles/${slug}.html`);
+  } else {
+    console.log(`  up to date: articles/${slug}.html`);
+  }
 }
 
 // ── Discover translated slugs for a language ─────────────────────────────────
