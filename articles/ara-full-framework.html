@@ -121,6 +121,12 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 .domain-cell{padding:1.4rem 1.6rem;background:rgba(3,11,9,.9)}
 .domain-cell-name{font-size:.62rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.52);margin-bottom:.5rem}
 .domain-cell-q{font-size:.9rem;font-weight:300;color:rgba(235,240,236,.62);line-height:1.7;font-family:var(--serif);font-style:italic}
+
+.signal-list{margin:1.8rem 0;display:flex;flex-direction:column;gap:1px;background:rgba(139,189,210,.08);border:1px solid rgba(139,189,210,.08)}
+.signal-item{padding:1.2rem 1.6rem;background:rgba(3,11,9,.9)}
+.signal-name{font-size:.6rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:rgba(61,214,232,.52);margin-bottom:.45rem}
+.signal-body{font-size:.9rem;font-weight:300;color:rgba(235,240,236,.62);line-height:1.75}
+.signal-read{font-size:.82rem;font-style:italic;color:rgba(157,191,154,.55);margin-top:.35rem}
 </style>
 </head>
 <body>
@@ -177,8 +183,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <p class="art-intro-text">You do not need to read this to use ARA. It is here for those who want to understand why the framework is built the way it is.</p>
     <div class="art-intro-meta">
       <span>Framework Reference</span><span class="meta-dot">·</span>
-      <span>9 modules</span><span class="meta-dot">·</span>
-      <span>~22 min</span>
+      <span>11 modules</span><span class="meta-dot">·</span>
+      <span>~28 min</span>
     </div>
     <button class="art-begin-btn" onclick="startLearning()">Start reading <span>→</span></button>
   </div>
@@ -188,12 +194,13 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 1 ═══ -->
   <section class="module" id="mod-1" data-mod="1">
-    <div class="mod-eyebrow"><span class="mod-num">01 / 09</span><span class="mod-tag">Scope &amp; Core Assumptions</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">01 / 11</span><span class="mod-tag">Scope &amp; Core Assumptions</span></div>
     <h2 class="mod-title">What ARA <em>means by aquarium</em></h2>
     <div class="mod-body">
       <p>ARA applies to closed or semi-closed freshwater and brackish aquatic micro-ecosystems — typically tanks between 20 and 500 litres, managed by a single keeper or small household. This is the scope the framework was designed for. It does not claim to extend naturally to large-scale aquaculture, public aquaria, or pond systems, where keeper rhythms, stocking densities, and biological dynamics differ substantially.</p>
       <p>Within that scope, ARA makes three foundational assumptions. First, that an aquarium is a living system — not a decorative object, not a static environment, but a community of organisms (fish, invertebrates, plants, microbes, and the keeper) in ongoing interaction. Second, that the keeper is part of the system, not external to it — the keeper's rhythm, consistency, attention, and capacity directly shape what the water can sustain. Third, that alignment — the state in which the system's rhythms are in productive relationship — is preferable to control, and that most aquarium problems are expressions of misalignment rather than technical failure.</p>
       <p>ARA does not assume that all keepers should maintain the same kind of tank, follow the same schedule, or hold the same values about what an aquarium is for. The framework is designed to work across styles — high-tech planted, species-only, low-tech community, breeding setups, shrimp tanks — because it operates at the level of ecological rhythms and system phases, not at the level of product recommendations or specific techniques.</p>
+      <p>A note on biological scope: the living community in an aquarium extends well beyond the nitrogen cycle and the visible livestock. Substrate, hardscape, plant roots, and filter media host microbial communities — bacteria, fungi, protists — that participate in nutrient processing, disease suppression, and overall system stability. ARA refers to the richness of this broader community as <strong>microbiome depth</strong>. It is one of the key distinctions between a tank that has genuinely matured and one that has merely stabilised chemically. Microbiome depth increases with tank age and ecological diversity; it is not measurable by routine testing, but it is readable in how the system responds to disruption.</p>
     </div>
 
     <div class="pq">
@@ -213,14 +220,17 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 2 ═══ -->
   <section class="module" id="mod-2" data-mod="2">
-    <div class="mod-eyebrow"><span class="mod-num">02 / 09</span><span class="mod-tag">Five Ecological Rhythms</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">02 / 11</span><span class="mod-tag">Five Ecological Rhythms</span></div>
     <h2 class="mod-title">Five <em>Ecological Rhythms</em></h2>
     <div class="mod-body">
       <p>ARA organises what happens in an aquarium into five readable rhythms. Each rhythm is a domain of ongoing change within the system — something that can be observed, tracked, and read before it becomes a problem.</p>
       <p><strong>Water Rhythm</strong> — the chemical and physical state of the water: temperature, pH, ammonia, nitrite, nitrate, dissolved oxygen, hardness, and conductivity. Water rhythm is the most commonly measured but also the most over-relied-on single indicator. Numbers alone do not tell you the direction the system is moving — only a series of observations over time can do that.</p>
       <p><strong>Biological Rhythm</strong> — the state of the nitrogen cycle and the broader microbial community. Biological rhythm is phase-dependent: an Early Phase tank has a different biological rhythm than a Mature Phase tank. The same ammonia reading means something different in week two of a new cycle versus month six of an established tank.</p>
+      <p>A note on biofilm and substrate biology: in a healthy tank, a thin brownish-grey film on hardscape surfaces is a positive indicator of a functional microbial community, not a sign of neglect. Biofilm is consumed by invertebrates and small fish, and participates in the tank's ongoing biological processing. Substrate biology — the microbial activity within sand, gravel, or soil — contributes to the tank's biological rhythm in ways that no test kit measures directly. A tank with rich substrate biology has a fundamentally different biological character than one with an inert substrate, even if the water parameters read identically.</p>
       <p><strong>Environmental Rhythm</strong> — light, flow, hardscape, substrate, and plant dynamics. Environmental rhythm includes the physical structure of the tank — the territories, resting spots, and hiding places that animals need — as well as the patterns of light and water movement that shape algae, plant growth, and fish behaviour.</p>
+      <p>Three elements of environmental rhythm deserve specific attention. The light cycle — not just brightness but the consistency and pattern of the photoperiod — shapes plant growth, algae dynamics, and the circadian rhythms of fish. A tank on a consistent twelve-hour cycle operates differently from one switched on and off irregularly, even at the same average intensity. Territory is another: the physical arrangement of hardscape, plants, and open space determines whether fish can establish stable home ranges and avoid chronic territorial pressure. A tank where dominant fish have no structured space to claim will produce chronic stress in subordinate species, even when all other parameters are normal. Flow dead spots — areas where water circulation is insufficient — create pockets where organic waste accumulates and oxygen levels drop. Dead spots are a common source of localised bacterial problems that show up in livestock behaviour before they appear in water tests.</p>
       <p><strong>Livestock Rhythm</strong> — behaviour, colour, appetite, social dynamics, and visible signs of ease or stress. Livestock rhythm is often the earliest readable indicator of system drift. Fish and invertebrates respond to changes in water chemistry, stocking pressure, and environmental stress before those changes become measurable on a test kit.</p>
+      <p>ARA describes the concept of <strong>stress accumulation</strong> in livestock rhythm: fish that experience multiple sub-threshold stressors — slightly elevated nitrate, a mildly aggressive tank mate, marginal territory — may show no single visible symptom while their immune function and resilience are being steadily depleted. The preclinical state is worth knowing how to read. A fish that is not visibly ill but shows subtle behavioural changes — reduced feeding enthusiasm, less active exploration, a slight fading of colour, or increased time near the surface or in corners — is in a preclinical stress state. Reading preclinical indicators before they become clinical symptoms is one of the highest-value skills in livestock rhythm observation, and it depends entirely on knowing what normal looks like for each specific animal in this specific tank.</p>
       <p><strong>Keeper Rhythm</strong> — the keeper's own consistency, attention, time, and emotional state. Keeper rhythm is not peripheral — it is structurally part of the system. Irregular feeding, missed water changes, delayed responses to visible problems, and emotional disengagement from the tank all create ecological effects. A tank kept by a distracted keeper will drift differently than a tank kept by an attentive one, even under identical technical conditions.</p>
     </div>
 
@@ -241,13 +251,16 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 3 ═══ -->
   <section class="module" id="mod-3" data-mod="3">
-    <div class="mod-eyebrow"><span class="mod-num">03 / 09</span><span class="mod-tag">Ecological Phases</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">03 / 11</span><span class="mod-tag">Ecological Phases</span></div>
     <h2 class="mod-title">Three <em>System Phases</em></h2>
     <div class="mod-body">
       <p>ARA recognises that a tank's life follows a developmental arc, and that what is appropriate — in terms of intervention, stocking, maintenance intensity, and expectations — changes as the tank moves through that arc. The framework describes three phases.</p>
       <p><strong>Early Phase</strong> — the nitrogen cycle is establishing. The biological community is fragile, ammonia and nitrite are present, and the microbial population that will eventually process waste is still developing. Early Phase tanks require patience more than technique. Most interventions during this phase — aggressive water changes, heavy dosing, early stocking — disrupt the biological process that needs to complete naturally. The aligned approach is: minimal intervention, stable conditions, and time.</p>
+      <p>The first two weeks of an Early Phase tank carry particular weight in ARA: this is the <strong>critical window</strong>. Ammonia spikes, cloudiness, and apparent instability are expected and necessary during this period — not problems to be solved. The urge to intervene is strongest in the critical window, and the cost of unnecessary intervention is highest. A keeper who understands the critical window is one who can hold that impulse and give the system what it actually needs: stillness.</p>
       <p><strong>Developing Phase</strong> — the nitrogen cycle is complete. Ammonia and nitrite readings are zero, nitrate is present and manageable. The broader biological community (beneficial bacteria, microorganisms beyond the cycle, plant biology if present) is assembling. The tank is functional but not yet ecologically deep. Developing Phase tanks can support moderate stocking and respond reasonably well to gradual additions. They are more vulnerable to disruption than Mature Phase tanks — large water changes, sudden stocking additions, or significant environmental changes can destabilise what has been established.</p>
       <p><strong>Mature Phase</strong> — the biological community has depth. The tank has accumulated ecological complexity: established microbial populations, balanced plant biology (if present), species that have settled into stable behavioural patterns, substrate and hardscape that have become ecologically functional rather than decorative. Mature Phase tanks are more resilient — they can absorb disruptions and recover without intervention. They require less active management and more observation. The aligned approach in a Mature Phase tank is maintenance rhythm (consistent water changes, feeding patterns, equipment checks) and attentive reading, not active intervention.</p>
+      <p>A note on <strong>false maturity</strong>: some tanks reach a state of apparent stability — parameters are clean, fish are alive and feeding, maintenance is adequate — without having developed genuine ecological depth. The substrate is biologically thin, the microbial community beyond the nitrogen cycle remains shallow, and the tank has not accumulated the complexity that distinguishes Mature Phase resilience from Developing Phase stability. False maturity is not visible in routine testing. It becomes visible when the tank encounters a significant stressor — a disease event, a stocking addition, a large water change — and responds with the fragility of a Developing Phase tank rather than the resilience expected of a Mature one. The signal is this: a tank that maintains stable parameters under normal conditions but consistently struggles under disruption has likely not yet achieved genuine maturity.</p>
+      <p><strong>Phase Regression</strong> — the direction of phase progression is not guaranteed to be forward. A Mature Phase tank under sufficient disruption — a significant disease event, a major equipment failure, repeated large water changes, or a sudden stocking overhaul — can temporarily regress to behaviour characteristic of an earlier phase. The biological community does not disappear, but its functional capacity can be impaired. A regressing tank may show ammonia or nitrite that has not appeared for months; it may require the careful, minimal-intervention management appropriate to Early Phase; it may need a period of recovery time before returning to genuine Mature Phase function. Recognising regression — rather than applying Mature Phase expectations to what is now a Developing Phase system — is one of the subtler demands the framework places on keeper attention.</p>
     </div>
 
     <div class="pq">
@@ -267,7 +280,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 4 ═══ -->
   <section class="module" id="mod-4" data-mod="4">
-    <div class="mod-eyebrow"><span class="mod-num">04 / 09</span><span class="mod-tag">Alignment Thinking</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">04 / 11</span><span class="mod-tag">Alignment Thinking</span></div>
     <h2 class="mod-title">Alignment <em>vs Control</em></h2>
     <div class="mod-body">
       <p>The distinction between alignment and control is central to how ARA thinks about aquarium care. Control is the dominant model in conventional aquarium advice: measure parameters, identify deviations from ideal values, intervene to correct them. The keeper is positioned as the manager of a technical system, and the tank's health is defined by how closely its numbers match published targets.</p>
@@ -276,6 +289,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <p><strong>Control reacts to numbers. Alignment responds to patterns.</strong> A single elevated nitrate reading triggers a water change in a control approach. In an alignment approach, the question is: what is the nitrate trend over the past two weeks, and is it consistent with the biological load and maintenance rhythm? A one-off spike after overfeeding is different from a steady upward trend that is not responding to water changes.</p>
       <p><strong>Control adds interventions. Alignment removes friction.</strong> A control approach to a sluggish betta might involve adding a tonic or changing a product. An alignment approach asks: what in this system is creating friction for this fish? Is the temperature slightly low? Is the flow too strong? Is something in the social or environmental structure creating low-level stress? The aligned move is to remove the friction, not to add a response to its symptoms.</p>
       <p><strong>Control acts at the first signal. Alignment observes before acting.</strong> The aligned approach builds in a deliberate observation window before intervening — typically 24 to 48 hours for non-emergency signals. Most things that look alarming are transient. Acting immediately on every signal produces interventions that are unnecessary, and unnecessary interventions in a living system produce their own disruptions.</p>
+      <p>ARA also holds a fourth orientation, less a contrast and more a governing direction for alignment effort: <strong>stability over perfection</strong>. The aligned goal is a tank that is consistently good, not occasionally perfect. A tank maintained at 25°C every day is preferable to a tank that achieves a theoretically ideal temperature briefly after careful adjustment but oscillates otherwise. A weekly water change of 25% performed reliably is more valuable than a 50% change performed sporadically after long gaps. Consistency creates the ecological conditions for depth to develop; perfection-seeking often introduces the very disruptions it is trying to eliminate. When the choice is between a good rhythm reliably maintained and an optimal rhythm that depends on conditions that may not always hold, ARA consistently recommends the former.</p>
     </div>
 
     <div class="pq">
@@ -290,7 +304,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 5 ═══ -->
   <section class="module" id="mod-5" data-mod="5">
-    <div class="mod-eyebrow"><span class="mod-num">05 / 09</span><span class="mod-tag">Alignment Domains</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">05 / 11</span><span class="mod-tag">Alignment Domains</span></div>
     <h2 class="mod-title">Where <em>Alignment Happens</em></h2>
     <div class="mod-body">
       <p>ARA identifies seven domains in which alignment — or misalignment — manifests in a working aquarium. These domains are not independent; they interact continuously. But reading each domain separately gives a more complete picture of what the system is doing than any single measurement can provide.</p>
@@ -329,6 +343,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
     <div class="mod-body" style="margin-top:1.2rem">
       <p>No domain is independent. A misalignment in the Human Rhythm domain (inconsistent water changes) will eventually produce misalignment in the Nutrient domain, which will produce changes in the Water domain, which will show up in the Livestock Behaviour domain. Reading domains together gives you the direction of causation — which matters for knowing where to act and where not to.</p>
+      <p>When reading across domains, ARA suggests identifying the <em>origin domain</em> — the domain where the misalignment began — rather than the <em>expression domain</em> where it has become visible. Treating the expression without addressing the origin produces temporary improvement that does not hold.</p>
     </div>
 
     <div class="mod-next">
@@ -339,7 +354,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 6 ═══ -->
   <section class="module" id="mod-6" data-mod="6">
-    <div class="mod-eyebrow"><span class="mod-num">06 / 09</span><span class="mod-tag">Alignment Pathways</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">06 / 11</span><span class="mod-tag">Alignment Pathways</span></div>
     <h2 class="mod-title">Reading <em>Patterns, not Symptoms</em></h2>
     <div class="mod-body">
       <p>An alignment pathway is the route by which a misalignment in one domain propagates through the system and eventually becomes visible as a symptom in another. Understanding pathways allows you to read what a problem is pointing at — not just what it looks like.</p>
@@ -353,6 +368,14 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <p>Gradual drift is one of the most common and least-read pathway types. Because the change is slow, each new state becomes the new normal — the keeper stops noticing the accumulating distance from baseline. A tank that has been slowly overcrowded over six months, or a tank where water changes have been gradually delayed over a year, may look "fine" to a keeper who has adapted to the new baseline. Periodic comparison against a documented baseline (or an honest reassessment of the tank from fresh eyes) is the only reliable counter to gradual drift.</p>
     </div>
 
+    <div class="mod-body" style="margin-top:.4rem">
+      <p>ARA maps four pathways that recur across a wide range of aquarium situations. They are not exhaustive, but they are the most commonly encountered patterns:</p>
+      <p><strong>Keeper Rhythm → Water Quality → Livestock Behaviour.</strong> The most common slow-drift pathway. Subtle changes in keeper routine accumulate as chemistry drift, which manifests as behavioural change in livestock. Because each step is gradual, the causal link is rarely visible to the keeper while it is developing. The fish seem "a bit off" long before the keeper connects this to the water change rhythm that shifted three months earlier.</p>
+      <p><strong>Environmental Misalignment → Chronic Stress → Disease Susceptibility.</strong> Physical environment creates persistent low-level stress — poor territory, wrong flow, inadequate cover. Immune function depletes over weeks or months. Disease outbreak appears to arrive without warning, but was preceded by a long stress accumulation pathway that was readable in the livestock all along.</p>
+      <p><strong>Biological Overload → Chemistry Drift → Loss of Resilience.</strong> A tank carrying more biological load than its current phase can process experiences gradual chemistry drift that becomes self-reinforcing: higher waste load impairs the biological community that processes it, which worsens the chemistry, which further impairs the community. This pathway accelerates once it reaches a threshold, which is why gradual overloading can appear stable until it suddenly isn't.</p>
+      <p><strong>False Maturity → Vulnerability Window → Acute Crisis.</strong> A tank that appears stable but has not developed genuine ecological depth encounters a disruption — new fish, illness, equipment failure — and responds with the fragility of an earlier phase. The keeper, expecting Mature Phase resilience, does not recognise the regression and does not adjust the response accordingly. The intervention that would be appropriate for a Mature Phase tank makes things worse in what is functionally a Developing Phase system.</p>
+    </div>
+
     <div class="mod-next">
       <button class="btn-prev" onclick="goMod(5)">← Back</button>
       <button class="btn-next" onclick="goMod(7)">Observation &amp; Iteration <span>→</span></button>
@@ -361,7 +384,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
   <!-- ═══ MODULE 7 ═══ -->
   <section class="module" id="mod-7" data-mod="7">
-    <div class="mod-eyebrow"><span class="mod-num">07 / 09</span><span class="mod-tag">Observation &amp; Iteration</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">07 / 11</span><span class="mod-tag">Observation &amp; Iteration</span></div>
     <h2 class="mod-title">Observation <em>before Action</em></h2>
     <div class="mod-body">
       <p>ARA treats observation as a primary tool, not a preliminary step before the real tool (testing, treatment, intervention). The capacity to read a tank — to notice what has changed, to distinguish normal variation from genuine drift, to identify which rhythm is under the most pressure — is what the framework is built on. Observation cannot be replaced by measurement, because measurement only captures a single moment in a single domain.</p>
@@ -376,13 +399,90 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 
     <div class="mod-next">
       <button class="btn-prev" onclick="goMod(6)">← Back</button>
-      <button class="btn-next" onclick="goMod(8)">Limits &amp; Ethics <span>→</span></button>
+      <button class="btn-next" onclick="goMod(8)">Building Observation Capacity <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 8 ═══ -->
+  <!-- ═══ MODULE 8 (NEW) ═══ -->
   <section class="module" id="mod-8" data-mod="8">
-    <div class="mod-eyebrow"><span class="mod-num">08 / 09</span><span class="mod-tag">Limits &amp; Ethics</span></div>
+    <div class="mod-eyebrow"><span class="mod-num">08 / 11</span><span class="mod-tag">Observation · Practical</span></div>
+    <h2 class="mod-title">Building <em>Observation Capacity</em></h2>
+    <div class="mod-body">
+      <p>Observation is a skill, not just an intention. The capacity to notice subtle change, to distinguish pattern from noise, to read a tank accurately — develops through practice and structure. ARA describes several specific habits that build this capacity over time.</p>
+      <p><strong>The photographic record.</strong> Photograph the tank at consistent intervals — every two weeks for the first three months, then monthly — at a consistent time of day, from the same angle. The purpose is not documentation but baseline. The eye adapts to gradual change and stops registering it; a photograph from six months ago will often reveal changes that the keeper has long since normalised. The photograph reveals what fresh eyes would see.</p>
+      <p><strong>Behavioural mapping.</strong> Know where each animal spends most of its time, what it does when the lights come on, how it behaves at feeding, how it interacts with its tank mates. Behavioural mapping is not formal — it is the accumulated memory of what <em>this</em> fish normally does. When behaviour changes, the map is what makes the change readable. Without it, there is no way to distinguish a fish that has always been a shy bottom-dweller from a fish that is newly retreating due to stress.</p>
+      <p><strong>The same-time habit.</strong> Observe the tank at the same time of day — ideally multiple points across the day: first thing in the morning (before lights come on), at feeding, and after lights out. Each time window reveals different information. Morning behaviour before light shows the resting state; feeding response is one of the most sensitive indicators of health; late-night behaviour can reveal aggression or stress that is suppressed when the keeper is present during brighter hours.</p>
+      <p><strong>The fresh-eyes practice.</strong> Periodically observe the tank as if seeing it for the first time — sit down at the level of the tank, move slowly, and look without the assumption of familiarity. The familiar eye skips over what it already "knows." The fresh-eyes practice is a counter to this: it deliberately resets the perceptual filter. Some keepers find it useful to ask a non-keeper family member or friend to describe what they see in the tank, specifically because they carry no familiarity.</p>
+      <p><strong>The 3-day rule.</strong> After any change — a water change, a new fish addition, a hardscape rearrangement, a new food — give the system three days before re-evaluating the result. Immediate post-change behaviour is often atypical and not a reliable indicator of how the change will settle. Most transient disruptions resolve within 72 hours; what persists after three days is genuinely worth reading.</p>
+      <p><strong>The 7-day rule.</strong> Significant ecological changes — a new cycle completing, a disease treatment finishing, a plant system establishing — often do not fully manifest for seven days or more. A tank that looks "fine after four days" may still be settling processes that will not be visible for another week. Building a seven-day window into post-change evaluation reduces the rate of premature re-intervention.</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">ARA · On Building vs Having Capacity</span>
+      <p>Observation capacity is built incrementally, not acquired. A keeper six months into a tank has more capacity to read that specific tank than a keeper with ten years of general experience who has never watched this particular system. The framework values depth of familiarity with one system over broad familiarity across many.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(7)">← Back</button>
+      <button class="btn-next" onclick="goMod(9)">Reading False Signals <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 9 (NEW) ═══ -->
+  <section class="module" id="mod-9" data-mod="9">
+    <div class="mod-eyebrow"><span class="mod-num">09 / 11</span><span class="mod-tag">Observation · Pattern Recognition</span></div>
+    <h2 class="mod-title">Reading <em>False Signals</em></h2>
+    <div class="mod-body">
+      <p>Not every alarming appearance is a problem. Some of the most common causes of unnecessary intervention in aquariums are false signals — appearances that look like something is wrong but are in fact normal expressions of the system's developmental processes. Recognising them reduces the rate of intervention that disrupts more than it helps.</p>
+    </div>
+
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-name">Diatom bloom</div>
+        <div class="signal-body">Brown coating on glass, substrate, and hardscape in new tanks, appearing in the first weeks of an Early Phase setup.</div>
+        <div class="signal-read">Read as: a phase marker, not an algae problem. Diatoms are the first photosynthetic colonisers in new systems. They use silica from substrate and water, then retreat on their own as the biological community matures. No intervention needed — most are consumed naturally by snails, shrimp, and otocinclus.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-name">New-tank cloudiness</div>
+        <div class="signal-body">White or grey cloudy water, typically appearing in the first one to two weeks of a new cycle.</div>
+        <div class="signal-read">Read as: a bacterial bloom — a massive proliferation of heterotrophic bacteria responding to the initial organic load. The water looks like diluted milk. It is temporary, usually resolving within a week, and is often a positive sign that the cycle is progressing. Large water changes disrupt it and extend the timeline.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-name">White biofilm on hardscape</div>
+        <div class="signal-body">White or off-white fuzzy coating on driftwood, rocks, or substrate in new or recently changed setups.</div>
+        <div class="signal-read">Read as: fungal or bacterial decomposition of organic material in wood or new substrate. Common, harmless, typically consumed by shrimp and snails within days to weeks. Only worth acting on if it persists beyond three weeks or is associated with livestock distress.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-name">Post-water-change behaviour</div>
+        <div class="signal-body">Fish appearing stressed, hiding, or less active for one to several hours following a water change.</div>
+        <div class="signal-read">Read as: a transient disruption response. Water changes introduce physical disturbance, slight temperature or chemistry variation, and altered flow. Most fish settle within a few hours. Apply the 3-day rule before concluding the water change caused a problem. Watch for persistence beyond 24 hours, which is worth investigating further.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-name">Early-morning surface breathing</div>
+        <div class="signal-body">Fish at the water surface in the morning, appearing to gasp or breath heavily, then normal behaviour once lights are on and plants are active.</div>
+        <div class="signal-read">Read as: overnight oxygen depletion. Plants consume oxygen and produce CO₂ at night; the morning surface behaviour reflects the overnight low point, not a disease symptom. Improving surface agitation (flow, surface movement) usually resolves it. If surface breathing continues through the day, investigate for gill disease or ammonia elevation.</div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-name">Panic window</div>
+        <div class="signal-body">Highly erratic, disoriented, or hiding behaviour in newly introduced fish, lasting 24 to 72 hours after introduction.</div>
+        <div class="signal-read">Read as: the settling period for a new fish entering an unfamiliar environment with unfamiliar smells, pressure differentials, tank mates, and light conditions. This is not illness. It is the normal response to a significant environmental change. Give new fish 48 to 72 hours to settle before assessing their health state — most will be eating and exploring normally within three days.</div>
+      </div>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">ARA · On the Cost of Unnecessary Intervention</span>
+      <p>Every intervention in a living system is a disruption, even when it is correct and necessary. An intervention triggered by a false signal is a disruption with no benefit — it adds stress, changes chemistry, alters the biological environment, and often extends the timeline to stability. Building the capacity to distinguish false signals from genuine ones is therefore a direct reduction in the disruption load the system carries.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(8)">← Back</button>
+      <button class="btn-next" onclick="goMod(10)">Limits &amp; Ethics <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 10 (formerly Module 8) ═══ -->
+  <section class="module" id="mod-10" data-mod="10">
+    <div class="mod-eyebrow"><span class="mod-num">10 / 11</span><span class="mod-tag">Limits &amp; Ethics</span></div>
     <h2 class="mod-title">What ARA <em>does not cover</em></h2>
     <div class="mod-body">
       <p>ARA is a conceptual framework, not a diagnostic protocol. It is not a substitute for veterinary advice in cases of confirmed disease, and it does not provide species-specific medical guidance. When a fish is visibly ill — with external lesions, parasites, or symptoms that do not resolve within a reasonable observation window — the aligned response is to consult a specialist or a trusted disease reference, not to apply the framework more rigorously.</p>
@@ -396,21 +496,26 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <p>The framework explicitly rejects shame as a useful response to aquarium problems. Fish die. Tanks crash. Keepers make mistakes. None of this means a keeper is failing — it means a living system is doing what living systems do. ARA is designed to be useful in the aftermath of difficulty as well as in stable periods. Reading what went wrong in a tank crash — tracing the alignment pathway backwards — is one of the most reliable ways to build genuine keeper capacity. Shame short-circuits that learning.</p>
     </div>
 
+    <div class="mod-body" style="margin-top:.4rem">
+      <p>ARA's approach to keeper psychology rests on four evidence-based foundations. <strong>Attention Restoration Theory</strong> (Kaplan, 1995) explains why aquariums have the restorative quality many keepers experience — the "soft fascination" of a living aquatic system allows the directed attention used in daily work to recover. <strong>Self-Compassion</strong> (Neff, 2003) informs the framework's explicit rejection of shame: self-critical responses to difficulty are associated with disengagement, which in an aquarium context means reduced observation and worsening outcomes. <strong>Self-Determination Theory</strong> (Deci &amp; Ryan, 1985) explains the motivational dynamics of intrinsic engagement with the hobby — the difference between keeping because it is genuinely meaningful and keeping because of external expectations. <strong>Biophilia</strong> (Wilson, 1984) situates aquarium keeping within the broader human tendency toward connection with living systems. These foundations are not ornamental to the framework — they shape how ARA speaks to keepers about difficulty, capacity, and what the hobby is actually for.</p>
+    </div>
+
     <div class="mod-next">
-      <button class="btn-prev" onclick="goMod(7)">← Back</button>
-      <button class="btn-next" onclick="goMod(9)">ARA as Living Framework <span>→</span></button>
+      <button class="btn-prev" onclick="goMod(9)">← Back</button>
+      <button class="btn-next" onclick="goMod(11)">ARA as Living Framework <span>→</span></button>
     </div>
   </section>
 
-  <!-- ═══ MODULE 9 ═══ -->
-  <section class="module" id="mod-9" data-mod="9">
-    <div class="mod-eyebrow"><span class="mod-num">09 / 09</span><span class="mod-tag">Living Framework</span></div>
+  <!-- ═══ MODULE 11 (formerly Module 9) ═══ -->
+  <section class="module" id="mod-11" data-mod="11">
+    <div class="mod-eyebrow"><span class="mod-num">11 / 11</span><span class="mod-tag">Living Framework</span></div>
     <h2 class="mod-title">ARA as a <em>Living Framework</em></h2>
     <div class="mod-body">
       <p>ARA is not a rulebook. It does not tell you that a 30-litre tank is wrong, that planted tanks are better than non-planted tanks, or that any particular maintenance schedule is correct. It is a way of reading — a set of lenses applied to what is actually happening in your specific tank with your specific rhythm, rather than a set of standards your tank is supposed to meet.</p>
       <p>The framework is called "living" in two senses. First, it applies to living systems — ecosystems in which the relevant variables are biological and behavioural, not merely chemical and mechanical. Second, the framework itself is intended to develop. ARA was developed through observation of real tanks over time, cross-referenced with established aquatic ecology and community keeper knowledge. It will continue to be refined as that knowledge deepens.</p>
       <p>ARA is compatible with any keeping style. A high-tech CO₂-injected planted tank and a low-tech walstad bowl are both living systems with five rhythms, three possible phases, and seven alignment domains. The questions ARA asks are applicable to both — what is under pressure, what needs to reduce friction, what does the system need from this keeper right now. The answers will be different. The framework that generates the questions is the same.</p>
       <p>The framework is also compatible with any level of keeper experience. A beginner who has just set up their first tank will read it through the lens of Early Phase and the basics of Water and Livestock Rhythms. An experienced keeper with a well-established biotope will read it through the lens of fine-grained Alignment Pathways and Mature Phase maintenance. The same framework — different depth of application.</p>
+      <p>ARA also holds an explicit position on keeper psychology. The shame spiral — where guilt about aquarium problems leads to reduced observation, which leads to missed signals, which leads to worsening conditions, which leads to more shame — is not a character flaw. It is a predictable psychological response that the framework is designed to interrupt. The four psychological foundations ARA rests on — Attention Restoration Theory, Self-Compassion, Self-Determination Theory, and Biophilia — describe why aquariums have the psychological power they do, and what that means for how the framework speaks to keepers. The aligned approach treats keeper wellbeing as part of the system, not separate from it.</p>
       <p>What ARA ultimately offers is a way of being present with a tank: attentive, patient, responsive to what is actually happening rather than to a predetermined idea of what should be happening. That is not a technique. It is a practice — one that gets richer the longer you bring it to the glass.</p>
     </div>
 
@@ -419,7 +524,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     </div>
 
     <div class="mod-next" style="margin-top:1.5rem">
-      <button class="btn-prev" onclick="goMod(8)">← Back</button>
+      <button class="btn-prev" onclick="goMod(10)">← Back</button>
       <button class="btn-next" onclick="goIntro()">Back to Intro <span>→</span></button>
     </div>
 
@@ -444,7 +549,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 </main>
 
 <script>
-var totalMods = 9;
+var totalMods = 11;
 var currentMod = 1;
 
 function goIntro() {
