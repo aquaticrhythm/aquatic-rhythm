@@ -25,12 +25,19 @@ const TODAY       = new Date().toISOString().slice(0, 10);
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
+/** Return slugs whose translation JSON has _meta.status === "ready" */
 function getTranslatedSlugs(lang) {
   const dir = path.join(TRANS_DIR, lang);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter(f => f.endsWith('.json'))
-    .map(f => f.replace('.json', ''));
+    .map(f => f.replace('.json', ''))
+    .filter(slug => {
+      try {
+        const t = JSON.parse(fs.readFileSync(path.join(dir, `${slug}.json`), 'utf8'));
+        return t._meta && t._meta.status === 'ready';
+      } catch { return false; }
+    });
 }
 
 function buildHreflangSitemapEntries(slug, lang, otherLangs) {

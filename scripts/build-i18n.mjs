@@ -181,17 +181,20 @@ function buildArticle(slug, lang, t) {
       c = replaceOnce(c, /(<span class="mod-tag">)[^<]*(<\/span>)/,
         (_, a, b) => `${a}${mod.tag}${b}`);
 
-      // mod-title (may contain <em>, <br>)
-      c = replaceOnce(c, /(<h2 class="mod-title">)[\s\S]*?(<\/h2>)/,
+      // mod-title — mod-1 uses <h1>, others use <h2>
+      c = replaceOnce(c, /(<h[12] class="mod-title">)[\s\S]*?(<\/h[12]>)/,
         (_, a, b) => `${a}${mod.titleHtml}${b}`);
 
-      // mod-body paragraphs
+      // mod-body paragraphs — replace ALL mod-body divs; translated content goes into
+      // the first one, subsequent divs (used for canvas context in some articles) are removed.
       if (mod.body && mod.body.length) {
-        c = replaceOnce(c, /(<div class="mod-body">)([\s\S]*?)(<\/div>)/,
-          (_, open, _inner, close) => {
-            const paras = mod.body.map(p => `\n      <p>${p}</p>`).join('');
-            return `${open}${paras}\n    ${close}`;
-          });
+        const paras = mod.body.map(p => `\n      <p>${p}</p>`).join('');
+        const replacement = `<div class="mod-body">${paras}\n    </div>`;
+        let first = true;
+        c = c.replace(/(<div class="mod-body">)([\s\S]*?)(<\/div>)/g, () => {
+          if (first) { first = false; return replacement; }
+          return '';
+        });
       }
 
       // Pull quote (optional)
@@ -286,12 +289,19 @@ function patchEnglishArticle(slug) {
 
 // ── Discover translated slugs for a language ─────────────────────────────────
 
+/** Return slugs whose translation JSON has _meta.status === "ready" */
 function getTranslatedSlugs(lang) {
   const dir = path.join(TRANS_DIR, lang);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter(f => f.endsWith('.json'))
-    .map(f => f.replace('.json', ''));
+    .map(f => f.replace('.json', ''))
+    .filter(slug => {
+      try {
+        const t = JSON.parse(fs.readFileSync(path.join(dir, `${slug}.json`), 'utf8'));
+        return t._meta && t._meta.status === 'ready';
+      } catch { return false; }
+    });
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
