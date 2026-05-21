@@ -100,6 +100,12 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 .ara-art-secnav a{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(139,189,210,.6);text-decoration:none;transition:color .2s}
 .ara-art-secnav a:hover{color:rgba(61,214,232,.85)}
 .ara-art-secnav-empty{flex:1}
+.ara-art-hub-cta{max-width:680px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem) 3rem}
+.ara-art-hub-cta-link{display:block;padding:1.4rem 1.6rem;border:1px solid rgba(139,189,210,.12);background:rgba(5,12,10,.4);text-decoration:none;transition:border-color .22s,background .22s;-webkit-tap-highlight-color:transparent}
+.ara-art-hub-cta-link:hover{border-color:rgba(61,214,232,.28);background:rgba(61,214,232,.04)}
+.ara-art-hub-cta-eyebrow{display:block;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(235,240,236,.28);margin-bottom:.45rem}
+.ara-art-hub-cta-body{display:block;font-family:var(--serif);font-size:clamp(.95rem,1.5vw,1.08rem);font-weight:300;color:rgba(139,189,210,.65);line-height:1.4}
+.ara-art-hub-cta-link:hover .ara-art-hub-cta-body{color:rgba(61,214,232,.82)}
 </style>
 </head>
 <body>
@@ -195,6 +201,14 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <div class="ara-art-secnav-empty"></div>
     <a href="/articles/ara-s2-five-rhythms">Five Rhythms →</a>
   </nav>
+
+  <div class="ara-art-hub-cta">
+    <a href="/articles/ara-full-framework" class="ara-art-hub-cta-link">
+      <span class="ara-art-hub-cta-eyebrow">Done for now?</span>
+      <span class="ara-art-hub-cta-body">Return to the ARA Framework overview ↗</span>
+    </a>
+  </div>
+
 </main>
 
 <script src="/js/content-trust.js"></script>
