@@ -551,8 +551,24 @@
           var s = speciesById[p.id];
           var row = document.createElement('div');
           row.className = 'csl-chip';
+          var sciLine = s.scientificName
+            ? '<em class="csl-chip-sci">' + escapeHtml(s.scientificName) + '</em>'
+            : '';
+          var noteLine = s.citationNote
+            ? '<span class="csl-chip-note">' + escapeHtml(s.citationNote) + '</span>'
+            : '';
+          var srcLine = (s.sources && s.sources.length)
+            ? '<span class="csl-chip-sources">' +
+                s.sources.map(function (url) {
+                  var domain = url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
+                  return '<a class="csl-chip-src-link" href="' + escapeHtml(url) +
+                    '" target="_blank" rel="noopener noreferrer">' + escapeHtml(domain) + ' ↗</a>';
+                }).join(' · ') +
+              '</span>'
+            : '';
           row.innerHTML =
-            '<span class="csl-chip-name">' + escapeHtml(s.displayName) + '</span>' +
+            '<span class="csl-chip-name">' + escapeHtml(s.displayName) + sciLine + '</span>' +
+            noteLine + srcLine +
             '<span class="csl-chip-ctl">' +
             '<button type="button" class="csl-count-btn" data-act="minus" aria-label="Decrease count">−</button>' +
             '<span class="csl-count">' + p.count + '</span>' +
