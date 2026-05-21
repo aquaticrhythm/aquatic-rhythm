@@ -149,6 +149,8 @@ function buildArticle(slug, lang, t) {
     (_, canon) => `${canon}\n${hreflang}`);
 
   // ── 4b. Language switcher (inject before burger button in nav) ────────────
+  // Strip any existing lang-sw injected by a previous patch/build run first.
+  h = h.replace(/<div class="lang-sw"[^>]*>.*?<\/div>\n?/g, '');
   const switcher = buildLangSwitcher(slug, lang);
   if (switcher) {
     h = replaceOnce(h, /(<button class="nbg")/,
