@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "slug": "when-hobby-stops-feeling-good",
+    "lang": "ms",
+    "sourceFile": "articles/when-hobby-stops-feeling-good.html"
+  },
+  "head": {
+    "title": "When the Hobby Stops Feeling Good — Aquatic Rhythm",
+    "description": "Aquarium burnout is real — the weight of maintenance, the grief of losses, the guilt of not doing enough. This is the guide nobody else writes: three honest paths forward.",
+    "ogTitle": "When the Hobby Stops Feeling Good — Aquatic Rhythm",
+    "ogDescription": "Aquarium burnout is real — the weight of maintenance, the grief of losses, the guilt of not doing enough. This is the guide nobody else writes: three honest paths forward."
+  },
+  "intro": {
+    "eyebrow": "Reading · Reflection",
+    "titleHtml": "When the Hobby Stops<br><em>Feeling Good</em>",
+    "subtitle": "Burnout in fishkeeping is real. Nobody talks about it honestly.",
+    "texts": [
+      "At some point the tank that was a source of peace starts to feel like a source of pressure. Maintenance that felt meditative starts to feel like a chore. You find yourself not looking at the tank when you walk past.",
+      "This guide names what is actually happening, and offers three honest paths forward — without judgment about which one is right."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~8 min",
+    "metaLevel": "Reflection",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "The weight that grows quietly",
+      "titleHtml": "The weight <em>that grows quietly</em>",
+      "body": [
+        "The hobby starts with something that felt like joy: watching a betta explore a new tank, the first time a planted tank looked exactly right, the satisfaction of a cycled, stable system. But at some point — gradually, or all at once — the feeling changes. The tank starts to feel like an obligation. Maintenance that used to feel meditative starts to feel like a chore. A fish dies and instead of sadness there is mostly exhaustion. You find yourself not looking at the tank when you walk past.",
+        "This is a real experience. It has a name in every other hobby — burnout — and it happens in fishkeeping more than anyone discusses, because the hobby culture tends to reward effort and shame neglect. The keeper who is struggling often feels isolated: they love their fish, they feel guilty for not doing more, they are not sure whether to push through or step back.",
+        "In ARA terms, what is happening here is a Keeper Rhythm misalignment — the demands of the system have exceeded the capacity the keeper can genuinely sustain. This is not a character flaw. It is an ecological observation."
+      ],
+      "pullQuote": "\"The tank that started as a source of peace has become a source of pressure. That shift deserves to be named, not ignored.\"",
+      "hintLabel": "ARA · Keeper Rhythm",
+      "hintText": [
+        "In ARA, the Keeper Rhythm is the fifth ecological rhythm — the pattern of attention, time, energy, and emotional capacity the keeper brings to the system. It is not fixed. It changes with seasons, with life circumstances, with grief, with exhaustion. A tank that was sustainable last year may be unsustainable now — not because the keeper has failed, but because the keeper's rhythm has changed."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "When your keeper rhythm no longer fits"
+    },
+    {
+      "id": "mod-2",
+      "tag": "When your rhythm no longer fits",
+      "titleHtml": "When your keeper rhythm <em>no longer fits your life</em>",
+      "body": [
+        "There are different ways the keeper-tank relationship can become misaligned. Some are sudden: a new job, a new baby, an illness, a move. Others are gradual: the tank grew more complex than intended, losses accumulated, the initial excitement faded and wasn't replaced by anything.",
+        "Some keepers are in misalignment because the tank they built requires more than they realised. They bought a high-tech planted tank or a large cichlid setup or a marine tank because it was beautiful, and only later discovered what it actually demands. Others are in misalignment because life changed and the keeper who set up that tank is no longer the keeper who maintains it.",
+        "In both cases, the instinct is often to feel guilty — to see the struggle as a personal failing. ARA reframes this: the tank and the keeper are a system, and systems need to be in alignment. If the keeper has changed, the system needs to respond to that change — not by demanding the keeper return to who they were, but by finding a configuration that fits who they are now. This is not giving up. It is ecological honesty.",
+        "One specific cause of misalignment is worth naming: <strong>capacity creep</strong>. This is the process by which a keeper's care rhythm shifts gradually — water changes extending by a day here, feeding becoming slightly less consistent there — without any conscious decision to change. Each individual shift feels insignificant. The accumulated effect over months is a tank that is receiving substantially less care than it was designed for, without the keeper fully registering the change. Capacity creep is particularly common when life gets busier in ways that happen slowly rather than all at once. Naming it is useful because it removes the moral weight from a structural observation: the rhythm changed. The system needs to respond."
+      ],
+      "pullQuote": "\"The keeper who set up this tank and the keeper maintaining it today may be different people. Both deserve a tank that fits their actual life.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Three honest paths"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Three honest paths",
+      "titleHtml": "Three <em>honest paths</em>",
+      "body": [
+        "There is no single right answer when the hobby stops feeling good. ARA recognises three genuinely honest responses, none of which is a failure.",
+        "<strong>Path 1: Redesign.</strong> The current tank is misaligned — but the keeper still wants to keep fish. The aligned response is to redesign the system to match what the keeper can actually sustain now. This might mean moving from a high-maintenance planted tank to a simpler, lower-demand setup. It might mean reducing stocking density. It might mean consolidating two tanks into one. Redesigning is not retreat — it is the most ARA-aligned response: bringing the system back into honest correspondence with the keeper's actual capacity.",
+        "<strong>Path 2: Simplify.</strong> The keeper wants to stay in the hobby but needs the burden to be lighter. Simplification means identifying what is creating the most maintenance overhead and reducing it — not to zero, but to what is sustainable. A tank with fewer species, a simpler substrate, no CO2, no auto-dosing, minimal equipment to maintain. Many keepers discover that a simpler tank is also more beautiful, and that the aesthetic they were pursuing was a source of stress rather than satisfaction.",
+        "<strong>Path 3: Leave with dignity.</strong> Sometimes the most honest answer is to leave the hobby, at least for now. This is not failure. A keeper who rehomes their fish carefully, closes their tank properly, and gives themselves permission to return later when circumstances change has made a responsible, ecologically aware decision. The ARA framing: you are not abandoning your fish. You are recognising that the system has exceeded your capacity to sustain it, and choosing to resolve that drift in a way that serves both you and the animals."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Ecological Forgiveness",
+      "hintText": [
+        "Ecological forgiveness applies to the keeper, not just the tank. A keeper who has been struggling, who has missed water changes, who has lost fish to preventable causes — that keeper is not a bad keeper. They are a keeper whose system drifted beyond alignment. What matters now is not the history but the next choice."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Leaving a tank well, if you leave"
+    },
+    {
+      "id": "mod-4",
+      "tag": "If you leave",
+      "titleHtml": "Leaving a tank well, <em>if you leave</em>",
+      "body": [
+        "If the decision is to leave the hobby — temporarily or permanently — there is a way to do it well. This is worth saying explicitly, because most hobby resources only cover how to keep tanks, not how to close them.",
+        "Practical guidance for leaving with dignity: (1) Find appropriate homes for the fish first — local fish clubs, aquarium societies, hobbyist forums, and some aquarium stores will accept healthy fish. Do not pour fish into ponds, rivers, or storm drains. (2) Run the tank until every fish has a home — do not rush the rehoming process by reducing maintenance below minimum levels. (3) Sell or donate equipment to other keepers. Well-maintained equipment is valuable to hobbyists who are starting out. (4) If plants are in the tank, many can be given to other keepers — planted tank communities often trade freely.",
+        "Give yourself permission to feel whatever you feel about closing the tank. Grief about leaving the hobby is legitimate. So is relief. Both can be true at once.",
+        "And finally: leaving now does not mean leaving forever. Many keepers return to the hobby years later with a different life stage, different capacity, and a clearer understanding of what kind of tank actually fits their rhythm. The hobby will be here."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Back to Reading"
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/know-your-rhythm",
+      "text": "Know Your Rhythm →"
+    },
+    {
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "How to Build an Aquarium Routine →"
+    },
+    {
+      "href": "/ara",
+      "text": "Aquatic Rhythm Alignment →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

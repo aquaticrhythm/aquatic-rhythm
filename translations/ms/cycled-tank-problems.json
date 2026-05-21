@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "slug": "cycled-tank-problems",
+    "lang": "ms",
+    "sourceFile": "articles/cycled-tank-problems.html"
+  },
+  "head": {
+    "title": "An Established Tank Is Not a Finished Tank — Aquatic Rhythm",
+    "description": "A long-running tank is a different kind of system. This guide walks through why established tanks still struggle — and what they are usually telling you.",
+    "ogTitle": "An Established Tank Is Not a Finished Tank",
+    "ogDescription": "Why long-running tanks still struggle — and what they are usually telling you."
+  },
+  "intro": {
+    "eyebrow": "Reading · The Established Tank",
+    "titleHtml": "An Established Tank<br><em>Is Not a Finished Tank.</em>",
+    "subtitle": "Why long-running tanks still struggle — and what they are usually telling you.",
+    "texts": [
+      "The cycle is behind you. The bacteria are established, the parameters have settled, and the tank has been running for months. This is where most guides stop.",
+      "But this is also where a quieter, slower kind of difficulty tends to begin. The fish seem slightly off. Something keeps coming back. The parameters look fine — and yet something is not quite right.",
+      "An established tank is a different system from a cycling one. It asks something different from its keeper — less about building, more about reading. This is about learning to do that."
+    ],
+    "metaModules": "5 modules",
+    "metaTime": "Intermediate",
+    "metaLevel": "~10 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "A different kind of learning",
+      "titleHtml": "The cycle was<br><em>never the finish line.</em>",
+      "body": [
+        "A tank that has been running for six months is a fundamentally different system from one that just completed its cycle. The bacteria are established, the chemistry has found a rhythm, and the fish have settled. The urgent, unstable phase is over.",
+        "But established tanks have their own kind of difficulty — slower, quieter, and easier to miss. Problems do not spike suddenly. They drift. Small pressures compound over weeks until something finally becomes visible, and by then it has usually been building for a while."
+      ],
+      "pullQuote": "Stability is not something you arrive at. It is something you maintain — quietly, consistently, even when nothing visible is going wrong.",
+      "hintLabel": "ARA · Developing Phase",
+      "hintText": [
+        "In Aquatic Rhythm Alignment, an established tank has entered the <strong>Developing Phase</strong> — where the ecosystem sustains itself rather than builds. The challenge at this stage is not skill. It is attention. Most problems in established tanks are not failures of the keeper. They are slow drifts — misalignments that any keeper can learn to catch when they know what to observe."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "The five things to read"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What ARA looks at",
+      "titleHtml": "Five things the tank<br><em>is always doing.</em>",
+      "body": [
+        "Aquatic Rhythm Alignment organises an aquarium into five ecological rhythms — five layers of the system that are always active, always shifting, and always speaking. Problems in established tanks almost always trace back to drift in one or more of these rhythms.",
+        "Reading them together gives you a fuller picture than any single test can."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Where to start looking"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Finding the root",
+      "titleHtml": "Most problems have<br><em>one root.</em>",
+      "body": [
+        "When a tank is struggling — fish getting sick, algae returning, parameters that drift — it can feel like everything is wrong at once. It rarely is. There is almost always one thing that is the primary pressure, and everything else is responding to that.",
+        "Treating everything at once is exhausting and usually does not work. But finding the one thing that is actually driving the others — and addressing just that — often changes everything."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "What the filter is actually doing"
+    },
+    {
+      "id": "mod-4",
+      "tag": "The thing most guides skip",
+      "titleHtml": "The filter is not<br><em>a machine. It is a habitat.</em>",
+      "body": [
+        "Most people think of the filter as a mechanical device — it moves water, it catches debris, it can be cleaned when it looks dirty. That understanding is incomplete, and it leads to one of the most common mistakes in established tank care.",
+        "The filter media — the sponge, the ceramic rings, the bio-balls — is where the majority of your bacterial colony lives. Not in the water. Not on the gravel. On those surfaces. Those billions of bacteria are what make your tank stable. They are the cycle, running continuously, every hour of every day."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Signs your filter colony may have been disrupted",
+      "hintText": [
+        "A small ammonia or nitrite reading in an established tank — even 0.25 ppm — is a signal. So is a tank that suddenly seems less stable, or fish that recover more slowly from minor stress than they used to. These are not always caused by filter disruption, but if you recently cleaned or replaced media, that is where to look first."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "The quietest problem of all"
+    },
+    {
+      "id": "mod-5",
+      "tag": "The thing that builds without being seen",
+      "titleHtml": "Nitrate.<br><em>It builds without drama.</em>",
+      "body": [
+        "After the cycle, ammonia and nitrite are handled. That part is working. But nitrate — the end product of the whole process — has nowhere to go. It does not get broken down further. It simply builds, quietly, every day, until something removes it.",
+        "At low levels, nothing looks wrong. Parameters seem fine. Fish look normal. But nitrate is not inert. As it rises over weeks and months, it enters fish tissue through the gills and interferes with how blood carries oxygen — a process called methaemoglobinaemia at high concentrations, but even at moderate levels the effect is subtler and chronic. Immune function is gradually suppressed. Stress hormones remain slightly elevated. The fish survives, but it is running at a deficit — more prone to disease, slower to recover from minor stress, never quite as vivid or active as it could be in cleaner water."
+      ],
+      "pullQuote": null,
+      "hintLabel": "A reassuring note",
+      "hintText": [
+        "If you suspect nitrate has been higher than it should be for a while — bringing it down gradually over a few weeks (through regular small water changes, not one large one) will often produce a visible difference. Fish that have been slightly muted, slightly cautious, suddenly look more alive. They were not sick. They were just finally comfortable."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Learning to see what is actually there"
+    },
+    {
+      "id": "mod-6",
+      "tag": "Reading, not just checking",
+      "titleHtml": "Your fish are<br><em>always telling you something.</em>",
+      "body": [
+        "A test kit tells you what the water contains at the moment you test it. Your fish tell you what the water has been doing to them — all day, every day, in real time.",
+        "Most keepers learn to read numbers before they learn to read fish. That makes sense — numbers feel certain, and behaviour can seem vague. But fish respond to changes in their environment long before a test kit shows anything. By the time a reading is off, the fish have usually been living with it for a while."
+      ],
+      "pullQuote": "You do not need to know what is wrong to know that something has changed. And knowing something has changed — early — is most of what good tank-keeping actually is.",
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

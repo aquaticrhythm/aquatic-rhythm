@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "slug": "fish-keep-dying-new-tank",
+    "lang": "ms",
+    "sourceFile": "articles/fish-keep-dying-new-tank.html"
+  },
+  "head": {
+    "title": "Why Do Fish Keep Dying in My New Tank? — Aquatic Rhythm",
+    "description": "Fish dying in a new tank is one of the most common and misunderstood experiences in the hobby. Here is what is actually happening, and what was never in your control.",
+    "ogTitle": "Why Do Fish Keep Dying in My New Tank? — Aquatic Rhythm",
+    "ogDescription": "Fish dying in a new tank is one of the most common and misunderstood experiences in the hobby. Here is what is actually happening, and what was never in your control."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "Why Do Fish Keep<br><em>Dying in My New Tank?</em>",
+    "subtitle": "The first weeks are the hardest part of what you are building — not proof that something is wrong.",
+    "texts": [
+      "You set up the tank carefully. You let it run. You added fish. And then they died — some quickly, some after a few days, some after what felt like they were finally settling in.",
+      "Fish dying in a new tank is one of the most common and misunderstood experiences in the hobby. This guide explains what is actually happening at the biology level, what was never in your control, and what a different approach looks like next time."
+    ],
+    "metaModules": "Practical",
+    "metaTime": "4 modules",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "What you are experiencing",
+      "titleHtml": "This happens to almost everyone.<br><em>It happened to you first.</em>",
+      "body": [
+        "Fish dying in the first days or weeks of a new tank is not rare. It is probably the single most common discouraging experience in the hobby. Most keepers who go through this blame themselves. The biology suggests they should not.",
+        "A new tank has not yet built its bacterial colony. The water holds ammonia — from fish waste, from uneaten food, from the fish themselves — but there is nothing yet to convert it. The system that would make the water safe for fish is still in the process of becoming one.",
+        "At the same time, fish just transported from a store are already in a stressed state. They were bagged, moved, handled, possibly mixed with other fish under unfamiliar conditions. A new tank is asking them to adapt to new water chemistry while their immune system is already running low. That is a significant biological burden — one that has nothing to do with how carefully you set up the tank."
+      ],
+      "pullQuote": "A fish that dies in its first week was not lost because you did something wrong. It was lost before the system that was supposed to support it was ready.",
+      "hintLabel": "ARA · Early Phase",
+      "hintText": [
+        "In Aquatic Rhythm Alignment, this is the Early Phase — the period when the ecosystem is building its biological foundation. Livestock introduced before that foundation is in place are not entering a stable system. They are entering a system still becoming one."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "Why it is so hard"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What the system is doing",
+      "titleHtml": "The bacteria that protect fish<br><em>do not exist yet.</em>",
+      "body": [
+        "Every aquarium runs on a biological process called the nitrogen cycle. It is not a checklist — it is a living sequence that takes four to eight weeks to establish, and it cannot be rushed.",
+        "When fish are in a tank, they produce ammonia. That ammonia is toxic. In a mature tank, a colony of bacteria converts it first to nitrite — which is also toxic — and then a second colony of bacteria converts that nitrite to nitrate, which is far less harmful and manageable with regular water changes. But those bacterial colonies have to grow from almost nothing. They take weeks to build the density needed to keep up with the waste a tank produces.",
+        "Until both colonies are mature, fish are living in conditions that drift between stressful and dangerous — often invisibly. Ammonia and nitrite have no colour, no smell, and no warning before they reach critical levels. The water can look perfectly clear while quietly crossing thresholds that are harmful to fish."
+      ],
+      "pullQuote": "The water looks fine. The tank is running. But the biology that would make it safe for fish is still weeks away from being ready.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "What was yours and what was not"
+    },
+    {
+      "id": "mod-3",
+      "tag": "An honest account",
+      "titleHtml": "Some of it was always going to be hard.<br><em>Not all of it was yours.</em>",
+      "body": [
+        "<strong>What was not in your control:</strong>",
+        "The nitrogen cycle does not announce itself. You cannot see it or smell it. Most guides mention it once and move on. Few explain that it means the early weeks are genuinely dangerous for fish — even when you do everything right. That gap in common knowledge is structural, not personal.",
+        "Adjustment stress is real and it arrives with the fish. The stress they carry from transport — the bagging, the handling, the changes in light and temperature — is not something you created. It came with them.",
+        "The biological gap is also structural. A tank cannot skip the Early Phase. The bacterial colonies that make water safe for fish have to build from scratch, and that process takes the time it takes. There is no shortcut that eliminates it."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA perspective",
+      "hintText": [
+        "ARA does not ask \"what did you do wrong?\" It asks \"what was the system not yet ready to support?\" That shift matters — not just emotionally, but practically. It points toward what can be done differently next time, rather than toward shame about this time."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What comes next"
+    },
+    {
+      "id": "mod-4",
+      "tag": "What comes next",
+      "titleHtml": "The tank is not over.<br><em>It is still early.</em>",
+      "body": [
+        "If fish died but the tank is still running, the cycle may still be progressing. Test the water. If ammonia or nitrite are still elevated, the system is not yet ready — wait, and feed very lightly or not at all. A modest 20 to 25% water change can help if ammonia is high, but do not do a full reset. A complete water change removes the bacterial progress already built into the filter media and surfaces. That progress is real, even if it is not yet visible.",
+        "If you are thinking about starting again — or about what to do next — consider fishless cycling first. Add a small amount of pure ammonia to the empty tank and monitor it daily. When ammonia drops to zero within 24 hours and nitrite follows, the cycle is complete. Fish introduced into that system enter water that was biologically prepared to receive them."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Ecological forgiveness",
+      "hintText": [
+        "The New Tank Syndrome article walks through the full biology of this period — what ammonia, nitrite, and nitrate each mean, and what the system is building toward. If this is what you are in the middle of, that article is a good next read."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/new-tank-syndrome.html",
+      "text": "New tank syndrome →"
+    },
+    {
+      "href": "/ara",
+      "text": "The ARA framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "slug": "shrimp-dying-aquarium",
+    "lang": "ms",
+    "sourceFile": "articles/shrimp-dying-aquarium.html"
+  },
+  "head": {
+    "title": "Why Are My Shrimp Dying? — Aquatic Rhythm",
+    "description": "Shrimp die in aquariums that look fine on paper. They are the most sensitive readers of the Water Rhythm in the hobby — and they signal drift long before your test kit does.",
+    "ogTitle": "Why Are My Shrimp Dying? — Aquatic Rhythm",
+    "ogDescription": "Shrimp die in aquariums that look fine on paper. They are the most sensitive readers of the Water Rhythm in the hobby — and they signal drift long before your test kit does."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "Why Are My<br><em>Shrimp Dying?</em>",
+    "subtitle": "Shrimp don't fail suddenly. They drift, slowly, until they stop.",
+    "texts": [
+      "Shrimp die in aquariums that look fine on paper. Parameters check out. The tank runs cleanly. Fish in the same water are doing well. And yet the shrimp are declining — one or two at a time, over weeks.",
+      "They are the most sensitive readers of the Water Rhythm in the hobby. They signal drift long before your test kit does. This guide explains what they are reading, and what an aligned response looks like."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~7 min",
+    "metaLevel": "Practical",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Why shrimp are different",
+      "titleHtml": "Why shrimp are <em>different from fish</em>",
+      "body": [
+        "Shrimp are invertebrates — no immune system the way fish have one, no stress cortisol buffer, no gill adaptation to gradual parameter shifts. They are exquisitely sensitive to water chemistry because they live <em>inside</em> it rather than moving through it. Their gill-equivalent organs are in constant direct contact with whatever is dissolved.",
+        "This means they register Water Rhythm drift earlier than any fish in the same tank. They are not fragile — they are precise. A shrimp colony that is stable is a strong signal the Water Rhythm is aligned. A colony that is slowly declining is reading something your tests may not yet show."
+      ],
+      "pullQuote": "\"A shrimp colony that is dying is not a fragile shrimp problem. It is a Water Rhythm signal.\"",
+      "hintLabel": "ARA · Water Rhythm",
+      "hintText": [
+        "In ARA, the Water Rhythm is the chemistry, mineral content, temperature, and dissolved gases of the water — not just ammonia and nitrite, but total dissolved solids, GH (general hardness), KH (carbonate hardness), pH stability over time, and temperature swing.",
+        "Shrimp read all of it, continuously. A test kit reads one moment. The difference matters."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "What kills shrimp slowly"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What actually kills shrimp",
+      "titleHtml": "What actually <em>kills shrimp slowly</em>",
+      "body": [
+        "<strong>TDS creep.</strong> Total dissolved solids rising gradually as water evaporates and minerals concentrate. Shrimp tolerate a specific TDS range. When it drifts out over weeks, they become stressed, stop breeding, then start dying — one or two at a time.",
+        "<strong>GH and KH instability.</strong> Soft water shrimp (neocaridina) vs hard water shrimp (caridina) need different mineral profiles. A mismatch between tank water and the shrimp's natural range causes chronic osmotic stress. They expend energy maintaining internal chemistry that should cost nothing.",
+        "<strong>Copper.</strong> Invisible and lethal to invertebrates. Present in some tap water, some fertilisers, some medications. A single dose of a copper-containing product in a shrimp tank can cause colony collapse within days.",
+        "<strong>Temperature swing.</strong> Not temperature itself — but swing. A tank that hits 22°C at night and 28°C during the day is killing shrimp slowly. Shrimp are ectotherms with narrow tolerances. Small daily swings compound over weeks.",
+        "<strong>Ammonia and nitrite peaks.</strong> Shrimp show ammonia stress earlier than fish. A shrimp that has begun frantically swimming near the surface is reacting to ammonia or pH shock, not expressing personality.",
+        "<strong>New tank syndrome timing.</strong> Adding shrimp to an uncycled or recently cycled tank is the single most common cause of new shrimp dying. The nitrogen cycle must be genuinely stable before shrimp are added — not just \"ammonia reads zero today.\""
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Dominant Stressor",
+      "hintText": [
+        "When a shrimp colony is declining, the instinct is to test everything and change everything at once. In ARA, this is the wrong response. One large water change with different tap water, one new fertiliser, one medication change — any of these can be the dominant stressor.",
+        "Find what changed most recently before the decline started. That is usually the answer."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Reading water trends"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Reading water trends",
+      "titleHtml": "Reading water <em>trends, not moments</em>",
+      "body": [
+        "A test kit gives you a reading at one point in time. For fish, that is often enough — fish have buffer systems that smooth out short-term variation. For shrimp, what matters is not today's reading but the pattern over two weeks.",
+        "Log TDS once a week with a cheap TDS meter. Log temperature high/low if your thermometer supports it. If TDS is rising each week, evaporation is concentrating minerals — top off with RO or distilled water, not tap. If TDS is stable but shrimp are still declining, the next question is what changed two to three weeks before the decline started — not two to three days before.",
+        "Shrimp respond to stressors with a lag. They do not die immediately — they weaken over weeks. This means the cause is almost always earlier than it looks. The keeper rhythm that matters here is the habit of noting small changes before they become visible in the colony."
+      ],
+      "pullQuote": "\"Shrimp don't react to what happened today. They react to what accumulated over the last two weeks.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Stable over perfect"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Stable over perfect",
+      "titleHtml": "Stable <em>over perfect</em>",
+      "body": [
+        "The most common advice for shrimp is to chase perfect parameters. Specific TDS. Specific GH and KH ratios. Specific pH to two decimal places. In practice, this advice causes more shrimp deaths than it prevents — because chasing perfection means changing things constantly, and constant change is the opposite of what shrimp need.",
+        "In ARA, the principle for shrimp is <em>stable over perfect</em>. A tank with GH slightly outside the recommended range, but consistent for six months, is safer for shrimp than a tank that achieves perfect GH this week after a major remineralisation intervention. Shrimp acclimate to a stable environment. They cannot acclimate to a changing one.",
+        "Once your shrimp are breeding and active, the aligned response is to change as little as possible. Top off with the same water. Do small, frequent water changes rather than large periodic ones. Use the same fertiliser at the same dose. Watch TDS weekly. If something is working, the aligned response is to not adjust it."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Ecological Forgiveness",
+      "hintText": [
+        "Shrimp colonies recover when the dominant stressor is removed and the environment stabilises. If your colony has declined but survivors are still active, the tank has ecological forgiveness left. Remove the dominant stressor, stabilise the water, and wait six to eight weeks before concluding the tank is unsuitable.",
+        "Breeding returns before all other signs of colony health."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/perfect-parameters-fish-dying",
+      "text": "My Fish Are Dying But My Water Looks Fine →"
+    },
+    {
+      "href": "/articles/ara-full-framework",
+      "text": "The ARA Framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Back to Reading",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

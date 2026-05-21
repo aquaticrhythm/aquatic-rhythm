@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "slug": "caring-without-guilt",
+    "lang": "ms",
+    "sourceFile": "articles/caring-without-guilt.html"
+  },
+  "head": {
+    "title": "Caring Without Guilt — Aquatic Rhythm",
+    "description": "Why guilt makes tanks worse — and what ARA says about your actual relationship with the system you tend. When the keeper's mind is part of the ecosystem.",
+    "ogTitle": "Caring Without Guilt — Aquatic Rhythm",
+    "ogDescription": "Why guilt makes tanks worse — and what ARA says about your actual relationship with the system you tend."
+  },
+  "intro": {
+    "eyebrow": "Keeper &amp; Rhythm",
+    "titleHtml": "Caring Without Guilt<br><em>When the keeper's mind<br>is part of the ecosystem.</em>",
+    "subtitle": "Why guilt makes tanks worse — and what ARA says about your actual relationship with the system you tend.",
+    "texts": [
+      "When something goes wrong in the tank, the instinct is often self-blame. But guilt is not just uncomfortable — it is ecologically harmful. This is not a soft observation. It is a structural one.",
+      "This piece draws on the ARA framework to explain why, and what a more honest relationship with care actually looks like."
+    ],
+    "metaModules": "All levels",
+    "metaTime": "5 modules",
+    "metaLevel": "~9 min",
+    "cta": "Begin reading"
+  },
+  "modules": [],
+  "relatedLinks": [
+    {
+      "href": "/articles/know-your-rhythm",
+      "text": "Know Your Rhythm →"
+    },
+    {
+      "href": "/ara",
+      "text": "Explore ARA →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Talk with Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All guides",
+    "araLink": "Explore ARA →"
+  }
+}

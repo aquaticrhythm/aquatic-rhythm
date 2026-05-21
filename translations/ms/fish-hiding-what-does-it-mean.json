@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "slug": "fish-hiding-what-does-it-mean",
+    "lang": "ms",
+    "sourceFile": "articles/fish-hiding-what-does-it-mean.html"
+  },
+  "head": {
+    "title": "My Fish Are Hiding — What Does It Mean? — Aquatic Rhythm",
+    "description": "Fish hiding is the most honest signal your aquarium can send. ARA reads fish behaviour as a rhythm — and most hiding behaviour is information before it is a problem.",
+    "ogTitle": "My Fish Are Hiding — What Does It Mean? — Aquatic Rhythm",
+    "ogDescription": "Fish hiding is the most honest signal your aquarium can send. ARA reads fish behaviour as a rhythm — and most hiding is information before it is a problem."
+  },
+  "intro": {
+    "eyebrow": "Reading · Reading Your Tank",
+    "titleHtml": "My Fish Are Hiding —<br><em>What Does It Mean?</em>",
+    "subtitle": "Fish behaviour is the most honest signal a tank can send. This is how to read it.",
+    "texts": [
+      "You walk past the tank and the fish are gone. Or they are tucked into a corner, barely moving. They were fine yesterday. Now something has changed — and you are not sure if it is serious.",
+      "Fish hiding is alarming because it feels invisible. Nothing looks broken. But ARA treats fish behaviour as one of five ecological rhythms — and most hiding behaviour is information before it is a problem. This guide explains how to read it."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "All levels",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Reading the signal",
+      "titleHtml": "Fish going quiet is<br><em>one of the most informative things you can watch.</em>",
+      "body": [
+        "It is also one of the most worrying. When fish stop being visible — when they retreat behind plants, under driftwood, into corners — most keepers feel an immediate need to do something. The absence itself is alarming.",
+        "But before acting, it is worth separating two very different situations. The first is <strong>natural hiding</strong>: many species are inherently shy, nocturnal, or refuge-dwelling. Catfish, loaches, kuhlis, and many plecos spend most of their time hidden. This is not stress. It is their nature. If the hiding behaviour is consistent with how the fish have always behaved, it is probably not a signal at all.",
+        "The second is <strong>changed behaviour</strong>: fish that were previously active and visible are now withdrawn, or hiding in ways they did not before. This is the situation that deserves attention — because fish behaviour is a direct readout of how the system is being experienced from the inside."
+      ],
+      "pullQuote": null,
+      "hintLabel": "First question to ask",
+      "hintText": [
+        "Is this new behaviour, or has it always been this way? If it is new, what changed? Something in the tank, or something in your care pattern? The answer to those two questions will guide everything else."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "What is the fish actually sensing"
+    },
+    {
+      "id": "mod-2",
+      "tag": "The Livestock Rhythm",
+      "titleHtml": "Fish behaviour is<br><em>a rhythm.</em>",
+      "body": [
+        "ARA names five ecological rhythms that run simultaneously in every aquarium: Water, Biological, Environmental, Livestock, and Human. Fish behaviour is the Livestock Rhythm — and it is often the most sensitive indicator in the system, registering changes that water tests cannot yet show.",
+        "When fish go quiet and withdrawn, they are usually responding to one of several things. Not all of them are crises."
+      ],
+      "pullQuote": "Animals often show what numbers cannot. A fish hiding in a corner before ammonia shows on a test kit is not being dramatic. It is reading its environment at a resolution that your instruments do not have. The Livestock Rhythm speaks first.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Observation before action"
+    },
+    {
+      "id": "mod-3",
+      "tag": "What ARA suggests",
+      "titleHtml": "Observation before<br><em>intervention.</em>",
+      "body": [
+        "The most common response to hiding fish is to add something — a medication, a stress coat, a water conditioner. This impulse is caring. But in most cases, what the fish needs is not a treatment. It needs the stressor identified and reduced. Adding chemistry to an already stressed system can compound the problem.",
+        "ARA calls this the principle of observation before correction. Before you add anything, spend one or two days watching carefully. Note exactly where the fish are hiding, when they emerge, whether they are eating, and whether their appearance has changed. This observation is not passive — it is diagnostic."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA principle",
+      "hintText": [
+        "Observation before correction is one of ARA's four core principles. Not every visible change is a signal to intervene. Some are transitional, some are adaptive, and some need to be watched before they can be read honestly. Fish hiding behaviour is almost always one of these — it becomes clearer with observation, not with action."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What to do now"
+    },
+    {
+      "id": "mod-4",
+      "tag": "One step, then watch",
+      "titleHtml": "Two days of watching.<br><em>Then one aligned action.</em>",
+      "body": [
+        "Spend one or two days watching before doing anything beyond a parameter check. Make note of: when do the fish come out, if at all? Do they eat? Do they appear physically normal? Is there any interaction between fish that might indicate aggression?",
+        "If the fish are new to the tank, the aligned response is to wait. Add hiding places if there are not enough. Keep lighting moderate. Do not rearrange the tank. Give the fish time to map the space.",
+        "If the fish were previously settled and behaviour has changed, look for the single most likely stressor. Water quality is the most common culprit — a modest water change of 20–25% is almost always safe and reduces any accumulated load. If aggression is suspected, remove the aggressor temporarily to observe whether the others emerge."
+      ],
+      "pullQuote": "The keeper's job, when fish go quiet, is not to fix something immediately. It is to read what has drifted — and then make one small aligned adjustment in that direction. Most hiding behaviour resolves when the stressor is removed, not when something is added.",
+      "hintLabel": "Remember",
+      "hintText": [
+        "Fish do not hide to communicate distress. They hide because their environment is asking them to. When you change the environment — when you remove the stressor rather than masking it — the fish follow. That is how the Livestock Rhythm works: it reflects conditions, not personality."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/cycled-tank-problems",
+      "text": "Reading established tanks →"
+    },
+    {
+      "href": "/ara",
+      "text": "The ARA framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

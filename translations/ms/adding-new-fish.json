@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "slug": "adding-new-fish",
+    "lang": "ms",
+    "sourceFile": "articles/adding-new-fish.html"
+  },
+  "head": {
+    "title": "Adding New Fish — Aquatic Rhythm",
+    "description": "Every new fish disrupts a tank that was stable. Reading that disruption — rather than trying to prevent it entirely — is the aligned keeper's approach.",
+    "ogTitle": "Adding New Fish — Aquatic Rhythm",
+    "ogDescription": "Every new fish disrupts a tank that was stable. Reading that disruption — rather than trying to prevent it entirely — is the aligned keeper's approach."
+  },
+  "intro": {
+    "eyebrow": "All levels",
+    "titleHtml": "Adding New Fish<br><em>The Disruption Window</em>",
+    "subtitle": "The first two weeks are a disruption. That is normal.",
+    "texts": [
+      "You added the new fish properly — drip acclimation, matched temperature, the bag floated for 20 minutes. But three days later the existing fish look stressed, one is hiding who never used to hide, and the new arrivals aren't eating. You did everything right. The disruption happened anyway.",
+      "This guide explains why adding new fish always disrupts a stable tank, what the two-week disruption window looks like across all five rhythms, and how to read what's happening — rather than rushing to fix what doesn't need fixing."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~7 min",
+    "metaLevel": "All levels",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Why every addition is a disruption",
+      "titleHtml": "Why every addition <em>is a disruption</em>",
+      "body": [
+        "A stable aquarium is a negotiated equilibrium. The fish have established territories, feeding hierarchies, and social patterns. The bacterial colony in the filter is sized to the current bioload. The water chemistry reflects the balance between what the tank produces and what the maintenance rhythm removes.",
+        "When new fish arrive, all of this is disrupted simultaneously. The bacterial colony faces a higher bioload than it was sized for — new fish add waste before the bacteria can expand to process it, which means ammonia and nitrite may nudge upward for days or weeks. The existing fish perceive the new arrivals as intruders, triggering territorial and social responses that look like aggression, hiding, or colour changes. The new fish are stressed from transport, unfamiliar water chemistry, and an unfamiliar social hierarchy — which suppresses their immune response during exactly the period they most need it intact.",
+        "None of this is a problem. It is a disruption — a temporary state that a healthy tank with aligned keeper rhythm passes through. The disruption window is not a signal to act. It is a signal to watch."
+      ],
+      "pullQuote": "\"A disruption is not a crisis. It is the tank reorganising around new information. The aligned response is observation — not intervention.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Quarantine: what it actually protects"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Quarantine: what it actually protects",
+      "titleHtml": "Quarantine: <em>what it actually protects</em>",
+      "body": [
+        "Quarantine is often described as protecting existing fish from disease brought by new arrivals. That is true, and it is the practical reason to maintain a quarantine tank. But quarantine also protects the new fish. A fish introduced directly into an established community tank is navigating a new social hierarchy, unfamiliar water parameters, and potential territorial aggression while simultaneously stressed from transport. If that fish is carrying a low-level infection — ich, bacterial infection, internal parasites — the combination of stressors may trigger an outbreak in the new fish and then expose existing fish whose immune function is suppressed by the territorial disruption.",
+        "A two-week quarantine does three things: it allows the new fish to recover from transport stress in a calm, uncontested environment; it gives time for any carried disease to manifest where it can be treated without affecting the display tank; and it allows the keeper to observe the new fish's behaviour, appetite, and colouration at baseline before introducing them to the social complexity of the main tank.",
+        "A quarantine tank does not need to be elaborate — a bare 20–40L tank with a cycled sponge filter, a heater, and a simple hide is sufficient."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "In ARA, quarantine is not just disease prevention — it is a period of Livestock Rhythm reading. Watching a new fish eat, swim, and rest in an uncontested environment tells you what their baseline looks like. That baseline is what you compare against once they enter the display tank."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Reading the two-week window"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Reading the two-week window",
+      "titleHtml": "Reading the <em>two-week window</em>",
+      "body": [
+        "The two weeks after introduction are the disruption window — the period during which the tank is reorganising. What to expect and how to read it: territory negotiation looks like chasing, fin-spreading, and occasional nipping. In community fish without dedicated territories, this usually resolves within days. In cichlids or bettas, the negotiation is longer and more physical. Watch for sustained chasing (one fish unable to access food or rest), clamped fins that don't resolve, or hiding that continues beyond five to seven days — these are signs the social disruption is not resolving on its own.",
+        "Parameter drift during this window is expected. Test ammonia and nitrite for the first ten days after adding new fish — not because a crisis is likely, but because the bacterial colony is adjusting to a new load. A small ammonia reading (0.25 ppm) that clears within 24 hours is the colony catching up. A reading above 0.5 ppm that doesn't fall within 24 hours is the colony struggling and warrants a water change.",
+        "New fish not eating for the first two to three days is normal — they are stressed and orienting. Not eating past five to seven days warrants attention. Observe before acting. Most disruptions resolve without intervention if the keeper rhythm (feeding, water changes) remains consistent during the window."
+      ],
+      "pullQuote": "\"The disruption window asks one thing of the keeper: consistency. Don't change the feeding schedule, the lighting, the water change rhythm. Let the biology stabilise around what it already knows.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "After the window"
+    },
+    {
+      "id": "mod-4",
+      "tag": "After the window",
+      "titleHtml": "After the <em>window</em>",
+      "body": [
+        "By the end of week two, a tank that was healthy before the addition should be returning to its baseline. Aggression decreases as territories are established or accepted. Feeding resumes normal patterns. Ammonia and nitrite return to zero. The new fish begin to show their resting colouration rather than the stress-muted tones of the first few days.",
+        "If the tank has not returned to baseline by three weeks, something in the disruption window was not a temporary reorganisation — it is a persistent condition. Sustained aggression at three weeks suggests an incompatibility that time won't resolve: the stocking configuration may need reconsideration. Ongoing ammonia at three weeks suggests the bacterial colony is not keeping up with the new load: either the tank is overstocked, or a filter issue needs attention. Continued not eating at three weeks is a disease signal, not a stress signal.",
+        "The two-week disruption window is a reading tool. It tells you what the tank can absorb, how the existing fish respond to change, and whether the new arrivals were genuinely compatible with the environment they entered. Tanks that pass through the window cleanly are telling you something useful about their resilience. Tanks that don't resolve within three weeks are telling you something equally useful about their limits."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/fish-hiding-what-does-it-mean",
+      "text": "My Fish Are Hiding →"
+    },
+    {
+      "href": "/articles/ich-keeps-coming-back",
+      "text": "Ich Keeps Coming Back →"
+    },
+    {
+      "href": "/articles/community-fish-tank",
+      "text": "Community Fish Tank →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

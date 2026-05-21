@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "slug": "overfeeding-aquarium",
+    "lang": "ms",
+    "sourceFile": "articles/overfeeding-aquarium.html"
+  },
+  "head": {
+    "title": "Overfeeding and the Tank's Hidden Load — Aquatic Rhythm",
+    "description": "Most tanks are not underfed. Overfeeding is the most common unacknowledged driver of cloudy water, high nitrate, algae, and ammonia spikes.",
+    "ogTitle": "Overfeeding and the Tank's Hidden Load — Aquatic Rhythm",
+    "ogDescription": "Most tanks are not underfed. Overfeeding is the most common unacknowledged driver of cloudy water, high nitrate, algae, and ammonia spikes."
+  },
+  "intro": {
+    "eyebrow": "All levels",
+    "titleHtml": "Overfeeding and<br><em>the Tank's Hidden Load</em>",
+    "subtitle": "Most tanks are not underfed. Most tanks are overfed.",
+    "texts": [
+      "The water is cloudy. Nitrate is high. Algae keeps appearing. You've done water changes, checked the filter, tested the water — and nothing is clearly wrong. The fish seem fine. You wonder what you're missing.",
+      "In many of these cases, the answer is feeding. Not the frequency, not the type — the amount. Overfeeding is the most common invisible driver of the problems keepers attribute to other causes. This guide explains why it happens, what it does to the tank's biology, and how to read the signs before they compound."
+    ],
+    "metaModules": "4 modules",
+    "metaTime": "~7 min",
+    "metaLevel": "All levels",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Why keepers overfeed",
+      "titleHtml": "Why keepers <em>overfeed</em>",
+      "body": [
+        "Fish appear to respond to food with enthusiasm regardless of whether they need it. A fish that ate five minutes ago will chase a flake the same way as a fish that hasn't eaten in two days. This creates a feedback loop for keepers: the fish \"seem hungry,\" so more food goes in.",
+        "The drive to feed is also emotional — feeding is one of the few visible ways keepers interact with their fish. Watching them respond to food feels like direct contact with the animals. This is not a failure of judgement. It is a normal human response to animals that appear to respond.",
+        "But fish are efficient foragers in nature — they are adapted to opportunistic eating and will respond to available food beyond what they need. The visible enthusiasm for food is not a reliable indicator of hunger. The rule most experienced keepers arrive at through observation is: feed only what disappears in two to three minutes, once or twice daily. Not as a strict rule — but as a starting calibration. A tank that is genuinely thriving on this amount is not a tank that is underfed. It is a tank with a matched organic load."
+      ],
+      "pullQuote": "\"The fish will always look hungry. That is not information about whether they are.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "What happens to uneaten food"
+    },
+    {
+      "id": "mod-2",
+      "tag": "What happens to uneaten food",
+      "titleHtml": "What happens <em>to uneaten food</em>",
+      "body": [
+        "Food that is not eaten within a few minutes settles to the substrate or is drawn into the filter. On the substrate, it begins decomposing — bacteria break it down, consuming oxygen in the process. The decomposition produces ammonia, which feeds the nitrogen cycle and ultimately becomes nitrate.",
+        "In a tank with moderate stocking and an efficient filter, small amounts of decomposing food are managed without visible consequence. But consistent overfeeding adds organic load continuously. Nitrate rises faster than water changes can manage. The bacterial bloom feeding on the excess food turns the water cloudy — the cloudiness is not a chemical problem but a biological response to abundance. Algae receives elevated nitrate and phosphate (also a decomposition product) as fertiliser and grows faster. The filter draws in decomposing material, partially compressing the sponge and reducing flow — reducing the filter's capacity to process ammonia exactly when more ammonia is being produced.",
+        "All of these consequences are connected to a single input: more food than the tank's biology can process in real time."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Chemical Rhythm",
+      "hintText": [
+        "Overfeeding is a Keeper Rhythm behaviour — a habit — that directly loads the Chemical Rhythm. Rising nitrate, cloudy water, and accelerating algae are Chemical Rhythm readings. Tracing them back to their cause often leads to the feeding routine before it leads anywhere else."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Reading the signs"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Reading the signs",
+      "titleHtml": "Reading <em>the signs</em>",
+      "body": [
+        "Several signs consistently indicate overfeeding rather than other causes: nitrate rises faster than the stocking density and water change schedule would predict; water turns cloudy within 24–48 hours of feeding, clearing and returning repeatedly; algae grows on the glass and substrate faster than it can be removed, despite other parameters being stable; uneaten food is visible on the substrate or resting against decorations; the filter flow is gradually slowing between cleaning cycles faster than expected.",
+        "Test this hypothesis: reduce feeding to a clear minimum — once daily, only what disappears in two minutes — for two weeks. Do not change anything else: same water change schedule, same filter maintenance, same stocking. If nitrate rises more slowly, cloudiness clears and stays clear, and algae growth slows, overfeeding was the dominant driver.",
+        "This two-week trial is one of the most diagnostic experiments available to a keeper without specialist equipment. The results are direct feedback from the Chemical Rhythm about how much organic load the tank can sustain without visible consequence."
+      ],
+      "pullQuote": "\"Reducing feeding is not depriving the fish. It is calibrating the load to the tank's capacity. A fish that eats slightly less than it could is not suffering. A tank that is consistently overloaded is.\"",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Calibrating to the tank"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Calibrating to the tank",
+      "titleHtml": "Calibrating <em>to the tank</em>",
+      "body": [
+        "The goal is not a universal feeding rule — it is calibration to the specific tank. A heavily planted tank with high light and good CO2 can absorb more organic load because plants consume nitrate and phosphate directly. A bare tank with minimal filtration and moderate stocking needs a much lighter hand.",
+        "Observation guides calibration: if parameters are stable, water is clear, algae is manageable, and fish are at healthy weight, the feeding amount is working. If any of these drift, the feeding rate is one of the first variables to examine.",
+        "Fasting fish one day per week is a common practice with multiple benefits: it allows the digestive system to clear, reduces organic load for a day, and provides a reliable comparison point — a tank that looks better after a fast day is almost certainly carrying excess load on feeding days. Varied diet also reduces dependence on a single food type, each of which has different phosphate and organic content.",
+        "The keeper who has calibrated feeding to the tank's actual capacity has solved a problem that many keepers spend months addressing through water changes and filter maintenance without understanding the root input. The Keeper Rhythm — the feeding habit — shapes the Chemical Rhythm continuously. Reading one means reading the other."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/why-is-my-aquarium-water-cloudy",
+      "text": "Why Is My Aquarium Water Cloudy? →"
+    },
+    {
+      "href": "/articles/algae-in-aquarium",
+      "text": "Algae in My Aquarium →"
+    },
+    {
+      "href": "/articles/nitrate-keeps-rising",
+      "text": "Why Nitrate Keeps Rising →"
+    },
+    {
+      "href": "/ara",
+      "text": "Aquatic Rhythm Alignment →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "slug": "aquarium-plants-not-growing",
+    "lang": "ms",
+    "sourceFile": "articles/aquarium-plants-not-growing.html"
+  },
+  "head": {
+    "title": "Why Won't My Aquarium Plants Grow? — Aquatic Rhythm",
+    "description": "Aquarium plants that melt, turn yellow, or refuse to grow are showing you something about your Environmental Rhythm — light consistency, nutrient balance, and substrate conditions. A guide to reading the signals.",
+    "ogTitle": "Why Won't My Aquarium Plants Grow? — Aquatic Rhythm",
+    "ogDescription": "Aquarium plants that melt, turn yellow, or refuse to grow are showing you something about your Environmental Rhythm — light consistency, nutrient balance, and substrate conditions."
+  },
+  "intro": {
+    "eyebrow": "Practical",
+    "titleHtml": "Why Won't My<br><em>Aquarium Plants Grow?</em>",
+    "subtitle": "The plant is reading something. Learn what.",
+    "texts": [
+      "The leaves are melting, or yellowing, or covered in algae. Or nothing is growing at all — just a slow, stubborn refusal to thrive. The plant looks like it should be alive, but something is clearly not right.",
+      "This guide explains what your plants are actually responding to, how to read the specific signals they're showing you, and how to match your setup to what you can genuinely and consistently provide."
+    ],
+    "metaModules": "Practical",
+    "metaTime": "4 modules",
+    "metaLevel": "~7 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "What the plant is reading",
+      "titleHtml": "Aquarium plants are not<br><em>decorations that happen to be alive.</em>",
+      "body": [
+        "Plants in an aquarium are not passive. They are responding continuously to the light, water chemistry, CO2 levels, nutrient availability, and substrate conditions of their environment. When they struggle — melting leaves, yellowing, refusing to grow upward, algae colonising their leaves — they are telling you that one or more of those conditions is not what they need.",
+        "The most common response to struggling plants is to buy different plants, add more fertiliser, or upgrade the light. All of these can help, but none of them helps if the underlying condition is not identified first. Adding more fertiliser to a plant that is struggling because of inconsistent light doesn't resolve the misalignment — it often makes algae worse.",
+        "The first question is always: what is the plant reading that you are not?",
+        "These are the most common visible symptoms and what they signal:",
+        "<strong>New leaves melt or rot shortly after purchase:</strong> Often adaptation stress — many aquarium plants are grown emersed (above water) and must transition to submersed growth. Some leaf loss is normal. If melting continues after 3–4 weeks, observe light and CO2.",
+        "<strong>Leaves turning yellow, starting from older (lower) leaves:</strong> Classic nutrient deficiency, typically nitrogen or potassium. Usually indicates nutrients are being consumed faster than they're being replenished, or the substrate is depleted.",
+        "<strong>Leaves yellowing from newer (upper) leaves:</strong> Micronutrient deficiency, commonly iron. Indicates the plant cannot access or absorb certain trace elements — often a water chemistry or chelation issue.",
+        "<strong>Holes in leaves / pinholes:</strong> Often a potassium deficiency, or physical damage from snails or fish.",
+        "<strong>Leggy growth toward the light (stems long with few leaves):</strong> Light is too low or too far from the substrate. The plant is stretching toward the source.",
+        "<strong>Algae growing on leaves (especially older leaves):</strong> Plants that are not growing vigorously cannot compete with algae for nutrients and light. The algae colonising plant leaves is a sign the plant is stressed, not the cause of the stress."
+      ],
+      "pullQuote": "A healthy plant growing strongly outcompetes algae for the same resources. A plant that is struggling cannot. The algae on its leaves is a symptom, not a cause.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Light, nutrients, and rhythm"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Light, nutrients, and the rhythm they need",
+      "titleHtml": "Three things plants need —<br><em>and why consistency matters more than intensity.</em>",
+      "body": [
+        "<strong>Light</strong>",
+        "Plants need light to photosynthesize, but the relationship is more nuanced than \"more light = better growth.\" The relevant variables are: intensity (how bright), spectrum (what wavelengths), duration (how many hours per day), and consistency (does it happen at the same time every day?).",
+        "Common sources of drift: too short a photoperiod (less than 6 hours for most plants); too long a photoperiod without sufficient CO2 or nutrients, which drives algae rather than growth; inconsistent timing — lights on at different times each day, disrupting the plant's photosynthetic rhythm; and a light source too far from the substrate for low-light plants to receive what they need.",
+        "A timer is one of the most valuable tools for planted tanks — not because plants \"know\" the time, but because consistent light cycles create predictable conditions that both plants and the keeper can calibrate around.",
+        "<strong>Nutrients</strong>",
+        "Plants need macronutrients (nitrogen, phosphorus, potassium) and micronutrients (iron, manganese, magnesium, and others). In most aquariums with fish, nitrogen and phosphorus are naturally present from waste. Potassium and iron are commonly deficient in established tanks and usually need supplementation.",
+        "The nutrient need scales with plant density and growth rate. A fast-growing high-light tank depletes nutrients quickly. A slow-growing low-light tank depletes them slowly. Matching fertiliser dose to actual plant growth rate — rather than a generic recommended dose — is what an aligned response looks like for nutrition.",
+        "<strong>CO2 and carbon</strong>",
+        "Carbon is required for photosynthesis and is often the limiting factor in plant growth. Fish respiration provides some CO2, but in densely planted or high-light tanks, this is rarely enough. Low-tech tanks accept low-to-medium light levels precisely because they are calibrated to the natural CO2 available — this is not a compromise, it is a design choice that matches system capacity to keeper reality."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Environmental Rhythm",
+      "hintText": [
+        "In ARA, the Environmental Rhythm covers everything the organism experiences as its environment — not just water chemistry, but light cycle, temperature stability, CO2 availability, and physical structure. Plants are part of this rhythm, not separate from it. When plant growth is the signal, Environmental Rhythm is almost always where to look."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "Matching ambition to capacity"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Low-tech vs high-tech — matching ambition to capacity",
+      "titleHtml": "Capacity before Ambition.<br><em>Choose the system your life can actually support.</em>",
+      "body": [
+        "One of the four ARA principles is Capacity before Ambition — building a system around what the keeper can sustainably provide, not around an ideal that requires conditions or time commitments the keeper does not have. This applies directly to planted tanks.",
+        "<strong>Low-tech planted tanks</strong> (no CO2 injection, low-to-medium light) are designed for slow, steady growth. They are best suited for low-light species: Java fern, Anubias, Cryptocorynes, mosses. These plants are adapted to lower light and grow slowly — which means they need fewer nutrients, produce less waste, and are far more forgiving of irregular fertiliser dosing. They also outcompete algae at lower light levels when healthy.",
+        "The tradeoff: you cannot grow high-light demanding carpeting plants such as Hemianthus callitrichoides or Glossostigma in a low-tech setup. The capacity does not support the ambition.",
+        "<strong>High-tech planted tanks</strong> (CO2 injection, high light) can grow almost anything, but they require more consistent attention. CO2 must be on during lights-on hours, nutrients must be replenished regularly, and water changes are often more frequent to manage nutrient buildup. The margin for drift is smaller. A missed CO2 refill or an irregular fertiliser schedule in a high-light tank produces algae rapidly.",
+        "For most keepers — especially those with irregular or episodic care rhythms — low-tech planted tanks are not a compromise. They are the honest design choice that produces a healthy, thriving planted tank over the long term.",
+        "Some practical guidance:",
+        "If you find it difficult to maintain regular fertiliser dosing, start with low-tech, slow-growing plants. If your photoperiod varies because you forget the timer, get a timer — it is the cheapest, highest-impact planted tank tool available. If you want carpeting plants, be honest about whether you can commit to CO2 and regular nutrient dosing before purchasing."
+      ],
+      "pullQuote": "A Java fern that grows slowly and stays green for years requires less from the keeper than a carpeting plant that looks perfect for three months before declining from inconsistent CO2. The right plant is the one that fits the care the keeper can actually give.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "What to do now"
+    },
+    {
+      "id": "mod-4",
+      "tag": "One consistent change over two weeks",
+      "titleHtml": "Start with the most likely cause.<br><em>Then watch for two weeks.</em>",
+      "body": [
+        "<strong>Step 1: Identify the symptom type from Module 1.</strong> The visible signal almost always points to a cause category — light, nutrients, or CO2. Start there before changing anything else.",
+        "<strong>Step 2: Make one change.</strong> The most common high-impact adjustments:",
+        "Add a timer if the photoperiod is inconsistent. Adjust photoperiod to 7–8 hours with a midday break if algae is present alongside slow growth. Add a root tab or liquid potassium or iron supplement if yellowing points to nutrient deficiency. Trim and remove heavily algae-covered leaves — they will not recover, and removing them redirects the plant's energy. Reduce fish feeding if nitrate is high but iron and potassium are low, since excess nitrogen drives algae rather than plant growth.",
+        "<strong>Step 3: Wait two weeks.</strong> Plants do not respond overnight. Two weeks is the minimum observation window to see whether a change made a meaningful difference in the Environmental Rhythm.",
+        "What not to do: change light, nutrients, and CO2 simultaneously. If the tank improves, you will not know what helped. If it does not improve, you have changed the baseline in every dimension and lost your ability to read the system. One change, observed over time, is how coherent continuity is built.",
+        "If algae is part of what you are seeing alongside plant problems, the algae guide explains what different types signal about Environmental Rhythm conditions. And for the full picture of how Environmental Rhythm connects to the other four ecological layers in your tank, the Five Rhythms article covers all of them."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/algae-in-aquarium",
+      "text": "Algae in aquariums →"
+    },
+    {
+      "href": "/articles/ara-full-framework",
+      "text": "The ARA Framework →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Ask Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

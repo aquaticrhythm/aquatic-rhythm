@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "slug": "new-tank-syndrome",
+    "lang": "ms",
+    "sourceFile": "articles/new-tank-syndrome.html"
+  },
+  "head": {
+    "title": "New Tank Syndrome — What's Actually Happening and Why Waiting Is the Right Answer",
+    "description": "New tank syndrome is not a mistake you made. It is a phase every aquarium passes through. A guided introduction to the nitrogen cycle — with visuals, clear explanations, and a live simulator to try it yourself.",
+    "ogTitle": "New Tank Syndrome — What's Actually Happening and Why Waiting Is the Right Answer",
+    "ogDescription": "A guided introduction to the nitrogen cycle — with visuals and a live simulator."
+  },
+  "intro": {
+    "eyebrow": "Reading · New Tank Syndrome",
+    "titleHtml": "New Tank Syndrome",
+    "subtitle": "What is actually happening — and why waiting is the right answer.",
+    "texts": [
+      "You set up a new tank. The water turned cloudy. The fish looked stressed. You tested, changed, added something — and it kept happening.",
+      "You did not do anything wrong. What you were watching is one of the most misunderstood phases in the hobby — and almost every keeper goes through it.",
+      "This guide walks through what is actually happening, why the instinct to act often makes it worse, and what you can do instead."
+    ],
+    "metaModules": "7 modules",
+    "metaTime": "Beginner &amp; Intermediate",
+    "metaLevel": "~14 min",
+    "cta": "Start reading"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "You did not do anything wrong",
+      "titleHtml": "",
+      "body": [
+        "Almost every keeper goes through this. The water turns cloudy, the fish seem off, and adjustments do not immediately help. After repeated tweaks, it can feel like you are causing the issue yourself.",
+        "What you are seeing is the biological startup phase, not system collapse. New tank syndrome appears in nearly every new setup because core bacteria populations are still forming. The system is alive, but not mature yet.",
+        "Reduce intervention and focus on consistency. Keep feeding conservative, monitor trends, and avoid drastic resets. The water is not broken; it is not ready yet."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Early Phase",
+      "hintText": [
+        "In Aquatic Rhythm Alignment, this is called the <strong>Early Phase</strong> — the period when the ecosystem is preparing its biological foundation. The system is not broken. It is building. Most of what feels wrong right now is the system doing exactly what it is supposed to do at this stage. What it needs is steadiness, not intervention, and enough time for biology to catch up."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "So what is actually happening"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Ammonia",
+      "titleHtml": "The water is not empty.<br><em>Something is building.</em>",
+      "body": [
+        "Fish can look stressed very quickly in a new tank. Waste and leftover food break down into <strong>ammonia</strong>, which is toxic even at low concentration. That load can rise before the keeper sees obvious test spikes.",
+        "Mature tanks process ammonia almost immediately, but new tanks do not yet have that biological capacity. The conversion system is still being built. Until then, ammonia accumulates and fish feel the stress first."
+      ],
+      "pullQuote": "The cloudiness, the stressed fish, the unstable readings — these are not signs that something has gone wrong. They are signs that something is trying to begin.",
+      "hintLabel": "On fish welfare",
+      "hintText": [
+        "This is one reason <em>fishless cycling</em> is now widely preferred — using an ammonia source (pure ammonia or decaying food) to grow bacteria before any animals are introduced. Fish-in cycling subjects living animals to prolonged ammonia exposure that causes real physiological stress. If you have already started with fish, frequent small water changes — not large ones — can keep levels manageable while the cycle builds."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What actually fixes this"
+    },
+    {
+      "id": "mod-3",
+      "tag": "The only real answer",
+      "titleHtml": "Bacteria are<br><em>the only answer.</em>",
+      "body": [
+        "Many products promise fast stability, but the tank still swings. New tank syndrome cannot be solved by a single additive. Keepers often over-correct because they expect instant reversal.",
+        "Beneficial bacteria must colonise real surfaces such as filter media, substrate, and decor. This buildup takes weeks and follows a sequence you cannot force. Once established, they process waste continuously and quietly."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Where bacteria actually live"
+    },
+    {
+      "id": "mod-4",
+      "tag": "A common misconception",
+      "titleHtml": "Bacteria do not live<br><em>in the water.</em>",
+      "body": [
+        "Many keepers worry water changes will remove their bacteria and restart the cycle. That fear can lead to skipping needed maintenance. It also shifts attention away from the true biological core.",
+        "Bacteria are settlers, not free swimmers. They form living films on sponge, ceramic rings, bio-balls, and substrate over time. The filter remains the most important habitat for colony stability."
+      ],
+      "pullQuote": "Turning off your filter — even briefly — is more disruptive to a cycling tank than almost any water change. You are not just stopping circulation. You are cutting off the oxygen the colony depends on.",
+      "hintLabel": "A few things worth remembering",
+      "hintText": [
+        "Do not rinse filter media under the tap — chlorine will kill the biofilm. Use old tank water instead, and only when you need to. Never replace all the media at once. If you are ever upgrading equipment or moving tanks, the filter is the most important thing to carry across."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What makes the cycle faster or slower"
+    },
+    {
+      "id": "mod-5",
+      "tag": "The variables",
+      "titleHtml": "Not all cycles<br><em>take the same time.</em>",
+      "body": [
+        "Two similar tanks can cycle at very different speeds. That difference often makes keepers think one setup is “wrong.” In reality, timeline variation is normal."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": null,
+      "prevBtn": "← Back",
+      "nextBtn": "Why helping sometimes hurts"
+    },
+    {
+      "id": "mod-6",
+      "tag": "When care becomes the obstacle",
+      "titleHtml": "Why doing more<br><em>often makes it worse.</em>",
+      "body": [
+        "When fish look stressed, most keepers intervene repeatedly. That response is caring, but frequent fixes can destabilise a cycling tank. The timeline often stretches because the system cannot settle."
+      ],
+      "pullQuote": "The intervention trap is not about doing the wrong thing. It is about doing the right thing too often, in a system that needs time more than it needs help.",
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": [
+        "ARA calls this the intervention trap — when care becomes the obstacle. Most of what happens during cycling falls into one category: things that need to be witnessed, not fixed. The difficulty is learning to tell the difference."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": "What it feels like when it works"
+    },
+    {
+      "id": "mod-7",
+      "tag": "The other side of this",
+      "titleHtml": "The tank finds<br><em>its own rhythm.</em>",
+      "body": [
+        "Early on, it can feel like the tank will never settle. Progress is gradual and easy to miss day to day. That uncertainty makes many keepers doubt the process.",
+        "Between roughly week four and week eight, colony function usually becomes steady. Ammonia stays near zero, nitrite fades, and fish behaviour normalises. The system gains resilience and can recover from small disturbances."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Aquatic Rhythm perspective",
+      "hintText": [
+        "New tank syndrome is not an obstacle to the hobby. It is the first real lesson of it — the difference between a signal that needs a response and one that simply needs room to resolve on its own."
+      ],
+      "prevBtn": "← Back",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [],
+  "footer": {
+    "allArticles": "← All articles",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
