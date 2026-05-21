@@ -76,7 +76,8 @@ function parseArticle(html) {
     const [, id, content] = sm;
 
     const tag = extract1(content, /<span class="mod-tag">([^<]*)<\/span>/);
-    const modTitleHtml = extract1(content, /<h2 class="mod-title">([\s\S]*?)<\/h2>/);
+    // mod-1 uses <h1>, all others use <h2>
+    const modTitleHtml = extract1(content, /<h[12] class="mod-title">([\s\S]*?)<\/h[12]>/);
 
     // Body — directly-nested <p> inside mod-body (no nested divs in this element)
     const bodyBlock = extract1(content, /<div class="mod-body">([\s\S]*?)<\/div>/);
