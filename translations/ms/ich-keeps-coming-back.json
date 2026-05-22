@@ -53,9 +53,11 @@
         "Dalam kedua-dua kes, pemerhatian adalah langkah seterusnya — bukan rawatan semula serta-merta. Merawat ich untuk kali kedua tanpa memahami kenapa ia kembali adalah mengulangi kitaran yang sama.",
         "Ikan yang paling kerap mendapat ich pertama dalam wabak biasanya adalah yang paling tertekan — sama ada dari tekanan sosial (ikan yang sentiasa dikejar), ketidakserasian persekitaran (spesies air dingin dalam tank yang terlalu panas), atau beban penyakit sedia ada. Ikan yang mendapat ich pertama adalah bacaan, bukan kebetulan."
       ],
-      "pullQuote": "Ich bukan masalah. Ich adalah bacaan. Masalah adalah apa yang menekan ikan cukup untuk bagi laluan kepadanya.",
-      "hintLabel": null,
-      "hintText": null,
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "Dalam ARA, Livestock Rhythm adalah corak berterusan tingkah laku ikan, warna, selera makan, dan dinamik sosial yang mencerminkan keadaan keseluruhan sistem. Ikan yang sihat sebelum wabak ich dan sihat selepas ia dibersihkan tidak memberi anda maklumat yang berguna. Ikan yang ditekan cukup untuk menunjukkan titik sedang memberitahu anda sesuatu yang ujian air tidak boleh."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Mencari tekanan dominan"
     },
@@ -69,7 +71,7 @@
         "Semak kestabilan suhu terlebih dahulu — ia adalah penyumbang ich yang paling biasa diabaikan. Banyak heater berayun 2–3°C sepanjang hari, terutamanya heater lebih murah. Ikan dalam persekitaran haba yang tidak menentu hidup dalam tekanan fisiologi kronik walaupun purata suhu 'betul.'",
         "Semak parameter air tidak hanya selepas water change tetapi beberapa hari sebelum water change seterusnya. Ammonia dan nitrite yang membina secara perlahan antara perubahan air, walaupun tidak mencapai tahap yang sangat tinggi, boleh mengekalkan ikan dalam keadaan tertekan yang berterusan."
       ],
-      "pullQuote": null,
+      "pullQuote": "Ich bukan masalah. Ich adalah bacaan. Masalah adalah apa yang menekan ikan cukup untuk bagi laluan kepadanya.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Kembali",
@@ -86,8 +88,10 @@
         "Tank yang melepasi empat hingga enam bulan tanpa wabak ich berulang selepas menangani tekanan dominan hampir selalu adalah tank di mana satu perkara yang ketara berubah — bukan tank di mana semua perkara diselaraskan sedikit-sedikit serentak."
       ],
       "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Pengampunan Ekologi",
+      "hintText": [
+        "Tank yang pernah mengalami ich berulang boleh menjadi tank yang stabil. Sistem imun ikan pulih apabila tekanan kronik dibuang. Pengampunan ekologi bermakna corak masa lalu tidak menentukan masa depan — tetapi hanya jika tekanan asas diubah, bukan hanya gejala yang dibersihkan. Sejarah wabak bukan penilaian akhir. Ia adalah rekod apa yang tank sedang minta."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": null
     }
