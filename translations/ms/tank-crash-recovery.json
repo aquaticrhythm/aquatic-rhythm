@@ -2,133 +2,132 @@
   "_meta": {
     "slug": "tank-crash-recovery",
     "lang": "ms",
-    "sourceFile": "articles/tank-crash-recovery.html"
+    "sourceFile": "articles/tank-crash-recovery.html",
+    "status": "ready"
   },
   "head": {
-    "title": "When the Tank Crashes — Aquatic Rhythm",
-    "description": "A tank crash is more than a technical emergency. It is the tank communicating, loudly, something it has been saying quietly for some time.",
-    "ogTitle": "When the Tank Crashes — Aquatic Rhythm",
-    "ogDescription": "A tank crash is more than a technical emergency. It is the tank communicating, loudly, something it has been saying quietly for some time."
+    "title": "Pemulihan Tank Selepas Crash — Aquatic Rhythm",
+    "description": "Anda balik ke rumah dan ikan di permukaan. Atau air jadi keruh tiba-tiba. Panduan ini menerangkan apa yang perlu dibuat dalam 30 minit pertama, cara menilai sama ada tank boleh pulih, dan apa yang crash sedang beritahu anda.",
+    "ogTitle": "Pemulihan Tank Selepas Crash",
+    "ogDescription": "Tank crash adalah isyarat paling kuat yang tank bagi. Ketahui cara response dan cara baca apa yang ia sedang beritahu."
   },
   "intro": {
-    "eyebrow": "All levels",
-    "titleHtml": "When the Tank<br><em>Crashes</em>",
-    "subtitle": "What to do, what to feel, and what to decide.",
+    "eyebrow": "Bacaan · Tindak Balas Segera",
+    "titleHtml": "Pemulihan Tank<br><em>Selepas Crash</em>",
+    "subtitle": "Dalam crash, naluri adalah untuk bertindak. Response yang selari adalah membaca dahulu — kemudian bertindak atas apa yang bacaan kata.",
     "texts": [
-      "You come home to find fish on the surface. Or you wake up and the water has turned opaque overnight. Or you notice the fish are all at the bottom, barely moving. The tank crashed. In the first few minutes, the instinct is to act — change the water, add something, fix something. But the first step is to read what happened.",
-      "This guide covers the immediate response to a crash, how to assess whether the tank is recoverable, how to read a crash as information rather than catastrophe, and — for those who need it — how to process the grief of losing fish."
+      "Anda balik ke rumah dan ikan berada di permukaan. Atau anda bangun pagi dan air menjadi keruh atau bertukar warna tiba-tiba. Ada yang sudah mati. Ada yang masih ada tapi kelihatan teruk.",
+      "Panduan ini menerangkan apa yang perlu dibuat dalam tiga puluh minit pertama, cara menilai apa jenis crash yang berlaku, cara membaca sama ada tank boleh pulih, dan apa yang crash sedang beritahu anda tentang sistem yang menghasilkannya."
     ],
-    "metaModules": "5 modules",
-    "metaTime": "~10 min",
-    "metaLevel": "All levels",
-    "cta": "Start reading"
+    "metaModules": "5 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~8 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "The first thirty minutes",
-      "titleHtml": "The first <em>thirty minutes</em>",
+      "tag": "Tiga puluh minit pertama",
+      "titleHtml": "Tiga puluh minit pertama:<br><em>stabil dahulu, baca kemudian.</em>",
       "body": [
-        "In the first thirty minutes, two things matter: stabilise what is survivable, and do not add to the disruption. Test ammonia, nitrite, and if possible pH. These three numbers tell you what kind of crash this is. High ammonia (above 2 ppm) or detectable nitrite means the biological system has failed — the bacterial colony is overwhelmed or absent. Low pH with high CO2 is a different crisis from high ammonia with zero CO2. Understanding the type of crash shapes the response.",
-        "A 20–25% water change with dechlorinated, temperature-matched water is the safest universal first action — it dilutes whatever is elevated without shocking the system further. Do not do a large emergency change (50%+) unless ammonia is above 4 ppm or pH has dropped below 6.5; large rapid changes are a second shock layered on the first.",
-        "Remove dead or clearly dying fish — decomposing bodies add to the ammonia load. Move surviving fish only if you have a suitable emergency container with dechlorinated water; the stress of netting and transfer may be greater than the stress of remaining in the crash tank during recovery.",
-        "Hold the first water change. Test again in two hours. The trend is more useful than the single reading."
+        "Dalam tiga puluh minit pertama, dua perkara penting: stabilkan apa yang boleh diselamatkan, dan jangan tambah kepada gangguan. Uji ammonia, nitrite, dan kalau boleh pH. Tiga nombor ini memberitahu anda jenis crash apa ini. Ammonia tinggi (melebihi 2 ppm) atau nitrite yang boleh dikesan bermakna sistem biologi gagal — koloni bakteria terlampau beban atau tiada. pH rendah dengan CO2 tinggi adalah krisis berbeza dari kegagalan biologi.",
+        "Tingkatkan agitasi permukaan serta-merta — alihkan outlet filter untuk memecah permukaan, tambah airstone jika ada. Ini memberi masa tanpa mengira punca. Oksigen adalah yang paling segera dalam hampir semua crash.",
+        "Buat water change 25–30% dengan air yang disamakan suhu dan denyahklorinkan — ini mengurangkan kepekatan bahan toksik tanpa mengganggu koloni bakteria yang masih ada. Jangan buat water change penuh: ia membuang bacteria pada media filter dan permukaan, dan boleh menjejaskan kimia air secara mendadak. Water change separa adalah tindakan yang seimbang.",
+        "Kalau CO2 diinjeksi, hentikan injeksi serta-merta. Kalau anda mengesyaki racun kimia (detergen, racun serangga dari bilik sebelah, ubat yang didoskan berlebihan), water change yang lebih besar mungkin diperlukan — tapi lakukan secara berperingkat, bukan serentak."
       ],
-      "pullQuote": "\"In a crash, the instinct is to act. The aligned response is to read — and act on what the reading says, not on what the panic suggests.\"",
+      "pullQuote": "Dalam crash, naluri adalah untuk bertindak. Response yang selari adalah membaca — dan bertindak atas apa yang bacaan kata, bukan atas apa yang panik cadangkan.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "What caused it"
+      "nextBtn": "Apa yang menyebabkannya"
     },
     {
       "id": "mod-2",
-      "tag": "What caused it",
-      "titleHtml": "What <em>caused it</em>",
+      "tag": "Apa yang menyebabkannya",
+      "titleHtml": "Crash mempunyai corak<br><em>yang boleh dikenali.</em>",
       "body": [
-        "Crashes have recognisable patterns. Knowing which pattern occurred guides both the immediate response and the longer recovery.",
-        "<strong>Ammonia spike from filter failure or cleaning</strong> — the bacterial colony was disrupted (filter ran dry, was cleaned with tap water, or the power was out for more than 24 hours). Ammonia rises sharply over 24–48 hours. The tank may have appeared fine until it didn't.",
-        "<strong>New tank syndrome in an established tank</strong> — a large water change, medication course, or significant filter disturbance partially re-cycled the tank. The colony was smaller than the load, and the remaining load tipped it.",
-        "<strong>Overstocking tipping point</strong> — a tank that had been gradually adding fish finally exceeded the colony's processing capacity. The crash appears sudden but was the last step of a long drift.",
-        "<strong>Disease cascade</strong> — a disease introduced by new arrivals suppressed fish immune function, which triggered secondary bacterial infections, which raised ammonia from gill damage and decomposition.",
-        "<strong>Chemical poisoning</strong> — cleaning products near the tank, a treated wood or decor introduction, or a CO2 overdose. No biological recovery is possible until the chemical is removed or diluted.",
-        "Identifying the type matters because the response to a chemical crash is different from the response to an ammonia crash — and treating one with the other's protocol can accelerate the failure."
+        "Crash mempunyai corak yang boleh dikenali. Mengetahui corak mana yang berlaku membimbing kedua-dua response segera dan pemulihan yang lebih panjang.",
+        "<strong>Lonjakan ammonia dari kegagalan filter atau pembersihan.</strong> Koloni bakteria terganggu — filter berjalan kering, dibersihkan dengan air paip, atau kuasa terputus lebih dari 24 jam. Ammonia naik dengan tajam dalam 24–48 jam. Tank mungkin kelihatan ok sehingga ia tidak. Response: water change segera 25–30%, uji setiap 12 jam, buat water change lagi kalau ammonia kekal melebihi 1 ppm.",
+        "<strong>Crash oksigen.</strong> Ammonia sifar atau rendah, tapi ikan tercungap-cungap di permukaan, air mungkin keruh atau berbau lain dari biasa. Ini berlaku apabila beberapa faktor bergabung — suhu tinggi, aliran filter perlahan, bloom alga atau bakteria yang menggunakan oksigen. Response: agitasi permukaan maksimum serta-merta, semak suhu, semak aliran filter.",
+        "<strong>Crash bahan kimia.</strong> Kematian tiba-tiba tanpa tanda air yang jelas — ikan kelihatan ok kemudian mati dalam beberapa jam. Boleh dari detergen pada tangan sebelum menyentuh air tank, racun serangga digunakan berhampiran, ubat yang didoskan dengan salah, atau bahan dari hiasan baru yang larut dalam air. Response: water change besar 40–50% dengan air bersih, buang hiasan baru, gantikan dengan karbon aktif dalam filter sementara.",
+        "<strong>Crash nitrogen — tank baru atau selepas rawatan ubat.</strong> Tank yang belum selesai cycle, atau tank yang bakteria dibunuh oleh ubat, mengalami pengumpulan ammonia yang progresif. Ikan merosot secara perlahan bukan tiba-tiba. Response: water change kerap (20% setiap hari kalau ammonia melebihi 1 ppm), kurangkan pemberian makan drastik, biarkan koloni pulih.",
+        "<strong>Crash penyakit.</strong> Ikan mati secara kluster dalam masa singkat, selalunya dengan gejala yang nampak — titik, lendir, luka. Kalau penyakit telah hadir dalam tank dan tidak dirawat, ia boleh mencetuskan kematian beramai-ramai bila ikan yang sedia ada tertekan atau imun turun. Response: asingkan ikan yang sakit, mulakan rawatan yang sesuai.",
+        "<strong>Kegagalan heater.</strong> Heater yang rosak boleh membekukan atau memasak ikan — kedua-duanya berlaku lebih perlahan dari crash kimia tetapi dengan akibat yang sama serius. Semak suhu jika ada kematian yang tidak dapat dijelaskan, terutamanya kalau ikan mati secara beransur dari satu hari ke hari lain."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Is it recoverable"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Adakah ia boleh pulih"
     },
     {
       "id": "mod-3",
-      "tag": "Is it recoverable",
-      "titleHtml": "Is it <em>recoverable</em>",
+      "tag": "Adakah ia boleh pulih",
+      "titleHtml": "Kebanyakan crash<br><em>boleh dipulihkan.</em>",
       "body": [
-        "Most crashes are recoverable given sufficient time and consistent response. The question is whether the biology can re-establish faster than the remaining survivors can tolerate continued stress.",
-        "The factors that favour recovery: the bacterial colony was partially disrupted, not eliminated (the filter was running throughout, even if overwhelmed); there are surviving fish that are not in severe distress; ammonia, while elevated, is below 4 ppm and trending down after water changes; the cause has been identified and addressed.",
-        "The factors that complicate recovery: the filter ran dry or was replaced entirely — the colony must rebuild from scratch, which takes weeks; multiple species died and the remaining bioload dropped suddenly, meaning the new balance will re-establish at a different setpoint; the cause was chemical and requires full water changes to eliminate; surviving fish are severely stressed with clamped fins, surface breathing, and not responding to food.",
-        "If the cause was chemical or the filter colony was completely eliminated, the tank will need to be managed like a new cycle for three to six weeks — ammonia and nitrite will rise and fall before the colony re-establishes. This is survivable with consistent water changes and patience. Restarting versus recovering is a decision about the surviving fish, the keeper's capacity for intensive management, and honest assessment of what the tank can do now."
+        "Kebanyakan crash boleh dipulihkan dengan masa dan response yang konsisten. Soalannya adalah sama ada biologi boleh ditubuhkan semula lebih cepat dari penghuni yang masih ada boleh menampung tekanan berterusan.",
+        "Faktor yang menyokong pemulihan: koloni bakteria terganggu sebahagian sahaja, bukan dihapuskan (filter masih berjalan sepanjang masa, walaupun terlampau beban); ikan yang masih ada tidak dalam kesusahan teruk (sedang makan, bergerak normal, tidak tercungap-cungap secara berterusan); penyebab crash dikenal pasti dan boleh ditangani; tank mempunyai sejarah kestabilan sebelum crash.",
+        "Faktor yang membuat pemulihan sukar: filter berjalan kering untuk tempoh yang panjang (koloni mati sepenuhnya, perlu cycle semula); ikan yang masih ada dalam keadaan teruk (tercungap-cungap berterusan, berbaring di substrat, tidak bertindak balas); penyebab crash tidak dapat dikenal pasti; tank adalah baru dan tidak pernah stabil sepenuhnya.",
+        "Kalau koloni bakteria perlu ditubuhkan semula, prosesnya mengambil masa seperti cycling baru — empat hingga lapan minggu. Dalam tempoh itu, ikan yang ada berada dalam bahaya kalau mereka kekal dalam sistem. Pilihan yang sukar: kekalkan ikan dalam tank yang sedang dipulihkan dengan pengurusan intensif (water change harian, pemberian makan minimum), atau pindahkan mereka sementara ke setup lain."
       ],
       "pullQuote": null,
-      "hintLabel": "ARA · Ecological Forgiveness",
-      "hintText": [
-        "ARA's concept of ecological forgiveness applies directly to crashes. A tank that has crashed can rebuild. The past state does not determine the future state. The crash is information — it reveals what the previous alignment was not sustaining. The rebuilding is the opportunity to create alignment that can be sustained."
-      ],
-      "prevBtn": "← Back",
-      "nextBtn": "What the crash is saying"
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang crash sedang beritahu"
     },
     {
       "id": "mod-4",
-      "tag": "What the crash is saying",
-      "titleHtml": "What the crash <em>is saying</em>",
+      "tag": "Apa yang crash sedang beritahu",
+      "titleHtml": "Crash jarang<br><em>berlaku tanpa amaran.</em>",
       "body": [
-        "A crash is rarely a completely random event. In most cases, looking backward reveals a series of signals the tank had been giving that did not cross the threshold of visible crisis until the crash occurred. Parameters that were stable but elevated. Fish that were not thriving but not obviously failing. Filter flow that had gradually decreased. Feeding that had increased incrementally. A disease that was treated but produced residual stress that was never fully cleared.",
-        "The crash reads as sudden because the visible threshold was crossed suddenly. The conditions that produced it were often weeks or months in development.",
-        "After the immediate crisis has stabilised, the most useful question is not \"how do I prevent this from happening again?\" but \"what was the tank saying before this happened that I didn't read as clearly as it intended?\" This is not self-blame. It is the forensic ecology that makes future keeping more attuned.",
-        "Every experienced keeper has lost fish to a crash. The ones who learn from it are not the ones who beat themselves up — they are the ones who read the crash as information."
+        "Crash jarang berlaku secara tiba-tiba. Dalam kebanyakan kes, melihat ke belakang mendedahkan siri isyarat yang tank telah beri yang tidak melepasi ambang krisis yang nampak sehingga crash berlaku. Parameter yang stabil tetapi meningkat. Ikan yang tidak berkembang tetapi tidak jelas gagal. Aliran filter yang beransur-ansur berkurang. Pemberian makan yang meningkat secara beransur. Penyakit yang dirawat sebahagian tetapi tidak sepenuhnya dibersihkan.",
+        "Ini bukan tentang menyalahkan diri sendiri — ia tentang memahami bahawa crash adalah hujung urutan, bukan permulaan satu. Isyarat-isyarat itu ada. Hobi ini tidak mengajar orang untuk membacanya, dan kebanyakan panduan hanya menerangkan apa yang perlu dibuat semasa krisis, bukan cara mengenali apabila sistem sedang menuju ke arahnya.",
+        "Selepas pemulihan, soalan yang paling berguna bukan 'apa yang saya buat salah?' Ia adalah 'isyarat apa yang hadir selama beberapa minggu atau bulan sebelum ini, dan mana satu saya boleh belajar untuk melihat lebih awal kali seterusnya?'",
+        "Crash yang dipelajari adalah crash yang membuat penjaga lebih selari — lebih sedar kepada aliran filter yang perlahan, kepada suhu yang merangkak naik, kepada ikan yang tidak cukup aktif pada waktu makan. Sistem mempunyai kapasiti untuk pulih. Begitu juga penjaganya."
       ],
-      "pullQuote": "\"The crash is the loudest signal the tank gives. The question is not how to silence it. The question is what it was trying to say.\"",
+      "pullQuote": "Crash adalah isyarat paling kuat yang tank bagi. Soalannya bukan cara meredakannya. Soalannya adalah apa yang ia cuba katakan.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "The loss"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Kehilangan"
     },
     {
       "id": "mod-5",
-      "tag": "The loss",
-      "titleHtml": "The <em>loss</em>",
+      "tag": "Kehilangan",
+      "titleHtml": "Kehilangan<br><em>adalah nyata.</em>",
       "body": [
-        "Losing fish in a crash is a grief that is often not acknowledged because fish are not always treated as animals that merit grief. But keepers who have cared for a tank for months or years have watched particular fish grow, develop personalities, establish relationships with other fish. Losing them to a crash can produce genuine sadness, guilt, and a questioning of whether to continue. These responses are valid. Caring for living animals involves their deaths. The crash accelerates that process and takes away the gradual and natural arc.",
-        "There is no fixed protocol for processing this. Some keepers take a week before re-establishing the tank. Some find that the work of rebuilding — the careful water changes, the daily testing, the gradual return of biology — is itself a process of meaning-making. Some decide the crash was the signal to simplify: fewer fish, a lower-maintenance approach, a different relationship with the hobby. None of these are failures. They are the Keeper Rhythm responding to its own experience and adjusting accordingly.",
-        "Aquatic Rhythm is built on the observation that keepers are part of the system. What happens to the keeper — the loss, the grief, the reassessment — is part of what the tank produces and what it teaches. Reading the crash means reading what it asked of you as well as what it asked of the biology."
+        "Kehilangan ikan dalam crash adalah kesedihan yang selalunya tidak diakui kerana ikan tidak sentiasa dianggap sebagai haiwan yang layak mendapat kesedihan. Tapi penjaga yang telah menjaga tank selama berbulan-bulan atau bertahun-tahun telah melihat ikan tertentu membesar, membangun personaliti, menubuhkan hubungan dengan ikan lain. Kehilangan mereka dalam crash boleh menghasilkan kesedihan, rasa bersalah, dan persoalan sama ada nak teruskan. Perasaan-perasaan ini adalah nyata dan tidak perlu dirasionalkan.",
+        "Rasa bersalah adalah bahagian yang paling biasa dan paling tidak berguna dari pengalaman crash. Kebanyakan crash berlaku bukan kerana kecuaian tetapi kerana sistem mencapai had yang tidak nampak — had yang mana panduan tidak ajar penjaga untuk lihat. Menyalahkan diri sendiri tidak mengubah apa yang berlaku dan tidak mencegah crash yang akan datang. Memahami apa yang berlaku — dan apa yang akan berbeza — adalah apa yang berguna.",
+        "Kalau anda mempertimbangkan untuk berhenti dari hobi ini selepas crash yang teruk: ia adalah keputusan yang sah. Tapi jika anda teruskan, tank yang anda ada sekarang sudah mempunyai lebih banyak asas biologi dari yang dimilikinya pada hari pertama. Bakteria yang ada pada media filter, pada permukaan, pada substrat — ia tidak hilang sepenuhnya. Sistem mempunyai kapasiti untuk pulih. Dan anda kini memahami lebih banyak tentang bagaimana ia berfungsi dari yang anda tahu sebelum crash."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
+      "href": "/articles/aquarium-filter-maintenance",
+      "text": "Filter anda bukan apa yang anda fikir →"
+    },
+    {
+      "href": "/articles/fish-gasping-surface",
+      "text": "Ikan tercungap-cungap di permukaan →"
+    },
+    {
       "href": "/articles/new-tank-syndrome",
       "text": "New Tank Syndrome →"
     },
     {
-      "href": "/articles/aquarium-filter-maintenance",
-      "text": "Your Filter Is Not What You Think →"
-    },
-    {
-      "href": "/articles/caring-without-guilt",
-      "text": "Caring Without Guilt →"
-    },
-    {
       "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

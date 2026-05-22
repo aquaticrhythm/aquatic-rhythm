@@ -2,99 +2,98 @@
   "_meta": {
     "slug": "when-is-tank-ready-for-fish",
     "lang": "ms",
-    "sourceFile": "articles/when-is-tank-ready-for-fish.html"
+    "sourceFile": "articles/when-is-tank-ready-for-fish.html",
+    "status": "ready"
   },
   "head": {
-    "title": "How to Know When Your Tank Is Ready for Fish — Aquatic Rhythm",
-    "description": "A tank that reads zero ammonia and zero nitrite is cycled. Whether it is ready for fish depends on more than a test kit reading — it depends on which phase the biology is actually in.",
-    "ogTitle": "How to Know When Your Tank Is Ready for Fish — Aquatic Rhythm",
-    "ogDescription": "A tank that reads zero ammonia and zero nitrite is cycled. Whether it is ready for fish depends on more than a test kit reading — it depends on which phase the biology is actually in."
+    "title": "Bila Tank Dah Sedia untuk Ikan? — Aquatic Rhythm",
+    "description": "Test kit tunjuk ammonia sifar, nitrite sifar. Setiap panduan kata itu bermakna tank sudah sedia. Panduan ini menerangkan apa 'matang' sebenarnya bermakna dalam bahasa biologi.",
+    "ogTitle": "Bila Tank Dah Sedia untuk Ikan?",
+    "ogDescription": "Ammonia sifar tidak semestinya bermakna sedia. Ketahui cara baca peralihan fasa dan ikan apa yang sesuai."
   },
   "intro": {
-    "eyebrow": "Practical",
-    "titleHtml": "How to Know When Your Tank<br><em>Is Ready for Fish</em>",
-    "subtitle": "\"Cycled\" is a number. Ready is something else.",
+    "eyebrow": "Bacaan · Early Phase",
+    "titleHtml": "Bila Tank<br><em>Dah Sedia untuk Ikan?</em>",
+    "subtitle": "Ammonia sifar adalah minimum. Bukan tanda bahawa sistem sudah sepenuhnya bersedia.",
     "texts": [
-      "Your test kit says zero ammonia, zero nitrite. Every guide says that means the tank is ready. But something about the question still feels open — and that instinct is worth reading.",
-      "This guide explains what \"cycled\" actually means in biological terms, how to read the transition into the Developing Phase, and how to choose the first fish in a way that works with the system rather than against it."
+      "Test kit tunjuk ammonia sifar, nitrite sifar. Setiap panduan kata itu bermakna tank sudah 'matang' dan anda boleh masukkan ikan. Tapi ikan masih mati, atau tank tidak stabil, atau sesuatu tidak kena walaupun nombor ok.",
+      "Panduan ini menerangkan apa yang 'matang' sebenarnya bermakna dalam bahasa biologi, cara membaca peralihan kepada fasa Developing, ikan apa yang sesuai untuk tank yang baru selesai cycle, dan satu semakan jujur sebelum anda tambah ikan pertama."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "~7 min",
-    "metaLevel": "Practical",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Pemula",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "What \"cycled\" actually means",
-      "titleHtml": "What <em>\"cycled\"</em> actually means",
+      "tag": "Apa yang 'matang' sebenarnya bermakna",
+      "titleHtml": "Matang adalah minimum.<br><em>Bukan sedia sepenuhnya.</em>",
       "body": [
-        "The nitrogen cycle establishes a colony of bacteria that converts ammonia — from fish waste and decomposing organic matter — to nitrite, and nitrite to nitrate. When a tank is \"cycled,\" both ammonia and nitrite consistently read zero because the bacterial colony is large enough to process what the tank produces. This is the biological minimum for fish to survive.",
-        "But \"cycled\" is a binary. It tells you the colony exists and is functioning. It does not tell you how stable that colony is, how large a bioload it can process, how resilient it is to disruption, or what the rest of the tank's biology is doing.",
-        "In ARA terms, the nitrogen cycle is part of the Biological Rhythm — but the Biological Rhythm is broader than the cycle alone. A tank transitions through phases: Early Phase, where the cycle is establishing and biology is fragile; Developing Phase, where the cycle is stable but the full biological community is still assembling; and Mature Phase, where the biological community is established, and the system has ecological depth and resilience.",
-        "Most cycling guides only tell you how to move out of the Early Phase. A tank that is ready for fish has entered the Developing Phase — and the right fish to add first are the ones that match what a Developing Phase system can support."
+        "Nitrogen cycle menubuhkan koloni bakteria yang menukar ammonia — dari sisa ikan dan bahan organik yang terurai — kepada nitrite, dan nitrite kepada nitrate. Bila tank 'matang,' kedua-dua ammonia dan nitrite secara konsisten baca sifar kerana koloni bakteria cukup besar untuk memproses apa yang tank hasilkan. Ini adalah minimum biologi untuk ikan untuk terus hidup.",
+        "Tapi 'matang' adalah perkara binari. Ia bermakna proses berjalan, bukan bahawa ia stabil, bukan bahawa ia mempunyai kapasiti berlebihan untuk menampung stres tambahan, dan bukan bahawa tank sudah bersedia untuk semua ikan di bawah semua keadaan. Tank yang baru matang mempunyai koloni bakteria yang cukup untuk memproses beban yang digunakan semasa cycling — dan tidak banyak lebih.",
+        "Kerangka ARA menyebut ini sebagai fasa Developing — tempoh selepas cycle selesai di mana sistem sedang membina kestabilan dan kapasiti berlebihan. Fasa ini berbeza dari fasa Mature di mana biologi sudah kukuh, kapasiti penimbal sudah wujud, dan sistem boleh menampung beban yang berubah tanpa gejolak yang ketara.",
+        "Memahami perbezaan ini mengubah soalan dari 'adakah tank sudah matang?' kepada 'fasa apa tank ini sekarang, dan ikan apa yang sesuai untuk fasa itu?'"
       ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Biological Rhythm",
-      "hintText": [
-        "In ARA, the Biological Rhythm is the state and trajectory of the living biology in the tank — not just the nitrogen cycle but the full microbial and plant community. A tank with a stable nitrogen cycle but no beneficial film on the glass, no microfauna, no established substrate biology is cycled but not yet Developing. These secondary communities take longer to establish than the nitrogen cycle, and they matter."
-      ],
+      "pullQuote": "Tank yang baca ammonia sifar, nitrite sifar selama sepuluh hari berturut-turut, tunjuk pengumpulan nitrate, dan ada filem biologi nipis yang sedang membentuk — sedang memberitahu anda ia telah memasuki fasa Developing.",
+      "hintLabel": null,
+      "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Reading the transition to Developing phase"
+      "nextBtn": "Membaca peralihan"
     },
     {
       "id": "mod-2",
-      "tag": "Reading the transition",
-      "titleHtml": "Reading the transition <em>to Developing phase</em>",
+      "tag": "Membaca peralihan",
+      "titleHtml": "Membaca peralihan<br><em>kepada fasa Developing.</em>",
       "body": [
-        "A tank in the Developing Phase shows specific signs beyond zero ammonia and nitrite. These are the signals ARA uses to read phase transition:",
-        "<strong>Stable parameters for 1–2 weeks, not just one test.</strong> A single reading of zero ammonia and nitrite could be a good day, or it could reflect accurate bacterial processing. Stability over 7–14 days — especially after adding a small additional ammonia source such as a pinch of food or a small bioload addition — confirms the colony is established and responsive.",
-        "<strong>Nitrate presence.</strong> A cycled tank should show some nitrate accumulation over time. Nitrate is the end product of the cycle. If ammonia and nitrite are zero but nitrate is also zero and the tank has no plants, the cycle may not be fully established — or the test kit is drifting toward inaccuracy.",
-        "<strong>Secondary biological activity.</strong> A thin, barely visible film on glass and hardscape surfaces; tiny organisms visible with a torch if the tank has substrate — copepods, nematodes; a slight brown diatom bloom in the first weeks that has since receded. These indicate the broader biological community is establishing.",
-        "<strong>Plant response</strong> (if planted): Plants that were introduced during cycling and are showing new growth — not melting, not stagnant, but actively growing — indicate the biology is supporting photosynthesis and that light, nutrients, and CO2 are in an early balance.",
-        "<strong>Water clarity.</strong> Not just visually clear but clear with a slight settled appearance — not the sharp, clinical clarity of brand-new RO water, but the slightly softened look of water that has passed through biological media."
+        "Tank dalam fasa Developing menunjukkan tanda-tanda spesifik melebihi ammonia dan nitrite sifar. Ini adalah isyarat yang ARA gunakan untuk membaca peralihan fasa:",
+        "<strong>Parameter stabil selama 1–2 minggu, bukan hanya satu ujian.</strong> Satu bacaan ammonia dan nitrite sifar boleh menjadi hari yang baik, atau ia boleh mencerminkan pemprosesan bakteria yang tepat. Kestabilan selama 7–14 hari — terutamanya selepas menambah sumber ammonia kecil tambahan — mengesahkan koloni sedang berfungsi secara konsisten.",
+        "<strong>Pengumpulan nitrate yang boleh diukur.</strong> Nitrate yang naik perlahan-lahan (5–10 ppm seminggu dengan stocking minimal) mengesahkan kitaran nitrogen sedang berjalan lengkap. Kalau ammonia dan nitrite sifar tetapi nitrate tidak bergerak langsung, sistem mungkin sedang mendapat bacaan yang mengelirukan.",
+        "<strong>Filem nipis pada permukaan filter media dan hiasan.</strong> Biofilm nipis yang kelihatan pada substrat, dekorasi, dan media filter adalah tanda ekosistem biologi yang sedang membina. Ini adalah tanda positif, bukan tanda kotor.",
+        "<strong>Amonia kecil yang diproses dalam 24 jam.</strong> Ini adalah semakan yang paling berguna: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Kalau tank memprosesnya kembali ke sifar, koloni berfungsi dengan kapasiti berlebihan.",
+        "<strong>Bacaan pH yang stabil.</strong> pH yang stabil sepanjang hari menunjukkan kimia air yang diseimbangkan. pH yang berayun ketara menunjukkan sistem penimbal yang lemah — tanda tank yang masih awal dalam pembangunannya."
       ],
-      "pullQuote": "A tank that reads zero ammonia and nitrite for ten consecutive days, shows nitrate accumulation, and has a thin biological film forming is telling you it has entered the Developing Phase.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Which fish belong in a Developing phase tank"
+      "pullQuote": null,
+      "hintLabel": "ARA · Early Phase ke Developing",
+      "hintText": [
+        "Dalam ARA, peralihan dari Early Phase ke Developing adalah tentang kapasiti berlebihan, bukan hanya kehadiran cycle. Tank yang boleh memproses beban tambahan dalam 24 jam, yang mempunyai parameter yang stabil selama dua minggu, yang menunjukkan biofilm pada permukaan — tank itu sudah bersedia untuk ikan pertama yang sesuai. Masuk sebelum itu adalah mengharapkan sistem melakukan lebih dari yang boleh ia lakukan."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Ikan untuk tank fasa Developing"
     },
     {
       "id": "mod-3",
-      "tag": "Fish for a Developing phase tank",
-      "titleHtml": "Which fish belong in <em>a Developing phase tank</em>",
+      "tag": "Ikan untuk tank fasa Developing",
+      "titleHtml": "Tidak semua ikan sesuai<br><em>untuk tank yang baru matang.</em>",
       "body": [
-        "Not all fish are appropriate for a tank that has just entered the Developing Phase. The first fish you add are not just inhabitants — they complete the biological loop. Their waste feeds the bacteria, their behaviour tests the system's stability, and their responses give you the first Livestock Rhythm readings.",
-        "Fish appropriate for early Developing Phase tanks share certain characteristics: they are hardy, they tolerate the parameter fluctuations that still occur in a newly stabilised tank, and they produce a bioload the early bacterial colony can process without pushing the system back toward drift.",
-        "<strong>Small schooling fish with low bioload:</strong> Zebra danios, ember tetras, white cloud mountain minnows. Hardy, active, and visibly responsive if something is wrong in the water.",
-        "<strong>Small, undemanding livebearers:</strong> Endlers, guppies. These tolerate wider parameter ranges than many fish and provide consistent, manageable bioload.",
-        "<strong>Smaller corydoras species:</strong> Corydoras habrosus, pygmy cories. Hardy, good bottom coverage, active and observable.",
-        "Fish to avoid in a Developing Phase tank: discus, altum angelfish, wild-caught specimens, most apistogramma species, and fish with specific water chemistry requirements — soft blackwater fish if your water is hard, for instance. These fish require a Mature Phase tank — not because they are expensive, but because they need biological stability and keeper rhythm consistency that only develops over months."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Early Phase to Developing",
-      "hintText": [
-        "In ARA, adding fish is not the goal of cycling — it is the transition between phases. The Early Phase is about the nitrogen cycle. The Developing Phase begins when the first fish are added and the full biological community starts to assemble around them. Adding too many fish too soon, or the wrong fish, can push a Developing Phase tank back toward Early conditions — a form of misalignment that is gradual and often invisible until the parameters show it."
-      ],
-      "prevBtn": "← Back",
-      "nextBtn": "One honest check before you add fish"
-    },
-    {
-      "id": "mod-4",
-      "tag": "One honest check",
-      "titleHtml": "One honest check <em>before you add fish</em>",
-      "body": [
-        "Before adding the first fish to a newly cycled tank, one practice cuts through most of the uncertainty: add a small, controlled ammonia source and watch what happens over 24 hours. A pinch of fish food, left to decompose, will produce a small ammonia spike. If the tank processes it back to zero within 24 hours — ammonia spikes briefly, then returns to zero, nitrite never rises — the bacterial colony is genuinely established and responsive.",
-        "If the ammonia spike lingers beyond 48 hours, or if nitrite rises and stays elevated, the colony needs more time. This is not a failure. It is a reading. The tank is telling you it is not yet in the Developing Phase. Give it one more week and test again.",
-        "Beyond this check, the aligned approach to adding the first fish is gradual: one small group first — six of a schooling species, for example — then a 10-day observation period before adding anything else. Watch how they behave in the first 48 hours. Active and exploring is a good sign. Hiding and not eating is a signal to check water parameters and temperature before proceeding.",
-        "The tank will tell you what it can hold. Read it before you stock it. The keeper rhythm you build around observation in this early period carries forward into every phase the tank moves through."
+        "Tidak semua ikan sesuai untuk tank yang baru memasuki fasa Developing. Ikan pertama yang anda tambah bukan sekadar penghuni — mereka melengkapkan gelung biologi. Sisa mereka memberi makan bakteria, tingkah laku mereka menguji kestabilan sistem, dan respons mereka memberi anda bacaan Livestock Rhythm pertama.",
+        "Ikan yang sesuai untuk tank fasa Developing awal berkongsi ciri-ciri tertentu: toleran kepada swing parameter kecil (yang akan berlaku semasa sistem menstabilkan dirinya), lasak secara biologi dalam erti kata tidak memerlukan keadaan yang sangat tepat untuk berkembang, tidak besar dalam erti kata beban biologi per ikan adalah boleh diuruskan untuk sistem yang baru ditubuhkan.",
+        "<strong>Ikan yang bagus untuk tank yang baru matang:</strong> danio (zebra danio, pearl danio), tetra yang lebih lasak (ember tetra, black skirt tetra, cardinal tetra bila parameter stabil), rasbora (harlequin rasbora, chili rasbora), corydoras untuk lapisan bawah, dan banyak killifish. Ini adalah ikan yang boleh menampung variasi kecil tanpa menunjukkan tekanan yang ketara.",
+        "<strong>Ikan yang tidak sesuai untuk tank yang baru matang:</strong> discus dan ikan air Amazon yang memerlukan parameter yang sangat tepat, banyak cichlid yang menghasilkan sisa banyak, scaleless fish seperti clown loach yang lebih sensitif kepada kualiti air, dan ikan yang memerlukan GH dan KH yang sangat spesifik sebelum sistem menstabilkan kimia airnya.",
+        "Tambah perlahan-lahan: satu atau dua ikan pada satu masa, tunggu dua minggu, uji parameter, dan hanya tambah lagi bila sistem tunjuk ia boleh menampung tambahan itu. Setiap penambahan meningkatkan beban biologi; menambah secara beransur memberi koloni masa untuk menyesuaikan diri.",
+        "Ikan pertama dalam tank baru bukan sekadar penghuni — mereka adalah ujian pertama sistem. Pilih mereka dengan sedar."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Back to Reading"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Satu semakan jujur"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Satu semakan jujur",
+      "titleHtml": "Satu semakan jujur<br><em>sebelum anda tambah ikan pertama.</em>",
+      "body": [
+        "Sebelum menambah ikan pertama ke tank yang baru matang, satu amalan mengurangkan kebanyakan ketidakpastian: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Secubit makanan ikan, dibiarkan untuk terurai, akan menghasilkan lonjakan ammonia kecil. Kalau tank memprosesnya kembali ke sifar dalam 24 jam — ammonia naik sebentar kemudian kembali ke sifar, nitrite tidak naik — koloni bakteria mempunyai kapasiti berlebihan. Itu adalah tanda sistem bersedia.",
+        "Kalau ammonia tidak turun dalam 24 jam, atau kalau nitrite naik dan kekal, sistem belum mempunyai kapasiti yang diperlukan. Tunggu lagi seminggu dan ulang semakan.",
+        "Tiga soalan terakhir untuk dijawab dengan jujur sebelum menambah ikan: Adakah heater stabil — pernahkah anda ukur suhu pada waktu pagi dan malam untuk mengesahkan ia tidak berayun lebih dari 1°C? Adakah filter media berfungsi — adakah ada aliran yang kuat dan konsisten? Dan yang paling penting: adakah anda bersedia untuk uji air setiap hari selama dua minggu pertama selepas penambahan?",
+        "Ujian harian dalam dua minggu pertama bukan tanda kerisauan yang berlebihan — ia adalah pemerhatian. Ammonia dan nitrite yang naik secara perlahan-lahan semasa sistem menyesuaikan diri dengan beban baru boleh ditangani dengan water change kecil kalau ditangkap awal. Yang sama yang ditangkap lewat boleh kehilangan ikan. Ujian adalah pemerhatian awal — satu-satunya alat yang memberitahu anda apa yang berlaku sebelum ikan tunjukkan tanda tekanan."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
     }
   ],
   "relatedLinks": [
@@ -104,19 +103,19 @@
     },
     {
       "href": "/articles/fish-keep-dying-new-tank",
-      "text": "Why Do Fish Keep Dying in My New Tank? →"
+      "text": "Kenapa ikan terus mati dalam tank baru? →"
+    },
+    {
+      "href": "/articles/adding-new-fish",
+      "text": "Menambah ikan baru →"
     },
     {
       "href": "/ara",
-      "text": "Aquatic Rhythm Alignment →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "text": "Framework ARA →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

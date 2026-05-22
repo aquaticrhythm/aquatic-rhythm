@@ -37,6 +37,13 @@
   </url>
 
   <url>
+    <loc>https://aquaticrhythm.com/ms/articles/community-fish-tank</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://aquaticrhythm.com/ms/articles/cycled-tank-problems</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -72,7 +79,21 @@
   </url>
 
   <url>
+    <loc>https://aquaticrhythm.com/ms/articles/ich-keeps-coming-back</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://aquaticrhythm.com/ms/articles/new-tank-syndrome</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/nitrate-keeps-rising</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -86,7 +107,28 @@
   </url>
 
   <url>
+    <loc>https://aquaticrhythm.com/ms/articles/perfect-parameters-fish-dying</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://aquaticrhythm.com/ms/articles/shrimp-dying-aquarium</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/tank-crash-recovery</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/when-is-tank-ready-for-fish</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
