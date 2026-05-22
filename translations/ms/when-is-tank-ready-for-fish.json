@@ -35,9 +35,11 @@
         "Kerangka ARA menyebut ini sebagai fasa Developing — tempoh selepas cycle selesai di mana sistem sedang membina kestabilan dan kapasiti berlebihan. Fasa ini berbeza dari fasa Mature di mana biologi sudah kukuh, kapasiti penimbal sudah wujud, dan sistem boleh menampung beban yang berubah tanpa gejolak yang ketara.",
         "Memahami perbezaan ini mengubah soalan dari 'adakah tank sudah matang?' kepada 'fasa apa tank ini sekarang, dan ikan apa yang sesuai untuk fasa itu?'"
       ],
-      "pullQuote": "Tank yang baca ammonia sifar, nitrite sifar selama sepuluh hari berturut-turut, tunjuk pengumpulan nitrate, dan ada filem biologi nipis yang sedang membentuk — sedang memberitahu anda ia telah memasuki fasa Developing.",
-      "hintLabel": null,
-      "hintText": null,
+      "pullQuote": null,
+      "hintLabel": "ARA · Biological Rhythm",
+      "hintText": [
+        "Dalam ARA, Biological Rhythm adalah keadaan dan trajektori biologi hidup dalam tank — bukan sekadar nitrogen cycle tetapi keseluruhan komuniti mikrob dan tumbuhan. Tank yang mempunyai nitrogen cycle yang stabil tetapi tiada filem berfaedah pada cermin, tiada mikrofauna, tiada biologi substrat yang ditubuhkan — adalah matang tetapi belum Developing. Komuniti sekunder ini mengambil masa lebih lama untuk ditubuhkan berbanding nitrogen cycle, dan ia penting."
+      ],
       "prevBtn": "← Intro",
       "nextBtn": "Membaca peralihan"
     },
@@ -53,11 +55,9 @@
         "<strong>Amonia kecil yang diproses dalam 24 jam.</strong> Ini adalah semakan yang paling berguna: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Kalau tank memprosesnya kembali ke sifar, koloni berfungsi dengan kapasiti berlebihan.",
         "<strong>Bacaan pH yang stabil.</strong> pH yang stabil sepanjang hari menunjukkan kimia air yang diseimbangkan. pH yang berayun ketara menunjukkan sistem penimbal yang lemah — tanda tank yang masih awal dalam pembangunannya."
       ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Early Phase ke Developing",
-      "hintText": [
-        "Dalam ARA, peralihan dari Early Phase ke Developing adalah tentang kapasiti berlebihan, bukan hanya kehadiran cycle. Tank yang boleh memproses beban tambahan dalam 24 jam, yang mempunyai parameter yang stabil selama dua minggu, yang menunjukkan biofilm pada permukaan — tank itu sudah bersedia untuk ikan pertama yang sesuai. Masuk sebelum itu adalah mengharapkan sistem melakukan lebih dari yang boleh ia lakukan."
-      ],
+      "pullQuote": "Tank yang baca ammonia sifar, nitrite sifar selama sepuluh hari berturut-turut, tunjuk pengumpulan nitrate, dan ada filem biologi nipis yang sedang membentuk — sedang memberitahu anda ia telah memasuki fasa Developing.",
+      "hintLabel": null,
+      "hintText": null,
       "prevBtn": "← Kembali",
       "nextBtn": "Ikan untuk tank fasa Developing"
     },
@@ -74,8 +74,10 @@
         "Ikan pertama dalam tank baru bukan sekadar penghuni — mereka adalah ujian pertama sistem. Pilih mereka dengan sedar."
       ],
       "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Early Phase ke Developing",
+      "hintText": [
+        "Dalam ARA, menambah ikan bukan matlamat cycling — ia adalah peralihan antara fasa. Early Phase adalah tentang nitrogen cycle. Fasa Developing bermula apabila ikan pertama ditambah dan komuniti biologi penuh mula berkumpul di sekeliling mereka. Menambah terlalu banyak ikan terlalu cepat, atau ikan yang salah, boleh menolak tank fasa Developing kembali ke arah keadaan Early — satu bentuk ketidakselarasan yang beransur-ansur dan sering tidak kelihatan sehingga parameter menunjukkannya."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Satu semakan jujur"
     },
