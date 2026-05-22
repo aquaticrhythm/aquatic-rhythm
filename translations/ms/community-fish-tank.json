@@ -53,9 +53,11 @@
         "<strong>Warna berbeza dari gambar spesies.</strong> Warna ikan mencerminkan keadaan fisiologinya. Spesies yang kelihatan lebih pucat atau kurang terang dari gambar referens selalunya sedang bertindak balas kepada keadaan yang tidak optimum.",
         "<strong>Ikan yang sentiasa dekat permukaan atau sudut.</strong> Ikan yang mengelak ruang tengah tank dan kekal berhampiran permukaan atau sudut adalah ikan yang aktif mengelak tekanan di tempat lain dalam tank."
       ],
-      "pullQuote": "Seminggu pemerhatian mendedahkan lebih banyak tentang tank komuniti dari carta keserasian dan ujian air digabungkan.",
-      "hintLabel": null,
-      "hintText": null,
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "Membaca Livestock Rhythm dalam tank komuniti bermakna memerhati kumpulan secara keseluruhan, bukan sekadar memeriksa sama ada tiada ikan yang kelihatan sakit. Komuniti di mana sesetengah individu berkembang maju sementara yang lain perlahan-lahan merosot adalah komuniti dengan tekanan dominan yang belum diselesaikan. Cari ikan yang berkembang maju dan yang merosot — corak itu biasanya akan menunjukkan apa yang tidak sejajar."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Tekanan dominan dalam sistem sosial"
     },
@@ -72,7 +74,7 @@
         "<strong>Masalah ketumpatan itu tidak selalu nampak.</strong> Tank yang ok pada bulan pertama boleh menjadi terlalu padat apabila ikan membesar, atau apabila anda menambah beberapa ikan 'kecil' yang tumbuh lebih dari yang dijangka. Ketumpatan stocking adalah dinamik, bukan keputusan sekali sahaja.",
         "<strong>Cara mengesahkan tekanan dominan.</strong> Buang ikan yang disyaki sebagai penyebab tekanan ke quarantine tank selama dua minggu. Kalau tingkah laku bersembunyi berkurangan dan ikan lain mula muncul lebih kerap, anda telah mengenal pasti punca. Ini lebih tepat dari membuat andaian berdasarkan pemerhatian sahaja."
       ],
-      "pullQuote": null,
+      "pullQuote": "Seminggu pemerhatian mendedahkan lebih banyak tentang tank komuniti dari carta keserasian dan ujian air digabungkan.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Kembali",
@@ -89,8 +91,10 @@
         "Komuniti yang lalui penambahan baru dengan bersih — kembali ke baseline dalam dua minggu, tiada ikan sedia ada yang merosot — memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Komuniti yang tidak pulih dalam tiga minggu memberitahu anda sama ada pertambahan adalah ketidakpadanan, atau bahawa komuniti asas tidak mempunyai kapasiti untuk sebarang tambahan."
       ],
       "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Capacity before Ambition",
+      "hintText": [
+        "Tank komuniti mempunyai kapasiti — bilangan ikan, kepadatan sosial, tahap kerumitan ekologi — yang boleh ia kekalkan dalam keselarasan. Melebihi kapasiti itu menghasilkan tekanan kronik merentasi sistem. Pendekatan yang selari adalah mencari komuniti yang berkembang maju dalam kapasiti sebenar tank, bukan mendorong ke had maksimum yang carta katakan adalah mungkin."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": null
     }
