@@ -36,8 +36,10 @@
         "Rasa bersalah mengubah maklumat itu menjadi sesuatu yang berbeza. Ia menukarkan bacaan sistem ('nitrat tinggi menunjuk kepada beban organik berlebihan') kepada penilaian diri ('saya tidak memberi cukup perhatian'). Peralihan itu kelihatan kecil, tapi ia mengubah tindakan yang anda ambil seterusnya — dari respons yang terarah kepada reaksi yang meliputi semua aspek."
       ],
       "pullQuote": "Masalah dalam sistem tertutup tidak bermula dengan kegagalan moral. Ia bermula dengan ketidakselarasan ritma — beransur-ansur, berstruktur, selalunya tidak kelihatan sehingga ia kelihatan.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "Dari ARA",
+      "hintText": [
+        "Rasa malu mengurangkan pembelajaran. Ketakutan mempercepatkan tindak balas berlebihan. Bimbingan — termasuk bimbingan yang anda berikan kepada diri sendiri — mesti memelihara maruah, rasa ingin tahu, dan keyakinan. Tanpa itu, penjagaan yang boleh dikekalkan cenderung runtuh."
+      ],
       "prevBtn": "← Intro",
       "nextBtn": "Ritma anda adalah maklumat nyata"
     },
@@ -67,8 +69,10 @@
         "Melakukan kurang, apabila sistem sedang dalam pemulihan, bukan kepasifan. Ia adalah respons yang paling selari yang ada. Sistem yang berehat selepas gangguan — dengan input yang konsisten dan minimal, bukan intervensi berganda — adalah sistem yang biasanya pulih lebih cepat."
       ],
       "pullQuote": "Melakukan kurang, apabila sistem sedang dalam pemulihan, bukan kepasifan. Ia adalah respons yang paling selari yang ada.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "Dari ARA",
+      "hintText": [
+        "Beban kognitif meningkatkan risiko tindak balas berlebihan. Keletihan sering mendahului campur tangan yang drastik atau tidak perlu. Sistem yang direka tanpa toleransi terhadap realiti ini menjadi rapuh."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Apa yang tank sebenarnya perlukan"
     },
@@ -83,8 +87,10 @@
         "Kesinambungan yang jujur selalu mengatasi intensiti yang terputus-putus. Dan kesinambungan yang jujur bermakna mereka bentuk sistem sekitar apa yang anda sebenarnya boleh berikan — bukan sekitar ideal yang anda inginkan untuk berikan."
       ],
       "pullQuote": "Sistem hidup biasanya bertindak balas lebih baik kepada kesinambungan yang padu berbanding ledakan intervensi. Melakukan sedikit, secara kerap, dengan perhatian yang jujur, mewujudkan lebih banyak kestabilan dari melakukan banyak sekali-sekala.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "Dalam praktik",
+      "hintText": [
+        "Kematangan dalam sistem datang dari masa dan kesinambungan, bukan kesempurnaan. Tank yang dijaga dengan senyap — walaupun tidak sempurna — selama dua tahun sering mempunyai daya tahan yang jauh lebih besar daripada yang diuruskan secara intensif selama enam bulan."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Ruang untuk bernafas"
     },
@@ -99,8 +105,10 @@
         "Dengan memerhati ritma, menghormati had, dan menyelaraskan tindakan dengan realiti — kedua-dua ekosistem dan manusia mendapat ruang untuk bernafas."
       ],
       "pullQuote": "Dengan memerhati ritma, menghormati had, dan menyelaraskan tindakan dengan realiti — kedua-dua ekosistem dan manusia mendapat ruang untuk bernafas.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "Kata penutup",
+      "hintText": [
+        "Anda tidak bermula untuk gagal. Anda bermula untuk menjaga sesuatu yang hidup. Niat itu masih sah — walaupun pada hari-hari apabila tank kelihatan lebih teruk dari yang anda harapkan, walaupun pada minggu-minggu apabila anda tidak melakukan semua yang anda rancang. Ketidakselarasan adalah maklumat, bukan vonis. Ia adalah tempat penjagaan yang jujur bermula."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": null
     }
