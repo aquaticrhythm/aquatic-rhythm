@@ -33,7 +33,7 @@
       "body": [
         "Hampir setiap penjaga melalui perkara ini. Air jadi keruh, ikan kelihatan tidak selesa, dan sebarang pelarasan tidak membawa perubahan segera. Selepas beberapa kali mencuba tanpa hasil, terasa seolah-olah andalah punca masalah itu.",
         "Apa yang anda lihat adalah fasa permulaan biologi, bukan keruntuhan sistem. New Tank Syndrome berlaku hampir di setiap setup baru kerana populasi bakteria utama masih belum terbentuk. Sistem ini sudah hidup — tetapi belum stabil sepenuhnya.",
-        "Kurangkan campur tangan dan fokus kepada konsistensi. Jaga pemberian makan secara sederhana, pantau perubahan secara beransur, dan elakkan reset yang drastik. Air itu tidak rosak — ia cuma belum stabil."
+        "Kurangkan campur tangan dan fokus kepada konsistensi. Jaga pemberian makan secara sederhana, pantau dari hari ke hari, dan elakkan reset yang drastik. Air itu tidak rosak — ia cuma belum stabil."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Fasa Awal",
@@ -48,13 +48,13 @@
       "tag": "Amonia",
       "titleHtml": "Air itu tidak kosong.<br><em>Ada yang sedang membina.</em>",
       "body": [
-        "Ikan boleh kelihatan tertekan sangat cepat dalam tank baru. Sisa dan makanan lebihan terpecah menjadi <strong>amonia</strong> — bahan yang toksik walaupun pada kepekatan yang rendah. Paras ini boleh meningkat sebelum penjaga sempat melihat bacaan ujian yang ketara.",
-        "Tank yang matang memproses amonia hampir sebaik sahaja ia muncul, tetapi tank baru belum mempunyai kapasiti biologi itu. Sistem penukaran masih dalam pembinaan. Sehingga itu, amonia terkumpul dan ikan akan menerima kesannya lebih awal daripada anda sedari."
+        "Ikan boleh kelihatan tertekan sangat cepat dalam tank baru. Sisa dan lebihan makanan terurai menjadi <strong>amonia</strong> — bahan yang toksik walaupun pada kepekatan yang rendah. Paras ini boleh meningkat sebelum penjaga sempat nampak bacaan test kit yang jelas.",
+        "Tank yang matang memproses amonia hampir sebaik sahaja ia muncul, tetapi tank baru belum ada kapasiti biologi itu. Sistem untuk urai amonia itu belum terbentuk lagi. Jadi amonia terkumpul, dan ikan rasa kesannya lebih awal dari yang anda sedar."
       ],
       "pullQuote": "Kekeruhan air, ikan yang tertekan, bacaan yang tidak stabil — ini bukan tanda sesuatu telah silap. Ini adalah tanda sesuatu sedang cuba bermula.",
       "hintLabel": "Tentang kesejahteraan ikan",
       "hintText": [
-        "Inilah sebab kenapa <em>fishless cycle</em> kini lebih diutamakan — menggunakan sumber amonia (amonia tulen atau makanan yang reput) untuk menumbuhkan bakteria sebelum sebarang hidupan dimasukkan. Cycle bersama ikan mendedahkan hidupan kepada amonia yang berpanjangan dan menyebabkan tekanan fisiologi yang nyata. Jika anda sudah memulakan tank dengan ikan, water change kecil secara kerap — bukan water change besar-besaran — dapat membantu mengekalkan paras pada tahap terkawal semasa cycle sedang terbentuk."
+        "Inilah sebab kenapa <em>fishless cycle</em> kini lebih diutamakan — menggunakan sumber amonia (amonia tulen atau makanan yang dibiarkan terurai) untuk menumbuhkan bakteria sebelum sebarang hidupan dimasukkan. Cycle bersama ikan mendedahkan hidupan kepada ammonia untuk tempoh yang lama dan menyebabkan tekanan yang ketara pada ikan. Jika anda sudah memulakan tank dengan ikan, water change kecil secara kerap — bukan water change besar-besaran — dapat membantu mengekalkan paras pada tahap terkawal semasa cycle sedang terbentuk."
       ],
       "prevBtn": "← Kembali",
       "nextBtn": "Apa yang sebenarnya menyelesaikannya"
@@ -64,7 +64,7 @@
       "tag": "Satu-satunya jawapan sebenar",
       "titleHtml": "Bakteria adalah<br><em>satu-satunya jawapan.</em>",
       "body": [
-        "Banyak produk berjanji memberikan kestabilan segera, namun tank masih tidak menentu. New Tank Syndrome tidak boleh diselesaikan dengan satu bahan tambah. Penjaga sering cuba membetulkan keadaan secara berlebihan kerana mereka menjangkakan pemulihan segera.",
+        "Banyak produk berjanji memberikan kestabilan segera, namun tank masih tidak menentu. New Tank Syndrome tidak boleh diselesaikan dengan satu bahan tambah. Penjaga sering terlampau banyak campur tangan kerana harap tank recover cepat.",
         "Bakteria baik mesti menjajah permukaan sebenar seperti filter media, substrat, dan hiasan. Proses pembinaan ini mengambil masa beberapa minggu dan mengikut urutan yang tidak boleh dipaksa. Setelah terbentuk, ia memproses sisa secara berterusan tanpa disedari.",
         "Ikuti proses itu — bukan mengejar bacaan harian yang sempurna. Amonia meningkat dahulu, nitrit menyusul, kemudian kedua-duanya surut apabila koloni matang. Jika corak itu sedang berlaku, sistem anda sedang maju ke hadapan."
       ],
@@ -81,7 +81,7 @@
       "tag": "Salah faham yang biasa",
       "titleHtml": "Bakteria tidak tinggal<br><em>dalam air.</em>",
       "body": [
-        "Ramai penjaga bimbang water change akan menghapuskan bakteria baik dalam tank dan memulakan semula cycle. Ketakutan itu boleh menyebabkan penyelenggaraan yang diperlukan diabaikan. Ia juga mengalihkan perhatian daripada teras biologi yang sebenar.",
+        "Ramai penjaga bimbang water change akan menghapuskan bakteria baik dalam tank dan memulakan semula cycle. Ketakutan itu boleh menyebabkan penyelenggaraan yang diperlukan diabaikan. Ia juga mengelirukan perkara yang sebenarnya penting.",
         "Bakteria hidup melekat pada permukaan, bukan berenang bebas di dalam air. Ia membentuk lapisan biofilm pada span, cincin seramik, bio-ball, dan substrat dari semasa ke semasa. Filter kekal sebagai tempat utama untuk kestabilan koloni.",
         "Lakukan penyelenggaraan secara berhati-hati dan fokus pada kestabilan koloni. Water change tidak mengelupas biofilm daripada filter media, tetapi water change besar yang berulang boleh melambatkan metabolisme bakteria melalui perubahan kimia yang mendadak. Jika boleh, gunakan filter media matang daripada tank yang sudah mantap untuk permulaan yang lebih praktikal."
       ],
@@ -99,13 +99,13 @@
       "titleHtml": "Tidak semua cycle<br><em>mengambil masa yang sama.</em>",
       "body": [
         "Dua tank yang serupa boleh melalui cycle pada kadar yang sangat berbeza. Perbezaan itu sering membuatkan penjaga menyangka satu setup itu 'silap.' Sebenarnya, perbezaan tempoh itu adalah perkara biasa.",
-        "Suhu, luas permukaan yang tersedia, dan kaedah memperkenalkan koloni bakteria — semuanya mempengaruhi kelajuan bakteria. Air yang lebih sejuk memperlahankan aktiviti Nitrospira, manakala media dengan luas permukaan yang lebih baik dan semaian koloni matang mempercepatkan pembentukan. Pencahayaan pun boleh mempengaruhi kestabilan secara tidak langsung melalui tekanan alga.",
+        "Suhu, luas permukaan yang tersedia, dan kaedah memperkenalkan koloni bakteria — semuanya mempengaruhi laju cycle. Air yang lebih sejuk memperlahankan aktiviti Nitrospira, manakala media dengan luas permukaan yang lebih baik dan koloni matang yang disemai mempercepatkan lagi proses. Pencahayaan pun boleh mempengaruhi kestabilan secara tidak langsung melalui tekanan alga.",
         "Pastikan suhu berada dalam julat yang sesuai, elakkan pembersihan media yang agresif, dan gunakan media matang apabila ada. Anggap bottled bacteria sebagai dorongan, bukan jalan pintas. Pastikan pencahayaan awal berada pada tahap sederhana supaya alga tidak menambah ketidakstabilan yang tidak perlu."
       ],
       "pullQuote": null,
       "hintLabel": "Perspektif Aquatic Rhythm",
       "hintText": [
-        "Mengetahui pemboleh ubah ini bukan tentang mengoptimumkan cycle seperti proses pengeluaran. Ia tentang memahami kenapa tank anda dan tank orang lain mungkin berkelakuan berbeza — walaupun anda melakukan semua perkara yang sama. Suhu bilik yang rendah, filter lama, tiada semaian koloni. Tiada satu pun daripada itu bermaksud ada sesuatu yang tidak kena. Ia hanya bermakna lebih perlahan. Dan perlahan itu bukan satu masalah."
+        "Mengetahui pemboleh ubah ini bukan tentang mengurus cycle macam satu projek. Ia tentang memahami kenapa tank anda dan tank orang lain mungkin berkelakuan berbeza — walaupun anda melakukan semua perkara yang sama. Suhu bilik yang rendah, filter lama, tiada semaian koloni. Tiada satu pun daripada itu bermaksud ada sesuatu yang tidak kena. Ia hanya bermakna lebih perlahan. Dan perlahan itu bukan satu masalah."
       ],
       "prevBtn": "← Kembali",
       "nextBtn": "Kenapa tolong kadang-kadang menyakitkan"
@@ -116,7 +116,7 @@
       "titleHtml": "Kenapa buat lebih banyak<br><em>sering memburukkan keadaan.</em>",
       "body": [
         "Apabila ikan kelihatan tertekan, kebanyakan penjaga campur tangan berulang kali. Tindak balas itu datang daripada rasa prihatin, tetapi terlalu banyak perubahan boleh menyebabkan tank menjadi tidak stabil. Tempoh cycle sering menjadi lebih panjang kerana sistem tidak sempat stabil.",
-        "Campur tangan yang melambatkan cycle biasanya adalah perkara yang biasa dan berulang: <strong>memberi makan berlebihan</strong> meningkatkan beban amonia lebih pantas daripada yang mampu diproses oleh koloni awal. <strong>Penggunaan ammonia binder secara rutin</strong> boleh menyembunyikan angka sambil mengurangkan sumber makanan bakteria. <strong>Menggantikan media</strong> membuang permukaan koloni yang aktif. <strong>Memasukkan banyak ikan awal-awal</strong> membebankan kapasiti sistem. <strong>Water change besar yang kerap</strong> boleh berulang kali mengganggu kimia air.",
+        "Campur tangan yang melambatkan cycle biasanya perkara yang sama: <strong>memberi makan berlebihan</strong> meningkatkan beban amonia lebih pantas daripada yang mampu diproses oleh koloni awal. <strong>Penggunaan ammonia binder secara rutin</strong> boleh menyembunyikan angka sambil mengurangkan sumber makanan bakteria. <strong>Menggantikan media</strong> membuang permukaan koloni yang aktif. <strong>Memasukkan banyak ikan awal-awal</strong> membebankan kapasiti sistem. <strong>Water change besar yang kerap</strong> boleh berulang kali mengganggu kimia air.",
         "Pastikan campur tangan pada tahap minimum dan benar-benar diperlukan. Beri makan sedikit, jaga filter media, masukkan ikan perlahan-lahan, dan simpan water change yang lebih besar untuk bacaan yang benar-benar tidak selamat. Biarkan sistem menyesuaikan diri secara semula jadi di antara setiap tindakan."
       ],
       "pullQuote": "Perangkap campur tangan bukan tentang melakukan perkara yang salah. Ia tentang melakukan perkara yang betul terlalu kerap, dalam sistem yang memerlukan masa lebih daripada ia memerlukan bantuan.",
