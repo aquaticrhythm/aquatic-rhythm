@@ -259,21 +259,53 @@ function buildArticle(slug, lang, t) {
           (m, prefix) => `${prefix}${mod.simulatorLinkText}`);
       }
 
-      // Hint box label (optional)
-      if (mod.hintLabel) {
-        c = replaceOnce(c, /(<span class="hn-label">)[^<]*(<\/span>)/,
-          (_, a, b) => `${a}${mod.hintLabel}${b}`);
+      // Hint boxes — supports up to 2 per module (hintLabel/hintText + hintLabel2/hintText2).
+      {
+        const hints = [];
+        if (mod.hintLabel) hints.push({ label: mod.hintLabel, text: mod.hintText || [] });
+        if (mod.hintLabel2) hints.push({ label: mod.hintLabel2, text: mod.hintText2 || [] });
+        if (hints.length) {
+          let hIdx = 0;
+          c = c.replace(
+            /(<div class="hn[^"]*">)([\s\S]*?)(<span[^>]*>)[^<]*(<\/span>)([\s\S]*?)(<\/div>)/g,
+            (full, divOpen, preSpan, spanOpen, spanClose, _body, divClose) => {
+              if (hIdx < hints.length) {
+                const hint = hints[hIdx++];
+                const paras = hint.text.map(p => `\n      <p>${p}</p>`).join('');
+                return `${divOpen}${preSpan}${spanOpen}${hint.label}${spanClose}${paras}\n    ${divClose}`;
+              }
+              return full;
+            }
+          );
+        }
       }
 
-      // Hint box paragraphs (optional — hintText is array of strings).
-      // Regex matches class="hn" with or without additional classes (e.g. "hn ar").
-      if (mod.hintText && mod.hintText.length) {
-        c = replaceOnce(c,
-          /(<div class="hn[^"]*">[\s\S]*?<span[^>]*>[^<]*<\/span>)([\s\S]*?)(<\/div>)/,
-          (_, head, _body, tail) => {
-            const paras = mod.hintText.map(p => `\n      <p>${p}</p>`).join('');
-            return `${head}${paras}\n    ${tail}`;
-          });
+      // Rhythm grid cell names/descriptions (optional — used in cycled-tank-problems).
+      if (mod.rhythmGrid && mod.rhythmGrid.length) {
+        let nameIdx = 0, descIdx = 0;
+        c = c.replace(/(<div class="rhythm-cell-name">)[^<]*(<\/div>)/g, (_, a, b) => {
+          if (nameIdx < mod.rhythmGrid.length) return `${a}${mod.rhythmGrid[nameIdx++].name}${b}`;
+          return _;
+        });
+        c = c.replace(/(<div class="rhythm-cell-desc">)[^<]*(<\/div>)/g, (_, a, b) => {
+          if (descIdx < mod.rhythmGrid.length) return `${a}${mod.rhythmGrid[descIdx++].desc}${b}`;
+          return _;
+        });
+      }
+
+      // Final CTA block (optional — e.g. mod-6 in cycled-tank-problems).
+      if (mod.finalCtaText) {
+        c = c.replace(/(<div class="final-cta">[\s\S]*?<p>)([\s\S]*?)(<\/p>)/,
+          (_, pre, _body, close) => `${pre}${mod.finalCtaText}${close}`);
+      }
+      if (mod.finalCtaBtn1 || mod.finalCtaBtn2) {
+        let btnIdx = 0;
+        c = c.replace(/(<a [^>]*class="btn-reading"[^>]*>)([^<]*)/g, (match, open, _text) => {
+          if (btnIdx === 0 && mod.finalCtaBtn1) { btnIdx++; return `${open}${mod.finalCtaBtn1}`; }
+          if (btnIdx === 1 && mod.finalCtaBtn2) { btnIdx++; return `${open}${mod.finalCtaBtn2}`; }
+          btnIdx++;
+          return match;
+        });
       }
 
       // prev button
