@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/reading</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/cycled-tank-problems</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/fish-hiding-what-does-it-mean</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/how-often-water-changes</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://aquaticrhythm.com/ms/articles/new-tank-syndrome</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaticrhythm.com/articles/new-tank-syndrome"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://aquaticrhythm.com/ms/articles/new-tank-syndrome"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquaticrhythm.com/articles/new-tank-syndrome"/>
+  </url>
+
+  <url>
+    <loc>https://aquaticrhythm.com/ms/articles/why-is-my-aquarium-water-cloudy</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

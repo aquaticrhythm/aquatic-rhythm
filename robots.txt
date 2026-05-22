@@ -4,6 +4,4 @@ Allow: /
 # Do not block /?p= — short-lived redirects from path stubs to the SPA use it;
 # blocking it prevented crawlers from reaching hub pages. Clean URLs in
 # <link rel="canonical"> and history.replaceState remain the SEO source of truth.
-
-Sitemap: https://aquaticrhythm.com/sitemap.xml
 Sitemap: https://aquaticrhythm.com/sitemap-index.xml
