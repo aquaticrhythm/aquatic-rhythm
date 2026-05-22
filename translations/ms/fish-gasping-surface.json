@@ -2,83 +2,83 @@
   "_meta": {
     "slug": "fish-gasping-surface",
     "lang": "ms",
-    "sourceFile": "articles/fish-gasping-surface.html"
+    "sourceFile": "articles/fish-gasping-surface.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Fish Gasping at the Surface — Aquatic Rhythm",
-    "description": "Fish gasping at the surface is one of the clearest signals a tank can give. The question is which of several causes is producing it — and they each require a different response.",
-    "ogTitle": "Fish Gasping at the Surface — Aquatic Rhythm",
-    "ogDescription": "Fish gasping at the surface is one of the clearest signals a tank can give. The question is which of several causes is producing it — and they each require a different response."
+    "title": "Ikan Tercungap-cungap di Permukaan — Aquatic Rhythm",
+    "description": "Tank sedang kehabisan sesuatu. Soalannya adalah apa. Panduan ini menerangkan punca paling biasa ikan tercungap-cungap di permukaan dan bagaimana response yang tepat untuk setiap satu.",
+    "ogTitle": "Ikan Tercungap-cungap di Permukaan",
+    "ogDescription": "Tank sedang kehabisan sesuatu. Soalannya adalah apa. Ketahui cara baca isyarat dan bertindak balas dengan tepat."
   },
   "intro": {
-    "eyebrow": "All levels",
-    "titleHtml": "Fish Gasping<br><em>at the Surface</em>",
-    "subtitle": "The tank is running out of something. The question is what.",
+    "eyebrow": "Bacaan · Tindak Balas Segera",
+    "titleHtml": "Ikan Tercungap-cungap<br><em>di Permukaan</em>",
+    "subtitle": "Tank sedang kehabisan sesuatu. Soalannya adalah apa.",
     "texts": [
-      "You look at your tank and the fish are at the surface, mouths working. Some are hanging just below the waterline, barely moving. Others swim normally but keep returning to the top. It looks urgent, and it often is — but the right response depends entirely on what is causing it.",
-      "This guide walks through the most common reasons fish gasp at the surface, how to distinguish between them using what you can observe right now, and what an aligned response looks like for each."
+      "Anda tengok tank dan ikan berada di permukaan, mulut bergerak-gerak. Ada yang terapung tepat di bawah garis air, hampir tidak bergerak. Ada yang berenang normal tapi terus kembali ke atas. Ia nampak mendesak, dan selalunya memang begitu — tapi response yang betul bergantung sepenuhnya kepada apa yang menyebabkannya.",
+      "Panduan ini menerangkan punca paling biasa ikan tercungap-cungap di permukaan, cara membezakan antara mereka menggunakan apa yang boleh anda perhatikan sekarang, dan bagaimana response yang selari kelihatan untuk setiap satu."
     ],
-    "metaModules": "3 modules",
-    "metaTime": "~5 min",
-    "metaLevel": "All levels",
-    "cta": "Start reading"
+    "metaModules": "3 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~5 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "Reading the signal",
-      "titleHtml": "Reading <em>the signal</em>",
+      "tag": "Membaca isyarat",
+      "titleHtml": "Membaca<br><em>isyarat.</em>",
       "body": [
-        "Fish gasping at the surface is a distress signal — the fish are trying to access more oxygen than the water currently provides, or they are unable to use the oxygen that is there. The key is that several different causes produce the same visible behaviour, and treating the wrong one at best does nothing and at worst accelerates the problem.",
-        "The four most common causes are: low dissolved oxygen, high carbon dioxide, ammonia or nitrite poisoning, and gill damage (from disease or parasites). Of these, low dissolved oxygen and CO2 toxicity are the most common in home aquariums. Ammonia poisoning usually accompanies other visible symptoms and test kit confirmation. Gill damage is typically accompanied by other disease signs — flashing, white patches, or mucus on the body.",
-        "<strong>Low dissolved oxygen</strong> is most likely when: all species in the tank are gasping simultaneously; the tank is warm (warmer water holds less oxygen); surface agitation is minimal; the filter flow has slowed; it happened overnight or in the early morning when plant photosynthesis stops and respiration continues. Action: increase surface agitation immediately — move the filter outlet to break the surface, add an airstone, or turn on a powerhead near the surface. If the tank recovers within 30 minutes, oxygen depletion was the cause.",
-        "<strong>High CO2</strong> is most likely when: it happened during daylight hours in a heavily planted tank with CO2 injection; plants appear healthy; pH tested low; turning off the CO2 injection and increasing surface agitation brings improvement within an hour. CO2 injected at night or in excess acidifies the water and competes with oxygen at the gill surface even when oxygen levels are technically adequate.",
-        "<strong>Ammonia/nitrite poisoning</strong> — test immediately. If ammonia is above 1 ppm or nitrite is detectable, this is the cause. Fish will also show red or inflamed gills, rapid breathing even at rest, and may dart or flash. Response: 25–30% water change immediately."
+        "Ikan yang tercungap-cungap di permukaan adalah isyarat kesusahan — ikan sedang cuba mengakses lebih banyak oksigen daripada yang air sediakan sekarang, atau mereka tidak boleh menggunakan oksigen yang ada. Kuncinya adalah bahawa beberapa punca berbeza menghasilkan tingkah laku yang sama, dan merawat yang salah pada yang terbaik tidak membuat apa-apa dan pada yang terburuk mempercepatkan masalah.",
+        "Empat punca paling biasa adalah: oksigen terlarut rendah, karbon dioksida tinggi, keracunan ammonia atau nitrite, dan kerosakan insang (dari penyakit atau parasit). Daripada ini, oksigen terlarut rendah dan ketoksikan CO2 adalah yang paling biasa dalam akuarium rumah. Keracunan ammonia biasanya disertai gejala nampak lain dan pengesahan test kit. Kerosakan insang biasanya disertai tanda penyakit lain — flashing, tampalan putih, atau lendir di badan.",
+        "<strong>Oksigen terlarut rendah</strong> paling mungkin bila: semua spesies dalam tank tercungap-cungap serentak; tank panas (air yang lebih panas memegang kurang oksigen); agitasi permukaan minimum; aliran filter telah perlahan; ia berlaku semalaman atau awal pagi bila fotosintesis pokok berhenti dan pernafasan berterusan. Tindakan: tingkatkan agitasi permukaan serta-merta — alihkan outlet filter untuk pecah permukaan, tambah airstone, atau hidupkan powerhead berhampiran permukaan. Kalau tank pulih dalam 30 minit, pengurangan oksigen adalah punca.",
+        "<strong>CO2 tinggi</strong> paling mungkin bila: ia berlaku pada waktu siang dalam planted tank dengan injeksi CO2; pokok nampak sihat; pH diuji rendah; mematikan injeksi CO2 dan meningkatkan agitasi permukaan membawa penambahbaikan dalam sejam. CO2 yang diinjeksi pada waktu malam atau berlebihan mengasidkan air dan bersaing dengan oksigen di permukaan insang walaupun tahap oksigen secara teknikal mencukupi.",
+        "<strong>Keracunan ammonia/nitrite</strong> — uji serta-merta. Kalau ammonia melebihi 1 ppm atau nitrite boleh dikesan, ini adalah punca. Ikan juga akan menunjukkan insang yang merah atau meradang, pernafasan cepat walaupun berehat, dan mungkin dart atau flashing. Response: water change 25–30% serta-merta."
       ],
-      "pullQuote": "\"The surface is the fish's last resort. By the time gasping is visible, the tank has been signalling for some time in ways that didn't yet reach the threshold of visibility.\"",
+      "pullQuote": "Permukaan adalah jalan terakhir ikan. Menjelang masa tercungap-cungap nampak, tank telah memberi isyarat untuk beberapa lama dengan cara yang belum mencapai ambang keterlihatan.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Oxygen, temperature, and surface agitation"
+      "nextBtn": "Oksigen, suhu, dan agitasi permukaan"
     },
     {
       "id": "mod-2",
-      "tag": "Oxygen, temperature, and surface agitation",
-      "titleHtml": "Oxygen, temperature, <em>and surface agitation</em>",
+      "tag": "Oksigen, suhu, dan agitasi permukaan",
+      "titleHtml": "Oksigen, suhu,<br><em>dan agitasi permukaan.</em>",
       "body": [
-        "Dissolved oxygen enters aquarium water almost entirely through surface agitation — the movement of water at the air-water interface. A still surface in a warm tank is an oxygen-limited tank waiting for the right conditions to express it.",
-        "Several factors combine to reduce dissolved oxygen simultaneously: summer room temperature rise warms the tank water (oxygen solubility decreases as temperature increases); algae blooms consume oxygen overnight as respiration continues without photosynthesis; bioload increases (more fish, larger fish, more decomposing organic matter all consume oxygen); filter flow slows due to partial blockage.",
-        "Each factor individually may not produce gasping. Combined, they can drop dissolved oxygen below the tolerance threshold for all species simultaneously — which is why gasping events often appear sudden and confusing when the individual factors have been present for weeks. The aligned response begins before gasping: keep surface movement active, maintain a clean filter, avoid overstocking relative to the season (a tank that was fine in winter may need reduced bioload in summer), and watch for slowing filter flow as an early indicator."
+        "Oksigen terlarut memasuki air akuarium hampir sepenuhnya melalui agitasi permukaan — pergerakan air di antara muka udara-air. Permukaan yang tenang dalam tank yang panas adalah tank yang terhad oksigen yang menunggu keadaan yang betul untuk menzahirkannya.",
+        "Beberapa faktor bergabung untuk mengurangkan oksigen terlarut serentak: kenaikan suhu bilik musim panas memanaskan air tank (kelarutan oksigen berkurang apabila suhu meningkat); bloom alga menggunakan oksigen pada waktu malam apabila pernafasan berterusan tanpa fotosintesis; bioload meningkat (lebih banyak ikan, ikan yang lebih besar, lebih banyak bahan organik yang terurai semuanya menggunakan oksigen); aliran filter perlahan akibat penyumbatan separa. Setiap faktor secara individu mungkin tidak menghasilkan tercungap-cungap. Digabungkan, mereka boleh mengurangkan oksigen terlarut di bawah ambang toleransi untuk semua spesies serentak — itulah sebabnya peristiwa tercungap-cungap selalunya kelihatan mengejut dan mengelirukan apabila faktor individu telah hadir selama beberapa minggu.",
+        "Response yang selari bermula sebelum tercungap-cungap: kekalkan pergerakan permukaan aktif, kekalkan filter bersih, elakkan overstocking relatif kepada musim (tank yang ok pada musim sejuk mungkin perlukan bioload yang dikurangkan pada musim panas), dan perhatikan aliran filter yang perlahan sebagai penunjuk awal."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Environmental Rhythm",
       "hintText": [
-        "In ARA, dissolved oxygen is part of the Environmental Rhythm — the ongoing physical conditions the tank maintains. An oxygen depletion event is a reading: the Environmental Rhythm drifted beyond the tolerance of the Livestock Rhythm. The event was not sudden. The drift was."
+        "Dalam ARA, oksigen terlarut adalah sebahagian daripada Environmental Rhythm — keadaan fizikal berterusan yang tank kekalkan. Peristiwa pengurangan oksigen adalah bacaan: Environmental Rhythm telah drift melebihi toleransi Livestock Rhythm. Peristiwa itu tidak mengejut. Drift itulah yang mengejut."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "Aligned response and prevention"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Response yang selari dan pencegahan"
     },
     {
       "id": "mod-3",
-      "tag": "Aligned response",
-      "titleHtml": "Aligned response <em>and prevention</em>",
+      "tag": "Response yang selari",
+      "titleHtml": "Response yang selari<br><em>dan pencegahan.</em>",
       "body": [
-        "The immediate response to any gasping event: first, increase surface agitation now — move the filter outlet, add an airstone, create water movement. This buys time regardless of the cause. Second, test ammonia and nitrite — if elevated, do a 25–30% water change with dechlorinated water that is temperature-matched. Third, if CO2 is injected, reduce or pause injection and increase surface agitation. Fourth, observe for 30–60 minutes while maintaining surface movement.",
-        "If the fish return to normal depth and behaviour, the cause was oxygen-related and you have time to investigate the contributing factors. If they do not improve, or if you observe gill redness, darting, or mucus, suspect disease and consult a specialist.",
-        "Prevention is about reading the system before it reaches the gasping threshold. Check filter flow weekly — a partially blocked filter is the most common silent contributor. Monitor tank temperature during warm seasons. Do not allow surface agitation to slow without addressing it. Watch for signs of CO2 excess (pH crash overnight in injected tanks, yellowing water, fish near the surface specifically in the morning before lights on).",
-        "The gasping event is the end of a sequence. The aligned keeper reads the earlier steps: slowing flow, warming water, accumulating organic load — and adjusts before the sequence completes."
+        "Response segera kepada sebarang peristiwa tercungap-cungap: pertama, tingkatkan agitasi permukaan sekarang — alihkan outlet filter, tambah airstone, wujudkan pergerakan air. Ini memberi masa tanpa mengira punca. Kedua, uji ammonia dan nitrite — kalau meningkat, buat water change 25–30% dengan air yang telah dinyahklorin dan sepadan suhu. Ketiga, kalau CO2 diinjeksi, kurangkan atau hentikan injeksi dan tingkatkan agitasi permukaan. Keempat, perhatikan selama 30–60 minit sambil mengekalkan pergerakan permukaan.",
+        "Kalau ikan kembali ke kedalaman dan tingkah laku normal, punca berkaitan oksigen dan anda mempunyai masa untuk menyiasat faktor yang menyumbang. Kalau mereka tidak bertambah baik, atau kalau anda perhatikan kemerahan insang, darting, atau lendir, syaki penyakit dan dapatkan pendapat pakar.",
+        "Pencegahan adalah tentang membaca sistem sebelum ia mencapai ambang tercungap-cungap. Semak aliran filter setiap minggu — filter yang tersumbat sebahagiannya adalah penyumbang senyap yang paling biasa. Pantau suhu tank semasa musim panas. Jangan biarkan agitasi permukaan perlahan tanpa menanganinya. Perhatikan tanda kelebihan CO2 (pH yang crash semalaman dalam tank yang diinjeksi, air yang menguning, ikan berhampiran permukaan khususnya pada waktu pagi sebelum lampu hidup). Peristiwa tercungap-cungap adalah hujung urutan. Penjaga yang selari membaca langkah-langkah lebih awal: aliran yang perlahan, air yang memanas, beban organik yang terkumpul — dan laras sebelum urutan selesai."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/perfect-parameters-fish-dying",
-      "text": "Fish Dying But Water Looks Fine →"
+      "text": "Parameter ok tapi ikan mati →"
     },
     {
       "href": "/articles/new-tank-syndrome",
@@ -86,15 +86,15 @@
     },
     {
       "href": "/articles/aquarium-filter-maintenance",
-      "text": "Your Filter Is Not What You Think →"
+      "text": "Filter anda bukan apa yang anda fikir →"
     },
     {
       "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

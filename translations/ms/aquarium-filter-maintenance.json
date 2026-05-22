@@ -2,105 +2,106 @@
   "_meta": {
     "slug": "aquarium-filter-maintenance",
     "lang": "ms",
-    "sourceFile": "articles/aquarium-filter-maintenance.html"
+    "sourceFile": "articles/aquarium-filter-maintenance.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Your Filter Is Not What You Think — Aquatic Rhythm",
-    "description": "Most keepers clean their filter to keep it working. The ones who crash their tanks do the same thing. The difference is understanding what the filter actually is.",
-    "ogTitle": "Your Filter Is Not What You Think — Aquatic Rhythm",
-    "ogDescription": "Most keepers clean their filter to keep it working. The ones who crash their tanks do the same thing. The difference is understanding what the filter actually is."
+    "title": "Filter Anda Bukan Apa yang Anda Fikir — Aquatic Rhythm",
+    "description": "Membersihkannya dengan cara yang salah lebih teruk daripada tidak membersihkannya langsung. Panduan ini menerangkan apa yang filter akuarium sebenarnya buat dan cara menyelenggarakannya tanpa rosakkan biologi.",
+    "ogTitle": "Filter Anda Bukan Apa yang Anda Fikir",
+    "ogDescription": "Membersihkannya dengan cara yang salah lebih teruk daripada tidak membersihkannya langsung. Ketahui cara baca dan jaga Biological Rhythm tank anda."
   },
   "intro": {
-    "eyebrow": "Beginner &amp; Intermediate",
-    "titleHtml": "Your Filter Is<br><em>Not What You Think</em>",
-    "subtitle": "Cleaning it the wrong way is worse than not cleaning it at all.",
+    "eyebrow": "Bacaan · Biological Rhythm",
+    "titleHtml": "Filter Anda Bukan<br><em>Apa yang Anda Fikir</em>",
+    "subtitle": "Membersihkannya dengan cara yang salah lebih teruk daripada tidak membersihkannya langsung.",
     "texts": [
-      "You clean your filter because it looks dirty, or because it's been a few months, or because the flow has slowed down. Three days later the ammonia spikes and you can't explain why. The tank looked fine. You did everything right.",
-      "This guide explains what an aquarium filter actually does, why cleaning it at the wrong time or in the wrong way can crash an established tank, and how to read your filter's state as part of the Biological Rhythm rather than treating it as maintenance to tick off."
+      "Anda bersihkan filter kerana ia nampak kotor, atau kerana dah beberapa bulan, atau kerana aliran dah perlahan. Tiga hari kemudian ammonia naik dan anda tidak faham kenapa. Tank nampak ok. Anda dah buat semua dengan betul.",
+      "Panduan ini menerangkan apa yang filter akuarium sebenarnya buat, kenapa membersihkannya pada masa yang salah atau dengan cara yang salah boleh rosakkan tank yang sudah mantap, dan cara membaca keadaan filter sebagai sebahagian daripada Biological Rhythm — berbanding menganggapnya sebagai penyelenggaraan yang perlu ditandakan."
     ],
-    "metaModules": "5 modules",
-    "metaTime": "~10 min",
-    "metaLevel": "Beginner &amp; Intermediate",
-    "cta": "Start reading"
+    "metaModules": "5 modul",
+    "metaTime": "Pemula & Pertengahan",
+    "metaLevel": "~10 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "What the filter actually is",
-      "titleHtml": "What the filter <em>actually is</em>",
+      "tag": "Apa yang filter sebenarnya",
+      "titleHtml": "Apa yang filter<br><em>sebenarnya.</em>",
       "body": [
-        "Most keepers think of the filter as a cleaning machine — it removes waste from the water. That is partly true: mechanical filtration traps particles. But the biological function of the filter is more important and more fragile than the mechanical one.",
-        "The filter media — sponge, ceramic rings, bio-balls, lava rock — is the primary home of the nitrifying bacteria that run the nitrogen cycle. These bacteria convert ammonia (fish waste) into nitrite, then nitrite into nitrate. Without them, ammonia and nitrite accumulate to toxic levels. The colony that does this work lives inside the filter. It took weeks to establish during your tank's cycle. It is maintained every day by the water passing through it.",
-        "Understanding this changes what \"filter maintenance\" means. You are not just cleaning a machine. You are managing a living ecosystem that exists inside a piece of plastic and ceramic. The decisions you make about when and how to service it either preserve that ecosystem or disrupt it."
+        "Kebanyakan penjaga menganggap filter sebagai mesin pembersih — ia membuang sisa dari air. Itu sebahagiannya betul: penapisan mekanikal memerangkap zarah. Tapi fungsi biologi filter adalah lebih penting dan lebih rapuh daripada yang mekanikal.",
+        "Filter media — span, cincin seramik, bio-ball, batu lava — adalah rumah utama bakteria nitrifikasi yang menjalankan nitrogen cycle. Bakteria ini menukar ammonia (sisa ikan) kepada nitrite, kemudian nitrite kepada nitrate. Tanpa mereka, ammonia dan nitrite terkumpul kepada tahap toksik. Koloni yang melakukan kerja ini hidup di dalam filter. Ia mengambil masa beberapa minggu untuk ditubuhkan semasa cycle tank anda. Ia dikekalkan setiap hari oleh air yang melaluinya.",
+        "Memahami ini mengubah maksud 'penyelenggaraan filter.' Anda bukan sekadar membersihkan mesin. Anda mengurus ekosistem hidup yang wujud di dalam plastik dan seramik. Keputusan yang anda buat tentang bila dan bagaimana untuk menyelenggarakannya sama ada memelihara ekosistem itu atau mengganggu ia."
       ],
-      "pullQuote": "\"The filter is not where the dirty water goes. It is where the bacteria live that make the tank survivable.\"",
+      "pullQuote": "Filter bukan tempat air kotor pergi. Ia tempat bakteria hidup yang menjadikan tank boleh didiami.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Why tap water crashes tanks"
+      "nextBtn": "Kenapa air paip boleh rosakkan tank"
     },
     {
       "id": "mod-2",
-      "tag": "Why tap water crashes tanks",
-      "titleHtml": "Why tap water <em>crashes tanks</em>",
+      "tag": "Kenapa air paip boleh rosakkan tank",
+      "titleHtml": "Kenapa air paip<br><em>boleh rosakkan tank.</em>",
       "body": [
-        "Tap water contains chlorine and chloramine — compounds added by water treatment facilities to kill bacteria. This is excellent for drinking water and fatal for filter media. Rinsing filter sponges under a running tap, or soaking ceramic media in tap water, kills a significant portion of the bacterial colony that took weeks to establish.",
-        "The crash doesn't always happen immediately. If a portion of the colony survives, it may recover over days. But during that recovery window, the filter's processing capacity is reduced. Ammonia and nitrite rise, usually gradually at first, then more sharply as the surviving bacteria are overwhelmed by normal waste production.",
-        "Keepers who experience a crash after filter cleaning often attribute it to the cleaning happening \"at the wrong time\" or to a disease. The actual cause is simpler: the water used for cleaning destroyed the biology. The fix is equally simple: always rinse filter media in water taken from the tank during a water change. Tank water is dechlorinated, temperature-matched, and already contains the compounds the bacteria need. A gentle rinse in a bucket of tank water removes trapped debris without disrupting the colony."
+        "Air paip mengandungi klorin dan kloramin — sebatian yang ditambah oleh loji rawatan air untuk membunuh bakteria. Ini sangat baik untuk air minum dan mematikan untuk filter media. Membilas span filter di bawah paip yang mengalir, atau merendam media seramik dalam air paip, membunuh sebahagian besar koloni bakteria yang mengambil masa beberapa minggu untuk ditubuhkan.",
+        "Kerosakan tidak selalu berlaku serta-merta. Kalau sebahagian koloni masih hidup, ia mungkin pulih dalam beberapa hari. Tapi dalam tempoh pemulihan itu, kapasiti pemprosesan filter dikurangkan. Ammonia dan nitrite naik, biasanya perlahan-lahan pada mulanya, kemudian lebih tajam apabila bakteria yang masih ada terbeban oleh pengeluaran sisa biasa.",
+        "Penjaga yang mengalami kerosakan selepas pembersihan filter selalunya mengaitkannya dengan pembersihan yang berlaku 'pada masa yang salah' atau dengan penyakit. Punca sebenarnya lebih mudah: air yang digunakan untuk pembersihan telah memusnahkan biologi. Penyelesaiannya sama mudah: sentiasa bilas filter media dalam air yang diambil dari tank semasa water change sesi tersebut. Air tank tidak berklorin, sesuai suhu, dan sudah mengandungi sebatian yang bakteria perlukan. Bilas lembut dalam baldi air tank membuang habuk yang terperangkap tanpa mengganggu koloni."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Biological Rhythm",
       "hintText": [
-        "In ARA, the Biological Rhythm includes the bacterial colony in your filter — it is as much a living part of the tank as the fish and plants. Managing the filter means reading the state of that colony: when it is established and stable, when it needs servicing, and what kind of servicing preserves rather than disrupts it."
+        "Dalam ARA, Biological Rhythm merangkumi koloni bakteria dalam filter anda — ia sama-sama bahagian hidup tank seperti ikan dan pokok. Mengurus filter bermakna membaca keadaan koloni itu: bila ia ditubuhkan dan stabil, bila ia perlu diservis, dan jenis servis apa yang memelihara berbanding mengganggu ia."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "When to clean — and when not to"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Bila perlu dibersihkan — dan bila tidak perlu"
     },
     {
       "id": "mod-3",
-      "tag": "When to clean — and when not to",
-      "titleHtml": "When to clean — <em>and when not to</em>",
+      "tag": "Bila perlu dibersihkan — dan bila tidak perlu",
+      "titleHtml": "Bila perlu dibersihkan —<br><em>dan bila tidak perlu.</em>",
       "body": [
-        "The timing of filter cleaning matters as much as the method. Several situations make filter cleaning riskier than usual: immediately after adding new fish (the bacterial load increases for several weeks while the colony adjusts — cleaning during this window removes processing capacity exactly when more is needed); during or just after a disease treatment (many medications kill bacteria as well as pathogens — adding a cleaning that removes more colony capacity compounds the disruption); during temperature instability (bacterial growth rates are temperature-dependent — a tank that has experienced heater issues or seasonal temperature changes may already have a suppressed colony).",
-        "The signs that a filter needs servicing are flow reduction (the pump is working against blocked media) and visible compaction of the sponge. These are mechanical signals, not biological ones — the bacterial colony doesn't announce when it needs cleaning. But a filter that passes water freely and has been in place less than three months almost certainly doesn't need cleaning yet.",
-        "The instinct to clean because time has passed is less useful than reading the actual filter state."
+        "Masa pembersihan filter sama pentingnya dengan kaedahnya. Beberapa situasi menjadikan pembersihan filter lebih berisiko dari biasa: sejurus selepas menambah ikan baru (beban bakteria meningkat selama beberapa minggu sementara koloni menyesuaikan diri — pembersihan dalam tingkap ini membuang kapasiti pemprosesan tepat apabila lebih banyak diperlukan); semasa atau sejurus selepas rawatan penyakit (banyak ubat membunuh bakteria serta patogen — menambah pembersihan yang membuang lebih banyak kapasiti koloni menggandakan gangguan); semasa ketidakstabilan suhu (kadar pertumbuhan bakteria bergantung kepada suhu — tank yang mengalami isu heater atau perubahan suhu bermusim mungkin sudah mempunyai koloni yang tertekan).",
+        "Isyarat bahawa filter perlu diservis adalah pengurangan aliran (pam bekerja menentang media yang tersumbat) dan pemampatan span yang nampak. Ini adalah isyarat mekanikal, bukan biologi — koloni bakteria tidak mengumumkan bila ia perlu dibersihkan. Tapi filter yang mengalirkan air dengan bebas dan telah dipasang kurang dari tiga bulan hampir pasti tidak perlu dibersihkan lagi.",
+        "Naluri untuk membersihkan kerana masa telah berlalu kurang berguna daripada membaca keadaan filter sebenar."
       ],
-      "pullQuote": "\"A filter that is working — passing water freely, in a stable tank — is doing its job. The impulse to clean it because it 'has been a while' is a Keeper Rhythm signal, not a tank signal.\"",
+      "pullQuote": "Filter yang berfungsi — mengalirkan air dengan bebas, dalam tank yang stabil — sedang melakukan kerjanya. Desakan untuk membersihkannya kerana 'dah lama' adalah isyarat Keeper Rhythm, bukan isyarat tank.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "How to clean without crashing"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Cara membersihkan tanpa rosakkan tank"
     },
     {
       "id": "mod-4",
-      "tag": "How to clean without crashing",
-      "titleHtml": "How to clean <em>without crashing</em>",
+      "tag": "Cara membersihkan tanpa rosakkan tank",
+      "titleHtml": "Cara membersihkan<br><em>tanpa rosakkan tank.</em>",
       "body": [
-        "The method that preserves the bacterial colony while removing mechanical waste: remove filter media one section at a time, not all at once; rinse each piece gently in a bucket of water taken from the tank during that session's water change; squeeze sponges once or twice to remove trapped debris, not repeatedly; do not scrub ceramic or bio-media — a gentle rinse is sufficient; replace cleaned media before moving to the next piece; never replace all media at once.",
-        "If you are replacing old media with new media (sponge that has finally disintegrated, ceramic that has cracked), run old and new media simultaneously for four to six weeks before removing the old piece entirely. The old media seeds the new with bacteria. Removing old media immediately leaves the new piece bare and your filter significantly under-capacity.",
-        "This is also why the advice to \"replace filter cartridges monthly\" — common in the instructions for branded hang-on filters — can destabilise established tanks. The cartridge is the biological media. Replacing it monthly is a slow way of repeatedly partially cycling a tank."
+        "Kaedah yang memelihara koloni bakteria sambil membuang sisa mekanikal: buang filter media satu bahagian pada satu masa, bukan semuanya sekaligus; bilas setiap bahagian dengan lembut dalam baldi air yang diambil dari tank semasa sesi water change tersebut; perah span sekali atau dua kali untuk membuang habuk yang terperangkap, bukan berulang kali; jangan gosok media seramik atau bio-media — bilas lembut adalah mencukupi; gantikan media yang dibersihkan sebelum beralih ke bahagian seterusnya; jangan sekali-kali gantikan semua media serentak.",
+        "Kalau anda menggantikan media lama dengan media baru (span yang akhirnya reput, seramik yang pecah), jalankan media lama dan baru serentak selama empat hingga enam minggu sebelum membuang bahagian lama sepenuhnya. Media lama memasukkan bakteria ke yang baru. Membuang media lama serta-merta meninggalkan bahagian baru yang kosong dan filter anda dengan kapasiti yang jauh berkurangan.",
+        "Inilah juga sebabnya nasihat untuk 'gantikan cartridge filter setiap bulan' — biasa dalam arahan untuk filter hang-on berjenama — boleh mengdestabilkan tank yang sudah mantap. Cartridge itu adalah media biologi. Menggantikannya setiap bulan adalah cara perlahan untuk berulang kali mengcycle sebahagian tank."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Timing before Technique",
       "hintText": [
-        "The ARA principle of Timing before Technique applies directly to filter maintenance. A filter cleaned at the wrong time with the right technique can still crash a tank. A filter cleaned at the right time with the right technique preserves the Biological Rhythm. Read the timing first."
+        "Prinsip ARA tentang Timing before Technique terpakai secara langsung pada penyelenggaraan filter. Filter yang dibersihkan pada masa yang salah dengan teknik yang betul masih boleh rosakkan tank. Filter yang dibersihkan pada masa yang betul dengan teknik yang betul memelihara Biological Rhythm. Baca masanya dahulu."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "Reading the filter's state"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membaca keadaan filter"
     },
     {
       "id": "mod-5",
-      "tag": "Reading the filter's state",
-      "titleHtml": "Reading the filter's <em>state</em>",
+      "tag": "Membaca keadaan filter",
+      "titleHtml": "Membaca<br><em>keadaan filter.</em>",
       "body": [
-        "An established filter in a stable tank has a characteristic look and feel: the sponge is brown-tinged from bacterial colonisation, the ceramic media may have a thin biofilm, flow is strong and consistent. None of these are signs of a dirty filter — they are signs of a live filter. The brown colour is bacteria. The biofilm is biology. A filter that looks like that is working.",
-        "The situations that genuinely require attention: flow has measurably decreased and the sponge compresses under pressure into a solid mass rather than yielding; the tank has been treated with medication that kills bacteria (test ammonia 24–48 hours after treatment; a rise indicates the colony was affected); the filter ran dry due to a power cut or pump failure (restarting a filter that ran dry may require re-establishing the colony — test daily for a week).",
-        "Beyond these, the most useful filter habit is not cleaning frequency — it is observation. Watch the flow. Watch the tank's readings after any maintenance. Give the biology space to work. The Biological Rhythm is more stable than most keepers realise, and more fragile than most cleaning habits account for."
+        "Filter yang sudah mantap dalam tank yang stabil mempunyai rupa dan rasa yang ciri: span berwarna perang dari penjajahan bakteria, media seramik mungkin mempunyai biofilm nipis, aliran kuat dan konsisten. Tiada satu pun daripada ini tanda filter kotor — ia tanda filter yang hidup. Warna perang itu adalah bakteria. Biofilm itu adalah biologi. Filter yang kelihatan seperti itu sedang berfungsi.",
+        "Situasi yang benar-benar memerlukan perhatian: aliran telah berkurangan dengan ketara dan span mampat di bawah tekanan menjadi jisim pepejal berbanding bergerak; tank telah dirawat dengan ubat yang membunuh bakteria (uji ammonia 24–48 jam selepas rawatan; kenaikan menunjukkan koloni terjejas); filter berjalan kering akibat kegagalan elektrik atau pam (memulakan semula filter yang berjalan kering mungkin memerlukan penubuhan semula koloni — uji setiap hari selama seminggu).",
+        "Di luar ini, tabiat filter yang paling berguna bukan kekerapan pembersihan — ia adalah pemerhatian. Perhatikan aliran. Perhatikan bacaan tank selepas sebarang penyelenggaraan. Beri biologi ruang untuk bekerja. Biological Rhythm lebih stabil daripada yang kebanyakan penjaga sedar, dan lebih rapuh daripada yang kebanyakan tabiat pembersihan ambil kira."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
@@ -111,19 +112,19 @@
     },
     {
       "href": "/articles/cycled-tank-problems",
-      "text": "An Established Tank Isn't Finished →"
+      "text": "Tank yang dah matang →"
     },
     {
       "href": "/articles/nitrate-keeps-rising",
-      "text": "Why Nitrate Keeps Rising →"
+      "text": "Kenapa nitrate terus naik? →"
     },
     {
       "href": "/ara",
-      "text": "Aquatic Rhythm Alignment →"
+      "text": "Framework ARA →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }
