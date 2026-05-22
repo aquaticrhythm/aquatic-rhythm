@@ -2,111 +2,113 @@
   "_meta": {
     "slug": "aquarium-travel-vacation",
     "lang": "ms",
-    "sourceFile": "articles/aquarium-travel-vacation.html"
+    "sourceFile": "articles/aquarium-travel-vacation.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Keeping Tanks When You Travel — Aquatic Rhythm",
-    "description": "A well-aligned tank is more resilient than most keepers believe. What it actually needs during your absence is different from what you fear it needs.",
-    "ogTitle": "Keeping Tanks When You Travel — Aquatic Rhythm",
-    "ogDescription": "A well-aligned tank is more resilient than most keepers believe. What it actually needs during your absence is different from what you fear it needs."
+    "title": "Menjaga Akuarium Semasa Anda Bercuti — Aquatic Rhythm",
+    "description": "Tank yang mantap lebih tahan lasak dari yang anda sangka. Panduan ini menerangkan apa yang tank sebenarnya perlukan semasa ketiadaan anda, dan cara membaca penjajaran semasa tank sebagai peramal bagaimana ia akan berkelakuan bila anda tidak ada.",
+    "ogTitle": "Menjaga Akuarium Semasa Anda Bercuti",
+    "ogDescription": "Tank yang mantap lebih tahan lasak dari yang anda sangka. Ketahui apa yang benar-benar perlu, dan apa yang boleh ditangani sendiri."
   },
   "intro": {
-    "eyebrow": "All levels",
-    "titleHtml": "Keeping Tanks<br><em>When You Travel</em>",
-    "subtitle": "A well-aligned tank is more resilient than you think.",
+    "eyebrow": "Bacaan · Semua Peringkat",
+    "titleHtml": "Menjaga Akuarium<br><em>Semasa Anda Bercuti</em>",
+    "subtitle": "Tank yang mantap lebih tahan lasak dari yang anda sangka.",
     "texts": [
-      "The holiday is booked. The tank has been stable for months. And now you're spending the week before you leave calculating how things could go wrong. You've asked a neighbour, but you're not sure they understand. You've considered auto-feeders, but you don't know if they're reliable.",
-      "This guide explains what an established tank actually needs during keeper absence, what it can manage without, and how to read your tank's current alignment as a genuine predictor of how it will behave when you're not there."
+      "Percutian sudah ditempah. Tank sudah stabil selama berbulan-bulan. Dan kini anda habiskan minggu sebelum berlepas mengira bagaimana sesuatu boleh berjalan salah. Anda dah minta jiran, tapi anda tidak pasti mereka faham. Anda pertimbangkan auto-feeder, tapi anda tidak tahu kalau ia boleh dipercayai.",
+      "Panduan ini menerangkan apa yang akuarium yang stabil sebenarnya perlukan semasa ketiadaan penjaga, apa yang boleh ia uruskan sendiri, dan cara membaca penjajaran semasa tank sebagai peramal yang sebenar tentang bagaimana ia akan berkelakuan bila anda tidak ada.",
+      "Penjajaran adalah kunci. Tank yang berjalan dengan baik sebelum anda pergi adalah tank yang boleh bertahan dengan sendirinya. Tank yang sudah mempunyai masalah sebelum anda pergi akan mempunyai masalah yang lebih besar bila anda kembali."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "~7 min",
-    "metaLevel": "All levels",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "What the tank actually needs",
-      "titleHtml": "What the tank <em>actually needs</em>",
+      "tag": "Apa yang tank sebenarnya perlukan",
+      "titleHtml": "Akuarium yang mantap<br><em>tidak bergantung pada intervensi harian.</em>",
       "body": [
-        "An established, stable aquarium is not dependent on daily keeper intervention in the way it might feel. The biology is self-sustaining: the bacterial colony processes waste continuously without the keeper's involvement. The filter runs. The heater maintains temperature. The light cycles on and off. These are the three non-negotiable requirements during absence: functional heating, functional filtration, and a working light timer. Everything else — feeding, water changes, algae scraping — matters on a weekly or monthly timescale, not a daily one.",
-        "Fish in an established tank can go without food for one week without health consequences. In the wild, most fish experience periods of food scarcity regularly and are physiologically adapted for it. A healthy fish that has not been fed for five days is not a starving fish. It may be thinner, and it may be more eager to eat when feeding resumes — but it is not suffering.",
-        "This reframe is important because the anxiety about fish during travel is disproportionately about food. The filter, heater, and light timer deserve more attention in the pre-departure check than the feeding arrangement."
+        "Akuarium yang mantap dan stabil tidak bergantung pada intervensi harian penjaga seperti yang mungkin terasa. Biologi adalah kendiri-mampan: koloni bakteria memproses sisa secara berterusan tanpa penglibatan penjaga. Filter berjalan. Pemanas mengekalkan suhu. Lampu bertukar hidup dan mati. Ini adalah tiga keperluan yang tidak boleh ditawar semasa ketiadaan penjaga.",
+        "Apa yang tidak diperlukan oleh tank yang stabil selama satu minggu: pembersihan filter (filter yang sihat berfungsi tanpa intervensi selama berminggu-minggu), water change (satu water change yang terlepas tidak menjejaskan kimia air dengan ketara dalam tank yang stabil), atau pemerhatian aktif (tank yang stabil sudah mempunyai kapasiti berlebihan biologi yang boleh menampung variasi kecil).",
+        "Apa yang sebenarnya boleh menjadi masalah: kegagalan alatan (pam filter rosak, pemanas rosak, kitaran lampu terganggu) dan kehabisan makanan kalau lebih dari tujuh hari. Risiko pertama tidak dapat diramalkan — risiko kedua boleh ditangani.",
+        "Baca penjajaran semasa tank sebelum berlepas, bukan seminggu sebelumnya. Tank yang stabil dengan ikan yang makan dengan baik, parameter yang konsisten, dan tiada isu yang belum diselesaikan — tank itu boleh menguruskan sendiri selama seminggu. Tank yang sudah mempunyai masalah — ikan yang berkelakuan pelik, parameter yang tidak menentu, penyakit yang baru muncul — itu adalah tank yang memerlukan perhatian sebelum anda pergi, bukan selepas."
       ],
-      "pullQuote": "\"An established tank that has a working filter, heater, and light timer can sustain itself for a week without a keeper. The biology already knows what to do.\"",
+      "pullQuote": "Akuarium yang mantap dengan filter, pemanas, dan timer lampu yang berfungsi boleh menampung sendiri selama seminggu tanpa penjaga. Biologi sudah tahu apa yang perlu dilakukan.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Auto-feeders and helpers"
+      "nextBtn": "Auto-feeder dan pembantu"
     },
     {
       "id": "mod-2",
-      "tag": "Auto-feeders and helpers",
-      "titleHtml": "Auto-feeders <em>and helpers</em>",
+      "tag": "Auto-feeder dan pembantu",
+      "titleHtml": "Auto-feeder boleh dipercayai<br><em>dengan beberapa syarat.</em>",
       "body": [
-        "Auto-feeders are reliable for trips longer than five to seven days, with some important observations. They work best with dried foods — flakes, pellets, granules — and should be tested for a week before travel to confirm the dispensed amount and that the food isn't clumping or dispensing in excess. Over-dispensing from an auto-feeder in an unmonitored tank is worse than no feeding at all — uneaten food decomposing without a water change can cause an ammonia spike in the final days of a long absence. Set auto-feeders conservatively: less food than you think is needed is better than more.",
-        "For trips of one to two weeks, asking a trusted person to feed every two to three days — rather than daily — reduces the risk of overfeeding by someone who doesn't know how little is sufficient. If you do ask for help, give written instructions with specific quantities and times, not verbal guidance. A small container with pre-measured daily portions removes ambiguity.",
-        "Honest assessment: the most common tank problem during keeper absence is well-intentioned overfeeding by a helper. A tank left unfed for a week almost always survives. A tank fed generously by a nervous helper every day sometimes does not."
+        "Auto-feeder boleh dipercayai untuk perjalanan lebih dari lima hingga tujuh hari, dengan beberapa pemerhatian penting. Ia berfungsi paling baik dengan makanan kering — kepingan, pelet, granul — dan perlu diuji selama seminggu sebelum perjalanan untuk mengesahkan jumlah yang diberikan dan bahawa makanan tidak berketul atau diberikan secara berlebihan. Pemberian berlebihan dari auto-feeder dalam tank yang tidak dipantau adalah punca crash yang biasa — makanan yang tidak dimakan menghasilkan ammonia dalam sistem yang tidak ada kapasiti untuk memprosesnya.",
+        "Untuk perjalanan kurang dari tujuh hari dengan ikan dewasa yang sihat, tidak memberi makan langsung lebih selamat dari memberi makan berlebihan. Ikan dewasa boleh bertahan dua minggu tanpa makanan. Ikan yang mati kerana kekurangan makan selama seminggu hampir tidak pernah berlaku — ikan yang mati kerana kualiti air yang merosot dari pemberian berlebihan berlaku lebih kerap dari yang penjaga sedar.",
+        "Kalau anda meminta jiran atau rakan untuk memberi makan, beri mereka satu arahan yang sangat mudah: beri sekali, hanya apa yang habis dalam dua minit, jangan lebih. Berikan dos yang telah diukur terlebih dahulu dalam bekas kecil — bukan botol penuh. Orang yang tidak biasa dengan akuarium secara konsisten memberi makan berlebihan apabila mereka tidak pasti, dan mereka tidak pasti apabila mereka tidak biasa."
       ],
       "pullQuote": null,
-      "hintLabel": "ARA · Keeper Rhythm",
-      "hintText": [
-        "The travel arrangement is a Keeper Rhythm decision. How you structure absence — auto-feeder, helper, no feeding — reflects the tank's alignment and your accurate reading of its resilience. A tank that requires daily management to remain stable is not a stable tank. An aligned tank can sustain itself."
-      ],
-      "prevBtn": "← Back",
-      "nextBtn": "Pre-departure alignment"
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Penjajaran sebelum berlepas"
     },
     {
       "id": "mod-3",
-      "tag": "Pre-departure alignment",
-      "titleHtml": "Pre-departure <em>alignment</em>",
+      "tag": "Penjajaran sebelum berlepas",
+      "titleHtml": "Minggu sebelum perjalanan<br><em>bukan masa untuk perubahan.</em>",
       "body": [
-        "The week before travel is not the time to introduce changes to a stable tank. Do not add new fish, do not move decorations, do not change the feeding amount, do not perform unusual maintenance. Change what is needed — a water change on a regular schedule, filter check, heater verification — but do not add new variables. This is the opposite of the instinct to \"prepare\" the tank by doing everything possible before leaving. Over-preparation can destabilise a tank that would have been fine left alone.",
-        "A checklist: confirm filter is running at normal flow (no sign of reduced output); verify heater temperature with a separate thermometer — not just the indicator light; check that the light timer is set correctly; confirm ammonia and nitrite are zero on the day before departure; set auto-feeder if using, test it manually; leave water conditioner and a basic test kit visible if a helper is involved; give the helper a contact number and a clear description of the one situation that warrants a call (fish all at the surface, filter making unusual noise).",
-        "Beyond that, the preparation is complete. A tank in genuine alignment before you leave will be in genuine alignment when you return."
+        "Minggu sebelum perjalanan bukan masa untuk memperkenalkan perubahan kepada tank yang stabil. Jangan tambah ikan baru, jangan alihkan hiasan, jangan tukar jumlah makanan, jangan lakukan penyelenggaraan luar biasa. Lakukan apa yang diperlukan — water change mengikut jadual biasa, semak filter, sahkan pemanas — tapi jangan tambah pemboleh ubah baru. Ini adalah bertentangan dengan naluri ramai penjaga yang ingin 'menyediakan' tank sebelum mereka pergi.",
+        "Persediaan yang sebenar adalah berbeza: lakukan water change biasa tiga hingga empat hari sebelum berlepas (bukan sehari sebelum, yang boleh menyebabkan gangguan kecil). Uji ammonia, nitrite, dan nitrate — sekadar untuk mengesahkan baseline anda. Semak aliran filter. Pastikan pemanas berfungsi. Sahkan timer lampu adalah program dengan betul. Itu sahaja.",
+        "Satu perkara yang bernilai: beri jiran nombor yang boleh dihubungi kalau ia kelihatan sangat berbeza — 'kalau air sangat keruh atau ada ikan di permukaan, hubungi saya.' Ini bukan meminta mereka untuk menjadi penjaga — ia adalah jaring keselamatan untuk kegagalan alatan yang tidak dapat diramalkan, bukan untuk memantau parameter."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Return and reset"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Pulang dan reset"
     },
     {
       "id": "mod-4",
-      "tag": "Return and reset",
-      "titleHtml": "Return <em>and reset</em>",
+      "tag": "Pulang dan reset",
+      "titleHtml": "Pulang dan<br><em>baca sebelum bertindak.</em>",
       "body": [
-        "When you return, resist the impulse to immediately intervene in ways that feel like \"catching up.\" Test before changing. If parameters are normal, do the next scheduled water change on its normal schedule, not an extra emergency change. The tank does not need to be \"reset\" — it was sustaining itself.",
-        "If parameters show a nitrate rise that is within the expected range for the time away, a water change is appropriate. If ammonia or nitrite is detectable, investigate before acting (was food dispensed in excess? did a fish die?). Resume normal feeding gradually — not a large feeding to \"compensate\" for the absence. Fish coming off a reduced or no-feeding period are more sensitive to water quality than usual and a large feeding adds organic load at a moment of relative fragility.",
-        "The return is also a good moment to observe the tank with fresh eyes. Keepers who see their tanks daily often stop truly seeing them. Coming back after a week, you may notice things the familiarity had hidden: a plant that has been declining, a fish that was always last to the food, equipment that is not performing at its previous level. The absence, like the observation from a slight distance, can be a useful reading tool."
+        "Apabila anda pulang, tahan dorongan untuk segera campur tangan dalam cara yang terasa seperti 'mengejar ketinggalan.' Uji dahulu sebelum menukar apa-apa. Kalau parameter normal, lakukan water change terjadual seterusnya mengikut jadual biasanya — bukan water change kecemasan tambahan. Tank tidak perlu 'di-reset' — ia menguruskan diri sendiri.",
+        "Kalau parameter menunjukkan kenaikan nitrate yang lebih tinggi dari biasa, lakukan water change yang agak lebih besar dari yang dijadualkan — 30% berbanding 20% biasa — tapi jangan mengatasi. Nitrate yang meningkat selepas seminggu tanpa water change adalah jangkaan, bukan kecemasan.",
+        "Kalau anda dapati ikan yang mati, selidiki sebelum bertindak balas. Berapa banyak yang mati? Adakah yang tinggal menunjukkan tanda-tanda tekanan? Adakah parameter sangat berbeza dari normal? Satu ikan mati tanpa tanda-tanda kesulitan kepada yang lain adalah berbeza dari beberapa kematian dengan parameter yang tidak menentu. Yang pertama mungkin tiada kaitan dengan ketiadaan anda. Yang kedua memerlukan penilaian yang lebih teliti.",
+        "Tank yang menjalani ketiadaan penjaga dengan bersih memberitahu anda sesuatu yang berguna — ia adalah sistem yang mempunyai kapasiti berlebihan dan boleh menampung variasi. Tank yang mengalami kesulitan semasa ketiadaan anda memberitahu anda tentang had yang ada: sama ada bioload terlalu tinggi untuk sistem yang ada, atau ada sesuatu yang tidak stabil sebelum anda pergi yang kini anda boleh selidiki."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/aquarium-maintenance-routine",
-      "text": "How to Build an Aquarium Routine →"
+      "text": "Rutin penyelenggaraan yang berfungsi →"
+    },
+    {
+      "href": "/articles/tank-crash-recovery",
+      "text": "Pemulihan tank selepas crash →"
     },
     {
       "href": "/articles/overfeeding-aquarium",
-      "text": "Overfeeding and the Tank's Hidden Load →"
-    },
-    {
-      "href": "/articles/know-your-rhythm",
-      "text": "Know Your Rhythm →"
+      "text": "Memberi makan berlebihan →"
     },
     {
       "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

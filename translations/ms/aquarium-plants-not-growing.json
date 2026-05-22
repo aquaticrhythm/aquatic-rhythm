@@ -2,127 +2,126 @@
   "_meta": {
     "slug": "aquarium-plants-not-growing",
     "lang": "ms",
-    "sourceFile": "articles/aquarium-plants-not-growing.html"
+    "sourceFile": "articles/aquarium-plants-not-growing.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Why Won't My Aquarium Plants Grow? — Aquatic Rhythm",
-    "description": "Aquarium plants that melt, turn yellow, or refuse to grow are showing you something about your Environmental Rhythm — light consistency, nutrient balance, and substrate conditions. A guide to reading the signals.",
-    "ogTitle": "Why Won't My Aquarium Plants Grow? — Aquatic Rhythm",
-    "ogDescription": "Aquarium plants that melt, turn yellow, or refuse to grow are showing you something about your Environmental Rhythm — light consistency, nutrient balance, and substrate conditions."
+    "title": "Kenapa Pokok Akuarium Saya Tidak Membesar? — Aquatic Rhythm",
+    "description": "Daun layu, menguning, atau alga pada daun. Pokok sedang membaca sesuatu dan memberitahu anda tentangnya. Panduan ini menerangkan cara baca isyarat dan cara sepadan setup dengan kapasiti anda yang sebenar.",
+    "ogTitle": "Kenapa Pokok Akuarium Saya Tidak Membesar?",
+    "ogDescription": "Pokok sedang membaca sesuatu. Ketahui cara baca isyarat mereka dan cara sepadan setup dengan kapasiti sebenar anda."
   },
   "intro": {
-    "eyebrow": "Practical",
-    "titleHtml": "Why Won't My<br><em>Aquarium Plants Grow?</em>",
-    "subtitle": "The plant is reading something. Learn what.",
+    "eyebrow": "Bacaan · Praktikal",
+    "titleHtml": "Kenapa Pokok Akuarium<br><em>Saya Tidak Membesar?</em>",
+    "subtitle": "Pokok sedang membaca sesuatu. Ketahui apa.",
     "texts": [
-      "The leaves are melting, or yellowing, or covered in algae. Or nothing is growing at all — just a slow, stubborn refusal to thrive. The plant looks like it should be alive, but something is clearly not right.",
-      "This guide explains what your plants are actually responding to, how to read the specific signals they're showing you, and how to match your setup to what you can genuinely and consistently provide."
+      "Daun sedang layu, atau menguning, atau ditumbuhi alga. Atau tiada yang tumbuh langsung — hanya penolakan yang perlahan dan degil untuk berkembang maju. Pokok nampak seolah-olah sepatutnya hidup, tapi ada sesuatu yang jelas tidak kena.",
+      "Panduan ini menerangkan apa yang pokok anda sebenarnya bertindak balas, cara membaca isyarat spesifik yang mereka tunjukkan, dan cara menyepadankan setup anda dengan apa yang anda boleh genuinly dan konsisten berikan.",
+      "Ini bukan tentang mencapai planted tank yang sempurna. Ia tentang memahami apa yang pokok perlukan, dan sama ada anda boleh menyediakannya secara konsisten — kerana ketidakkonsistenan adalah penyumbang terbesar kepada kegagalan pokok dalam hobi ini."
     ],
-    "metaModules": "Practical",
-    "metaTime": "4 modules",
-    "metaLevel": "~7 min",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "What the plant is reading",
-      "titleHtml": "Aquarium plants are not<br><em>decorations that happen to be alive.</em>",
+      "tag": "Apa yang pokok sedang baca",
+      "titleHtml": "Pokok dalam akuarium<br><em>bertindak balas secara berterusan.</em>",
       "body": [
-        "Plants in an aquarium are not passive. They are responding continuously to the light, water chemistry, CO2 levels, nutrient availability, and substrate conditions of their environment. When they struggle — melting leaves, yellowing, refusing to grow upward, algae colonising their leaves — they are telling you that one or more of those conditions is not what they need.",
-        "The most common response to struggling plants is to buy different plants, add more fertiliser, or upgrade the light. All of these can help, but none of them helps if the underlying condition is not identified first. Adding more fertiliser to a plant that is struggling because of inconsistent light doesn't resolve the misalignment — it often makes algae worse.",
-        "The first question is always: what is the plant reading that you are not?",
-        "These are the most common visible symptoms and what they signal:",
-        "<strong>New leaves melt or rot shortly after purchase:</strong> Often adaptation stress — many aquarium plants are grown emersed (above water) and must transition to submersed growth. Some leaf loss is normal. If melting continues after 3–4 weeks, observe light and CO2.",
-        "<strong>Leaves turning yellow, starting from older (lower) leaves:</strong> Classic nutrient deficiency, typically nitrogen or potassium. Usually indicates nutrients are being consumed faster than they're being replenished, or the substrate is depleted.",
-        "<strong>Leaves yellowing from newer (upper) leaves:</strong> Micronutrient deficiency, commonly iron. Indicates the plant cannot access or absorb certain trace elements — often a water chemistry or chelation issue.",
-        "<strong>Holes in leaves / pinholes:</strong> Often a potassium deficiency, or physical damage from snails or fish.",
-        "<strong>Leggy growth toward the light (stems long with few leaves):</strong> Light is too low or too far from the substrate. The plant is stretching toward the source.",
-        "<strong>Algae growing on leaves (especially older leaves):</strong> Plants that are not growing vigorously cannot compete with algae for nutrients and light. The algae colonising plant leaves is a sign the plant is stressed, not the cause of the stress."
+        "Pokok dalam akuarium bukan pasif. Mereka bertindak balas secara berterusan kepada cahaya, kimia air, tahap CO2, ketersediaan nutrien, dan keadaan substrat persekitaran mereka. Bila mereka bergelut — daun layu, menguning, menolak untuk tumbuh ke atas, alga menjajah daun mereka — mereka sedang memberitahu anda bahawa satu atau lebih keadaan tersebut tidak sepadan.",
+        "<strong>Daun menguning dari bawah ke atas (chlorosis umum).</strong> Selalunya isyarat kekurangan nutrien — paling biasa kekurangan nitrogen atau zat besi. Dalam tank tanpa tanah kaya nutrien, ini berlaku semasa tumbuhan menghabiskan nutrien yang ada tanpa pengisian semula.",
+        "<strong>Daun baru kecil dan pucat.</strong> Selalunya kekurangan zat besi khusus. Zat besi penting untuk klorofil — daun baru yang tidak mendapat cukup menghasilkan dengan kandungan klorofil yang rendah. Boleh dirawat dengan suplemen zat besi cair.",
+        "<strong>Daun layu atau hancur dalam masa beberapa minggu selepas ditanam.</strong> Ini adalah peralihan melti — pokok yang ditanam semula dari sumber berbeza (emersed ke submersed) melepaskan daun lama untuk menghasilkan daun air baru. Ia biasanya normal dan berakhir dalam dua hingga empat minggu. Tanda bahaya adalah melti yang berterusan melebihi empat minggu tanpa pertumbuhan baru.",
+        "<strong>Alga pada daun pokok yang hidup.</strong> Pokok yang sihat dengan pertumbuhan aktif menghasilkan permukaan yang tidak mesra alga — ia tumbuh terlalu cepat untuk alga menjajah. Pokok yang berjuang dengan cahaya atau nutrien yang tidak mencukupi mempunyai permukaan daun yang statik di mana alga boleh menetap. Alga pada daun pokok adalah simptom perjuangan pokok, bukan punca berasingan.",
+        "<strong>Pertumbuhan pokok yang perlahan atau tiada langsung.</strong> Punca paling biasa: cahaya yang tidak mencukupi atau tidak konsisten, CO2 yang tidak mencukupi (dalam setup yang memerlukan injeksi), atau kekurangan nutrien makro (nitrogen, fosforus, kalium). Dalam tank low-tech, cahaya selalunya faktor pengehad.",
+        "<strong>Batang yang panjang dan kurus menuju ke arah cahaya.</strong> Dipanggil etiolasi — pokok sedang menghulurkan diri untuk mencari cahaya kerana ia tidak mendapat cukup di mana ia berada. Ini hampir selalu isyarat cahaya, bukan nutrien.",
+        "<strong>Akar yang tidak berkembang atau putus.</strong> Substrat yang terlalu padat, substrat yang tidak bernutrien (gravel polos tanpa suplemen), atau suhu yang terlalu rendah untuk metabolisme pokok semua boleh menghalang perkembangan akar.",
+        "<strong>pH tinggi dalam tank planted yang diinjeksi CO2.</strong> CO2 larut dalam air sebagai asid karbonik dan menurunkan pH. Kalau pH tidak turun semasa injeksi CO2, CO2 tidak cukup diserap — semak kadar aliran dan pastikan diffuser bersih dan berfungsi.",
+        "<strong>Daun berlubang atau terkikis.</strong> Selalunya aktiviti ikan yang memakan pokok (goldfish, beberapa cichlid, siput) — bukan masalah pertumbuhan. Tapi boleh juga dari kekurangan kalium dalam beberapa spesies."
       ],
-      "pullQuote": "A healthy plant growing strongly outcompetes algae for the same resources. A plant that is struggling cannot. The algae on its leaves is a symptom, not a cause.",
+      "pullQuote": "Pokok yang sihat dan tumbuh dengan aktif bersaing dengan alga untuk sumber yang sama. Pokok yang bergelut tidak boleh. Alga pada daunnya adalah simptom, bukan punca.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Light, nutrients, and rhythm"
+      "nextBtn": "Cahaya, nutrien, dan CO2"
     },
     {
       "id": "mod-2",
-      "tag": "Light, nutrients, and the rhythm they need",
-      "titleHtml": "Three things plants need —<br><em>and why consistency matters more than intensity.</em>",
+      "tag": "Cahaya, nutrien, dan CO2",
+      "titleHtml": "Tiga pemboleh ubah utama<br><em>dan cara membacanya.</em>",
       "body": [
-        "<strong>Light</strong>",
-        "Plants need light to photosynthesize, but the relationship is more nuanced than \"more light = better growth.\" The relevant variables are: intensity (how bright), spectrum (what wavelengths), duration (how many hours per day), and consistency (does it happen at the same time every day?).",
-        "Common sources of drift: too short a photoperiod (less than 6 hours for most plants); too long a photoperiod without sufficient CO2 or nutrients, which drives algae rather than growth; inconsistent timing — lights on at different times each day, disrupting the plant's photosynthetic rhythm; and a light source too far from the substrate for low-light plants to receive what they need.",
-        "A timer is one of the most valuable tools for planted tanks — not because plants \"know\" the time, but because consistent light cycles create predictable conditions that both plants and the keeper can calibrate around.",
-        "<strong>Nutrients</strong>",
-        "Plants need macronutrients (nitrogen, phosphorus, potassium) and micronutrients (iron, manganese, magnesium, and others). In most aquariums with fish, nitrogen and phosphorus are naturally present from waste. Potassium and iron are commonly deficient in established tanks and usually need supplementation.",
-        "The nutrient need scales with plant density and growth rate. A fast-growing high-light tank depletes nutrients quickly. A slow-growing low-light tank depletes them slowly. Matching fertiliser dose to actual plant growth rate — rather than a generic recommended dose — is what an aligned response looks like for nutrition.",
-        "<strong>CO2 and carbon</strong>",
-        "Carbon is required for photosynthesis and is often the limiting factor in plant growth. Fish respiration provides some CO2, but in densely planted or high-light tanks, this is rarely enough. Low-tech tanks accept low-to-medium light levels precisely because they are calibrated to the natural CO2 available — this is not a compromise, it is a design choice that matches system capacity to keeper reality."
+        "Pokok memerlukan cahaya untuk fotosintesis, tapi hubungan ini lebih bernuansa dari 'lebih cahaya = pertumbuhan lebih baik.' Pemboleh ubah yang relevan adalah: intensiti (seberapa terang), spektrum (panjang gelombang apa), tempoh (berapa jam sehari), dan konsistensi (adakah ia berlaku pada masa yang sama setiap hari?).",
+        "<strong>Punca drift cahaya biasa:</strong> fotoperiod terlalu pendek (kurang dari 6 jam adalah terlalu sedikit untuk kebanyakan spesies akuatik), ketidakkonsistenan (lampu dihidupkan pada masa berbeza, hari dilangkau), kedudukan dan sudut lampu yang berubah, atau lampu yang merosot (LED kehilangan output dari masa ke masa, lebih cepat dengan lampu berkualiti rendah). Satu timer untuk lampu tank menyelesaikan masalah ketidakkonsistenan dan merupakan pembelian bernilai tertinggi untuk planted tank.",
+        "<strong>Nutrien</strong> merangkumi makronutrien (nitrogen, fosforus, kalium — sering dipanggil NPK) dan mikronutrien (zat besi, mangan, zink, dan lain-lain). Dalam tank yang ditanam dengan tanah kaya nutrien, kebanyakan ini disediakan secara pasif. Dalam tank dengan substrat inert (gravel, pasir, batu), pemupukan biasanya diperlukan. Kekurangan nutrien yang paling biasa dalam tank akuarium ialah nitrogen (daun menguning merentasi seluruh pokok, bermula dari yang lebih tua) dan zat besi (daun baru pucat manakala daun lama kekal hijau).",
+        "<strong>CO2</strong> adalah faktor pengehad dalam banyak planted tank. Pokok memerlukan karbon untuk pertumbuhan, dan dalam akuarium tertutup, CO2 terlarut secara semula jadi selalunya tidak mencukupi untuk tumbuhan yang menuntut tinggi. Isyarat CO2 tidak mencukupi: pertumbuhan perlahan walaupun cahaya dan nutrien kelihatan ok; daun baru kecil dan padat; pH tinggi pada penghujung tempoh cahaya dalam tank dengan CO2 semula jadi sahaja.",
+        "Hubungan antara cahaya, CO2, dan nutrien berfungsi sebagai kunci pengehad Liebig — had dalam rantaian pertumbuhan adalah apa yang menghadkan, tanpa mengira berapa banyak yang lain anda tambah. Menambah nutrien ke dalam tank yang terhad cahaya tidak membantu pertumbuhan pokok; ia hanya membaja alga. Diagnos dengan betul dahulu sebelum menambah sesuatu."
       ],
       "pullQuote": null,
-      "hintLabel": "ARA · Environmental Rhythm",
-      "hintText": [
-        "In ARA, the Environmental Rhythm covers everything the organism experiences as its environment — not just water chemistry, but light cycle, temperature stability, CO2 availability, and physical structure. Plants are part of this rhythm, not separate from it. When plant growth is the signal, Environmental Rhythm is almost always where to look."
-      ],
-      "prevBtn": "← Back",
-      "nextBtn": "Matching ambition to capacity"
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Low-tech vs high-tech"
     },
     {
       "id": "mod-3",
-      "tag": "Low-tech vs high-tech — matching ambition to capacity",
-      "titleHtml": "Capacity before Ambition.<br><em>Choose the system your life can actually support.</em>",
+      "tag": "Low-tech vs high-tech",
+      "titleHtml": "Kapasiti sebelum ambisi<br><em>dalam planted tank.</em>",
       "body": [
-        "One of the four ARA principles is Capacity before Ambition — building a system around what the keeper can sustainably provide, not around an ideal that requires conditions or time commitments the keeper does not have. This applies directly to planted tanks.",
-        "<strong>Low-tech planted tanks</strong> (no CO2 injection, low-to-medium light) are designed for slow, steady growth. They are best suited for low-light species: Java fern, Anubias, Cryptocorynes, mosses. These plants are adapted to lower light and grow slowly — which means they need fewer nutrients, produce less waste, and are far more forgiving of irregular fertiliser dosing. They also outcompete algae at lower light levels when healthy.",
-        "The tradeoff: you cannot grow high-light demanding carpeting plants such as Hemianthus callitrichoides or Glossostigma in a low-tech setup. The capacity does not support the ambition.",
-        "<strong>High-tech planted tanks</strong> (CO2 injection, high light) can grow almost anything, but they require more consistent attention. CO2 must be on during lights-on hours, nutrients must be replenished regularly, and water changes are often more frequent to manage nutrient buildup. The margin for drift is smaller. A missed CO2 refill or an irregular fertiliser schedule in a high-light tank produces algae rapidly.",
-        "For most keepers — especially those with irregular or episodic care rhythms — low-tech planted tanks are not a compromise. They are the honest design choice that produces a healthy, thriving planted tank over the long term.",
-        "Some practical guidance:",
-        "If you find it difficult to maintain regular fertiliser dosing, start with low-tech, slow-growing plants. If your photoperiod varies because you forget the timer, get a timer — it is the cheapest, highest-impact planted tank tool available. If you want carpeting plants, be honest about whether you can commit to CO2 and regular nutrient dosing before purchasing."
+        "Salah satu daripada empat prinsip ARA adalah Kapasiti sebelum Ambisi — membina sistem di sekitar apa yang penjaga boleh sediakan secara mampan, bukan di sekitar ideal yang memerlukan keadaan atau komitmen masa yang penjaga tidak miliki. Ini terpakai secara langsung kepada planted tank.",
+        "Planted tank low-tech (tiada injeksi CO2, cahaya rendah hingga sederhana) direka untuk pertumbuhan yang perlahan dan mampan yang tidak memerlukan dosing harian, pemantauan CO2 yang teliti, atau penyesuaian kerap. Mereka bukan pilihan bajet — mereka adalah pilihan yang jujur untuk penjaga yang ritma kehidupannya tidak sesuai dengan keperluan high-tech.",
+        "Planted tank high-tech (CO2 yang diinjeksikan, cahaya tinggi, dosing nutrien kerap) boleh menghasilkan pertumbuhan yang spektakular, tapi ia memerlukan input yang konsisten dan kerap. Kalau CO2 diinjeksikan tidak konsisten, pertumbuhan alga — bukannya tumbuhan — mendapat manfaat daripada lebih banyak cahaya. Kalau nutrien tidak ditambah secara kerap dalam sistem high-tech, tumbuhan mengalami kekurangan dengan cepat.",
+        "Soalan yang betul bukan 'planted tank jenis apa yang kelihatan paling cantik?' Ia adalah 'planted tank jenis apa yang akan masih kelihatan bagus dalam enam bulan dengan penjagaan yang sebenarnya akan saya berikan?' Pokok yang tumbuh perlahan dan kekal hijau selama bertahun-tahun memerlukan lebih sedikit dari penjaga berbanding pokok karpet yang kelihatan sempurna selama tiga bulan sebelum merosot dari CO2 yang tidak konsisten.",
+        "Tanda bahawa setup anda melampaui kapasiti anda: anda mula melangkau dosing yang diperlukan; fotoperiod menjadi tidak konsisten; anda mengelak dari melihat tank kerana ia mengingatkan anda tentang kerja yang perlu dilakukan. Ini bukan tanda kegagalan — ini adalah maklumat bahawa penjajaran antara ambisi setup dan kapasiti sebenar perlu diperiksa semula.",
+        "Permulaan yang sederhana adalah lebih mudah untuk disesuaikan daripada sistem yang rumit yang tidak berfungsi. Tiga jenis pokok yang tumbuh dengan baik lebih baik dari dua puluh jenis yang berjuang."
       ],
-      "pullQuote": "A Java fern that grows slowly and stays green for years requires less from the keeper than a carpeting plant that looks perfect for three months before declining from inconsistent CO2. The right plant is the one that fits the care the keeper can actually give.",
+      "pullQuote": "Soalannya bukan pokok mana yang cantik. Ia adalah pokok mana yang masih akan hidup dalam tiga bulan dengan penjagaan yang sebenarnya akan anda berikan.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "What to do now"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Satu perubahan konsisten selama dua minggu"
     },
     {
       "id": "mod-4",
-      "tag": "One consistent change over two weeks",
-      "titleHtml": "Start with the most likely cause.<br><em>Then watch for two weeks.</em>",
+      "tag": "Satu perubahan konsisten selama dua minggu",
+      "titleHtml": "Satu perubahan.<br><em>Dua minggu. Baca hasilnya.</em>",
       "body": [
-        "<strong>Step 1: Identify the symptom type from Module 1.</strong> The visible signal almost always points to a cause category — light, nutrients, or CO2. Start there before changing anything else.",
-        "<strong>Step 2: Make one change.</strong> The most common high-impact adjustments:",
-        "Add a timer if the photoperiod is inconsistent. Adjust photoperiod to 7–8 hours with a midday break if algae is present alongside slow growth. Add a root tab or liquid potassium or iron supplement if yellowing points to nutrient deficiency. Trim and remove heavily algae-covered leaves — they will not recover, and removing them redirects the plant's energy. Reduce fish feeding if nitrate is high but iron and potassium are low, since excess nitrogen drives algae rather than plant growth.",
-        "<strong>Step 3: Wait two weeks.</strong> Plants do not respond overnight. Two weeks is the minimum observation window to see whether a change made a meaningful difference in the Environmental Rhythm.",
-        "What not to do: change light, nutrients, and CO2 simultaneously. If the tank improves, you will not know what helped. If it does not improve, you have changed the baseline in every dimension and lost your ability to read the system. One change, observed over time, is how coherent continuity is built.",
-        "If algae is part of what you are seeing alongside plant problems, the algae guide explains what different types signal about Environmental Rhythm conditions. And for the full picture of how Environmental Rhythm connects to the other four ecological layers in your tank, the Five Rhythms article covers all of them."
+        "Langkah 1: Kenalpasti jenis simptom dari Modul 1. Isyarat yang kelihatan hampir selalu menunjuk kepada kategori punca — cahaya, nutrien, atau CO2. Mulakan di situ sebelum menukar apa-apa lagi.",
+        "Langkah 2: Buat satu perubahan. Penyesuaian impak tinggi yang paling biasa: tambah timer kalau fotoperiod tidak konsisten; laraskan fotoperiod kepada 7–8 jam; kalau pokok dalam substrate inert, mulakan suplemen nutrien cair asas; kalau tumbuhan yang menuntut dalam setup low-tech, pertimbangkan untuk menukar kepada spesies yang lebih tahan atau tambah CO2 cair.",
+        "Langkah 3: Tunggu dua minggu tanpa perubahan lain. Ini adalah bahagian yang paling sukar. Perubahan kepada pertumbuhan pokok berlaku perlahan — paling cepat dua minggu, selalunya empat hingga enam. Membuat perubahan berganda serentak bermakna anda tidak akan tahu mana yang membantu.",
+        "Langkah 4: Baca hasilnya. Daun baru yang lebih hijau, lebih besar, atau pertumbuhan lebih cepat dari node baru — perubahan anda sedang berfungsi. Tiada perubahan dalam empat minggu — jenis simptom mungkin menunjuk kepada punca yang berbeza, atau tahap perubahan tidak cukup.",
+        "Pendekatan perubahan tunggal adalah lebih perlahan dari ubah semua serentak — tapi ia adalah satu-satunya cara untuk benar-benar memahami apa yang sistem anda perlu. Planted tank yang difahami adalah planted tank yang boleh disesuaikan. Planted tank yang dibina berdasarkan andaian adalah yang membingungkan bila ia tidak berfungsi.",
+        "Tank yang tumbuh perlahan dan stabil bukan gagal. Ia berjaya pada kadar yang sepadan dengan sistem yang ia hidup di dalamnya."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
-      "href": "/articles/algae-in-aquarium",
-      "text": "Algae in aquariums →"
+      "href": "/articles/low-tech-planted-tank",
+      "text": "Cara mulakan planted tank low-tech →"
     },
     {
-      "href": "/articles/ara-full-framework",
-      "text": "The ARA Framework →"
+      "href": "/articles/algae-in-aquarium",
+      "text": "Alga dalam akuarium →"
+    },
+    {
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "Rutin penyelenggaraan yang berfungsi →"
     },
     {
       "href": "/rhyssa",
-      "text": "Ask Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }
