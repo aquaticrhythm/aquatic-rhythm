@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "slug": "algae-in-aquarium",
+    "lang": "id",
+    "sourceFile": "articles/algae-in-aquarium.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Alga di Akuarium — Apa yang Sebenarnya Ia Isyaratkan — Aquatic Rhythm",
+    "description": "Alga bukan masalah. Ia adalah bacaan. Panduan ini menjelaskan jenis alga yang umum, apa yang masing-masing isyaratkan tentang Environmental Rhythm Anda, dan apa yang sebenarnya mengubah kondisi.",
+    "ogTitle": "Alga di Akuarium — Apa yang Sebenarnya Ia Isyaratkan",
+    "ogDescription": "Alga bukan masalah. Ia adalah bacaan. Pelajari cara membaca sinyal Environmental Rhythm tank Anda."
+  },
+  "intro": {
+    "eyebrow": "Artikel · Environmental Rhythm",
+    "titleHtml": "Alga di Akuarium —<br><em>Apa yang Sebenarnya Ia Isyaratkan</em>",
+    "subtitle": "Alga bukan masalah. Ia adalah bacaan.",
+    "texts": [
+      "Alga tumbuh di setiap akuarium, di setiap tingkat pengalaman, di bawah setiap pola perawatan. Tank tidak rusak. Pemelihara tidak gagal. Ada sesuatu dalam kondisi itu yang telah menciptakan peluang — dan alga masuk ke dalamnya.",
+      "Panduan ini menjelaskan jenis yang paling umum, apa yang masing-masing isyaratkan tentang Environmental Rhythm Anda, dan apa yang sebenarnya mengubah kondisi — dibandingkan dengan yang hanya membuang gejala yang terlihat sampai alga kembali lagi."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua level",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Apa yang Anda lihat",
+      "titleHtml": "Tidak semua alga<br><em>adalah sinyal yang sama.</em>",
+      "body": [
+        "Alga tumbuh di setiap akuarium, di setiap tingkat pengalaman, di bawah setiap pola perawatan. Fakta itu sendiri seharusnya mengubah cara mendekatinya. Ini bukan tanda tank kotor atau pemelihara gagal. Ini tanda bahwa kondisi tertentu ada — dan jenis alga yang berbeda menunjuk pada kondisi yang berbeda.",
+        "<strong>Lapisan berdebu cokelat (diatom).</strong> Hampir selalu muncul di tank baru dalam 4–8 minggu pertama. Ini adalah perilaku Early Phase yang normal — silika dalam substrat baru dan air keran memberi makan bloom sementara. Biasanya hilang dengan sendirinya saat tank matang. Membersihkan mempercepat efek kosmetik tapi tidak mengubah jangka waktu yang mendasarinya.",
+        "<strong>Titik-titik alga hijau</strong> — bintik hijau keras di kaca dan hardscape. Muncul ketika intensitas cahaya tinggi atau fotoperiod terlalu lama untuk tingkat nutrisi di air. Umum di tank dengan pencahayaan baik tapi tidak ada atau sedikit tanaman untuk bersaing memperebutkan nutrisi.",
+        "<strong>Alga rambut / alga filamentous</strong> — seperti benang, hijau, tersangkut di tanaman. Sering menunjukkan nutrisi berlebih (nitrat, fosfat) dikombinasikan dengan kadar CO2 yang tidak konsisten jika ada tanaman. Bisa juga tumbuh dengan cahaya tinggi dan kepadatan tanaman rendah.",
+        "<strong>Air hijau</strong> — kekeruhan seperti sup kacang. Bloom fitoplankton, biasanya dipicu oleh sinar matahari langsung mengenai tank atau kombinasi nutrisi tinggi dan cahaya tinggi. Tidak berbahaya bagi ikan tapi mengganggu secara visual.",
+        "<strong>Black beard algae (BBA)</strong> — berumbai gelap di tepi tanaman dan hardscape. Hampir selalu dikaitkan dengan fluktuasi CO2 di planted tank, atau aliran air yang sangat lambat di area tertentu. Salah satu jenis yang paling sulit diatasi.",
+        "<strong>Alga biru-hijau / sianobakteri</strong> — seperti lendir, biru-hijau, dengan bau khas. Bukan alga sejati — ini adalah bakteri fotosintetik. Sinyal nitrat yang sangat rendah (sering setelah ganti air berat atau bioload yang sangat rendah) dikombinasikan dengan fosfat berlebih, atau area aliran stagnan."
+      ],
+      "pullQuote": "Pertanyaan pertama bukan 'bagaimana cara membuang ini?' Melainkan 'jenis apa ini, dan apa yang sedang ia baca di tank saya?'",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Apa yang tank sedang sampaikan"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Sinyal di balik permukaan",
+      "titleHtml": "Alga tumbuh di mana<br><em>kondisi mengizinkannya.</em>",
+      "body": [
+        "Dalam Aquatic Rhythm Alignment, kehadiran alga terutama adalah sinyal tentang ketidakselarasan Environmental Rhythm — khususnya hubungan antara cahaya, nutrisi, dan kepadatan tanaman dalam sistem. Ketiga hal ini ada dalam keseimbangan yang dinamis. Alga masuk ketika keseimbangan itu terganggu: ketika cahaya lebih banyak dari yang bisa digunakan tanaman, ketika nutrisi terkumpul lebih cepat dari yang terpakai, ketika kondisi cukup konsisten untuk alga bertahan tapi cukup tidak konsisten untuk tanaman menjadi stres.",
+        "Wawasan utamanya adalah alga dan tanaman bersaing untuk sumber yang sama. Dalam planted tank yang seimbang dengan baik — cahaya dan nutrisi yang sesuai — alga jarang bisa bertahan karena tanaman menang persaingan. Dalam tank tanpa tanaman, atau dengan tanaman yang kesulitan, alga mengisi relung yang tersedia. Ini bukan serangan. Ini respons terhadap apa yang ada.",
+        "Pertanyaan tentang persistensi juga penting. Alga yang muncul lalu memudar biasanya merupakan peristiwa fase — diatom di tank baru — atau drift sekali yang memperbaiki dirinya sendiri. Alga yang terus kembali bahkan setelah dibersihkan memberi tahu Anda bahwa kondisi yang mendasarinya masih ada. Mengikis kaca tidak mengubah apa yang ada di air atau berapa lama lampu menyala. Alga membaca kondisi yang belum berubah. Jadi ia kembali."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Environmental Rhythm",
+      "hintText": [
+        "ARA menganggap Environmental Rhythm sebagai kondisi latar belakang yang mendukung atau menghambat semua hal lain di dalam tank. Konsistensi siklus cahaya, stabilitas suhu, pola aliran, dan keseimbangan nutrisi air semuanya adalah bagian dari ritme ini. Alga yang persisten hampir selalu merupakan tanda bahwa salah satu dari ini tidak selaras — bukan bahwa tank dirawat dengan buruk."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang sebenarnya mengubah kondisi"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Apa yang sebenarnya mengubah kondisi",
+      "titleHtml": "Membuang alga tidak membuang<br><em>kondisi yang menghasilkannya.</em>",
+      "body": [
+        "Respons paling umum terhadap alga adalah penghapusan fisik — mengikis, periode blackout, algasida. Pendekatan ini mengatasi gejala yang terlihat tanpa mengatasi kondisi yang menghasilkannya. Jika siklus cahaya masih terlalu lama setelah blackout, alga kembali. Jika nutrisi masih terkumpul lebih cepat dari yang digunakan tanaman, alga rambut tumbuh kembali dalam beberapa minggu. Kondisinya sabar. Ia akan menunggu.",
+        "Yang sebenarnya mengubah kondisi adalah menemukan ketidakselarasan dan menyesuaikannya. Untuk sebagian besar jenis alga, ini berarti salah satu dari berikut:",
+        "<strong>Kurangi fotoperiod</strong> — respons paling umum yang selaras untuk titik alga hijau dan alga rambut. Jika lampu menyala 10 jam atau lebih, coba 7–8 jam dengan istirahat di tengah hari. Sebagian besar planted tank berkembang baik dengan cahaya yang lebih sedikit dari yang diperkirakan pemelihara.",
+        "<strong>Tambahkan lebih banyak tanaman</strong> — respons paling ekologis yang tersedia. Lebih banyak tanaman berarti lebih banyak persaingan untuk sumber yang dibutuhkan alga. Tanaman batang yang tumbuh cepat khususnya bisa mengubah keseimbangan dengan cepat dengan menggunakan nutrisi sebelum alga sempat.",
+        "<strong>Kurangi pemberian makan</strong> — relevan di tank tanpa tanaman hidup. Lebih sedikit input organik berarti lebih sedikit penumpukan nutrisi. Pengurangan kecil dan konsisten lebih mudah dibaca daripada perubahan mendadak.",
+        "<strong>Perbaiki aliran untuk menghilangkan area stagnan</strong> — sangat relevan untuk black beard algae dan sianobakteri, yang cenderung bertahan di area di mana pergerakan air lambat dan kondisi menggenang.",
+        "<strong>Bersabar dengan diatom</strong> — lapisan cokelat di tank baru tidak memerlukan intervensi. Ini selesai dengan kematangan tank. Membersihkan membantu secara kosmetik, tapi bloom silika yang mendasari berjalan pada waktunya sendiri. Jangan ubah banyak hal sekaligus — jika Anda mengurangi fotoperiod, menambah tanaman, dan mengubah pemberian makan di minggu yang sama, Anda tidak akan tahu apa yang berhasil, dan Anda mungkin mengganggu sistem lebih jauh. Satu perubahan, diamati dari waktu ke waktu, memberi Anda umpan balik yang bisa dibaca."
+      ],
+      "pullQuote": "Tujuannya bukan tank tanpa alga. Melainkan tank di mana kondisinya tidak lagi secara konsisten berpihak pada alga yang mengungguli semua hal lain yang tumbuh di sana.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang perlu dilakukan sekarang"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Apa yang perlu dilakukan sekarang",
+      "titleHtml": "Identifikasi jenisnya.<br><em>Sesuaikan satu hal. Lalu amati.</em>",
+      "body": [
+        "Jalan praktis ke depan itu sederhana, meski membutuhkan kesabaran dibanding kecepatan.",
+        "Pertama, identifikasi jenis alga yang Anda miliki — gunakan deskripsi di modul satu sebagai referensi. Lalu cocokkan dengan ketidakselarasan Environmental Rhythm yang paling mungkin: diatom menunjuk pada usia tank; titik alga hijau dan alga rambut menunjuk pada cahaya dan nutrisi; BBA menunjuk pada fluktuasi CO2 atau aliran rendah; sianobakteri menunjuk pada nitrat yang sangat rendah atau area stagnan. Dari sana, buat satu perubahan — koreksi yang paling mungkin untuk jenis spesifik Anda.",
+        "Kemudian tunggu dua minggu sebelum menilai. Alga tidak merespons dalam semalam, begitu pula koreksinya. Perubahan yang tampaknya tidak membuat perbedaan setelah empat hari mungkin sudah mengubah keseimbangan; Anda akan melihatnya di minggu kedua.",
+        "Jika Anda memiliki beberapa jenis yang hadir, mulailah dengan yang paling dominan. Mereka sering berbagi penyebab yang sama — atasi itu, dan jenis sekunder biasanya berkurang dengan sendirinya.",
+        "Yang tidak perlu dilakukan: menambahkan ikan pemakan alga atau siput tanpa mengatasi kondisi penyebabnya cenderung menciptakan siklus pemeliharaan. Tambahkan pemakan alga, alga habis secara alami, perlu makan tambahan untuk mereka, alga kembali. Spesies pemakan alga bisa menjadi bagian yang benar-benar membantu sistem yang seimbang — tapi bukan pengganti untuk keselarasan Environmental Rhythm. Mereka bekerja paling baik ketika kondisi sudah bergerak ke arah yang tepat. Modul Environmental Rhythm dalam Framework ARA mencakup cahaya, suhu, dan aliran sebagai sistem yang berkelanjutan — bukan sekadar keputusan setup."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/ara",
+      "text": "Framework ARA →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

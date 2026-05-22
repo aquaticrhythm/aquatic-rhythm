@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "slug": "fish-hiding-what-does-it-mean",
+    "lang": "id",
+    "sourceFile": "articles/fish-hiding-what-does-it-mean.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Ikan Saya Bersembunyi — Apa Artinya? — Aquatic Rhythm",
+    "description": "Ikan yang tiba-tiba bersembunyi adalah sinyal paling jujur yang bisa diberikan tank. ARA membaca perilaku ikan sebagai ritme — dan kebanyakan perilaku bersembunyi adalah informasi sebelum menjadi masalah.",
+    "ogTitle": "Ikan Saya Bersembunyi — Apa Artinya?",
+    "ogDescription": "Ikan yang bersembunyi adalah sinyal paling jujur yang bisa diberikan tank. ARA membaca perilaku ikan sebagai ritme."
+  },
+  "intro": {
+    "eyebrow": "Artikel · Membaca Tank Anda",
+    "titleHtml": "Ikan Saya Bersembunyi —<br><em>Apa Artinya?</em>",
+    "subtitle": "Perilaku ikan adalah sinyal paling jujur yang bisa diberikan tank. Begini cara membacanya.",
+    "texts": [
+      "Anda melintas di depan tank dan ikan-ikan menghilang. Atau mereka diam di sudut, hampir tidak bergerak. Kemarin masih baik-baik saja. Tapi sekarang sesuatu sudah berubah — dan Anda tidak yakin apakah ini serius atau tidak.",
+      "Ikan yang tiba-tiba bersembunyi memang mengkhawatirkan — karena tidak ada yang tampak rusak atau salah secara nyata. Tapi ARA melihat perilaku ikan sebagai salah satu dari lima ecological rhythm di akuarium. Dan kebanyakan perilaku bersembunyi adalah informasi sebelum menjadi masalah. Panduan ini menjelaskan cara membacanya."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua level",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Membaca sinyal",
+      "titleHtml": "Ikan yang tiba-tiba diam<br><em>adalah salah satu hal paling informatif yang bisa Anda amati.</em>",
+      "body": [
+        "Sekaligus juga salah satu yang paling mengkhawatirkan. Ketika ikan berhenti terlihat — ketika mereka bersembunyi di belakang tanaman, bawah kayu apung, atau ke sudut-sudut tank — kebanyakan pemelihara merasa terdorong untuk melakukan sesuatu. Ketidakhadiran itu sendiri sudah menakutkan.",
+        "Tapi sebelum bertindak, ada dua situasi yang perlu dibedakan. Pertama adalah <strong>bersembunyi yang alami</strong>: banyak spesies memang pemalu, aktif di malam hari, atau menyukai tempat berlindung. Catfish, loach, kuhli, dan banyak pleco menghabiskan sebagian besar waktu mereka tersembunyi. Ini bukan stres. Ini memang sifat mereka. Jika perilaku bersembunyi itu konsisten dengan cara ikan itu selalu berperilaku, mungkin itu bukan sinyal sama sekali.",
+        "Kedua adalah <strong>perubahan perilaku</strong>: ikan yang sebelumnya aktif dan terlihat tiba-tiba menjadi pendiam, atau bersembunyi dengan cara yang belum pernah dilakukan sebelumnya. Situasi inilah yang perlu diperhatikan — karena perilaku ikan adalah bacaan langsung tentang bagaimana sistem itu dirasakan dari dalam."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Pertanyaan pertama yang perlu ditanyakan",
+      "hintText": [
+        "Apakah ini perilaku baru, atau memang sudah begitu dari dulu? Jika baru, apa yang berubah? Sesuatu di tank, atau pola perawatan Anda? Jawaban dari dua pertanyaan itulah yang akan memandu selebihnya."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "Apa yang sebenarnya dirasakan ikan"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Livestock Rhythm",
+      "titleHtml": "Perilaku ikan<br><em>adalah ritme.</em>",
+      "body": [
+        "ARA menamai lima ecological rhythm yang berjalan bersamaan di setiap akuarium: Water, Biological, Environmental, Livestock, dan Human. Perilaku ikan adalah Livestock Rhythm — dan ini sering menjadi indikator paling sensitif dalam sistem, merekam perubahan yang belum bisa ditunjukkan oleh tes air.",
+        "Ketika ikan menjadi pendiam dan bersembunyi, mereka biasanya merespons salah satu dari beberapa hal. Tidak semuanya darurat.",
+        "<strong>Lingkungan baru.</strong> Ikan yang baru dimasukkan ke tank, atau tank yang baru ditata ulang secara besar-besaran, biasanya akan bersembunyi selama beberapa hari bahkan beberapa minggu. Ini normal dan wajar. Sistem itu masih asing bagi mereka. Tunggu dua minggu dulu sebelum menarik kesimpulan.",
+        "<strong>Kualitas air yang menurun.</strong> Amonia atau nitrit yang tinggi, kadar oksigen yang turun, atau perubahan pH yang signifikan bisa menyebabkan ikan bersembunyi. Ikan sering mulai merasakan stres sebelum parameter mencapai tingkat yang mengkhawatirkan dalam bacaan test kit. Periksa parameter ketika perilaku berubah — bukan karena Anda mengharapkan krisis, tapi untuk menyingkirkan kemungkinan itu.",
+        "<strong>Perubahan suhu.</strong> Heater yang rusak, ruangan yang dingin, atau tank yang dipindahkan dekat jendela bisa mengubah suhu cukup untuk memperlambat metabolisme dan mendorong ikan bersembunyi. Periksa termometer.",
+        "<strong>Serangan dari sesama penghuni tank.</strong> Ini sering tidak terlihat oleh pemelihara. Ikan yang dominan mungkin mengejar yang lain ke tempat sembunyi saat Anda tidak memperhatikan. Perhatikan sirip yang rusak, sisik yang tercabut, atau ikan yang hanya keluar saat makan lalu langsung bersembunyi kembali.",
+        "<strong>Sakit.</strong> Ikan yang tidak sehat biasanya akan mengisolasi diri. Perhatikan gejala yang terlihat — sirip yang terlipat, gerakan tidak normal, bintik-bintik, atau warna yang memudar — bersamaan dengan perilaku bersembunyi."
+      ],
+      "pullQuote": "Makhluk hidup sering menunjukkan apa yang angka tidak bisa. Ikan yang bersembunyi di sudut sebelum amonia terlihat di test kit bukan sedang berdrama. Ia membaca lingkungannya dengan ketepatan yang belum dimiliki alat Anda. Livestock Rhythm berbicara lebih dulu.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Amati dulu sebelum bertindak"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Pendekatan ARA",
+      "titleHtml": "Amati dulu<br><em>sebelum bertindak.</em>",
+      "body": [
+        "Respons paling umum terhadap ikan yang bersembunyi adalah menambahkan sesuatu — obat, stress coat, water conditioner. Naluri itu datang dari rasa peduli. Tapi sebagian besar waktu, yang dibutuhkan ikan bukan perawatan. Yang ia butuhkan adalah sumber stres yang diidentifikasi dan dikurangi. Menambahkan bahan kimia ke sistem yang sudah stres bisa memperburuk situasi.",
+        "ARA menamai ini sebagai prinsip observation before correction. Sebelum menambahkan apapun, luangkan satu atau dua hari untuk mengamati dengan seksama. Catat dengan tepat di mana ikan bersembunyi, kapan mereka keluar, apakah mereka makan, dan apakah penampilan fisik mereka berubah. Pengamatan ini bukan pasif — ini adalah diagnostik.",
+        "Selama periode pengamatan itu, lakukan satu pemeriksaan parameter — amonia, nitrit, dan nitrat setidaknya. Bukan untuk mendiagnosis ikan, tapi untuk memahami kondisi latar belakang tempat mereka hidup. Jika parameter aman dan perilaku baru muncul, lihat apa yang berubah dalam seminggu terakhir: penghuni baru, dekorasi yang dipindahkan, ganti air yang terlewat, atau heater yang bermasalah saat cuaca panas.",
+        "Jika ada gejala penyakit yang terlihat bersamaan dengan perilaku bersembunyi, itu mengubah perhitungan. Identifikasi penyakitnya secara spesifik sebelum mengobati. Obat spektrum luas yang digunakan untuk kondisi yang salah bisa menimbulkan lebih banyak kerusakan daripada kondisi itu sendiri dalam sebagian besar kasus."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Prinsip ARA",
+      "hintText": [
+        "Observation before correction adalah salah satu dari empat prinsip inti ARA. Tidak setiap perubahan yang terlihat adalah sinyal untuk intervensi. Beberapa adalah transisi, beberapa adalah adaptasi, dan beberapa perlu diamati sebelum bisa dibaca dengan benar. Perilaku bersembunyi hampir selalu masuk kategori ini — semakin jelas dengan pengamatan, bukan dengan tindakan."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang perlu dilakukan sekarang"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Satu langkah, lalu amati",
+      "titleHtml": "Dua hari mengamati.<br><em>Lalu satu tindakan yang selaras.</em>",
+      "body": [
+        "Luangkan satu atau dua hari untuk mengamati sebelum melakukan apapun selain pemeriksaan parameter. Catat: kapan ikan keluar, jika memang keluar? Apakah mereka makan? Apakah mereka terlihat normal secara fisik? Apakah ada interaksi antar ikan yang mungkin menunjukkan agresi?",
+        "Jika ikan baru di tank, respons yang selaras adalah menunggu. Tambahkan tempat berlindung jika belum cukup. Pertahankan pencahayaan pada tingkat sedang. Jangan tata ulang tank. Beri ikan waktu untuk mengenal ruang itu.",
+        "Jika ikan sebelumnya sudah nyaman dan perilakunya berubah, cari satu stresor yang paling mungkin. Kualitas air adalah penyebab yang paling umum — ganti air kecil sebesar 20–25% hampir selalu aman dan mengurangi beban yang terkumpul. Jika agresi dicurigai, pisahkan ikan yang agresif sementara untuk melihat apakah yang lain mulai keluar.",
+        "Jika perilaku bersembunyi berlanjut lebih dari dua minggu tanpa penyebab yang teridentifikasi dan tanpa perubahan apapun, itulah saat untuk mencari pandangan yang lebih mendalam — baik dari pemelihara ikan lokal yang berpengalaman, dokter hewan dengan pengalaman akuatik, atau AI companion yang bisa membantu Anda memikirkan polanya tanpa terburu-buru menuju satu jawaban."
+      ],
+      "pullQuote": "Tugas pemelihara, ketika ikan menjadi pendiam, bukan untuk langsung memperbaiki sesuatu. Melainkan membaca apa yang sudah bergeser — lalu membuat satu penyesuaian kecil yang selaras ke arah itu. Sebagian besar perilaku bersembunyi mereda ketika stresor dihilangkan, bukan ketika sesuatu ditambahkan.",
+      "hintLabel": "Ingat",
+      "hintText": [
+        "Ikan tidak bersembunyi untuk mengekspresikan stres. Mereka bersembunyi karena lingkungan mereka memintanya. Ketika Anda mengubah lingkungan — ketika Anda menghilangkan stres dan bukan hanya menutupinya — ikan akan mengikuti. Begitulah cara Livestock Rhythm bekerja: ia mencerminkan kondisi, bukan kepribadian."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/cycled-tank-problems",
+      "text": "Membaca tank yang sudah matang →"
+    },
+    {
+      "href": "/ara",
+      "text": "Framework ARA →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
