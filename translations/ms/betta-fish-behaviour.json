@@ -2,131 +2,120 @@
   "_meta": {
     "slug": "betta-fish-behaviour",
     "lang": "ms",
-    "sourceFile": "articles/betta-fish-behaviour.html"
+    "sourceFile": "articles/betta-fish-behaviour.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Betta Fish Behaviour — What Your Betta Is Telling You — Aquatic Rhythm",
-    "description": "Betta fish behaviour is one of the clearest expressions of the Livestock Rhythm in the hobby. Learn to read your betta's signals — inactivity, colour change, surface breathing — before they become urgent.",
-    "ogTitle": "Betta Fish Behaviour — What Your Betta Is Telling You — Aquatic Rhythm",
-    "ogDescription": "Betta fish behaviour is one of the clearest expressions of the Livestock Rhythm in the hobby. Learn to read your betta's signals before they become urgent."
+    "title": "Tingkah Laku Betta — Apa yang Ia Sedang Beritahu Anda — Aquatic Rhythm",
+    "description": "Betta yang duduk diam di sudut bukan berdrama. Ia memberi anda bacaan. Panduan ini menerangkan apa setiap isyarat bermakna dan bagaimana bertindak balas dengan tepat.",
+    "ogTitle": "Tingkah Laku Betta — Apa yang Ia Sedang Beritahu Anda",
+    "ogDescription": "Betta yang duduk diam di sudut bukan berdrama. Ia memberi anda bacaan. Ketahui cara membaca isyarat ikan anda."
   },
   "intro": {
-    "eyebrow": "Practical",
-    "titleHtml": "Betta Fish Behaviour —<br><em>What Your Betta Is Telling You</em>",
-    "subtitle": "A betta in a corner is not being dramatic. It is giving you a reading.",
+    "eyebrow": "Bacaan · Livestock Rhythm",
+    "titleHtml": "Tingkah Laku Betta —<br><em>Apa yang Ia Sedang Beritahu Anda</em>",
+    "subtitle": "Betta yang duduk diam di sudut bukan berdrama. Ia sedang memberi anda bacaan.",
     "texts": [
-      "Betta fish are one of the most personally kept fish in the hobby — and one of the most legible. When a betta changes its behaviour, there is no school to hide in, no other species to compare against. There is just one fish, and it is telling you something.",
-      "This guide covers what the key signals actually mean, what commonly causes them, and what an aligned response looks like — before the situation becomes urgent."
+      "Betta adalah antara ikan yang paling peribadi dijaga dalam hobi ini — dan antara yang paling mudah dibaca. Bila betta berubah tingkah laku, tiada sekumpulan ikan lain untuk dibandingkan. Hanya satu ikan, dan ia sedang memberitahu anda sesuatu.",
+      "Panduan ini menerangkan apa maksud setiap isyarat utama, apa yang sering menyebabkannya, dan bagaimana response yang selari kelihatan — sebelum keadaan menjadi mendesak."
     ],
-    "metaModules": "Practical",
-    "metaTime": "4 modules",
-    "metaLevel": "~7 min",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "Your betta as a living signal",
-      "titleHtml": "One fish.<br><em>Completely readable.</em>",
+      "tag": "Betta anda sebagai isyarat hidup",
+      "titleHtml": "Satu ikan.<br><em>Sangat mudah dibaca.</em>",
       "body": [
-        "Betta fish are kept alone. That is actually one of the things that makes them one of the most informative fish a keeper can have — because when a betta changes, there is no school of fish to observe, no other species to compare to. There is just one individual, and its behaviour is the whole signal.",
-        "Most betta keepers develop a relationship with their fish that is more personal than any other type of fish keeping. They know when the betta greets them at the glass, when it explores the whole tank, when it builds a bubble nest. They notice when it stops doing these things.",
-        "In Aquatic Rhythm Alignment, this is the Livestock Rhythm — the ongoing pattern of an animal's behaviour that reflects the state of the whole system. In a betta, this rhythm is easier to read than almost any other fish, because the individual is so legible. A change in a betta's behaviour is almost always telling you something before anything else in the system makes it visible."
+        "Betta dijaga seorang diri. Itulah yang menjadikannya antara ikan paling informatif yang boleh dimiliki penjaga — kerana bila betta berubah, tiada sekumpulan ikan lain untuk diperhatikan, tiada spesies lain untuk dibandingkan. Hanya satu individu, dan tingkah lakunya adalah keseluruhan isyarat.",
+        "Kebanyakan penjaga betta membina hubungan dengan ikan mereka yang lebih peribadi daripada jenis ikan peliharaan lain. Mereka tahu bila betta menyambut mereka di cermin tank, bila ia meneroka seluruh tank, bila ia membina bubble nest. Mereka perasan bila ia berhenti buat semua itu.",
+        "Dalam Aquatic Rhythm Alignment, ini adalah Livestock Rhythm — corak berterusan tingkah laku haiwan yang mencerminkan keadaan seluruh sistem. Dalam betta, ritma ini lebih mudah dibaca daripada hampir mana-mana ikan lain, kerana individunya sangat terbaca. Perubahan dalam tingkah laku betta hampir selalu memberitahu anda sesuatu sebelum apa-apa lagi dalam sistem menjadikannya nampak."
       ],
-      "pullQuote": "A betta that has always greeted you at feeding time and now stays low — that change is information. It arrived before anything in your water test will.",
+      "pullQuote": "Betta yang selalu menyambut anda waktu makan dan kini duduk di bawah — perubahan itu adalah maklumat. Ia tiba sebelum apa-apa dalam ujian air anda akan nampak.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Reading the signals"
+      "nextBtn": "Membaca isyarat"
     },
     {
       "id": "mod-2",
-      "tag": "Reading the signals",
-      "titleHtml": "What each behaviour<br><em>actually means.</em>",
+      "tag": "Membaca isyarat",
+      "titleHtml": "Apa maksud setiap tingkah laku.<br><em>Sebenarnya.</em>",
       "body": [
-        "<strong>Inactivity / resting near the bottom or surface</strong>",
-        "Bettas rest at the surface or on leaves — that is normal. What is not normal is a betta that was previously active now spending most of its time motionless near the bottom. This often signals water quality stress (temperature drop, ammonia drift, low oxygen) or early illness. Check temperature first — bettas are very sensitive to temperature below 24°C and will become sluggish as the water cools.",
-        "<strong>Clamped fins (fins held tight against the body)</strong>",
-        "A betta with open, flowing fins is a comfortable betta. Clamped fins — held tight, not spreading — is one of the clearest stress signals the fish can give. It almost always indicates water quality stress or early parasitic/bacterial presence. It is a signal to observe closely and check parameters.",
-        "<strong>Loss of colour intensity</strong>",
-        "A betta's colour is partly controlled by its stress response — cortisol (the stress hormone) suppresses pigmentation over time. A betta that was vivid and is now faded has been under stress for some time, not just today. This is a slow drift signal, not an acute event.",
-        "<strong>Increased surface breathing / gasping</strong>",
-        "A betta occasionally visiting the surface is normal — they breathe atmospheric air via a labyrinth organ. A betta spending unusual amounts of time at the surface, or visibly gasping, signals low dissolved oxygen, very warm water, or gill irritation from water chemistry.",
-        "<strong>Bubble nest building</strong>",
-        "A betta building a bubble nest is a betta that feels secure enough to behave reproductively. It is one of the clearest positive signals a betta can give — the fish is comfortable, well-fed, and not under stress. Some bettas build constantly; some rarely. What matters is change from your individual fish's baseline.",
-        "<strong>Flaring at its own reflection or at nothing</strong>",
-        "Occasional flaring is normal and actually good for betta health — it provides exercise and stimulation. Constant, frantic flaring at a reflection or at nothing suggests the fish is stressed, possibly from seeing a perceived competitor too often (reflection, another betta or similar-shaped fish nearby).",
-        "<strong>Not eating</strong>",
-        "A betta that refuses food for 1–2 days is showing early stress or illness. Bettas can refuse food for a day occasionally — but a fish that was enthusiastic at feeding time and now consistently ignores food is showing something has changed."
+        "<strong>Tidak aktif / rehat berhampiran dasar atau permukaan</strong><br>Betta memang berehat di permukaan atau atas daun — itu normal. Yang tidak normal adalah betta yang sebelum ni aktif kini habiskan kebanyakan masa tidak bergerak berhampiran dasar. Ini selalunya isyarat tekanan kualiti air (penurunan suhu, drift ammonia, oksigen rendah) atau penyakit awal. Semak suhu dahulu — betta sangat sensitif kepada suhu di bawah 24°C dan akan jadi lemah bila air menjadi sejuk.",
+        "<strong>Sirip terkatup (sirip rapat dengan badan)</strong><br>Betta dengan sirip terbuka dan melambai adalah betta yang selesa. Sirip terkatup — dipegang rapat, tidak mengembang — adalah antara isyarat tekanan paling jelas yang ikan boleh bagi. Ini hampir selalu menunjukkan tekanan kualiti air atau kehadiran parasit atau bakteria awal. Ia adalah isyarat untuk perhatikan dengan teliti dan semak parameter.",
+        "<strong>Kehilangan keamatan warna</strong><br>Warna betta sebahagiannya dikawal oleh tindak balas tekanannya — cortisol menekan pigmentasi dari masa ke masa. Betta yang dulunya terang tapi kini pudar telah berada di bawah tekanan untuk beberapa lama, bukan hari ini sahaja. Ini adalah isyarat drift perlahan, bukan peristiwa akut.",
+        "<strong>Bernafas banyak di permukaan / tercungap-cungap</strong><br>Betta yang sesekali naik ke permukaan adalah normal — mereka menghirup udara atmosfera melalui labyrinth organ. Betta yang habiskan masa luar biasa di permukaan, atau nampak tercungap-cungap, isyarat oksigen terlarut rendah, air terlalu panas, atau kerengsaan insang dari kimia air.",
+        "<strong>Membina bubble nest</strong><br>Betta yang membina bubble nest adalah betta yang rasa cukup selamat untuk berkelakuan secara reproduktif. Ia adalah antara isyarat positif paling jelas yang betta boleh bagi — ikan itu selesa, cukup makan, dan tidak di bawah tekanan. Ada betta yang membina selalu; ada yang jarang. Yang penting adalah perubahan dari baseline ikan anda sendiri.",
+        "<strong>Flaring pada bayangan sendiri atau pada tiada apa</strong><br>Flaring sesekali adalah normal dan sebenarnya baik untuk kesihatan betta — ia memberi senaman dan rangsangan. Flaring berterusan dan panik pada bayangan atau tiada apa menunjukkan ikan itu tertekan, mungkin kerana terlalu kerap nampak persaing yang dianggap — bayangan, betta lain, atau ikan berbentuk serupa berdekatan.",
+        "<strong>Tidak mahu makan</strong><br>Betta yang menolak makanan selama 1–2 hari menunjukkan tekanan atau penyakit awal. Betta boleh tolak makanan sehari sesekali — tapi ikan yang dulunya aktif waktu makan dan kini secara konsisten mengabaikan makanan menunjukkan sesuatu telah berubah."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Livestock Rhythm",
       "hintText": [
-        "In ARA, the Livestock Rhythm is read by comparing behaviour to baseline — not to a generic standard of what a betta \"should\" do. A naturally shy betta that has always been quiet is not showing a problem. A previously active betta that has become quiet is. The signal is change, not trait."
+        "Dalam ARA, Livestock Rhythm dibaca dengan membandingkan tingkah laku dengan baseline — bukan dengan standard generik apa yang betta 'sepatutnya' buat. Betta yang secara semula jadi pemalu dan selalu pendiam tidak menunjukkan masalah. Betta yang sebelumnya aktif dan kini pendiam — itulah yang perlu diberi perhatian. Isyaratnya adalah perubahan, bukan sifat."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "What causes betta drift"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang biasanya menyebabkan betta drift"
     },
     {
       "id": "mod-3",
-      "tag": "What commonly causes betta drift",
-      "titleHtml": "Most betta problems<br><em>trace back to one of these.</em>",
+      "tag": "Punca biasa masalah betta",
+      "titleHtml": "Kebanyakan masalah betta<br><em>boleh dikesan kepada salah satu daripada ini.</em>",
       "body": [
-        "<strong>Temperature out of range or unstable</strong>",
-        "Bettas are tropical fish from shallow warm waters. Their optimal temperature is 25–28°C. Below 24°C, metabolism slows and immune function is suppressed. A cheap heater that swings 3°C through a day creates chronic stress. Temperature is the most commonly overlooked betta stressor — check it first.",
-        "<strong>Small tank or inadequate water volume</strong>",
-        "Bettas are often sold in very small containers, which creates the misconception that they prefer small spaces. They do not. A betta in a 2-litre bowl lives in water that changes chemistry rapidly — a small feeding, a day of warming, and the parameters have shifted significantly. A betta in 15–20L of well-filtered water lives in a much more stable system. Tank size is not about swimming space; it is about water stability.",
-        "<strong>Ammonia or nitrite in the water</strong>",
-        "A betta showing clamped fins and inactivity in a new or recently disrupted tank is almost certainly experiencing ammonia or nitrite stress. Test the water if the tank is under 8 weeks old or if the filter was recently cleaned with tap water. This is Early Phase territory.",
-        "<strong>Water too cold after a partial water change</strong>",
-        "One of the most common acute stressors — adding water that is several degrees cooler than the tank creates a sudden temperature shock. Always match water change temperature to tank temperature before adding.",
-        "<strong>Loneliness vs. overstimulation</strong>",
-        "Bettas need some visual stimulation but not constant threat. A betta in a completely bare tank with nothing to explore or hide behind may show low-level chronic stress. A betta that can see another betta, or whose tank has a strong reflection from one side, may show constant flaring stress. Both are Environmental Rhythm issues — the tank's physical structure is part of what the betta is experiencing."
+        "<strong>Suhu luar julat atau tidak stabil</strong><br>Betta adalah ikan tropika dari perairan cetek yang panas. Suhu optimum mereka adalah 25–28°C. Di bawah 24°C, metabolisme perlahan dan fungsi imun tertekan. Heater murah yang swing 3°C sepanjang hari mewujudkan tekanan kronik. Suhu adalah stressor betta yang paling kerap diabaikan — semak dahulu.",
+        "<strong>Tank terlalu kecil atau isipadu air tidak mencukupi</strong><br>Betta sering dijual dalam bekas yang sangat kecil, yang mewujudkan salah faham bahawa mereka suka ruang kecil. Tidak begitu. Betta dalam bekas 2 liter hidup dalam air yang kimianya berubah dengan cepat — satu suapan, sehari yang panas, dan parameter dah bergerak ketara. Betta dalam 15–20L air berfilter baik hidup dalam sistem yang jauh lebih stabil. Saiz tank bukan tentang ruang berenang; ia tentang kestabilan air.",
+        "<strong>Ammonia atau nitrite dalam air</strong><br>Betta yang menunjukkan sirip terkatup dan tidak aktif dalam tank baru atau tank yang baru kena ganggu hampir pasti mengalami tekanan ammonia atau nitrite. Uji air kalau tank berumur kurang dari 8 minggu atau kalau filter baru-baru ini dibersihkan dengan air paip. Ini adalah kawasan Early Phase.",
+        "<strong>Air terlalu sejuk selepas water change</strong><br>Antara stressor akut yang paling biasa — menambah air yang beberapa darjah lebih sejuk daripada tank mewujudkan kejutan suhu mengejut. Sentiasa padankan suhu water change dengan suhu tank sebelum menambah.",
+        "<strong>Kesunyian vs. overstimulasi</strong><br>Betta perlukan sedikit rangsangan visual tapi bukan ancaman berterusan. Betta dalam tank yang benar-benar kosong tanpa apa untuk diterokai atau bersembunyi mungkin menunjukkan tekanan kronik tahap rendah. Betta yang boleh nampak betta lain, atau tanknya ada pantulan kuat dari satu sisi, mungkin menunjukkan tekanan flaring berterusan. Kedua-duanya adalah isu Environmental Rhythm — struktur fizikal tank adalah sebahagian daripada apa yang betta alami."
       ],
-      "pullQuote": "Before you add anything to the tank, identify which of these is most likely the root. One aligned change — usually temperature or water quality — often resolves what looks like a complex betta health problem.",
+      "pullQuote": "Sebelum anda tambah apa-apa ke dalam tank, kenalpasti mana yang paling mungkin menjadi punca. Satu perubahan yang selari — biasanya suhu atau kualiti air — selalunya menyelesaikan apa yang kelihatan seperti masalah kesihatan betta yang kompleks.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Creating conditions for a thriving betta"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Mewujudkan keadaan untuk betta yang sihat"
     },
     {
       "id": "mod-4",
-      "tag": "Creating conditions for a thriving betta",
-      "titleHtml": "Your betta is readable.<br><em>Give it conditions worth reading.</em>",
+      "tag": "Keadaan untuk betta yang sihat",
+      "titleHtml": "Betta anda mudah dibaca.<br><em>Beri ia keadaan yang worth dibaca.</em>",
       "body": [
-        "A betta that is genuinely thriving shows a specific pattern: it explores the whole tank regularly (not just one corner), greets the keeper at feeding time, flares briefly when stimulated then relaxes, holds its fins open at rest, and maintains vivid colour. This is not a high bar — it is what happens naturally when the conditions are right.",
-        "What creates this:",
-        "<strong>Stable warm temperature</strong> (25–28°C, less than 1°C variation)<br>\n      <strong>Adequate tank volume</strong> (15L minimum; 20–30L is comfortable)<br>\n      <strong>A cycled filter</strong> — not a new tank<br>\n      <strong>Regular partial water changes</strong> (weekly or fortnightly depending on tank size and feeding load)<br>\n      <strong>Some structure in the tank</strong> — plants, hides, surfaces to rest on and explore near<br>\n      <strong>A photoperiod</strong> (lights on/off on a timer) so the fish has a day/night cycle",
-        "These are not luxury conditions. They are the baseline ecological requirements for a fish that evolved in warm, structured, seasonally varying habitats.",
-        "If your betta is showing any of the signals in Module 2, the guides on fish hiding and water parameters may help narrow down what to check. And if you want to understand the broader ecological signals your tank is giving — not just the betta's — the Five Rhythms article covers all five layers."
+        "Betta yang benar-benar sihat menunjukkan corak tertentu: ia meneroka seluruh tank secara berkala (bukan hanya satu sudut), menyambut penjaga waktu makan, flaring sekejap bila dirangsang kemudian berehat, memegang siripnya terbuka waktu rehat, dan mengekalkan warna yang terang. Ini bukan standard tinggi — ini yang berlaku secara semula jadi bila keadaan betul.",
+        "Yang mewujudkan ini:",
+        "<strong>Suhu panas yang stabil</strong> (25–28°C, kurang dari 1°C variasi)<br><strong>Isipadu tank yang mencukupi</strong> (minimum 15L; 20–30L selesa)<br><strong>Filter yang dah cycle</strong> — bukan tank baru<br><strong>Water change separa secara berkala</strong> (mingguan atau dua minggu sekali bergantung kepada saiz tank dan beban suapan)<br><strong>Sedikit struktur dalam tank</strong> — pokok, tempat sembunyi, permukaan untuk berehat dan diterokai<br><strong>Photoperiod</strong> (lampu on/off pada timer) supaya ikan ada kitaran siang/malam",
+        "Ini bukan keadaan mewah. Ini keperluan ekologi asas untuk ikan yang berevolusi dalam habitat yang panas, berstruktur, dan bermusim.",
+        "Kalau betta anda menunjukkan mana-mana isyarat dalam Modul 2, panduan tentang ikan bersembunyi dan parameter air boleh bantu sempitkan apa yang perlu diperiksa. Dan kalau anda nak faham isyarat ekologi yang lebih luas yang tank anda bagi — bukan sekadar betta — artikel Lima Ritma merangkumi semua lima lapisan."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "Why is my fish hiding? →"
+      "text": "Kenapa ikan saya bersembunyi? →"
     },
     {
       "href": "/articles/perfect-parameters-fish-dying",
-      "text": "Perfect parameters, fish dying →"
+      "text": "Parameter ok tapi ikan mati →"
     },
     {
       "href": "/ara",
-      "text": "The ARA framework →"
+      "text": "Framework ARA →"
     },
     {
       "href": "/rhyssa",
-      "text": "Ask Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

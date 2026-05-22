@@ -2,112 +2,113 @@
   "_meta": {
     "slug": "overfeeding-aquarium",
     "lang": "ms",
-    "sourceFile": "articles/overfeeding-aquarium.html"
+    "sourceFile": "articles/overfeeding-aquarium.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Overfeeding and the Tank's Hidden Load — Aquatic Rhythm",
-    "description": "Most tanks are not underfed. Overfeeding is the most common unacknowledged driver of cloudy water, high nitrate, algae, and ammonia spikes.",
-    "ogTitle": "Overfeeding and the Tank's Hidden Load — Aquatic Rhythm",
-    "ogDescription": "Most tanks are not underfed. Overfeeding is the most common unacknowledged driver of cloudy water, high nitrate, algae, and ammonia spikes."
+    "title": "Memberi Makan Berlebihan dan Beban Tersembunyi Tank — Aquatic Rhythm",
+    "description": "Kebanyakan tank bukan kekurangan makanan. Kebanyakan tank diberi makan berlebihan. Panduan ini menerangkan kenapa ia berlaku, apa yang ia buat kepada biologi tank, dan cara membaca isyaratnya.",
+    "ogTitle": "Memberi Makan Berlebihan dan Beban Tersembunyi Tank",
+    "ogDescription": "Kebanyakan tank bukan kekurangan makanan. Kebanyakan tank diberi makan berlebihan. Ketahui cara membaca dan kalibrasi beban organik tank anda."
   },
   "intro": {
-    "eyebrow": "All levels",
-    "titleHtml": "Overfeeding and<br><em>the Tank's Hidden Load</em>",
-    "subtitle": "Most tanks are not underfed. Most tanks are overfed.",
+    "eyebrow": "Bacaan · Keeper Rhythm",
+    "titleHtml": "Memberi Makan Berlebihan<br><em>dan Beban Tersembunyi Tank</em>",
+    "subtitle": "Kebanyakan tank bukan kekurangan makanan. Kebanyakan tank diberi makan berlebihan.",
     "texts": [
-      "The water is cloudy. Nitrate is high. Algae keeps appearing. You've done water changes, checked the filter, tested the water — and nothing is clearly wrong. The fish seem fine. You wonder what you're missing.",
-      "In many of these cases, the answer is feeding. Not the frequency, not the type — the amount. Overfeeding is the most common invisible driver of the problems keepers attribute to other causes. This guide explains why it happens, what it does to the tank's biology, and how to read the signs before they compound."
+      "Air keruh. Nitrate tinggi. Alga terus muncul. Anda dah buat water change, semak filter, uji air — dan tiada yang nampak jelas salah. Ikan nampak ok. Anda tertanya-tanya apa yang anda terlepas.",
+      "Dalam banyak kes ini, jawapannya adalah suapan. Bukan kekerapan, bukan jenis — jumlahnya. Memberi makan berlebihan adalah pemacu tersembunyi yang paling biasa bagi masalah yang penjaga kaitkan dengan punca lain. Panduan ini menerangkan kenapa ia berlaku, apa yang ia buat kepada biologi tank, dan cara membaca isyarat sebelum ia berganda."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "~7 min",
-    "metaLevel": "All levels",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "Why keepers overfeed",
-      "titleHtml": "Why keepers <em>overfeed</em>",
+      "tag": "Kenapa penjaga memberi makan berlebihan",
+      "titleHtml": "Kenapa penjaga<br><em>memberi makan berlebihan.</em>",
       "body": [
-        "Fish appear to respond to food with enthusiasm regardless of whether they need it. A fish that ate five minutes ago will chase a flake the same way as a fish that hasn't eaten in two days. This creates a feedback loop for keepers: the fish \"seem hungry,\" so more food goes in.",
-        "The drive to feed is also emotional — feeding is one of the few visible ways keepers interact with their fish. Watching them respond to food feels like direct contact with the animals. This is not a failure of judgement. It is a normal human response to animals that appear to respond.",
-        "But fish are efficient foragers in nature — they are adapted to opportunistic eating and will respond to available food beyond what they need. The visible enthusiasm for food is not a reliable indicator of hunger. The rule most experienced keepers arrive at through observation is: feed only what disappears in two to three minutes, once or twice daily. Not as a strict rule — but as a starting calibration. A tank that is genuinely thriving on this amount is not a tank that is underfed. It is a tank with a matched organic load."
+        "Ikan nampak bertindak balas kepada makanan dengan semangat tanpa mengira sama ada mereka memerlukannya. Ikan yang makan lima minit lepas akan kejar biskut dengan cara yang sama seperti ikan yang tidak makan dua hari. Ini mewujudkan gelung maklum balas untuk penjaga: ikan 'nampak lapar,' jadi lebih banyak makanan masuk.",
+        "Dorongan untuk memberi makan juga emosi — memberi makan adalah salah satu cara nampak yang penjaga berinteraksi dengan ikan mereka. Melihat mereka bertindak balas kepada makanan terasa seperti hubungan langsung dengan haiwan. Ini bukan kegagalan pertimbangan. Ia adalah tindak balas manusia yang normal kepada haiwan yang nampak bertindak balas.",
+        "Tapi ikan adalah pemburu peluang yang cekap di alam semula jadi — mereka disesuaikan untuk makan secara peluang dan akan bertindak balas kepada makanan yang tersedia melebihi apa yang mereka perlukan. Semangat nampak untuk makanan bukan penunjuk kelaparan yang boleh dipercayai. Peraturan yang kebanyakan penjaga berpengalaman sampai melalui pemerhatian adalah: beri makan hanya apa yang hilang dalam dua hingga tiga minit, sekali atau dua kali sehari. Bukan sebagai peraturan ketat — tetapi sebagai kalibrasi permulaan. Tank yang benar-benar berkembang maju dengan jumlah ini bukan tank yang kekurangan makan. Ia adalah tank dengan beban organik yang sepadan."
       ],
-      "pullQuote": "\"The fish will always look hungry. That is not information about whether they are.\"",
+      "pullQuote": "Ikan akan sentiasa nampak lapar. Itu bukan maklumat tentang sama ada mereka lapar.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "What happens to uneaten food"
+      "nextBtn": "Apa yang berlaku kepada makanan yang tidak dimakan"
     },
     {
       "id": "mod-2",
-      "tag": "What happens to uneaten food",
-      "titleHtml": "What happens <em>to uneaten food</em>",
+      "tag": "Apa yang berlaku kepada makanan yang tidak dimakan",
+      "titleHtml": "Apa yang berlaku<br><em>kepada makanan yang tidak dimakan.</em>",
       "body": [
-        "Food that is not eaten within a few minutes settles to the substrate or is drawn into the filter. On the substrate, it begins decomposing — bacteria break it down, consuming oxygen in the process. The decomposition produces ammonia, which feeds the nitrogen cycle and ultimately becomes nitrate.",
-        "In a tank with moderate stocking and an efficient filter, small amounts of decomposing food are managed without visible consequence. But consistent overfeeding adds organic load continuously. Nitrate rises faster than water changes can manage. The bacterial bloom feeding on the excess food turns the water cloudy — the cloudiness is not a chemical problem but a biological response to abundance. Algae receives elevated nitrate and phosphate (also a decomposition product) as fertiliser and grows faster. The filter draws in decomposing material, partially compressing the sponge and reducing flow — reducing the filter's capacity to process ammonia exactly when more ammonia is being produced.",
-        "All of these consequences are connected to a single input: more food than the tank's biology can process in real time."
+        "Makanan yang tidak dimakan dalam beberapa minit mendap ke substrat atau tersedut ke dalam filter. Di substrat, ia mula terurai — bakteria mengurainya, menggunakan oksigen dalam proses tersebut. Penguraian menghasilkan ammonia, yang memberi makan nitrogen cycle dan akhirnya menjadi nitrate.",
+        "Dalam tank dengan stocking sederhana dan filter yang cekap, jumlah kecil makanan yang terurai diuruskan tanpa kesan yang nampak. Tapi pemberian makan berlebihan yang konsisten menambah beban organik secara berterusan. Nitrate naik lebih cepat daripada yang water change boleh uruskan. Bloom bakteria yang memberi makan lebihan itu menjadikan air keruh — kekeruhan bukan masalah kimia tetapi tindak balas biologi kepada kelimpahan. Alga menerima nitrate dan phosphate (juga produk penguraian) yang meningkat sebagai baja dan tumbuh lebih cepat. Filter menyedut bahan yang terurai, menekan span sebahagiannya dan mengurangkan aliran — mengurangkan kapasiti filter untuk memproses ammonia tepat apabila lebih banyak ammonia dihasilkan.",
+        "Semua akibat ini dikaitkan dengan satu input: lebih banyak makanan daripada yang biologi tank boleh proses dalam masa nyata."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Chemical Rhythm",
       "hintText": [
-        "Overfeeding is a Keeper Rhythm behaviour — a habit — that directly loads the Chemical Rhythm. Rising nitrate, cloudy water, and accelerating algae are Chemical Rhythm readings. Tracing them back to their cause often leads to the feeding routine before it leads anywhere else."
+        "Memberi makan berlebihan adalah tingkah laku Keeper Rhythm — tabiat — yang terus memuatkan Chemical Rhythm. Nitrate yang meningkat, air yang keruh, dan alga yang semakin cepat adalah bacaan Chemical Rhythm. Menjejak mereka kembali ke puncanya selalunya membawa kepada rutin suapan sebelum ia membawa ke mana-mana tempat lain."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "Reading the signs"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membaca isyarat"
     },
     {
       "id": "mod-3",
-      "tag": "Reading the signs",
-      "titleHtml": "Reading <em>the signs</em>",
+      "tag": "Membaca isyarat",
+      "titleHtml": "Membaca<br><em>isyarat.</em>",
       "body": [
-        "Several signs consistently indicate overfeeding rather than other causes: nitrate rises faster than the stocking density and water change schedule would predict; water turns cloudy within 24–48 hours of feeding, clearing and returning repeatedly; algae grows on the glass and substrate faster than it can be removed, despite other parameters being stable; uneaten food is visible on the substrate or resting against decorations; the filter flow is gradually slowing between cleaning cycles faster than expected.",
-        "Test this hypothesis: reduce feeding to a clear minimum — once daily, only what disappears in two minutes — for two weeks. Do not change anything else: same water change schedule, same filter maintenance, same stocking. If nitrate rises more slowly, cloudiness clears and stays clear, and algae growth slows, overfeeding was the dominant driver.",
-        "This two-week trial is one of the most diagnostic experiments available to a keeper without specialist equipment. The results are direct feedback from the Chemical Rhythm about how much organic load the tank can sustain without visible consequence."
+        "Beberapa isyarat secara konsisten menunjukkan pemberian makan berlebihan berbanding punca lain: nitrate naik lebih cepat daripada yang kepadatan stocking dan jadual water change akan jangkakan; air jadi keruh dalam 24–48 jam selepas suapan, bersih dan kembali secara berulang; alga tumbuh di cermin dan substrat lebih cepat daripada yang boleh dibuang, walaupun parameter lain stabil; makanan yang tidak dimakan nampak di substrat atau bersandar pada hiasan; aliran filter perlahan-lahan perlahan antara kitaran pembersihan lebih cepat daripada yang dijangka.",
+        "Uji hipotesis ini: kurangkan suapan kepada minimum yang jelas — sekali sehari, hanya apa yang hilang dalam dua minit — selama dua minggu. Jangan tukar apa-apa lagi: jadual water change yang sama, penyelenggaraan filter yang sama, stocking yang sama. Kalau nitrate naik lebih perlahan, kekeruhan bersih dan kekal bersih, dan pertumbuhan alga perlahan, pemberian makan berlebihan adalah pemacu dominan.",
+        "Ujian dua minggu ini adalah antara eksperimen paling diagnostik yang tersedia kepada penjaga tanpa peralatan khusus. Hasilnya adalah maklum balas langsung dari Chemical Rhythm tentang berapa banyak beban organik yang tank boleh tanggung tanpa akibat yang nampak."
       ],
-      "pullQuote": "\"Reducing feeding is not depriving the fish. It is calibrating the load to the tank's capacity. A fish that eats slightly less than it could is not suffering. A tank that is consistently overloaded is.\"",
+      "pullQuote": "Mengurangkan suapan bukan menghilangkan hak ikan. Ia mengkalibrasi beban kepada kapasiti tank. Ikan yang makan sedikit kurang daripada yang ia boleh tidak menderita. Tank yang secara konsisten terbeban — ya.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Calibrating to the tank"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Kalibrasi kepada tank"
     },
     {
       "id": "mod-4",
-      "tag": "Calibrating to the tank",
-      "titleHtml": "Calibrating <em>to the tank</em>",
+      "tag": "Kalibrasi kepada tank",
+      "titleHtml": "Kalibrasi<br><em>kepada tank.</em>",
       "body": [
-        "The goal is not a universal feeding rule — it is calibration to the specific tank. A heavily planted tank with high light and good CO2 can absorb more organic load because plants consume nitrate and phosphate directly. A bare tank with minimal filtration and moderate stocking needs a much lighter hand.",
-        "Observation guides calibration: if parameters are stable, water is clear, algae is manageable, and fish are at healthy weight, the feeding amount is working. If any of these drift, the feeding rate is one of the first variables to examine.",
-        "Fasting fish one day per week is a common practice with multiple benefits: it allows the digestive system to clear, reduces organic load for a day, and provides a reliable comparison point — a tank that looks better after a fast day is almost certainly carrying excess load on feeding days. Varied diet also reduces dependence on a single food type, each of which has different phosphate and organic content.",
-        "The keeper who has calibrated feeding to the tank's actual capacity has solved a problem that many keepers spend months addressing through water changes and filter maintenance without understanding the root input. The Keeper Rhythm — the feeding habit — shapes the Chemical Rhythm continuously. Reading one means reading the other."
+        "Matlamatnya bukan peraturan suapan universal — ia adalah kalibrasi kepada tank yang spesifik. Planted tank dengan cahaya tinggi dan CO2 yang baik boleh menyerap lebih banyak beban organik kerana pokok menggunakan nitrate dan phosphate secara langsung. Tank kosong dengan penapisan minimum dan stocking sederhana perlukan tangan yang jauh lebih ringan.",
+        "Pemerhatian membimbing kalibrasi: kalau parameter stabil, air jernih, alga boleh diurus, dan ikan berat yang sihat, jumlah suapan berfungsi. Kalau mana-mana daripada ini drift, kadar suapan adalah antara pemboleh ubah pertama yang perlu diperiksa.",
+        "Puasa ikan sehari seminggu adalah amalan biasa dengan pelbagai manfaat: ia membenarkan sistem penghadaman bersih, mengurangkan beban organik selama sehari, dan menyediakan titik perbandingan yang boleh dipercayai — tank yang nampak lebih baik selepas hari puasa hampir pasti membawa beban berlebihan pada hari suapan.",
+        "Penjaga yang telah mengkalibrasi suapan kepada kapasiti sebenar tank telah menyelesaikan masalah yang ramai penjaga habiskan berbulan-bulan menangani melalui water change dan penyelenggaraan filter tanpa memahami input punca. Keeper Rhythm — tabiat suapan — membentuk Chemical Rhythm secara berterusan. Membaca satu bermakna membaca yang lain."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/why-is-my-aquarium-water-cloudy",
-      "text": "Why Is My Aquarium Water Cloudy? →"
+      "text": "Kenapa air akuarium saya keruh? →"
     },
     {
       "href": "/articles/algae-in-aquarium",
-      "text": "Algae in My Aquarium →"
+      "text": "Alga dalam akuarium →"
     },
     {
       "href": "/articles/nitrate-keeps-rising",
-      "text": "Why Nitrate Keeps Rising →"
+      "text": "Kenapa nitrate terus naik? →"
     },
     {
       "href": "/ara",
-      "text": "Aquatic Rhythm Alignment →"
+      "text": "Framework ARA →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

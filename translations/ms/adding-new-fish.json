@@ -2,111 +2,112 @@
   "_meta": {
     "slug": "adding-new-fish",
     "lang": "ms",
-    "sourceFile": "articles/adding-new-fish.html"
+    "sourceFile": "articles/adding-new-fish.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Adding New Fish — Aquatic Rhythm",
-    "description": "Every new fish disrupts a tank that was stable. Reading that disruption — rather than trying to prevent it entirely — is the aligned keeper's approach.",
-    "ogTitle": "Adding New Fish — Aquatic Rhythm",
-    "ogDescription": "Every new fish disrupts a tank that was stable. Reading that disruption — rather than trying to prevent it entirely — is the aligned keeper's approach."
+    "title": "Menambah Ikan Baru — Tingkap Gangguan — Aquatic Rhythm",
+    "description": "Dua minggu pertama adalah gangguan. Itu normal. ARA menerangkan kenapa menambah ikan baru sentiasa mengganggu tank yang stabil — dan cara membaca apa yang sedang berlaku.",
+    "ogTitle": "Menambah Ikan Baru — Tingkap Gangguan",
+    "ogDescription": "Dua minggu pertama adalah gangguan. Itu normal. Ketahui cara membaca tingkap gangguan dan bila perlu bertindak."
   },
   "intro": {
-    "eyebrow": "All levels",
-    "titleHtml": "Adding New Fish<br><em>The Disruption Window</em>",
-    "subtitle": "The first two weeks are a disruption. That is normal.",
+    "eyebrow": "Bacaan · Livestock Rhythm",
+    "titleHtml": "Menambah Ikan Baru —<br><em>Tingkap Gangguan</em>",
+    "subtitle": "Dua minggu pertama adalah gangguan. Itu normal.",
     "texts": [
-      "You added the new fish properly — drip acclimation, matched temperature, the bag floated for 20 minutes. But three days later the existing fish look stressed, one is hiding who never used to hide, and the new arrivals aren't eating. You did everything right. The disruption happened anyway.",
-      "This guide explains why adding new fish always disrupts a stable tank, what the two-week disruption window looks like across all five rhythms, and how to read what's happening — rather than rushing to fix what doesn't need fixing."
+      "Anda dah masukkan ikan baru dengan betul — drip acclimation, suhu dipadankan, beg terapung 20 minit. Tapi tiga hari kemudian ikan yang sedia ada nampak tertekan, satu yang tak pernah bersembunyi tiba-tiba bersembunyi, dan ikan baru tidak makan. Anda dah buat semua dengan betul. Gangguan berlaku juga.",
+      "Panduan ini menerangkan kenapa menambah ikan baru sentiasa mengganggu tank yang stabil, apa tingkap gangguan dua minggu kelihatan seperti merentasi semua lima ritma, dan cara membaca apa yang berlaku — daripada tergesa nak betulkan apa yang tak perlu diperbaiki."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "~7 min",
-    "metaLevel": "All levels",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "Why every addition is a disruption",
-      "titleHtml": "Why every addition <em>is a disruption</em>",
+      "tag": "Kenapa setiap pertambahan adalah gangguan",
+      "titleHtml": "Kenapa setiap pertambahan<br><em>adalah gangguan.</em>",
       "body": [
-        "A stable aquarium is a negotiated equilibrium. The fish have established territories, feeding hierarchies, and social patterns. The bacterial colony in the filter is sized to the current bioload. The water chemistry reflects the balance between what the tank produces and what the maintenance rhythm removes.",
-        "When new fish arrive, all of this is disrupted simultaneously. The bacterial colony faces a higher bioload than it was sized for — new fish add waste before the bacteria can expand to process it, which means ammonia and nitrite may nudge upward for days or weeks. The existing fish perceive the new arrivals as intruders, triggering territorial and social responses that look like aggression, hiding, or colour changes. The new fish are stressed from transport, unfamiliar water chemistry, and an unfamiliar social hierarchy — which suppresses their immune response during exactly the period they most need it intact.",
-        "None of this is a problem. It is a disruption — a temporary state that a healthy tank with aligned keeper rhythm passes through. The disruption window is not a signal to act. It is a signal to watch."
+        "Akuarium yang stabil adalah keseimbangan yang dirundingkan. Ikan telah menubuhkan wilayah, hierarki suapan, dan corak sosial. Koloni bakteria dalam filter disaizkan untuk bioload semasa. Kimia air mencerminkan keseimbangan antara apa yang tank hasilkan dan apa yang ritma penyelenggaraan buang.",
+        "Bila ikan baru tiba, semua ini terganggu serentak. Koloni bakteria menghadapi bioload yang lebih tinggi daripada yang ia disaizkan — ikan baru menambah sisa sebelum bakteria boleh berkembang untuk memprosesnya, bermakna ammonia dan nitrite mungkin naik sedikit selama beberapa hari atau minggu. Ikan yang sedia ada menganggap ikan baru sebagai penceroboh, mencetuskan tindak balas wilayah dan sosial yang kelihatan seperti aggression, bersembunyi, atau perubahan warna. Ikan baru tertekan dari pengangkutan, kimia air yang asing, dan hierarki sosial yang asing — yang menekan tindak balas imun mereka tepat pada masa mereka paling memerlukannya.",
+        "Tiada satu pun daripada ini masalah. Ia adalah gangguan — keadaan sementara yang tank sihat dengan keeper rhythm yang selari lalui. Tingkap gangguan bukan isyarat untuk bertindak. Ia adalah isyarat untuk perhatikan."
       ],
-      "pullQuote": "\"A disruption is not a crisis. It is the tank reorganising around new information. The aligned response is observation — not intervention.\"",
+      "pullQuote": "Gangguan bukan krisis. Ia adalah tank yang menyusun semula dirinya mengikut maklumat baru. Response yang selari adalah pemerhatian — bukan intervensi.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Quarantine: what it actually protects"
+      "nextBtn": "Quarantine: apa yang sebenarnya ia lindungi"
     },
     {
       "id": "mod-2",
-      "tag": "Quarantine: what it actually protects",
-      "titleHtml": "Quarantine: <em>what it actually protects</em>",
+      "tag": "Quarantine: apa yang sebenarnya ia lindungi",
+      "titleHtml": "Quarantine:<br><em>apa yang sebenarnya ia lindungi.</em>",
       "body": [
-        "Quarantine is often described as protecting existing fish from disease brought by new arrivals. That is true, and it is the practical reason to maintain a quarantine tank. But quarantine also protects the new fish. A fish introduced directly into an established community tank is navigating a new social hierarchy, unfamiliar water parameters, and potential territorial aggression while simultaneously stressed from transport. If that fish is carrying a low-level infection — ich, bacterial infection, internal parasites — the combination of stressors may trigger an outbreak in the new fish and then expose existing fish whose immune function is suppressed by the territorial disruption.",
-        "A two-week quarantine does three things: it allows the new fish to recover from transport stress in a calm, uncontested environment; it gives time for any carried disease to manifest where it can be treated without affecting the display tank; and it allows the keeper to observe the new fish's behaviour, appetite, and colouration at baseline before introducing them to the social complexity of the main tank.",
-        "A quarantine tank does not need to be elaborate — a bare 20–40L tank with a cycled sponge filter, a heater, and a simple hide is sufficient."
+        "Quarantine selalunya digambarkan sebagai melindungi ikan yang sedia ada daripada penyakit yang dibawa oleh ikan baru. Itu betul, dan ia adalah sebab praktikal untuk mengekalkan tank quarantine. Tapi quarantine juga melindungi ikan baru. Ikan yang dimasukkan terus ke dalam tank komuniti yang telah mantap sedang mengemudi hierarki sosial baru, parameter air yang asing, dan kemungkinan aggression wilayah sambil tertekan dari pengangkutan. Kalau ikan itu membawa jangkitan tahap rendah — ich, jangkitan bakteria, parasit dalaman — kombinasi stressor mungkin mencetuskan wabak dalam ikan baru dan kemudian mendedahkan ikan yang sedia ada yang fungsi imunnya tertekan oleh gangguan wilayah.",
+        "Quarantine dua minggu melakukan tiga perkara: ia membenarkan ikan baru pulih dari tekanan pengangkutan dalam persekitaran yang tenang dan tidak dicabar; ia memberi masa untuk sebarang penyakit yang dibawa untuk nyata di mana ia boleh dirawat tanpa menjejaskan tank utama; dan ia membenarkan penjaga memerhatikan tingkah laku, selera makan, dan warna ikan baru pada baseline sebelum memperkenalkan mereka kepada kerumitan sosial tank utama.",
+        "Tank quarantine tidak perlu rumit — tank kosong 20–40L dengan sponge filter yang dah cycle, heater, dan tempat sembunyi ringkas adalah mencukupi."
       ],
       "pullQuote": null,
       "hintLabel": "ARA · Livestock Rhythm",
       "hintText": [
-        "In ARA, quarantine is not just disease prevention — it is a period of Livestock Rhythm reading. Watching a new fish eat, swim, and rest in an uncontested environment tells you what their baseline looks like. That baseline is what you compare against once they enter the display tank."
+        "Dalam ARA, quarantine bukan sekadar pencegahan penyakit — ia adalah tempoh pembacaan Livestock Rhythm. Memerhatikan ikan baru makan, berenang, dan berehat dalam persekitaran yang tidak dicabar memberitahu anda bagaimana baseline mereka kelihatan. Itulah baseline yang anda bandingkan sebaik sahaja mereka memasuki tank utama."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "Reading the two-week window"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membaca tingkap dua minggu"
     },
     {
       "id": "mod-3",
-      "tag": "Reading the two-week window",
-      "titleHtml": "Reading the <em>two-week window</em>",
+      "tag": "Membaca tingkap dua minggu",
+      "titleHtml": "Membaca<br><em>tingkap dua minggu.</em>",
       "body": [
-        "The two weeks after introduction are the disruption window — the period during which the tank is reorganising. What to expect and how to read it: territory negotiation looks like chasing, fin-spreading, and occasional nipping. In community fish without dedicated territories, this usually resolves within days. In cichlids or bettas, the negotiation is longer and more physical. Watch for sustained chasing (one fish unable to access food or rest), clamped fins that don't resolve, or hiding that continues beyond five to seven days — these are signs the social disruption is not resolving on its own.",
-        "Parameter drift during this window is expected. Test ammonia and nitrite for the first ten days after adding new fish — not because a crisis is likely, but because the bacterial colony is adjusting to a new load. A small ammonia reading (0.25 ppm) that clears within 24 hours is the colony catching up. A reading above 0.5 ppm that doesn't fall within 24 hours is the colony struggling and warrants a water change.",
-        "New fish not eating for the first two to three days is normal — they are stressed and orienting. Not eating past five to seven days warrants attention. Observe before acting. Most disruptions resolve without intervention if the keeper rhythm (feeding, water changes) remains consistent during the window."
+        "Dua minggu selepas pengenalan adalah tingkap gangguan — tempoh di mana tank sedang menyusun semula dirinya. Apa yang dijangka dan cara membacanya: rundingan wilayah kelihatan seperti kejar-mengejar, perkembangan sirip, dan kadang-kadang gigitan ringan. Dalam ikan komuniti tanpa wilayah khusus, ini biasanya selesai dalam beberapa hari. Dalam cichlid atau betta, rundingan lebih lama dan lebih fizikal. Perhatikan kejar-mengejar yang berterusan (satu ikan tidak dapat mengakses makanan atau berehat), sirip terkatup yang tidak pulih, atau bersembunyi yang berterusan lebih dari lima hingga tujuh hari — ini adalah tanda gangguan sosial tidak selesai sendiri.",
+        "Drift parameter semasa tingkap ini dijangka. Uji ammonia dan nitrite untuk sepuluh hari pertama selepas menambah ikan baru — bukan kerana krisis mungkin berlaku, tetapi kerana koloni bakteria sedang menyesuaikan diri dengan beban baru. Bacaan ammonia kecil (0.25 ppm) yang bersih dalam 24 jam adalah koloni yang mengejar. Bacaan melebihi 0.5 ppm yang tidak turun dalam 24 jam adalah koloni yang bergelut dan wajar dilakukan water change.",
+        "Ikan baru yang tidak makan untuk dua hingga tiga hari pertama adalah normal — mereka tertekan dan sedang berorientasi. Tidak makan lebih dari lima hingga tujuh hari perlu perhatian. Perhatikan sebelum bertindak. Kebanyakan gangguan selesai tanpa intervensi kalau keeper rhythm (suapan, water change) kekal konsisten semasa tingkap."
       ],
-      "pullQuote": "\"The disruption window asks one thing of the keeper: consistency. Don't change the feeding schedule, the lighting, the water change rhythm. Let the biology stabilise around what it already knows.\"",
+      "pullQuote": "Tingkap gangguan meminta satu perkara daripada penjaga: konsistensi. Jangan tukar jadual suapan, pencahayaan, ritma water change. Biar biologi stabil mengikut apa yang ia dah tahu.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "After the window"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Selepas tingkap"
     },
     {
       "id": "mod-4",
-      "tag": "After the window",
-      "titleHtml": "After the <em>window</em>",
+      "tag": "Selepas tingkap",
+      "titleHtml": "Selepas<br><em>tingkap.</em>",
       "body": [
-        "By the end of week two, a tank that was healthy before the addition should be returning to its baseline. Aggression decreases as territories are established or accepted. Feeding resumes normal patterns. Ammonia and nitrite return to zero. The new fish begin to show their resting colouration rather than the stress-muted tones of the first few days.",
-        "If the tank has not returned to baseline by three weeks, something in the disruption window was not a temporary reorganisation — it is a persistent condition. Sustained aggression at three weeks suggests an incompatibility that time won't resolve: the stocking configuration may need reconsideration. Ongoing ammonia at three weeks suggests the bacterial colony is not keeping up with the new load: either the tank is overstocked, or a filter issue needs attention. Continued not eating at three weeks is a disease signal, not a stress signal.",
-        "The two-week disruption window is a reading tool. It tells you what the tank can absorb, how the existing fish respond to change, and whether the new arrivals were genuinely compatible with the environment they entered. Tanks that pass through the window cleanly are telling you something useful about their resilience. Tanks that don't resolve within three weeks are telling you something equally useful about their limits."
+        "Menjelang akhir minggu kedua, tank yang sihat sebelum pertambahan sepatutnya kembali ke baseline-nya. Aggression berkurang apabila wilayah ditubuhkan atau diterima. Suapan kembali ke corak normal. Ammonia dan nitrite kembali ke sifar. Ikan baru mula menunjukkan warna rehat mereka berbanding warna yang redup kerana tekanan dalam beberapa hari pertama.",
+        "Kalau tank belum kembali ke baseline menjelang tiga minggu, sesuatu dalam tingkap gangguan bukan penyusunan semula sementara — ia adalah keadaan yang berterusan. Aggression yang berterusan pada tiga minggu menunjukkan ketidakserasian yang masa tidak akan selesaikan: konfigurasi stocking mungkin perlu dipertimbangkan semula. Ammonia yang berterusan pada tiga minggu menunjukkan koloni bakteria tidak dapat mengekalkan beban baru: sama ada tank overstocked, atau isu filter perlu diberi perhatian. Terus tidak makan pada tiga minggu adalah isyarat penyakit, bukan isyarat tekanan.",
+        "Tingkap gangguan dua minggu adalah alat pembacaan. Ia memberitahu anda apa yang tank boleh serap, bagaimana ikan yang sedia ada bertindak balas kepada perubahan, dan sama ada ikan baru benar-benar serasi dengan persekitaran yang mereka masuki. Tank yang lalui tingkap dengan bersih memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Tank yang tidak selesai dalam tiga minggu memberitahu anda sesuatu yang sama berguna tentang had mereka."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "My Fish Are Hiding →"
+      "text": "Ikan saya bersembunyi →"
     },
     {
       "href": "/articles/ich-keeps-coming-back",
-      "text": "Ich Keeps Coming Back →"
+      "text": "Ich terus kembali →"
     },
     {
       "href": "/articles/community-fish-tank",
-      "text": "Community Fish Tank →"
+      "text": "Tank komuniti →"
     },
     {
       "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }
