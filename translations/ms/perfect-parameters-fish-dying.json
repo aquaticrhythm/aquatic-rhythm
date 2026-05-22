@@ -2,106 +2,130 @@
   "_meta": {
     "slug": "perfect-parameters-fish-dying",
     "lang": "ms",
-    "sourceFile": "articles/perfect-parameters-fish-dying.html"
+    "sourceFile": "articles/perfect-parameters-fish-dying.html",
+    "status": "ready"
   },
   "head": {
-    "title": "My Fish Are Dying — But My Water Parameters Look Fine — Aquatic Rhythm",
-    "description": "Perfect ammonia, zero nitrite, reasonable nitrate — and fish still dying or struggling. What parameters don't measure, and how to find what is actually wrong.",
-    "ogTitle": "My Fish Are Dying — But My Water Parameters Look Fine — Aquatic Rhythm",
-    "ogDescription": "Perfect ammonia, zero nitrite, reasonable nitrate — and fish still dying or struggling. What parameters don't measure, and how to find what is actually wrong."
+    "title": "Parameter Ok Tapi Ikan Masih Mati — Aquatic Rhythm",
+    "description": "Ammonia sifar. Nitrite sifar. Tapi ikan masih dalam kesusahan. Panduan ini menerangkan apa yang test kit tidak ukur, cara membaca isyarat ikan, dan cara cari punca sebenar.",
+    "ogTitle": "Parameter Ok Tapi Ikan Masih Mati",
+    "ogDescription": "Test kit tunjuk sifar tapi ikan masih bergelut. Ketahui cara baca apa yang kit tidak nampak."
   },
   "intro": {
-    "eyebrow": "Practical",
-    "titleHtml": "My Fish Are Dying —<br><em>But My Water Parameters Look Fine</em>",
-    "subtitle": "A test kit measures one layer of the system. Your fish are reading all of them.",
+    "eyebrow": "Bacaan · Praktikal",
+    "titleHtml": "Parameter Ok<br><em>Tapi Ikan Masih Mati</em>",
+    "subtitle": "Test kit bagi jawapan yang anda nak dengar. Ikan bagi jawapan yang sebenar.",
     "texts": [
-      "Ammonia at zero. Nitrite at zero. Nitrate at a manageable level. The numbers look right — and yet something is clearly wrong. Fish are fading, hiding, not eating, or dying with no obvious cause.",
-      "This guide covers what a test kit actually measures, what it misses entirely, how to read the signals your fish are already giving you, and how to find the one thing that is most likely driving what you are seeing."
+      "Ammonia sifar. Nitrite sifar. Nitrate dalam had yang boleh diterima. Nombor semua ok — tapi ada sesuatu yang jelas salah. Ikan pudar, bersembunyi, tidak makan, atau mati tanpa sebab yang nampak.",
+      "Panduan ini menerangkan apa yang test kit sebenarnya ukur, apa yang ia terlepas sepenuhnya, cara membaca isyarat yang ikan dah bagi, dan cara cari satu perkara yang paling mungkin menjadi punca apa yang anda lihat."
     ],
-    "metaModules": "Practical",
-    "metaTime": "4 modules",
-    "metaLevel": "~7 min",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~8 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "The limits of the test kit",
-      "titleHtml": "Your test kit is right.<br><em>And it is also incomplete.</em>",
+      "tag": "Had test kit",
+      "titleHtml": "Test kit anda betul.<br><em>Dan ia juga tidak lengkap.</em>",
       "body": [
-        "A water test that shows ammonia at zero, nitrite at zero, and nitrate at a manageable level is a good sign. It means the biological cycle is running. But it is measuring one specific layer of the system — the nitrogen cycle layer. It says nothing about several other things that fish experience constantly.",
-        "Understanding what a standard test kit does not measure is not about finding more things to worry about. It is about knowing where to look when the numbers say one thing and your fish say another."
+        "Test air yang tunjuk ammonia sifar, nitrite sifar, dan nitrate dalam had yang boleh diuruskan adalah tanda baik. Ia bermakna nitrogen cycle sedang berjalan. Tapi ia mengukur satu lapisan spesifik sistem sahaja — lapisan nitrogen cycle. Ia tidak bercerita langsung tentang beberapa perkara lain yang ikan alami setiap hari.",
+        "Memahami apa yang test kit standard tidak ukur bukan tentang mencari lebih banyak perkara untuk dibimbangkan. Ia tentang tahu ke mana nak pandang bila nombor kata satu perkara dan ikan kata perkara lain.",
+        "<strong>Kestabilan suhu.</strong> Heater yang berayun 2–3°C sepanjang hari tidak menyediakan persekitaran yang stabil. Ikan dalam persekitaran haba yang berfluktuasi mengalami tekanan kronik — walaupun purata suhu adalah 'betul.' Test kit tidak nampak satu pun daripada ini.",
+        "<strong>Beban organik terlarut.</strong> Makanan yang tidak dimakan, bahan tumbuhan yang reput, invertebrat yang mati — ini menghasilkan sebatian yang tidak nampak dalam test ammonia sehingga dah terurai. Tank boleh baca bersih dalam kit sambil membawa beban organik tersembunyi yang signifikan.",
+        "<strong>Oksigen terlarut.</strong> Test kit standard tidak ukur dissolved oxygen. Tank yang terlalu panas dengan pergerakan permukaan yang lemah boleh mempunyai ammonia sifar tapi kekurangan oksigen — ikan tercungap-cungap bukan kerana kualiti air tetapi kerana kekurangan gas yang mereka perlukan.",
+        "<strong>Drift pH.</strong> pH boleh drift perlahan-lahan tanpa kelihatan mencurigakan dalam mana-mana satu bacaan. Ikan yang disesuaikan dengan pH 7.0 dalam kedai dan dimasukkan ke tank dengan pH 7.6 mengalami tekanan kimia yang tidak akan nampak dalam ujian ammonia.",
+        "<strong>Sisa ubat atau klorin.</strong> Dechlorinator yang tidak mencukupi semasa water change, atau sisa ubat dari rawatan sebelumnya, boleh menekan sistem imun ikan secara kronik tanpa meninggalkan kesan dalam mana-mana bacaan standard.",
+        "<strong>Ketidakpadanan spesies dengan keadaan air.</strong> Ikan dari air lembut dan berasid dalam tank keras dan beralkali mengalami tekanan kronik yang tidak nampak dalam test kit. Semak GH dan KH berbanding keperluan spesies yang anda pelihara."
       ],
-      "pullQuote": "Parameters measure the water at the moment you test it. Your fish are measuring the water all day, every day. Those are different things.",
+      "pullQuote": "Parameter mengukur air pada masa anda uji. Ikan anda mengukur air sepanjang hari, setiap masa. Itulah dua perkara yang berbeza.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "What fish show before tests do"
+      "nextBtn": "Ikan lebih awal dari mana-mana test kit"
     },
     {
       "id": "mod-2",
-      "tag": "Reading the Livestock Rhythm",
-      "titleHtml": "Fish behaviour is earlier<br><em>than any test kit.</em>",
+      "tag": "Membaca Livestock Rhythm",
+      "titleHtml": "Tingkah laku ikan lebih awal<br><em>dari mana-mana test kit.</em>",
       "body": [
-        "In Aquatic Rhythm Alignment, fish behavior is called the Livestock Rhythm — the ongoing pattern of how fish move, feed, position themselves, and interact. This rhythm is the most sensitive instrument in the tank. Fish respond to changes in their environment continuously, in real time, at a resolution no instrument can match.",
-        "Learning to read the Livestock Rhythm means knowing each fish's baseline well enough that a departure from it is visible before it becomes a crisis. These departures often appear days or weeks before any water parameter shifts."
+        "Dalam Aquatic Rhythm Alignment, tingkah laku ikan dipanggil Livestock Rhythm — corak berterusan cara ikan bergerak, makan, meletakkan diri, dan berinteraksi. Ritma ini adalah instrumen paling sensitif dalam tank. Ikan bertindak balas kepada perubahan dalam persekitaran mereka secara berterusan, dalam masa nyata, pada resolusi yang tidak dapat ditandingi oleh mana-mana alat.",
+        "Belajar membaca Livestock Rhythm bermakna mengenali baseline setiap ikan cukup baik supaya penyelewengan daripadanya nampak sebelum ia menjadi krisis. Penyelewengan ini selalunya muncul beberapa hari atau minggu sebelum sebarang parameter air berubah.",
+        "<strong>Kurang semangat makan.</strong> Selalunya tanda pertama. Ikan yang biasanya datang ke cermin dan kini duduk di belakang sedang berkomunikasi sesuatu. Ini berlaku sebelum sebarang perubahan parameter — ia adalah isyarat paling awal yang sistem bagi.",
+        "<strong>Pernafasan di permukaan atau pergerakan insang meningkat.</strong> Ini menunjukkan oksigen terlarut rendah atau kerengsaan insang dari organik terlarut. Wajar diambil serius walaupun ujian nampak bersih.",
+        "<strong>Kedudukan luar biasa dalam lajur air.</strong> Ikan yang biasanya tinggal di tengah dan kini sentiasa di permukaan, atau spesies permukaan yang turun ke bawah, adalah membaca kegagalan. Ikan meletakkan diri di mana mereka paling selesa — perubahan dalam itu adalah maklumat.",
+        "<strong>Sirip terkatup.</strong> Ikan yang mengatup sirip mereka rapat ke badan dalam keadaan rehat sedang menandakan ketidakselesaan. Sirip yang dibuka penuh adalah tanda ikan yang selesa.",
+        "<strong>Kehilangan warna.</strong> Warna rehat setiap ikan adalah baseline-nya. Warna yang pudar semasa rehat — bukan semasa makan atau berinteraksi — menunjukkan tekanan kronik yang berterusan.",
+        "<strong>Pengasingan diri atau diasingkan.</strong> Ikan yang tiba-tiba bersendirian atau yang kumpulan mengelak daripadanya — kedua-dua corak adalah bacaan Livestock Rhythm yang perlu diberi perhatian."
       ],
-      "pullQuote": null,
+      "pullQuote": "Soalannya bukan 'ujian apa yang saya terlepas?' Ia adalah 'apa satu perkara yang, jika berubah, akan menjelaskan semua yang saya lihat?'",
       "hintLabel": "ARA · Livestock Rhythm",
       "hintText": [
-        "ARA treats fish behavior as a rhythm — an ongoing signal that reflects the state of the whole system. The skill is knowing each fish's baseline, so that departures from it are visible. A fish that has always been slightly shy is different from a fish that has recently become shy. The change is the signal."
+        "ARA memperlakukan tingkah laku ikan sebagai ritma — isyarat berterusan yang mencerminkan keadaan keseluruhan sistem. Kemahirannya adalah mengenali baseline setiap ikan, supaya penyelewengan daripadanya nampak. Ikan yang sentiasa pemalu adalah berbeza dari ikan yang baru-baru ini jadi pemalu. Perubahan itulah isyarat."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "Finding the one thing"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Mencari punca utama"
     },
     {
       "id": "mod-3",
-      "tag": "Looking for the one thing",
-      "titleHtml": "Almost every struggling tank<br><em>has one root.</em>",
+      "tag": "Mencari punca utama",
+      "titleHtml": "Hampir setiap tank yang bergelut<br><em>ada satu punca utama.</em>",
       "body": [
-        "When fish are declining despite clean parameters, it helps to think in terms of the dominant stressor — the single pressure that is placing the most strain on the system at any given time. Everything else in the tank is responding to that one thing. Identify it and the rest becomes clearer.",
-        "This is not always easy to see. Dominant stressors are often invisible to a test kit, operate slowly, and are easy to normalise once they've been present for a while. But they are almost always findable."
-      ],
-      "pullQuote": "The question is not \"what test am I missing?\" It is \"what is the one thing that, if it changed, would change everything else?\"",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "What to do now"
-    },
-    {
-      "id": "mod-4",
-      "tag": "What to do now",
-      "titleHtml": "Slow down.<br><em>Look at everything once.</em>",
-      "body": [
-        "The impulse when fish are struggling is to act — add something, change something, do something. But the most useful thing right now is a single, calm, systematic read of the whole system. Not a panic checklist. Not multiple interventions at once. One honest look."
+        "Bila ikan merosot walaupun parameter bersih, ia membantu untuk berfikir dari segi tekanan dominan — tekanan tunggal yang meletakkan paling banyak beban pada sistem pada masa itu. Semua yang lain dalam tank sedang bertindak balas kepada satu perkara itu. Kenalpasti ia dan selebihnya menjadi lebih jelas.",
+        "Ini tidak selalu mudah untuk dilihat. Tekanan dominan selalunya tidak kelihatan kepada test kit, beroperasi perlahan-lahan, dan mudah dinormalkan setelah hadir untuk sementara. Tapi ia hampir selalu boleh dijumpai.",
+        "<strong>Ketidakstabilan suhu.</strong> Semak heater dengan mengukur suhu 3–4 kali sepanjang hari — pagi, tengah hari, petang, malam. Banyak heater berayun lebih dari spesifikasi. Ayunan 3°C adalah signifikan. Kalau ketidakstabilan hadir, tukar kepada heater berkualiti.",
+        "<strong>Pengumpulan organik.</strong> Lihat apa yang sedang reput dalam tank — makanan yang tidak dimakan di belakang substrat, pokok yang mati, siput yang tertanam dalam gravel. Ini menghasilkan ammonia secara setempat sebelum kit menangkapnya. Pengisapan substrat yang lebih teliti dan pengurangan pemberian makan tangani ini secara langsung.",
+        "<strong>Aggression tersembunyi.</strong> Ikan yang tampak ok secara individu boleh mengalami tekanan kronik dari satu pengganggu yang beroperasi ketika anda tidak menonton. Memerhatikan tank sekali pada waktu malam dengan cahaya bilik rendah selalunya mendedahkan dinamik yang tidak nampak siang hari.",
+        "<strong>Aliran filter yang perlahan.</strong> Filter yang tersumbat sebahagiannya tidak lagi memproses ammonia dengan cekap. Ia juga mengurangkan agitasi air dan peredaran. Tank yang nampak ok dengan aliran yang lemah sedang beroperasi pada kapasiti yang dikurangkan.",
+        "<strong>Ketidakpadanan spesies dengan parameter air.</strong> Ikan dari air lembut dan berasid dalam tank keras mengalami tekanan kronik yang tidak nampak dalam ujian standard. Semak GH dan KH berbanding keperluan spesies."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang perlu dibuat sekarang"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Apa yang perlu dibuat sekarang",
+      "titleHtml": "Perlahan.<br><em>Tengok semua sekali gus.</em>",
+      "body": [
+        "Dorongan bila ikan bergelut adalah untuk bertindak — tambah sesuatu, tukar sesuatu, buat sesuatu. Tapi perkara paling berguna sekarang adalah satu pembacaan yang tenang dan sistematik keseluruhan sistem. Bukan senarai semak panik. Bukan pelbagai intervensi serentak. Satu pandangan yang jujur.",
+        "<strong>1. Log suhu.</strong> Ukur pada masa yang sama selama 3 hari berturut-turut — pagi adalah ideal. Catat julat. Kalau ia berbeza lebih dari 1.5°C sepanjang hari atau antara bacaan, siasat heater.",
+        "<strong>2. Pemerhatian tingkah laku.</strong> Luangkan 10 minit di tank bukan untuk mencari masalah — hanya memerhati. Catat siapa ada di mana, siapa makan, siapa berinteraksi dengan siapa. Bandingkan dengan apa yang normal dua minggu lalu. Perubahan itulah isyarat.",
+        "<strong>3. Imbasan fizikal.</strong> Lihat setiap sudut substrat untuk bahan yang reput. Periksa di sebalik hiasan. Lihat setiap ikan dengan teliti dari jarak dekat — cari sebarang perubahan yang tidak ada seminggu lalu: titik, lendir, insang merah, perut kembung.",
+        "<strong>4. Semak aliran filter.</strong> Letakkan tangan di outlet. Adakah aliran kuat seperti biasa? Kalau perlahan, filter media mungkin tersumbat dan kapasiti pemprosesan dikurangkan.",
+        "<strong>5. Semak prosedur water change.</strong> Adakah air yang dimasukkan semasa water change terakhir disamakan suhu? Adakah dechlorinator digunakan dengan betul? Ramai kes 'parameter ok tapi ikan mati' boleh dijejaki ke air yang tidak disamakan suhu atau yang tidak cukup dinyahklorin.",
+        "Tekanan dominan hampir selalu boleh dijumpai dengan pemerhatian sistematik seperti ini. Anda tidak perlukan lebih banyak ujian. Anda perlukan lebih banyak melihat."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "Fish hiding guide →"
+      "text": "Ikan saya bersembunyi →"
     },
     {
       "href": "/articles/cycled-tank-problems",
-      "text": "Cycled tank problems →"
+      "text": "Tank yang dah matang →"
+    },
+    {
+      "href": "/articles/fish-gasping-surface",
+      "text": "Ikan tercungap-cungap di permukaan →"
     },
     {
       "href": "/rhyssa",
-      "text": "Ask Rhyssa →"
-    },
-    {
-      "href": "/ara",
-      "text": "The ARA framework →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

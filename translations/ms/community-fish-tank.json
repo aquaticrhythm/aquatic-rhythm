@@ -2,126 +2,119 @@
   "_meta": {
     "slug": "community-fish-tank",
     "lang": "ms",
-    "sourceFile": "articles/community-fish-tank.html"
+    "sourceFile": "articles/community-fish-tank.html",
+    "status": "ready"
   },
   "head": {
-    "title": "Community Fish Tank — Who Actually Gets Along — Aquatic Rhythm",
-    "description": "Compatibility charts tell you which fish won't kill each other. They don't tell you which fish will stress each other slowly. A guide to reading community dynamics through the Livestock Rhythm.",
-    "ogTitle": "Community Fish Tank — Who Actually Gets Along — Aquatic Rhythm",
-    "ogDescription": "Compatibility charts tell you which fish won't kill each other. They don't tell you which fish will stress each other slowly."
+    "title": "Tank Komuniti — Lebih dari Carta Keserasian — Aquatic Rhythm",
+    "description": "Carta keserasian kata ia akan berjaya. Anda stock dengan teliti. Kini ada yang bersembunyi, ada yang nipis, dan dinamik tak kena. Panduan ini menerangkan apa yang carta tidak jawab.",
+    "ogTitle": "Tank Komuniti — Lebih dari Carta Keserasian",
+    "ogDescription": "Carta kata ok tapi tank komuniti tidak berfungsi. Ketahui cara baca ekologi sosial dan tekanan dominan."
   },
   "intro": {
-    "eyebrow": "Practical",
-    "titleHtml": "Community Fish Tank —<br><em>Who Actually Gets Along</em>",
-    "subtitle": "Compatibility is not just about species. It is about the rhythms they bring together.",
+    "eyebrow": "Bacaan · Livestock Rhythm",
+    "titleHtml": "Tank Komuniti —<br><em>Lebih dari Carta Keserasian</em>",
+    "subtitle": "Carta keserasian menjawab soalan minimum. Masalah dalam tank komuniti selalunya bermula di luar had carta.",
     "texts": [
-      "The compatibility chart said it would work. You stocked the tank carefully. Now one fish is always hiding, another looks thinner than it should, and the tank feels tense in a way that is hard to name.",
-      "This guide explains why compatibility charts answer only the minimum question — and how reading the Livestock Rhythm across the whole community reveals what is actually driving the drift."
+      "Carta keserasian kata ia akan berjaya. Anda stock dengan teliti — spesies yang berbeza, lapisan yang berbeza, tidak ada yang dikenal sebagai agresif. Tapi kini ada ikan yang bersembunyi sepanjang hari, satu spesies nampak semakin nipis, dan ada satu yang nampak memang menguasai semua.",
+      "Panduan ini menerangkan kenapa carta keserasian hanya menjawab soalan paling asas, apa yang Livestock Rhythm dalam tank komuniti kelihatan seperti bila ia berfungsi, cara mencari tekanan dominan dalam sistem sosial, dan pendekatan yang selari untuk menambah spesies kepada komuniti yang sudah ada."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "~7 min",
-    "metaLevel": "Practical",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~8 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "Beyond the compatibility chart",
-      "titleHtml": "Beyond <em>the compatibility chart</em>",
+      "tag": "Melebihi carta keserasian",
+      "titleHtml": "Carta keserasian<br><em>menjawab satu soalan sahaja.</em>",
       "body": [
-        "Compatibility charts answer one question: will these fish attack each other? That is a useful minimum. But most community tank problems do not come from direct aggression — they come from chronic, low-level stress that accumulates when fish with different ecological needs share a space.",
-        "A fish from a fast-moving, oxygen-rich river is not compatible with a fish from a slow, heavily planted blackwater stream — not because they will fight, but because no single water parameter can satisfy both. A fish that is a mid-water open swimmer is not compatible with a fish that needs territory at the same level — not because they are listed as aggressive, but because one will spend energy claiming space the other also needs.",
-        "Compatibility charts miss this entirely. In ARA, compatibility is a Livestock Rhythm question: when you add these species together, do their combined rhythms — their ecological needs, social patterns, activity levels, and space requirements — produce a system that can hold together? Or does combining them create a background level of stress that slowly suppresses every fish in the tank?"
+        "Carta keserasian menjawab satu soalan: adakah ikan-ikan ini akan menyerang antara satu sama lain? Itu minimum yang berguna. Tapi kebanyakan masalah tank komuniti tidak datang dari aggression langsung — ia datang dari tekanan kronik, tahap rendah yang terkumpul bila ikan dengan keperluan ekologi yang berbeza berkongsi ruang.",
+        "Ikan dari sungai yang bergerak cepat dan kaya oksigen tidak serasi dengan ikan dari kolam yang perlahan dan ditanam lebat — walaupun carta kata kedua-duanya 'aman.' Ikan dari air yang berasid dan lembut mengalami tekanan kimia kronik dalam tank keras, walaupun tiada yang menyerang yang lain. Carta tidak menjawab ini.",
+        "Kebanyakan masalah tank komuniti adalah bukan tentang keserasian spesies — ia tentang ketidakpadanan antara keperluan ekologi spesies yang berbeza, dan sistem sosial yang muncul apabila banyak spesies dengan hierarki berbeza berkongsi had yang sama."
       ],
-      "pullQuote": "\"The fish that are slowly declining in your community tank are not incompatible. They are chronically stressed by something the chart didn't mention.\"",
+      "pullQuote": "Ikan yang perlahan-lahan merosot dalam tank komuniti anda bukan tidak serasi. Mereka sedang diteka kronik oleh sesuatu yang carta tidak sebut.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Livestock Rhythm and social ecology"
+      "nextBtn": "Livestock Rhythm dan ekologi sosial"
     },
     {
       "id": "mod-2",
-      "tag": "Livestock Rhythm and social ecology",
-      "titleHtml": "Livestock Rhythm <em>and social ecology</em>",
+      "tag": "Livestock Rhythm dan ekologi sosial",
+      "titleHtml": "Livestock Rhythm dalam tank komuniti<br><em>adalah corak merentasi kumpulan.</em>",
       "body": [
-        "In ARA, the Livestock Rhythm in a community tank is not the state of any single fish — it is the pattern across the whole group. A community tank that is working looks like this: fish occupying their expected zones, showing consistent colour and appetite, no individual consistently hiding or being chased, spawning behaviour or courtship in fish that do it, gradual weight gain across the whole population.",
-        "A community tank that is drifting looks like this: one or two fish consistently thin despite eating, a species that was active now spending time near the bottom, increased hiding especially around feeding time, fin damage appearing gradually.",
-        "The social dynamics of a community tank are driven by a few key variables:",
-        "<strong>Territory and zone overlap:</strong> Fish that need the same physical space will compete for it even if they never visibly fight. Cichlids that are nominally \"peaceful\" will establish territories that stress other bottom-dwellers. Too many fish of the same mid-water species creates a crowd that none of them can escape.",
-        "<strong>Feeding competition:</strong> Fast fish eat before slow fish. Messy eaters cloud the water with particles that stress fish with sensitive gills. Surface feeders out-compete mid-column feeders. If one species always has round, full bellies and another always looks thin, the feeding dynamic is the dominant stressor.",
-        "<strong>Size disparity over time:</strong> Fish grow. A 2cm juvenile and a 6cm juvenile are compatible today. At 4cm and 12cm, one is a predator and one is prey. Stocking a community tank based on current size rather than adult size is one of the most common causes of community breakdown six months in.",
-        "<strong>Activity level mismatch:</strong> A highly active, fast-moving schooling fish (danios, barbs) creates a hyperactive environment that stresses slow, deliberate fish (bettas, gouramis, many catfish). The active fish aren't doing anything wrong — they are just creating an ecological pace that the slower fish find persistently aversive."
+        "Dalam ARA, Livestock Rhythm dalam tank komuniti bukan keadaan mana-mana satu ikan — ia adalah corak merentasi keseluruhan kumpulan. Tank komuniti yang berfungsi kelihatan seperti ini: ikan menduduki zon yang dijangkakan, menunjukkan warna dan selera makan yang konsisten, tiada individu yang sentiasa bersembunyi atau dikejar, tingkah laku berkawan atau bercinta dalam ikan yang melakukannya, pertambahan berat secara beransur merentasi keseluruhan populasi.",
+        "Tank komuniti yang tidak berfungsi menunjukkan corak yang berbeza: satu atau lebih ikan yang sentiasa bersembunyi atau mengelak kawasan tertentu, warna yang redup berbanding apa yang kelihatan dalam gambar spesies, ikan yang nipis walaupun anda melihat mereka makan, masa makan yang tidak menentu di mana ikan tertentu tidak dapat mengakses makanan.",
+        "<strong>Bersembunyi berterusan.</strong> Satu ikan yang bersembunyi sepanjang masa bukan tanda spesies yang pemalu — ia adalah tanda ikan yang tidak selamat dalam persekitaran semasa. Spesies yang sama dalam persekitaran yang betul akan menunjukkan diri sepanjang hari.",
+        "<strong>Ketipisan dalam ikan yang kelihatan makan.</strong> Ini adalah tanda tekanan kronik yang paling tidak disedari. Ikan yang hadir semasa makan tapi tidak menambah berat sedang menggunakan kalori untuk mengatasi tekanan, bukan untuk pertumbuhan.",
+        "<strong>Penguasaan waktu makan.</strong> Satu ikan atau satu spesies yang mendominasi pemberian makan menghalang yang lain dari mendapat cukup makanan. Ini tidak kelihatan sebagai aggression — kelihatan seperti ikan yang aktif dan 'lapar' semasa makan.",
+        "<strong>Warna berbeza dari gambar spesies.</strong> Warna ikan mencerminkan keadaan fisiologinya. Spesies yang kelihatan lebih pucat atau kurang terang dari gambar referens selalunya sedang bertindak balas kepada keadaan yang tidak optimum.",
+        "<strong>Ikan yang sentiasa dekat permukaan atau sudut.</strong> Ikan yang mengelak ruang tengah tank dan kekal berhampiran permukaan atau sudut adalah ikan yang aktif mengelak tekanan di tempat lain dalam tank."
       ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Livestock Rhythm",
-      "hintText": [
-        "Reading the Livestock Rhythm in a community tank means watching the group as a whole, not just checking that no fish is visibly sick. A community where some individuals thrive while others slowly decline is a community with an unresolved dominant stressor. Find which fish are thriving and which are declining — the pattern will usually point to what is misaligned."
-      ],
-      "prevBtn": "← Back",
-      "nextBtn": "The dominant stressor in social systems"
+      "pullQuote": "Seminggu pemerhatian mendedahkan lebih banyak tentang tank komuniti dari carta keserasian dan ujian air digabungkan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Tekanan dominan dalam sistem sosial"
     },
     {
       "id": "mod-3",
-      "tag": "The dominant stressor",
-      "titleHtml": "The dominant stressor <em>in social systems</em>",
+      "tag": "Tekanan dominan",
+      "titleHtml": "Tekanan dominan<br><em>dalam sistem sosial.</em>",
       "body": [
-        "In a community tank, the dominant stressor is usually one of three things: a species mismatch, a stocking density problem, or a single individual causing outsized stress. Finding it requires observation over time, not a single snapshot.",
-        "The ARA approach: for one week, observe the tank at the same time each day — ideally at feeding time and once at night. Note which fish are actively feeding, which are hanging back, which are occupying which zones, and whether any individual is consistently chasing others. At the end of the week, the pattern usually makes the dominant stressor visible.",
-        "Common findings:",
-        "A single male of an otherwise peaceful species is the only fish causing chasing — removing him resolves the whole tank.",
-        "One species is consistently outcompeting others at feeding — target feeding with a separate pipette resolves the issue without removing anyone.",
-        "A species listed as \"community safe\" is demonstrably not compatible with the specific other species in this tank — not because the chart is wrong, but because individual temperament and tank size change the dynamic.",
-        "The tank is overstocked — not catastrophically, but enough that there is no neutral territory for any fish to withdraw to."
+        "Dalam tank komuniti, tekanan dominan biasanya adalah salah satu dari tiga perkara: ketidakpadanan spesies, masalah ketumpatan stocking, atau satu individu yang menyebabkan tekanan yang luar biasa. Mencarinya memerlukan pemerhatian dari masa ke masa, bukan satu gambar sekilas.",
+        "Pendekatan ARA: selama satu minggu, perhatikan tank pada masa yang sama setiap hari — sebaik-baiknya semasa waktu makan dan sekali pada waktu malam. Catat ikan mana yang makan aktif, ikan mana yang bersembunyi semasa makan, siapa yang berada di mana dalam tank, dan sama ada ada ikan yang sentiasa mengelak kawasan atau individu tertentu.",
+        "<strong>Ketidakpadanan spesies.</strong> Ikan yang memerlukan parameter air berbeza — pH, kesusahan, suhu — mengalami tekanan kronik walaupun semuanya 'hidup.' Semak keperluan ekologi setiap spesies dan bandingkan dengan parameter sebenar tank. Ketidakpadanan yang jelas selalunya menjelaskan kenapa satu spesies tidak berkembang walaupun yang lain berkembang.",
+        "<strong>Ketumpatan stocking.</strong> Tank yang terlalu padat menghasilkan tekanan yang tersebar secara luas — bukan dari aggression, tetapi dari persaingan berterusan untuk ruang, makanan, dan wilayah. Ikan dalam tank yang terlalu padat kerap membakar lebih banyak tenaga untuk navigasi sosial berbanding mencari keselesaan.",
+        "<strong>Satu individu yang dominan.</strong> Satu ikan yang secara konsisten mengejar, memblok, atau mendominasi waktu makan boleh meletakkan tekanan pada keseluruhan komuniti walaupun aggression nampak ringan. Ukuran kerosakan yang dilakukan bukan keterukan serangan tunggal — ia frekuensi dan siapa yang tidak dapat berehat atau makan dengan normal.",
+        "<strong>Masalah ketumpatan itu tidak selalu nampak.</strong> Tank yang ok pada bulan pertama boleh menjadi terlalu padat apabila ikan membesar, atau apabila anda menambah beberapa ikan 'kecil' yang tumbuh lebih dari yang dijangka. Ketumpatan stocking adalah dinamik, bukan keputusan sekali sahaja.",
+        "<strong>Cara mengesahkan tekanan dominan.</strong> Buang ikan yang disyaki sebagai penyebab tekanan ke quarantine tank selama dua minggu. Kalau tingkah laku bersembunyi berkurangan dan ikan lain mula muncul lebih kerap, anda telah mengenal pasti punca. Ini lebih tepat dari membuat andaian berdasarkan pemerhatian sahaja."
       ],
-      "pullQuote": "\"Observation for one week reveals more about a community tank than a compatibility chart and a water test combined.\"",
+      "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Reading your community before adding to it"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membaca sebelum menambah"
     },
     {
       "id": "mod-4",
-      "tag": "Reading before adding",
-      "titleHtml": "Reading your community <em>before adding to it</em>",
+      "tag": "Membaca sebelum menambah",
+      "titleHtml": "Membaca komuniti anda<br><em>sebelum menambah kepadanya.</em>",
       "body": [
-        "The most important principle for a community tank is one that the hobby rarely states directly: do not add fish to a struggling community to solve the problem. A tank where some fish are hiding, where one species is thin, where aggression is present — this is a tank that needs less, not more.",
-        "The aligned approach to adding new species is to start from a stable community. When the existing inhabitants are all active, well-fed, showing good colour, and occupying their expected zones, the tank is ready to consider new additions. At that point, the question to ask before adding any new species is: what does this fish need that my tank already provides? — water temperature, flow rate, hiding spots, feeding zone, social group size (many species need to be kept in groups of 6+).",
-        "If the answer is \"everything I already have,\" the addition is likely aligned. If the answer is \"I would need to change the temperature, add more flow, and remove the aggressive individual,\" the addition is not aligned — no matter how beautiful the fish is.",
-        "The most successful community tanks are usually modest in species count and generous in space per fish. A 200-litre tank with four carefully selected species will almost always outperform a 200-litre tank with twelve species \"from the compatibility chart.\""
+        "Prinsip paling penting untuk tank komuniti adalah satu yang hobi jarang nyatakan secara langsung: jangan tambah ikan ke komuniti yang bergelut untuk selesaikan masalah. Tank di mana ada ikan yang bersembunyi, di mana satu spesies nipis, di mana aggression hadir — ini adalah tank yang perlukan kurang, bukan lebih.",
+        "Pendekatan yang selari untuk menambah spesies baru adalah bermula dari komuniti yang stabil. Bila komuniti sedia ada menunjukkan warna yang baik, nafsu makan yang konsisten, dan tiada ikan yang sentiasa tertekan, tank itu berada dalam keadaan untuk menyambut pertambahan.",
+        "Sebelum menambah, jawab tiga soalan: apakah keperluan ekologi spesies baru dan adakah ia sepadan dengan parameter tank semasa? Adakah spesies baru akan bersaing untuk lapisan yang sama, sumber yang sama, atau wilayah yang sama dengan spesies yang sedia ada? Adakah tank mempunyai kapasiti biologi untuk stocking tambahan — atau adakah filter sudah berjalan pada kapasiti penuh?",
+        "Komuniti yang lalui penambahan baru dengan bersih — kembali ke baseline dalam dua minggu, tiada ikan sedia ada yang merosot — memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Komuniti yang tidak pulih dalam tiga minggu memberitahu anda sama ada pertambahan adalah ketidakpadanan, atau bahawa komuniti asas tidak mempunyai kapasiti untuk sebarang tambahan."
       ],
       "pullQuote": null,
-      "hintLabel": "ARA · Capacity before Ambition",
-      "hintText": [
-        "A community tank has a capacity — a number of fish, a social density, a level of ecological complexity — that it can sustain in alignment. Exceeding that capacity produces chronic stress across the system. The aligned approach is to find the community that thrives within the tank's actual capacity, not to push toward the maximum the chart says is possible."
-      ],
-      "prevBtn": "← Back",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
-      "href": "/articles/community-stress-lab",
-      "text": "Community Stress Lab →"
+      "href": "/articles/adding-new-fish",
+      "text": "Menambah ikan baru →"
     },
     {
       "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "My Fish Are Hiding →"
+      "text": "Ikan saya bersembunyi →"
     },
     {
       "href": "/articles/perfect-parameters-fish-dying",
-      "text": "My Fish Are Dying But My Water Looks Fine →"
-    },
-    {
-      "href": "/ara",
-      "text": "Aquatic Rhythm Alignment →"
+      "text": "Parameter ok tapi ikan mati →"
     },
     {
       "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }
