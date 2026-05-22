@@ -2,111 +2,111 @@
   "_meta": {
     "slug": "aquarium-not-a-project",
     "lang": "ms",
-    "sourceFile": "articles/aquarium-not-a-project.html"
+    "sourceFile": "articles/aquarium-not-a-project.html",
+    "status": "ready"
   },
   "head": {
-    "title": "The Aquarium Is Not a Project — Aquatic Rhythm",
-    "description": "Knowing when to stop improving is part of the practice. The difference between changes that serve the ecosystem and changes that serve the keeper's restlessness.",
-    "ogTitle": "The Aquarium Is Not a Project — Aquatic Rhythm",
-    "ogDescription": "Knowing when to stop improving is part of the practice. The difference between changes that serve the ecosystem and changes that serve the keeper's restlessness."
+    "title": "Akuarium Bukan Projek — Aquatic Rhythm",
+    "description": "Tahu bila nak berhenti memperbaiki adalah sebahagian daripada amalan. Dorongan untuk sentiasa mempertingkat tank boleh menjadi bentuk gangguan itu sendiri.",
+    "ogTitle": "Akuarium Bukan Projek",
+    "ogDescription": "Tank yang stabil tidak meminta banyak intervensi. Mengenali itu adalah kemahiran Keeper Rhythm."
   },
   "intro": {
-    "eyebrow": "Reflection",
-    "titleHtml": "The Aquarium<br><em>Is Not a Project</em>",
-    "subtitle": "Knowing when to stop improving is part of the practice.",
+    "eyebrow": "Bacaan · Renungan",
+    "titleHtml": "Akuarium<br><em>Bukan Projek</em>",
+    "subtitle": "Tahu bila nak berhenti memperbaiki adalah sebahagian daripada amalan.",
     "texts": [
-      "There is a particular kind of keeper who is never quite finished with their tank. Equipment gets upgraded before it fails. Fish get added before the existing community has settled. Decorations shift. Lighting profiles change. The tank is perpetually mid-revision — stable, but never rested.",
-      "This is not a character flaw. It is a natural consequence of caring. But it is worth examining, because a tank in genuine alignment asks for less intervention than most keepers give it — and the impulse to improve can itself be a form of disruption."
+      "Ada jenis penjaga yang tidak pernah betul-betul selesai dengan tank mereka. Peralatan diganti sebelum rosak. Ikan ditambah sebelum komuniti yang ada sempat stabil. Hiasan bergerak. Profil pencahayaan berubah. Tank sentiasa dalam keadaan separuh semakan — stabil, tapi tidak pernah berehat.",
+      "Ini bukan cacat watak. Ia adalah akibat semula jadi daripada mengambil berat. Tapi ia bernilai untuk diperiksa, kerana tank yang benar-benar sejajar memerlukan lebih sedikit intervensi dari yang kebanyakan penjaga berikan — dan dorongan untuk memperbaiki boleh menjadi satu bentuk gangguan itu sendiri.",
+      "Panduan ini menerangkan cara membezakan antara perubahan yang diperlukan dan perubahan yang didorong oleh kebimbangan penjaga, cara membaca isyarat bahawa tank sudah 'sampai,' dan cara mengenali bila membiarkan ia berehat adalah response yang paling selari yang ada."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "~8 min",
-    "metaLevel": "Reflection",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~8 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "The project mindset",
-      "titleHtml": "The <em>project mindset</em>",
+      "tag": "Pemikiran projek",
+      "titleHtml": "Projek ada destinasi.<br><em>Tank hidup tidak.</em>",
       "body": [
-        "A project has a destination. You gather materials, you build toward a vision, you complete it and move to the next thing. This frame works well for setting up a tank — cycling it, stocking it, establishing the hardscape. During those early phases, the keeper's active involvement is genuinely required. The tank is in flux and it needs guidance.",
-        "The project mindset becomes a liability when the tank has finished its early phase and entered genuine stability. A stable, cycled tank with established fish, functioning filtration, and consistent chemistry is not an unfinished project. It is a living system in balance. The keeper's role shifts from builder to observer — and that shift is harder to make than it sounds, because observation feels passive and building feels like care.",
-        "Many of the changes keepers make to established tanks are driven not by the tank's needs but by the keeper's restlessness. A new filter because the current one is \"old.\" A substrate swap because of something seen online. A new fish because the tank \"has room.\" These interventions are not always harmful, but they are worth examining before acting: is this for the tank, or for you?"
+        "Projek ada destinasi. Anda kumpul bahan, anda bina ke arah visi, anda siapkan dan beralih ke perkara seterusnya. Kerangka ini berfungsi dengan baik untuk setup tank — cycling, stocking, menetapkan hardscape. Semasa fasa awal itu, penglibatan aktif penjaga memang diperlukan. Tank dalam keadaan berubah dan ia memerlukan bimbingan.",
+        "Tapi bila tank matang — bila ikan sihat dan stabil, biologi berfungsi, pokok tumbuh — peranan penjaga berubah. Ia bukan lagi pengarah projek. Ia adalah pemerhati dan penjaga ritma. Cabaran adalah bahawa banyak penjaga meneruskan pemikiran projek melepasi fasa ini, kerana itulah cara mereka memulakan.",
+        "Pemikiran projek dalam tank yang stabil menghasilkan gangguan berterusan. Ikan baru sebelum komuniti sedia ada menetap. Penambahan pokok baru sebelum pertumbuhan semasa difahami. Perubahan substrat dalam tank yang sudah bekerja. Setiap perubahan itu mungkin baik secara individu — tapi digabungkan, ia mengekalkan tank dalam keadaan seolah-olah tidak pernah sampai."
       ],
-      "pullQuote": "\"A stable tank is not a waiting tank. It is an arrived tank. The work of maintenance is different from the work of completion — and recognising that difference is a Keeper Rhythm skill.\"",
+      "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "How improvement becomes disruption"
+      "nextBtn": "Bagaimana penambahbaikan menjadi gangguan"
     },
     {
       "id": "mod-2",
-      "tag": "How improvement becomes disruption",
-      "titleHtml": "How improvement <em>becomes disruption</em>",
+      "tag": "Bagaimana penambahbaikan menjadi gangguan",
+      "titleHtml": "Setiap perubahan kepada tank yang stabil<br><em>adalah gangguan.</em>",
       "body": [
-        "Every change to a stable tank is a perturbation. Some perturbations are necessary and managed — a scheduled water change, a filter media replacement in tank water, a slow temperature adjustment. These are maintenance rhythms that the tank has adapted around. The biological and chemical systems have incorporated them as predictable inputs.",
-        "Non-routine changes are different. A new fish introduces pathogens the existing livestock has no immunity to, and disrupts social dynamics that may have taken months to settle. A new filter, even a superior one, means cycling a new media colony from scratch — and during that period, biological filtration is compromised. A new substrate stirs anaerobic pockets, releases trapped gases, and suspends particles that shade plants and clog gills. A lighting change can trigger an algae bloom or suppress plants that had adapted to the previous spectrum.",
-        "None of these effects are catastrophic in isolation, but they compound. A keeper who is continuously improving a tank is continuously introducing perturbations — and a tank under chronic low-level perturbation cannot build the kind of deep alignment that makes it resilient. The fish are always adjusting. The bacteria are always re-establishing. The chemistry never quite stabilises."
+        "Setiap perubahan kepada tank yang stabil adalah gangguan. Sesetengah gangguan perlu dan terurus — water change yang dijadualkan, penggantian filter media dalam air tank, pelarasan suhu yang perlahan. Ini adalah ritma penyelenggaraan yang tank sudah menyesuaikan diri dengannya. Sistem biologi dan kimia telah memasukkannya sebagai input yang boleh diramalkan.",
+        "Gangguan bukan rutin adalah berbeza. Ikan baru membawa penyakit peringkat rendah yang berpotensi, menyusun semula hierarki sosial, menambah beban biologi. Perubahan pencahayaan yang besar mengganggu kitaran tumbuhan dan corak alga. Penggantian substrat, walaupun dengan niat untuk memperbaiki, boleh melepaskan sebatian yang terkumpul dan memberi tekanan kepada koloni bakteria. Setiap perubahan ini membawa tempoh penyesuaian di mana sistem membentuk semula dirinya.",
+        "Dalam tank yang stabil, tempoh penyesuaian yang berterusan bermakna sistem tidak pernah mencapai keseimbangan yang lebih dalam — keseimbangan yang dibangunkan dari masa ke masa apabila semua komponen hidup dalam tank menetap ke dalam corak yang sepadan. Tank yang sentiasa dalam keadaan gangguan kelihatan stabil dari luar tapi beroperasi pada kapasiti yang dikurangkan dari dalaman."
       ],
       "pullQuote": null,
-      "hintLabel": "ARA · Environmental + Biological Rhythm",
-      "hintText": [
-        "Frequent voluntary disruptions prevent the Environmental and Biological rhythms from deepening. A tank that has been stable for six months without intervention is qualitatively more resilient than one that has been \"optimised\" monthly. The biology needs uninterrupted time to mature."
-      ],
-      "prevBtn": "← Back",
-      "nextBtn": "Capacity before Ambition"
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Kapasiti sebelum ambisi"
     },
     {
       "id": "mod-3",
-      "tag": "Capacity before Ambition",
-      "titleHtml": "Capacity before <em>Ambition</em>",
+      "tag": "Kapasiti sebelum ambisi",
+      "titleHtml": "Soalan sebelum sebarang perubahan:<br><em>adakah sistem ini bersedia?</em>",
       "body": [
-        "One of the four principles of ARA is <strong>Capacity before Ambition</strong>. It means that the right question before any change is not \"is this a good idea in principle?\" but \"does this system currently have the capacity to absorb this change?\" A tank that is running at its biological and social limits — full stocking, established territories, mature plants at peak growth — has very little spare capacity. A change that might work well in an under-stocked, recently disrupted tank can destabilise one that was genuinely thriving.",
-        "Capacity is not only biological. It includes the keeper's available time and attention. An upgrade that requires two weeks of careful monitoring during a period when the keeper is busy travels, working long hours, or otherwise depleted is an upgrade without capacity. The tank will not wait for you to become less busy. It will respond to the disruption in your absence.",
-        "Ambition in fishkeeping is not inherently problematic. It is what drives keepers toward more complex and more beautiful tanks. But ambition that outpaces capacity — the tank's, the keeper's, or both — reliably produces the opposite of what it intends. More disruption, not less. More instability, not more beauty."
+        "Salah satu daripada empat prinsip ARA adalah Kapasiti sebelum Ambisi. Ia bermakna soalan yang betul sebelum sebarang perubahan bukan 'adakah ini idea yang baik secara prinsip?' tetapi 'adakah sistem ini mempunyai kapasiti untuk menyerap perubahan ini?'",
+        "Tank yang berjalan pada had biologinya dan sosialnya — stocking penuh, wilayah yang ditubuhkan, tumbuhan dewasa pada kapasiti maksimum — tidak mempunyai kapasiti berlebihan untuk pertambahan baru. Tambah ikan baru ke tank seperti itu dan anda bukan sekadar menambah ikan — anda sedang menguji semula semua keseimbangan yang dibina di sana.",
+        "Kapasiti sebelum Ambisi bukan pelarasan kepada ambisi anda. Ia hanya mengubah susunannya. Dahulu baca kapasiti semasa. Kemudian tanya apa yang sistem boleh absorb dengan selesa. Kemudian rancang ambisi berdasarkan jawapan itu — bukan berdasarkan visi yang anda miliki sebelum anda melihat apa yang tank sebenarnya ada."
       ],
-      "pullQuote": null,
+      "pullQuote": "Tank yang stabil bukan tank yang sedang menunggu. Ia adalah tank yang telah sampai. Kerja penyelenggaraan adalah berbeza dari kerja penyempurnaan — dan mengenali perbezaan itu adalah kemahiran Keeper Rhythm.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Knowing when the tank is enough"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Bila tank sudah cukup"
     },
     {
       "id": "mod-4",
-      "tag": "When the tank is already enough",
-      "titleHtml": "When the tank is <em>already enough</em>",
+      "tag": "Bila tank sudah cukup",
+      "titleHtml": "Tank memberitahu anda<br><em>bila ia sudah sampai.</em>",
       "body": [
-        "A tank tells you when it has arrived. The fish are visible, not hiding. They move through the full water column. Feeding response is confident and immediate. Parameters test consistently within range, week after week. Algae stays minor and manageable. Plants are growing, even slowly. Nothing is asking for attention — not because you've stopped watching, but because there is nothing to notice.",
-        "This is what alignment looks like from the outside. It is quiet. It is unremarkable. And for keepers trained to equate activity with care, it can feel like neglect. The instinct is to do something — add a fish, move a plant, upgrade the lighting. But a tank in this state is not asking for improvement. It is asking to be allowed to continue.",
-        "The practice of noticing this — recognising the difference between a tank that needs intervention and a tank that is simply being watched — is a skill. It develops the same way observation does: slowly, with repetition, and only if you are looking for it. The aquarium is not a project to be completed. It is a rhythm to be maintained. And sometimes maintaining a rhythm means setting down the tools and letting the water be still."
+        "Tank memberitahu anda apabila ia sudah sampai. Ikan kelihatan, tidak bersembunyi. Mereka bergerak melalui keseluruhan lajur air. Tindak balas makan adalah yakin dan segera. Parameter ujian konsisten dalam julat, minggu demi minggu. Alga kekal kecil dan boleh diurus. Tumbuhan sedang tumbuh, walaupun perlahan. Tiada apa yang memerlukan perhatian — bukan kerana anda berhenti melihat, tetapi kerana tiada apa yang memanggil perhatian.",
+        "Keadaan ini bukan kemalasan. Ia adalah keberhasilan. Ia adalah apa yang penternakan ikan selari kelihatan apabila ia berfungsi — sistem yang telah mencapai keseimbangan yang boleh kekal sendiri dan tidak aktif memerlukan intervensi anda.",
+        "Kemahiran yang jarang diajar dalam hobi ini adalah kemahiran membiarkan tank berehat. Untuk melihat isyarat 'sudah sampai' dan mengenalinya sebagai sesuatu yang boleh anda tanggapi dengan kehadiran — bukan dengan pelan seterusnya. Untuk memahami bahawa penjaga terbaik untuk tank yang stabil adalah penjaga yang tahu bila untuk tidak bertindak."
       ],
       "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
-      "href": "/articles/ara-full-framework",
-      "text": "The ARA Framework →"
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "Rutin penyelenggaraan yang berfungsi →"
     },
     {
-      "href": "/articles/know-your-rhythm",
-      "text": "Know Your Rhythm →"
+      "href": "/articles/adding-new-fish",
+      "text": "Menambah ikan baru →"
     },
     {
-      "href": "/articles/when-hobby-stops-feeling-good",
-      "text": "When the Hobby Stops Feeling Good →"
+      "href": "/articles/caring-without-guilt",
+      "text": "Menjaga tanpa rasa bersalah →"
     },
     {
-      "href": "/rhyssa",
-      "text": "Rhyssa →"
+      "href": "/ara",
+      "text": "Framework ARA →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }

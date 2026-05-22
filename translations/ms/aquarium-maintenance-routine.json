@@ -2,116 +2,122 @@
   "_meta": {
     "slug": "aquarium-maintenance-routine",
     "lang": "ms",
-    "sourceFile": "articles/aquarium-maintenance-routine.html"
+    "sourceFile": "articles/aquarium-maintenance-routine.html",
+    "status": "ready"
   },
   "head": {
-    "title": "How to Build an Aquarium Maintenance Routine That Actually Fits Your Life — Aquatic Rhythm",
-    "description": "Most aquarium maintenance schedules are built for an ideal keeper. This guide helps you build one for the keeper you actually are — using your real rhythm, not the one you intend to have.",
-    "ogTitle": "How to Build an Aquarium Maintenance Routine That Actually Fits Your Life — Aquatic Rhythm",
-    "ogDescription": "Most aquarium maintenance schedules are built for an ideal keeper. This guide helps you build one for the keeper you actually are — using your real rhythm, not the one you intend to have."
+    "title": "Rutin Penyelenggaraan Akuarium yang Benar-Benar Berfungsi — Aquatic Rhythm",
+    "description": "Kebanyakan jadual penyelenggaraan dibina untuk penjaga yang ideal. Panduan ini membantu anda bina rutin untuk penjaga yang anda sebenarnya — menggunakan Keeper Rhythm yang anda ada, bukan yang anda inginkan.",
+    "ogTitle": "Rutin Penyelenggaraan Akuarium yang Benar-Benar Berfungsi",
+    "ogDescription": "Rutin yang anda boleh kekalkan lebih berharga dari rutin yang optimal di atas kertas."
   },
   "intro": {
-    "eyebrow": "Practical",
-    "titleHtml": "How to Build an Aquarium<br><em>Maintenance Routine</em><br>That Actually Fits Your Life",
-    "subtitle": "The routine that works is the one you can sustain. Not the one that looks good on paper.",
+    "eyebrow": "Bacaan · Praktikal",
+    "titleHtml": "Rutin Penyelenggaraan<br><em>yang Benar-Benar Berfungsi</em>",
+    "subtitle": "Rutin yang anda boleh kekalkan lebih berharga dari rutin yang optimal di atas kertas.",
     "texts": [
-      "Most aquarium maintenance schedules are built for an ideal keeper — one with the same amount of time every week, reliably, for years. That keeper is rare.",
-      "This guide helps you build a routine for the keeper you actually are, using your real keeper rhythm rather than the one you intend to have."
+      "Kebanyakan panduan akuarium menyertakan jadual penyelenggaraan. Ia biasanya kelihatan seperti ini: water change setiap minggu, pengisapan gravel setiap dua minggu, cuci filter setiap bulan, bersih cermin mengikut keperluan. Secara teknikal ia nasihat yang baik — untuk penjaga yang mempunyai masa yang sama setiap minggu, secara konsisten, selama bertahun-tahun. Penjaga seperti itu adalah jarang.",
+      "Panduan ini membantu anda membina rutin untuk penjaga yang anda sebenarnya, menggunakan Keeper Rhythm yang sebenar berbanding yang anda niatkan untuk ada.",
+      "Hasilnya bukan jadual yang lebih pendek. Ia adalah pemahaman tentang bagaimana menyesuaikan ritma penjagaan yang anda ada dengan keperluan sistem yang anda pelihara."
     ],
-    "metaModules": "Practical",
-    "metaTime": "4 modules",
-    "metaLevel": "~7 min",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "Why one-size schedules fail",
-      "titleHtml": "The weekly checklist<br><em>was not written for your life.</em>",
+      "tag": "Kenapa jadual satu-saiz gagal",
+      "titleHtml": "Jadual yang sempurna<br><em>untuk penjaga yang jarang wujud.</em>",
       "body": [
-        "Most aquarium guides include a maintenance schedule. It typically looks something like this: water change every week, gravel vacuuming every other week, filter rinse monthly, glass cleaning as needed. It is technically sound advice — for a keeper who has the same amount of time every week, reliably, for years.",
-        "That keeper is rare.",
-        "For most people, the rhythm of life — work, travel, illness, family demands, irregular energy — means that \"weekly\" is an aspiration, not a reliable commitment. The tank gets what is available. Some weeks, that is more than scheduled. Some weeks, it is nothing.",
-        "The problem is not the gap. The problem is that most maintenance advice was designed without accounting for the gap. When you follow a weekly schedule for three weeks and then miss two in a row, the advice gives you no framework for what to do next — how large to make the catch-up change, how to read whether the system absorbed the gap, what to do differently next time.",
-        "A maintenance routine built on the keeper's actual keeper rhythm is more useful than one built on an ideal. It is also more stable for the tank — because a modest consistent pattern is almost always healthier than intensive irregular intervention."
+        "Kebanyakan jadual penyelenggaraan akuarium dibina untuk penjaga yang ideal — satu yang mempunyai masa yang sama setiap minggu, tanpa kecemasan, tanpa minggu yang terlampau sibuk. Penjaga itu jarang wujud dalam dunia nyata.",
+        "Masalahnya bukan jadual itu salah secara teknikal. Masalahnya adalah ia membina rasa bersalah — dan rasa bersalah menghasilkan corak yang lebih teruk dari sekadar tidak mengikuti jadual. Ia menghasilkan sesi catch-up di mana anda buat terlalu banyak sekaligus: water change besar, cuci filter, gravel vac semua dalam satu hari, mengikuti tempoh yang tersasar. Gangguan daripada sesi seperti itu selalunya lebih memudaratkan daripada kelonggaran yang sederhana yang mendahuluinya.",
+        "Tank yang menerima water change 20% setiap sepuluh hari adalah lebih stabil dari yang menerima perubahan 40% setiap tiga minggu apabila penjaga sempat. Kesinambungan yang padu lebih penting dari volum.",
+        "Soalan yang betul bukan 'jadual apa yang disyorkan?' Ia adalah 'jadual apa yang saya sebenarnya akan ikuti — berdasarkan apa yang saya benar-benar lakukan, bukan apa yang saya ingin lakukan?'",
+        "Menjawab soalan kedua dengan jujur adalah titik permulaan rutin yang akan berfungsi."
       ],
-      "pullQuote": "A tank that receives 20% water changes every ten days is more stable than one that receives 40% changes every three weeks when the keeper finds time. Coherent continuity matters more than volume.",
-      "hintLabel": "ARA — Rhythm before Intensity",
-      "hintText": [
-        "One of ARA's four principles is Rhythm before Intensity — the observation that small, regular actions done with coherent continuity produce more stable ecosystems than periodic large efforts. This is not just true for tanks. It is true for most living systems."
-      ],
+      "pullQuote": "Tank yang menerima penjagaan konsisten yang kurang lebih stabil dari tank yang menerima penjagaan intensif yang tidak menentu. Kesinambungan mengatasi volum.",
+      "hintLabel": null,
+      "hintText": null,
       "prevBtn": "← Intro",
-      "nextBtn": "Reading your keeper rhythm"
+      "nextBtn": "Membaca Keeper Rhythm anda yang sebenar"
     },
     {
       "id": "mod-2",
-      "tag": "Reading your actual keeper rhythm",
-      "titleHtml": "You already have a rhythm.<br><em>The question is whether your tank fits it.</em>",
+      "tag": "Membaca Keeper Rhythm anda yang sebenar",
+      "titleHtml": "Empat Keeper Rhythm<br><em>dan apa yang masing-masing perlukan.</em>",
       "body": [
-        "The four ARA keeper rhythm types are not personality categories. They are honest descriptions of how people actually engage with their tanks over time. Most keepers recognise themselves in one of them fairly quickly — and recognising the pattern is the first step toward designing a routine around it.",
-        "<strong>Episodic care.</strong> High engagement in bursts, with longer gaps between. You are highly attentive when something needs attention or when you have the time and energy. Then life takes over and the tank runs itself for a while. Common pattern: intensive sessions of water changes, glass cleaning, and observation followed by two to three week gaps.",
-        "<strong>Irregular care.</strong> Maintenance happens, but not on a fixed schedule. You know the tank needs a water change — and you do it when you can, not when the calendar says to. The intent is consistent; the timing is not.",
-        "<strong>Incremental care.</strong> Small, frequent actions. You enjoy spending time at the tank and do a little each day or every few days rather than larger sessions less often. You are more likely to top off evaporated water, spot-clean the glass, and check the temperature regularly than to do a monthly deep clean.",
-        "<strong>Low-engagement care.</strong> The tank runs mostly alone. You provide water changes, feeding, and basic observation, but intensive maintenance is rare. This is not neglect — it is a realistic assessment of what the hobby can ask of a particular life.",
-        "None of these are wrong. Each has a corresponding tank design that supports it. The misalignment between keeper rhythm and tank design is what produces the drift most keepers experience — not any individual missed session."
+        "ARA mengenal pasti empat corak yang menerangkan cara orang sebenarnya berinteraksi dengan tank mereka dari masa ke masa. Ini bukan kategori personaliti — ia adalah ritma penjagaan yang dibentuk oleh keadaan hidup. Kebanyakan penjaga mengenali diri mereka dalam salah satu dengan agak cepat — dan mengenali corak adalah langkah pertama untuk mereka bentuk rutin di sekitarnya.",
+        "<strong>Penjaga episodik.</strong> Penglibatan yang tinggi dalam kejutan, kemudian tempoh yang lebih tenang. Tank mendapat banyak perhatian selama satu atau dua minggu, kemudian beberapa minggu yang lebih kendur. Ini bukan kecuaian — ia adalah corak. Tank yang direka untuk jenis ini mempunyai stocking yang lebih ringan, penapis yang lebih besar dari yang diperlukan, dan lebih sedikit spesies yang memerlukan penjagaan yang tepat.",
+        "<strong>Penjaga yang konsisten.</strong> Penglibatan yang rendah dan boleh dipercayai — 15 minit setiap minggu, setiap minggu, tanpa pengecualian. Tank berkembang maju dengan jenis ini kerana kestabilan yang boleh diramalkan adalah perkara yang paling bermanfaat untuk ekologi tertutup. Risiko adalah menganggap konsistensi bermakna jadual lebih kerap secara automatik lebih baik. Ia tidak.",
+        "<strong>Penjaga intensif.</strong> Penglibatan yang tinggi dan kerap — uji air beberapa kali seminggu, perhatian harian, kepekaan kepada perubahan halus. Risiko jenis ini adalah over-correction: bertindak balas kepada isyarat sebelum trend jelas. Tank dalam tangan penjaga intensif selalunya mengalami lebih banyak perubahan dari yang biologi perlu.",
+        "<strong>Penjaga minimal.</strong> Perhatian yang sedikit tetapi deliberat — water change yang memang dilakukan, walaupun jarang. Tank yang direka untuk jenis ini adalah yang paling sederhana: beban rendah, penapisan kuat, keperluan yang mudah diingati. Kuncinya adalah kejujuran tentang berapa sedikit yang sebenarnya perlu berbanding berapa sedikit yang sebenarnya akan dilakukan.",
+        "Mengenali corak mana yang anda adalah bukan tentang hukuman diri. Ia tentang mereka bentuk sistem yang berfungsi untuk cara anda sebenarnya ada."
       ],
       "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Building your routine"
+      "hintLabel": "ARA · Keeper Rhythm",
+      "hintText": [
+        "Keeper Rhythm dalam ARA adalah corak berterusan cara penjaga berinteraksi dengan tanknya — bukan niat, tetapi tindakan sebenar dari masa ke masa. Ia adalah salah satu daripada lima ritma yang ARA jejak, dan ia selalunya yang paling sukar untuk dibaca dengan jujur kerana ia memerlukan kita melihat tingkah laku sebenar, bukan yang kita cadangkan."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membangun kesinambungan yang sepadan"
     },
     {
       "id": "mod-3",
-      "tag": "Building coherent continuity, not intensity",
-      "titleHtml": "Match the routine to your rhythm.<br><em>Then build in the buffer.</em>",
+      "tag": "Membangun kesinambungan yang sepadan",
+      "titleHtml": "Tiga soalan jujur<br><em>sebelum membina rutin anda.</em>",
       "body": [
-        "Each keeper rhythm calls for a different approach. The goal in every case is the same: Capacity before Ambition. A routine you can actually sustain, designed around the gaps you will realistically have, is more valuable than the theoretically optimal schedule.",
-        "<strong>For episodic keepers.</strong> The goal is designing a tank that can absorb your gaps without crisis. This means keeping a lower bioload — fewer fish, smaller fish — so that less waste accumulates during the gaps you know will come. A larger tank relative to fish count provides more water volume and more buffering capacity. Strong biological filtration, established and never cleaned aggressively, does the steady work between your sessions. When you do have a session: a 20–25% water change, gravel vacuum, glass clean, and a parameter check. After a long gap, test the water before doing a large change — a sudden large water change in a tank that has been stable at elevated nitrate can stress fish more than a gradual reduction.",
-        "<strong>For irregular keepers.</strong> The goal is removing friction from the maintenance so it happens more easily when you do have time. Keep the water change equipment accessible and simple — a bucket and siphon that are always out, not stored away. Set a minimum that is achievable even on low-energy days: a 15% change with no vacuuming, just the water. The full routine is for when you have more time; the minimum is for when you do not. The minimum done regularly is more valuable than the full routine done occasionally.",
-        "<strong>For incremental keepers.</strong> The goal is structuring the small actions so they add up to a complete maintenance cycle over time. A practical pattern: check temperature and observe fish for five minutes on two days per week; top off evaporated water with dechlorinated water mid-week; do a 20% water change with a light gravel vacuum of accessible areas once a week; rinse filter media in tank water (never tap water) once a month. Each individual action is small. Together they constitute a complete care cycle.",
-        "<strong>For low-engagement keepers.</strong> The goal is automation and simplification wherever possible. A quality programmable heater eliminates temperature checks. A timer for lights eliminates photoperiod management. A canister filter over a hang-on often requires less frequent maintenance. Choosing hardier, less demanding species reduces the consequences of gaps. Test strips rather than liquid kits lower the friction of occasional water checks. The tank is designed to need less from you — and it functions well within that design."
+        "Tiga soalan bernilai untuk dijawab dengan jujur sebelum mereka bentuk mana-mana rutin:",
+        "Bila kali terakhir anda buat water change? Dan bila satu sebelum itu? Berapakah selang sebenar — bukan yang dimaksudkan?",
+        "Pernahkah anda buat sesi penyelenggaraan catch-up selepas jurang yang lebih panjang dari yang dirancang — dan kalau ya, berapa kerap ini berlaku? Adakah ia sekali sekala, atau ia adalah corak?",
+        "Semasa minggu yang sangat sibuk, apa yang anda paling mungkin tinggalkan? Apa yang anda paling mungkin lakukan walaupun semua yang lain tersasar? Jawapan kepada soalan ketiga biasanya mengandungi maklumat paling berguna — ia menunjukkan apa yang anda anggap sebagai minimum yang tidak boleh ditawar.",
+        "Untuk penjaga episodik: reka tank yang boleh menyerap jurang anda tanpa tekanan. Filter yang lebih besar, bioload yang lebih ringan, pokok yang tahan tanpa pemupukan kerap. Apabila penjagaan berlaku dalam ledakan, buat ia bermakna — tapi jangan reka sistem yang bergantung kepada tindakan konsisten yang anda tahu tidak akan berlaku.",
+        "Untuk penjaga intensif: bina perlindungan aktif terhadap over-correction. Tetapkan peraturan untuk diri sendiri: tidak lebih dari satu perubahan besar per minggu. Uji air — tapi tunggu tren tiga hari sebelum bertindak atas sebarang bacaan tunggal.",
+        "Untuk penjaga minimal: jadual yang anda ikuti secara konsisten — walaupun ia water change 20% setiap tiga minggu — lebih baik dari jadual ideal yang anda ikuti hanya sekali sebulan."
       ],
-      "pullQuote": "The routine that gets done is more valuable than the routine that is theoretically optimal. A 15% water change every ten days beats a 40% change whenever you can manage it.",
+      "pullQuote": null,
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "A rhythm you can sustain"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Ritma yang boleh anda kekalkan"
     },
     {
       "id": "mod-4",
-      "tag": "A rhythm you can sustain",
-      "titleHtml": "Start honest.<br><em>Build from there.</em>",
+      "tag": "Ritma yang boleh anda kekalkan",
+      "titleHtml": "Mulakan dari apa yang<br><em>anda sebenarnya lakukan.</em>",
       "body": [
-        "The most reliable way to build a maintenance routine is to start with what you have actually been doing — not what you plan to do. If your honest interval is ten days, make ten days your baseline. If your honest interval is three weeks, make three weeks your baseline with a tank designed to hold that gap without stress.",
-        "From that honest baseline, small improvements are possible: reducing the interval slightly, reducing the effort per session by making equipment more accessible, adding one incremental action per week. But the foundation is honesty, not aspiration. A routine built on an overestimated version of your available time will produce drift — the slow, structural misalignment between what the tank needs and what it receives.",
-        "What happens when you miss the interval: most well-established tanks with appropriate fish loads can absorb a gap without crisis. The Water Rhythm drifts slightly, and the Livestock Rhythm may show subtle signals before any test kit does. When you return to maintenance, do a water test first, then a modest change rather than a large catch-up, then observe. The system has capacity to absorb gaps — that is what Ecological Forgiveness means in practice. The goal on return is not to compensate for the gap in one session. It is to re-establish the pattern."
+        "Cara paling boleh dipercayai untuk membina rutin penyelenggaraan adalah bermula dari apa yang anda sebenarnya lakukan — bukan apa yang anda rancang. Kalau selang jujur anda adalah sepuluh hari, jadikan sepuluh hari garis dasar anda. Kalau selang jujur anda adalah tiga minggu, jadikan tiga minggu garis dasar anda dengan tank yang direka untuk menampung jurang itu tanpa tekanan.",
+        "Satu prinsip praktikal: reka tank untuk menjadi lebih lasak dari yang diperlukan. Filter yang lebih besar bermakna kapasiti penimbal yang lebih besar. Bioload yang lebih ringan bermakna lebih sedikit sisa per ikan. Pokok yang tahan bermakna input yang lebih sedikit diperlukan. Tank yang lasak memaafkan selang penjagaan yang realistik tanpa merosot.",
+        "Rutin penyelenggaraan bukan jadual yang anda ikuti. Ia adalah penjajaran antara apa yang tank perlukan dan apa yang anda boleh secara realistik dan konsisten berikan. Apabila penjajaran itu betul, penyelenggaraan terasa seperti rutin, bukan tanggungjawab."
       ],
       "pullQuote": null,
-      "hintLabel": "Know Your Rhythm",
-      "hintText": [
-        "The Know Your Rhythm reflection — seven questions about how you actually engage with things you care for over time — helps identify which pattern describes you most accurately. It is a starting point for matching any tank design to the keeper who will actually care for it."
-      ],
-      "prevBtn": "← Back",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
-      "href": "/articles/know-your-rhythm",
-      "text": "Know Your Rhythm →"
+      "href": "/articles/how-often-water-changes",
+      "text": "Berapa kerap water change? →"
     },
     {
-      "href": "/articles/ara-full-framework",
-      "text": "The ARA Framework →"
+      "href": "/articles/aquarium-filter-maintenance",
+      "text": "Filter anda bukan apa yang anda fikir →"
     },
     {
-      "href": "/rhyssa",
-      "text": "Ask Rhyssa →"
+      "href": "/articles/aquarium-not-a-project",
+      "text": "Akuarium bukan projek →"
+    },
+    {
+      "href": "/ara",
+      "text": "Framework ARA →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }
