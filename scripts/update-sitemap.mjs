@@ -1,141 +1,135 @@
 /**
- * Generates sitemap-index.xml + per-language sitemaps for translated articles.
+ * update-sitemap.mjs
+ *
+ * Generates localized sitemaps for each language with ready translations,
+ * then writes a sitemap-index.xml referencing all sitemaps.
  *
  * Usage:
  *   node scripts/update-sitemap.mjs
  *
  * Output:
- *   /sitemap-index.xml    — sitemap index referencing all sitemaps
- *   /sitemap-ms.xml       — Malay article URLs (if any translations exist)
- *   /sitemap-id.xml       — Indonesian article URLs
- *   /sitemap-ja.xml       — Japanese article URLs
- *
- * The original /sitemap.xml (English) is left unchanged.
- * robots.txt is updated to also reference sitemap-index.xml.
+ *   sitemap-en.xml    — copy of existing sitemap.xml
+ *   sitemap-ms.xml    — Malay articles + /ms/reading
+ *   sitemap-ja.xml    — Japanese articles + /ja/reading
+ *   sitemap-index.xml — references all sitemaps
+ *   robots.txt        — updated to reference sitemap-index.xml
  */
 
-import fs from 'fs';
+import fs   from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const ROOT        = path.join(import.meta.dirname, '..');
-const TRANS_DIR   = path.join(ROOT, 'translations');
-const BASE_URL    = 'https://aquaticrhythm.com';
-const LANGUAGES   = ['ms', 'id', 'ja'];
-const TODAY       = new Date().toISOString().slice(0, 10);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT      = path.join(__dirname, '..');
+const TRANS_DIR = path.join(ROOT, 'translations');
+const BASE_URL  = 'https://aquaticrhythm.com';
+const TODAY     = new Date().toISOString().slice(0, 10);
+const LANGS     = ['ms', 'id', 'ja'];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-/** Return slugs whose translation JSON has _meta.status === "ready" */
-function getTranslatedSlugs(lang) {
+function getReadySlugs(lang) {
   const dir = path.join(TRANS_DIR, lang);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter(f => f.endsWith('.json'))
-    .map(f => f.replace('.json', ''))
-    .filter(slug => {
+    .filter(f => {
       try {
-        const t = JSON.parse(fs.readFileSync(path.join(dir, `${slug}.json`), 'utf8'));
-        return t._meta && t._meta.status === 'ready';
+        const j = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+        return j._meta?.status === 'ready';
       } catch { return false; }
-    });
+    })
+    .map(f => f.replace('.json', ''))
+    .sort();
 }
 
-function buildHreflangSitemapEntries(slug, lang, otherLangs) {
-  const lines = [];
-  lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/articles/${slug}"/>`);
-  lines.push(`    <xhtml:link rel="alternate" hreflang="${lang}" href="${BASE_URL}/${lang}/articles/${slug}"/>`);
-  for (const other of otherLangs) {
-    if (other !== lang) {
-      lines.push(`    <xhtml:link rel="alternate" hreflang="${other}" href="${BASE_URL}/${other}/articles/${slug}"/>`);
-    }
-  }
-  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/articles/${slug}"/>`);
-  return lines.join('\n');
+function urlEntry(loc, priority = '0.8', changefreq = 'monthly') {
+  return [
+    '  <url>',
+    `    <loc>${loc}</loc>`,
+    `    <lastmod>${TODAY}</lastmod>`,
+    `    <changefreq>${changefreq}</changefreq>`,
+    `    <priority>${priority}</priority>`,
+    '  </url>',
+  ].join('\n');
 }
+
+// ── Build per-language sitemap ────────────────────────────────────────────────
 
 function buildLangSitemap(lang) {
-  const slugs = getTranslatedSlugs(lang);
-  if (!slugs.length) return null;
+  const slugs = getReadySlugs(lang);
+  if (slugs.length === 0) return null;
 
-  // Which other languages also have translations (for hreflang in sitemap)
-  const otherLangs = LANGUAGES.filter(l => l !== lang && getTranslatedSlugs(l).length > 0);
-
-  const urls = slugs.map(slug => {
-    const hreflang = buildHreflangSitemapEntries(slug, lang, otherLangs);
-    return `  <url>
-    <loc>${BASE_URL}/${lang}/articles/${slug}</loc>
-    <lastmod>${TODAY}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-${hreflang}
-  </url>`;
-  });
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-${urls.join('\n\n')}
-
-</urlset>`;
-}
-
-function buildSitemapIndex(activeLangs) {
-  const sitemaps = [
-    `  <sitemap>
-    <loc>${BASE_URL}/sitemap.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>`
+  const entries = [
+    urlEntry(`${BASE_URL}/${lang}/reading`, '0.85', 'weekly'),
+    ...slugs.map(slug => urlEntry(`${BASE_URL}/${lang}/articles/${slug}`)),
   ];
 
-  for (const lang of activeLangs) {
-    sitemaps.push(`  <sitemap>
-    <loc>${BASE_URL}/sitemap-${lang}.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>`);
-  }
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '',
+    entries.join('\n\n'),
+    '',
+    '</urlset>',
+  ].join('\n');
+}
 
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+// ── Build sitemap-index.xml ───────────────────────────────────────────────────
 
-${sitemaps.join('\n\n')}
+function buildSitemapIndex(activeLangs) {
+  const allLangs = ['en', ...activeLangs];
+  const entries = allLangs.map(lang => [
+    '  <sitemap>',
+    `    <loc>${BASE_URL}/sitemap-${lang}.xml</loc>`,
+    `    <lastmod>${TODAY}</lastmod>`,
+    '  </sitemap>',
+  ].join('\n'));
 
-</sitemapindex>`;
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '',
+    entries.join('\n\n'),
+    '',
+    '</sitemapindex>',
+  ].join('\n');
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
+console.log('Updating sitemaps…');
+
+// Copy current sitemap.xml → sitemap-en.xml
+const existingSitemap = path.join(ROOT, 'sitemap.xml');
+const enSitemapPath   = path.join(ROOT, 'sitemap-en.xml');
+fs.copyFileSync(existingSitemap, enSitemapPath);
+console.log('  → sitemap-en.xml');
+
+// Generate per-language sitemaps
 const activeLangs = [];
-
-for (const lang of LANGUAGES) {
-  const xml = buildLangSitemap(lang);
-  if (!xml) {
-    console.log(`  skip ${lang}: no translations`);
-    continue;
+for (const lang of LANGS) {
+  const content = buildLangSitemap(lang);
+  if (content) {
+    fs.writeFileSync(path.join(ROOT, `sitemap-${lang}.xml`), content + '\n');
+    console.log(`  → sitemap-${lang}.xml (${getReadySlugs(lang).length} articles)`);
+    activeLangs.push(lang);
   }
-
-  const outPath = path.join(ROOT, `sitemap-${lang}.xml`);
-  fs.writeFileSync(outPath, xml, 'utf8');
-  console.log(`  written: sitemap-${lang}.xml (${getTranslatedSlugs(lang).length} URLs)`);
-  activeLangs.push(lang);
 }
 
-if (activeLangs.length) {
-  const indexXml = buildSitemapIndex(activeLangs);
-  const indexPath = path.join(ROOT, 'sitemap-index.xml');
-  fs.writeFileSync(indexPath, indexXml, 'utf8');
-  console.log(`  written: sitemap-index.xml (references: en + ${activeLangs.join(', ')})`);
+// Write sitemap-index.xml
+fs.writeFileSync(
+  path.join(ROOT, 'sitemap-index.xml'),
+  buildSitemapIndex(activeLangs) + '\n'
+);
+console.log('  → sitemap-index.xml');
 
-  // Update robots.txt to reference the sitemap index (if not already there)
-  const robotsPath = path.join(ROOT, 'robots.txt');
-  let robots = fs.readFileSync(robotsPath, 'utf8');
-  if (!robots.includes('sitemap-index.xml')) {
-    robots = robots.trimEnd() + `\nSitemap: ${BASE_URL}/sitemap-index.xml\n`;
-    fs.writeFileSync(robotsPath, robots, 'utf8');
-    console.log('  updated: robots.txt (added sitemap-index.xml reference)');
-  } else {
-    console.log('  robots.txt already references sitemap-index.xml');
-  }
-} else {
-  console.log('No language sitemaps generated — translate some articles first.');
-}
+// Update robots.txt — ensure only sitemap-index.xml is listed
+const robotsPath = path.join(ROOT, 'robots.txt');
+let robots = fs.existsSync(robotsPath) ? fs.readFileSync(robotsPath, 'utf8') : 'User-agent: *\nAllow: /\n';
+robots = robots.replace(/^Sitemap:.*\n?/gm, '').trimEnd();
+robots += `\nSitemap: ${BASE_URL}/sitemap-index.xml\n`;
+fs.writeFileSync(robotsPath, robots);
+console.log('  → robots.txt');
+
+console.log('Done.');
