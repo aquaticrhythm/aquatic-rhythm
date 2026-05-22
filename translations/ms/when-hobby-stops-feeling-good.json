@@ -36,8 +36,10 @@
         "Tank yang mula terasa seperti beban adalah isyarat Keeper Rhythm — bukan tentang apa yang salah dengan tank, tapi tentang apa yang telah berubah dalam hubungan anda dengannya. Dan seperti mana-mana isyarat lain dalam ARA, ia bernilai untuk dibaca sebelum bertindak balas."
       ],
       "pullQuote": "Tank yang mula terasa seperti tekanan adalah isyarat. Soalannya adalah apa yang ia sedang beritahu anda — tentang sistem, atau tentang kehidupan sekeliling sistem.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Keeper Rhythm",
+      "hintText": [
+        "Dalam ARA, Keeper Rhythm adalah ritma ekologi kelima — corak perhatian, masa, tenaga, dan kapasiti emosi yang dibawa penjaga kepada sistem. Ia tidak tetap. Ia berubah mengikut musim, keadaan hidup, kesedihan, keletihan. Tank yang boleh dikekalkan tahun lalu mungkin tidak boleh dikekalkan sekarang — bukan kerana penjaga telah gagal, tetapi kerana ritma penjaga telah berubah."
+      ],
       "prevBtn": "← Intro",
       "nextBtn": "Bila ritma anda tidak lagi sesuai"
     },
@@ -51,7 +53,7 @@
         "Sesetengah penjaga mengalami ketidakselarasan kerana mereka membina sesuatu yang terlalu kompleks untuk Keeper Rhythm yang mereka ada — bukan kerana mereka tidak peduli, tetapi kerana sistem yang mereka bina diasaskan pada versi diri mereka yang mengambil berat secara intensif yang tidak lagi boleh dikekalkan.",
         "Apa yang semua ini ada persamaan: ini bukan tentang betapa anda mengambil berat. Kepedulian tidak pernah dipersoalkan. Yang berubah adalah keadaan sekeliling kepedulian itu — masa, tenaga, kepentingan yang bersaing. Mengenali itu penting kerana ia menukar soalan dari 'apa yang salah dengan saya?' kepada 'sistem jenis apa yang sepadan dengan kehidupan sebenar yang saya ada sekarang?'"
       ],
-      "pullQuote": null,
+      "pullQuote": "Penjaga yang menyediakan tank ini dan penjaga yang menyelenggarakannya hari ini mungkin orang yang berbeza. Kedua-duanya layak mendapat tank yang sepadan dengan kehidupan sebenar mereka.",
       "hintLabel": null,
       "hintText": null,
       "prevBtn": "← Kembali",
@@ -68,9 +70,11 @@
         "<strong>Laluan 3: Pergi.</strong> Hobi ini, dalam bentuk ini, tidak lagi sepadan dengan kehidupan anda sekarang. Respons yang selari adalah mengiktiraf itu dan bertindak atas pengiktirafan itu dengan kemuliaan — mencari rumah yang baik untuk ikan, membubarkan tank dengan betul, tanpa paksaan untuk meneruskan sesuatu yang tidak lagi memberikan apa yang anda perlu.",
         "Ketiga-tiga laluan ini adalah sah. Tiada satu pun yang menunjukkan bahawa anda tidak sesuai untuk hobi ini, atau bahawa anda tidak seharusnya memulakan. Mereka hanya mencerminkan realiti bahawa kehidupan berubah, dan sistem yang dibina untuk satu fasa kehidupan tidak semestinya sesuai untuk fasa yang lain."
       ],
-      "pullQuote": "Penjaga yang menyediakan tank ini dan penjaga yang menyelenggarakannya hari ini mungkin orang yang berbeza. Kedua-duanya layak mendapat tank yang sepadan dengan kehidupan sebenar mereka.",
-      "hintLabel": null,
-      "hintText": null,
+      "pullQuote": null,
+      "hintLabel": "ARA · Pengampunan Ekologi",
+      "hintText": [
+        "Pengampunan ekologi terpakai kepada penjaga, bukan hanya tank. Penjaga yang telah bergelut, yang terlepas water change, yang kehilangan ikan kerana punca yang boleh dicegah — penjaga itu bukan penjaga yang buruk. Mereka adalah penjaga yang sistemnya telah drift melebihi penjajaran. Yang penting sekarang bukan sejarah tetapi pilihan seterusnya."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Jika anda pergi"
     },

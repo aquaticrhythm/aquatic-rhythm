@@ -200,7 +200,7 @@ main{min-height:100vh;padding-top:64px}
 <div class="module-wrap" id="cwg-wrap">
 
   <!-- MODULE 1 -->
-  <div class="module" id="cwg-m1">
+  <section class="module" id="mod-1" data-mod="1">
     <div class="mod-eyebrow">
       <span class="mod-num">01 / 05</span>
       <span class="mod-tag">The guilt trap</span>
@@ -230,10 +230,10 @@ main{min-height:100vh;padding-top:64px}
       <a href="/reading">← All guides</a>
       <a href="/ara">Explore ARA →</a>
     </div>
-  </div>
+  </section>
 
   <!-- MODULE 2 -->
-  <div class="module" id="cwg-m2">
+  <section class="module" id="mod-2" data-mod="2">
     <div class="mod-eyebrow">
       <span class="mod-num">02 / 05</span>
       <span class="mod-tag">Your rhythm is real information</span>
@@ -278,10 +278,10 @@ main{min-height:100vh;padding-top:64px}
       <a href="/reading">← All guides</a>
       <a href="/ara">Explore ARA →</a>
     </div>
-  </div>
+  </section>
 
   <!-- MODULE 3 -->
-  <div class="module" id="cwg-m3">
+  <section class="module" id="mod-3" data-mod="3">
     <div class="mod-eyebrow">
       <span class="mod-num">03 / 05</span>
       <span class="mod-tag">The cost of over-correction</span>
@@ -313,10 +313,10 @@ main{min-height:100vh;padding-top:64px}
       <a href="/reading">← All guides</a>
       <a href="/ara">Explore ARA →</a>
     </div>
-  </div>
+  </section>
 
   <!-- MODULE 4 -->
-  <div class="module" id="cwg-m4">
+  <section class="module" id="mod-4" data-mod="4">
     <div class="mod-eyebrow">
       <span class="mod-num">04 / 05</span>
       <span class="mod-tag">What the tank actually needs</span>
@@ -347,10 +347,10 @@ main{min-height:100vh;padding-top:64px}
       <a href="/reading">← All guides</a>
       <a href="/ara">Explore ARA →</a>
     </div>
-  </div>
+  </section>
 
   <!-- MODULE 5 -->
-  <div class="module" id="cwg-m5">
+  <section class="module" id="mod-5" data-mod="5">
     <div class="mod-eyebrow">
       <span class="mod-num">05 / 05</span>
       <span class="mod-tag">Room to breathe</span>
@@ -389,7 +389,7 @@ main{min-height:100vh;padding-top:64px}
       <a href="/reading">← All guides</a>
       <a href="/ara">Explore ARA →</a>
     </div>
-  </div>
+  </section>
 
 </div><!-- /module-wrap -->
 </main>
@@ -406,8 +406,8 @@ main{min-height:100vh;padding-top:64px}
 
   function showModule(n){
     if(n < 1 || n > TOTAL) return;
-    var prev = document.getElementById('cwg-m' + current);
-    var next = document.getElementById('cwg-m' + n);
+    var prev = document.getElementById('mod-' + current);
+    var next = document.getElementById('mod-' + n);
     if(prev){ prev.classList.remove('active','visible'); }
     current = n;
     if(next){

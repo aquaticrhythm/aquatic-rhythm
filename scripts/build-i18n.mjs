@@ -232,14 +232,44 @@ function buildArticle(slug, lang, t) {
 
       // mod-body paragraphs — replace ALL mod-body divs; translated content goes into
       // the first one, subsequent divs (used for canvas context in some articles) are removed.
+      // Uses depth-aware div tracking so nested divs inside mod-body (e.g. pq, hn, rhythm-grid)
+      // are handled correctly and don't cause a lazy-regex to stop early.
+      // Any pq/hn elements found INSIDE mod-body are rescued and re-injected after the new
+      // mod-body so the subsequent pq/hn replacement steps can still find and translate them.
       if (mod.body && mod.body.length) {
         const paras = mod.body.map(p => `\n      <p>${p}</p>`).join('');
-        const replacement = `<div class="mod-body">${paras}\n    </div>`;
-        let first = true;
-        c = c.replace(/(<div class="mod-body">)([\s\S]*?)(<\/div>)/g, () => {
-          if (first) { first = false; return replacement; }
-          return '';
-        });
+        const newModBody = `<div class="mod-body">${paras}\n    </div>`;
+        let replaced = false;
+        let result = '';
+        let rest = c;
+        while (rest.length > 0) {
+          const mbIdx = rest.indexOf('<div class="mod-body">');
+          if (mbIdx === -1) { result += rest; break; }
+          result += rest.slice(0, mbIdx);
+          let depth = 0, i = mbIdx, endIdx = -1;
+          while (i < rest.length) {
+            if (rest[i] === '<') {
+              if (rest.slice(i, i + 4) === '<div') { depth++; }
+              else if (rest.slice(i, i + 6) === '</div>') {
+                depth--;
+                if (depth === 0) { endIdx = i + 6; break; }
+              }
+            }
+            i++;
+          }
+          if (endIdx === -1) { result += rest.slice(mbIdx); break; }
+          if (!replaced) {
+            // Rescue any pq/hn elements nested inside this mod-body so the
+            // later replacement steps can still translate them.
+            const mbContent = rest.slice(mbIdx, endIdx);
+            const rescued = [...mbContent.matchAll(/<div class="(?:pq[^"]*|hn[^"]*)">[\s\S]*?<\/div>/g)]
+              .map(m => m[0]).join('\n    ');
+            result += newModBody + (rescued ? '\n    ' + rescued : '');
+            replaced = true;
+          }
+          rest = rest.slice(endIdx);
+        }
+        c = result;
       }
 
       // Pull quotes — pullQuote for first block, additionalPullQuotes for the rest.
