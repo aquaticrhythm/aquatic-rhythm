@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "slug": "new-tank-syndrome",
+    "lang": "es",
+    "sourceFile": "articles/new-tank-syndrome.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "El Síndrome del Acuario Nuevo — Aquatic Rhythm",
+    "description": "Agua turbia, peces estresados, parámetros inestables. Esto no es un fallo — es una fase. Aquí te explicamos la biología real detrás del ciclado y por qué la paciencia es la única respuesta correcta.",
+    "ogTitle": "El Síndrome del Acuario Nuevo",
+    "ogDescription": "Agua turbia, peces estresados, lecturas que no tienen sentido. Esto no es un error — es una fase biológica. Aprende a leerla."
+  },
+  "intro": {
+    "eyebrow": "Artículo · New Tank Syndrome",
+    "titleHtml": "El Síndrome del<br><em>Acuario Nuevo</em>",
+    "subtitle": "Agua turbia, peces estresados, parámetros que no cuadran. No es un error — es una fase.",
+    "texts": [
+      "Tu acuario lleva una semana funcionando. El agua está turbia, los peces parecen inquietos, y los parámetros no tienen sentido. Buscas respuestas y encuentras opiniones contradictorias. Añades productos. Cambias el agua. Nada mejora.",
+      "Lo que estás viviendo tiene nombre: síndrome del acuario nuevo. Y tiene una causa biológica concreta que ningún producto puede saltarse. Esta guía te explica qué está pasando realmente, por qué las intervenciones frecuentes suelen empeorar las cosas, y qué aspecto tiene atravesar esta fase de forma que tenga sentido a largo plazo."
+    ],
+    "metaModules": "7 módulos",
+    "metaTime": "Principiantes e intermedios",
+    "metaLevel": "~14 minutos",
+    "cta": "Empezar a leer"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "No es tu culpa",
+      "titleHtml": "Esto no es un error.<br><em>Es una fase.</em>",
+      "body": [
+        "Casi todo acuarista pasa por esto. Agua que se pone blanca o verde. Peces que se quedan quietos en las esquinas. Lecturas de amoniaco que suben aunque hagas cambios de agua. La sensación de que algo va mal sin saber exactamente qué.",
+        "La causa no es falta de cuidado ni un equipo defectuoso. Es algo más fundamental: el sistema biológico que hace que el agua sea segura para los peces todavía no existe. Está en proceso de formarse — y ese proceso tiene su propio ritmo que no se puede forzar.",
+        "Aquatic Rhythm Alignment llama a esto la Fase Inicial — el período en que el ecosistema está construyendo sus bases. No es una señal de que algo ha salido mal. Es la señal de que algo está empezando."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Fase Inicial",
+      "hintText": [
+        "En ARA, la Fase Inicial no termina cuando el agua se ve clara o cuando los parámetros dan un buen número un día. Termina cuando el sistema puede mantener esos parámetros de forma consistente bajo carga — cuando tiene capacidad de reserva, no solo capacidad mínima. Esa distinción importa más de lo que suelen explicar los tutoriales de ciclado."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "El amoniaco"
+    },
+    {
+      "id": "mod-2",
+      "tag": "El amoniaco",
+      "titleHtml": "El agua no está vacía.<br><em>Hay algo construyéndose.</em>",
+      "body": [
+        "Cuando introduces peces en un acuario nuevo, empiezan a producir amoniaco de inmediato — a través de las branquias, la orina y la descomposición de los restos de comida. El amoniaco es tóxico. En un acuario maduro, colonias de bacterias lo convierten primero en nitrito (también tóxico) y después en nitrato (mucho menos dañino y manejable con cambios de agua regulares).",
+        "En un acuario nuevo, esas colonias bacterianas todavía no existen en cantidad suficiente. El amoniaco se acumula. Luego, cuando las primeras bacterias empiezan a establecerse, sube el nitrito. Los peces viven en agua que oscila entre estresante y peligrosa — a menudo en silencio, porque el amoniaco no tiene color ni olor.",
+        "El agua puede verse perfectamente clara mientras contiene concentraciones que están dañando a los peces. Eso es lo que hace que esta fase sea difícil: los indicadores visuales no se corresponden con lo que está pasando químicamente."
+      ],
+      "pullQuote": "Agua turbia, peces estresados, lecturas inestables — no son señal de que algo ha fallado. Son señal de que algo está intentando empezar.",
+      "hintLabel": "Sobre el bienestar de los peces",
+      "hintText": [
+        "Si tienes peces en un acuario que todavía está ciclando, cambios de agua pequeños y frecuentes (20–25% cada dos días) pueden reducir el amoniaco y el nitrito lo suficiente para mantener a los peces fuera de un rango peligroso mientras las colonias bacterianas se establecen. No elimina la fase — pero reduce la presión sobre los peces durante el proceso."
+      ],
+      "prevBtn": "← Volver",
+      "nextBtn": "La única respuesta real"
+    },
+    {
+      "id": "mod-3",
+      "tag": "La única respuesta real",
+      "titleHtml": "Las bacterias son<br><em>la única respuesta real.</em>",
+      "body": [
+        "No existe ningún producto que reemplace a las bacterias nitrificantes. Algunos aceleradores de ciclado contienen bacterias vivas que pueden acortar el proceso — pero incluso en el mejor caso, el sistema sigue necesitando tiempo para estabilizarse. No hay atajos que eliminen la fase; solo algunos que la hacen algo más corta.",
+        "Las bacterias necesitan tres cosas para establecerse: una fuente de amoniaco, superficies donde colonizar, y tiempo. El filtro es el lugar más importante — el medio filtrante ofrece superficie porosa donde las bacterias se asientan y forman biofilm. Es por eso que limpiar el filtro con agua del grifo durante el ciclado puede reiniciar semanas de progreso: el cloro del agua mata las colonias que estaban construyéndose.",
+        "El proceso completo suele tardar entre cuatro y ocho semanas, dependiendo de la temperatura del agua, el tamaño del acuario, el tipo de filtración y si se añade o no una fuente de arranque. Acelerar artificialmente ese proceso sin bacterias vivas no funciona — lo que hace es crear condiciones en las que el sistema parece estable sin serlo realmente."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Perspectiva Aquatic Rhythm",
+      "hintText": [
+        "ARA trata el ciclado no como un problema a resolver sino como una fase biológica que el sistema atraviesa. La distinción importa porque cambia lo que el acuarista hace durante ese tiempo: en lugar de intervenir para forzar un resultado, la tarea es mantener condiciones que permitan que el proceso ocurra. Eso es más difícil de lo que parece cuando el agua no se ve bien."
+      ],
+      "prevBtn": "← Volver",
+      "nextBtn": "Las bacterias no viven en el agua"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Dónde viven las bacterias",
+      "titleHtml": "Las bacterias no viven<br><em>en el agua.</em>",
+      "body": [
+        "Este es el malentendido más común y el que más daño causa: pensar que las bacterias están en el agua. No lo están, o no principalmente. Las bacterias nitrificantes viven adheridas a superficies — el medio filtrante, las paredes del acuario, el sustrato, las plantas, la decoración. Viven en biofilm: capas finas de microorganismos que se forman sobre cualquier superficie que lleve tiempo en contacto con el agua.",
+        "Las implicaciones prácticas son importantes. Cambiar toda el agua del acuario no elimina las bacterias — pero limpiar el filtro con agua del grifo sí puede hacerlo. Reemplazar todo el medio filtrante durante el ciclado puede retrasarlo semanas. Añadir grandes cantidades de carbón activo puede interferir con el proceso si se hace en el momento equivocado.",
+        "Apagar el filtro — incluso brevemente — puede afectar más al ciclado que la mayoría de los cambios de agua. Las bacterias nitrificantes son aeróbicas: necesitan oxígeno disuelto para sobrevivir. Sin flujo de agua, el oxígeno en el medio filtrante se agota rápido. No solo se detiene el flujo — se interrumpe el suministro de oxígeno del que depende la colonia."
+      ],
+      "pullQuote": "Apagar el filtro — aunque sea un momento — puede afectar más a un acuario en ciclado que la mayoría de los cambios de agua. No solo detienes el flujo de agua. Cortas el suministro de oxígeno del que depende la colonia bacteriana.",
+      "hintLabel": "Algunas cosas que vale la pena recordar",
+      "hintText": [
+        "Durante el ciclado: no limpies el medio filtrante con agua del grifo. No reemplaces todo el filtro. No uses antibióticos en el acuario principal. Si necesitas tratar una enfermedad, hazlo en un acuario de cuarentena separado. Cada una de estas acciones puede interrumpir o resetear el progreso del ciclado."
+      ],
+      "prevBtn": "← Volver",
+      "nextBtn": "No todos los ciclados duran lo mismo"
+    },
+    {
+      "id": "mod-5",
+      "tag": "Variaciones en el ciclado",
+      "titleHtml": "No todos los ciclados<br><em>duran lo mismo.</em>",
+      "body": [
+        "Cuatro a ocho semanas es una estimación — no una garantía. Varios factores pueden extender o acortar el proceso de forma significativa.",
+        "La temperatura importa: las bacterias nitrificantes se multiplican más rápido entre 25 y 30°C. Un acuario a 18°C puede tardar el doble que uno a 27°C en ciclar completamente. Si tu acuario está en un lugar frío, esto puede explicar por qué el proceso parece estancado.",
+        "La fuente de amoniaco importa: el ciclado sin peces (fishless cycling) con amoniaco puro o comida en descomposición puede ser más predecible que el ciclado con peces, porque la fuente de amoniaco es constante. Con peces, la carga varía según cuánto comen y cuánto produces.",
+        "El medio filtrante importa: los medios porosos de alta superficie (cerámica biológica, lana de roca) ofrecen mucho más espacio para la colonización bacteriana que la esponja sola. Un filtro con buen medio biológico cicla más rápido y mantiene colonias más estables a largo plazo.",
+        "El arranque importa: añadir agua, medio filtrante o decoración de un acuario ya establecido puede reducir el tiempo de ciclado de semanas a días, porque introduces colonias ya existentes. Es el método más eficaz disponible sin productos comerciales."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Perspectiva Aquatic Rhythm",
+      "hintText": [
+        "ARA trata el tiempo de ciclado como parte del Ritmo Biológico del sistema — no como un número fijo a alcanzar. Un acuario que tarda diez semanas en ciclar en un entorno frío no está fallando. Está siguiendo el ritmo que sus condiciones permiten. Forzar ese ritmo — con demasiados cambios, demasiados productos, demasiada intervención — suele extender la fase en lugar de acortarla."
+      ],
+      "prevBtn": "← Volver",
+      "nextBtn": "Por qué hacer más suele empeorar las cosas"
+    },
+    {
+      "id": "mod-6",
+      "tag": "La trampa de la intervención",
+      "titleHtml": "Por qué hacer más<br><em>suele empeorar las cosas.</em>",
+      "body": [
+        "El síndrome del acuario nuevo tiene una trampa característica: cuando las cosas no mejoran, el impulso natural es hacer algo más. Cambio de agua grande. Nuevo producto. Reinicio del filtro. Cambio del sustrato. Cada intervención parece razonable por separado. En conjunto, pueden mantenar el sistema en un estado permanente de inestabilidad.",
+        "Las bacterias nitrificantes necesitan un entorno estable para multiplicarse. Cada vez que cambias grandes volúmenes de agua, alteras el pH, la temperatura y la química de forma abrupta. Cada vez que tocas el filtro, interrumpes el biofilm que está formándose. El sistema nunca llega a estabilizarse porque siempre está recuperándose de la última intervención.",
+        "ARA llama a esto la trampa de la intervención: cuando el cuidado se convierte en un obstáculo. No porque las intenciones sean malas — sino porque el sistema necesita tiempo más que ayuda, y la mayoría de las formas de «ayudar» durante el ciclado introducen inestabilidad adicional."
+      ],
+      "pullQuote": "La trampa de la intervención no se trata de hacer las cosas mal. Se trata de hacer las cosas bien demasiado a menudo, en un sistema que necesita tiempo más que ayuda.",
+      "hintLabel": "Perspectiva Aquatic Rhythm",
+      "hintText": [
+        "La regla práctica durante el ciclado: haz el mínimo posible para mantener a los peces fuera de un rango peligroso. Cambios de agua pequeños cuando el amoniaco o el nitrito suban demasiado. Alimentación mínima. Sin reordenaciones del filtro. Sin nuevos productos a menos que sean esenciales. El sistema no necesita supervisión constante — necesita estabilidad."
+      ],
+      "prevBtn": "← Volver",
+      "nextBtn": "Al otro lado de todo esto"
+    },
+    {
+      "id": "mod-7",
+      "tag": "Al otro lado de todo esto",
+      "titleHtml": "El acuario encuentra<br><em>su propio ritmo.</em>",
+      "body": [
+        "Cuando el ciclado termina — cuando el amoniaco y el nitrito se mantienen consistentemente en cero bajo carga, y los nitratos suben de forma predecible — el sistema ha cambiado fundamentalmente. No solo los parámetros son más estables. El ecosistema completo empieza a funcionar de otra manera. Las paredes del acuario desarrollan una fina capa de biofilm beneficioso. Los peces empiezan a mostrar patrones de comportamiento más relajados. El agua tiene una calidad diferente.",
+        "ARA llama a esto el <strong>perdón ecológico</strong> — la capacidad de un sistema vivo de absorber pequeños desequilibrios y volver a la coherencia sin intervención del acuarista. Lo que el acuario nuevo está construyendo durante la Fase Inicial no son solo bacterias. Es la resiliencia que protegerá todo lo que añadas después."
+      ],
+      "pullQuote": "ARA llama a esto <strong>perdón ecológico</strong> — la capacidad del sistema de absorber pequeños desequilibrios y volver a la coherencia por sí solo. Lo que el acuario nuevo está construyendo durante la Fase Inicial no son solo bacterias. Es la resiliencia que protegerá todo lo que añadas después.",
+      "hintLabel": "Perspectiva Aquatic Rhythm",
+      "hintText": [
+        "Un acuario que ha atravesado la Fase Inicial con intervención mínima suele ser más estable a largo plazo que uno que se ha «forzado» a través del ciclado con muchos productos y cambios. La estabilidad no se construye con correcciones frecuentes — se construye dando al sistema el tiempo y el espacio para establecer sus propias colonias, sus propios equilibrios, su propio ritmo."
+      ],
+      "prevBtn": "← Volver",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/why-is-my-aquarium-water-cloudy",
+      "text": "¿Por qué el agua del acuario está turbia? →"
+    },
+    {
+      "href": "/articles/fish-keep-dying-new-tank",
+      "text": "¿Por qué mis peces siguen muriendo? →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Preguntar a Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Todos los artículos",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

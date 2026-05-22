@@ -21,7 +21,7 @@ const TODAY     = new Date().toISOString().slice(0, 10);
 
 const args     = process.argv.slice(2);
 const langArg  = args.includes('--lang') ? args[args.indexOf('--lang') + 1] : null;
-const LANGS    = langArg ? [langArg] : ['ms', 'id', 'ja'];
+const LANGS    = langArg ? [langArg] : ['ms', 'id', 'ja', 'es'];
 
 // Preferred article order for the reading index
 const SLUG_ORDER = [
@@ -97,6 +97,19 @@ const UI = {
     backHome:    '← Aquatic Rhythmに戻る',
     notoFont:    true,
   },
+  es: {
+    lang:        'es',
+    htmlLang:    'es',
+    pageTitle:   'Guías de Acuario — Aquatic Rhythm',
+    metaDesc:    'Guías de ecología acuática en español — ciclo del nitrógeno, ritmos de cuidado y el enfoque ARA. Cómodas para leer en el móvil.',
+    ogTitle:     'Guías de Acuario — Aquatic Rhythm',
+    eyebrow:     'Aquatic Rhythm',
+    heading:     'Ecología acuática<br><em>que puedes leer en cualquier lugar.</em>',
+    intro:       'Artículos breves sobre el ecosistema del acuario cerrado — presentados en módulos cortos para el móvil y las noches tranquilas. Biología y química primero; sin exageraciones.',
+    backToEn:    'Ver todos los artículos en inglés →',
+    backHome:    '← Volver a Aquatic Rhythm',
+    notoFont:    false,
+  },
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -134,7 +147,7 @@ function getReadyArticles(lang) {
   return articles;
 }
 
-const ALL_READING_LANGS = ['ms', 'id', 'ja'];
+const ALL_READING_LANGS = ['ms', 'id', 'ja', 'es'];
 
 function buildLangSwitcher(lang) {
   // Include a language if it has at least one ready article — avoids build-order issues.

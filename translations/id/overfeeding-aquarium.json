@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "slug": "overfeeding-aquarium",
+    "lang": "id",
+    "sourceFile": "articles/overfeeding-aquarium.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Pemberian Makan Berlebihan dan Beban Tersembunyi Tank — Aquatic Rhythm",
+    "description": "Kebanyakan tank bukan kekurangan makan. Kebanyakan tank diberi makan terlalu banyak. Panduan ini menjelaskan mengapa itu terjadi, apa efeknya pada biologi tank, dan cara membaca sinyalnya.",
+    "ogTitle": "Pemberian Makan Berlebihan dan Beban Tersembunyi Tank",
+    "ogDescription": "Kebanyakan tank diberi makan terlalu banyak. Pelajari cara membaca dan mengkalibrasi beban organik tank Anda."
+  },
+  "intro": {
+    "eyebrow": "Artikel · Keeper Rhythm",
+    "titleHtml": "Pemberian Makan Berlebihan<br><em>dan Beban Tersembunyi Tank</em>",
+    "subtitle": "Kebanyakan tank bukan kekurangan makan. Kebanyakan tank diberi makan terlalu banyak.",
+    "texts": [
+      "Air keruh. Nitrat tinggi. Alga terus muncul. Anda sudah ganti air, periksa filter, uji air — dan tidak ada yang jelas salah. Ikan tampak baik. Anda bertanya-tanya apa yang terlewat.",
+      "Dalam banyak kasus ini, jawabannya adalah pemberian makan. Bukan frekuensinya, bukan jenisnya — jumlahnya. Pemberian makan berlebihan adalah penggerak tersembunyi paling umum dari masalah yang pemelihara kaitkan dengan penyebab lain. Panduan ini menjelaskan mengapa itu terjadi, apa efeknya pada biologi tank, dan cara membaca sinyalnya sebelum menumpuk."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua level",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Kenapa pemelihara memberi makan berlebihan",
+      "titleHtml": "Kenapa pemelihara<br><em>memberi makan berlebihan.</em>",
+      "body": [
+        "Ikan tampak merespons makanan dengan antusias tanpa memedulikan apakah mereka membutuhkannya. Ikan yang makan lima menit lalu akan mengejar pelet dengan cara yang sama seperti ikan yang belum makan dua hari. Ini menciptakan loop umpan balik bagi pemelihara: ikan 'tampak lapar,' jadi lebih banyak makanan masuk.",
+        "Dorongan memberi makan juga bersifat emosional — memberi makan adalah salah satu cara paling nyata pemelihara berinteraksi dengan ikan mereka. Melihat mereka merespons makanan terasa seperti hubungan langsung dengan hewan. Ini bukan kegagalan penilaian. Ini adalah respons manusia yang normal terhadap hewan yang tampak merespons.",
+        "Tapi ikan adalah pemburu oportunis yang efisien di alam liar — mereka dirancang untuk makan secara oportunis dan akan merespons makanan yang tersedia melebihi apa yang mereka butuhkan. Antusiasme tampak terhadap makanan bukan indikator kelaparan yang bisa diandalkan. Aturan yang kebanyakan pemelihara berpengalaman temukan melalui pengamatan adalah: beri makan hanya apa yang habis dalam dua hingga tiga menit, sekali atau dua kali sehari. Bukan sebagai aturan ketat — tapi sebagai kalibrasi awal. Tank yang benar-benar berkembang baik dengan jumlah itu bukan tank yang kekurangan makan. Ini tank dengan beban organik yang sesuai."
+      ],
+      "pullQuote": "Ikan akan selalu tampak lapar. Itu bukan informasi tentang apakah mereka lapar.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Apa yang terjadi pada makanan yang tidak dimakan"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Apa yang terjadi pada makanan yang tidak dimakan",
+      "titleHtml": "Apa yang terjadi<br><em>pada makanan yang tidak dimakan.</em>",
+      "body": [
+        "Makanan yang tidak dimakan dalam beberapa menit mengendap ke substrat atau tersedot ke filter. Di substrat, makanan mulai terurai — bakteri mengurainya, menggunakan oksigen dalam proses tersebut. Penguraian menghasilkan amonia, yang memberi makan siklus nitrogen dan akhirnya menjadi nitrat.",
+        "Dalam tank dengan populasi sedang dan filter yang efisien, sejumlah kecil makanan yang terurai ditangani tanpa efek yang terlihat. Tapi pemberian makan berlebihan yang konsisten terus-menerus menambah beban organik. Nitrat naik lebih cepat dari yang bisa ditangani ganti air. Bloom bakteri yang memakan kelebihan itu membuat air keruh — kekeruhan bukan masalah kimia tapi respons biologis terhadap kelimpahan. Alga menerima nitrat dan fosfat (juga produk penguraian) yang meningkat sebagai pupuk dan tumbuh lebih cepat. Filter menyedot bahan yang terurai, menyumbat media sebagian dan mengurangi aliran — mengurangi kapasitas filter untuk memproses amonia tepat ketika lebih banyak amonia dihasilkan.",
+        "Semua konsekuensi ini terhubung ke satu input: lebih banyak makanan dari yang bisa diproses biologi tank secara real time."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Chemical Rhythm",
+      "hintText": [
+        "Pemberian makan berlebihan adalah perilaku Keeper Rhythm — kebiasaan — yang terus-menerus membebani Chemical Rhythm. Nitrat yang naik, air yang keruh, dan alga yang makin cepat adalah bacaan Chemical Rhythm. Menelusuri kembali ke sumbernya sering membawa ke rutinitas pemberian makan sebelum membawa ke tempat lain."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membaca sinyal"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Membaca sinyal",
+      "titleHtml": "Membaca<br><em>sinyal.</em>",
+      "body": [
+        "Beberapa sinyal secara konsisten menunjukkan pemberian makan berlebihan dibandingkan penyebab lain: nitrat naik lebih cepat dari yang diperkirakan berdasarkan kepadatan populasi dan jadwal ganti air; air menjadi keruh dalam 24–48 jam setelah pemberian makan, jernih lalu keruh lagi secara berulang; alga tumbuh di kaca dan substrat lebih cepat dari yang bisa dibersihkan, meski parameter lain stabil; makanan yang tidak dimakan terlihat di substrat atau menempel pada dekorasi; aliran filter perlahan-lahan melambat antar siklus pembersihan lebih cepat dari yang diharapkan.",
+        "Uji hipotesis ini: kurangi pemberian makan ke minimum yang jelas — sekali sehari, hanya apa yang habis dalam dua menit — selama dua minggu. Jangan ubah hal lain: jadwal ganti air yang sama, perawatan filter yang sama, populasi yang sama. Jika nitrat naik lebih lambat, kekeruhan bersih dan tetap bersih, dan pertumbuhan alga melambat, pemberian makan berlebihan adalah penggerak utama.",
+        "Uji dua minggu ini adalah salah satu eksperimen paling diagnostik yang tersedia bagi pemelihara tanpa peralatan khusus. Hasilnya adalah umpan balik langsung dari Chemical Rhythm tentang seberapa banyak beban organik yang bisa ditanggung tank tanpa konsekuensi yang terlihat."
+      ],
+      "pullQuote": "Mengurangi pemberian makan bukan mencabut hak ikan. Ini mengkalibrasi beban ke kapasitas tank. Ikan yang makan sedikit lebih sedikit dari yang bisa ia makan tidak menderita. Tank yang terus kelebihan beban — ya.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Kalibrasi ke tank"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Kalibrasi ke tank",
+      "titleHtml": "Kalibrasi<br><em>ke tank.</em>",
+      "body": [
+        "Tujuannya bukan aturan pemberian makan universal — tapi kalibrasi ke tank spesifik. Planted tank dengan cahaya tinggi dan CO2 yang baik bisa menyerap beban organik lebih banyak karena tanaman menggunakan nitrat dan fosfat secara langsung. Tank kosong dengan filtrasi minimal dan populasi sedang membutuhkan tangan yang jauh lebih ringan.",
+        "Pengamatan yang memandu kalibrasi: jika parameter stabil, air jernih, alga bisa dikelola, dan ikan memiliki berat yang sehat, jumlah pemberian makan berfungsi. Jika salah satu dari ini drift, laju pemberian makan adalah salah satu variabel pertama yang perlu diperiksa.",
+        "Puasa ikan sehari seminggu adalah praktik umum dengan berbagai manfaat: memungkinkan sistem pencernaan bersih, mengurangi beban organik selama satu hari, dan memberikan titik perbandingan yang bisa diandalkan — tank yang terlihat lebih baik setelah hari puasa hampir pasti membawa beban berlebih pada hari pemberian makan.",
+        "Pemelihara yang telah mengkalibrasi pemberian makan ke kapasitas sebenar tank telah menyelesaikan masalah yang banyak pemelihara habiskan berbulan-bulan mengatasi melalui ganti air dan perawatan filter tanpa memahami input penyebabnya. Keeper Rhythm — kebiasaan pemberian makan — terus-menerus membentuk Chemical Rhythm. Membaca satu berarti membaca yang lain."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/why-is-my-aquarium-water-cloudy",
+      "text": "Kenapa air akuarium saya keruh? →"
+    },
+    {
+      "href": "/articles/algae-in-aquarium",
+      "text": "Alga di akuarium →"
+    },
+    {
+      "href": "/articles/nitrate-keeps-rising",
+      "text": "Kenapa nitrat terus naik? →"
+    },
+    {
+      "href": "/ara",
+      "text": "Framework ARA →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

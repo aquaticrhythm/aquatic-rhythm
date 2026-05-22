@@ -19,7 +19,7 @@ const ROOT       = path.join(import.meta.dirname, '..');
 const ART_DIR    = path.join(ROOT, 'articles');
 const TRANS_DIR  = path.join(ROOT, 'translations');
 const BASE_URL   = 'https://aquaticrhythm.com';
-const LANGUAGES  = ['ms', 'id', 'ja'];
+const LANGUAGES  = ['ms', 'id', 'ja', 'es'];
 
 const args      = process.argv.slice(2);
 const langIdx   = args.indexOf('--lang');
@@ -31,7 +31,7 @@ const patchEn   = args.includes('--patch-english');
 
 // ── Language switcher ─────────────────────────────────────────────────────────
 
-const LANG_LABELS = { en: 'EN', ms: 'MS', id: 'ID', ja: 'JA' };
+const LANG_LABELS = { en: 'EN', ms: 'MS', id: 'ID', ja: 'JA', es: 'ES' };
 
 function buildLangSwitcher(slug, currentLang) {
   // Collect available lang → URL pairs
