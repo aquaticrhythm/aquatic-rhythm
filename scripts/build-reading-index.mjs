@@ -134,30 +134,32 @@ function getReadyArticles(lang) {
   return articles;
 }
 
-function buildLangSwitcher(lang, slug) {
-  // For reading index pages, link between /reading equivalents.
-  // Always include the current lang being built even if its file doesn't exist yet.
-  const available = ['en', ...LANGS].filter(l => {
+const ALL_READING_LANGS = ['ms', 'id', 'ja'];
+
+function buildLangSwitcher(lang) {
+  // Include a language if it has at least one ready article — avoids build-order issues.
+  const available = ['en', ...ALL_READING_LANGS].filter(l => {
     if (l === 'en') return true;
-    if (l === lang) return true;
-    return fs.existsSync(path.join(ROOT, l, 'reading', 'index.html'));
+    return getReadyArticles(l).length > 0;
   });
   if (available.length < 2) return '';
 
-  const parts = available.map(l => {
+  const others = available.filter(l => l !== lang);
+  const menuItems = others.map(l => {
     const url = l === 'en' ? `${BASE_URL}/reading` : `${BASE_URL}/${l}/reading`;
-    if (l === lang) return `<span class="lang-sw-cur" aria-current="page">${l.toUpperCase()}</span>`;
     return `<a href="${url}" class="lang-sw-opt" hreflang="${l}">${l.toUpperCase()}</a>`;
-  });
+  }).join('');
 
-  return `<div class="lang-sw" aria-label="Language">${parts.join('<span class="lang-sw-sep" aria-hidden="true">·</span>')}</div>`;
+  const dropdown = `<details class="lang-sw" aria-label="Language"><summary class="lang-sw-cur" aria-current="page">${lang.toUpperCase()}</summary><div class="lang-sw-menu">${menuItems}</div></details>`;
+  const closeScript = `<script>if(!window._lswH){window._lswH=1;document.addEventListener('click',function(e){if(!e.target.closest('.lang-sw'))document.querySelectorAll('details.lang-sw[open]').forEach(function(d){d.removeAttribute('open')})})}</script>`;
+  return dropdown + '\n  ' + closeScript;
 }
 
 function buildHreflang(lang) {
   const lines = [];
   lines.push(`<link rel="alternate" hreflang="en" href="${BASE_URL}/reading">`);
-  for (const l of LANGS) {
-    if (fs.existsSync(path.join(ROOT, l, 'reading', 'index.html')) || l === lang) {
+  for (const l of ALL_READING_LANGS) {
+    if (getReadyArticles(l).length > 0) {
       lines.push(`<link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}/reading">`);
     }
   }
@@ -233,10 +235,14 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1rem,4vw,2.5rem);background:rgba(244,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(22,28,24,.07)}
 .nl{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.8rem;font-weight:500;color:rgba(22,28,24,.82);letter-spacing:.04em}
 .nl svg{width:22px;height:22px;opacity:.7}
-.lang-sw{display:flex;align-items:center;gap:.4rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase}
-.lang-sw-opt{color:rgba(45,107,82,.65);text-decoration:none;transition:color .2s}.lang-sw-opt:hover{color:rgba(45,107,82,.95)}
-.lang-sw-cur{color:rgba(22,28,24,.88);font-weight:500}
-.lang-sw-sep{color:rgba(22,28,24,.22)}
+details.lang-sw{position:relative}
+details.lang-sw>summary{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,28,24,.88);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;gap:.2rem;line-height:1}
+details.lang-sw>summary::-webkit-details-marker{display:none}
+details.lang-sw>summary::after{content:'▾';font-size:.5rem;opacity:.45}
+details.lang-sw[open]>summary::after{content:'▴'}
+.lang-sw-menu{position:absolute;right:0;top:calc(100% + .5rem);background:rgba(244,247,242,.98);border:1px solid rgba(22,28,24,.1);border-radius:6px;padding:.25rem;display:flex;flex-direction:column;min-width:2.8rem;z-index:200;box-shadow:0 4px 16px rgba(22,28,24,.1)}
+.lang-sw-opt{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(45,107,82,.72);text-decoration:none;padding:.28rem .55rem;border-radius:3px;transition:color .15s,background .15s;display:block;text-align:center}
+.lang-sw-opt:hover{color:rgba(45,107,82,.95);background:rgba(45,107,82,.07)}
 main{max-width:680px;margin:0 auto;padding:7rem clamp(1.25rem,5vw,2rem) 5rem}
 .eyebrow{display:block;font-size:.6rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(45,107,82,.82);margin-bottom:1.4rem}
 h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.2rem);color:rgba(22,28,24,.92);line-height:1.1;margin-bottom:1.5rem}
@@ -269,7 +275,7 @@ h1 em{font-style:italic;color:rgba(45,107,82,.82)}
     </svg>
     Aquatic Rhythm
   </a>
-  ${buildLangSwitcher(lang, 'reading')}
+  ${buildLangSwitcher(lang)}
 </nav>
 
 <main>

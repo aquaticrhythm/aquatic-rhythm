@@ -47,12 +47,15 @@ nav:not(.bnav){position:fixed;top:0;left:0;right:0;z-index:800;height:68px;displ
   .nbg{display:flex}
 }
 
-/* ── LANGUAGE SWITCHER ── */
-.lang-sw{display:flex;align-items:center;gap:.3rem;margin-right:.5rem}
-.lang-sw-cur{font-size:.5rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.78);cursor:default;line-height:1}
-.lang-sw-sep{font-size:.44rem;color:rgba(255,255,255,.15);user-select:none;line-height:1}
-.lang-sw-opt{font-size:.5rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.34);text-decoration:none;transition:color .2s;line-height:1}
-.lang-sw-opt:hover{color:rgba(61,214,232,.68)}
+/* ── LANGUAGE SWITCHER (dropdown) ── */
+details.lang-sw{position:relative;margin-right:.5rem}
+details.lang-sw>summary{font-size:.5rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(61,214,232,.78);cursor:pointer;list-style:none;display:flex;align-items:center;gap:.22rem;line-height:1;padding:.15rem .25rem;border-radius:3px}
+details.lang-sw>summary::-webkit-details-marker{display:none}
+details.lang-sw>summary::after{content:'▾';font-size:.46rem;opacity:.6}
+details.lang-sw[open]>summary::after{content:'▴'}
+.lang-sw-menu{position:absolute;right:0;top:calc(100% + .5rem);background:rgba(4,12,8,.97);border:1px solid rgba(61,214,232,.12);border-radius:6px;padding:.25rem;display:flex;flex-direction:column;min-width:2.8rem;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.45)}
+.lang-sw-opt{font-size:.5rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:.28rem .55rem;border-radius:3px;transition:color .15s,background .15s;display:block;text-align:center}
+.lang-sw-opt:hover{color:rgba(61,214,232,.9);background:rgba(61,214,232,.07)}
 
 /* ── SETTINGS BUTTON ── */
 .ar-settings-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:none;border:none;border-radius:50%;cursor:pointer;padding:0;color:rgba(139,189,210,.72);opacity:.52;transition:background .25s,opacity .3s;-webkit-tap-highlight-color:transparent;flex-shrink:0}

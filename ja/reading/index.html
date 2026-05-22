@@ -35,10 +35,14 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1rem,4vw,2.5rem);background:rgba(244,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(22,28,24,.07)}
 .nl{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.8rem;font-weight:500;color:rgba(22,28,24,.82);letter-spacing:.04em}
 .nl svg{width:22px;height:22px;opacity:.7}
-.lang-sw{display:flex;align-items:center;gap:.4rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase}
-.lang-sw-opt{color:rgba(45,107,82,.65);text-decoration:none;transition:color .2s}.lang-sw-opt:hover{color:rgba(45,107,82,.95)}
-.lang-sw-cur{color:rgba(22,28,24,.88);font-weight:500}
-.lang-sw-sep{color:rgba(22,28,24,.22)}
+details.lang-sw{position:relative}
+details.lang-sw>summary{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(22,28,24,.88);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;gap:.2rem;line-height:1}
+details.lang-sw>summary::-webkit-details-marker{display:none}
+details.lang-sw>summary::after{content:'▾';font-size:.5rem;opacity:.45}
+details.lang-sw[open]>summary::after{content:'▴'}
+.lang-sw-menu{position:absolute;right:0;top:calc(100% + .5rem);background:rgba(244,247,242,.98);border:1px solid rgba(22,28,24,.1);border-radius:6px;padding:.25rem;display:flex;flex-direction:column;min-width:2.8rem;z-index:200;box-shadow:0 4px 16px rgba(22,28,24,.1)}
+.lang-sw-opt{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(45,107,82,.72);text-decoration:none;padding:.28rem .55rem;border-radius:3px;transition:color .15s,background .15s;display:block;text-align:center}
+.lang-sw-opt:hover{color:rgba(45,107,82,.95);background:rgba(45,107,82,.07)}
 main{max-width:680px;margin:0 auto;padding:7rem clamp(1.25rem,5vw,2rem) 5rem}
 .eyebrow{display:block;font-size:.6rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(45,107,82,.82);margin-bottom:1.4rem}
 h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.2rem);color:rgba(22,28,24,.92);line-height:1.1;margin-bottom:1.5rem}
@@ -71,7 +75,8 @@ h1 em{font-style:italic;color:rgba(45,107,82,.82)}
     </svg>
     Aquatic Rhythm
   </a>
-  <div class="lang-sw" aria-label="Language"><a href="https://aquaticrhythm.com/reading" class="lang-sw-opt" hreflang="en">EN</a><span class="lang-sw-sep" aria-hidden="true">·</span><a href="https://aquaticrhythm.com/ms/reading" class="lang-sw-opt" hreflang="ms">MS</a><span class="lang-sw-sep" aria-hidden="true">·</span><a href="https://aquaticrhythm.com/id/reading" class="lang-sw-opt" hreflang="id">ID</a><span class="lang-sw-sep" aria-hidden="true">·</span><span class="lang-sw-cur" aria-current="page">JA</span></div>
+  <details class="lang-sw" aria-label="Language"><summary class="lang-sw-cur" aria-current="page">JA</summary><div class="lang-sw-menu"><a href="https://aquaticrhythm.com/reading" class="lang-sw-opt" hreflang="en">EN</a><a href="https://aquaticrhythm.com/ms/reading" class="lang-sw-opt" hreflang="ms">MS</a><a href="https://aquaticrhythm.com/id/reading" class="lang-sw-opt" hreflang="id">ID</a></div></details>
+  <script>if(!window._lswH){window._lswH=1;document.addEventListener('click',function(e){if(!e.target.closest('.lang-sw'))document.querySelectorAll('details.lang-sw[open]').forEach(function(d){d.removeAttribute('open')})})}</script>
 </nav>
 
 <main>
