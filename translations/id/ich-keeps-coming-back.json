@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "slug": "ich-keeps-coming-back",
+    "lang": "id",
+    "sourceFile": "articles/ich-keeps-coming-back.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Ich Terus Kembali — Aquatic Rhythm",
+    "description": "Pengobatan berhasil. Bintik hilang. Tapi beberapa minggu kemudian muncul lagi. Panduan ini menjelaskan mengapa ich berulang dan apa yang sebenarnya sedang disampaikan tank kepada Anda.",
+    "ogTitle": "Ich Terus Kembali",
+    "ogDescription": "Pengobatan berhasil tapi ich muncul lagi. Pelajari mengapa ia berulang dan apa yang sebenarnya perlu berubah."
+  },
+  "intro": {
+    "eyebrow": "Artikel · Livestock Rhythm",
+    "titleHtml": "Ich Terus<br><em>Kembali</em>",
+    "subtitle": "Pengobatan berhasil. Bintik hilang. Tapi beberapa minggu kemudian muncul lagi.",
+    "texts": [
+      "Bintik hilang. Anda melakukan segalanya dengan benar — pengobatan panas, garam, atau obat, dan berhasil. Tapi beberapa minggu kemudian bintik-bintik itu muncul kembali, kadang pada ikan yang sama, kadang pada yang lain.",
+      "Panduan ini menjelaskan mengapa ich berulang di tank di mana pengobatan sudah berhasil, apa yang berulangnya ceritakan tentang kondisi tank, dan bagaimana respons yang berbeda terlihat — satu yang mengatasi penyebab bukan hanya gejala."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua level",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Kenapa pengobatan saja tidak cukup",
+      "titleHtml": "Ich hilang.<br><em>Tapi kondisi yang memberinya jalan masih ada.</em>",
+      "body": [
+        "Ich (Ichthyophthirius multifiliis) adalah parasit yang hampir semua pemelihara berpengalaman pernah hadapi. Bagian yang menjengkelkan bukan wabah pertama — tapi kembalinya. Pengobatan efektif: panas, garam, dan obat semuanya membersihkan tahap berenang bebas dengan efektif. Tapi pemelihara yang mengalami ich berulang sering menangani gejala yang sama berulang kali tanpa mengatasi apa yang membuat ikan rentan.",
+        "Ich ada hampir di mana-mana dalam lingkungan akuarium sebagai parasit tingkat rendah. Sistem imun ikan yang sehat dan tidak stres biasanya menjaganya pada tingkat yang tidak menghasilkan wabah yang terlihat. Ini menjadi masalah yang terlihat ketika stres menekan fungsi imun ikan cukup untuk membiarkan parasit berkembang biak lebih cepat dari pertahanan alami mereka yang bisa mengelolanya.",
+        "Implikasi praktisnya: ich berulang bukan kegagalan teknik pengobatan. Ini adalah sinyal bahwa stres di tank yang memungkinkan wabak pertama masih hadir. Membersihkan bintik untuk keempat kalinya tanpa mengatasi stres itu adalah menunggu untuk kelima kalinya."
+      ],
+      "pullQuote": "Ich tidak kembali karena pengobatan gagal. Ia kembali karena tank yang ditinggalinya tidak berubah.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Ich sebagai sinyal Livestock Rhythm"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Ich sebagai sinyal Livestock Rhythm",
+      "titleHtml": "Ich adalah sinyal.<br><em>Bukan masalah itu sendiri.</em>",
+      "body": [
+        "Dalam ARA, wabah ich adalah sinyal Livestock Rhythm — cara tank mengekspresikan stres yang sudah hadir. Sinyalnya bukan ich itu sendiri tapi apa yang ich ungkapkan: bahwa ikan di tank ini berada di bawah stres kronis yang cukup untuk membiarkan parasit yang biasanya tertekan berkembang biak.",
+        "Pertanyaan ARA setelah wabah ich bukan hanya 'bagaimana cara menghilangkan bintik?' Melainkan 'stres apa di tank ini yang cukup tinggi untuk memungkinkan ini terjadi, dan apakah masih hadir?'",
+        "Stres yang paling umum memungkinkan ich muncul: perubahan suhu mendadak atau ketidakstabilan suhu kronis, populasi yang terlalu padat atau agresi yang berkelanjutan, kualitas air yang buruk (amonia atau nitrit walau rendah, perubahan pH), ikan baru dimasukkan tanpa karantina membawa parasit pada tingkat sub-klinis, atau stres dari prosedur perawatan — ganti air dengan air yang tidak disesuaikan suhunya adalah penyumbang umum yang sering terlewat.",
+        "Tidak semua kasus ich adalah stres kronis. Kadang-kadang satu kejadian yang jelas — ikan baru tanpa karantina, lonjakan suhu mendadak — memicu wabah tunggal. Dalam kasus itu, mengatasi kejadian itu sudah cukup. Tapi ich yang berulang — lebih dari sekali dalam enam bulan — hampir selalu menunjukkan sesuatu yang berkelanjutan.",
+        "Cara membedakannya: ich pertama setelah menambah ikan baru yang tidak dikarantina kemungkinan dari pengenalan parasit. Ich yang muncul tiga minggu setelah pengobatan di tank stabil tanpa penambahan baru hampir pasti dari stres yang masih hadir.",
+        "Dalam kedua kasus, pengamatan adalah langkah berikutnya — bukan pengobatan ulang segera. Mengobati ich untuk kedua kalinya tanpa memahami mengapa ia kembali adalah mengulangi siklus yang sama.",
+        "Ikan yang paling sering mendapat ich pertama dalam wabah biasanya yang paling stres — baik dari stres sosial (ikan yang terus dikejar), ketidakcocokan lingkungan (spesies air dingin di tank yang terlalu panas), atau beban penyakit yang sudah ada. Ikan yang mendapat ich pertama adalah bacaan, bukan kebetulan."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Livestock Rhythm",
+      "hintText": [
+        "Dalam ARA, Livestock Rhythm adalah pola berkelanjutan perilaku ikan, warna, nafsu makan, dan dinamika sosial yang mencerminkan kondisi seluruh sistem. Ikan yang sehat sebelum wabah ich dan sehat setelahnya tidak memberi Anda informasi yang berguna. Ikan yang cukup stres untuk menunjukkan bintik sedang menyampaikan sesuatu yang tes air tidak bisa."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Mencari stres dominan"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Mencari stres dominan",
+      "titleHtml": "Menemukan apa yang<br><em>sebenarnya sedang disampaikan tank.</em>",
+      "body": [
+        "Langkah pertama setelah membersihkan wabah ich adalah pengamatan, bukan perubahan segera. Buat daftar apa yang Anda ketahui: kapan wabah muncul? Apa yang berubah dalam dua hingga empat minggu sebelumnya? Ikan baru? Makan baru? Perubahan suhu musiman? Perubahan suhu ruangan? Ganti air besar? Pembersihan filter?",
+        "Setelah perubahan terbaru yang paling mungkin teridentifikasi, itulah stres dominan yang perlu diatasi. Jika tidak ada perubahan yang jelas teridentifikasi, lihat kondisi yang berkelanjutan: seberapa padat populasi? Apakah ikan tertentu selalu bersembunyi atau menghindari area tertentu? Apakah suhu stabil sepanjang hari dan malam?",
+        "Periksa stabilitas suhu terlebih dahulu — ini adalah penyumbang ich yang paling sering diabaikan. Banyak heater berayun 2–3°C sepanjang hari, terutama heater yang lebih murah. Ikan di lingkungan termal yang tidak menentu hidup dalam stres fisiologis kronis walau suhu rata-rata 'benar.'",
+        "Periksa parameter air tidak hanya setelah ganti air tapi beberapa hari sebelum ganti air berikutnya. Amonia dan nitrit yang perlahan-lahan naik di antara ganti air, walau tidak mencapai tingkat yang sangat tinggi, bisa membuat ikan dalam kondisi stres yang berkelanjutan."
+      ],
+      "pullQuote": "Ich bukan masalah. Ich adalah bacaan. Masalahnya adalah apa yang membuat ikan cukup stres untuk memberinya jalan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Respons yang selaras"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Respons yang selaras",
+      "titleHtml": "Respons yang selaras<br><em>terhadap penyakit berulang.</em>",
+      "body": [
+        "Respons yang selaras terhadap ich berulang berbeda dari respons pengobatan. Pengobatan bertanya: 'bagaimana cara menghilangkan bintik?' Respons yang selaras bertanya: 'apa yang dibutuhkan tank ini agar berhenti menghasilkan wabah?'",
+        "Urutan praktis: Pertama, tangani wabah saat ini — pengobatan panas (30°C selama 10 hari) efektif dan tidak melibatkan bahan kimia obat; untuk planted tank, garam dengan dosis rendah bisa digunakan. Kedua, selama pengobatan, mulai pengamatan: catat suhu setiap hari, uji air di pertengahan siklus pengobatan, perhatikan perilaku makan dan sosial. Ketiga, setelah bintik hilang selama tujuh hari, identifikasi stres dominan — satu hal yang paling mungkin menjadi penyumbang. Keempat, atasi satu hal itu saja dan pantau selama empat hingga delapan minggu sebelum menarik kesimpulan.",
+        "Perubahan yang paling berguna setelah ich berulang, berdasarkan urutan seberapa sering membantu: perbaiki stabilitas suhu, kurangi populasi atau atasi agresi, tingkatkan frekuensi atau kualitas ganti air, tambahkan karantina untuk ikan baru ke depannya.",
+        "Tank yang melewati empat hingga enam bulan tanpa wabah ich berulang setelah mengatasi stres dominan hampir selalu tank di mana satu hal yang signifikan berubah — bukan tank di mana semua hal disesuaikan sedikit-sedikit sekaligus."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Ecological Forgiveness",
+      "hintText": [
+        "Tank yang pernah mengalami ich berulang bisa menjadi tank yang stabil. Sistem imun ikan pulih ketika stres kronis dihilangkan. Ecological forgiveness berarti pola masa lalu tidak menentukan masa depan — tapi hanya jika stres yang mendasarinya diubah, bukan hanya gejala yang dibersihkan. Riwayat wabah bukan penilaian akhir. Ini adalah catatan apa yang diminta tank."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/adding-new-fish",
+      "text": "Menambah ikan baru →"
+    },
+    {
+      "href": "/articles/perfect-parameters-fish-dying",
+      "text": "Parameter ok tapi ikan mati →"
+    },
+    {
+      "href": "/articles/fish-hiding-what-does-it-mean",
+      "text": "Ikan saya bersembunyi →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
