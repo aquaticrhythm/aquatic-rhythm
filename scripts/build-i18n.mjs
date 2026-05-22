@@ -144,6 +144,8 @@ function buildArticle(slug, lang, t) {
     (_, a, b) => `${a}${localUrl}${b}`);
 
   // ── 4. hreflang tags (inject after canonical) ─────────────────────────────
+  // Strip any existing hreflang tags before injecting fresh ones.
+  h = h.replace(/<link rel="alternate" hreflang="[^"]*"[^>]*>\n?/g, '');
   const hreflang = buildHreflangTags(slug, lang);
   h = replaceOnce(h, /(<link rel="canonical"[^>]*>)/,
     (_, canon) => `${canon}\n${hreflang}`);
@@ -363,22 +365,21 @@ function patchEnglishArticle(slug) {
   let h = fs.readFileSync(srcPath, 'utf8');
   let changed = false;
 
-  // Inject hreflang if missing
-  if (!h.includes('hreflang="en"')) {
-    const hreflang = buildHreflangTags(slug, 'en');
-    h = replaceOnce(h, /(<link rel="canonical"[^>]*>)/,
-      (_, canon) => `${canon}\n${hreflang}`);
-    changed = true;
-  }
+  // Always strip and re-inject hreflang so new languages are picked up.
+  const hreflangBefore = h;
+  h = h.replace(/<link rel="alternate" hreflang="[^"]*"[^>]*>\n?/g, '');
+  const hreflang = buildHreflangTags(slug, 'en');
+  h = replaceOnce(h, /(<link rel="canonical"[^>]*>)/,
+    (_, canon) => `${canon}\n${hreflang}`);
+  if (h !== hreflangBefore) changed = true;
 
-  // Inject language switcher if missing
-  if (!h.includes('class="lang-sw"')) {
-    const switcher = buildLangSwitcher(slug, 'en');
-    if (switcher) {
-      h = replaceOnce(h, /(<button class="nbg")/,
-        (_, btn) => `${switcher}\n${btn}`);
-      changed = true;
-    }
+  // Strip and re-inject language switcher so new languages appear.
+  h = h.replace(/<div class="lang-sw"[^>]*>.*?<\/div>\n?/g, '');
+  const switcher = buildLangSwitcher(slug, 'en');
+  if (switcher) {
+    h = replaceOnce(h, /(<button class="nbg")/,
+      (_, btn) => `${switcher}\n${btn}`);
+    changed = true;
   }
 
   if (changed) {
