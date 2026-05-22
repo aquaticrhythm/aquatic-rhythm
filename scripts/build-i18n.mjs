@@ -50,15 +50,15 @@ function buildLangSwitcher(slug, currentLang) {
   // Only inject switcher if more than one language is available
   if (options.length < 2) return '';
 
-  const parts = options.map(({ lang, url }) => {
-    if (lang === currentLang) {
-      return `<span class="lang-sw-cur" aria-current="page">${LANG_LABELS[lang]}</span>`;
-    }
-    return `<a href="${url}" class="lang-sw-opt" hreflang="${lang}">${LANG_LABELS[lang]}</a>`;
-  });
+  const currentLabel = LANG_LABELS[currentLang];
+  const others = options.filter(o => o.lang !== currentLang);
+  const menuItems = others.map(({ lang, url }) =>
+    `<a href="${url}" class="lang-sw-opt" hreflang="${lang}">${LANG_LABELS[lang]}</a>`
+  ).join('');
 
-  const inner = parts.join('<span class="lang-sw-sep" aria-hidden="true">·</span>');
-  return `<div class="lang-sw" aria-label="Language">${inner}</div>`;
+  const dropdown = `<details class="lang-sw" aria-label="Language"><summary class="lang-sw-cur" aria-current="page">${currentLabel}</summary><div class="lang-sw-menu">${menuItems}</div></details>`;
+  const closeScript = `<script>if(!window._lswH){window._lswH=1;document.addEventListener('click',function(e){if(!e.target.closest('.lang-sw'))document.querySelectorAll('details.lang-sw[open]').forEach(function(d){d.removeAttribute('open')})})}</script>`;
+  return dropdown + '\n' + closeScript;
 }
 
 // ── SEO helpers ───────────────────────────────────────────────────────────────
@@ -152,7 +152,9 @@ function buildArticle(slug, lang, t) {
 
   // ── 4b. Language switcher (inject before burger button in nav) ────────────
   // Strip any existing lang-sw injected by a previous patch/build run first.
+  h = h.replace(/<details class="lang-sw"[\s\S]*?<\/details>\n?/g, '');
   h = h.replace(/<div class="lang-sw"[^>]*>.*?<\/div>\n?/g, '');
+  h = h.replace(/<script>if\(!window\._lswH\)[\s\S]*?<\/script>\n?/g, '');
   const switcher = buildLangSwitcher(slug, lang);
   if (switcher) {
     h = replaceOnce(h, /(<button class="nbg")/,
@@ -374,7 +376,9 @@ function patchEnglishArticle(slug) {
   if (h !== hreflangBefore) changed = true;
 
   // Strip and re-inject language switcher so new languages appear.
+  h = h.replace(/<details class="lang-sw"[\s\S]*?<\/details>\n?/g, '');
   h = h.replace(/<div class="lang-sw"[^>]*>.*?<\/div>\n?/g, '');
+  h = h.replace(/<script>if\(!window\._lswH\)[\s\S]*?<\/script>\n?/g, '');
   const switcher = buildLangSwitcher(slug, 'en');
   if (switcher) {
     h = replaceOnce(h, /(<button class="nbg")/,
