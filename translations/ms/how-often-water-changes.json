@@ -2,107 +2,113 @@
   "_meta": {
     "slug": "how-often-water-changes",
     "lang": "ms",
-    "sourceFile": "articles/how-often-water-changes.html"
+    "sourceFile": "articles/how-often-water-changes.html",
+    "status": "ready"
   },
   "head": {
-    "title": "How Often Should I Do Water Changes? — Aquatic Rhythm",
-    "description": "There is no single right answer — and that is not the problem you think it is. ARA looks at your keeper rhythm first, then asks what kind of continuity your system actually needs.",
-    "ogTitle": "How Often Should I Do Water Changes? — Aquatic Rhythm",
-    "ogDescription": "There is no single right answer — and that is not the problem you think it is. ARA looks at your keeper rhythm first."
+    "title": "Berapa Kerap Perlu Buat Water Change? — Aquatic Rhythm",
+    "description": "Tiada satu jawapan yang betul — dan itu bukan masalah yang anda fikir ia adalah. ARA bermula dengan keeper rhythm anda dulu, kemudian tanya apa kesinambungan yang sistem anda sebenarnya perlukan.",
+    "ogTitle": "Berapa Kerap Perlu Buat Water Change?",
+    "ogDescription": "Tiada satu jawapan yang betul — dan itu bukan masalah yang anda fikir ia adalah. ARA bermula dengan keeper rhythm anda dulu."
   },
   "intro": {
-    "eyebrow": "Reading · Keeper &amp; Rhythm",
-    "titleHtml": "How Often Should I<br><em>Do Water Changes?</em>",
-    "subtitle": "There is no single right answer. And that is not the problem you think it is.",
+    "eyebrow": "Bacaan · Penjaga & Ritma",
+    "titleHtml": "Berapa Kerap Perlu<br><em>Buat Water Change?</em>",
+    "subtitle": "Tiada satu jawapan yang betul. Dan itu bukan masalah yang anda fikir ia adalah.",
     "texts": [
-      "Weekly 25%. Monthly 50%. When nitrates hit a certain number. The advice varies so much that it starts to feel like everyone is guessing — and you are the one getting it wrong.",
-      "The question itself might be the problem. ARA does not start with frequency. It starts with your keeper rhythm — the actual pattern of care you can sustain — and works from there."
+      "25% seminggu. 50% sebulan. Bila nitrate dah sampai nombor tertentu. Nasihat yang ada terlalu pelbagai sampai terasa macam semua orang meneka — dan andalah yang buat silap.",
+      "Soalan itu sendiri mungkin masalahnya. ARA tidak bermula dengan kekerapan. Ia bermula dengan keeper rhythm anda — corak penjagaan sebenar yang anda boleh kekalkan — dan bekerja dari situ."
     ],
-    "metaModules": "4 modules",
-    "metaTime": "All levels",
-    "metaLevel": "~7 min",
-    "cta": "Start reading"
+    "metaModules": "4 modul",
+    "metaTime": "Semua peringkat",
+    "metaLevel": "~7 minit",
+    "cta": "Mula membaca"
   },
   "modules": [
     {
       "id": "mod-1",
-      "tag": "The question behind the question",
-      "titleHtml": "There are as many answers<br><em>as there are keepers.</em>",
+      "tag": "Soalan di sebalik soalan",
+      "titleHtml": "Tanya sepuluh penjaga,<br><em>dapat sepuluh jawapan berbeza.</em>",
       "body": [
-        "Ask ten experienced aquarists and you will get ten different answers. Weekly. Every two weeks. Monthly. 10%. 30%. 50%. Based on nitrates. Based on the calendar. Based on how the tank looks.",
-        "The disagreement is not because some of them are wrong. It is because water change frequency is genuinely dependent on things that differ between every tank and every keeper: bioload, plant mass, filter capacity, tank phase, and — the part most advice leaves out — the pattern of care the keeper can actually sustain."
+        "Tanya sepuluh penjaga berpengalaman dan anda akan dapat sepuluh jawapan berbeza. Setiap minggu. Dua minggu sekali. Sebulan sekali. 10%. 30%. 50%. Berdasarkan nitrate. Berdasarkan kalendar. Berdasarkan keadaan tank.",
+        "Percanggahan itu bukan kerana sebahagian daripada mereka salah. Ia kerana kekerapan water change memang bergantung kepada perkara yang berbeza bagi setiap tank dan setiap penjaga: bioload, banyaknya tumbuhan, kapasiti filter, fasa tank, dan — bahagian yang kebanyakan nasihat tinggalkan — corak penjagaan yang penjaga tu sebenarnya mampu kekalkan.",
+        "Berita baiknya ialah dalam julat yang cukup luas, <em>konsistensi</em> water change anda lebih penting daripada kekerapan atau jumlah yang tepat. Tank yang menerima water change kecil secara berkala hampir selalu lebih baik daripada satu yang menerima water change besar secara tidak menentu — walaupun jumlah keseluruhan yang ditukar sebulan adalah sama."
       ],
       "pullQuote": null,
-      "hintLabel": "Aquatic Rhythm note",
+      "hintLabel": "Nota Aquatic Rhythm",
       "hintText": [
-        "ARA does not give a universal water change schedule because there is not one. What it does instead is ask two prior questions: what does your system actually need, and what rhythm can you honestly maintain? The answer to the second shapes the answer to the first."
+        "ARA tidak bagi jadual water change universal kerana memang tiada satu pun yang betul. Yang ia buat adalah tanya dua soalan terlebih dahulu: apa yang sistem anda sebenarnya perlukan, dan ritma apa yang anda benar-benar boleh kekalkan? Jawapan kepada soalan kedua membentuk jawapan kepada soalan pertama."
       ],
       "prevBtn": "← Intro",
-      "nextBtn": "What water changes actually do"
+      "nextBtn": "Apa yang water change sebenarnya buat"
     },
     {
       "id": "mod-2",
-      "tag": "What is actually happening",
-      "titleHtml": "Water changes are not<br><em>about removing bad things.</em>",
+      "tag": "Apa yang sebenarnya berlaku",
+      "titleHtml": "Water change bukan<br><em>tentang membuang benda buruk.</em>",
       "body": [
-        "The common framing is that water changes remove toxins and waste. That is partly true. But in a well-functioning tank, the biological filter handles most of the toxic load. What water changes primarily do is something subtler: they dilute accumulated compounds that biology cannot break down — nitrates, dissolved organics, trace mineral depletion — and they renew the Water Rhythm of the tank.",
-        "The Water Rhythm, in ARA terms, is the pattern of movement and renewal in the system. When that rhythm becomes too irregular — too long between changes, or too large when they happen — the system has to absorb a sudden shift. Biology does not respond well to sudden shifts."
+        "Tanggapan yang biasa ialah water change membuang toksin dan sisa. Itu sebahagiannya betul. Tapi dalam tank yang berfungsi dengan baik, filter biologi yang menguruskan kebanyakan beban toksik itu. Apa yang water change terutamanya buat adalah sesuatu yang lebih halus: ia mencairkan sebatian yang terkumpul yang biologi tidak boleh urai — nitrate, bahan organik larut, kehabisan mineral surih — dan ia memperbaharui Water Rhythm tank.",
+        "Water Rhythm, dalam istilah ARA, adalah corak pergerakan dan pembaharuan dalam sistem. Apabila ritma itu menjadi terlalu tidak menentu — terlalu lama antara water change, atau terlalu besar apabila ia dibuat — sistem terpaksa menyerap perubahan mendadak. Biologi tidak bertindak balas dengan baik terhadap perubahan mendadak.",
+        "Kekerapan yang betul juga bergantung kepada di mana tank anda dalam fasa ekologinya. Tank <strong>Early Phase</strong> — baru, atau baru sahaja restart — lebih banyak mendapat manfaat daripada water change yang lebih kerap dan lebih kecil. Biologi masih rapuh dan kimia boleh berubah dengan cepat. Tank <strong>Mature Phase</strong> pula telah membina penampan. Ia boleh menangani water change yang kurang kerap dengan lebih tenang, terutama jika ada tumbuhan dan bioload yang sederhana. Sistem dah bina apa yang ARA panggil ecological forgiveness — kapasiti untuk serap variasi penjaga tanpa terganggu."
       ],
-      "pullQuote": "A water change is not a reset. It is a renewal — a moment when the system's accumulated load is reduced gently, and the chemistry that living things depend on is brought back into range. Renewals work best when they are part of a rhythm, not a reaction to a crisis.",
+      "pullQuote": "Water change bukan reset. Ia pembaharuan — saat apabila beban terkumpul sistem dikurangkan perlahan-lahan, dan kimia yang hidupan bergantung padanya dibawa kembali dalam julat. Pembaharuan berfungsi paling baik apabila ia adalah sebahagian daripada ritma, bukan tindak balas kepada krisis.",
       "hintLabel": null,
       "hintText": null,
-      "prevBtn": "← Back",
-      "nextBtn": "Rhythm before frequency"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Ritma sebelum kekerapan"
     },
     {
       "id": "mod-3",
-      "tag": "The ARA approach",
-      "titleHtml": "Rhythm before frequency.<br><em>Coherent continuity above all.</em>",
+      "tag": "Pendekatan ARA",
+      "titleHtml": "Ritma sebelum kekerapan.<br><em>Kesinambungan yang koheren di atas segalanya.</em>",
       "body": [
-        "ARA's answer to \"how often?\" is: start with what you can actually sustain. Not what you aspire to do when life is uncomplicated. What you will do when you are tired, when work is heavy, when you travel for a week. That is your real keeper rhythm.",
-        "A keeper who reliably does 15% every two weeks creates better long-term conditions than one who plans 40% weekly but misses every third or fourth change. The plan sounds better on paper, but the inconsistency creates larger swings than the smaller, reliable rhythm."
+        "Jawapan ARA kepada \"berapa kerap?\" adalah: mulakan dengan apa yang anda sebenarnya boleh kekalkan. Bukan apa yang anda ingin buat apabila hidup tidak rumit. Apa yang anda akan buat apabila anda penat, apabila kerja menimbun, apabila anda bermusafir seminggu. Itulah keeper rhythm anda yang sebenar.",
+        "Penjaga yang secara konsisten buat 15% setiap dua minggu mewujudkan keadaan jangka panjang yang lebih baik daripada satu yang merancang 40% setiap minggu tapi terlepas setiap kali yang ketiga atau keempat. Rancangan itu kedengaran lebih baik di atas kertas, tapi ketidakkonsistenan itu mewujudkan turun naik yang lebih besar daripada ritma yang kecil tapi boleh dipercayai.",
+        "Ini bukan bermakna jumlah langsung tidak penting. Jika nitrate sentiasa tinggi walaupun dengan water change yang kerap, anda perlu sama ada water change yang lebih besar atau bioload yang lebih sedikit. Tapi mulakan dengan ritma. Bina tabiat dulu. Kalibrasi dari situ.",
+        "Quiz Know Your Rhythm boleh bantu anda kenal pasti jenis keeper rhythm yang anda sebenarnya ada — bukan yang anda fikir anda ada atau harap anda ada. Keeper rhythm yang berbeza sesuai dengan pendekatan penyelenggaraan air yang berbeza, dan membina berdasarkan ritma sebenar anda berbanding yang dibayangkan adalah perbezaan antara penjagaan yang bertahan dan yang runtuh."
       ],
-      "pullQuote": "Living systems usually respond better to coherent continuity than to bursts of intervention. Doing a little, regularly, with honest attention, creates more stability than doing a great deal occasionally. This is as true for water changes as it is for any other form of care.",
-      "hintLabel": "ARA principle",
+      "pullQuote": "Sistem hidup biasanya bertindak balas lebih baik kepada kesinambungan yang koheren berbanding kepada ledakan campur tangan. Buat sedikit, secara berkala, dengan perhatian yang jujur, mewujudkan lebih banyak kestabilan daripada buat banyak sesekali. Ini benar untuk water change sama seperti untuk mana-mana bentuk penjagaan lain.",
+      "hintLabel": "Prinsip ARA",
       "hintText": [
-        "Capacity before ambition. A system should not be built on imagined consistency. ARA brings your real life into the frame — because sustainability depends on what can actually be maintained, not what sounds correct in theory."
+        "Capacity before ambition. Sistem tidak sepatutnya dibina atas konsistensi yang dibayangkan. ARA membawa kehidupan sebenar anda ke dalam gambar — kerana kelestarian bergantung kepada apa yang sebenarnya boleh dikekalkan, bukan apa yang kedengaran betul dari segi teori."
       ],
-      "prevBtn": "← Back",
-      "nextBtn": "How to calibrate your rhythm"
+      "prevBtn": "← Kembali",
+      "nextBtn": "Cara kalibrasi ritma anda"
     },
     {
       "id": "mod-4",
-      "tag": "Design a rhythm you can keep",
-      "titleHtml": "Start honest.<br><em>Then calibrate.</em>",
+      "tag": "Reka ritma yang anda boleh kekalkan",
+      "titleHtml": "Mulakan dengan jujur.<br><em>Kemudian kalibrasi.</em>",
       "body": [
-        "A practical starting point for most home tanks: pick the most frequent interval you know you will actually maintain — weekly, every ten days, fortnightly — and do 15–25% at each change. That range is gentle enough not to shock the system but frequent enough to keep nitrates from accumulating significantly in most moderately stocked tanks.",
-        "Then test nitrates two or three weeks in. If they are staying below 20 ppm between changes, your rhythm is working. If they are consistently higher, either increase volume slightly, reduce feeding, or add plants. If they are very low with live plants and light stocking, you may be able to extend the interval without consequence."
+        "Titik permulaan yang praktikal untuk kebanyakan tank di rumah: pilih selang yang paling kerap yang anda tahu akan anda kekalkan — setiap minggu, setiap sepuluh hari, dua minggu sekali — dan buat 15–25% setiap kali. Julat itu cukup lembut untuk tidak mengejutkan sistem tapi cukup kerap untuk elak nitrate terkumpul dengan ketara dalam kebanyakan tank yang diisi secara sederhana.",
+        "Kemudian test nitrate dua atau tiga minggu kemudian. Jika ia kekal di bawah 20 ppm antara water change, ritma anda berfungsi. Jika ia sentiasa lebih tinggi, sama ada tambah jumlah sedikit, kurangkan pemberian makan, atau tambah tumbuhan. Jika ia sangat rendah dengan tumbuhan hidup dan bioload ringan, anda mungkin boleh panjangkan selang tanpa kesan.",
+        "Perkara paling penting adalah elakkan tabiat membuat water change besar dalam kecemasan sahaja apabila sesuatu kelihatan salah — kemudian pergi lama tanpa sebarang water change langsung. Corak itu mewujudkan turun naik yang paling besar, tekanan paling banyak pada ikan, dan keresahan paling banyak untuk penjaga. Bina ritma dulu. Walaupun tidak sempurna. Tank akan mencerminkannya."
       ],
-      "pullQuote": "The rhythm between you and the tank is a real thing. When care is coherent and continuous — even if modest — the system learns to hold within it. That is not metaphor. It is ecology.",
-      "hintLabel": "A note on tank phase",
+      "pullQuote": "Ritma antara anda dan tank adalah perkara yang nyata. Apabila penjagaan koheren dan berterusan — walaupun sederhana — sistem belajar untuk kekal dalam lingkungannya. Itu bukan metafora. Itu ekologi.",
+      "hintLabel": "Nota tentang fasa tank",
       "hintText": [
-        "New tanks (Early Phase) generally need more attention — smaller but more frequent changes, especially while cycling. As the tank matures and biology stabilises, you will find you can do less and the system will hold more. That increasing forgiveness is something you earn through time and consistent care — not something you can shortcut."
+        "Tank baru (Early Phase) secara umum memerlukan lebih banyak perhatian — water change yang lebih kecil tapi lebih kerap, terutama semasa cycling. Apabila tank matang dan biologi stabil, anda akan dapati anda boleh buat lebih sedikit dan sistem akan bertahan lebih lama. Pengampunan yang semakin meningkat itu adalah sesuatu yang anda perolehi melalui masa dan penjagaan yang konsisten — bukan sesuatu yang boleh dipintas."
       ],
-      "prevBtn": "← Back",
+      "prevBtn": "← Kembali",
       "nextBtn": null
     }
   ],
   "relatedLinks": [
     {
       "href": "/articles/know-your-rhythm",
-      "text": "Know your rhythm →"
+      "text": "Kenal ritma anda →"
     },
     {
       "href": "/ara",
-      "text": "The ARA framework →"
+      "text": "Framework ARA →"
     },
     {
       "href": "/rhyssa",
-      "text": "Ask Rhyssa →"
+      "text": "Tanya Rhyssa →"
     }
   ],
   "footer": {
-    "allArticles": "← All articles",
+    "allArticles": "← Semua artikel",
     "araLink": "Aquatic Rhythm Alignment"
   }
 }
