@@ -1,0 +1,127 @@
+{
+  "_meta": {
+    "slug": "aquarium-plants-not-growing",
+    "lang": "id",
+    "sourceFile": "articles/aquarium-plants-not-growing.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Kenapa Tanaman Akuarium Saya Tidak Tumbuh? — Aquatic Rhythm",
+    "description": "Daun layu, menguning, atau tertutup alga. Tanaman sedang membaca sesuatu dan memberi tahu Anda tentangnya. Panduan ini menjelaskan cara membaca sinyal dan menyelaraskan setup dengan kapasitas Anda yang sebenar.",
+    "ogTitle": "Kenapa Tanaman Akuarium Saya Tidak Tumbuh?",
+    "ogDescription": "Tanaman sedang membaca sesuatu. Pelajari cara membaca sinyal mereka dan menyelaraskan setup dengan kapasitas sebenar Anda."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Praktis",
+    "titleHtml": "Kenapa Tanaman Akuarium<br><em>Saya Tidak Tumbuh?</em>",
+    "subtitle": "Tanaman sedang membaca sesuatu. Pelajari apa.",
+    "texts": [
+      "Daun sedang layu, atau menguning, atau ditumbuhi alga. Atau tidak ada yang tumbuh sama sekali — hanya penolakan yang lambat dan keras kepala untuk berkembang. Tanaman terlihat seharusnya hidup, tapi ada sesuatu yang jelas tidak beres.",
+      "Panduan ini menjelaskan apa yang sebenarnya direspons tanaman Anda, cara membaca sinyal spesifik yang mereka tunjukkan, dan cara menyelaraskan setup Anda dengan apa yang bisa Anda berikan secara konsisten.",
+      "Ini bukan tentang mencapai planted tank yang sempurna. Ini tentang memahami apa yang tanaman butuhkan, dan apakah Anda bisa menyediakannya secara konsisten — karena ketidakkonsistenan adalah kontributor terbesar kegagalan tanaman dalam hobi ini."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Apa yang tanaman sedang baca",
+      "titleHtml": "Tanaman dalam akuarium<br><em>merespons secara terus-menerus.</em>",
+      "body": [
+        "Tanaman dalam akuarium tidak pasif. Mereka merespons secara terus-menerus terhadap cahaya, kimia air, kadar CO2, ketersediaan nutrisi, dan kondisi substrat. Ketika mereka berjuang — daun layu, menguning, menolak tumbuh ke atas, alga menjajah daun mereka — mereka sedang memberi tahu Anda bahwa satu atau lebih kondisi itu tidak sesuai.",
+        "<strong>Daun menguning dari bawah ke atas (klorosis umum).</strong> Sering sinyal kekurangan nutrisi — paling umum kekurangan nitrogen atau zat besi. Di akuarium tanpa substrat kaya nutrisi, ini terjadi ketika tanaman menghabiskan nutrisi yang ada tanpa pengisian ulang.",
+        "<strong>Daun baru kecil dan pucat.</strong> Sering kekurangan zat besi khusus. Zat besi penting untuk klorofil — daun baru yang tidak cukup mendapatkannya terbentuk dengan kandungan klorofil rendah. Bisa diatasi dengan suplemen zat besi cair.",
+        "<strong>Daun layu atau hancur dalam beberapa minggu setelah ditanam.</strong> Ini adalah transisi melt — tanaman yang dipindahkan dari sumber berbeda (dari atas air ke bawah air) melepaskan daun lama untuk menghasilkan daun air baru. Biasanya normal dan berakhir dalam dua hingga empat minggu. Tanda bahaya adalah melt yang berlanjut melebihi empat minggu tanpa pertumbuhan baru.",
+        "<strong>Alga di daun tanaman hidup.</strong> Tanaman yang sehat dengan pertumbuhan aktif menghasilkan permukaan yang tidak ramah alga — ia tumbuh terlalu cepat untuk alga menjajah. Tanaman yang berjuang dengan cahaya atau nutrisi yang tidak cukup memiliki permukaan daun yang statis di mana alga bisa menetap. Alga di daun tanaman adalah gejala tanaman yang berjuang, bukan penyebab terpisah.",
+        "<strong>Pertumbuhan tanaman lambat atau tidak ada sama sekali.</strong> Penyebab paling umum: cahaya yang tidak cukup atau tidak konsisten, CO2 yang tidak cukup (di setup yang memerlukan injeksi), atau kekurangan nutrisi makro (nitrogen, fosfor, kalium). Di akuarium low-tech, cahaya sering menjadi faktor pembatas.",
+        "<strong>Batang yang panjang dan kurus menuju cahaya.</strong> Disebut etiolasi — tanaman sedang meregangkan diri mencari cahaya karena tidak cukup mendapatkannya di tempatnya. Ini hampir selalu sinyal cahaya, bukan nutrisi.",
+        "<strong>Akar yang tidak berkembang atau putus.</strong> Substrat yang terlalu padat, substrat yang tidak bernutrisi (kerikil polos tanpa suplemen), atau suhu yang terlalu rendah untuk metabolisme tanaman semua bisa menghambat perkembangan akar.",
+        "<strong>pH tinggi di planted tank yang diinjeksi CO2.</strong> CO2 larut dalam air sebagai asam karbonat dan menurunkan pH. Jika pH tidak turun selama injeksi CO2, CO2 tidak cukup terserap — periksa laju aliran dan pastikan diffuser bersih dan berfungsi.",
+        "<strong>Daun berlubang atau terkikis.</strong> Sering aktivitas ikan yang memakan tanaman (ikan mas, beberapa cichlid, siput) — bukan masalah pertumbuhan. Tapi bisa juga dari kekurangan kalium pada beberapa spesies."
+      ],
+      "pullQuote": "Tanaman yang sehat dan tumbuh aktif bersaing dengan alga untuk sumber yang sama. Tanaman yang berjuang tidak bisa. Alga di daunnya adalah gejala, bukan penyebab.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Cahaya, nutrisi, dan CO2"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Cahaya, nutrisi, dan CO2",
+      "titleHtml": "Tiga variabel utama<br><em>dan cara membacanya.</em>",
+      "body": [
+        "Tanaman membutuhkan cahaya untuk fotosintesis, tapi hubungan ini lebih bernuansa dari 'lebih cahaya = pertumbuhan lebih baik.' Variabel yang relevan adalah: intensitas (seberapa terang), spektrum (panjang gelombang apa), durasi (berapa jam per hari), dan konsistensi (apakah terjadi pada waktu yang sama setiap hari?).",
+        "<strong>Penyebab drift cahaya yang umum:</strong> fotoperiod terlalu pendek (kurang dari 6 jam terlalu sedikit untuk kebanyakan spesies akuatik), ketidakkonsistenan (lampu dinyalakan pada waktu berbeda, hari dilewati), posisi dan sudut lampu yang berubah, atau lampu yang merosot (LED kehilangan output dari waktu ke waktu, lebih cepat dengan lampu kualitas rendah). Satu timer untuk lampu akuarium menyelesaikan masalah ketidakkonsistenan dan merupakan pembelian bernilai tertinggi untuk planted tank.",
+        "<strong>Nutrisi</strong> mencakup makronutrien (nitrogen, fosfor, kalium — sering disebut NPK) dan mikronutrien (zat besi, mangan, seng, dll). Di akuarium yang ditanam dengan substrat kaya nutrisi, kebanyakan disediakan secara pasif. Di akuarium dengan substrat inert (kerikil, pasir, batu), pemupukan biasanya diperlukan. Kekurangan nutrisi paling umum di akuarium adalah nitrogen (daun menguning di seluruh tanaman, dimulai dari yang lebih tua) dan zat besi (daun baru pucat sementara daun lama tetap hijau).",
+        "<strong>CO2</strong> adalah faktor pembatas di banyak planted tank. Tanaman membutuhkan karbon untuk pertumbuhan, dan di akuarium tertutup, CO2 terlarut secara alami sering tidak cukup untuk tanaman yang menuntut. Sinyal CO2 tidak cukup: pertumbuhan lambat meski cahaya dan nutrisi terlihat oke; daun baru kecil dan padat; pH tinggi di akhir periode cahaya di akuarium dengan CO2 alami saja.",
+        "Hubungan antara cahaya, CO2, dan nutrisi bekerja seperti hukum minimum Liebig — batas dalam rantai pertumbuhan adalah apa yang membatasi, terlepas dari berapa banyak yang lain Anda tambahkan. Menambah nutrisi ke akuarium yang terbatas cahaya tidak membantu pertumbuhan tanaman; itu hanya menyuburkan alga. Diagnosa dengan benar dulu sebelum menambahkan apa pun."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Low-tech vs high-tech"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Low-tech vs high-tech",
+      "titleHtml": "Kapasitas sebelum ambisi<br><em>dalam planted tank.</em>",
+      "body": [
+        "Salah satu dari empat prinsip ARA adalah Kapasitas sebelum Ambisi — membangun sistem di sekitar apa yang penghobi bisa sediakan secara berkelanjutan, bukan di sekitar ideal yang membutuhkan kondisi atau komitmen waktu yang tidak dimiliki penghobi. Ini berlaku langsung pada planted tank.",
+        "Planted tank low-tech (tanpa injeksi CO2, cahaya rendah hingga sedang) dirancang untuk pertumbuhan yang lambat dan berkelanjutan yang tidak membutuhkan dosing harian, pemantauan CO2 yang teliti, atau penyesuaian sering. Mereka bukan pilihan hemat — mereka adalah pilihan yang jujur untuk penghobi yang ritme hidupnya tidak sesuai dengan kebutuhan high-tech.",
+        "Planted tank high-tech (CO2 bertekanan, cahaya tinggi, dosing nutrisi sering) bisa menghasilkan pertumbuhan yang spektakuler, tapi membutuhkan input yang konsisten dan sering. Jika CO2 yang diinjeksikan tidak konsisten, pertumbuhan alga — bukan tanaman — yang mendapat manfaat dari lebih banyak cahaya. Jika nutrisi tidak ditambahkan secara sering di sistem high-tech, tanaman mengalami kekurangan dengan cepat.",
+        "Pertanyaan yang tepat bukan 'planted tank jenis apa yang terlihat paling cantik?' Tapi 'planted tank jenis apa yang masih terlihat bagus dalam enam bulan dengan perawatan yang sebenarnya akan saya berikan?' Tanaman yang tumbuh lambat dan tetap hijau selama bertahun-tahun membutuhkan lebih sedikit dari penghobi dibanding tanaman karpet yang terlihat sempurna tiga bulan sebelum merosot karena CO2 yang tidak konsisten.",
+        "Tanda bahwa setup Anda melampaui kapasitas Anda: Anda mulai melewatkan dosing yang diperlukan; fotoperiod menjadi tidak konsisten; Anda menghindari melihat akuarium karena mengingatkan Anda pekerjaan yang perlu dilakukan. Ini bukan tanda kegagalan — ini adalah informasi bahwa keselarasan antara ambisi setup dan kapasitas nyata perlu diperiksa kembali.",
+        "Memulai dengan sederhana lebih mudah disesuaikan dari sistem rumit yang tidak berfungsi. Tiga jenis tanaman yang tumbuh baik lebih baik dari dua puluh jenis yang berjuang."
+      ],
+      "pullQuote": "Pertanyaannya bukan tanaman mana yang cantik. Pertanyaannya adalah tanaman mana yang masih akan hidup dalam tiga bulan dengan perawatan yang sebenarnya akan Anda berikan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Satu perubahan konsisten selama dua minggu"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Satu perubahan konsisten selama dua minggu",
+      "titleHtml": "Satu perubahan.<br><em>Dua minggu. Baca hasilnya.</em>",
+      "body": [
+        "Langkah 1: Identifikasi jenis gejala dari Modul 1. Sinyal yang terlihat hampir selalu menunjuk ke kategori penyebab — cahaya, nutrisi, atau CO2. Mulai di situ sebelum mengubah hal lain.",
+        "Langkah 2: Buat satu perubahan. Penyesuaian berdampak tinggi yang paling umum: tambahkan timer jika fotoperiod tidak konsisten; sesuaikan fotoperiod ke 7–8 jam; jika tanaman di substrat inert, mulai suplemen nutrisi cair dasar; jika tanaman yang menuntut di setup low-tech, pertimbangkan beralih ke spesies yang lebih tahan atau tambahkan CO2 cair.",
+        "Langkah 3: Tunggu dua minggu tanpa perubahan lain. Ini bagian yang paling sulit. Perubahan pada pertumbuhan tanaman terjadi lambat — paling cepat dua minggu, sering empat hingga enam. Membuat beberapa perubahan sekaligus berarti Anda tidak akan tahu mana yang membantu.",
+        "Langkah 4: Baca hasilnya. Daun baru yang lebih hijau, lebih besar, atau pertumbuhan lebih cepat dari node baru — perubahan Anda sedang berhasil. Tidak ada perubahan dalam empat minggu — jenis gejala mungkin menunjuk ke penyebab berbeda, atau tingkat perubahan tidak cukup.",
+        "Pendekatan satu perubahan lebih lambat dari mengubah segalanya sekaligus — tapi ini satu-satunya cara untuk benar-benar memahami apa yang sistem Anda butuhkan. Planted tank yang dipahami adalah planted tank yang bisa disesuaikan. Planted tank yang dibangun berdasarkan asumsi adalah yang membingungkan ketika tidak berfungsi.",
+        "Akuarium yang tumbuh lambat dan stabil bukan gagal. Ia berhasil pada kecepatan yang sesuai dengan sistem tempatnya hidup."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/low-tech-planted-tank",
+      "text": "Cara mulai planted tank low-tech →"
+    },
+    {
+      "href": "/articles/algae-in-aquarium",
+      "text": "Alga dalam akuarium →"
+    },
+    {
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "Rutinitas perawatan yang berhasil →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

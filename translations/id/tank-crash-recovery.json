@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "slug": "tank-crash-recovery",
+    "lang": "id",
+    "sourceFile": "articles/tank-crash-recovery.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Pemulihan Akuarium Setelah Crash — Aquatic Rhythm",
+    "description": "Anda pulang ke rumah dan ikan ada di permukaan. Atau air tiba-tiba keruh. Panduan ini menjelaskan apa yang perlu dilakukan dalam 30 menit pertama, cara menilai apakah akuarium bisa pulih, dan apa yang crash sedang beritahu Anda.",
+    "ogTitle": "Pemulihan Akuarium Setelah Crash",
+    "ogDescription": "Crash akuarium adalah sinyal terkuat yang diberikan akuarium. Pelajari cara merespons dan membaca apa yang coba ia katakan."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Respons Segera",
+    "titleHtml": "Pemulihan Akuarium<br><em>Setelah Crash</em>",
+    "subtitle": "Dalam crash, naluri adalah untuk bertindak. Respons yang tepat adalah membaca dulu — lalu bertindak berdasarkan apa yang bacaan katakan.",
+    "texts": [
+      "Anda pulang ke rumah dan ikan ada di permukaan. Atau Anda bangun pagi dan air tiba-tiba keruh atau berubah warna. Ada yang sudah mati. Ada yang masih ada tapi terlihat buruk.",
+      "Panduan ini menjelaskan apa yang perlu dilakukan dalam tiga puluh menit pertama, cara menilai jenis crash apa yang terjadi, cara membaca apakah akuarium bisa pulih, dan apa yang crash sedang beritahu Anda tentang sistem yang menghasilkannya."
+    ],
+    "metaModules": "5 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~8 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Tiga puluh menit pertama",
+      "titleHtml": "Tiga puluh menit pertama:<br><em>stabilkan dulu, baca kemudian.</em>",
+      "body": [
+        "Dalam tiga puluh menit pertama, dua hal penting: stabilkan apa yang bisa diselamatkan, dan jangan tambah gangguan. Tes amonia, nitrit, dan kalau bisa pH. Tiga angka ini memberi tahu Anda jenis crash apa ini. Amonia tinggi (lebih dari 2 ppm) atau nitrit yang terdeteksi berarti sistem biologis gagal — koloni bakteri terlalu terbebani atau tidak ada. pH rendah dengan CO2 tinggi adalah krisis berbeda dari kegagalan biologis.",
+        "Tingkatkan agitasi permukaan segera — arahkan outlet filter untuk memecah permukaan, tambahkan airstone jika ada. Ini memberi waktu tanpa memandang penyebab. Oksigen adalah yang paling mendesak di hampir semua crash.",
+        "Lakukan ganti air 25–30% dengan air yang disesuaikan suhu dan sudah dechlorinate — ini mengurangi konsentrasi zat beracun tanpa mengganggu koloni bakteri yang tersisa. Jangan lakukan ganti air penuh: itu membuang bakteri di media filter dan permukaan, dan bisa mengubah kimia air secara mendadak. Ganti air sebagian adalah tindakan yang seimbang.",
+        "Jika CO2 diinjeksikan, hentikan injeksi segera. Jika Anda mencurigai kontaminan kimia (detergen, insektisida dari ruangan sebelah, obat yang overdosis), ganti air yang lebih besar mungkin diperlukan — tapi lakukan secara bertahap, bukan sekaligus."
+      ],
+      "pullQuote": "Dalam crash, naluri adalah untuk bertindak. Respons yang tepat adalah membaca — dan bertindak berdasarkan apa yang bacaan katakan, bukan apa yang panik sarankan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Apa yang menyebabkannya"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Apa yang menyebabkannya",
+      "titleHtml": "Crash memiliki pola<br><em>yang bisa dikenali.</em>",
+      "body": [
+        "Crash memiliki pola yang bisa dikenali. Mengetahui pola mana yang terjadi memandu baik respons segera maupun pemulihan yang lebih panjang.",
+        "<strong>Lonjakan amonia dari kegagalan atau pembersihan filter.</strong> Koloni bakteri terganggu — filter berjalan kering, dibersihkan dengan air kran, atau listrik mati lebih dari 24 jam. Amonia naik tajam dalam 24–48 jam. Akuarium mungkin terlihat oke sampai tiba-tiba tidak. Respons: ganti air segera 25–30%, tes setiap 12 jam, lakukan ganti air lagi jika amonia tetap di atas 1 ppm.",
+        "<strong>Crash oksigen.</strong> Amonia nol atau rendah, tapi ikan megap-megap di permukaan, air mungkin keruh atau berbau berbeda. Ini terjadi ketika beberapa faktor bergabung — suhu tinggi, aliran filter lambat, blooming alga atau bakteri yang menggunakan oksigen. Respons: agitasi permukaan maksimum segera, periksa suhu, periksa aliran filter.",
+        "<strong>Crash kimia.</strong> Kematian tiba-tiba tanpa tanda air yang jelas — ikan terlihat oke lalu mati dalam beberapa jam. Bisa dari detergen di tangan sebelum menyentuh air akuarium, insektisida yang digunakan di dekatnya, obat yang salah dosis, atau bahan dari dekorasi baru yang larut di air. Respons: ganti air besar 40–50% dengan air bersih, singkirkan dekorasi baru, ganti dengan karbon aktif di filter sementara.",
+        "<strong>Crash nitrogen — akuarium baru atau setelah pengobatan.</strong> Akuarium yang belum selesai siklus, atau akuarium yang bakterinya dibunuh oleh obat, mengalami akumulasi amonia yang progresif. Ikan melemah perlahan bukan tiba-tiba. Respons: ganti air sering (20% setiap hari jika amonia di atas 1 ppm), kurangi pemberian makan drastis, biarkan koloni pulih.",
+        "<strong>Crash penyakit.</strong> Ikan mati bergerombol dalam waktu singkat, sering dengan gejala yang terlihat — bintik, lendir, luka. Jika penyakit sudah ada di akuarium dan tidak diobati, bisa memicu kematian massal ketika ikan yang ada tertekan atau imunnya turun. Respons: isolasi ikan yang sakit, mulai pengobatan yang sesuai.",
+        "<strong>Kegagalan heater.</strong> Heater yang rusak bisa membekukan atau memasak ikan — keduanya terjadi lebih lambat dari crash kimia tapi dengan konsekuensi yang sama serius. Periksa suhu jika ada kematian yang tidak bisa dijelaskan, terutama jika ikan mati secara bertahap dari satu hari ke hari berikutnya."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apakah ia bisa pulih"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Apakah ia bisa pulih",
+      "titleHtml": "Kebanyakan crash<br><em>bisa dipulihkan.</em>",
+      "body": [
+        "Kebanyakan crash bisa dipulihkan dengan waktu dan respons yang konsisten. Pertanyaannya adalah apakah biologi bisa dibentuk kembali lebih cepat dari penghuni yang tersisa bisa menanggung tekanan yang berkelanjutan.",
+        "Faktor yang mendukung pemulihan: koloni bakteri hanya terganggu sebagian, tidak dihapus (filter masih berjalan sepanjang waktu, meski terlalu terbebani); ikan yang tersisa tidak dalam kesusahan berat (masih makan, bergerak normal, tidak terus-menerus megap-megap); penyebab crash teridentifikasi dan bisa ditangani; akuarium memiliki sejarah stabilitas sebelum crash.",
+        "Faktor yang membuat pemulihan sulit: filter berjalan kering untuk waktu yang lama (koloni mati sepenuhnya, perlu siklus ulang); ikan yang tersisa dalam kondisi buruk (terus megap-megap, berbaring di substrat, tidak merespons); penyebab crash tidak bisa diidentifikasi; akuarium baru dan tidak pernah stabil sepenuhnya.",
+        "Jika koloni bakteri perlu dibentuk kembali, prosesnya memerlukan waktu seperti siklus baru — empat hingga delapan minggu. Selama itu, ikan yang ada dalam bahaya jika tetap di sistem. Pilihan yang sulit: pertahankan ikan di akuarium yang sedang dipulihkan dengan manajemen intensif (ganti air harian, pemberian makan minimum), atau pindahkan sementara ke setup lain."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Pengampunan Ekologis",
+      "hintText": [
+        "Konsep pengampunan ekologis ARA berlaku langsung pada crash. Akuarium yang sudah crash bisa dibangun kembali. Kondisi masa lalu tidak menentukan kondisi masa depan. Crash adalah informasi — ia mengungkapkan apa yang penyelarasan sebelumnya tidak bisa ditopang. Membangun kembali adalah kesempatan untuk menciptakan penyelarasan yang bisa dipertahankan."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Apa yang crash sedang beritahu"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Apa yang crash sedang beritahu",
+      "titleHtml": "Crash jarang<br><em>terjadi tanpa peringatan.</em>",
+      "body": [
+        "Crash jarang terjadi secara tiba-tiba. Dalam kebanyakan kasus, melihat ke belakang mengungkapkan serangkaian sinyal yang diberikan akuarium yang tidak melewati ambang krisis yang terlihat sampai crash terjadi. Parameter yang stabil tapi meningkat. Ikan yang tidak berkembang tapi tidak jelas gagal. Aliran filter yang berangsur melambat. Pemberian makan yang perlahan meningkat. Penyakit yang diobati sebagian tapi tidak benar-benar bersih.",
+        "Ini bukan tentang menyalahkan diri sendiri — ini tentang memahami bahwa crash adalah ujung dari sebuah urutan, bukan awal dari satu. Sinyal-sinyal itu ada. Hobi ini tidak mengajarkan orang untuk membacanya, dan kebanyakan panduan hanya menjelaskan apa yang perlu dilakukan selama krisis, bukan cara mengenali ketika sistem sedang menuju ke sana.",
+        "Setelah pemulihan, pertanyaan yang paling berguna bukan 'apa yang salah saya lakukan?' Tapi 'sinyal apa yang ada selama beberapa minggu atau bulan sebelumnya, dan mana yang bisa saya pelajari untuk melihat lebih awal lain kali?'",
+        "Crash yang dipelajari adalah crash yang membuat penghobi lebih selaras — lebih sadar terhadap aliran filter yang melambat, terhadap suhu yang merangkak naik, terhadap ikan yang kurang aktif saat waktu makan. Sistem memiliki kapasitas untuk pulih. Begitu juga penghobi."
+      ],
+      "pullQuote": "Crash adalah sinyal terkuat yang diberikan akuarium. Pertanyaannya bukan cara meredakannya. Pertanyaannya adalah apa yang coba ia katakan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Kehilangan"
+    },
+    {
+      "id": "mod-5",
+      "tag": "Kehilangan",
+      "titleHtml": "Kehilangan<br><em>adalah nyata.</em>",
+      "body": [
+        "Kehilangan ikan dalam crash adalah kesedihan yang sering tidak diakui karena ikan tidak selalu dianggap sebagai hewan yang layak untuk berduka. Tapi penghobi yang sudah merawat akuarium selama berbulan-bulan atau bertahun-tahun telah melihat ikan tertentu tumbuh, mengembangkan kepribadian, membangun hubungan dengan ikan lain. Kehilangan mereka dalam crash bisa menghasilkan kesedihan, rasa bersalah, dan pertanyaan apakah ingin melanjutkan. Perasaan-perasaan itu nyata dan tidak perlu dirasionalisasi.",
+        "Rasa bersalah adalah bagian yang paling umum dan paling tidak berguna dari pengalaman crash. Kebanyakan crash terjadi bukan karena kelalaian tapi karena sistem mencapai batas yang tidak terlihat — batas yang panduan tidak mengajarkan penghobi untuk melihat. Menyalahkan diri sendiri tidak mengubah apa yang terjadi dan tidak mencegah crash berikutnya. Memahami apa yang terjadi — dan apa yang akan berbeda — adalah yang berguna.",
+        "Jika Anda mempertimbangkan untuk berhenti dari hobi ini setelah crash yang berat: itu keputusan yang sah. Tapi jika Anda melanjutkan, akuarium yang Anda miliki sekarang sudah memiliki lebih banyak fondasi biologis dari yang dimilikinya di hari pertama. Bakteri yang ada di media filter, di permukaan, di substrat — tidak hilang sepenuhnya. Sistem memiliki kapasitas untuk pulih. Dan Anda sekarang memahami lebih banyak tentang cara kerjanya dari yang Anda tahu sebelum crash."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/aquarium-filter-maintenance",
+      "text": "Filter Anda bukan apa yang Anda kira →"
+    },
+    {
+      "href": "/articles/fish-gasping-surface",
+      "text": "Ikan megap-megap di permukaan →"
+    },
+    {
+      "href": "/articles/new-tank-syndrome",
+      "text": "New Tank Syndrome →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
