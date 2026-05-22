@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "slug": "fish-gasping-surface",
+    "lang": "id",
+    "sourceFile": "articles/fish-gasping-surface.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Ikan Megap-Megap di Permukaan — Aquatic Rhythm",
+    "description": "Akuarium sedang kekurangan sesuatu. Pertanyaannya adalah apa. Panduan ini menjelaskan penyebab paling umum ikan megap-megap di permukaan dan cara respons yang tepat untuk setiap kasusnya.",
+    "ogTitle": "Ikan Megap-Megap di Permukaan",
+    "ogDescription": "Akuarium sedang kekurangan sesuatu. Pertanyaannya adalah apa. Pelajari cara membaca sinyal dan merespons dengan tepat."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Respons Segera",
+    "titleHtml": "Ikan Megap-Megap<br><em>di Permukaan</em>",
+    "subtitle": "Akuarium sedang kekurangan sesuatu. Pertanyaannya adalah apa.",
+    "texts": [
+      "Anda melihat akuarium dan ikan berada di permukaan, mulut bergerak-gerak. Ada yang mengambang tepat di bawah garis air, hampir tidak bergerak. Ada yang berenang normal tapi terus kembali ke atas. Terlihat mendesak — dan seringkali memang begitu — tapi respons yang tepat bergantung sepenuhnya pada apa penyebabnya.",
+      "Panduan ini menjelaskan penyebab paling umum ikan megap-megap di permukaan, cara membedakan satu dari yang lain menggunakan apa yang bisa Anda amati sekarang, dan bagaimana respons yang sesuai untuk masing-masing kasus."
+    ],
+    "metaModules": "3 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~5 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Membaca sinyal",
+      "titleHtml": "Membaca<br><em>sinyal.</em>",
+      "body": [
+        "Ikan yang megap-megap di permukaan adalah sinyal kesusahan — ikan sedang mencoba mengakses lebih banyak oksigen dari yang air sediakan sekarang, atau mereka tidak bisa menggunakan oksigen yang ada. Kuncinya adalah beberapa penyebab berbeda menghasilkan perilaku yang sama, dan merawat yang salah paling baik tidak mengubah apa-apa, paling buruk mempercepat masalah.",
+        "Empat penyebab paling umum adalah: oksigen terlarut rendah, karbon dioksida tinggi, keracunan amonia atau nitrit, dan kerusakan insang (dari penyakit atau parasit). Dari keempat ini, oksigen terlarut rendah dan toksisitas CO2 adalah yang paling umum di akuarium rumahan. Keracunan amonia biasanya disertai gejala lain yang terlihat dan konfirmasi dari test kit. Kerusakan insang biasanya disertai tanda penyakit lain — flashing, bercak putih, atau lendir di tubuh.",
+        "<strong>Oksigen terlarut rendah</strong> paling mungkin bila: semua spesies di akuarium megap-megap bersamaan; akuarium panas (air yang lebih hangat menyimpan lebih sedikit oksigen); agitasi permukaan minimal; aliran filter sudah melambat; terjadi semalam atau pagi hari ketika fotosintesis tanaman berhenti tapi pernapasan terus berjalan. Tindakan: tingkatkan agitasi permukaan segera — arahkan outlet filter untuk memecah permukaan, tambahkan airstone, atau nyalakan powerhead di dekat permukaan. Jika akuarium pulih dalam 30 menit, kekurangan oksigen adalah penyebabnya.",
+        "<strong>CO2 tinggi</strong> paling mungkin bila: terjadi siang hari di planted tank dengan injeksi CO2; tanaman terlihat sehat; pH diuji rendah; mematikan injeksi CO2 dan meningkatkan agitasi permukaan membawa perbaikan dalam satu jam. CO2 yang diinjeksi di malam hari atau berlebihan mengasamkan air dan bersaing dengan oksigen di permukaan insang meskipun kadar oksigen secara teknis mencukupi.",
+        "<strong>Keracunan amonia/nitrit</strong> — tes segera. Jika amonia melebihi 1 ppm atau nitrit terdeteksi, inilah penyebabnya. Ikan juga akan menunjukkan insang yang merah atau meradang, pernapasan cepat meski sedang istirahat, dan mungkin darting atau flashing. Respons: ganti air 25–30% segera."
+      ],
+      "pullQuote": "Permukaan adalah jalan terakhir ikan. Saat megap-megap sudah terlihat, akuarium sebenarnya sudah memberi sinyal sejak lama — dengan cara yang belum mencapai ambang terlihat.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Oksigen, suhu, dan agitasi permukaan"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Oksigen, suhu, dan agitasi permukaan",
+      "titleHtml": "Oksigen, suhu,<br><em>dan agitasi permukaan.</em>",
+      "body": [
+        "Oksigen terlarut masuk ke air akuarium hampir seluruhnya melalui agitasi permukaan — pergerakan air di antarmuka udara dan air. Permukaan yang tenang di akuarium yang panas adalah akuarium dengan oksigen terbatas yang menunggu kondisi yang tepat untuk memperlihatkan dampaknya.",
+        "Beberapa faktor bisa bergabung untuk mengurangi oksigen terlarut secara bersamaan: kenaikan suhu ruangan di musim panas memanaskan air akuarium (kelarutan oksigen menurun saat suhu meningkat); blooming alga menggunakan oksigen di malam hari ketika respirasi terus berjalan tanpa fotosintesis; beban biologis meningkat (lebih banyak ikan, ikan lebih besar, lebih banyak bahan organik yang membusuk semuanya menggunakan oksigen); aliran filter melambat karena penyumbatan sebagian. Setiap faktor secara individual mungkin tidak menyebabkan megap-megap. Digabungkan, mereka bisa menurunkan oksigen terlarut di bawah ambang toleransi semua spesies sekaligus — itulah kenapa kejadian megap-megap sering tampak tiba-tiba dan membingungkan padahal faktor-faktornya sudah ada selama beberapa minggu.",
+        "Respons yang tepat dimulai sebelum megap-megap terjadi: pertahankan pergerakan permukaan yang aktif, jaga filter tetap bersih, hindari overstock relatif terhadap musim (akuarium yang baik-baik saja di musim dingin mungkin memerlukan beban dikurangi di musim panas), dan perhatikan aliran filter yang melambat sebagai indikator awal."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Environmental Rhythm",
+      "hintText": [
+        "Dalam ARA, oksigen terlarut adalah bagian dari Environmental Rhythm — kondisi fisik berkelanjutan yang dipertahankan akuarium. Kejadian kekurangan oksigen adalah bacaan: Environmental Rhythm sudah menyimpang melampaui toleransi Livestock Rhythm. Kejadiannya tidak tiba-tiba. Penyimpangan itulah yang terjadi perlahan."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Respons yang tepat dan pencegahan"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Respons yang tepat",
+      "titleHtml": "Respons yang tepat<br><em>dan pencegahan.</em>",
+      "body": [
+        "Respons segera untuk setiap kejadian megap-megap: pertama, tingkatkan agitasi permukaan sekarang — arahkan outlet filter, tambahkan airstone, ciptakan pergerakan air. Ini memberi waktu tanpa memandang penyebabnya. Kedua, tes amonia dan nitrit — jika meningkat, lakukan ganti air 25–30% dengan air yang sudah dechlorinate dan suhu sesuai. Ketiga, jika CO2 sedang diinjeksi, kurangi atau hentikan injeksi dan tingkatkan agitasi permukaan. Keempat, amati selama 30–60 menit sambil mempertahankan pergerakan permukaan.",
+        "Jika ikan kembali ke kedalaman dan perilaku normal, penyebabnya berkaitan dengan oksigen dan Anda punya waktu untuk menyelidiki faktor-faktor yang berkontribusi. Jika tidak membaik, atau jika Anda melihat kemerahan pada insang, darting, atau lendir berlebih, curigai penyakit dan cari pendapat ahli.",
+        "Pencegahan adalah tentang membaca sistem sebelum mencapai ambang megap-megap. Periksa aliran filter setiap minggu — filter yang tersumbat sebagian adalah kontributor diam yang paling umum. Pantau suhu akuarium di musim panas. Jangan biarkan agitasi permukaan melemah tanpa menanganinya. Perhatikan tanda kelebihan CO2 (pH yang anjlok semalaman di planted tank yang diinjeksi, air yang menguning, ikan di dekat permukaan terutama pagi hari sebelum lampu menyala). Kejadian megap-megap adalah ujung dari sebuah urutan. Penghobi yang selaras membaca langkah-langkah lebih awal: aliran yang melambat, air yang memanas, beban organik yang menumpuk — dan menyesuaikan sebelum urutannya selesai."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/perfect-parameters-fish-dying",
+      "text": "Parameter oke tapi ikan mati →"
+    },
+    {
+      "href": "/articles/new-tank-syndrome",
+      "text": "New Tank Syndrome →"
+    },
+    {
+      "href": "/articles/aquarium-filter-maintenance",
+      "text": "Filter Anda bukan apa yang Anda kira →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
