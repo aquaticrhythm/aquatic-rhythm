@@ -1,0 +1,17 @@
+# Article images
+
+## Layout
+
+- One folder per article **slug**: `img/articles/<slug>/`
+- Prefer **WebP** encoded at two widths for `srcset` (for example `720` and `1200` logical pixels).
+- Keep originals or export notes in `SOURCES.md` inside that folder (license, photographer, URL).
+
+## HTML conventions
+
+- **Hero** (intro screen): `<figure class="art-hero-figure">` with `<picture>` + `fetchpriority="high"` on the `<img>`, explicit `width` / `height`, no `loading="lazy"`.
+- **In-article**: `<figure class="art-inline-figure">` with `loading="lazy"` and `decoding="async"`.
+- Shared styles live in `/css/ar-page.css` (`.art-intro-stack`, `.art-hero-figure`, `.art-inline-figure`, `.art-img`, `.art-img-caption`).
+
+## Localised pages
+
+Images are **shared by slug** across `en` / `ms` / `id` / `ja` / `es` HTML. Translate **alt** and **figcaption** text per page where it matters for accessibility.

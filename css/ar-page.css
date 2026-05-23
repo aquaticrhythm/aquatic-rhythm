@@ -192,6 +192,43 @@ details.lang-sw[open]>summary::after{content:'▴'}
 .ar-stg-num-input{width:56px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:.35rem .5rem;color:rgba(235,240,236,.88);font-size:.82rem;font-family:var(--sans);text-align:center;transition:border-color .2s;-webkit-appearance:none;appearance:none}
 .ar-stg-num-input:focus{outline:none;border-color:rgba(61,214,232,.42)}
 
+/* ── Article photography (shared article pages) ── */
+.art-intro-stack{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,3rem);
+}
+.art-hero-figure{
+  margin:0 0 clamp(1.75rem,4vw,2.35rem);
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 14px 48px rgba(0,0,0,.38);
+}
+.art-hero-figure picture,.art-inline-figure picture{display:block}
+.art-img{
+  width:100%;
+  height:auto;
+  display:block;
+  vertical-align:middle;
+}
+.art-img:focus-visible{outline:2px solid rgba(61,214,232,.45);outline-offset:3px}
+.art-inline-figure{
+  margin:clamp(1.75rem,4vw,2.4rem) 0;
+  border-radius:3px;
+  overflow:hidden;
+  border:1px solid rgba(61,214,232,.16);
+  background:rgba(4,14,12,.35);
+}
+.art-img-caption{
+  font-size:.72rem;
+  font-weight:300;
+  color:rgba(235,240,236,.44);
+  line-height:1.68;
+  padding:.55rem 1rem .85rem;
+  margin:0;
+}
+
 /* ── ARTICLE VISUAL BLOCKS ── */
 .vis-block{margin:2.4rem 0;border-radius:8px;overflow:hidden;position:relative;border:1px solid rgba(61,214,232,.1);background:rgba(2,10,18,.72)}
 .vis-block svg{display:block;width:100%;height:auto}
