@@ -17,13 +17,7 @@
     'letter-spacing:.08em;font-size:.68rem;margin-bottom:.55rem;' +
     'color:rgba(61,214,232,.48)}' +
     '.art-trust-body{margin:0 0 .35rem;font-weight:300}' +
-    '.art-trust-cta{margin:1.1rem 0 0;padding-top:1.05rem;border-top:1px solid rgba(61,214,232,.2)}' +
-    '.art-trust-cta-link{display:inline-block;font-size:.78rem;font-weight:500;letter-spacing:.01em;' +
-    'color:rgba(61,214,232,.92)!important;text-decoration:none!important;' +
-    'border-bottom:none!important}' +
-    '.art-trust-cta-link:hover{color:rgba(190,245,255,.98)!important}' +
-    '.art-trust-cta-note{margin:.45rem 0 0;font-size:.74rem;font-weight:300;color:rgba(235,240,236,.52);' +
-    'line-height:1.65}' +
+    '.art-trust-photo{margin:.85rem 0 0;font-weight:300;color:rgba(235,240,236,.38)}' +
     '.art-trust a{color:rgba(61,214,232,.62);text-decoration:none;' +
     'border-bottom:1px solid rgba(61,214,232,.2)}' +
     '.art-trust a:hover{color:rgba(61,214,232,.9);border-bottom-color:rgba(61,214,232,.5)}' +
@@ -34,10 +28,8 @@
   var isSharePhotosPage = /\/share-photos\.html$/i.test(location.pathname || '');
   var photoInviteHtml = isSharePhotosPage
     ? ''
-    : '<div class="art-trust-cta">' +
-      '<a class="art-trust-cta-link" href="/share-photos.html">Share your tank photos →</a>' +
-      '<p class="art-trust-cta-note">Offer aquarium images for editorial consideration in future guides.</p>' +
-      '</div>';
+    : '<p class="art-trust-photo">If you would like to offer your aquarium photos for editorial ' +
+      'consideration in future guides, use <a href="/share-photos.html">Share your tank photos</a>.</p>';
 
   var section = document.createElement('section');
   section.className = 'art-trust';
