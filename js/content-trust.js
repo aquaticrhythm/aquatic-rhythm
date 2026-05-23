@@ -18,8 +18,8 @@
     'color:rgba(61,214,232,.48)}' +
     '.art-trust-body{margin:0 0 .35rem;font-weight:300}' +
     '.art-trust-cta{margin:1.1rem 0 0;padding-top:1.05rem;border-top:1px solid rgba(61,214,232,.2)}' +
-    '.art-trust-cta-link{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;' +
-    'text-transform:uppercase;color:rgba(61,214,232,.92)!important;text-decoration:none!important;' +
+    '.art-trust-cta-link{display:inline-block;font-size:.78rem;font-weight:500;letter-spacing:.01em;' +
+    'color:rgba(61,214,232,.92)!important;text-decoration:none!important;' +
     'border-bottom:none!important}' +
     '.art-trust-cta-link:hover{color:rgba(190,245,255,.98)!important}' +
     '.art-trust-cta-note{margin:.45rem 0 0;font-size:.74rem;font-weight:300;color:rgba(235,240,236,.52);' +
