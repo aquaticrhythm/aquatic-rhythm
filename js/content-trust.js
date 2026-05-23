@@ -17,12 +17,19 @@
     'letter-spacing:.08em;font-size:.68rem;margin-bottom:.55rem;' +
     'color:rgba(61,214,232,.48)}' +
     '.art-trust-body{margin:0 0 .35rem;font-weight:300}' +
+    '.art-trust-photo{margin:.85rem 0 0;font-weight:300;color:rgba(235,240,236,.38)}' +
     '.art-trust a{color:rgba(61,214,232,.62);text-decoration:none;' +
     'border-bottom:1px solid rgba(61,214,232,.2)}' +
     '.art-trust a:hover{color:rgba(61,214,232,.9);border-bottom-color:rgba(61,214,232,.5)}' +
     '.art-trust-meta{margin-top:.9rem;font-size:.68rem;color:rgba(235,240,236,.26);' +
     'letter-spacing:.03em}';
   document.head.appendChild(style);
+
+  var isSharePhotosPage = /\/share-photos\.html$/i.test(location.pathname || '');
+  var photoInviteHtml = isSharePhotosPage
+    ? ''
+    : '<p class="art-trust-photo">If you would like to offer your aquarium photos for editorial ' +
+      'consideration in future guides, use <a href="/share-photos.html">Share your tank photos</a>.</p>';
 
   var section = document.createElement('section');
   section.className = 'art-trust';
@@ -37,6 +44,7 @@
     '<a href="https://www.seriouslyfish.com" target="_blank" rel="noopener noreferrer">SeriouslyFish</a>, ' +
     'or consult a local aquarium specialist. Your tank and your observations always ' +
     'come first.</p>' +
+    photoInviteHtml +
     '<p class="art-trust-meta">Content by Aquatic Rhythm · ARA framework · aquaticrhythm.com</p>';
 
   nav.parentNode.insertBefore(section, nav);
