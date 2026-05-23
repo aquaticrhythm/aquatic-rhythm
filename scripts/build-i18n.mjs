@@ -378,7 +378,7 @@ function buildArticle(slug, lang, t) {
             (__, a, b) => `${a}${t.footer.allArticles}${b}`);
         }
         if (t.footer.araLink) {
-          f = f.replace(/(<a href="\/ara">)[^<]*(<\/a>)/,
+          f = f.replace(/(<a href="\/articles\/ara-full-framework">)[^<]*(<\/a>)/,
             (__, a, b) => `${a}${t.footer.araLink}${b}`);
         }
         return `${open}${f}${close}`;
