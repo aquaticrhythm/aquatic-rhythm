@@ -1,6 +1,9 @@
 # Article images
 
+Stock images for **New Tank Syndrome** were removed from the repo so assets can be **curated and added manually** (same HTML hooks and CSS in `/css/ar-page.css` still apply when you add files under `img/articles/new-tank-syndrome/` and wire `<picture>` / `<img>` in the article HTML).
+
 ## Layout
+
 
 - One folder per article **slug**: `img/articles/<slug>/`
 - Prefer **WebP** encoded at two widths for `srcset` (for example `720` and `1200` logical pixels).

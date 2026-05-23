@@ -10,8 +10,8 @@
    deployed repo; cache is only used when the network request fails.
    ============================================================ */
 
-var SHELL_CACHE   = 'ar-shell-v12';
-var ARTICLE_CACHE = 'ar-articles-v12';
+var SHELL_CACHE   = 'ar-shell-v14';
+var ARTICLE_CACHE = 'ar-articles-v14';
 
 var SHELL_URLS = [
   '/',
@@ -24,11 +24,7 @@ var SHELL_URLS = [
   '/js/fauna.js',
   '/favicon.png',
   '/apple-touch-icon.png',
-  '/offline.html',
-  '/img/articles/new-tank-syndrome/hero-720.webp',
-  '/img/articles/new-tank-syndrome/hero-1200.webp',
-  '/img/articles/new-tank-syndrome/mod-planted-720.webp',
-  '/img/articles/new-tank-syndrome/mod-planted-1200.webp'
+  '/offline.html'
 ];
 
 /* A handful of high-value articles pre-fetched after install */
