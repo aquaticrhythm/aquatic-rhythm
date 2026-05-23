@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Share your tank photos — Aquatic Rhythm</title>
-<meta name="description" content="Submit aquarium photos to the Aquatic Rhythm editorial team for possible use in guides — no email required, optional topic tags, clear permission terms.">
+<meta name="description" content="Submit aquarium photo links to the Aquatic Rhythm editorial team for possible use in guides — no email required, shareable URLs only on this form, clear permission terms.">
 <link rel="canonical" href="https://aquaticrhythm.com/share-photos.html">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <meta name="theme-color" content="#030b09">
@@ -56,8 +56,6 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 .sf-input:focus,.sf-textarea:focus{outline:none;border-color:rgba(61,214,232,.42)}
 .sf-textarea{min-height:140px;resize:vertical;line-height:1.65}
 .sf-hint{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:.35rem;line-height:1.55}
-
-.sf-file{font-size:.82rem;color:rgba(235,240,236,.55)}
 
 .sf-fieldset{margin:0 0 1.35rem;padding:1.1rem 1.25rem 1.2rem;border:1px solid rgba(139,189,210,.14);border-radius:4px;background:rgba(255,255,255,.02)}
 .sf-fieldset .sf-legend{padding:0 .35rem;font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(235,240,236,.38)}
@@ -135,6 +133,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <p>You must own the rights to the photographs (they are your work, or you have written permission from the photographer).</p>
     <p>By submitting, you grant Aquatic Rhythm a <strong>non-exclusive</strong> licence to use the images and description for editorial and educational purposes on this site and related channels (for example social previews), with credit using the name you provide below.</p>
     <p>This summary is not legal advice; keep a copy of your submission for your records.</p>
+    <p>This form does <strong>not</strong> accept file attachments — our host blocks uploads on this plan. Please paste <strong>shareable links</strong> to your images in the message box (for example Google Photos, iCloud, Dropbox, or Imgur with &ldquo;anyone with the link&rdquo; turned on).</p>
   </div>
 
   <div class="sf-hn" style="margin-top:1.5rem">
@@ -144,7 +143,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <p><strong>Harder to use:</strong> very dark shots, extreme close-ups without scale, heavy face or document reflections, or images where nothing in the tank is in focus.</p>
   </div>
 
-  <form class="sf-form" id="share-form" action="https://formspree.io/f/mwvzqkbr" method="POST" enctype="multipart/form-data">
+  <form class="sf-form" id="share-form" action="https://formspree.io/f/mwvzqkbr" method="POST">
     <input type="hidden" name="_subject" value="Aquatic Rhythm — photo submission">
     <input type="hidden" name="_next" value="https://aquaticrhythm.com/share-photos.html?sent=1">
     <input type="text" name="_gotcha" class="sf-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
@@ -169,15 +168,9 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     </fieldset>
 
     <div class="sf-row">
-      <label class="sf-label" for="context">What should we know?</label>
-      <textarea class="sf-textarea" id="context" name="message" required maxlength="6000" placeholder="Tank size, how long it has been running, what you are seeing, species if relevant, and image links if you are not attaching a file."></textarea>
-      <p class="sf-hint">Avoid sharing street addresses, receipts, or other sensitive details. Crop them out of photos if possible.</p>
-    </div>
-
-    <div class="sf-row">
-      <label class="sf-label" for="file">Photo (optional)</label>
-      <input class="sf-file" id="file" name="attachment" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp">
-      <p class="sf-hint">One file under ~10&nbsp;MB. If uploads are disabled on the Formspree plan, send a link to your image in the text box instead.</p>
+      <label class="sf-label" for="context">Message and image links</label>
+      <textarea class="sf-textarea" id="context" name="message" required maxlength="6000" placeholder="Paste one or more viewable links (enable link sharing in your gallery first). Add tank size, how long it has been running, species if relevant, and what you want us to notice in each shot."></textarea>
+      <p class="sf-hint">Use links that open without a login where possible. Avoid street addresses, receipts, or other sensitive details in text or in the images themselves.</p>
     </div>
 
     <div class="sf-check">
