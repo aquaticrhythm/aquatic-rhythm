@@ -48,8 +48,10 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 .sf-hn h2{font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(139,189,210,.48);margin-bottom:.85rem}
 .sf-hn p{font-size:.78rem;font-weight:300;color:rgba(235,240,236,.48);line-height:1.75;margin-bottom:.65rem}
 .sf-hn p:last-child{margin-bottom:0}
+.sf-hn a.sf-svc-link{color:rgba(61,214,232,.78);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.28);transition:color .2s,border-color .2s;word-break:break-word}
+.sf-hn a.sf-svc-link:hover{color:rgba(190,245,255,.95);border-bottom-color:rgba(61,214,232,.55)}
 
-.sf-form{margin-top:2rem}
+.share-form-error{margin:1rem 0 0;padding:.85rem 1rem;border:1px solid rgba(220,120,100,.4);background:rgba(220,70,55,.12);color:rgba(255,215,205,.92);font-size:.82rem;font-weight:400;line-height:1.55;border-radius:4px}
 .sf-row{margin-bottom:1.35rem}
 .sf-label{display:block;font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(235,240,236,.38);margin-bottom:.45rem}
 .sf-input,.sf-textarea{width:100%;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:.72rem .95rem;color:rgba(235,240,236,.9);font-size:.95rem;font-family:var(--sans);transition:border-color .2s}
@@ -133,7 +135,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <p>You must own the rights to the photographs (they are your work, or you have written permission from the photographer).</p>
     <p>By submitting, you grant Aquatic Rhythm a <strong>non-exclusive</strong> licence to use the images and description for editorial and educational purposes on this site and related channels (for example social previews), with credit using the name you provide below.</p>
     <p>This summary is not legal advice; keep a copy of your submission for your records.</p>
-    <p>This form does <strong>not</strong> accept file attachments — our host blocks uploads on this plan. Please paste <strong>shareable links</strong> to your images in the message box (for example Google Photos, iCloud, Dropbox, or Imgur with &ldquo;anyone with the link&rdquo; turned on).</p>
+    <p>This form does <strong>not</strong> accept file attachments — our host blocks uploads on this plan. Please paste <strong>shareable links</strong> to your images in the message box (for example <a href="https://photos.google.com/" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Google Photos</a>, <a href="https://www.icloud.com/photos" class="sf-svc-link" target="_blank" rel="noopener noreferrer">iCloud Photos</a>, <a href="https://www.dropbox.com/" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Dropbox</a>, or <a href="https://imgur.com/" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Imgur</a> with &ldquo;anyone with the link&rdquo; turned on).</p>
   </div>
 
   <div class="sf-hn" style="margin-top:1.5rem">
@@ -146,9 +148,9 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
   <div class="sf-hn" style="margin-top:1.5rem">
     <h2>Getting a link from your own photos</h2>
     <p>Shots that only live in your camera roll do <strong>not</strong> have a web address yet. You need one short <strong>viewable</strong> URL per photo or album — that usually means uploading or syncing to a service you already use, then using its &ldquo;share&rdquo; or &ldquo;copy link&rdquo; option.</p>
-    <p><strong>Google Photos</strong> (common on Android; optional on iPhone): Open the photo in the Google Photos app → <strong>Share</strong> → <strong>Create link</strong> (wording may vary slightly) → <strong>Copy link</strong>. If the image is not there yet, turn backup on briefly or add the file from your gallery into Photos, then create the link.</p>
-    <p><strong>iCloud</strong> (iPhone / iPad): Open <strong>Photos</strong> → select the image → <strong>Share</strong> → <strong>Copy iCloud Link</strong> when that option appears. Availability depends on your region and iCloud settings.</p>
-    <p><strong>Dropbox, OneDrive, or similar:</strong> Upload the picture from your phone (or save it there), then open the file and use <strong>Copy link</strong> / <strong>Share</strong> so anyone with the link can view without signing in.</p>
+    <p><strong><a href="https://photos.google.com/" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Google Photos</a></strong> (common on Android; optional on iPhone): Open the photo in the Google Photos app → <strong>Share</strong> → <strong>Create link</strong> (wording may vary slightly) → <strong>Copy link</strong>. If the image is not there yet, turn backup on briefly or add the file from your gallery into Photos, then create the link. Step-by-step from Google: <a href="https://support.google.com/photos/answer/6131413" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Create shared links in Google Photos ↗</a>.</p>
+    <p><strong><a href="https://www.icloud.com/photos" class="sf-svc-link" target="_blank" rel="noopener noreferrer">iCloud Photos</a></strong> (iPhone / iPad): On your device, open the <strong>Photos</strong> app → select the image → <strong>Share</strong> → <strong>Copy iCloud Link</strong> when that option appears. Availability depends on your region and iCloud settings. Apple’s guide: <a href="https://support.apple.com/guide/iphone/share-photos-and-videos-iph61aaea052/ios" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Share photos and videos on iPhone ↗</a>.</p>
+    <p><strong><a href="https://www.dropbox.com/" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Dropbox</a></strong> or <strong><a href="https://onedrive.live.com/" class="sf-svc-link" target="_blank" rel="noopener noreferrer">OneDrive</a></strong> (or similar): Upload the picture from your phone (or save it there), then open the file and use <strong>Copy link</strong> / <strong>Share</strong> so anyone with the link can view without signing in. Help: <a href="https://help.dropbox.com/share/how-to-create-share-link" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Dropbox shared links ↗</a> · <a href="https://support.microsoft.com/office/share-onedrive-files-and-folders-9a9b9db0-9e5d-4ced-8f42-8f690a01f23f" class="sf-svc-link" target="_blank" rel="noopener noreferrer">Share OneDrive files ↗</a>.</p>
     <p>We know this is more work than attaching a file. Our form host does not allow uploads on the current plan; links are the reliable option for now.</p>
   </div>
 
@@ -187,6 +189,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <label for="consent">I confirm I own or control the rights to these images and I agree to the non-exclusive editorial licence described above.</label>
     </div>
 
+    <p class="share-form-error" id="share-form-error" role="alert" hidden></p>
+
     <button class="sf-submit" type="submit" id="share-submit">Send to editorial</button>
   </form>
 
@@ -217,13 +221,97 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 <script src="/js/content-trust.js"></script>
 <script src="/js/ar-page.js" defer></script>
 <script>
-(function(){
-  if (location.search.indexOf('sent=1') !== -1) {
+(function () {
+  'use strict';
+
+  function showThanksState() {
     var t = document.getElementById('share-thanks');
     var f = document.getElementById('share-form');
     if (t) t.classList.add('visible');
-    if (f) { f.setAttribute('hidden', ''); f.setAttribute('aria-hidden', 'true'); }
+    if (f) {
+      f.setAttribute('hidden', '');
+      f.setAttribute('aria-hidden', 'true');
+    }
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, 0);
+    }
   }
+
+  function hideError() {
+    var el = document.getElementById('share-form-error');
+    if (el) {
+      el.setAttribute('hidden', '');
+      el.textContent = '';
+    }
+  }
+
+  function showError(msg) {
+    var el = document.getElementById('share-form-error');
+    if (!el) return;
+    el.textContent = msg;
+    el.removeAttribute('hidden');
+  }
+
+  function formspreeMessage(data) {
+    if (!data) return 'Something went wrong — please try again in a moment.';
+    if (typeof data.error === 'string') return data.error;
+    if (data.errors && data.errors.length) {
+      var first = data.errors[0];
+      if (typeof first === 'string') return first;
+      if (first && first.message) return first.message;
+    }
+    return 'Please check your entries and try again.';
+  }
+
+  if (location.search.indexOf('sent=1') !== -1) {
+    showThanksState();
+  }
+
+  var form = document.getElementById('share-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    hideError();
+    var btn = document.getElementById('share-submit');
+    if (btn) btn.disabled = true;
+
+    var fd = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: fd,
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) {
+        return res.text().then(function (text) {
+          var data = {};
+          if (text) {
+            try {
+              data = JSON.parse(text);
+            } catch (ignore) {}
+          }
+          if (res.ok) {
+            try {
+              history.replaceState(null, '', '/share-photos.html?sent=1');
+            } catch (e2) {}
+            showThanksState();
+            return;
+          }
+          showError(formspreeMessage(data));
+          if (btn) btn.disabled = false;
+        });
+      })
+      .catch(function () {
+        showError('Network error — check your connection and try again.');
+        if (btn) btn.disabled = false;
+      });
+  });
 })();
 </script>
 <script>
