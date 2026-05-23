@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "slug": "when-hobby-stops-feeling-good",
+    "lang": "id",
+    "sourceFile": "articles/when-hobby-stops-feeling-good.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Ketika Hobi Berhenti Terasa Menyenangkan — Aquatic Rhythm",
+    "description": "Ketika akuarium mulai terasa seperti beban, itu adalah sinyal Keeper Rhythm — bukan kelemahan karakter. Panduan ini menjelaskan mengapa keselarasan penjaga-tank bergeser, tiga jalur jujur yang tersedia, dan cara meninggalkan hobi dengan bermartabat jika itu yang diperlukan.",
+    "ogTitle": "Ketika Hobi Berhenti Terasa Menyenangkan",
+    "ogDescription": "Akuarium yang terasa seperti beban adalah sinyal, bukan kegagalan. Pelajari apa yang bisa dilakukan — termasuk cara pergi dengan bermartabat."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Semua Tingkat",
+    "titleHtml": "Ketika Hobi<br><em>Berhenti Terasa Menyenangkan</em>",
+    "subtitle": "Ketika akuarium terasa seperti beban, itu adalah sinyal — bukan kelemahan.",
+    "texts": [
+      "Ada momen ketika memberi makan ikan terasa seperti tugas yang harus diselesaikan, bukan bagian dari sesuatu yang Anda nikmati. Ketika melihat tank mengingatkan Anda tentang ganti air yang belum dilakukan. Ketika Anda berhenti duduk di depannya dan mulai hanya lewat di depannya.",
+      "Panduan ini tidak akan mengatakan bahwa semua penghobi harus terus. Tidak semua harus. Tapi ia akan menjelaskan apa yang mungkin terjadi ketika hobi mulai terasa berat — dan apa saja pilihan jujur yang tersedia, termasuk pilihan untuk pergi."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Beban yang tumbuh perlahan",
+      "titleHtml": "Beban yang tumbuh perlahan<br><em>sering tidak terlihat sampai sudah besar.</em>",
+      "body": [
+        "Hobi akuarium jarang tiba-tiba berhenti menyenangkan. Lebih sering, ada pergeseran bertahap yang hampir tidak terasa sampai sudah mengubah keseluruhan hubungan penjaga dengan tanknya.",
+        "Awalnya mungkin hanya perasaan bahwa ada 'lebih banyak yang perlu dilakukan' dari yang diharapkan. Kemudian ganti air mulai terasa seperti kewajiban bukan pilihan. Kemudian masalah kecil — sedikit alga, satu parameter yang sedikit bergeser — mulai terasa berat secara tidak proporsional. Kemudian tank itu sendiri mulai terasa seperti sesuatu yang harus dikelola, bukan sesuatu yang dinikmati.",
+        "Dalam istilah ARA, ini adalah sinyal Keeper Rhythm — informasi tentang keselarasan antara apa yang sistem butuhkan dan apa yang penjaga bisa berikan secara berkelanjutan. Bukan tentang apakah penjaga cukup sayang pada ikannya. Bukan tentang apakah ia orang yang baik. Ini tentang apakah kapasitas yang ada cukup untuk setup yang dipilih.",
+        "Sinyal itu nyata dan berguna. Mengabaikannya karena merasa harus melanjutkan tidak membantu penjaga atau tanknya."
+      ],
+      "pullQuote": "Akuarium yang terasa seperti beban adalah sinyal Keeper Rhythm — informasi tentang keselarasan antara apa yang sistem butuhkan dan apa yang penjaga bisa berikan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Jenis-jenis ketidakselarasan"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Jenis-jenis ketidakselarasan",
+      "titleHtml": "Ada berbagai cara hubungan penjaga-tank<br><em>menjadi tidak selaras.</em>",
+      "body": [
+        "Tidak semua ketidakselarasan terlihat sama. Memahami jenisnya membantu menentukan apa yang tersedia sebagai respons.",
+        "<strong>Ketidakselarasan mendadak dari perubahan hidup.</strong> Pekerjaan baru, kelahiran anak, penyakit, pindah rumah — perubahan eksternal yang mengubah berapa banyak waktu dan perhatian yang tersedia. Setup yang sebelumnya selaras tiba-tiba terasa terlalu banyak. Ini bukan tentang kehilangan minat — ini adalah perubahan kapasitas yang nyata.",
+        "<strong>Ketidakselarasan gradual dari pergeseran minat.</strong> Minat yang berevolusi adalah normal. Penghobi yang mulai dengan setup komunitas sederhana mungkin bergerak ke planted tank, ke shrimp, ke cichlid, ke breeding — atau mungkin menemukan bahwa minat terhadap ikan secara keseluruhan memudar tanpa ada pengganti yang jelas. Ini juga nyata.",
+        "<strong>Ketidakselarasan karena setup melampaui kapasitas.</strong> Setup yang terus ditambah dan diperluas sampai melampaui apa yang bisa dikelola secara konsisten. Ini sering terjadi perlahan — satu tank lagi, satu koleksi lagi — sampai keseluruhan sistem terasa tidak terkendali.",
+        "<strong>Penjaga yang berubah.</strong> Orang berubah. Seseorang yang memiliki banyak waktu dan energi di usia 25 mungkin punya prioritas yang berbeda di usia 35. Ini bukan kegagalan — ini adalah kehidupan. Setup yang dibuat untuk versi diri yang lebih awal mungkin tidak lagi sesuai dengan versi yang ada sekarang."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Tiga jalur jujur"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Tiga jalur jujur",
+      "titleHtml": "Tidak ada satu jawaban yang benar<br><em>ketika hobi berhenti terasa baik.</em>",
+      "body": [
+        "Ada tiga jalur jujur yang tersedia — dan tidak ada yang secara otomatis benar atau salah.",
+        "<strong>Redesain.</strong> Ubah setup agar selaras dengan kapasitas yang ada sekarang. Ini mungkin berarti menyederhanakan: lebih sedikit tank, lebih sedikit spesies, setup yang membutuhkan lebih sedikit perawatan. Atau beralih ke jenis akuarium yang berbeda — dari high-tech ke low-tech, dari komunitas ke species-only, dari banyak kecil ke satu sedang yang lebih mudah dikelola. Redesain bisa mengubah hobi yang terasa berat menjadi sesuatu yang bisa dinikmati kembali.",
+        "<strong>Sederhanakan.</strong> Kurangi setup ke sesuatu yang lebih kecil dari apa yang saat ini ada. Konsolidasi. Kurangi jumlah penghuni ke level yang lebih nyaman dikelola. Ini berbeda dari redesain karena fokusnya pada pengurangan, bukan transformasi.",
+        "<strong>Pergi.</strong> Pilihan ini sah dan sering diabaikan dalam komunitas hobi. Tidak semua orang harus terus memelihara akuarium selamanya. Kehidupan berubah. Minat berubah. Kapasitas berubah. Memilih untuk keluar dari hobi bukan kegagalan — itu adalah keputusan yang jujur dan bertanggung jawab.",
+        "Yang tidak tersedia sebagai pilihan yang berguna: terus dengan setup yang saat ini ada karena merasa harus, sementara kualitas perawatan merosot dan penjaga merasa semakin bersalah. Itu tidak membantu penjaga atau penghuni tank."
+      ],
+      "pullQuote": "Tiga jalur jujur: redesain agar selaras dengan kapasitas yang ada, sederhanakan ke level yang lebih nyaman, atau pergi. Tidak ada yang secara otomatis salah.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Pergi dengan bermartabat"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Pergi dengan bermartabat",
+      "titleHtml": "Ada cara untuk pergi<br><em>dengan bermartabat.</em>",
+      "body": [
+        "Jika memilih untuk keluar dari hobi, ada cara untuk melakukannya yang bertanggung jawab terhadap penghuni yang ada.",
+        "Prioritas pertama: temukan rumah yang baik untuk ikan dan penghuni lainnya sebelum melakukan apa pun lainnya. Komunitas akuarium lokal, toko ikan lokal yang mau menerima, forum online — banyak penghobi lain yang dengan senang hati mengambil ikan sehat dari penjaga yang bertanggung jawab. Ini membutuhkan waktu, tapi ini langkah yang benar.",
+        "Kurangi secara bertahap jika memungkinkan. Menjual atau memberikan satu tank pada satu waktu lebih mudah dikelola dari mencoba menyelesaikan segalanya sekaligus. Dan ini memberi waktu untuk memastikan setiap penghuni mendapat tempat yang tepat.",
+        "Tidak ada alasan untuk mempertahankan rasa bersalah tentang keputusan ini. Memilih untuk tidak memelihara akuarium lagi bukan tanda bahwa Anda tidak pernah peduli. Itu tanda bahwa Anda cukup jujur untuk mengakui kapan sebuah babak dalam hidup sudah selesai.",
+        "Dan jika suatu saat kondisi berubah — lebih banyak waktu, lebih banyak energi, minat yang muncul kembali — hobi ini akan ada. Komunitas akan ada. Tidak ada yang hilang secara permanen dengan memilih untuk berhenti sekarang."
+      ],
+      "pullQuote": null,
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/caring-without-guilt",
+      "text": "Merawat tanpa rasa bersalah →"
+    },
+    {
+      "href": "/articles/aquarium-not-a-project",
+      "text": "Akuarium bukan proyek →"
+    },
+    {
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "Rutinitas perawatan yang berhasil →"
+    },
+    {
+      "href": "/articles/ara-full-framework",
+      "text": "Aquatic Rhythm Alignment →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

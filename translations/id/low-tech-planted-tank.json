@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "slug": "low-tech-planted-tank",
+    "lang": "id",
+    "sourceFile": "articles/low-tech-planted-tank.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Cara Memulai Planted Tank Low-Tech — Aquatic Rhythm",
+    "description": "Low-tech bukan pilihan hemat. Ini adalah pilihan yang selaras untuk penghobi yang ritme perawatannya bersifat manual — planted tank yang kebutuhannya sesuai dengan kapasitas yang sebenarnya dimiliki. Panduan ini menjelaskan apa artinya dan cara memulainya.",
+    "ogTitle": "Cara Memulai Planted Tank Low-Tech",
+    "ogDescription": "Low-tech bukan kompromi. Ini adalah planted tank yang selaras untuk kapasitas manual penghobi — sama validnya dengan high-tech bagi penghobi yang benar-benar membangun infrastruktur teknis yang diperlukan."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Praktis",
+    "titleHtml": "Cara Memulai<br><em>Planted Tank Low-Tech</em>",
+    "subtitle": "Low-tech bukan pilihan hemat. Ini adalah pilihan yang selaras untuk penghobi dengan ritme perawatan manual.",
+    "texts": [
+      "Planted tank low-tech sering digambarkan sebagai kompromi — sesuatu yang di-upgrade ketika sudah siap untuk CO2 yang diinjeksikan dan pencahayaan output tinggi. Gambaran itu salah.",
+      "Akuarium low-tech adalah akuarium yang kebutuhannya sesuai dengan kapasitas penghobi yang sebenar. Panduan ini menjelaskan apa artinya secara ekologi, tanaman apa yang selaras dengan Keeper Rhythm yang jujur, bagaimana cahaya bekerja sebagai Environmental Rhythm, dan kenapa memulai dengan kecil adalah jalur yang paling selaras.",
+      "Planted tank yang tumbuh lambat dan sehat selama bertahun-tahun membutuhkan lebih sedikit dari penghobi dibanding planted tank yang terlihat sempurna tiga bulan sebelum merosot karena dikelola tanpa infrastruktur teknis yang diperlukan."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~8 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Apa yang low-tech sebenarnya berarti",
+      "titleHtml": "Low-tech adalah tentang<br><em>keselarasan kapasitas, bukan hemat.</em>",
+      "body": [
+        "Kebanyakan penghobi menganggap low-tech sebagai pilihan hemat: tanpa injeksi CO2, lampu lebih murah, substrat lebih mudah. Dalam istilah ARA, low-tech adalah sesuatu yang lebih bermakna — ini adalah planted tank yang kebutuhannya jatuh dalam kapasitas penghobi yang sebenar.",
+        "Planted tank high-tech (CO2 bertekanan, pencahayaan output tinggi, dosing harian) bukan lebih sulit hanya karena tuntutan teknis semata. Lebih sulit karena membutuhkan input yang konsisten dan sering. CO2 yang diinjeksikan harus disesuaikan. Nutrisi harus ditambahkan. Fotoperiod harus dijaga dengan teliti. Ketika input mana pun ini berfluktuasi, keseimbangan berubah — sering ke arah alga dibanding tanaman.",
+        "Planted tank low-tech beroperasi pada kecepatan yang lebih lambat dan lebih memaafkan. Tanaman tumbuh lambat, tapi ia tumbuh. Nutrisi dari substrat dan kotoran ikan biasanya cukup untuk memasok tanaman yang dipilih dengan baik. Ketidakkonsistenan perawatan kecil — satu ganti air yang terlewat, beberapa hari tanpa observasi — tidak memicu gangguan yang signifikan.",
+        "Perbedaan mendasar: planted tank high-tech adalah sistem yang dioptimalkan. Planted tank low-tech adalah sistem yang diselaraskan. Dioptimalkan berarti menghasilkan hasil maksimum ketika semua input sempurna. Diselaraskan berarti tetap sehat meski input adalah apa yang realistis akan diberikan."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Capacity before Ambition",
+      "hintText": [
+        "Dalam ARA, 'Capacity before Ambition' berarti memahami apa yang sebenarnya bisa Anda pertahankan sebelum memilih apa yang akan dibangun. Planted tank high-tech yang dikelola tanpa infrastruktur teknis yang diperlukan hampir pasti akan merosot. Planted tank low-tech yang dirawat secara konsisten — meski tidak sempurna — hampir pasti akan berhasil. Titik awal yang selaras adalah jujur tentang waktu, perhatian, infrastruktur teknis, dan apa yang terjadi ketika kehidupan menjadi sibuk."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "Tanaman yang sesuai dengan ritme Anda"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Tanaman yang sesuai dengan ritme Anda",
+      "titleHtml": "Pilih tanaman berdasarkan<br><em>apa yang masih hidup dalam tiga bulan.</em>",
+      "body": [
+        "Tidak semua tanaman akuarium memiliki kebutuhan yang sama. Beberapa membutuhkan CO2, cahaya tinggi, dan keseimbangan nutrisi yang tepat untuk melakukan apa pun. Yang lain telah berkembang di lingkungan cahaya rendah yang berfluktuasi dan akan tumbuh di hampir apa pun yang stabil. Kuncinya adalah menyelaraskan pilihan tanaman dengan Keeper Rhythm — bukan dengan aspirasi aquascape.",
+        "<strong>Tanaman rhizoma (Anubias, Java Fern, Bolbitis).</strong> Ini adalah tanaman paling tahan di akuarium. Diikat pada kayu atau batu (tidak ditanam di substrat), mereka tumbuh lambat dan toleran terhadap cahaya rendah, kebutuhan nutrisi yang berubah-ubah, dan berbagai kondisi air. Daun hidup bertahun-tahun. Ini adalah fondasi planted tank low-tech yang paling bisa diandalkan.",
+        "<strong>Lumut (Java Moss, Christmas Moss, Fissidens).</strong> Tumbuh di hampir semua kondisi, menempel pada permukaan keras, dan menyediakan habitat alami yang sangat baik untuk udang dan ikan kecil. Mudah dirawat — hanya dipangkas ketika tumbuh terlalu besar.",
+        "<strong>Vallisneria.</strong> Tanaman latar belakang yang berkembang di berbagai kondisi air, berkembang biak dengan cepat melalui stolon, dan tidak membutuhkan CO2 atau nutrisi tambahan di kebanyakan setup. Cocok untuk akuarium yang lebih besar.",
+        "<strong>Cryptocoryne.</strong> Lambat untuk terbentuk (perkirakan 'melt crypt' di minggu awal), tapi ketika stabil, sangat tahan dan bisa bertahan di cahaya rendah dan kebutuhan nutrisi yang bervariasi. Hindari memindahkannya setelah ditanam.",
+        "Tanaman yang harus dihindari di setup low-tech yang dikelola dengan sedang: tanaman karpet (HC Cuba, Glossostigma, kebanyakan Hemianthus) — ini membutuhkan CO2 tinggi dan cahaya kuat untuk tumbuh sebagai karpet; kebanyakan stem plant yang menuntut (Rotala rotundifolia bisa dilakukan low-tech, tapi banyak varietas lain membutuhkan CO2); tanaman bulb tropis yang membutuhkan musim dormansi."
+      ],
+      "pullQuote": "Pertanyaannya bukan tanaman mana yang cantik. Pertanyaannya adalah tanaman mana yang masih akan hidup dalam tiga bulan dengan perawatan yang sebenarnya akan Anda berikan.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Cahaya sebagai Environmental Rhythm"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Cahaya sebagai Environmental Rhythm",
+      "titleHtml": "Konsistensi cahaya<br><em>lebih penting dari kuantitas cahaya.</em>",
+      "body": [
+        "Di planted tank, cahaya adalah pendorong utama Environmental Rhythm. Pertanyaan yang kebanyakan penghobi tanyakan adalah 'berapa lumen?' atau 'LED merek apa?' Dalam ARA, pertanyaan yang lebih penting adalah: seberapa konsisten fotoperiodnya?",
+        "Tanaman berkembang dengan siklus cahaya harian yang bisa diprediksi. Ketidakkonsistenan — menyalakan lampu pada waktu yang berbeda, melewati hari, atau membiarkan lampu menyala sepanjang hari karena lupa mematikannya — mengganggu proses metabolis yang bergantung pada sinyal cahaya yang stabil. Alga, sebaliknya, oportunistik dan memanfaatkan ketidakkonsistenan.",
+        "Satu timer untuk lampu akuarium adalah pembelian paling berharga yang bisa Anda lakukan untuk planted tank. Ini menyelesaikan masalah ketidakkonsistenan tanpa upaya berkelanjutan, dan ini adalah cara termudah untuk mengurangi pertumbuhan alga. Fotoperiod 7–8 jam, diatur pada waktu yang sama setiap hari, adalah titik awal yang baik untuk kebanyakan setup low-tech.",
+        "Untuk intensitas: cukup cahaya untuk tanaman Anda, tapi tidak terlalu banyak untuk mendorong pertumbuhan alga yang tidak bisa dikelola. Untuk kebanyakan tanaman low-tech yang disebutkan di atas, lampu yang menghasilkan 20–40 PAR (umol/m²/s) di level substrat sudah cukup. Jika Anda tidak memiliki meter PAR, 6–8 jam dari LED planted standar yang diperingkat untuk ukuran akuarium Anda biasanya berfungsi sebagai titik awal."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Environmental Rhythm",
+      "hintText": [
+        "Dalam ARA, cahaya adalah komponen Environmental Rhythm — kondisi fisik berkelanjutan yang dipertahankan akuarium. Tanaman membaca Environmental Rhythm secara terus-menerus. Konsistensi dalam komponen itu — apakah itu cahaya, suhu, atau aliran — lebih bermakna untuk pertumbuhan tanaman dari optimalnya bacaan tunggal mana pun."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Mulai dengan kecil"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Mulai dengan kecil",
+      "titleHtml": "Pola drift paling umum:<br><em>terlalu banyak variabel sekaligus.</em>",
+      "body": [
+        "Pola drift paling umum di planted tank low-tech adalah memulai dengan terlalu banyak variabel sekaligus: substrat baru, banyak spesies tanaman, rejimen pupuk baru, jadwal cahaya baru, ikan baru, semua dalam minggu yang sama. Ketika masalah muncul — dan akan muncul — mustahil untuk tahu variabel mana yang menyebabkannya.",
+        "Pendekatan yang selaras adalah mulai dengan sedikit. Tiga atau empat jenis tanaman yang terbukti untuk setup Anda. Satu substrat. Satu rejimen pencahayaan yang bisa Anda pertahankan dengan konsisten. Biarkan berjalan sebulan sebelum menambahkan apa pun. Dari baseline yang stabil itu, perubahan apa pun yang Anda buat menghasilkan informasi yang bisa dibaca.",
+        "Drift yang paling umum yang akan Anda hadapi: tanaman yang tumbuh terlalu besar untuk ruangnya (pangkas secara teratur), lumut yang menyebar melebihi yang Anda inginkan (kendalikan dengan pemangkasan manual dan kurangi nutrisi), dan tanaman yang akhirnya mati meski diperkirakan hidup (ini terjadi — ganti saja, jangan simpulkan bahwa seluruh sistem gagal).",
+        "Planted tank low-tech yang tumbuh lambat dan stabil selama bertahun-tahun adalah keberhasilan. Ini bukan menunggu untuk menjadi sesuatu yang lebih baik. Ia sudah berkembang pada kecepatan yang sesuai dengan sistem tempatnya hidup — dan dengan kebutuhan penghobi yang merawatnya."
+      ],
+      "pullQuote": "Planted tank yang stabil dan tumbuh lambat bukan gagal. Ia berhasil pada kecepatan yang sesuai dengan sistem tempatnya hidup.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/aquarium-plants-not-growing",
+      "text": "Kenapa tanaman saya tidak tumbuh? →"
+    },
+    {
+      "href": "/articles/algae-in-aquarium",
+      "text": "Alga dalam akuarium →"
+    },
+    {
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "Rutinitas perawatan yang berhasil →"
+    },
+    {
+      "href": "/rhyssa",
+      "text": "Tanya Rhyssa →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

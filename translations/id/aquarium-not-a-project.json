@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "slug": "aquarium-not-a-project",
+    "lang": "id",
+    "sourceFile": "articles/aquarium-not-a-project.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Akuarium Bukan Proyek — Aquatic Rhythm",
+    "description": "Akuarium yang sehat bukan tentang mencapai 'selesai'. Cara penjaga berpikir tentang akuariumnya — sebagai proyek atau sebagai sistem hidup — menentukan cara ia merespons, dan apa yang ia lakukan ketika semuanya sudah stabil.",
+    "ogTitle": "Akuarium Bukan Proyek",
+    "ogDescription": "Tank yang sudah sampai tidak perlu diubah. Pelajari perbedaan antara berpikir seperti proyek dan berpikir seperti penjaga."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Semua Tingkat",
+    "titleHtml": "Akuarium<br><em>Bukan Proyek</em>",
+    "subtitle": "Proyek punya titik akhir. Akuarium hidup tidak.",
+    "texts": [
+      "Ada pola yang hampir universal di kalangan penghobi akuarium: tank baru disetup, parameter mulai stabil, ikan mulai berkembang — dan kemudian muncul dorongan untuk mengubah sesuatu. Menambah ikan lagi. Meredesain hardscape. Upgrade filter. Coba substrat baru.",
+      "Dorongan itu sering terasa seperti kemajuan. Padahal sering kali ia adalah pola pikir proyek yang menyusup ke dalam hobi yang tidak bekerja seperti proyek.",
+      "Panduan ini menjelaskan apa perbedaannya — dan mengapa memahami perbedaan itu mengubah cara Anda merespons tank yang sudah stabil, dan cara Anda menikmati apa yang sudah Anda bangun."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Pikiran proyek vs pikiran penjaga",
+      "titleHtml": "Proyek punya titik akhir.<br><em>Akuarium hidup tidak.</em>",
+      "body": [
+        "Proyek dirancang untuk selesai. Ada visi di awal, ada milestone di tengah, ada momen ketika Anda bisa berkata 'sudah jadi.' Pola pikir ini berguna untuk banyak hal — tapi tidak untuk akuarium.",
+        "Akuarium hidup bukan bergerak menuju selesai. Ia bergerak terus: ikan tumbuh, bakteri beradaptasi, tanaman merespons cahaya dan nutrisi yang berubah, bioload bergeser saat ikan tua mati dan ikan muda tumbuh. Tidak ada titik di mana sistem berhenti berubah.",
+        "Penjaga yang berpikir seperti proyek cenderung mengalami frustrasi di fase stabil — karena tidak ada lagi yang 'dilakukan.' Tank sudah setup, parameter oke, ikan sehat. Dan justru di situlah dorongan muncul: tambah sesuatu, ubah sesuatu, buat sesuatu terjadi. Bukan karena tank butuh itu. Tapi karena penjaga belum belajar menikmati fase yang bukan konstruksi.",
+        "Penjaga yang berpikir seperti penjaga belajar membaca sistem — bukan membangun menuju titik akhir, tapi memperhatikan apa yang sistem sedang katakan. Ikan yang aktif saat waktu makan adalah sinyal. Tanaman yang tumbuh perlahan tapi konsisten adalah sinyal. Filter yang mengalir dengan baik adalah sinyal. Membaca sinyal-sinyal itu adalah keterampilan, bukan hiburan sementara antara upgrade."
+      ],
+      "pullQuote": "Penjaga yang berpikir seperti proyek mencari momen 'sudah jadi.' Akuarium yang hidup tidak menuju ke sana.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Intro",
+      "nextBtn": "Biaya gangguan"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Biaya gangguan",
+      "titleHtml": "Setiap perubahan pada tank yang stabil<br><em>adalah gangguan.</em>",
+      "body": [
+        "Tank yang stabil memiliki ritme yang sudah terbentuk: Environmental Rhythm (suhu, cahaya, aliran yang konsisten), Biological Rhythm (koloni bakteri yang berfungsi, proses nitrogen yang stabil), Livestock Rhythm (pola makan, pola aktivitas, hubungan sosial antar penghuni yang sudah settled). Perubahan apapun — sekecil apapun — mengganggu ritme itu.",
+        "Ini bukan alasan untuk tidak pernah berubah. Beberapa perubahan diperlukan: ganti air rutin, perawatan filter, mengganti ikan yang sakit. Tapi perubahan yang dipilih sendiri oleh penjaga — bukan karena tank butuh, tapi karena penjaga bosan atau ingin mencoba sesuatu — punya biaya yang sering tidak kelihatan.",
+        "Menambahkan ikan baru mengubah bioload dan dinamika sosial. Memindahkan dekorasi mengganggu pola teritorial yang sudah stabil. Mengganti substrat adalah intervensi besar yang bisa membutuhkan berminggu-minggu untuk sistem pulih. Bahkan meningkatkan frekuensi ganti air tanpa alasan yang jelas bisa mengganggu parameter yang sudah menemukan keseimbangannya.",
+        "Pertanyaan yang berguna sebelum perubahan apapun bukan 'apakah ini akan membuat tank lebih baik?' tapi 'apakah tank membutuhkan ini, atau ini yang saya butuhkan?' Jawaban yang jujur sering berbeda dari jawaban yang ingin Anda dengar."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Gangguan Sukarela",
+      "hintText": [
+        "Dalam ARA, gangguan sukarela adalah perubahan yang dipilih penjaga tanpa sinyal yang jelas dari sistem. Berbeda dengan respons terhadap sinyal nyata (ikan sakit, parameter bergeser, filter tersumbat), gangguan sukarela berasal dari kebutuhan penjaga — bukan kebutuhan tank. Mengenali perbedaan itu adalah bagian dari Keeper Rhythm yang matang."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Kapasitas sebelum ambisi"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Kapasitas sebelum ambisi",
+      "titleHtml": "Baca kapasitas sistem<br><em>sebelum perubahan apapun.</em>",
+      "body": [
+        "Salah satu prinsip ARA adalah Kapasitas sebelum Ambisi — membaca apa yang sistem benar-benar bisa tanggung sebelum menambah atau mengubah apapun. Dalam praktik, ini berarti bertanya bukan 'apa yang ingin saya tambahkan?' tapi 'apa yang tank ini sebenarnya bisa tampung?'",
+        "Kapasitas bukan hanya ukuran liter. Ia adalah kombinasi dari bioload yang ada, kemampuan filtrasi, kestabilan parameter, kondisi penghuni saat ini — dan kapasitas penjaga sendiri: waktu, perhatian, serta infrastruktur teknis (otomasi, pemantauan, peralatan) yang benar-benar dipahami dan dirawat. Tank 100 liter yang sudah penuh dengan ikan aktif dan filter yang sudah di batas kapasitasnya punya kapasitas yang berbeda dari tank 100 liter dengan dua ikan damai dan filter yang masih punya ruang.",
+        "Pola yang paling umum: penjaga melihat tank yang stabil dan menyimpulkan bahwa ada 'ruang' untuk lebih banyak. Tapi kestabilan itu sendiri adalah bukti bahwa sistem sedang berjalan baik pada kapasitas yang ada — bukan undangan untuk menambah lebih.",
+        "Membaca kapasitas dengan jujur sering memerlukan lebih banyak keberanian dari menambah sesuatu. Karena ia berarti mengakui bahwa tank yang sedang oke — mungkin sudah baik. Tidak perlu diubah. Tidak perlu ditambah. Ia sudah sampai."
+      ],
+      "pullQuote": "Tank yang stabil bukan ruang kosong yang menunggu diisi. Ia adalah sistem yang sudah menemukan keseimbangannya.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Tanda-tanda kedatangan"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Tanda-tanda kedatangan",
+      "titleHtml": "Tank memberitahu Anda<br><em>ketika ia sudah sampai.</em>",
+      "body": [
+        "Ada tanda-tanda yang bisa dikenali ketika akuarium sudah menemukan keseimbangannya: parameter konsisten dari minggu ke minggu tanpa koreksi aktif, ikan makan dengan antusias dan menunjukkan perilaku yang sesuai spesies, tanaman (kalau ada) tumbuh perlahan tapi tidak mati, tidak ada sinyal stres yang perlu direspons.",
+        "Di titik itu, keterampilan yang paling berguna bukan keterampilan teknis — bukan pengetahuan tentang kimia air atau ilmu filter. Keterampilan yang paling berguna adalah kemampuan untuk diam dan mengamati. Duduk di depan tank selama beberapa menit tanpa agenda. Perhatikan apa yang terjadi. Bukan mencari masalah — tapi membiarkan sistem berbicara.",
+        "Ini bukan pasif. Ini adalah bentuk perhatian yang lebih tinggi dari intervensi aktif. Penjaga yang bisa duduk dengan tank yang stabil dan menikmatinya — tanpa dorongan untuk mengubah, tanpa kecemasan bahwa sesuatu harus dilakukan — telah melewati salah satu transisi terpenting dalam hobi ini.",
+        "Akuarium yang hidup tidak perlu menuju ke mana-mana. Ia sudah ada di sini. Keterampilan penjaganya adalah belajar ada di sini bersamanya."
+      ],
+      "pullQuote": "Kemampuan untuk diam dan mengamati tank yang sudah stabil — tanpa dorongan untuk mengubah — adalah salah satu keterampilan terpenting dalam hobi ini.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/aquarium-maintenance-routine",
+      "text": "Rutinitas perawatan yang berhasil →"
+    },
+    {
+      "href": "/articles/adding-new-fish",
+      "text": "Menambahkan ikan baru →"
+    },
+    {
+      "href": "/articles/caring-without-guilt",
+      "text": "Merawat tanpa rasa bersalah →"
+    },
+    {
+      "href": "/articles/ara-full-framework",
+      "text": "Aquatic Rhythm Alignment →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}

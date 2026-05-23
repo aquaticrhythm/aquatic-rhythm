@@ -1,0 +1,127 @@
+{
+  "_meta": {
+    "slug": "aquarium-maintenance-routine",
+    "lang": "id",
+    "sourceFile": "articles/aquarium-maintenance-routine.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "Rutinitas Perawatan Akuarium yang Benar-Benar Berhasil — Aquatic Rhythm",
+    "description": "Kebanyakan jadwal perawatan dibuat untuk penghobi ideal. Panduan ini membantu Anda membangun rutinitas untuk penghobi yang Anda sebenarnya — menggunakan Keeper Rhythm yang nyata, bukan yang diinginkan.",
+    "ogTitle": "Rutinitas Perawatan Akuarium yang Benar-Benar Berhasil",
+    "ogDescription": "Rutinitas yang bisa Anda pertahankan lebih berharga dari rutinitas yang optimal di atas kertas."
+  },
+  "intro": {
+    "eyebrow": "Bacaan · Praktis",
+    "titleHtml": "Rutinitas Perawatan<br><em>yang Benar-Benar Berhasil</em>",
+    "subtitle": "Rutinitas yang bisa Anda pertahankan lebih berharga dari rutinitas yang optimal di atas kertas.",
+    "texts": [
+      "Kebanyakan panduan akuarium menyertakan jadwal perawatan. Biasanya terlihat seperti ini: ganti air setiap minggu, siphon substrat setiap dua minggu, bersihkan filter setiap bulan, bersihkan kaca sesuai kebutuhan. Secara teknis itu saran yang baik — untuk penghobi yang punya waktu sama setiap minggu, konsisten, selama bertahun-tahun. Penghobi seperti itu jarang.",
+      "Panduan ini membantu Anda membangun rutinitas untuk penghobi yang Anda sebenarnya, menggunakan Keeper Rhythm yang nyata versus yang Anda niatkan.",
+      "Hasilnya bukan jadwal yang lebih pendek. Ini adalah pemahaman tentang bagaimana menyelaraskan ritme perawatan yang Anda miliki dengan kebutuhan sistem yang Anda pelihara."
+    ],
+    "metaModules": "4 modul",
+    "metaTime": "Semua tingkat",
+    "metaLevel": "~7 menit",
+    "cta": "Mulai membaca"
+  },
+  "modules": [
+    {
+      "id": "mod-1",
+      "tag": "Kenapa jadwal satu-ukuran-untuk-semua gagal",
+      "titleHtml": "Jadwal yang sempurna<br><em>untuk penghobi yang jarang ada.</em>",
+      "body": [
+        "Kebanyakan jadwal perawatan akuarium dibuat untuk penghobi ideal — seseorang yang punya waktu sama setiap minggu, tanpa darurat, tanpa minggu yang terlalu sibuk. Penghobi itu jarang ada di dunia nyata.",
+        "Masalahnya bukan jadwal itu salah secara teknis. Masalahnya adalah ia menciptakan rasa bersalah — dan rasa bersalah menghasilkan pola yang lebih buruk dari sekadar tidak mengikuti jadwal. Ia menghasilkan sesi catch-up di mana Anda melakukan terlalu banyak sekaligus: ganti air besar, bersihkan filter, siphon substrat semua dalam satu hari, setelah periode yang terlewat. Gangguan dari sesi seperti itu sering lebih merusak dari kelonggaran sederhana yang mendahuluinya.",
+        "Akuarium yang menerima ganti air 20% setiap sepuluh hari lebih stabil dari yang menerima 40% setiap tiga minggu ketika sempat. Konsistensi yang koheren lebih penting dari volume.",
+        "Pertanyaan yang tepat bukan 'jadwal apa yang disarankan?' Tapi 'jadwal apa yang sebenarnya akan saya ikuti — berdasarkan apa yang benar-benar saya lakukan, bukan apa yang ingin saya lakukan?'",
+        "Menjawab pertanyaan kedua dengan jujur adalah titik awal rutinitas yang akan berhasil."
+      ],
+      "pullQuote": "Akuarium yang menerima perawatan konsisten yang lebih sedikit lebih stabil dari akuarium yang menerima perawatan intensif yang tidak menentu. Konsistensi mengalahkan volume.",
+      "hintLabel": "ARA — Ritme sebelum Intensitas",
+      "hintText": [
+        "Salah satu dari empat prinsip ARA adalah Ritme sebelum Intensitas — pengamatan bahwa tindakan kecil dan teratur yang dilakukan dengan konsistensi yang koheren menghasilkan ekosistem yang lebih stabil dibanding upaya besar yang sesekali. Ini bukan hanya benar untuk akuarium. Ini benar untuk kebanyakan sistem hidup."
+      ],
+      "prevBtn": "← Intro",
+      "nextBtn": "Membaca Keeper Rhythm Anda yang sebenar"
+    },
+    {
+      "id": "mod-2",
+      "tag": "Membaca Keeper Rhythm Anda yang sebenar",
+      "titleHtml": "Empat Keeper Rhythm<br><em>dan apa yang masing-masing butuhkan.</em>",
+      "body": [
+        "ARA mengidentifikasi empat pola yang menggambarkan cara orang sebenarnya berinteraksi dengan akuarium mereka dari waktu ke waktu. Ini bukan kategori kepribadian — ini adalah ritme perawatan yang dibentuk oleh kondisi hidup. Kebanyakan penghobi mengenali diri mereka dalam salah satunya dengan cukup cepat — dan mengenali pola adalah langkah pertama untuk merancang rutinitas di sekitarnya.",
+        "<strong>Penghobi episodik.</strong> Keterlibatan tinggi dalam ledakan, lalu periode yang lebih tenang. Akuarium mendapat banyak perhatian selama satu atau dua minggu, lalu beberapa minggu yang lebih longgar. Ini bukan kelalaian — ini adalah pola. Akuarium yang dirancang untuk tipe ini memiliki stocking yang lebih ringan, filter yang lebih besar dari yang diperlukan, dan lebih sedikit spesies yang membutuhkan perawatan presisi.",
+        "<strong>Penghobi konsisten.</strong> Keterlibatan rendah tapi bisa diandalkan — 15 menit setiap minggu, setiap minggu, tanpa pengecualian. Akuarium berkembang dengan tipe ini karena stabilitas yang bisa diprediksi adalah hal yang paling bermanfaat bagi ekologi tertutup. Risikonya adalah menganggap konsistensi berarti jadwal lebih sering secara otomatis lebih baik. Tidak.",
+        "<strong>Penghobi intensif.</strong> Keterlibatan tinggi dan sering — tes air beberapa kali seminggu, perhatian harian, kepekaan terhadap perubahan halus. Risiko tipe ini adalah over-correction: merespons sinyal sebelum tren jelas. Akuarium di tangan penghobi intensif sering mengalami lebih banyak perubahan dari yang dibutuhkan biologi.",
+        "<strong>Penghobi minimal.</strong> Sedikit perhatian tapi disengaja — ganti air yang memang dilakukan, meskipun jarang. Akuarium yang dirancang untuk tipe ini adalah yang paling sederhana: beban rendah, filtrasi kuat, kebutuhan yang mudah diingat. Kuncinya adalah kejujuran tentang seberapa sedikit yang sebenarnya perlu versus seberapa sedikit yang sebenarnya akan dilakukan.",
+        "Mengenali pola mana yang Anda miliki bukan tentang menyalahkan diri sendiri. Ini tentang merancang sistem yang berhasil untuk cara Anda sebenarnya ada."
+      ],
+      "pullQuote": null,
+      "hintLabel": "ARA · Keeper Rhythm",
+      "hintText": [
+        "Keeper Rhythm dalam ARA adalah pola berkelanjutan dari cara penghobi berinteraksi dengan akuariumnya — bukan niat, melainkan tindakan nyata dari waktu ke waktu. Ini adalah salah satu dari lima ritme yang ARA lacak, dan sering yang paling sulit dibaca dengan jujur karena membutuhkan kita melihat perilaku nyata, bukan yang kita rencanakan."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": "Membangun konsistensi yang sesuai"
+    },
+    {
+      "id": "mod-3",
+      "tag": "Membangun konsistensi yang sesuai",
+      "titleHtml": "Tiga pertanyaan jujur<br><em>sebelum membangun rutinitas Anda.</em>",
+      "body": [
+        "Tiga pertanyaan yang layak dijawab dengan jujur sebelum merancang rutinitas apa pun:",
+        "Kapan terakhir kali Anda ganti air? Dan kapan sebelumnya? Berapa interval sebenarnya — bukan yang dimaksudkan?",
+        "Apakah Anda pernah melakukan sesi perawatan catch-up setelah jeda yang lebih panjang dari yang direncanakan — dan kalau ya, seberapa sering ini terjadi? Apakah sekali-sekali, atau ini adalah pola?",
+        "Selama minggu yang sangat sibuk, apa yang paling mungkin Anda lewatkan? Apa yang paling mungkin Anda lakukan meskipun semua yang lain terlambat? Jawaban atas pertanyaan ketiga biasanya mengandung informasi paling berguna — ini menunjukkan apa yang Anda anggap sebagai minimum yang tidak bisa ditawar.",
+        "Untuk penghobi episodik: tujuan langsungnya adalah merancang akuarium yang bisa menyerap jeda Anda tanpa tekanan — filter yang lebih besar, bioload yang lebih ringan, tanaman yang tahan. Ketika perawatan terjadi dalam ledakan, jadikan bermakna. Tapi jangan rancang sistem yang bergantung pada tindakan konsisten yang Anda tahu tidak akan terjadi. Ini adalah titik awal. Arah yang ARA tunjukkan adalah ke arah mempersempit jeda itu — secara bertahap, bukan dengan paksaan, seiring kapasitas berkembang.",
+        "Untuk penghobi intensif: bangun perlindungan aktif terhadap over-correction. Tetapkan aturan untuk diri sendiri: tidak lebih dari satu perubahan besar per minggu. Tes air — tapi tunggu tren tiga hari sebelum bertindak atas bacaan tunggal mana pun.",
+        "Untuk penghobi minimal: jadwal yang Anda ikuti secara konsisten — meski hanya ganti air 20% setiap tiga minggu — lebih baik dari jadwal ideal yang hanya Anda ikuti sekali sebulan."
+      ],
+      "pullQuote": "Rutinitas yang dilaksanakan lebih bernilai dari rutinitas yang optimal secara teori. Ganti air 15% setiap sepuluh hari mengalahkan perubahan 40% kapanpun sempat.",
+      "hintLabel": null,
+      "hintText": null,
+      "prevBtn": "← Kembali",
+      "nextBtn": "Ritme yang bisa Anda pertahankan"
+    },
+    {
+      "id": "mod-4",
+      "tag": "Ritme yang bisa Anda pertahankan",
+      "titleHtml": "Mulailah dari apa yang<br><em>sebenarnya Anda lakukan.</em>",
+      "body": [
+        "Cara paling andal untuk membangun rutinitas perawatan adalah mulai dari apa yang sebenarnya Anda lakukan — bukan apa yang Anda rencanakan. Jika interval jujur Anda adalah sepuluh hari, jadikan sepuluh hari sebagai baseline Anda. Jika interval jujur Anda adalah tiga minggu, jadikan tiga minggu baseline Anda dengan akuarium yang dirancang untuk menanggung jeda itu tanpa tekanan.",
+        "Satu prinsip praktis: rancang akuarium untuk lebih tangguh dari yang diperlukan. Filter yang lebih besar berarti kapasitas buffer yang lebih besar. Bioload yang lebih ringan berarti lebih sedikit limbah per ikan. Tanaman yang tahan berarti lebih sedikit input yang diperlukan. Akuarium yang tangguh memaafkan interval perawatan yang realistis tanpa merosot.",
+        "Rutinitas perawatan bukan jadwal yang Anda ikuti. Ini adalah keselarasan antara apa yang akuarium butuhkan dan apa yang secara realistis dan konsisten bisa Anda berikan. Ketika keselarasan itu tepat, perawatan terasa seperti rutinitas, bukan kewajiban."
+      ],
+      "pullQuote": null,
+      "hintLabel": "Kenali Ritme Anda",
+      "hintText": [
+        "Refleksi Know Your Rhythm — tujuh pertanyaan tentang cara Anda sebenarnya terlibat dengan hal-hal yang Anda rawat dari waktu ke waktu — membantu mengidentifikasi pola mana yang paling menggambarkan Anda. Ini adalah titik awal untuk menyelaraskan desain akuarium dengan penghobi yang sebenarnya akan merawatnya."
+      ],
+      "prevBtn": "← Kembali",
+      "nextBtn": null
+    }
+  ],
+  "relatedLinks": [
+    {
+      "href": "/articles/how-often-water-changes",
+      "text": "Seberapa sering ganti air? →"
+    },
+    {
+      "href": "/articles/aquarium-filter-maintenance",
+      "text": "Filter Anda bukan apa yang Anda kira →"
+    },
+    {
+      "href": "/articles/aquarium-not-a-project",
+      "text": "Akuarium bukan proyek →"
+    },
+    {
+      "href": "/articles/ara-full-framework",
+      "text": "Framework ARA →"
+    }
+  ],
+  "footer": {
+    "allArticles": "← Semua artikel",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
