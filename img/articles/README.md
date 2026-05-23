@@ -2,7 +2,7 @@
 
 Stock images for **New Tank Syndrome** were removed from the repo so assets can be **curated and added manually** (same HTML hooks and CSS in `/css/ar-page.css` still apply when you add files under `img/articles/new-tank-syndrome/` and wire `<picture>` / `<img>` in the article HTML).
 
-**Community / editorial photos:** keepers can offer images via **[Share your tank photos](/share-photos.html)** (Formspree — see page for permission summary).
+**Community / editorial photos:** keepers can offer images via **[Share your tank photos](/share-photos.html)** (Formspree — no email required; optional topic checkboxes match common guide themes; see page for permission summary).
 
 ## Layout
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Share your tank photos — Aquatic Rhythm</title>
-<meta name="description" content="Submit aquarium photos to the Aquatic Rhythm editorial team for possible use in guides — with a simple form and clear permission terms.">
+<meta name="description" content="Submit aquarium photos to the Aquatic Rhythm editorial team for possible use in guides — no email required, optional topic tags, clear permission terms.">
 <link rel="canonical" href="https://aquaticrhythm.com/share-photos.html">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <meta name="theme-color" content="#030b09">
@@ -58,6 +58,13 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 .sf-hint{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:.35rem;line-height:1.55}
 
 .sf-file{font-size:.82rem;color:rgba(235,240,236,.55)}
+
+.sf-fieldset{margin:0 0 1.35rem;padding:1.1rem 1.25rem 1.2rem;border:1px solid rgba(139,189,210,.14);border-radius:4px;background:rgba(255,255,255,.02)}
+.sf-fieldset .sf-legend{padding:0 .35rem;font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(235,240,236,.38)}
+.sf-fieldset > .sf-hint{margin-top:.5rem}
+.sf-opts{display:flex;flex-direction:column;gap:.5rem;margin-top:.85rem}
+.sf-opt{display:flex;align-items:flex-start;gap:.55rem;font-size:.78rem;font-weight:300;color:rgba(235,240,236,.52);line-height:1.55;cursor:pointer}
+.sf-opt input{margin-top:.22rem;flex-shrink:0;accent-color:rgba(61,214,232,.85)}
 
 .sf-check{display:flex;align-items:flex-start;gap:.65rem;margin:1.75rem 0}
 .sf-check input{margin-top:.25rem;accent-color:rgba(61,214,232,.85)}
@@ -117,7 +124,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
 <main class="share-wrap">
   <span class="share-eyebrow">Editorial · Community photos</span>
   <h1 class="share-title">Share your<br><em>tank photos</em></h1>
-  <p class="share-lead">If you would like the Aquatic Rhythm editorial team to consider your aquarium images for guides or articles, use this form. We read every submission; we cannot reply to all, and publication is never guaranteed.</p>
+  <p class="share-lead">If you would like the Aquatic Rhythm editorial team to consider your aquarium images for guides or articles, use this form. You do <strong>not</strong> need an email address — we read every submission; we cannot reply to all, and publication is never guaranteed.</p>
 
   <div class="share-thanks" id="share-thanks" role="status" aria-live="polite">
     <p>Thank you — your message was sent. You can close this tab or return to Reading.</p>
@@ -130,6 +137,13 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
     <p>This summary is not legal advice; keep a copy of your submission for your records.</p>
   </div>
 
+  <div class="sf-hn" style="margin-top:1.5rem">
+    <h2>What we can use best</h2>
+    <p>Our guides on <a href="/reading" style="color:rgba(61,214,232,.72);text-decoration:none;border-bottom:1px solid rgba(61,214,232,.25)">Reading</a> need <strong>clear, honest tank moments</strong> — not studio stock. Horizontal photos usually work better on phones; avoid heavy filters so water colour and algae types stay readable.</p>
+    <p><strong>Especially useful:</strong> wide shots of the whole tank; algae or cloudiness in context; fish or shrimp behaviour from the side; filters, flow, or maintenance steps; planted layouts under your real lights; and before/after pairs for cycling or recovery stories.</p>
+    <p><strong>Harder to use:</strong> very dark shots, extreme close-ups without scale, heavy face or document reflections, or images where nothing in the tank is in focus.</p>
+  </div>
+
   <form class="sf-form" id="share-form" action="https://formspree.io/f/mwvzqkbr" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Aquatic Rhythm — photo submission">
     <input type="hidden" name="_next" value="https://aquaticrhythm.com/share-photos.html?sent=1">
@@ -140,14 +154,23 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-grad
       <input class="sf-input" id="credit" name="credit_name" type="text" required maxlength="120" placeholder="First name or @handle" autocomplete="name">
     </div>
 
-    <div class="sf-row">
-      <label class="sf-label" for="email">Email (for follow-up only)</label>
-      <input class="sf-input" id="email" name="email" type="email" required maxlength="200" placeholder="you@example.com" autocomplete="email">
-    </div>
+    <fieldset class="sf-fieldset">
+      <legend class="sf-legend">Optional — what do your images best illustrate?</legend>
+      <p class="sf-hint">Tick anything that fits. These tags mirror topics we already publish (new tanks, algae, behaviour, filtration, plants, recovery).</p>
+      <div class="sf-opts">
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Cycling / new tank / cloudy water">Cycling, new tank startup, cloudy water, or parameters in context</label>
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Algae / biofilm / plant health">Algae, biofilm, diatoms, or plant health on glass, wood, or leaves</label>
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Fish or invertebrate behaviour">Fish, shrimp, or snail behaviour (gasping, hiding, schooling, breeding)</label>
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Filtration / flow / maintenance">Filters, flow, equipment, or maintenance (water change, media, cleaning)</label>
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Planted tank / aquascape">Planted tank, aquascape, or lighting character across the whole scape</label>
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Crash / recovery / travel / before-after">Crash recovery, travel prep, or a clear before-and-after story</label>
+        <label class="sf-opt"><input type="checkbox" name="photo_focus" value="Other (see message)">Something else — explain in your message below</label>
+      </div>
+    </fieldset>
 
     <div class="sf-row">
       <label class="sf-label" for="context">What should we know?</label>
-      <textarea class="sf-textarea" id="context" name="message" required maxlength="6000" placeholder="Tank size, approximate age, what you are seeing (algae type, behaviour, setup change), and anything else that helps us read the photo in context."></textarea>
+      <textarea class="sf-textarea" id="context" name="message" required maxlength="6000" placeholder="Tank size, how long it has been running, what you are seeing, species if relevant, and image links if you are not attaching a file."></textarea>
       <p class="sf-hint">Avoid sharing street addresses, receipts, or other sensitive details. Crop them out of photos if possible.</p>
     </div>
 
