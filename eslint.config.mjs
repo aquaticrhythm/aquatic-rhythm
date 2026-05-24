@@ -70,11 +70,12 @@ export default [
     }
   },
 
-  // ui.js is the large legacy SPA shell; reference-undeclared symbols
-  // (`streak`, `getTankContext`) are pre-existing bugs tracked separately.
-  // Downgrade so the linter still flags them without failing the suite.
+  // ui.js + the ui-*.js modules extracted from it are the large legacy
+  // SPA shell. Reference-undeclared symbols (`streak`, `getTankContext`,
+  // etc.) are pre-existing bugs tracked separately. Downgrade so the
+  // linter still flags them without failing the suite.
   {
-    files: ['js/ui.js'],
+    files: ['js/ui.js', 'js/ui-*.js'],
     rules: {
       'no-undef': 'warn'
     }

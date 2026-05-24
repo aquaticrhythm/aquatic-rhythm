@@ -138,7 +138,16 @@ Current articles (32 total):
 │   └── kofi-sheet.css                — Ko-fi support widget styles
 │
 ├── js/
-│   ├── ui.js                         — SPA routing, navigation, page transitions
+│   ├── ui.js                         — SPA routing core: cursor, mobile nav,
+│   │                                   page routing, scroll reveal, reading
+│   │                                   progress. Loads first; exposes window.go.
+│   ├── ui-eco-toggle.js              — header fauna/flora eco-toggle (extracted)
+│   ├── ui-reading-pathways.js        — "continue reading" card + analytics
+│   ├── ui-journal.js                 — Keeper's Log (tanks, entries, streaks,
+│   │                                   sparklines, inhabitants, gear)
+│   ├── ui-rhyssa-sheet.js            — Rhyssa floating chat (bottom sheet)
+│   ├── ui-rhyssa-page.js             — Rhyssa standalone companion page
+│   ├── ui-settings.js                — settings panel (motion, units, PWA install)
 │   ├── ar-page.js                    — shared nav logic for article/tool pages
 │   ├── community-stress-lab.js       — Community Stress Lab rules engine + UI
 │   ├── rhyssa-fab-ext.js             — Rhyssa AI companion chat interface
