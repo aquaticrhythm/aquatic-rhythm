@@ -2083,6 +2083,14 @@
 <script src="js/ecosystem.js" defer></script>
 <script src="js/fauna.js" defer></script>
 <script src="js/ui.js" defer></script>
+<!-- ui.js sub-modules — order matters: eco-toggle exposes window.__arApply{Fauna,Flora}
+     which settings reads; journal hooks window.go defined in ui.js. -->
+<script src="js/ui-eco-toggle.js" defer></script>
+<script src="js/ui-reading-pathways.js" defer></script>
+<script src="js/ui-journal.js" defer></script>
+<script src="js/ui-rhyssa-sheet.js" defer></script>
+<script src="js/ui-rhyssa-page.js" defer></script>
+<script src="js/ui-settings.js" defer></script>
 <script src="js/kofi-sheet.js" defer></script>
 <script src="js/rhyssa-fab-ext.js" defer></script>
 <script>
