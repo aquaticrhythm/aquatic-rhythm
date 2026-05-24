@@ -1,0 +1,25 @@
+{
+  "name": "aquatic-rhythm",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Aquatic Rhythm — ecology-first guides for home aquarium keepers. ARA framework, interactive tools, and Rhyssa.",
+  "homepage": "https://aquaticrhythm.com",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "lint": "eslint \"js/**/*.js\" \"scripts/**/*.mjs\" \"worker/**/*.js\" \"tests/**/*.mjs\"",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "test": "node --test tests/",
+    "check": "npm run check:syntax && npm test && npm run lint",
+    "i18n:extract": "node scripts/extract-i18n.mjs",
+    "i18n:build": "node scripts/build-i18n.mjs",
+    "reading:build": "node scripts/build-reading-index.mjs",
+    "sitemap:build": "node scripts/update-sitemap.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
