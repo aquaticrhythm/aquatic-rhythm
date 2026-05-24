@@ -1,5 +1,5 @@
 # Aquatic Rhythm Alignment (ARA)
-## A behaviour-aware ecological conceptual framework for closed aquatic micro-ecosystems
+## A Behaviour-Aware Ecological Conceptual Framework for Human-Maintained Closed Aquatic Micro-Ecosystems
 ### Version 2.0 — Updated 2025
 
 **Aquatic Rhythm editorial team**
