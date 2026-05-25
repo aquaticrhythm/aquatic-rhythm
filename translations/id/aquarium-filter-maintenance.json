@@ -99,8 +99,10 @@
         "Di luar ini, kebiasaan filter yang paling berguna bukan frekuensi pembersihan — itu adalah observasi. Perhatikan alirannya. Perhatikan bacaan akuarium setelah perawatan apa pun. Beri biologi ruang untuk bekerja. Biological Rhythm lebih stabil dari yang kebanyakan penghobi sadari, dan lebih rapuh dari yang kebanyakan kebiasaan pembersihan perhitungkan."
       ],
       "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Infrastruktur Teknis",
+      "hintText": [
+        "ARA mengidentifikasi infrastruktur teknis sebagai dimensi kapasitas keempat: sejauh mana otomasi, sistem pemantauan, dan desain peralatan dapat menjalankan fungsi perawatan rutin secara andal. Peralatan yang dipahami dan dirawat dengan baik benar-benar memperluas kapasitas pemelihara. Namun, otomasi yang dipasang tanpa pemahaman sejati pemelihara menjadi sumber ketidakselarasan — ketika sistem gagal secara diam atau menyembunyikan sinyal, infrastruktur yang seharusnya mendukung sistem menghalangi pemelihara dari informasi yang mereka butuhkan."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": null
     }

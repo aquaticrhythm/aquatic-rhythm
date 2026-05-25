@@ -293,11 +293,12 @@ function buildArticle(slug, lang, t) {
           (m, prefix) => `${prefix}${mod.simulatorLinkText}`);
       }
 
-      // Hint boxes — supports up to 2 per module (hintLabel/hintText + hintLabel2/hintText2).
+      // Hint boxes — supports up to 3 per module (hintLabel/hintText + hintLabel2/hintText2 + hintLabel3/hintText3).
       {
         const hints = [];
         if (mod.hintLabel) hints.push({ label: mod.hintLabel, text: mod.hintText || [] });
         if (mod.hintLabel2) hints.push({ label: mod.hintLabel2, text: mod.hintText2 || [] });
+        if (mod.hintLabel3) hints.push({ label: mod.hintLabel3, text: mod.hintText3 || [] });
         if (hints.length) {
           let hIdx = 0;
           c = c.replace(

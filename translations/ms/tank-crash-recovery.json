@@ -75,6 +75,10 @@
       "hintText": [
         "Konsep pengampunan ekologi ARA terpakai secara langsung kepada crash. Tank yang telah crash boleh dibina semula. Keadaan masa lalu tidak menentukan keadaan masa depan. Crash adalah maklumat — ia mendedahkan apa yang penjajaran sebelumnya tidak dapat disokong. Pembinaan semula adalah peluang untuk mewujudkan penjajaran yang boleh dikekalkan."
       ],
+      "hintLabel2": "ARA · Tetapan Semula Fasa Bertujuan",
+      "hintText2": [
+        "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Apa yang crash sedang beritahu"
     },
@@ -89,8 +93,10 @@
         "Crash yang dipelajari adalah crash yang membuat penjaga lebih selari — lebih sedar kepada aliran filter yang perlahan, kepada suhu yang merangkak naik, kepada ikan yang tidak cukup aktif pada waktu makan. Sistem mempunyai kapasiti untuk pulih. Begitu juga penjaganya."
       ],
       "pullQuote": "Crash adalah isyarat paling kuat yang tank bagi. Soalannya bukan cara meredakannya. Soalannya adalah apa yang ia cuba katakan.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Asal sebelum Ekspresi",
+      "hintText": [
+        "Crash itu adalah ekspresi. Ketidakselarian yang terkumpul yang menghasilkannya — hanyutan beransur, isyarat yang terlepas, kemerosotan perlahan — adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: membaca crash bermakna mengesannya kembali kepada asalnya, bukan hanya menerangkan apa yang berlaku di hujungnya. Pengesanan itulah yang membezakan tank yang dibina semula dari yang mengalami crash."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Kehilangan"
     },

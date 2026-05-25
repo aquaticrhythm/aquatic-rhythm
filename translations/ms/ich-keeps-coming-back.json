@@ -72,8 +72,10 @@
         "Semak parameter air tidak hanya selepas water change tetapi beberapa hari sebelum water change seterusnya. Ammonia dan nitrite yang membina secara perlahan antara perubahan air, walaupun tidak mencapai tahap yang sangat tinggi, boleh mengekalkan ikan dalam keadaan tertekan yang berterusan."
       ],
       "pullQuote": "Ich bukan masalah. Ich adalah bacaan. Masalah adalah apa yang menekan ikan cukup untuk bagi laluan kepadanya.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Asal sebelum Ekspresi",
+      "hintText": [
+        "Ich yang berulang adalah ekspresi. Penekanan imun kronik yang membenarkannya bertapak adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: sebelum setiap kitaran rawatan baru, tanya apa dalam sistem yang menghasilkan kerentanan itu. Ekspresi dibersihkan dengan rawatan; asal memerlukan kerja yang berbeza."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Response yang selari"
     },
@@ -91,6 +93,10 @@
       "hintLabel": "ARA · Pengampunan Ekologi",
       "hintText": [
         "Tank yang pernah mengalami ich berulang boleh menjadi tank yang stabil. Sistem imun ikan pulih apabila tekanan kronik dibuang. Pengampunan ekologi bermakna corak masa lalu tidak menentukan masa depan — tetapi hanya jika tekanan asas diubah, bukan hanya gejala yang dibersihkan. Sejarah wabak bukan penilaian akhir. Ia adalah rekod apa yang tank sedang minta."
+      ],
+      "hintLabel2": "ARA · Tetapan Semula Fasa Bertujuan",
+      "hintText2": [
+        "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
       ],
       "prevBtn": "← Kembali",
       "nextBtn": null

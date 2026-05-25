@@ -79,8 +79,10 @@
         "Untuk penjaga minimal: jadual yang anda ikuti secara konsisten — walaupun ia water change 20% setiap tiga minggu — lebih baik dari jadual ideal yang anda ikuti hanya sekali sebulan."
       ],
       "pullQuote": "Rutin yang dilaksanakan lebih bernilai dari rutin yang optimum secara teori. Water change 15% setiap sepuluh hari mengalahkan perubahan 40% bila sempat sahaja.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Infrastruktur Teknikal",
+      "hintText": [
+        "ARA mengenal pasti infrastruktur teknikal sebagai dimensi kapasiti keempat: sejauh mana automasi, sistem pemantauan, dan reka bentuk peralatan dapat menjalankan fungsi penjagaan rutin secara dipercayai. Peralatan yang difahami dan diselenggara dengan baik benar-benar meluaskan kapasiti penjaga. Namun, automasi yang dipasang tanpa pemahaman sebenar penjaga menjadi sumber ketidakselarasan — apabila sistem gagal secara senyap atau menyembunyikan isyarat, infrastruktur yang sepatutnya menyokong sistem menghalang penjaga daripada maklumat yang mereka perlukan."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Ritma yang boleh anda kekalkan"
     },

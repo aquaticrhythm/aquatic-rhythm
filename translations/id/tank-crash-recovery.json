@@ -75,6 +75,10 @@
       "hintText": [
         "Konsep pengampunan ekologis ARA berlaku langsung pada crash. Akuarium yang sudah crash bisa dibangun kembali. Kondisi masa lalu tidak menentukan kondisi masa depan. Crash adalah informasi — ia mengungkapkan apa yang penyelarasan sebelumnya tidak bisa ditopang. Membangun kembali adalah kesempatan untuk menciptakan penyelarasan yang bisa dipertahankan."
       ],
+      "hintLabel2": "ARA · Reset Fase Intentional",
+      "hintText2": [
+        "Tidak semua transisi fase menunjukkan kegagalan. Pemelihara bisa sengaja mereset sistem — untuk menangani penyakit persisten, mengkonfigurasi ulang setup, atau memulai siklus baru setelah crash. ARA membedakan reset fase intentional dari regresi akibat gangguan: reset adalah keputusan pemelihara, bukan kegagalan sistem. Sistem melewati Fase Awal lagi, mengikuti trajektori perkembangan yang sama — tetapi pengetahuan yang terkumpul pemelihara membentuk cara siklus baru dikelola."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Apa yang crash sedang beritahu"
     },
@@ -89,8 +93,10 @@
         "Crash yang dipelajari adalah crash yang membuat penghobi lebih selaras — lebih sadar terhadap aliran filter yang melambat, terhadap suhu yang merangkak naik, terhadap ikan yang kurang aktif saat waktu makan. Sistem memiliki kapasitas untuk pulih. Begitu juga penghobi."
       ],
       "pullQuote": "Crash adalah sinyal terkuat yang diberikan akuarium. Pertanyaannya bukan cara meredakannya. Pertanyaannya adalah apa yang coba ia katakan.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Asal sebelum Ekspresi",
+      "hintText": [
+        "Crash itu adalah ekspresi. Ketidakselarasan yang terkumpul yang menghasilkannya — penyimpangan bertahap, sinyal yang terlewat, kemunduran perlahan — adalah asalnya. Prinsip keselarasan kelima ARA adalah Asal sebelum Ekspresi: membaca crash berarti menelusurinya kembali ke asalnya, bukan hanya menggambarkan apa yang terjadi di ujungnya. Penelusuran itulah yang membedakan akuarium yang dibangun kembali dari yang mengalami crash."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Kehilangan"
     },
