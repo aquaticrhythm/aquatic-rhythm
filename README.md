@@ -18,12 +18,13 @@ This repository hosts the website and all associated project files.
 
 ## The Framework
 
-ARA is built on four principles:
+ARA is built on five alignment principles:
 
 - **Timing before technique** — the right moment matters more than the right action
 - **Capacity before ambition** — honest assessment of what your real life can sustain
 - **Rhythm before intensity** — small consistent care outperforms dramatic intervention
 - **Observation before correction** — watch and understand before you disturb
+- **Origin before expression** — trace what you see back to where the pressure likely began, then choose the smallest move that reaches that starting point
 
 Behind these principles is a complete ecological system of thinking — five interlocking rhythms, three phases of system maturity, and a recognition that human behaviour is not external to the ecosystem. It is part of it.
 

@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "eslint \"js/**/*.js\" \"scripts/**/*.mjs\" \"worker/**/*.js\" \"tests/**/*.mjs\"",
     "check:syntax": "node scripts/check-syntax.mjs",
-    "test": "node --test tests/",
+    "test": "node --test \"tests/**/*.mjs\"",
     "check": "npm run check:syntax && npm test && npm run lint",
     "i18n:extract": "node scripts/extract-i18n.mjs",
     "i18n:build": "node scripts/build-i18n.mjs",

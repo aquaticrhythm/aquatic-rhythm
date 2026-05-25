@@ -99,7 +99,7 @@
 
   var descMap = {
     'home':      'Aquatic Rhythm — calm ecology guides for home aquariums. ARA (Aquatic Rhythm Alignment) is the reasoning behind Reading, tools, Rhyssa, and your private keeper\'s log.',
-    'ara':       'Explore Aquatic Rhythm Alignment (ARA) — a self-paced tour of the framework: scope and four foundational assumptions, five ecological rhythms, three phases (with false maturity and phase regression), five alignment principles, seven alignment domains, observation practice with the 3-Day and 7-Day rules, and a note on the Malaysian context that shaped it.',
+    'ara':       'Explore Aquatic Rhythm Alignment (ARA) as a self-paced module on this site — rhythms, phases, keeper care, four guiding questions, and practical next steps without leaving the framework page.',
     'companion': 'Rhyssa — AI aquarium companion on Aquatic Rhythm, shaped by ARA. Chat in the site; optional ChatGPT link for keepers who prefer it.',
     'about':     'Why Aquatic Rhythm exists — from uneven advice to a calmer, ecology-first way of reading small tanks.',
     'privacy':   'Privacy Policy for Aquatic Rhythm. What we collect, how it is handled, and what it means for you.',
@@ -261,7 +261,10 @@
     var nav = root && root.querySelector('.ara-mod-nav');
     if (!root || !nav) return;
     window.__araModSpyInit = true;
-    var ids = ['ara-frame', 'ara-what', 'ara-scope', 'ara-lenses', 'ara-keeper', 'ara-shame', 'ara-principles', 'ara-domains', 'ara-observe', 'ara-practice', 'ara-context'];
+    var ids = [
+      'ara-frame', 'ara-what', 'ara-scope', 'ara-lenses', 'ara-keeper', 'ara-shame',
+      'ara-principles', 'ara-domains', 'ara-observe', 'ara-practice', 'ara-context'
+    ];
     var links = {};
     ids.forEach(function (id) {
       var a = nav.querySelector('a[href="#' + id + '"]');

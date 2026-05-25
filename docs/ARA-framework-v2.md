@@ -1,5 +1,5 @@
 # Aquatic Rhythm Alignment (ARA)
-## A Behaviour-Aware Ecological Conceptual Framework for Human-Maintained Closed Aquatic Micro-Ecosystems
+## A behaviour-aware ecological conceptual framework for closed aquatic micro-ecosystems
 ### Version 2.0 — Updated 2025
 
 **Aquatic Rhythm editorial team**
@@ -340,6 +340,16 @@ Three practical contrasts:
 
 The aligned move is almost always the smallest effective adjustment that reduces friction without disrupting what is already settling.
 
+### S6.2b: The Five Alignment Principles
+
+ARA names five concurrent orientation checks — not a linear checklist — that keep responses proportionate:
+
+1. **Timing before Technique** — whether this moment can hold the action matters more than the elegance of the method.
+2. **Capacity before Ambition** — what the system and keeper can honestly sustain, including species needs and well-maintained automation.
+3. **Rhythm before Intensity** — modest care on a rhythm you can keep beats heroic bursts you cannot.
+4. **Observation before Correction** — read pattern and baseline before intervening; use short observation windows for non-urgent signals, with explicit welfare override when acute risk is present.
+5. **Origin before Expression** — visible problems are often downstream of where the misalignment began; read backwards from symptom to plausible starting domain (the seven alignment domains are handles for this), then choose the smallest response that addresses that starting friction.
+
 ### S6.3: Building Observation Capacity *(new in v2.0)*
 
 The original framework stated that observation is foundational to alignment but did not address how observation capacity is built. This was the most significant practical gap in v1.0.
@@ -608,7 +618,7 @@ These foundations explain why ARA is a distinguishable approach from technical a
 
 ---
 
-*Aquatic Rhythm Alignment (ARA): A Behaviour-Aware Ecological Conceptual Framework for Human-Maintained Closed Aquatic Micro-Ecosystems.*
+*Aquatic Rhythm Alignment (ARA): A behaviour-aware ecological conceptual framework articulated through ecological reasoning for closed aquatic micro-ecosystems.*
 *Version 2.0 — Aquatic Rhythm editorial team, 2025.*
 *Companion: ARA-psychology-foundations.md*
 *aquaticrhythm.com*
