@@ -74,7 +74,11 @@
       "pullQuote": null,
       "hintLabel": "Prinsip ARA",
       "hintText": [
-        "Observation before correction adalah salah satu dari empat prinsip inti ARA. Tidak setiap perubahan yang terlihat adalah sinyal untuk intervensi. Beberapa adalah transisi, beberapa adalah adaptasi, dan beberapa perlu diamati sebelum bisa dibaca dengan benar. Perilaku bersembunyi hampir selalu masuk kategori ini — semakin jelas dengan pengamatan, bukan dengan tindakan."
+        "Observation before correction adalah salah satu dari lima prinsip inti ARA. Tidak setiap perubahan yang terlihat adalah sinyal untuk intervensi. Beberapa adalah transisi, beberapa adalah adaptasi, dan beberapa perlu diamati sebelum bisa dibaca dengan benar. Perilaku bersembunyi hampir selalu masuk kategori ini — semakin jelas dengan pengamatan, bukan dengan tindakan."
+      ],
+      "hintLabel2": "ARA · Asal sebelum Ekspresi",
+      "hintText2": [
+        "Bersembunyi adalah ekspresi. Apa yang mendorong ikan bersembunyi adalah asalnya. Prinsip keselarasan kelima ARA meminta pemelihara untuk menelusuri ke belakang: sebelum menyesuaikan apapun, identifikasi apa dalam sistem yang menghasilkan perilaku yang Anda lihat. Bersembunyi mereda ketika asalnya ditangani — bukan ketika perawatan ditambahkan di atasnya."
       ],
       "prevBtn": "← Kembali",
       "nextBtn": "Apa yang perlu dilakukan sekarang"

@@ -79,8 +79,10 @@
         "Untuk penghobi minimal: jadwal yang Anda ikuti secara konsisten — meski hanya ganti air 20% setiap tiga minggu — lebih baik dari jadwal ideal yang hanya Anda ikuti sekali sebulan."
       ],
       "pullQuote": "Rutinitas yang dilaksanakan lebih bernilai dari rutinitas yang optimal secara teori. Ganti air 15% setiap sepuluh hari mengalahkan perubahan 40% kapanpun sempat.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Infrastruktur Teknis",
+      "hintText": [
+        "ARA mengidentifikasi infrastruktur teknis sebagai dimensi kapasitas keempat: sejauh mana otomasi, sistem pemantauan, dan desain peralatan dapat menjalankan fungsi perawatan rutin secara andal. Peralatan yang dipahami dan dirawat dengan baik benar-benar memperluas kapasitas pemelihara. Namun, otomasi yang dipasang tanpa pemahaman sejati pemelihara menjadi sumber ketidakselarasan — ketika sistem gagal secara diam atau menyembunyikan sinyal, infrastruktur yang seharusnya mendukung sistem menghalangi pemelihara dari informasi yang mereka butuhkan."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Ritme yang bisa Anda pertahankan"
     },

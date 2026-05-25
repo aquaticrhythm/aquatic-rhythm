@@ -72,8 +72,10 @@
         "Periksa parameter air tidak hanya setelah ganti air tapi beberapa hari sebelum ganti air berikutnya. Amonia dan nitrit yang perlahan-lahan naik di antara ganti air, walau tidak mencapai tingkat yang sangat tinggi, bisa membuat ikan dalam kondisi stres yang berkelanjutan."
       ],
       "pullQuote": "Ich bukan masalah. Ich adalah bacaan. Masalahnya adalah apa yang membuat ikan cukup stres untuk memberinya jalan.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Asal sebelum Ekspresi",
+      "hintText": [
+        "Ich yang berulang adalah ekspresi. Penekanan imun kronis yang memungkinkannya bertahan adalah asalnya. Prinsip keselarasan kelima ARA adalah Asal sebelum Ekspresi: sebelum setiap siklus pengobatan baru, tanyakan apa dalam sistem yang menghasilkan kerentanan itu. Ekspresinya bersih dengan pengobatan; asalnya memerlukan jenis pekerjaan yang berbeda."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Respons yang selaras"
     },
@@ -91,6 +93,10 @@
       "hintLabel": "ARA · Ecological Forgiveness",
       "hintText": [
         "Tank yang pernah mengalami ich berulang bisa menjadi tank yang stabil. Sistem imun ikan pulih ketika stres kronis dihilangkan. Ecological forgiveness berarti pola masa lalu tidak menentukan masa depan — tapi hanya jika stres yang mendasarinya diubah, bukan hanya gejala yang dibersihkan. Riwayat wabah bukan penilaian akhir. Ini adalah catatan apa yang diminta tank."
+      ],
+      "hintLabel2": "ARA · Reset Fase Intentional",
+      "hintText2": [
+        "Tidak semua transisi fase menunjukkan kegagalan. Pemelihara bisa sengaja mereset sistem — untuk menangani penyakit persisten, mengkonfigurasi ulang setup, atau memulai siklus baru setelah crash. ARA membedakan reset fase intentional dari regresi akibat gangguan: reset adalah keputusan pemelihara, bukan kegagalan sistem. Sistem melewati Fase Awal lagi, mengikuti trajektori perkembangan yang sama — tetapi pengetahuan yang terkumpul pemelihara membentuk cara siklus baru dikelola."
       ],
       "prevBtn": "← Kembali",
       "nextBtn": null

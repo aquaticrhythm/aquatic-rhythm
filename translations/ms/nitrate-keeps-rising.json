@@ -67,8 +67,10 @@
         "Bacaan nitrate yang paling bermaklumat bukan yang diambil sejurus selepas water change — ia yang diambil pada bilangan hari yang sama selepas setiap water change, selama empat minggu berturut-turut. Bacaan empat minggu itu tunjukkan sama ada trend anda stabil, membaik, atau merosot. Satu bacaan hanya tunjukkan nombor. Empat bacaan tunjukkan arah."
       ],
       "pullQuote": "Ujian nitrate yang diambil sejurus selepas water change memberitahu anda hampir tiada apa-apa. Ujian yang diambil pada bilangan hari yang sama selepas setiap perubahan, selama empat minggu, memberitahu anda sama ada ritma anda sepadan.",
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Asal sebelum Ekspresi",
+      "hintText": [
+        "Nitrate yang naik adalah ekspresi. Drift beransur dalam ketumpatan stocking, kadar suapan, atau liputan tumbuhan yang menghasilkannya adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: bacaan pada test kit memberitahu anda sesuatu sedang beroperasi dalam sistem — bukan apa yang perlu dibuat, tetapi di mana perlu dicari. Surih balik dari nombor kepada apa yang menghasilkannya."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": "Response yang selari kepada nitrate yang naik"
     },

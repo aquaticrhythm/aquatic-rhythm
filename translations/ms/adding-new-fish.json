@@ -82,8 +82,10 @@
         "Tingkap gangguan dua minggu adalah alat pembacaan. Ia memberitahu anda apa yang tank boleh serap, bagaimana ikan yang sedia ada bertindak balas kepada perubahan, dan sama ada ikan baru benar-benar serasi dengan persekitaran yang mereka masuki. Tank yang lalui tingkap dengan bersih memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Tank yang tidak selesai dalam tiga minggu memberitahu anda sesuatu yang sama berguna tentang had mereka."
       ],
       "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
+      "hintLabel": "ARA · Tetapan Semula Fasa Bertujuan",
+      "hintText": [
+        "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
+      ],
       "prevBtn": "← Kembali",
       "nextBtn": null
     }
