@@ -69,6 +69,8 @@ Neither frame is always wrong. A heater failure is a technical emergency that re
 
 ARA applies to closed or semi-closed freshwater and brackish aquatic micro-ecosystems — typically tanks between 20 and 500 litres, maintained by a single keeper or small household. This is the scope the framework was designed for, and the scope within which its concepts have been developed and tested.
 
+Marine and reef systems fall within the framework's conceptual scope — the five ecological rhythms, three phases, and alignment approach apply — but the specific expressions of those rhythms differ substantially. Reef biology involves live rock microbial communities, coral health signals, protein skimming dynamics, and trace element cycling that are not covered in the freshwater-centric examples throughout this document. A marine or reef keeper will find the framework's lens useful, but should read the specific examples with that difference in mind.
+
 The framework does not extend naturally to:
 - Large-scale aquaculture systems, where stocking density, biological management, and keeper-to-tank ratios operate at different scales
 - Public aquaria, where keeper specialisation, team management, and animal welfare requirements differ substantially
@@ -187,6 +189,8 @@ A keeper who feeds daily, performs weekly water changes, and observes the tank f
 
 This framing removes moral judgment from keeper capacity assessment and places it in the domain of honest ecology. The question is not "am I a good keeper?" but "what is the actual ecological effect of my current rhythm, and is the tank I have designed for the rhythm I can actually sustain?"
 
+**A note on intentional intensity.** The preference for rhythm over intensity applies to ongoing care for living system stability — the pattern of neglect followed by compensatory effort. It does not apply where intensity is the purpose. A competition aquascape maintained at peak for a display window, a breeding conditioning regimen that intentionally applies intensive nutritional input before spawning, an aquascaper working through a high-tempo growth phase — these are not misaligned with ARA. Intensity is an appropriate choice when it is a keeper decision grounded in the system's state and a clear purpose. The target of this principle is inconsistent ordinary care, not deliberate purposeful intensity.
+
 ### S4.2: Capacity Creep
 
 Capacity creep is the gradual, unnoticed reduction in keeper care quality over time. It is one of the most common causes of chronic aquarium problems, and one of the least recognised.
@@ -208,6 +212,8 @@ Minimum viable care is the irreducible core of keeper rhythm that a specific tan
 Understanding minimum viable care for your specific tank is practically useful because it allows honest capacity planning. A keeper who knows that their setup requires three water changes per month, one filter check, and daily feeding to remain stable can assess honestly whether their life circumstances support that rhythm — and if not, can adjust the tank design (stocking, filtration, plant density) rather than allowing chronic under-care.
 
 Minimum viable care is not maximum care. A tank can be well-maintained at minimum viable care. The goal is not to exceed it but to reliably meet it.
+
+**Technical infrastructure extends capacity.** A keeper's effective rhythm is not limited to what they can provide manually. Automation — auto feeders, auto top-off systems, timed lighting, dosing pumps, CO₂ controllers — can maintain ecological consistency during gaps in human attention. A keeper who genuinely understands their technical infrastructure and actively maintains it has real capacity that a manual assessment of their schedule alone would undercount. ARA recognises technical infrastructure as a legitimate and meaningful extension of keeper capacity, with one important constraint: automation executes but does not observe. A keeper relying on automation to extend their rhythm must observe with greater intentionality, not less, because the failures of automated systems compound silently — an auto feeder that jammed undetected, a dosing pump calibrated incorrectly, a pH controller masking a CO₂ fluctuation rather than resolving it. Technical infrastructure changes what minimum viable care requires manually; it does not eliminate the observation component.
 
 ### S4.4: Life Change Protocols
 
@@ -309,6 +315,14 @@ False maturity most commonly occurs in:
 A false-mature tank will often fail unexpectedly when stocking is increased, when the keeper's rhythm changes, or when a disruption occurs. It lacks the resilience buffer of genuine ecological depth.
 
 The distinction between false maturity and genuine maturity is difficult to assess with test kits. It is better read through the system's response to disruption: a genuinely mature tank absorbs a moderate disruption; a false-mature tank does not.
+
+### S5.6: Intentional Phase Reset
+
+Not all phase transitions involve disruption-driven regression. Keepers sometimes deliberately and voluntarily reset a tank to an earlier phase as a conscious decision — tearing down a competition layout at its peak, resetting a breeding tank between cycles, maintaining a quarantine tank that is never intended to reach maturity.
+
+Intentional phase reset is different from phase regression in one essential way: it is a keeper decision, not a system response. ARA's phase framework applies within each iteration of an intentionally reset setup — the reset tank follows the same Early, Developing, and Mature arc, with the same phase-appropriate care implications. But the reset itself is not a failure or a sign of ecological fragility. It is a keeper choice made in full awareness of what it means ecologically.
+
+The practical implication: intentional reset requires the same Early Phase care as any new setup — minimal intervention, stability-focused management, patience with developmental events that look alarming. The difference from regression is that the keeper initiated the reset knowingly and can calibrate expectations and care accordingly from the start.
 
 ---
 
@@ -588,6 +602,12 @@ The specific updates in v2.0:
 - Microbiome depth beyond the nitrogen cycle integrated into biological rhythm (S2.4, S3.2)
 - Common pathway maps added to the alignment pathways section (S8.2)
 - Keeper psychology and shame/disengagement pattern added to ethics section (S10.3)
+
+Post-v2.0 additions (synced from website content):
+- Marine/reef scope caveat added to S2.1
+- Intentional intensity note added to S4.1 (distinguishing purposeful intensity from episodic neglect)
+- Technical infrastructure as a capacity-extending dimension added to S4.3
+- Intentional Phase Reset added as S5.6 (distinguishing voluntary reset from disruption-driven regression)
 
 What has not changed: the five ecological rhythms, the three-phase system, the alignment vs control distinction, the seven domains, the foundational assumptions, the style-agnostic and non-prescriptive character of the framework.
 
