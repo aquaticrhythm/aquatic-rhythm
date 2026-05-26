@@ -10,25 +10,24 @@
    deployed repo; cache is only used when the network request fails.
    ============================================================ */
 
-var SHELL_CACHE   = 'ar-shell-v24';
-var ARTICLE_CACHE = 'ar-articles-v24';
+var SHELL_CACHE   = 'ar-shell-v25';
+var ARTICLE_CACHE = 'ar-articles-v25';
 
 var SHELL_URLS = [
   '/',
-  '/css/style.css',
-  '/css/ar-page.css',
-  '/js/ui.js',
-  '/js/ui-eco-toggle.js',
-  '/js/ui-reading-pathways.js',
-  '/js/ui-journal.js',
-  '/js/ui-rhyssa-sheet.js',
-  '/js/ui-rhyssa-page.js',
-  '/js/ui-settings.js',
-  '/js/ar-page.js',
-  '/js/content-trust.js',
-  '/js/rhyssa-fab-ext.js',
-  '/js/ecosystem.js',
-  '/js/fauna.js',
+  '/css/style.css?v=25',
+  '/css/ar-page.css?v=25',
+  '/js/ui.js?v=25',
+  '/js/ui-eco-toggle.js?v=25',
+  '/js/ui-reading-pathways.js?v=25',
+  '/js/ui-rhyssa-sheet.js?v=25',
+  '/js/ui-rhyssa-page.js?v=25',
+  '/js/ui-settings.js?v=25',
+  '/js/ar-page.js?v=25',
+  '/js/content-trust.js?v=25',
+  '/js/rhyssa-fab-ext.js?v=25',
+  '/js/ecosystem.js?v=25',
+  '/js/fauna.js?v=25',
   '/favicon.png',
   '/apple-touch-icon.png',
   '/offline.html'

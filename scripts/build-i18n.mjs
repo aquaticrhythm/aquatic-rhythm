@@ -84,18 +84,22 @@ function buildHreflangTags(slug, currentLang) {
   return lines.join('\n');
 }
 
-function buildJsonLd(t, lang, slug) {
+function buildJsonLd(t, lang, slug, dates) {
   const headline = t.intro.titleHtml.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-  return JSON.stringify({
+  const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     'headline': headline,
     'description': t.head.description,
     'url': `${BASE_URL}/${lang}/articles/${slug}`,
     'inLanguage': lang,
+    'image': `${BASE_URL}/og-image.png`,
     'author': { '@type': 'Organization', 'name': 'Aquatic Rhythm' },
     'publisher': { '@type': 'Organization', 'name': 'Aquatic Rhythm', 'url': BASE_URL }
-  });
+  };
+  if (dates.pub) schema['datePublished'] = dates.pub;
+  if (dates.mod) schema['dateModified'] = dates.mod;
+  return JSON.stringify(schema);
 }
 
 // ── Safe string replacement ───────────────────────────────────────────────────
@@ -162,8 +166,15 @@ function buildArticle(slug, lang, t) {
   }
 
   // ── 5. JSON-LD ────────────────────────────────────────────────────────────
+  // Extract dates from English source JSON-LD (already populated by patch-article-seo.mjs)
+  const srcLdMatch = h.match(/"datePublished"\s*:\s*"([^"]+)"/);
+  const srcModMatch = h.match(/"dateModified"\s*:\s*"([^"]+)"/);
+  const dates = {
+    pub: srcLdMatch ? srcLdMatch[1] : '',
+    mod: srcModMatch ? srcModMatch[1] : ''
+  };
   h = replaceOnce(h, /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
-    () => `<script type="application/ld+json">${buildJsonLd(t, lang, slug)}</script>`);
+    () => `<script type="application/ld+json">${buildJsonLd(t, lang, slug, dates)}</script>`);
 
   // ── 6. Japanese font (Noto Sans JP) ──────────────────────────────────────
   if (lang === 'ja') {
