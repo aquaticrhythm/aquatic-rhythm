@@ -62,8 +62,6 @@
   var pageMap = {
     '':            'home',
     '/':           'home',
-    '/ara':        'ara',
-    '/ara/':       'ara',
     '/rhyssa':     'companion',
     '/rhyssa/':    'companion',
     '/companion':  'companion',
@@ -253,66 +251,6 @@
     applyHeroFix();
     window.addEventListener('resize', applyHeroFix, { passive: true });
   }());
-
-  /* ── ARA page: module nav scroll spy (highlights current section) ── */
-  function initAraModScrollSpy() {
-    if (window.__araModSpyInit) return;
-    var root = document.getElementById('pg-ara');
-    var nav = root && root.querySelector('.ara-mod-nav');
-    if (!root || !nav) return;
-    window.__araModSpyInit = true;
-    var ids = ['ara-frame', 'ara-what', 'ara-scope', 'ara-lenses', 'ara-keeper', 'ara-shame', 'ara-principles', 'ara-domains', 'ara-observe', 'ara-practice', 'ara-context'];
-    var links = {};
-    ids.forEach(function (id) {
-      var a = nav.querySelector('a[href="#' + id + '"]');
-      if (a) links[id] = a;
-    });
-    function setActive(id) {
-      ids.forEach(function (i) {
-        var link = links[i];
-        if (!link) return;
-        link.classList.toggle('is-active', i === id);
-        link.setAttribute('aria-current', i === id ? 'true' : 'false');
-      });
-    }
-    function tick() {
-      if (!root.classList.contains('active')) {
-        ids.forEach(function (i) {
-          var link = links[i];
-          if (!link) return;
-          link.classList.remove('is-active');
-          link.setAttribute('aria-current', 'false');
-        });
-        return;
-      }
-      var y = window.scrollY || document.documentElement.scrollTop;
-      var lim = y + 132;
-      var activeId = ids[0];
-      for (var i = 0; i < ids.length; i++) {
-        var el = document.getElementById(ids[i]);
-        if (!el) continue;
-        var docTop = el.getBoundingClientRect().top + y;
-        if (docTop <= lim) activeId = ids[i];
-      }
-      var docEl = document.documentElement;
-      var maxScroll = Math.max(0, (docEl.scrollHeight || 0) - window.innerHeight);
-      if (maxScroll > 0 && y >= maxScroll - 6) activeId = ids[ids.length - 1];
-      setActive(activeId);
-    }
-    window.__araModTick = tick;
-    var raf = null;
-    function onScroll() {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        raf = null;
-        tick();
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-    tick();
-  }
-  initAraModScrollSpy();
 
   if (hasSpaPages) {
     document.addEventListener('click', function (e) {
