@@ -54,8 +54,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/kofi-sheet.css">
+<link rel="stylesheet" href="css/style.css?v=25">
+<link rel="stylesheet" href="css/kofi-sheet.css?v=25">
 </head>
 <body>
 <div id="cd" aria-hidden="true"></div><div id="cr" aria-hidden="true"></div>
@@ -1739,20 +1739,33 @@
 <!-- ── MODAL BACKDROP ── -->
 <div class="mt-backdrop" id="mt-backdrop" aria-hidden="true"></div>
 
-<script src="js/tank-data.js" defer></script>
-<script src="js/ecosystem.js" defer></script>
-<script src="js/fauna.js" defer></script>
-<script src="js/ui.js" defer></script>
+<script src="js/ecosystem.js?v=25" defer></script>
+<script src="js/fauna.js?v=25" defer></script>
+<script src="js/ui.js?v=25" defer></script>
 <!-- ui.js sub-modules — order matters: eco-toggle exposes window.__arApply{Fauna,Flora}
-     which settings reads; journal hooks window.go defined in ui.js. -->
-<script src="js/ui-eco-toggle.js" defer></script>
-<script src="js/ui-reading-pathways.js" defer></script>
-<script src="js/ui-journal.js" defer></script>
-<script src="js/ui-rhyssa-sheet.js" defer></script>
-<script src="js/ui-rhyssa-page.js" defer></script>
-<script src="js/ui-settings.js" defer></script>
-<script src="js/kofi-sheet.js" defer></script>
-<script src="js/rhyssa-fab-ext.js" defer></script>
+     which settings reads; journal is lazy-loaded on first journal navigation. -->
+<script src="js/ui-eco-toggle.js?v=25" defer></script>
+<script src="js/ui-reading-pathways.js?v=25" defer></script>
+<script src="js/ui-rhyssa-sheet.js?v=25" defer></script>
+<script src="js/ui-rhyssa-page.js?v=25" defer></script>
+<script src="js/ui-settings.js?v=25" defer></script>
+<script src="js/kofi-sheet.js?v=25" defer></script>
+<script src="js/rhyssa-fab-ext.js?v=25" defer></script>
+<script>
+/* ── JOURNAL LAZY LOADER ── */
+(function () {
+  function loadJournal() {
+    if (window.__journalLoaded) return;
+    window.__journalLoaded = true;
+    var s = document.createElement('script');
+    s.src = '/js/ui-journal.js?v=25';
+    document.head.appendChild(s);
+  }
+  var p = location.pathname;
+  if (p === '/journal' || p === '/journal/') loadJournal();
+  window.__loadJournal = loadJournal;
+}());
+</script>
 <script>
 /* ── SERVICE WORKER ── */
 if ('serviceWorker' in navigator) {

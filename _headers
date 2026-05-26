@@ -23,11 +23,15 @@
 /ja/*
   Cache-Control: public, max-age=0, must-revalidate
 
+/* Static assets are versioned with ?v=N query strings — safe for long-term caching */
 /css/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /js/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/*
+  Cache-Control: public, max-age=86400
 
 /sw.js
   Cache-Control: no-cache, no-store, must-revalidate

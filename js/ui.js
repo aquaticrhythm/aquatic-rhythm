@@ -203,6 +203,9 @@
     if (id === 'companion' && typeof window.__rhCompanionInit === 'function') {
       setTimeout(window.__rhCompanionInit, 80);
     }
+    if ((id === 'journal' || id === 'tank-log') && typeof window.__loadJournal === 'function') {
+      window.__loadJournal();
+    }
     if (window.__araModTick) setTimeout(window.__araModTick, 100);
 
     if (id !== 'reading') closeAllReadingAccordions();
