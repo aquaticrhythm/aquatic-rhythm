@@ -1,6 +1,6 @@
 # Aquatic Rhythm Alignment (ARA)
-## A Behaviour-Aware Ecological Conceptual Framework for Human-Maintained Closed Aquatic Micro-Ecosystems
-### Version 2.0 — Updated 2025
+## An Ecological Literacy Framework for Human-Maintained Closed Aquatic Micro-Ecosystems
+### Version 2.0 — Updated 2025 | Academic paper: Hazim (2026)
 
 **Aquatic Rhythm editorial team**
 aquaticrhythm.com
@@ -78,13 +78,15 @@ The framework does not extend naturally to:
 
 These are not lesser contexts — they are different ones. ARA's language and lenses may offer some utility there, but its claims are grounded in the closed small-tank experience.
 
-### S2.2: Three Foundational Assumptions
+### S2.2: Four Foundational Assumptions
 
 **The aquarium is a living system.** Not a decorative object, not a technical installation, but a community of organisms — fish, invertebrates, plants, microbes, and the keeper — in ongoing relationship. The water holds chemistry; the biology processes it. Parameters are readable symptoms of what the biology is doing, not the thing itself.
 
 **The keeper is inside the system.** The keeper's rhythm of attention, consistency of care, and available capacity directly shape the water, the biology, and the animals. This is not a motivational claim — it is an ecological one. Keeper behaviour is a variable in the system. When keeper rhythm changes, system rhythm changes. This is explored in depth in S4.
 
 **Alignment is preferable to control.** A system that is in productive relationship with its keeper — where the stocking matches the biology, the biology matches the phase, the care matches the keeper's real capacity — is more stable and requires less active management than a system that is technically correct but ecologically misaligned. Most chronic aquarium problems are expressions of misalignment, not technical failure.
+
+**ARA sides with ecological continuity.** Living systems do best when their needs arrive consistently and incrementally. The keeper's role is to provide that continuity as honestly as possible within the constraints of their actual capacity. Continuity, not perfection, is the direction the framework orients toward. This assumption is technology-neutral: a low-tech community tank and a high-tech CO₂-injected planted system may both be aligned when their design supports the keeper's realistic rhythm. Equipment is evaluated relationally, not ideologically. This assumption also explains why ARA is deliberately non-prescriptive: competence built on genuine understanding sustains keeper behaviour more reliably across varying circumstances than rule compliance alone.
 
 ### S2.3: What ARA Does Not Assume
 
@@ -376,6 +378,8 @@ The original framework stated that observation is foundational to alignment but 
 
 ### S6.4: Stability Over Perfection *(new in v2.0)*
 
+
+
 One of the most reliably damaging patterns in aquarium care is the pursuit of parameter perfection at the cost of parameter stability. This pattern appears frequently in experienced hobbyists as well as beginners, and it is worth naming explicitly.
 
 Fish, invertebrates, and microbial communities adapt to the conditions they live in. A betta living in pH 7.4 for six months has adapted to pH 7.4. If the keeper discovers that bettas are "supposed" to live in pH 6.5-7.0 and begins attempting to lower the pH toward the published ideal, the resulting pH fluctuation — even if the endpoint is technically more appropriate — creates stress that the stable but "suboptimal" pH did not.
@@ -385,6 +389,14 @@ The stability-over-perfection principle: *a stable parameter outside the publish
 This applies to temperature, pH, hardness, and nitrate levels. It does not apply to ammonia or nitrite, which have no "stable acceptable level" outside zero in an established tank.
 
 The practical application: if a parameter has been stable and the animals are thriving, do not adjust it to meet a published target. Read the animals, not the table.
+
+### S6.5: Cross-Rhythm Buffering *(formalised in 2026 academic paper)*
+
+The five rhythms do not operate independently. In stable systems, they support one another in a dynamic of cross-rhythm buffering: a strong biological community may compensate for minor water chemistry drift; consistent environmental conditions may reduce livestock stress during a period of keeper inconsistency; mature microbiome depth may absorb a temporary biological disruption that would destabilise a less-developed system.
+
+Stability in ARA therefore emerges not from perfection in any single rhythm but from the integration and mutual support of all five. A system with one weak rhythm may remain stable if the other four are strong. A system where all five are under pressure simultaneously has no cross-rhythm buffer to draw on.
+
+This integrative view has a direct implication for troubleshooting. Visible problems in one rhythm — cloudy water, an algae bloom, stressed livestock — are rarely the origin of the disturbance they represent. They are downstream expressions of misalignment that began in another rhythm and propagated through the system over time. Effective diagnosis requires reading backwards from the visible symptom to identify the origin rhythm, rather than treating the expression as the cause.
 
 ---
 
