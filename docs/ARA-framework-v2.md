@@ -640,7 +640,6 @@ These foundations explain why ARA is a distinguishable approach from technical a
 
 ---
 
-*Aquatic Rhythm Alignment (ARA): An Ecological Literacy Framework for Human-Maintained Closed Aquatic Micro-Ecosystems.*
-*Version 2.0 — Muhammad Nur Hazim bin Harun, 2026. Academic paper: Hazim (2026).*
-*Companion: ARA-psychology-foundations.md*
+*Harun, M. N. H. (2026). Aquatic Rhythm Alignment (ARA): A literacy framework for human-maintained closed aquatic micro-ecosystems. OSF. https://osf.io/ckjf2*
+*Version 2.0 — Companion: ARA-psychology-foundations.md*
 *aquaticrhythm.com*
