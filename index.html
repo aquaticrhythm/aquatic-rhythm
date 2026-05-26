@@ -1757,8 +1757,12 @@
   function loadJournal() {
     if (window.__journalLoaded) return;
     window.__journalLoaded = true;
+    // tank-data.js must load first — ui-journal.js reads window.AR_EQ from it
+    var td = document.createElement('script');
+    td.src = '/js/tank-data.js?v=25';
     var s = document.createElement('script');
     s.src = '/js/ui-journal.js?v=25';
+    document.head.appendChild(td);
     document.head.appendChild(s);
   }
   var p = location.pathname;
