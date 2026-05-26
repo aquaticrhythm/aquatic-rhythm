@@ -640,7 +640,7 @@ These foundations explain why ARA is a distinguishable approach from technical a
 
 ---
 
-*Aquatic Rhythm Alignment (ARA): A Behaviour-Aware Ecological Conceptual Framework for Human-Maintained Closed Aquatic Micro-Ecosystems.*
-*Version 2.0 — Aquatic Rhythm editorial team, 2025.*
+*Aquatic Rhythm Alignment (ARA): An Ecological Literacy Framework for Human-Maintained Closed Aquatic Micro-Ecosystems.*
+*Version 2.0 — Muhammad Nur Hazim bin Harun, 2026. Academic paper: Hazim (2026).*
 *Companion: ARA-psychology-foundations.md*
 *aquaticrhythm.com*
