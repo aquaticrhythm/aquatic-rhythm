@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サイクルが終わった水槽は、完成した水槽じゃない — Aquatic Rhythm</title>
+<meta name="description" content="長く稼働している水槽は、また別の種類のシステムです。成熟した水槽がそれでも問題を抱える理由——そして、何を伝えようとしているのかをわかりやすく解説します。">
+<link rel="canonical" href="https://aquaticrhythm.com/ja/articles/cycled-tank-problems">
+<link rel="alternate" hreflang="en" href="https://aquaticrhythm.com/articles/cycled-tank-problems">
+<link rel="alternate" hreflang="ms" href="https://aquaticrhythm.com/ms/articles/cycled-tank-problems">
+<link rel="alternate" hreflang="id" href="https://aquaticrhythm.com/id/articles/cycled-tank-problems">
+<link rel="alternate" hreflang="ja" href="https://aquaticrhythm.com/ja/articles/cycled-tank-problems">
+<link rel="alternate" hreflang="x-default" href="https://aquaticrhythm.com/articles/cycled-tank-problems">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<meta name="theme-color" content="#030b09">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aquatic Rhythm">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aquaticrhythm.com/ja/articles/cycled-tank-problems">
+<meta property="og:title" content="サイクルが終わった水槽は、完成した水槽じゃない">
+<meta property="og:description" content="成熟した水槽がそれでも問題を抱える理由——そして、何を伝えようとしているのか。">
+<meta property="og:image" content="https://aquaticrhythm.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Aquatic Rhythm">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://aquaticrhythm.com/articles/cycled-tank-problems">
+<meta name="twitter:title" content="An Established Tank Is Not a Finished Tank">
+<meta name="twitter:description" content="Why long-running tanks still struggle — and what they are usually telling you.">
+<meta name="twitter:image" content="https://aquaticrhythm.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"サイクルが終わった水槽は、 完成した水槽じゃない。","description":"長く稼働している水槽は、また別の種類のシステムです。成熟した水槽がそれでも問題を抱える理由——そして、何を伝えようとしているのかをわかりやすく解説します。","url":"https://aquaticrhythm.com/ja/articles/cycled-tank-problems","inLanguage":"ja","image":"https://aquaticrhythm.com/og-image.png","author":{"@type":"Organization","name":"Aquatic Rhythm"},"publisher":{"@type":"Organization","name":"Aquatic Rhythm","url":"https://aquaticrhythm.com"},"datePublished":"2026-05-22","dateModified":"2026-05-25"}</script>
+<script>if(localStorage.getItem('ar_analytics_opt')==='1'){window['ga-disable-G-8MDN065WNW']=true}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MDN065WNW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MDN065WNW');</script>
+<script>
+(function(){
+  try{
+    localStorage.setItem('ar_last_location', JSON.stringify({
+      href: window.location.pathname + window.location.hash,
+      title: document.title,
+      type: window.location.pathname.indexOf('/articles/')===0?'article':'page'
+    }));
+  }catch(e){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target.closest('[data-analytics-event]');
+    if(!el || typeof gtag==='undefined') return;
+    gtag('event', el.getAttribute('data-analytics-event'), {
+      pathway: el.getAttribute('data-pathway') || '',
+      cta: el.getAttribute('data-cta') || '',
+      destination: el.getAttribute('href') || ''
+    });
+  });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/ar-page.css?v=25">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:17px;scroll-behavior:smooth}
+:root{--abyss:#030b09;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans','Noto Sans JP',system-ui,sans-serif;--accent:#3DD6E8;--ease:cubic-bezier(0.19,1,0.22,1)}
+body{font-family:var(--sans);background:var(--abyss);color:rgba(235,240,236,.94);overflow-x:hidden;line-height:1.72}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#052535 0%,#073040 18%,#062a38 38%,#041e28 58%,#030f18 78%,#020810 100%)}
+
+/* BACK BAR */
+@media(max-width:600px){}
+
+/* PROGRESS DOTS */
+
+
+
+/* INTRO */
+.art-intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem clamp(1.5rem,5vw,3rem) 5rem;position:relative}
+.art-intro::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--abyss));pointer-events:none}
+.art-intro-inner{max-width:580px;margin:0 auto}
+.art-eyebrow{display:block;font-size:.6rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(157,191,154,.75);margin-bottom:1.6rem}
+.art-main-title{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,5vw,3.4rem);color:rgba(235,240,236,.94);line-height:1.1;margin-bottom:2rem}
+.art-main-title em{font-style:italic;color:rgba(61,214,232,.76)}
+.art-intro-text{font-size:1rem;font-weight:300;color:rgba(235,240,236,.70);line-height:1.95;margin-bottom:1rem}
+.art-intro-subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.6vw,1.18rem);font-weight:300;color:rgba(235,240,236,.56);line-height:1.85;margin-bottom:1.4rem}
+.art-intro-meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:2rem 0;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(235,240,236,.34)}
+.meta-dot{color:rgba(255,255,255,.12)}
+.art-begin-btn{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(61,214,232,.92);color:#fff;border:1px solid rgba(61,214,232,.54);padding:.8rem 2rem;border-radius:2px;cursor:pointer;transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
+.art-begin-btn:hover{background:rgba(110,165,155,.95);transform:translateY(-1px)}
+.art-begin-btn span{opacity:.65;font-size:.9rem}
+
+/* MODULE SYSTEM */
+.module-wrap{max-width:660px;margin:0 auto;padding:6rem clamp(1.5rem,5vw,3rem) 6rem;display:none}
+.module-wrap.active{display:block}
+.module{display:none;opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.module.active{display:block}
+.module.visible{opacity:1;transform:translateY(0)}
+
+/* MODULE CONTENT */
+.mod-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem}
+.mod-num{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(61,214,232,.48)}
+.mod-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(235,240,236,.30)}
+.mod-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,4vw,2.8rem);color:rgba(235,240,236,.94);line-height:1.1;margin-bottom:1.6rem}
+.mod-title em{font-style:italic;color:rgba(61,214,232,.76)}
+.mod-body p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.68);line-height:1.95;margin-bottom:1.2rem}
+.mod-body p:last-child{margin-bottom:0}
+.mod-body strong{font-weight:400;color:rgba(235,240,236,.88)}
+.mod-body em{font-style:italic;color:rgba(235,240,236,.56)}
+
+/* PULL QUOTE */
+.pq{margin:2.4rem 0;padding:1.6rem 2rem;border-left:2px solid rgba(61,214,232,.44);background:rgba(58,110,140,.07)}
+.pq p{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.7vw,1.15rem);color:rgba(235,240,236,.74);line-height:1.85;margin:0}
+
+/* HIGHLIGHT */
+.hn{margin:2rem 0;padding:1.4rem 1.8rem;border:1px solid rgba(139,189,210,.14);background:rgba(255,255,255,.04);position:relative}
+.hn-label{position:absolute;top:-.52rem;left:1rem;background:rgba(3,11,9,.95);padding:0 .45rem;font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(139,189,210,.5)}
+.hn.ar{border-color:rgba(61,214,232,.24)}
+.hn.ar .hn-label{color:rgba(61,214,232,.62)}
+.hn p{font-size:.92rem;font-weight:300;color:rgba(235,240,236,.65);line-height:1.85;margin-bottom:.6rem}
+.hn p:last-child{margin-bottom:0}
+
+/* VISUAL */
+.vis-block{margin:2.2rem 0;border-radius:3px;overflow:hidden;position:relative;background:rgba(4,22,32,.8);border:1px solid rgba(61,214,232,.20)}
+canvas{display:block;width:100%}
+.vis-ctrl{padding:.6rem 0 .3rem}
+.vc-label{text-align:center;margin-bottom:.4rem}
+.vc-label span{font-family:var(--serif);font-style:italic;font-size:.82rem;color:rgba(235,240,236,.50)}
+.vc-hint{text-align:center;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-top:.35rem}
+.vis-slider{-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:2px;background:rgba(255,255,255,.1);outline:none;cursor:pointer;margin:.3rem 0;display:block}
+.vis-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:rgba(61,214,232,.86);cursor:pointer;border:2px solid rgba(255,255,255,.15);box-shadow:0 0 8px rgba(61,214,232,.48)}
+.vis-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:rgba(61,214,232,.86);cursor:pointer;border:none}
+.vis-btn{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.05);color:rgba(235,240,236,.50);border:1px solid rgba(61,214,232,.24);border-radius:2px;padding:.38rem .85rem;cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.vis-btn:hover{background:rgba(61,214,232,.08);color:rgba(255,255,255,.75);border-color:rgba(61,214,232,.32)}
+.vis-btn-active{background:rgba(58,110,140,.25)!important;color:rgba(61,214,232,.86)!important;border-color:rgba(61,214,232,.54)!important}
+
+/* NAVIGATION */
+.mod-next{margin-top:2.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.btn-next{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(61,214,232,.92);color:#fff;border:1px solid rgba(61,214,232,.54);padding:.75rem 1.8rem;border-radius:2px;cursor:pointer;transition:background .25s,transform .2s;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans)}
+.btn-next:hover{background:rgba(110,165,155,.95);transform:translateY(-1px)}
+.btn-next span{opacity:.6;font-size:.8rem}
+.btn-prev{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(235,240,236,.36);background:none;border:none;cursor:pointer;transition:color .25s;padding:0;font-family:var(--sans)}
+.btn-prev:hover{color:rgba(235,240,236,.68)}
+
+/* FINAL CTA */
+.final-cta{margin-top:3rem;padding:2.2rem;border:1px solid rgba(61,214,232,.18);background:rgba(255,255,255,.04);text-align:center}
+.final-cta p{font-family:var(--serif);font-style:italic;font-size:.96rem;color:rgba(235,240,236,.54);line-height:1.8;margin-bottom:1.4rem}
+.btn-reading{display:inline-block;text-decoration:none;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(235,240,236,.42);border:1px solid rgba(255,255,255,.12);padding:.75rem 1.8rem;border-radius:2px;transition:color .25s,border-color .25s;font-family:var(--sans)}
+.btn-reading:hover{color:rgba(61,214,232,.8);border-color:rgba(61,214,232,.3)}
+
+/* RHYTHM GRID */
+.rhythm-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:2rem 0}
+@media(max-width:500px){.rhythm-grid{grid-template-columns:1fr}}
+.rhythm-cell{padding:1.2rem 1.4rem;border:1px solid rgba(61,214,232,.16);background:rgba(4,22,32,.5)}
+.rhythm-cell-num{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(61,214,232,.42);margin-bottom:.45rem}
+.rhythm-cell-name{font-family:var(--serif);font-weight:300;font-size:1.05rem;color:rgba(235,240,236,.88);margin-bottom:.4rem;line-height:1.2}
+.rhythm-cell-desc{font-size:.84rem;font-weight:300;color:rgba(235,240,236,.52);line-height:1.75}
+.rhythm-cell-wide{grid-column:1/-1}
+
+/* MODULE PROGRESS BAR */
+#mod-progress-wrap{
+  position:fixed;top:68px;left:0;right:0;z-index:90;
+  opacity:0;pointer-events:none;transition:opacity .4s;
+}
+#mod-progress-wrap.visible{opacity:1}
+#mod-progress-bar{
+  height:2px;
+  background:rgba(235,240,236,.06);
+  position:relative;
+  overflow:hidden;
+}
+#mod-progress-bar::after{
+  content:'';
+  position:absolute;
+  left:0;top:0;height:100%;
+  width:var(--prog,0%);
+  background:linear-gradient(to right,rgba(61,214,232,.66),rgba(157,191,154,.4));
+  transition:width .5s cubic-bezier(0.19,1,0.22,1);
+}
+#mod-progress-label{
+  position:absolute;
+  right:clamp(1.5rem,5vw,4.5rem);
+  top:6px;
+  font-size:.52rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(235,240,236,.34);
+  font-family:var(--sans);
+  transition:opacity .3s;
+}
+
+
+</style>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet"></noscript>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl" aria-label="Aquatic Rhythm — ecological care for small aquariums">
+    <svg width="175" height="30" viewBox="0 0 175 30" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+      <circle cx="13" cy="15" r="11.5" stroke="rgba(61,214,232,0.22)" stroke-width="1.0" fill="none"/>
+      <line x1="16.8" y1="24.5" x2="16.8" y2="9" stroke="rgba(100,200,82,0.82)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="19.8" y1="23.0" x2="19.8" y2="17" stroke="rgba(100,200,82,0.65)" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="12" cy="15" rx="4.0" ry="2.3" fill="rgba(40,120,150,0.85)"/>
+      <path d="M8.2 15 L6 12.5 L6 17.5 Z" fill="rgba(40,120,150,0.78)"/>
+      <path d="M2 15 C5 8.5 9 8.5 12 15 C15 21.5 19 21.5 22 15" stroke="rgba(61,214,232,0.96)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <circle cx="14.8" cy="14.2" r=".9" fill="rgba(255,255,255,0.96)"/>
+      <text x="32" y="13" font-family="DM Sans,system-ui,sans-serif" font-size="6" font-weight="300" fill="rgba(255,255,255,.42)" letter-spacing="2.5">AQUATIC</text>
+      <text x="32" y="27" font-family="Cormorant Garamond,Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="rgba(255,255,255,.82)">Rhythm</text>
+    </svg>
+  </a>
+  <ul class="nlinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/reading">Reading</a></li>
+    <li><a href="/companion">Companion</a></li>
+    <li><a href="/tools">Tools</a></li>
+    <li><a href="/journal">Log</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+  <details class="lang-sw" aria-label="Language"><summary class="lang-sw-cur" aria-current="page">JA</summary><div class="lang-sw-menu"><a href="https://aquaticrhythm.com/articles/cycled-tank-problems" class="lang-sw-opt" hreflang="en">EN</a><a href="https://aquaticrhythm.com/ms/articles/cycled-tank-problems" class="lang-sw-opt" hreflang="ms">MS</a><a href="https://aquaticrhythm.com/id/articles/cycled-tank-problems" class="lang-sw-opt" hreflang="id">ID</a></div></details>
+<script>if(!window._lswH){window._lswH=1;document.addEventListener('click',function(e){if(!e.target.closest('.lang-sw'))document.querySelectorAll('details.lang-sw[open]').forEach(function(d){d.removeAttribute('open')})})}</script>
+<button class="nbg" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</nav>
+<div class="nmob" id="nmob" aria-hidden="true">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/reading">Reading</a></li>
+    <li><a href="/companion">AI Companion</a></li>
+    <li><a href="/tools">Labs &amp; Tools</a></li>
+    <li><a href="/journal">Log</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/privacy">Privacy Policy</a></li>
+    <li><a href="/terms">Terms of Use</a></li>
+  </ul>
+</div>
+<div id="mod-progress-wrap">
+  <div id="mod-progress-bar"></div>
+  <div id="mod-progress-label"></div>
+</div>
+
+
+<main>
+
+<!-- INTRO -->
+<div class="art-intro" id="art-intro">
+  <div class="art-intro-inner">
+    <span class="art-eyebrow">読む · 成熟した水槽</span>
+    <h1 class="art-main-title">サイクルが終わった水槽は、<br><em>完成した水槽じゃない。</em></h1>
+    <p class="art-intro-subtitle">長く稼働している水槽がそれでも問題を抱える理由——そして、何を伝えようとしているのか。</p>
+    <p class="art-intro-text">サイクルは完了した。バクテリアは定着し、パラメーターも安定して、水槽は何ヶ月も動いている。たいていのガイドはここで終わります。</p>
+    <p class="art-intro-text">でも、ここからまた別の、もっと静かでゆっくりした難しさが始まることがあります。魚の様子がどことなくおかしい。何かが繰り返し戻ってくる。パラメーターは問題なさそうなのに、何かが違う。</p>
+    <p class="art-intro-text">成熟した水槽は、立ち上げ期の水槽とはまったく違うシステムです。飼育者に求めるものも違います——作ることより、読み取ること。このガイドはその学び方についてです。</p>
+    <div class="art-intro-meta">
+      <span>6 モジュール</span><span class="meta-dot">·</span>
+      <span>中級</span><span class="meta-dot">·</span>
+      <span>約10分</span>
+    </div>
+    <button class="art-begin-btn" onclick="startLearning()">読み始める <span>→</span></button>
+  </div>
+</div>
+
+<!-- MODULES -->
+<div class="module-wrap" id="module-wrap">
+
+  <!-- ═══ MODULE 1 — The cycle was never the finish line ═══ -->
+  <section class="module" id="mod-1" data-mod="1">
+    <div class="mod-eyebrow"><span class="mod-num">01 / 06</span><span class="mod-tag">別の種類の学び</span></div>
+    <h2 class="mod-title">サイクルは、<br><em>ゴールラインじゃなかった。</em></h2>
+    <div class="mod-body">
+      <p>半年間稼働してきた水槽は、立ち上がったばかりの水槽とは根本的に違うシステムです。バクテリアは定着し、水質はリズムを見つけ、魚は落ち着いています。あの緊張感のある不安定な時期はもう終わっています。</p>
+      <p>でも成熟した水槽には、それ固有の難しさがあります——もっとゆっくりで、静かで、見逃しやすい。問題は突然悪化するのではなく、じわじわとドリフトしていきます。小さなストレスが何週間もかけて積み重なり、ようやく何かが目に見えてきたとき、たいていはすでに長い時間をかけて積み上がっていたのです。</p>
+    </div>
+
+    <div class="pq">
+      <p>安定とは、たどり着くものではない。それは——目に見える問題がなくても——静かに、一貫して、維持し続けるものです。</p>
+    </div>
+
+    
+
+    <div class="hn">
+      <span class="hn-label">ARA · Mature Phase（成熟期）</span>
+      <p>Aquatic Rhythm Alignment（ARA）では、成熟した水槽は<strong>Mature Phase（成熟期）</strong>に入ったと考えます——生態系が作られていくのではなく、自らを維持していく段階です。この時期の課題はスキルではありません。それは注意力です。成熟した水槽の問題のほとんどは、飼育者の失敗ではありません。ゆっくりしたドリフト——何に注意を向ければいいかを知っていれば、どんな飼育者でも気づけるズレ——なのです。</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">ARA · Intentional Phase Reset（意図的なフェーズリセット）</span>
+      <p>すべてのフェーズの移行が失敗を意味するわけではありません。飼育者が意図的にシステムをリセットすることもあります——持続する病気の治療、セットアップの再構成、またはクラッシュ後の新しいサイクルの開始など。ARAは意図的なフェーズリセットと、混乱によって引き起こされた後退を区別しています：リセットは飼育者の決断であり、システムの崩壊ではありません。システムはEarly Phaseをもう一度経ます——同じ発展の軌跡に沿って。しかし飼育者に蓄積された知識が、新しいサイクルの管理を形作ります。</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythmの視点</span>
+      <p>立ち上げと維持は異なるフェーズです——そして、それぞれ異なるものを求めます。立ち上げ中、システムは構築しています。維持中は、持続させています。一方のフェーズで役立つことが、もう一方では不要だったり、逆効果になったりすることがあります。今どちらのフェーズにいるのか、そして本当に何が必要なのかを感じ取ることを学ぶと、このホビーの感触が変わってきます。</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goIntro()">← イントロ</button>
+      <button class="btn-next" onclick="goMod(2)">5つの読み取るべきもの <span>→</span></button>
+    </div>
+  </section>
+
+  <section class="module" id="mod-2" data-mod="2">
+    <div class="mod-eyebrow"><span class="mod-num">02 / 06</span><span class="mod-tag">ARAが見るもの</span></div>
+    <h2 class="mod-title">水槽が常にしている<br><em>5つのこと。</em></h2>
+    <div class="mod-body">
+      <p>Aquatic Rhythm Alignment（ARA）は、水槽を5つの生態学的リズムに整理しています——常にアクティブで、常に変化し、常に何かを語っている5つのシステムの層。成熟した水槽の問題は、ほぼ必ずこれらのリズムのひとつ、あるいは複数のドリフトにたどり着きます。</p>
+      <p>すべてをあわせて読み取ることで、どんな単一のテストよりも全体像が見えてきます。</p>
+    </div>
+
+    <div class="rhythm-grid">
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 01</div>
+        <div class="rhythm-cell-name">Water Rhythm（水のリズム）</div>
+        <div class="rhythm-cell-desc">ミネラルバランス、pHの安定性、換水の頻度。ズレると：パラメーターはゆっくりドリフトし、テストに出る前に魚が感じ取ります。</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 02</div>
+        <div class="rhythm-cell-name">Biological Rhythm（生物リズム）</div>
+        <div class="rhythm-cell-desc">フィルターと底床のバクテリアコロニーが継続的に廃棄物を処理しています。ここの乱れは、アンモニアか亜硝酸が再び現れるまで見えません。</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 03</div>
+        <div class="rhythm-cell-name">Environmental Rhythm（環境リズム）</div>
+        <div class="rhythm-cell-desc">光のサイクル、水温の安定性、水流。慢性的な低レベルのズレは免疫機能を抑制し、回復力を低下させます。</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="rhythm-cell-num">Rhythm 04</div>
+        <div class="rhythm-cell-name">Livestock Rhythm（生体リズム）</div>
+        <div class="rhythm-cell-desc">魚の行動、食欲、社会的ダイナミクス。水槽の中で最も感度の高い計器——魚はどんなテストキットよりも先にズレを示します。</div>
+      </div>
+      <div class="rhythm-cell rhythm-cell-wide">
+        <div class="rhythm-cell-num">Rhythm 05</div>
+        <div class="rhythm-cell-name">Keeper Rhythm（キーパーリズム）</div>
+        <div class="rhythm-cell-desc">飼育者自身の注意力、スケジュール、キャパシティ。不規則または余裕のないキーパーリズムは、個々の行動がそれぞれ技術的に正しくても、不規則な環境を生み出します。このリズムが他のすべてをつなぎます。</div>
+      </div>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythmの視点</span>
+      <p>成熟した水槽の問題のほとんどは、突発的な出来事ではありません。これらのリズムのひとつ以上にわたる小さなズレの積み重ねです。システムをうまく読み取るということは、どのリズムがドリフトしているかを——目に見える問題になる前に——知っているということです。次のモジュールでは、最もよくあるドリフトのポイントを見ていきます。</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(1)">← 戻る</button>
+      <button class="btn-next" onclick="goMod(3)">どこから探し始めるか <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 3 — One thing at a time ═══ -->
+  <section class="module" id="mod-3" data-mod="3">
+    <div class="mod-eyebrow"><span class="mod-num">03 / 06</span><span class="mod-tag">根本を探す</span></div>
+    <h2 class="mod-title">ほとんどの問題には<br><em>ひとつの根がある。</em></h2>
+    <div class="mod-body">
+      <p>水槽が不調のとき——魚が頻繁に病気になる、コケが戻ってくる、パラメーターが安定しない——すべてが同時におかしくなっているように感じることがあります。実際はそうであることはほとんどありません。ほぼ必ず、主要なストレス源がひとつあり、他のすべてはそれに反応しています。</p>
+      <p>すべてを同時に対処しようとするのは疲弊しますし、たいてい効果もありません。でも、実際に他のすべてを引き起こしているひとつのことを見つけて——それだけに対処すると——すべてが変わることがよくあります。</p>
+      <p>最もよくある4つの原因：静かに長い間積み重なっていた硝酸塩、システムが快適に扱えるより多い魚の数、水槽内の特定の魚に合わない水質、そしてセッションの間にシステムが完全に回復するには不規則になりすぎたメンテナンスルーティン。</p>
+      <p>これらのどれも劇的な失敗ではありません。すべてゆっくりしたドリフト——バランスからの小さな動きが静かに積み重なり、目に見えるようになるまで続きます。難しいのは、気づいたときにはたいていすでに長い間積み上がっていることです。</p>
+    </div>
+
+    <!-- VISUAL: Stressor selector -->
+    <div class="vis-block">
+      <canvas id="cv-stress" style="height:360px"></canvas>
+    </div>
+
+    
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythmの視点</span>
+      <p>ARAではこれを<strong>dominant stressor（支配的ストレス源）</strong>と呼びます——特定の時点でシステムに最も大きな負担をかけている単一のストレス。それを取り除くと、他の問題も自然に解決し始めることがよくあります。スキルは、それぞれの症状を個別に治療するのではなく、根本を探すことを学ぶことです。その転換——反応的から生態学的へ——は、飼育者がこのホビーを経験する方法を変えるものごとのひとつです。</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">ARA · Capacity Creep</span>
+      <p>One specific pattern worth naming in established tanks: ARA calls it capacity creep — the gradual accumulation of small additions that individually seem fine but cumulatively exceed the system's stable carrying capacity. One more fish, one more feeding, one more decoration reducing flow — none feels significant. But over months, the system that was handling its load comfortably is now at the edge of it, and the margin for error that forgave small keeper inconsistencies has quietly disappeared. Capacity creep rarely announces itself. It shows up as a tank that used to be stable and now is not, without any obvious single cause.</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(2)">← 戻る</button>
+      <button class="btn-next" onclick="goMod(4)">フィルターが実際にしていること <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 4 — Filter maintenance ═══ -->
+  <section class="module" id="mod-4" data-mod="4">
+    <div class="mod-eyebrow"><span class="mod-num">04 / 06</span><span class="mod-tag">ほとんどのガイドが飛ばすこと</span></div>
+    <h2 class="mod-title">フィルターは機械じゃない。<br><em>生息地だ。</em></h2>
+    <div class="mod-body">
+      <p>多くの飼育者はフィルターを機械的な装置として考えています——水を動かし、ゴミをつかまえ、汚れて見えたら掃除できるもの。その理解は不完全であり、成熟した水槽のケアで最もよくあるミスのひとつにつながります。</p>
+      <p>フィルターメディア——スポンジ、セラミックリング、バイオボール——は、バクテリアコロニーの大多数が住んでいる場所です。水の中ではなく、砂利の上でもなく、それらの表面に。その何十億ものバクテリアが水槽を安定させているのです。彼らがサイクルであり、毎時間毎日継続的に動いています。</p>
+      <p>つまり、フィルターの掃除の仕方が非常に重要ということです。メディアを水道水でゆすぐと——たとえ一瞬でも——塩素にコロニーをさらすことになり、塩素はバクテリアを素早く死滅させます。すべてのメディアを一度に交換すると、一度の行動でコロニー全体を取り除いてしまいます。水槽は事実上、新しいメディアが育つ間、ゆっくりと再サイクルする必要があります。すぐには気づかないかもしれません。でも、その後の数週間で、パラメーターはドリフトし、魚はどことなくおかしく見え、原因は見えないまま。</p>
+      <p>なぜ重要なのかを理解すれば、正しいアプローチは簡単です。換水時に取り出した古い水槽水でフィルターメディアを掃除してください——水道水はコロニーを殺します。一度にメディアの3分の1以上を交換せず、次を交換する前に少なくとも4週間待つ。これにより、フィルターの機械的な機能を維持しながらコロニーを保護できます。</p>
+    </div>
+
+    <div class="vis-block">
+      <canvas id="cv-filter" style="height:280px"></canvas>
+    </div>
+
+    
+
+    <div class="hn">
+      <span class="hn-label">フィルターのコロニーが乱されたかもしれないサイン</span>
+      <p>成熟した水槽でのわずかなアンモニアや亜硝酸の数値——0.25 ppmでさえ——はシグナルです。突然安定性が低く見える水槽や、以前より小さなストレスからの回復が遅い魚も同様です。これらは必ずしもフィルターの乱れによるものではありませんが、最近メディアを掃除または交換したなら、そこを最初に確認してください。</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythmの視点</span>
+      <p>フィルターは水槽で最も重要な機器です——機械的に何をするかではなく、その中に何が住んでいるかによって。優しく扱い、少しずつ交換することが、成熟した水槽を月単位ではなく年単位で安定させ続ける、最もシンプルかつ最も見過ごされている方法のひとつです。</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(3)">← 戻る</button>
+      <button class="btn-next" onclick="goMod(5)">最も静かな問題 <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 5 — Nitrate ═══ -->
+  <section class="module" id="mod-5" data-mod="5">
+    <div class="mod-eyebrow"><span class="mod-num">05 / 06</span><span class="mod-tag">見えずに積み重なるもの</span></div>
+    <h2 class="mod-title">硝酸塩。<br><em>ドラマなく積み重なる。</em></h2>
+    <div class="mod-body">
+      <p>サイクルが完了すると、アンモニアと亜硝酸は処理されます。その部分は機能しています。でも硝酸塩——そのプロセス全体の最終産物——は行き場がありません。それ以上分解されません。何かが取り除くまで、静かに毎日積み重なるだけです。</p>
+      <p>低いレベルでは、何もおかしく見えません。パラメーターは良さそうで、魚は正常に見えます。でも硝酸塩は不活性ではありません。週や月をかけて上昇すると、エラを通じて魚の組織に入り込み、血液が酸素を運ぶ方法を妨げます。免疫機能は徐々に抑制されます。ストレスホルモンはわずかに上昇したままになります。魚は生き延びますが、赤字を抱えて走っています——病気にかかりやすく、小さなストレスからの回復が遅く、より清潔な水の中ほど鮮やかにも活発にもなれません。</p>
+      <p>最も一般的な推奨は、敏感な魚には20 ppm以下、より耐性のある種には40 ppm以下に硝酸塩を保つことです。でも数値よりもトレンドの方が重要です。安定している30 ppmの水槽は、上昇し続けている25 ppmの水槽より健康です。</p>
+      <p>定期的な部分換水——週に15〜25%——が硝酸塩をコントロールする最も信頼できる方法です。水草は大いに助けになります。餌の与えすぎは蓄積を加速させる最も早い方法のひとつです。</p>
+    </div>
+
+    <!-- VISUAL: Nitrate toggle -->
+    <div class="vis-block">
+      <canvas id="cv-nitrate" style="height:300px"></canvas>
+    </div>
+
+    
+
+    <div class="hn">
+      <span class="hn-label">励みになるメモ</span>
+      <p>硝酸塩がしばらくの間必要以上に高かったと疑われる場合——数週間かけて徐々に下げていくと（大きな一度の換水ではなく、定期的な小さな換水によって）、目に見える違いが生まれることがよくあります。少し元気がなかった、少し慎重だった魚が、突然生き生きとして見えます。彼らは病気だったわけではありません。ただ、ようやく快適になっただけです。</p>
+    </div>
+
+    <div class="mod-next">
+      <button class="btn-prev" onclick="goMod(4)">← 戻る</button>
+      <button class="btn-next" onclick="goMod(6)">本当にそこにあるものを見ることを学ぶ <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- ═══ MODULE 6 — Reading the tank ═══ -->
+  <section class="module" id="mod-6" data-mod="6">
+    <div class="mod-eyebrow"><span class="mod-num">06 / 06</span><span class="mod-tag">確認するだけでなく、読み取る</span></div>
+    <h2 class="mod-title">魚はいつでも<br><em>何かを伝えている。</em></h2>
+    <div class="mod-body">
+      <p>テストキットは、テストした瞬間に水が何を含んでいるかを教えてくれます。魚は、水が一日中、毎日、リアルタイムで彼らに何をしてきたかを教えてくれます。</p>
+      <p>ほとんどの飼育者は、魚を読み取ることを学ぶ前に数値を読むことを学びます。それは理にかなっています——数値は確かなように感じられ、行動は曖昧に見えることがあります。でも魚は、テストキットが何かを示す前からずっと、環境の変化に反応しています。数値がおかしくなる頃には、たいてい魚はしばらくの間それと共に生きてきています。</p>
+      <p>これは病気を診断することではありません。魚のことを十分に知って、小さな変化に気づけるようにすることです——餌の時間に少し元気がない魚、普通はいないコーナーに移動した一匹、静かに自分の配置を変えたグループ。これらは劇的なシグナルではありません。でも本物のシグナルであり、どんなテストが示すよりも早く来ます。</p>
+      <p>気づいた瞬間に変化が何を意味するかを知る必要はありません。気づくだけで始まりとしては十分です。それは水槽との別の関係の始まりです——反応することではなく、読み取ることに基づいた関係。</p>
+    </div>
+
+    <!-- VISUAL: Behaviour signals slider -->
+    <div class="vis-block">
+      <canvas id="cv-behaviour" style="height:420px"></canvas>
+    </div>
+
+    
+
+    <div class="pq">
+      <p>何が悪いかを知らなくても、何かが変わったことはわかる。そして何かが変わったことを——早く——知ることが、良い水槽管理の大部分です。</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">ARA · Stability Over Perfection（完璧より安定）</span>
+      <p>ARAが成熟した水槽のために定式化した原則：完璧より安定。一貫した、目立たないパラメーターで保たれた水槽——理想的な数値ではなく、安定した数値——は、そこに留まるために絶え間ない介入が必要な、完璧な数値を追いかける水槽より優れた結果を出します。Mature Phaseのシステムの目標は最適化ではありません。一貫した、持続可能なリズムです。安定している小さな不完全さは、変動する完璧な数値よりずっと害が少ないことがほとんどです。これを学んだ飼育者は、目に見えて少なくやりながら——目に見えてより健康な水槽を持つことが多いのです。</p>
+    </div>
+
+    <div class="hn ar">
+      <span class="hn-label">Aquatic Rhythmの視点</span>
+      <p>ARAではこれを<strong>ecological attunement（生態学的なチューニング）</strong>と呼びます——勉強ではなく、存在を通じて時間とともに育まれる注意の質。読むことで身につけられるものではありません。でも水槽の前で——問題を探すためではなく、ただ見るために——時間を過ごすと自然に育ちます。魚が水の中をどう動くかを観察すること。以前なら気づかなかった小さな変化に気づくこと。確認することと見ることの違い。</p>
+      <p>この注意力を育てた飼育者は、水槽に費やす時間が増えるわけではありません。減ります——より早く気づき、より穏やかに反応し、水槽がうまくいっているときはそのままにしておけるほどシステムへの信頼を積み上げてきたからです。その信頼は、水槽を十分に知って読み取れることから生まれます。そして、このホビーの感触をとても違うものにします。</p>
+      <p>ARAにおいて、5番目の生態学的リズム——<strong>Keeper Rhythm（キーパーリズム）</strong>——が他のすべてを形作ります。一貫して観察し、一貫したリズムで換水し、自分の実際のキャパシティに正直にスケジュールを調整した飼育者は、どんな製品でも再現できない安定性を生み出します。水槽は飼育者を反映します。そして、アライメントが取れた飼育者は、時間とともに、より少ない介入で済むようになります——より多くではなく。</p>
+    </div>
+
+    <div class="hn">
+      <span class="hn-label">ARA · Keeper Rhythm</span>
+      <p>水槽で費やす時間が減り、でも状態はどんどん良くなっている——そんな段階に到達したなら、何かを作り上げたということです。すべての飼育者が同じペースでその境地に達するわけではなく、そこへの道はたいていいくつかの「すべてを確認したのに、何が変わったのかわからない」という繰り返しを経ます。そのフラストレーションはプロセスの一部であり、何か間違えている証拠ではありません。チューニングは、すべてが明確な瞬間と同じくらい、そういった「わからない」瞬間からも育まれます。</p>
+    </div>
+
+    <div class="mod-next" style="margin-bottom:1.5rem">
+      <button class="btn-prev" onclick="goMod(5)">← 戻る</button>
+      <span></span>
+    </div>
+
+    <div class="final-cta">
+      <p><strong>次にやること：</strong>72時間のログを作ってください：毎日3つのことを記録する（魚の行動、水温、硝酸塩の数値）。3日後、ストレスのパターンがパラメーター、餌やり、水流のどこから来ているか確認しましょう。</p>
+      <a href="/articles/cycled-tank-problems#mod-5" class="btn-reading" data-analytics-event="cta_mature_tank_next_action" data-cta="mature_tank_signal_review">行動シグナルを確認する →</a>
+      <a href="/reading" class="btn-reading" style="margin-top:.7rem">← Readingに戻る</a>
+    </div>
+
+  </section>
+
+</div><!-- /module-wrap -->
+</main>
+
+<script>
+/* ═══════════════════════════════
+   MODULE NAVIGATION
+═══════════════════════════════ */
+var totalMods = 6;
+var currentMod = 1;
+var canvases = {};
+var animFrames = {};
+
+function stopAnim(id){
+  if(animFrames[id]){cancelAnimationFrame(animFrames[id]);animFrames[id]=null;}
+}
+
+function goIntro(){
+  var mod=document.getElementById('mod-'+currentMod);
+  if(mod){mod.classList.remove('visible');setTimeout(function(){mod.classList.remove('active');},300);}
+  var wrap=document.getElementById('module-wrap');
+  var intro=document.getElementById('art-intro');
+  if(wrap)wrap.classList.remove('active');
+  if(intro){intro.classList.remove('hidden');intro.style.display='';}
+  var pw=document.getElementById('mod-progress-wrap');
+  if(pw)pw.classList.remove('visible');
+  window.scrollTo({top:0,behavior:'auto'});
+  currentMod=1;
+  updateDots();
+}
+
+function goMod(n){
+  stopAnim('cv-stress');stopAnim('cv-filter');stopAnim('cv-nitrate');stopAnim('cv-behaviour');
+  var prev=document.getElementById('mod-'+currentMod);
+  if(prev){prev.classList.remove('visible');setTimeout(function(){prev.classList.remove('active');},300);}
+  currentMod=n;
+  window.scrollTo({top:0,behavior:'auto'});
+  var next=document.getElementById('mod-'+n);
+  if(!next)return;
+  next.classList.add('active');
+  setTimeout(function(){next.classList.add('visible');},30);
+  updateDots();
+  if(canvases[n])setTimeout(function(){canvases[n]();},120);
+}
+
+function buildDots(){}
+function updateDots(){
+  var bar=document.getElementById('mod-progress-bar');
+  var lbl=document.getElementById('mod-progress-label');
+  if(bar) bar.style.setProperty('--prog', Math.round((currentMod/totalMods)*100)+'%');
+  if(lbl) lbl.textContent='Module '+currentMod+' / '+totalMods;
+}
+
+function startLearning(){
+  var intro=document.getElementById('art-intro');
+  var wrap=document.getElementById('module-wrap');
+  if(intro)intro.classList.add('hidden');
+  if(wrap)wrap.classList.add('active');
+  var pw=document.getElementById('mod-progress-wrap');
+  if(pw)pw.classList.add('visible');
+  window.scrollTo({top:0,behavior:'auto'});
+  var first=document.getElementById('mod-1');
+  if(first){first.classList.add('active');setTimeout(function(){first.classList.add('visible');},30);}
+  updateDots();
+  if(canvases[1])setTimeout(function(){canvases[1]();},120);
+}
+
+/* Hide intro when hidden class added */
+var introEl=document.getElementById('art-intro');
+if(introEl){
+  var obs=new MutationObserver(function(){
+    if(introEl.classList.contains('hidden'))introEl.style.display='none';
+  });
+  obs.observe(introEl,{attributes:true,attributeFilter:['class']});
+}
+
+/* ═══════════════════════════════
+   VISUALS
+═══════════════════════════════ */
+function resizeCanvas(id,h){
+  var c=document.getElementById(id);if(!c)return null;
+  c.width=c.parentElement.offsetWidth;
+  c.height=h||parseInt(c.style.height)||180;
+  return c;
+}
+
+/* ── VISUAL 1: Dominant stressor selector ── */
+canvases[3]=function(){
+  stopAnim('cv-stress');
+  var c=resizeCanvas('cv-stress',320);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+
+  var stressors=[
+    {label:'Nitrate buildup',
+     icon:'NO₃↑',color:'rgba(200,160,40,',
+     signals:['Fish seem dull or less enthusiastic','Disease keeps returning after treatment','Algae growing despite regular maintenance'],
+     note:'Nitrate rises quietly after every cycle. At high levels it suppresses immune function — fish survive but are never quite comfortable. Weekly partial water changes are the most reliable solution.'},
+    {label:'Too many fish',
+     icon:'🐟🐟🐟',color:'rgba(180,100,80,',
+     signals:['Frequent fin damage or aggression','Fish breathing at the surface','Ammonia spikes after feeding'],
+     note:'More fish means more waste, less oxygen, more competition. The bacteria can handle the chemistry — but the fish still experience the crowding. Rehoming some fish often transforms a tank overnight.'},
+    {label:'Wrong chemistry',
+     icon:'pH?',color:'rgba(80,150,180,',
+     signals:['Fish surviving but never thriving','Difficulty breeding species that should breed','Chronic low-grade illness without clear cause'],
+     note:'Fish evolved for specific water conditions. A species from soft acidic rivers kept in hard alkaline water is under constant stress, even if it looks fine on paper. Research your specific species — not just "tropical fish" in general.'},
+    {label:'Irregular care',
+     icon:'📅',color:'rgba(139,189,210,',
+     signals:['Tank seems fine then suddenly crashes','Problems always seem to appear at the same time','Recovery from problems takes unusually long'],
+     note:'Tanks tolerate gaps — but not indefinitely. Missed changes and irregular feeding create cumulative stress. The crash feels sudden because the warning signs were quiet. A modest consistent routine beats intensive irregular care.'}
+  ];
+
+  var selected=0;
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  var btnRow=document.createElement('div');
+  btnRow.style.cssText='display:flex;gap:.35rem;flex-wrap:wrap;justify-content:center;margin:.4rem 0';
+  stressors.forEach(function(s,i){
+    var btn=document.createElement('button');
+    btn.className='vis-btn'+(i===0?' vis-btn-active':'');
+    btn.textContent=s.label;btn.style.fontFamily='"DM Sans",system-ui,sans-serif';
+    btn.addEventListener('click',function(){
+      selected=i;
+      wrap.querySelectorAll('.vis-btn').forEach(function(b){b.classList.remove('vis-btn-active');});
+      btn.classList.add('vis-btn-active');draw();
+    });
+    btnRow.appendChild(btn);
+  });
+  ctrl.appendChild(btnRow);
+  var hint=document.createElement('div');hint.className='vc-hint';hint.textContent='tap a stressor to explore it';
+  ctrl.appendChild(hint);
+  wrap.appendChild(ctrl);
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var s=stressors[selected];
+    var pad=16, lineH=22, cur=14;
+
+    /* Bars */
+    var barData=[
+      {label:'Water',  val:selected===0?0.85:selected===1?0.5:selected===2?0.3:0.4},
+      {label:'Fish',   val:selected===0?0.5:selected===1?0.9:selected===2?0.6:0.55},
+      {label:'Stable', val:selected===0?0.4:selected===1?0.3:selected===2?0.35:0.2},
+      {label:'Visible',val:selected===0?0.2:selected===1?0.4:selected===2?0.15:0.3}
+    ];
+    var bMaxH=40, bW=(W-pad*2)/4-8;
+    barData.forEach(function(b,i){
+      var bx=pad+i*(bW+8);
+      var fillH=b.val*bMaxH;
+      ctx.fillStyle='rgba(235,240,236,.06)';
+      ctx.fillRect(bx,cur,bW,bMaxH);
+      ctx.fillStyle=s.color+(0.45+b.val*.45).toFixed(2)+')';
+      ctx.fillRect(bx,cur+bMaxH-fillH,bW,fillH);
+      ctx.font='300 9px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle='rgba(235,240,236,.38)';
+      ctx.textAlign='center';
+      ctx.fillText(b.label,bx+bW/2,cur+bMaxH+12);
+    });
+    ctx.textAlign='left';
+    cur+=bMaxH+20;
+
+    /* Divider */
+    ctx.strokeStyle='rgba(235,240,236,.07)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pad,cur);ctx.lineTo(W-pad,cur);ctx.stroke();
+    cur+=16;
+
+    /* Signals header */
+    ctx.font='300 10px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(235,240,236,.40)';
+    ctx.fillText('What you might notice:',pad,cur);
+    cur+=18;
+
+    /* Signal items */
+    s.signals.forEach(function(sig){
+      ctx.fillStyle=s.color+'0.7)';ctx.fillText('·',pad,cur);
+      ctx.fillStyle='rgba(235,240,236,.74)';
+      var maxW=W-pad*2-10;
+      while(ctx.measureText(sig).width>maxW&&sig.length>8)sig=sig.slice(0,-4)+'…';
+      ctx.fillText(sig,pad+12,cur);
+      cur+=lineH;
+    });
+    cur+=6;
+
+    /* Divider */
+    ctx.strokeStyle='rgba(235,240,236,.07)';
+    ctx.beginPath();ctx.moveTo(pad,cur);ctx.lineTo(W-pad,cur);ctx.stroke();
+    cur+=14;
+
+    /* Note */
+    ctx.font='italic 300 12px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(235,240,236,.48)';
+    var words=s.note.split(' ');
+    var line='';var maxW=W-pad*2;var maxY=H-8;
+    words.forEach(function(w){
+      if(cur>maxY)return;
+      var test=line+(line?' ':'')+w;
+      if(ctx.measureText(test).width>maxW&&line){
+        if(cur+20<=maxY){ctx.fillText(line,pad,cur);line=w;cur+=20;}
+        else{ctx.fillText(line+'…',pad,cur);line='';cur=maxY+1;}
+      } else line=test;
+    });
+    if(line&&cur<=maxY)ctx.fillText(line,pad,cur);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+/* ── VISUAL 2: Nitrate toggle ── */
+canvases[4]=function(){
+  stopAnim('cv-filter');
+  var c=resizeCanvas('cv-filter',245);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+
+  var scenarios=[
+    {label:'Correct — tank water',
+     color:'rgba(80,200,120,',
+     colony:0.95,
+     desc:'Rinsing in old tank water preserves the biofilm. Chlorine is absent. Bacteria survive. The colony remains intact.'},
+    {label:'Incorrect — tap water',
+     color:'rgba(220,100,60,',
+     colony:0.08,
+     desc:'Tap water contains chlorine. Even a brief rinse kills the majority of bacteria in the biofilm. The colony must rebuild from near zero.'},
+    {label:'Replace all media',
+     color:'rgba(220,80,40,',
+     colony:0.0,
+     desc:'New media has no bacteria. Replacing everything at once removes the entire colony. The tank effectively re-cycles — often invisibly, over weeks.'},
+    {label:'Replace one third',
+     color:'rgba(61,214,232,',
+     colony:0.72,
+     desc:'Replacing a third of the media at a time preserves most of the colony on the remaining surfaces. The new media colonises within 2–4 weeks.'}
+  ];
+
+  var selected=0;
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  var btnRow=document.createElement('div');
+  btnRow.style.cssText='display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center;margin:.4rem 0';
+  scenarios.forEach(function(s,i){
+    var btn=document.createElement('button');
+    btn.className='vis-btn'+(i===0?' vis-btn-active':'');
+    btn.textContent=s.label;
+    btn.style.fontFamily='"DM Sans",system-ui,sans-serif';
+    btn.addEventListener('click',function(){
+      selected=i;
+      wrap.querySelectorAll('.vis-btn').forEach(function(b){b.classList.remove('vis-btn-active');});
+      btn.classList.add('vis-btn-active');
+      draw();
+    });
+    btnRow.appendChild(btn);
+  });
+  ctrl.appendChild(btnRow);
+  wrap.appendChild(ctrl);
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var s=scenarios[selected];
+    var colony=s.colony;
+
+    /* Filter media illustration — left side */
+    var mediaX=18,mediaY=20,mediaW=W*.38,mediaH=H-50;
+    ctx.fillStyle='rgba(235,240,236,.05)';
+    ctx.fillRect(mediaX,mediaY,mediaW,mediaH);
+    ctx.strokeStyle='rgba(61,214,232,.24)';ctx.lineWidth=1;
+    ctx.strokeRect(mediaX,mediaY,mediaW,mediaH);
+
+    /* Label */
+    ctx.font='300 10px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(235,240,236,.38)';ctx.textAlign='center';
+    ctx.fillText('Filter media',mediaX+mediaW/2,mediaY-6);
+
+    /* Bacteria dots filling media */
+    var dotCount=Math.floor(colony*80);
+    var cols=8,rows=10;
+    for(var r=0;r<rows;r++){
+      for(var cc=0;cc<cols;cc++){
+        var idx2=r*cols+cc;
+        if(idx2>=80)break;
+        var dx=mediaX+6+(cc/cols)*( mediaW-12);
+        var dy=mediaY+8+(r/rows)*(mediaH-16);
+        var alive=idx2<dotCount;
+        ctx.beginPath();ctx.arc(dx,dy,2.8,0,Math.PI*2);
+        ctx.fillStyle=alive?s.color+'0.7)':'rgba(235,240,236,.06)';
+        ctx.fill();
+      }
+    }
+
+    /* Colony health bar — right side */
+    var barX=W*.52,barY=mediaY,barW=22,barH=mediaH;
+    ctx.fillStyle='rgba(235,240,236,.06)';ctx.fillRect(barX,barY,barW,barH);
+    var fillH=colony*barH;
+    if(fillH>0){
+      ctx.fillStyle=s.color+'0.7)';
+      ctx.fillRect(barX,barY+barH-fillH,barW,fillH);
+    }
+    ctx.font='300 9px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle=s.color+'0.8)';ctx.textAlign='center';
+    ctx.fillText(Math.round(colony*100)+'%',barX+barW/2,barY+barH+14);
+    ctx.fillStyle='rgba(235,240,236,.34)';
+    ctx.fillText('Colony',barX+barW/2,barY-6);
+    ctx.textAlign='left';
+
+    /* Description */
+    var words=s.desc.split(' ');
+    var line='';var y=mediaY+mediaH+28;var maxW=W-24;var maxY=H-4;
+    ctx.font='italic 300 12px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(235,240,236,.58)';
+    words.forEach(function(w){
+      if(y>maxY)return;
+      var test=line+(line?' ':'')+w;
+      if(ctx.measureText(test).width>maxW&&line){
+        if(y+16<=maxY){ctx.fillText(line,12,y);line=w;y+=16;}
+        else{ctx.fillText(line+'…',12,y);line='';y=maxY+1;}
+      } else line=test;
+    });
+    if(line&&y<=maxY)ctx.fillText(line,12,y);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+canvases[5]=function(){
+  stopAnim('cv-nitrate');
+  var c=resizeCanvas('cv-nitrate',265);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+  var withWC=true;
+
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  ctrl.innerHTML='<div style="display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin:.45rem 0"><button class="vis-btn vis-btn-active" id="btn-wc-y">Water changes</button><button class="vis-btn" id="btn-wc-n">No changes</button><button class="vis-btn" id="btn-wc-p">Changes + plants</button></div><div class="vc-hint">compare nitrate over 12 weeks</div>';
+  wrap.appendChild(ctrl);
+
+  var wcMode='wc'; /* wc, none, plants */
+  function setWcMode(m){
+    wcMode=m;
+    ['btn-wc-y','btn-wc-n','btn-wc-p'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el)el.className='vis-btn'+(
+        (m==='wc'&&id==='btn-wc-y')||(m==='none'&&id==='btn-wc-n')||(m==='plants'&&id==='btn-wc-p')
+        ?' vis-btn-active':'');
+    });
+    draw();
+  }
+  document.getElementById('btn-wc-y').addEventListener('click',function(){setWcMode('wc');});
+  document.getElementById('btn-wc-n').addEventListener('click',function(){setWcMode('none');});
+  document.getElementById('btn-wc-p').addEventListener('click',function(){setWcMode('plants');});
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var pL=42,pR=12,pT=22,pB=52;
+    var gW=W-pL-pR,gH=H-pT-pB,maxV=80;
+
+    /* Grid */
+    [0,20,40,60,80].forEach(function(v){
+      var y=pT+gH-(v/maxV)*gH;
+      ctx.strokeStyle=v===40?'rgba(220,80,60,.22)':'rgba(235,240,236,.06)';
+      ctx.lineWidth=1;ctx.setLineDash(v===40?[3,4]:[]);
+      ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+gW,y);ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.font='300 10px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle=v===40?'rgba(220,80,60,.7)':'rgba(235,240,236,.54)';
+      ctx.fillText(v,2,y+3);
+    });
+    ctx.fillStyle='rgba(220,80,60,.4)';
+    var szLabel='stress zone';
+    ctx.fillText(szLabel,Math.min(pL+gW*.55,W-ctx.measureText(szLabel).width-8),pT+gH-(40/maxV)*gH-5);
+
+    /* Axes */
+    ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;ctx.setLineDash([]);
+    ctx.beginPath();ctx.moveTo(pL,pT);ctx.lineTo(pL,pT+gH);ctx.lineTo(pL+gW,pT+gH);ctx.stroke();
+    ctx.font='300 10px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(235,240,236,.54)';
+    ctx.fillText('NO₃ ppm',2,pT+8);
+    [1,4,8,12].forEach(function(w){ctx.fillText('W'+w,pL+(w/12)*gW-5,pT+gH+12);});
+
+    /* Lines — draw all three faintly, highlight selected */
+    var modes=[
+      {key:'wc',   col:'rgba(61,214,232,', fn:function(t){var d=t-Math.floor(t);return 8+d*20;}},
+      {key:'none', col:'rgba(220,100,60,', fn:function(t){return Math.min(t*5.5,maxV);}},
+      {key:'plants',col:'rgba(80,200,120,', fn:function(t){var d=t-Math.floor(t);return Math.max(2,4+d*8);}}
+    ];
+    modes.forEach(function(m){
+      var active=m.key===wcMode;
+      ctx.strokeStyle=m.col+(active?'0.8':'0.2')+')';
+      ctx.lineWidth=active?2:1;ctx.setLineDash([]);ctx.beginPath();
+      for(var i=0;i<=120;i++){
+        var t=i/10;
+        var val=m.fn(t);
+        var x=pL+(t/12)*gW;
+        var y=pT+gH-(val/maxV)*gH;
+        if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+      /* Label at end — anchored right of chart, clear of lines */
+      if(active){
+        var endVal=m.fn(12);
+        var endY=pT+gH-(Math.min(endVal,maxV)/maxV)*gH;
+        endY=Math.max(pT+10, Math.min(pT+gH-10, endY));
+        ctx.fillStyle=m.col+'0.85)';
+        ctx.font='300 10px DM Sans,system-ui,sans-serif';
+        ctx.textAlign='right';
+        ctx.fillText(Math.round(endVal)+' ppm',W-4,endY);
+        ctx.textAlign='left';
+      }
+    });
+
+    /* Caption — placed below chart area, clear of all lines */
+    var capText=wcMode==='wc'?'Weekly 15-25% changes keep nitrate stable.':
+                wcMode==='none'?'Without changes, nitrate rises into the stress range.':
+                'Plants + regular changes — the most effective combination.';
+    ctx.font='italic 300 12px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(235,240,236,.54)';
+    ctx.textAlign='center';
+    ctx.fillText(capText,W/2,H-8);
+    ctx.textAlign='left';
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+/* ── VISUAL 3: Behaviour signals slider ── */
+canvases[6]=function(){
+  stopAnim('cv-behaviour');
+  var c=resizeCanvas('cv-behaviour',380);if(!c)return;
+  var ctx=c.getContext('2d');
+  var W=c.width,H=c.height;
+  var selected=0;
+
+  var signals=[
+    {label:'Surface breathing',
+     meaning:'Fish gulping at the water surface is one of the clearest distress signals. It usually means dissolved oxygen is low — from overcrowding, overfeeding, poor surface agitation, or high ammonia affecting gill function.',
+     urgency:'high',icon:'🐟↑'},
+    {label:'Hiding more than usual',
+     meaning:'A fish that suddenly spends time hiding when it normally did not is often experiencing stress from poor water quality, aggression from tankmates, or the early stages of illness. It is worth investigating before other symptoms appear.',
+     urgency:'medium',icon:'👁️'},
+    {label:'Eating less eagerly',
+     meaning:'Loss of appetite is one of the earliest and most reliable signs that something is not right. Fish that are comfortable and healthy are almost always enthusiastic feeders. A fish that skips meals deserves attention.',
+     urgency:'medium',icon:'🥣'},
+    {label:'Colour looking faded',
+     meaning:'Fish often show their best colour when they are genuinely comfortable — the right temperature, good water quality, low stress. Fading can be gradual and easy to miss. Comparing to photographs taken weeks apart can be revealing.',
+     urgency:'low',icon:'🎨'},
+    {label:'Staying near the heater',
+     meaning:'Fish huddling near a heat source often indicates the tank is too cold, or that a temperature fluctuation has occurred. Check your heater is functioning and that readings are consistent throughout the day.',
+     urgency:'medium',icon:'🌡️'}
+  ];
+
+  var wrap=c.parentElement;
+  var existing=wrap.querySelector('.vis-ctrl');if(existing)existing.remove();
+  var ctrl=document.createElement('div');ctrl.className='vis-ctrl';
+  ctrl.innerHTML='<div class="vc-label"><span id="beh-label">'+signals[0].label+'</span></div><input type="range" min="0" max="4" value="0" step="1" class="vis-slider" id="beh-slider"><div class="vc-hint">slide to explore behaviour signals</div>';
+  wrap.appendChild(ctrl);
+
+  var slider=document.getElementById('beh-slider');
+  var lbl=document.getElementById('beh-label');
+  slider.addEventListener('input',function(){
+    selected=parseInt(this.value);
+    lbl.textContent=signals[selected].label;
+    draw();
+  });
+
+  var urgencyColor={'high':'rgba(220,100,60,.8)','medium':'rgba(200,160,40,.75)','low':'rgba(80,200,120,.7)'};
+  var urgencyLabel={'high':'Respond soon','medium':'Worth checking','low':'Keep an eye on it'};
+
+  function drawFish(x,y,facingLeft,alpha,sick,surface,hiding){
+    ctx.save();ctx.globalAlpha=alpha;
+    if(sick)ctx.filter='sepia(0.55) brightness(0.7)';
+    var col='rgba(139,189,210,1)';
+    ctx.fillStyle=col;
+    ctx.beginPath();ctx.ellipse(x,y,11,7,0,0,Math.PI*2);ctx.fill();
+    var tx=facingLeft?x+11:x-11;
+    ctx.beginPath();
+    if(facingLeft){ctx.moveTo(x+7,y);ctx.lineTo(tx+8,y-5);ctx.lineTo(tx+8,y+5);}
+    else{ctx.moveTo(x-7,y);ctx.lineTo(tx-8,y-5);ctx.lineTo(tx-8,y+5);}
+    ctx.closePath();ctx.globalAlpha=alpha*.7;ctx.fill();
+    ctx.globalAlpha=alpha;
+    ctx.fillStyle='rgba(235,240,236,.92)';
+    var ex=facingLeft?x-6:x+6;
+    ctx.beginPath();ctx.arc(ex,y-2,1.8,0,Math.PI*2);ctx.fill();
+    if(sick)ctx.filter='none';
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var grd=ctx.createLinearGradient(0,0,0,H);
+    grd.addColorStop(0,'rgba(4,18,28,.97)');grd.addColorStop(1,'rgba(2,10,18,.99)');
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    var s=signals[selected];
+
+    /* Fish illustration — position and state changes per signal */
+    var tankH=H*.38, tankTop=H*.04;
+    ctx.fillStyle='rgba(235,240,236,.05)';ctx.fillRect(12,tankTop,W-24,tankH);
+    ctx.fillStyle='rgba(50,35,15,.6)';ctx.fillRect(12,tankTop+tankH,W-24,6);
+
+    if(selected===0){ /* Surface breathing — fish at surface */
+      ctx.font='300 9px DM Sans,system-ui,sans-serif';
+      ctx.fillStyle='rgba(61,214,232,.48)';ctx.fillText('surface',14,tankTop+8);
+      drawFish(W*.35,tankTop+10,false,0.85,true,true,false);
+      drawFish(W*.62,tankTop+12,true,0.75,true,true,false);
+      /* Ripples at surface */
+      [W*.3,W*.55,W*.75].forEach(function(rx){
+        ctx.strokeStyle='rgba(61,214,232,.32)';ctx.lineWidth=.8;
+        ctx.beginPath();ctx.ellipse(rx,tankTop+2,6,2,0,0,Math.PI*2);ctx.stroke();
+      });
+    } else if(selected===1){ /* Hiding — fish in corner */
+      drawFish(W*.12,tankTop+tankH*.85,false,0.6,false,false,true);
+      drawFish(W*.82,tankTop+tankH*.78,true,0.5,false,false,true);
+      /* Shadow corners */
+      ctx.fillStyle='rgba(0,0,0,.25)';ctx.fillRect(12,tankTop,W*.25,tankH);
+      ctx.fillStyle='rgba(0,0,0,.2)';ctx.fillRect(W*.75,tankTop,W*.25-12,tankH);
+    } else if(selected===2){ /* Not eating eagerly */
+      /* Food particles */
+      for(var f=0;f<5;f++){
+        var fx=W*(.2+f*.14),fy=tankTop+f*8+4;
+        ctx.beginPath();ctx.arc(fx,fy,1.5,0,Math.PI*2);
+        ctx.fillStyle='rgba(180,140,60,.5)';ctx.fill();
+      }
+      drawFish(W*.5,tankTop+tankH*.5,false,0.75,false,false,false);
+      /* Fish looking away from food */
+      drawFish(W*.3,tankTop+tankH*.65,true,0.65,false,false,false);
+    } else if(selected===3){ /* Faded colour */
+      drawFish(W*.35,tankTop+tankH*.5,false,0.45,true,false,false);
+      drawFish(W*.62,tankTop+tankH*.38,true,0.5,true,false,false);
+      /* Colour comparison hint */
+      ctx.font='italic 300 9px Cormorant Garamond,serif';
+      ctx.fillStyle='rgba(235,240,236,.34)';
+      ctx.fillText('colour faded',W*.55,tankTop+tankH*.62);
+    } else { /* Near heater */
+      /* Heater on right side */
+      ctx.strokeStyle='rgba(220,100,60,.4)';ctx.lineWidth=2;
+      ctx.beginPath();ctx.moveTo(W-20,tankTop+8);ctx.lineTo(W-20,tankTop+tankH-8);ctx.stroke();
+      ctx.fillStyle='rgba(220,100,60,.35)';
+      ctx.beginPath();ctx.arc(W-20,tankTop+tankH*.5,8,0,Math.PI*2);ctx.fill();
+      /* Fish clustering near heater */
+      drawFish(W*.62,tankTop+tankH*.45,false,0.8,false,false,false);
+      drawFish(W*.72,tankTop+tankH*.6,true,0.7,false,false,false);
+    }
+
+    /* s already declared above */
+    /* Icon + urgency badge — same row, icon left, badge right */
+    ctx.font='20px DM Sans,system-ui,sans-serif';
+    ctx.textAlign='left';
+    ctx.fillText(s.icon,12,H*.49);
+
+    /* Urgency badge — pill style, safely anchored to right */
+    var uc=urgencyColor[s.urgency];
+    var uLabel=urgencyLabel[s.urgency];
+    ctx.font='400 10px DM Sans,system-ui,sans-serif';
+    var uW=ctx.measureText(uLabel).width;
+    var uX=W-uW-14;
+    /* Pill background */
+    ctx.fillStyle='rgba(0,0,0,.3)';
+    ctx.beginPath();
+    var badgeY=H*.44-8;
+    ctx.roundRect ? ctx.roundRect(uX-6,badgeY,uW+12,16,8) : ctx.rect(uX-6,badgeY,uW+12,16);
+    ctx.fill();
+    /* Label */
+    ctx.fillStyle=uc;
+    ctx.fillText(uLabel,uX,H*.44+4);
+    ctx.textAlign='left';
+
+    /* Meaning — word wrapped */
+    ctx.font='italic 300 13px Cormorant Garamond,serif';
+    ctx.fillStyle='rgba(255,255,255,.68)';
+    var words=s.meaning.split(' ');
+    var line='';var y=H*.54;var maxW=W-22;var maxY=H-26;
+    words.forEach(function(w){
+      var test=line+(line?' ':'')+w;
+      if(ctx.measureText(test).width>maxW&&line){
+        if(y+19<=maxY){ctx.fillText(line,12,y);line=w;y+=19;}
+        else{ctx.fillText(line+'…',12,y);line='';y=maxY+1;}
+      } else line=test;
+    });
+    if(line&&y<=maxY)ctx.fillText(line,12,y);
+
+    /* Divider */
+    ctx.strokeStyle='rgba(235,240,236,.06)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(12,H-26);ctx.lineTo(W-12,H-26);ctx.stroke();
+
+    /* Footer note */
+    ctx.font='300 11px DM Sans,system-ui,sans-serif';
+    ctx.fillStyle='rgba(235,240,236,.62)';
+    var footerTxt='Signal '+(selected+1)+' of '+signals.length+' · '+s.label;
+    if(ctx.measureText(footerTxt).width>W-24)footerTxt='Signal '+(selected+1)+' / '+signals.length;
+    ctx.fillText(footerTxt,12,H-10);
+  }
+  draw();
+  window.addEventListener('resize',function(){c.width=c.parentElement.offsetWidth;W=c.width;draw();});
+};
+
+</script>
+
+<!-- ── BOTTOM NAV (PWA) ── -->
+<nav class="bnav" id="bnav" aria-label="Main navigation">
+  <a href="/" class="bnav-item" aria-label="Home">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 9.5L11 3l8 6.5V19a1 1 0 01-1 1H14v-5h-4v5H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="/reading" class="bnav-item active" aria-current="page" aria-label="Reading">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="4" y="3" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="7.5" y1="8" x2="14.5" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7.5" y1="11.5" x2="14.5" y2="11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+    <span>Reading</span>
+  </a>
+  <a href="/tools" class="bnav-item" aria-label="Tools">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M8 3v5.5L4.5 15A2 2 0 006.4 18h9.2a2 2 0 001.9-3L14 8.5V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="7" y1="3" x2="15" y2="3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="9.5" cy="13.5" r="1" fill="currentColor" opacity=".6"/><circle cx="13" cy="15" r=".8" fill="currentColor" opacity=".45"/></svg>
+    <span>Tools</span>
+  </a>
+  <a href="/journal" class="bnav-item" aria-label="Keeper's Log">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="2.5" y="7" width="17" height="12" rx="2" stroke="currentColor" stroke-width="1.4" fill="none"/><line x1="2.5" y1="11" x2="19.5" y2="11" stroke="currentColor" stroke-width="1" opacity=".3"/><path d="M6 9.5 C7 8 8 8 9 9.5 C10 11 11 11 12 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".65"/><line x1="15" y1="13.5" x2="15" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/><line x1="17" y1="14.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".45"/><line x1="7" y1="3" x2="7" y2="7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".5"/><line x1="15" y1="3" x2="15" y2="7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".5"/></svg>
+    <span>Log</span>
+  </a>
+</nav>
+<button id="rh-fab" class="rh-fab" aria-label="Chat with Rhyssa" aria-expanded="false">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+    <circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="1.4" fill="none"/>
+    <circle cx="11" cy="11" r="3.5" stroke="currentColor" stroke-width="1.1" fill="none" opacity=".55"/>
+    <circle cx="11" cy="11" r="1.2" fill="currentColor" opacity=".8"/>
+    <line x1="11" y1="3.5" x2="11" y2="1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+    <line x1="3.5" y1="11" x2="1.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+    <line x1="20.5" y1="11" x2="18.5" y2="11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+  </svg>
+  <span class="rh-fab-lbl">Rhyssa</span>
+</button>
+<div id="rh-backdrop" class="rh-backdrop"></div>
+<div id="rh-sheet" class="rh-sheet" role="dialog" aria-label="Chat with Rhyssa" aria-modal="true" aria-hidden="true">
+  <div class="rh-sheet-head">
+    <button class="rh-sheet-back" id="rh-sheet-cls" aria-label="Close chat">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M6 9L11 14L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="rh-sheet-title-group">
+      <span class="rh-sheet-name">Rhyssa</span>
+      <span class="rh-sheet-sub">Aquarium Companion</span>
+    </div>
+    <button class="rh-sheet-back" id="rh-sheet-clear" aria-label="Reset conversation" title="Reset conversation">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.5 4.5l1 10h9l1-10" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="4.5" x2="16" y2="4.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><path d="M6.5 4.5V3.5h5v1" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="rh-sheet-thread" id="rh-sheet-thread" role="log" aria-live="polite" aria-label="Conversation with Rhyssa">
+    <div class="rh-sheet-welcome" id="rh-sheet-welcome">
+      <svg width="36" height="36" viewBox="0 0 22 22" fill="none" aria-hidden="true" style="opacity:.8"><circle cx="11" cy="11" r="7.5" stroke="rgba(61,214,232,.55)" stroke-width="1.4" fill="none"/><circle cx="11" cy="11" r="3.5" stroke="rgba(61,214,232,.3)" stroke-width="1.1" fill="none"/><circle cx="11" cy="11" r="1.2" fill="rgba(61,214,232,.75)"/><line x1="11" y1="3.5" x2="11" y2="1.5" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/><line x1="3.5" y1="11" x2="1.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/><line x1="20.5" y1="11" x2="18.5" y2="11" stroke="rgba(61,214,232,.3)" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <p class="rh-sheet-welcome-txt">Tell me what you see — water, behaviour, anything that changed — and we can read it together before we fix anything.</p>
+      <p style="font-size:.5rem;color:rgba(255,255,255,.22);text-align:center;margin:.5rem 0 0;line-height:1.6">Same Rhyssa — also on <a href="https://chatgpt.com/g/g-6a09401c8ef48191b18deb53565a7fe1-rhyssa-aquarium-companion" target="_blank" rel="noopener" style="color:rgba(61,214,232,.4);text-decoration:none">ChatGPT ↗</a> if you prefer.</p>
+    </div>
+  </div>
+  <div class="rh-sheet-foot">
+    <form class="rh-sheet-form" id="rh-sheet-form" autocomplete="off">
+      <textarea id="rh-sheet-inp" class="rh-sheet-inp" placeholder="Ask about your tank…" rows="1" maxlength="1200" aria-label="Message to Rhyssa"></textarea>
+      <button type="submit" class="rh-sheet-send" id="rh-sheet-send" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15 9H3M15 9L9.5 4M15 9L9.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+    <p class="rh-sheet-note">AI can be wrong — for fish emergencies, consult a specialist</p>
+  </div>
+</div>
+<script src="/js/content-trust.js?v=25"></script>
+<script src="/js/ar-page.js?v=25" defer></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
+</script>
+<script src="/js/rhyssa-fab-ext.js?v=25" defer></script>
+</body>
+</html>
