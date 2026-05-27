@@ -93,7 +93,7 @@ function buildJsonLd(t, lang, slug, dates) {
     'description': t.head.description,
     'url': `${BASE_URL}/${lang}/articles/${slug}`,
     'inLanguage': lang,
-    'image': `${BASE_URL}/og/articles/${slug}.png`,
+    'image': `${BASE_URL}/og/articles/${slug}-${lang}.png`,
     'author': { '@type': 'Organization', 'name': 'Aquatic Rhythm' },
     'publisher': { '@type': 'Organization', 'name': 'Aquatic Rhythm', 'url': BASE_URL }
   };
@@ -139,7 +139,7 @@ function buildArticle(slug, lang, t) {
     (_, a, b) => `${a}${t.head.ogDescription}${b}`);
 
   h = replaceOnce(h, /(<meta property="og:image" content=")[^"]*(")/,
-    (_, a, b) => `${a}${BASE_URL}/og/articles/${slug}.png${b}`);
+    (_, a, b) => `${a}${BASE_URL}/og/articles/${slug}-${lang}.png${b}`);
 
   // ── 3. Canonical + OG URL ─────────────────────────────────────────────────
   const localUrl = `${BASE_URL}/${lang}/articles/${slug}`;
