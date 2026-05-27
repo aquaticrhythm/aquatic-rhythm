@@ -27,3 +27,6 @@ coverage/
 # Cloudflare Worker local artifacts
 worker/.wrangler/
 worker/.dev.vars
+
+# Font cache for OG image generation
+.font-cache/

@@ -17,9 +17,15 @@
     "i18n:extract": "node scripts/extract-i18n.mjs",
     "i18n:build": "node scripts/build-i18n.mjs",
     "reading:build": "node scripts/build-reading-index.mjs",
-    "sitemap:build": "node scripts/update-sitemap.mjs"
+    "sitemap:build": "node scripts/update-sitemap.mjs",
+    "og:build": "node scripts/gen-og-images.mjs --update-html"
   },
   "devDependencies": {
-    "eslint": "^9.0.0"
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/dm-sans": "^5.2.8",
+    "@resvg/resvg-js": "^2.6.2",
+    "eslint": "^9.0.0",
+    "satori": "^0.26.0",
+    "wawoff2": "^2.0.1"
   }
 }
