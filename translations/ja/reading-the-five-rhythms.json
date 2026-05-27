@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "slug": "reading-the-five-rhythms",
+    "lang": "ja",
+    "sourceFile": "articles/reading-the-five-rhythms.html",
+    "status": "ready"
+  },
+  "head": {
+    "title": "5つのリズムを読む — Aquatic Rhythm",
+    "description": "ARAの5つの生態学的リズム——ウォーターリズム、生体リズム、環境リズム、家畜リズム、キーパーリズム——は、ARAフレームワークの完全なリファレンスに統合されました。",
+    "ogTitle": "",
+    "ogDescription": ""
+  },
+  "intro": {
+    "eyebrow": "",
+    "titleHtml": "",
+    "subtitle": "",
+    "texts": [],
+    "metaModules": "",
+    "metaTime": "",
+    "metaLevel": "",
+    "cta": "読み始める"
+  },
+  "modules": [],
+  "relatedLinks": [],
+  "footer": {
+    "allArticles": "← 記事一覧",
+    "araLink": "Aquatic Rhythm Alignment"
+  }
+}
