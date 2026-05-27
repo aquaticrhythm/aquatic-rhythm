@@ -1,124 +1,128 @@
 {
-  "_meta": {
-    "slug": "low-tech-planted-tank",
-    "lang": "ms",
-    "sourceFile": "articles/low-tech-planted-tank.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Cara Mulakan Planted Tank Low-Tech — Aquatic Rhythm",
-    "description": "Low-tech bukan pilihan bajet. Ia adalah pilihan yang selari untuk penjaga yang ritma penjagaannya bersifat manual — sama seperti high-tech adalah pilihan yang selari untuk penjaga yang telah membina infrastruktur teknikal. Panduan ini menerangkan apa yang itu bermakna dan cara memulakannya.",
-    "ogTitle": "Cara Mulakan Planted Tank Low-Tech",
-    "ogDescription": "Low-tech bukan kompromi. Ia adalah planted tank yang sepadan dengan kapasiti manual penjaga — sama seperti high-tech sepadan dengan kapasiti teknikal penjaga yang telah membinanya."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Praktikal",
-    "titleHtml": "Cara Mulakan<br><em>Planted Tank Low-Tech</em>",
-    "subtitle": "Low-tech bukan pilihan bajet. Ia adalah pilihan yang selari untuk penjaga yang ritma penjagaannya bersifat manual.",
-    "texts": [
-      "Planted tank low-tech sering digambarkan sebagai kompromi — sesuatu yang anda naik taraf apabila anda sudah bersedia untuk CO2 yang diinjeksikan dan pencahayaan output tinggi. Gambaran itu salah.",
-      "Tank low-tech adalah tank yang keperluannya sepadan dengan kapasiti sebenar penjaga. Panduan ini menerangkan apa itu bermakna secara ekologi, pokok apa yang sejajar dengan Keeper Rhythm yang jujur, cara cahaya berfungsi sebagai Environmental Rhythm, dan kenapa bermula dengan kecil adalah laluan yang paling selari.",
-      "Sebuah planted tank yang tumbuh perlahan dan sihat selama bertahun-tahun memerlukan lebih sedikit dari penjaga berbanding planted tank yang kelihatan sempurna selama tiga bulan sebelum merosot kerana ia diuruskan tanpa infrastruktur teknikal yang diperlukan."
+    "_meta": {
+        "slug": "low-tech-planted-tank",
+        "lang": "ms",
+        "sourceFile": "articles/low-tech-planted-tank.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Cara Mulakan Planted Tank Low-Tech — Aquatic Rhythm",
+        "description": "Low-tech bukan pilihan bajet. Ia adalah pilihan yang selari untuk penjaga yang ritma penjagaannya bersifat manual — sama seperti high-tech adalah pilihan yang selari untuk penjaga yang telah membina infrastruktur teknikal. Panduan ini menerangkan apa yang itu bermakna dan cara memulakannya.",
+        "ogTitle": "Cara Mulakan Planted Tank Low-Tech",
+        "ogDescription": "Low-tech bukan kompromi. Ia adalah planted tank yang sepadan dengan kapasiti manual penjaga — sama seperti high-tech sepadan dengan kapasiti teknikal penjaga yang telah membinanya."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Praktikal",
+        "titleHtml": "Cara Mulakan<br><em>Planted Tank Low-Tech</em>",
+        "subtitle": "Low-tech bukan pilihan bajet. Ia adalah pilihan yang selari untuk penjaga yang ritma penjagaannya bersifat manual.",
+        "texts": [
+            "Planted tank low-tech sering digambarkan sebagai kompromi — sesuatu yang anda naik taraf apabila anda sudah bersedia untuk CO2 yang diinjeksikan dan pencahayaan output tinggi. Gambaran itu salah.",
+            "Tank low-tech adalah tank yang keperluannya sepadan dengan kapasiti sebenar penjaga. Panduan ini menerangkan apa itu bermakna secara ekologi, pokok apa yang sejajar dengan Keeper Rhythm yang jujur, cara cahaya berfungsi sebagai Environmental Rhythm, dan kenapa bermula dengan kecil adalah laluan yang paling selari.",
+            "Sebuah planted tank yang tumbuh perlahan dan sihat selama bertahun-tahun memerlukan lebih sedikit dari penjaga berbanding planted tank yang kelihatan sempurna selama tiga bulan sebelum merosot kerana ia diuruskan tanpa infrastruktur teknikal yang diperlukan."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~8 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Apa yang low-tech sebenarnya bermakna",
+            "titleHtml": "Low-tech adalah tentang<br><em>penjajaran kapasiti, bukan bajet.</em>",
+            "body": [
+                "Kebanyakan peminat menganggap low-tech sebagai pilihan bajet: tiada injeksi CO2, lampu lebih murah, substrat lebih mudah. Dalam istilah ARA, low-tech adalah sesuatu yang lebih bermakna — ia adalah planted tank yang keperluannya jatuh dalam kapasiti sebenar penjaga.",
+                "Planted tank high-tech (CO2 bertekanan, pencahayaan output tinggi, dosing harian) memerlukan jenis kapasiti yang berbeza — bukan semestinya lebih banyak masa, tetapi infrastruktur teknikal: pengawal CO2, pam dosing, pemantauan parameter yang difahami dan diselenggara dengan baik. Penjaga yang telah membina infrastruktur teknikal itu secara genuinly berada dalam penjajaran yang jujur dengan setup high-tech mereka, sama seperti penjaga low-tech berada dalam penjajaran dengan setup mereka yang lebih mudah.",
+                "Planted tank low-tech beroperasi pada kadar yang lebih perlahan dan lebih pemaaf. Tumbuhan tumbuh perlahan, tapi ia tumbuh. Nutrien dari substrat dan sisa ikan biasanya mencukupi untuk membekalkan tumbuhan yang terpilih dengan baik. Ketidakkonsistenan penjagaan kecil — satu water change yang terlepas, beberapa hari tanpa pemerhatian — tidak mencetuskan gangguan yang ketara.",
+                "Perbezaan asas: planted tank low-tech adalah pilihan yang betul untuk penjaga yang ritma penjagaannya bersifat manual — pemerhatian langsung, penyelenggaraan tangan. Planted tank high-tech adalah pilihan yang sama-sama sah untuk penjaga yang telah membina kapasiti teknikal untuk menampungnya. Tiada satu pun yang lebih tinggi atau lebih rendah — ia soal penjajaran antara keperluan sistem dan kapasiti sebenar penjaga."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Capacity before Ambition",
+            "hintText": [
+                "Dalam ARA, \"Capacity before Ambition\" bermakna memahami apa yang anda sebenarnya boleh kekalkan sebelum memilih apa yang hendak dibina. Planted tank high-tech yang diuruskan tanpa infrastruktur teknikal yang diperlukan hampir pasti akan merosot. Planted tank low-tech yang dijaga secara konsisten — walaupun tidak sempurna — hampir pasti akan berjaya. Titik permulaan yang selaras adalah jujur tentang masa, perhatian, kapasiti teknikal yang anda miliki, dan apa yang berlaku apabila kehidupan menjadi sibuk."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Pokok yang sepadan dengan ritma anda"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Pokok yang sepadan dengan ritma anda",
+            "titleHtml": "Pilih pokok berdasarkan<br><em>apa yang akan masih hidup dalam tiga bulan.</em>",
+            "body": [
+                "Tidak semua pokok akuarium mempunyai keperluan yang sama. Sesetengah memerlukan CO2, cahaya tinggi, dan keseimbangan nutrien yang tepat untuk melakukan apa-apa. Yang lain telah berkembang dalam persekitaran cahaya rendah yang berfluktuasi dan akan tumbuh dalam hampir apa-apa yang stabil. Kuncinya adalah menyesuaikan pilihan pokok dengan Keeper Rhythm — bukan dengan aspirasi aquascape.",
+                "<strong>Pokok rizoma (Anubias, Java Fern, Bolbitis).</strong> Ini adalah pokok paling tahan dalam akuarium. Terikat pada kayu atau batu (bukan ditanam dalam substrat), mereka tumbuh perlahan dan toleran terhadap cahaya rendah, keperluan nutrien yang berubah-ubah, dan pelbagai keadaan air. Daun hidup bertahun-tahun. Ini adalah asas planted tank low-tech yang paling boleh dipercayai.",
+                "<strong>Lumut (Java Moss, Christmas Moss, Fissidens).</strong> Tumbuh di hampir mana-mana keadaan, melekat pada permukaan keras, dan menyediakan habitat semula jadi yang sangat baik untuk udang dan ikan kecil. Mudah diselenggara — hanya dipotong bila tumbuh terlalu besar.",
+                "<strong>Vallisneria.</strong> Pokok latar belakang yang berkembang dalam pelbagai keadaan air, membiak dengan pesat melalui stolon, dan tidak memerlukan CO2 atau nutrien tambahan dalam kebanyakan setup. Sesuai untuk tank yang lebih besar.",
+                "<strong>Cryptocoryne.</strong> Perlahan untuk ditubuhkan (jangka 'melti crypt' di minggu awal), tapi apabila stabil, mereka sangat tahan dan boleh bertahan dalam cahaya rendah dan keperluan nutrien yang berbeza-beza. Elakkan memindahkan mereka selepas ditanam.",
+                "Pokok untuk dielakkan dalam setup low-tech yang diuruskan dengan sederhana: pokok karpet (HC Cuba, Glossostigma, kebanyakan Hemianthus) — ini memerlukan CO2 tinggi dan cahaya kuat untuk tumbuh sebagai karpet; kebanyakan stem plant yang menuntut (Rotala rotundifolia boleh dilakukan low-tech, tapi banyak varieti lain memerlukan CO2); pokok bulb tropika yang memerlukan musim dormansi."
+            ],
+            "pullQuote": "Soalannya bukan pokok mana yang cantik. Ia adalah pokok mana yang masih akan hidup dalam tiga bulan dengan penjagaan yang sebenarnya akan anda berikan.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Cahaya sebagai Environmental Rhythm"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Cahaya sebagai Environmental Rhythm",
+            "titleHtml": "Konsistensi cahaya<br><em>lebih penting dari kuantiti cahaya.</em>",
+            "body": [
+                "Dalam planted tank, cahaya adalah pemacu utama Environmental Rhythm. Soalan yang kebanyakan penjaga tanya adalah 'berapa lumen?' atau 'jenama LED mana?' Dalam ARA, soalan yang lebih penting adalah: betapa konsisten fotoperiod?",
+                "Pokok berkembang dengan kitaran cahaya harian yang boleh diramalkan. Ketidakkonsistenan — menghidupkan lampu pada masa yang berbeza, melangkau hari, atau meninggalkan lampu hidup sepanjang hari kerana terlupa untuk matikannya — mengganggu proses metabolik yang bergantung pada isyarat cahaya yang stabil. Alga, sebaliknya, adalah oportunistik dan memanfaatkan ketidakkonsistenan.",
+                "Satu timer untuk lampu tank adalah pembelian paling berharga yang anda boleh buat untuk planted tank. Ia menyelesaikan masalah ketidakkonsistenan tanpa sebarang usaha berterusan, dan ia adalah cara paling mudah untuk mengurangkan pertumbuhan alga. Fotoperiod 7–8 jam, ditetapkan pada masa yang sama setiap hari, adalah permulaan yang baik untuk kebanyakan setup low-tech.",
+                "Bagi intensiti: cukup cahaya untuk pokok anda, tapi bukan terlalu banyak untuk memacu pertumbuhan alga yang tidak dapat diuruskan. Untuk kebanyakan pokok low-tech yang disebutkan di atas, lampu yang menghasilkan 20–40 PAR (umol/m²/s) pada paras substrat adalah mencukupi. Jika anda tidak mempunyai meter PAR, 6–8 jam dari lampu planted LED standard yang diperingkat untuk tank bersaiz anda biasanya berfungsi sebagai titik permulaan."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Environmental Rhythm",
+            "hintText": [
+                "Dalam ARA, cahaya adalah komponen Environmental Rhythm — keadaan fizikal berterusan yang tank kekalkan. Pokok membaca Environmental Rhythm secara berterusan. Konsistensi dalam komponen itu — sama ada ia cahaya, suhu, atau aliran — lebih bermakna untuk pertumbuhan pokok dari keoptimuman mana-mana bacaan tunggal."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Mulakan dengan kecil"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Mulakan dengan kecil",
+            "titleHtml": "Corak drift paling biasa:<br><em>terlalu banyak pemboleh ubah serentak.</em>",
+            "body": [
+                "Corak drift yang paling biasa dalam planted tank low-tech adalah bermula dengan terlalu banyak pemboleh ubah serentak: substrat baru, pelbagai spesies pokok, rejimen baja baru, jadual cahaya baru, ikan baru, semua dalam minggu yang sama. Bila masalah muncul — dan ia akan muncul — mustahil untuk tahu pemboleh ubah mana yang menyebabkannya.",
+                "Pendekatan yang selari adalah bermula dengan sedikit. Tiga atau empat jenis pokok yang terbukti untuk setup anda. Satu substrat. Satu rejimen pencahayaan yang anda boleh kekalkan dengan konsisten. Biarkan ia berjalan selama sebulan sebelum menambah apa-apa. Dari baseline yang stabil itu, sebarang perubahan yang anda buat menghasilkan maklumat yang boleh dibaca.",
+                "Drift yang paling biasa yang anda akan hadapi: pokok yang tumbuh terlalu besar untuk ruang mereka (potong secara berkala), lumut yang merebak melebihi apa yang anda inginkan (kawal dengan pengarusan secara manual dan kurangkan nutrien), dan pokok yang akhirnya mati walaupun jangkaan (ini berlaku — gantikan sahaja, jangan buat kesimpulan bahawa keseluruhan sistem gagal).",
+                "Planted tank low-tech yang tumbuh perlahan dan stabil selama bertahun-tahun adalah kejayaan. Ia bukan menunggu untuk menjadi sesuatu yang lebih baik. Ia sudah berkembang maju pada kadar yang sepadan dengan sistem yang ia hidup di dalamnya — dan dengan keperluan penjaga yang menjaganya."
+            ],
+            "pullQuote": "Planted tank yang stabil dan tumbuh perlahan bukan gagal. Ia berjaya pada kadar yang sepadan dengan sistem yang ia hidup di dalamnya.",
+            "hintLabel": "ARA · Infrastruktur Teknikal",
+            "hintText": [
+                "ARA mengenal pasti infrastruktur teknikal sebagai dimensi kapasiti keempat: sejauh mana automasi, sistem pemantauan, dan reka bentuk peralatan dapat menjalankan fungsi penjagaan rutin secara dipercayai. Peralatan yang difahami dan diselenggara dengan baik benar-benar meluaskan kapasiti penjaga. Namun, automasi yang dipasang tanpa pemahaman sebenar penjaga menjadi sumber ketidakselarasan — apabila sistem gagal secara senyap atau menyembunyikan isyarat, infrastruktur yang sepatutnya menyokong sistem menghalang penjaga daripada maklumat yang mereka perlukan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel3": "ARA · Infrastruktur Teknikal",
+            "hintText3": [
+                "ARA mengenal pasti infrastruktur teknikal sebagai dimensi kapasiti keempat: sejauh mana automasi, sistem pemantauan, dan reka bentuk peralatan dapat melaksanakan fungsi penjagaan rutin secara boleh dipercayai. Peralatan yang difahami dengan baik dan diselenggara dengan betul memang meluaskan kapasiti penjaga. Namun, automasi yang dipasang tanpa pemahaman penjaga yang tulen menjadi sumber ketidakselarasan — apabila sistem gagal secara senyap atau menutup isyarat, infrastruktur yang sepatutnya menyokong sistem malah menghalang penjaga daripada maklumat yang mereka perlukan."
+            ]
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~8 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Apa yang low-tech sebenarnya bermakna",
-      "titleHtml": "Low-tech adalah tentang<br><em>penjajaran kapasiti, bukan bajet.</em>",
-      "body": [
-        "Kebanyakan peminat menganggap low-tech sebagai pilihan bajet: tiada injeksi CO2, lampu lebih murah, substrat lebih mudah. Dalam istilah ARA, low-tech adalah sesuatu yang lebih bermakna — ia adalah planted tank yang keperluannya jatuh dalam kapasiti sebenar penjaga.",
-        "Planted tank high-tech (CO2 bertekanan, pencahayaan output tinggi, dosing harian) memerlukan jenis kapasiti yang berbeza — bukan semestinya lebih banyak masa, tetapi infrastruktur teknikal: pengawal CO2, pam dosing, pemantauan parameter yang difahami dan diselenggara dengan baik. Penjaga yang telah membina infrastruktur teknikal itu secara genuinly berada dalam penjajaran yang jujur dengan setup high-tech mereka, sama seperti penjaga low-tech berada dalam penjajaran dengan setup mereka yang lebih mudah.",
-        "Planted tank low-tech beroperasi pada kadar yang lebih perlahan dan lebih pemaaf. Tumbuhan tumbuh perlahan, tapi ia tumbuh. Nutrien dari substrat dan sisa ikan biasanya mencukupi untuk membekalkan tumbuhan yang terpilih dengan baik. Ketidakkonsistenan penjagaan kecil — satu water change yang terlepas, beberapa hari tanpa pemerhatian — tidak mencetuskan gangguan yang ketara.",
-        "Perbezaan asas: planted tank low-tech adalah pilihan yang betul untuk penjaga yang ritma penjagaannya bersifat manual — pemerhatian langsung, penyelenggaraan tangan. Planted tank high-tech adalah pilihan yang sama-sama sah untuk penjaga yang telah membina kapasiti teknikal untuk menampungnya. Tiada satu pun yang lebih tinggi atau lebih rendah — ia soal penjajaran antara keperluan sistem dan kapasiti sebenar penjaga."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Capacity before Ambition",
-      "hintText": [
-        "Dalam ARA, \"Capacity before Ambition\" bermakna memahami apa yang anda sebenarnya boleh kekalkan sebelum memilih apa yang hendak dibina. Planted tank high-tech yang diuruskan tanpa infrastruktur teknikal yang diperlukan hampir pasti akan merosot. Planted tank low-tech yang dijaga secara konsisten — walaupun tidak sempurna — hampir pasti akan berjaya. Titik permulaan yang selaras adalah jujur tentang masa, perhatian, kapasiti teknikal yang anda miliki, dan apa yang berlaku apabila kehidupan menjadi sibuk."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Pokok yang sepadan dengan ritma anda"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Pokok yang sepadan dengan ritma anda",
-      "titleHtml": "Pilih pokok berdasarkan<br><em>apa yang akan masih hidup dalam tiga bulan.</em>",
-      "body": [
-        "Tidak semua pokok akuarium mempunyai keperluan yang sama. Sesetengah memerlukan CO2, cahaya tinggi, dan keseimbangan nutrien yang tepat untuk melakukan apa-apa. Yang lain telah berkembang dalam persekitaran cahaya rendah yang berfluktuasi dan akan tumbuh dalam hampir apa-apa yang stabil. Kuncinya adalah menyesuaikan pilihan pokok dengan Keeper Rhythm — bukan dengan aspirasi aquascape.",
-        "<strong>Pokok rizoma (Anubias, Java Fern, Bolbitis).</strong> Ini adalah pokok paling tahan dalam akuarium. Terikat pada kayu atau batu (bukan ditanam dalam substrat), mereka tumbuh perlahan dan toleran terhadap cahaya rendah, keperluan nutrien yang berubah-ubah, dan pelbagai keadaan air. Daun hidup bertahun-tahun. Ini adalah asas planted tank low-tech yang paling boleh dipercayai.",
-        "<strong>Lumut (Java Moss, Christmas Moss, Fissidens).</strong> Tumbuh di hampir mana-mana keadaan, melekat pada permukaan keras, dan menyediakan habitat semula jadi yang sangat baik untuk udang dan ikan kecil. Mudah diselenggara — hanya dipotong bila tumbuh terlalu besar.",
-        "<strong>Vallisneria.</strong> Pokok latar belakang yang berkembang dalam pelbagai keadaan air, membiak dengan pesat melalui stolon, dan tidak memerlukan CO2 atau nutrien tambahan dalam kebanyakan setup. Sesuai untuk tank yang lebih besar.",
-        "<strong>Cryptocoryne.</strong> Perlahan untuk ditubuhkan (jangka 'melti crypt' di minggu awal), tapi apabila stabil, mereka sangat tahan dan boleh bertahan dalam cahaya rendah dan keperluan nutrien yang berbeza-beza. Elakkan memindahkan mereka selepas ditanam.",
-        "Pokok untuk dielakkan dalam setup low-tech yang diuruskan dengan sederhana: pokok karpet (HC Cuba, Glossostigma, kebanyakan Hemianthus) — ini memerlukan CO2 tinggi dan cahaya kuat untuk tumbuh sebagai karpet; kebanyakan stem plant yang menuntut (Rotala rotundifolia boleh dilakukan low-tech, tapi banyak varieti lain memerlukan CO2); pokok bulb tropika yang memerlukan musim dormansi."
-      ],
-      "pullQuote": "Soalannya bukan pokok mana yang cantik. Ia adalah pokok mana yang masih akan hidup dalam tiga bulan dengan penjagaan yang sebenarnya akan anda berikan.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Cahaya sebagai Environmental Rhythm"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Cahaya sebagai Environmental Rhythm",
-      "titleHtml": "Konsistensi cahaya<br><em>lebih penting dari kuantiti cahaya.</em>",
-      "body": [
-        "Dalam planted tank, cahaya adalah pemacu utama Environmental Rhythm. Soalan yang kebanyakan penjaga tanya adalah 'berapa lumen?' atau 'jenama LED mana?' Dalam ARA, soalan yang lebih penting adalah: betapa konsisten fotoperiod?",
-        "Pokok berkembang dengan kitaran cahaya harian yang boleh diramalkan. Ketidakkonsistenan — menghidupkan lampu pada masa yang berbeza, melangkau hari, atau meninggalkan lampu hidup sepanjang hari kerana terlupa untuk matikannya — mengganggu proses metabolik yang bergantung pada isyarat cahaya yang stabil. Alga, sebaliknya, adalah oportunistik dan memanfaatkan ketidakkonsistenan.",
-        "Satu timer untuk lampu tank adalah pembelian paling berharga yang anda boleh buat untuk planted tank. Ia menyelesaikan masalah ketidakkonsistenan tanpa sebarang usaha berterusan, dan ia adalah cara paling mudah untuk mengurangkan pertumbuhan alga. Fotoperiod 7–8 jam, ditetapkan pada masa yang sama setiap hari, adalah permulaan yang baik untuk kebanyakan setup low-tech.",
-        "Bagi intensiti: cukup cahaya untuk pokok anda, tapi bukan terlalu banyak untuk memacu pertumbuhan alga yang tidak dapat diuruskan. Untuk kebanyakan pokok low-tech yang disebutkan di atas, lampu yang menghasilkan 20–40 PAR (umol/m²/s) pada paras substrat adalah mencukupi. Jika anda tidak mempunyai meter PAR, 6–8 jam dari lampu planted LED standard yang diperingkat untuk tank bersaiz anda biasanya berfungsi sebagai titik permulaan."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Environmental Rhythm",
-      "hintText": [
-        "Dalam ARA, cahaya adalah komponen Environmental Rhythm — keadaan fizikal berterusan yang tank kekalkan. Pokok membaca Environmental Rhythm secara berterusan. Konsistensi dalam komponen itu — sama ada ia cahaya, suhu, atau aliran — lebih bermakna untuk pertumbuhan pokok dari keoptimuman mana-mana bacaan tunggal."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Mulakan dengan kecil"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Mulakan dengan kecil",
-      "titleHtml": "Corak drift paling biasa:<br><em>terlalu banyak pemboleh ubah serentak.</em>",
-      "body": [
-        "Corak drift yang paling biasa dalam planted tank low-tech adalah bermula dengan terlalu banyak pemboleh ubah serentak: substrat baru, pelbagai spesies pokok, rejimen baja baru, jadual cahaya baru, ikan baru, semua dalam minggu yang sama. Bila masalah muncul — dan ia akan muncul — mustahil untuk tahu pemboleh ubah mana yang menyebabkannya.",
-        "Pendekatan yang selari adalah bermula dengan sedikit. Tiga atau empat jenis pokok yang terbukti untuk setup anda. Satu substrat. Satu rejimen pencahayaan yang anda boleh kekalkan dengan konsisten. Biarkan ia berjalan selama sebulan sebelum menambah apa-apa. Dari baseline yang stabil itu, sebarang perubahan yang anda buat menghasilkan maklumat yang boleh dibaca.",
-        "Drift yang paling biasa yang anda akan hadapi: pokok yang tumbuh terlalu besar untuk ruang mereka (potong secara berkala), lumut yang merebak melebihi apa yang anda inginkan (kawal dengan pengarusan secara manual dan kurangkan nutrien), dan pokok yang akhirnya mati walaupun jangkaan (ini berlaku — gantikan sahaja, jangan buat kesimpulan bahawa keseluruhan sistem gagal).",
-        "Planted tank low-tech yang tumbuh perlahan dan stabil selama bertahun-tahun adalah kejayaan. Ia bukan menunggu untuk menjadi sesuatu yang lebih baik. Ia sudah berkembang maju pada kadar yang sepadan dengan sistem yang ia hidup di dalamnya — dan dengan keperluan penjaga yang menjaganya."
-      ],
-      "pullQuote": "Planted tank yang stabil dan tumbuh perlahan bukan gagal. Ia berjaya pada kadar yang sepadan dengan sistem yang ia hidup di dalamnya.",
-      "hintLabel": "ARA · Infrastruktur Teknikal",
-      "hintText": [
-        "ARA mengenal pasti infrastruktur teknikal sebagai dimensi kapasiti keempat: sejauh mana automasi, sistem pemantauan, dan reka bentuk peralatan dapat menjalankan fungsi penjagaan rutin secara dipercayai. Peralatan yang difahami dan diselenggara dengan baik benar-benar meluaskan kapasiti penjaga. Namun, automasi yang dipasang tanpa pemahaman sebenar penjaga menjadi sumber ketidakselarasan — apabila sistem gagal secara senyap atau menyembunyikan isyarat, infrastruktur yang sepatutnya menyokong sistem menghalang penjaga daripada maklumat yang mereka perlukan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/aquarium-plants-not-growing",
+            "text": "Kenapa pokok saya tidak membesar? →"
+        },
+        {
+            "href": "/articles/algae-in-aquarium",
+            "text": "Alga dalam akuarium →"
+        },
+        {
+            "href": "/articles/aquarium-maintenance-routine",
+            "text": "Rutin penyelenggaraan yang berfungsi →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/aquarium-plants-not-growing",
-      "text": "Kenapa pokok saya tidak membesar? →"
-    },
-    {
-      "href": "/articles/algae-in-aquarium",
-      "text": "Alga dalam akuarium →"
-    },
-    {
-      "href": "/articles/aquarium-maintenance-routine",
-      "text": "Rutin penyelenggaraan yang berfungsi →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

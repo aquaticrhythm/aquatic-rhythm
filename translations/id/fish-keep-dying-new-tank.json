@@ -1,125 +1,129 @@
 {
-  "_meta": {
-    "slug": "fish-keep-dying-new-tank",
-    "lang": "id",
-    "sourceFile": "articles/fish-keep-dying-new-tank.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Kenapa Ikan Saya Terus Mati di Tank Baru? — Aquatic Rhythm",
-    "description": "Minggu-minggu pertama adalah bagian yang paling sulit dari apa yang sedang Anda bangun — bukan bukti bahwa ada yang salah. Panduan ini menjelaskan apa yang sebenarnya terjadi dan pendekatan yang berbeda.",
-    "ogTitle": "Kenapa Ikan Saya Terus Mati di Tank Baru?",
-    "ogDescription": "Minggu-minggu pertama adalah bagian yang paling sulit dari apa yang sedang Anda bangun — bukan bukti bahwa ada yang salah."
-  },
-  "intro": {
-    "eyebrow": "Artikel · Early Phase",
-    "titleHtml": "Kenapa Ikan Saya Terus<br><em>Mati di Tank Baru?</em>",
-    "subtitle": "Minggu-minggu pertama adalah bagian yang paling sulit dari apa yang sedang Anda bangun — bukan bukti bahwa ada yang salah.",
-    "texts": [
-      "Anda menyiapkan tank dengan teliti. Anda biarkan berjalan. Anda masukkan ikan. Dan kemudian mereka mati — ada yang cepat, ada setelah beberapa hari, ada setelah terasa seolah mereka sudah mulai settle.",
-      "Ikan yang mati di tank baru adalah salah satu pengalaman yang paling umum dan paling disalahpahami dalam hobi ini. Panduan ini menjelaskan apa yang sebenarnya terjadi secara biologis, apa yang tidak pernah ada dalam kendali Anda, dan bagaimana pendekatan yang berbeda terlihat untuk kali berikutnya."
+    "_meta": {
+        "slug": "fish-keep-dying-new-tank",
+        "lang": "id",
+        "sourceFile": "articles/fish-keep-dying-new-tank.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Kenapa Ikan Saya Terus Mati di Tank Baru? — Aquatic Rhythm",
+        "description": "Minggu-minggu pertama adalah bagian yang paling sulit dari apa yang sedang Anda bangun — bukan bukti bahwa ada yang salah. Panduan ini menjelaskan apa yang sebenarnya terjadi dan pendekatan yang berbeda.",
+        "ogTitle": "Kenapa Ikan Saya Terus Mati di Tank Baru?",
+        "ogDescription": "Minggu-minggu pertama adalah bagian yang paling sulit dari apa yang sedang Anda bangun — bukan bukti bahwa ada yang salah."
+    },
+    "intro": {
+        "eyebrow": "Artikel · Early Phase",
+        "titleHtml": "Kenapa Ikan Saya Terus<br><em>Mati di Tank Baru?</em>",
+        "subtitle": "Minggu-minggu pertama adalah bagian yang paling sulit dari apa yang sedang Anda bangun — bukan bukti bahwa ada yang salah.",
+        "texts": [
+            "Anda menyiapkan tank dengan teliti. Anda biarkan berjalan. Anda masukkan ikan. Dan kemudian mereka mati — ada yang cepat, ada setelah beberapa hari, ada setelah terasa seolah mereka sudah mulai settle.",
+            "Ikan yang mati di tank baru adalah salah satu pengalaman yang paling umum dan paling disalahpahami dalam hobi ini. Panduan ini menjelaskan apa yang sebenarnya terjadi secara biologis, apa yang tidak pernah ada dalam kendali Anda, dan bagaimana pendekatan yang berbeda terlihat untuk kali berikutnya."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Pemula",
+        "metaLevel": "~7 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Apa yang Anda alami",
+            "titleHtml": "Ini terjadi pada hampir semua orang.<br><em>Ia terjadi pada Anda lebih dulu.</em>",
+            "body": [
+                "Ikan yang mati dalam hari atau minggu pertama tank baru bukan hal yang jarang. Ini mungkin pengalaman paling umum yang membuat frustrasi dalam hobi ini. Kebanyakan pemelihara yang mengalaminya menyalahkan diri sendiri. Biologi menunjukkan mereka tidak perlu begitu.",
+                "Tank baru belum membangun koloni bakterinya. Air menampung amonia — dari kotoran ikan, dari makanan yang tidak dimakan, dari ikan itu sendiri — tapi belum ada apapun untuk mengubahnya. Sistem yang akan membuat air aman bagi ikan masih dalam proses menjadi sesuatu.",
+                "Pada saat yang sama, ikan yang baru diangkut dari toko sudah dalam kondisi stres. Mereka dibag, dipindahkan, ditangani, mungkin dicampur dengan ikan lain dalam kondisi asing. Tank baru meminta mereka beradaptasi dengan kimia air baru sementara sistem imun mereka sudah berjalan lemah. Itu beban biologis yang signifikan — satu yang tidak ada hubungannya dengan seberapa teliti Anda menyiapkan tank."
+            ],
+            "pullQuote": "Ikan yang mati di minggu pertama bukan hilang karena Anda melakukan sesuatu yang salah. Ia hilang sebelum sistem yang seharusnya mendukungnya siap.",
+            "hintLabel": "ARA · Early Phase",
+            "hintText": [
+                "Dalam Aquatic Rhythm Alignment, ini adalah Early Phase — periode di mana ekosistem sedang membangun fondasi biologisnya. Ikan yang dimasukkan sebelum fondasi itu terbentuk tidak memasuki sistem yang stabil. Mereka memasuki sistem yang masih dalam proses menjadi sesuatu."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Kenapa ini sangat sulit"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Apa yang sistem sedang lakukan",
+            "titleHtml": "Bakteri yang melindungi ikan<br><em>belum ada.</em>",
+            "body": [
+                "Setiap akuarium berjalan pada proses biologis yang disebut siklus nitrogen. Ini bukan daftar periksa — ini adalah urutan kehidupan yang membutuhkan empat hingga delapan minggu untuk terbentuk, dan tidak bisa dipaksakan.",
+                "Ketika ikan ada di tank, mereka menghasilkan amonia. Amonia itu beracun. Di tank yang sudah matang, koloni bakteri mengubahnya terlebih dahulu menjadi nitrit — yang juga beracun — lalu koloni bakteri kedua mengubah nitrit itu menjadi nitrat, yang jauh lebih tidak berbahaya dan bisa dikelola dengan ganti air rutin. Tapi koloni bakteri itu perlu tumbuh dari hampir tidak ada. Mereka membutuhkan beberapa minggu untuk membangun kepadatan yang diperlukan untuk menyeimbangkan limbah yang dihasilkan tank.",
+                "Sampai kedua koloni matang, ikan hidup dalam kondisi yang drift antara stres dan berbahaya — sering secara diam-diam. Amonia dan nitrit tidak berwarna, tidak berbau, dan tidak memberi peringatan sebelum mencapai tingkat yang berbahaya bagi ikan. Air bisa terlihat jernih sempurna sambil diam-diam melewati ambang yang merusak ikan.",
+                "Suhu adalah faktor lain yang jarang disebutkan. Bahkan perbedaan 2°C antara air dalam kantong pengangkutan dan air di tank sudah cukup menyebabkan stres fisiologis pada ikan. Banyak pemelihara tidak tahu ini. Banyak toko hewan tidak menyebutkannya. Ikan tiba dengan stres transportasi yang ada, dan ketidakcocokan suhu menambah satu lapisan lagi sebelum mereka sempat beristirahat.",
+                "Stres adaptasi melipatgandakan segalanya. Ikan yang sudah berjalan dengan daya tahan rendah memiliki fungsi imun yang lemah. Drift amonia kecil yang mungkin diserap oleh ikan yang benar-benar sudah settle menjadi masalah yang jauh lebih besar bagi ikan yang tiba dalam kondisi stres. Stres-stres ini tidak saling menambah — mereka saling mengalikan."
+            ],
+            "pullQuote": "Air tampak oke. Tank sedang berjalan. Tapi biologi yang akan membuatnya aman bagi ikan masih beberapa minggu dari siap.",
+            "hintLabel": "ARA · Kapasitas sebelum Ambisi",
+            "hintText": [
+                "Prinsip keselarasan ketiga ARA adalah Kapasitas sebelum Ambisi: infrastruktur biologis akuarium baru — koloni bakteri yang memproses amonia dan nitrit — harus dibiarkan berkembang sebelum ikan bisa hidup dengan stabil. Akuarium baru belum memiliki kapasitas itu. Menambah ikan sebelum kapasitas itu ada berarti ikan hidup di sistem yang belum bisa menopang mereka. Prinsip ini bukan tentang bergerak lambat demi kelambatan itu sendiri. Ini tentang mengenali bahwa kapasitas yang membuat pemeliharaan ikan berhasil perlu dibangun sebelum bisa digunakan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang milik Anda dan apa yang tidak"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Catatan yang jujur",
+            "titleHtml": "Sebagian memang akan selalu sulit.<br><em>Tidak semuanya tanggung jawab Anda.</em>",
+            "body": [
+                "Apa yang tidak ada dalam kendali Anda:",
+                "Siklus nitrogen tidak mengumumkan dirinya. Anda tidak bisa melihat atau merasakannya. Kebanyakan panduan menyebutnya sekali lalu melanjutkan. Sedikit yang menjelaskan bahwa ini berarti minggu-minggu awal benar-benar berbahaya bagi ikan — bahkan ketika Anda melakukan segalanya dengan benar. Kesenjangan pengetahuan yang umum itu bersifat struktural, bukan personal.",
+                "Stres adaptasi itu nyata dan datang bersama ikan. Stres yang mereka bawa dari transportasi — pembagan, penanganan, perubahan cahaya dan suhu — bukan sesuatu yang Anda ciptakan. Itu datang bersama mereka.",
+                "Kesenjangan biologis juga bersifat struktural. Tank tidak bisa melompati Early Phase. Koloni bakteri yang membuat air aman bagi ikan harus dibangun dari awal, dan proses itu memakan waktu yang dibutuhkannya. Tidak ada jalan pintas yang menghilangkannya.",
+                "Apa yang bisa dilakukan berbeda:",
+                "Siklus tank sebelum memasukkan ikan. Ini disebut fishless cycling — Anda menambahkan sumber amonia ke tank kosong dan membiarkan koloni bakteri terbentuk sepenuhnya sebelum ikan masuk. Membutuhkan empat hingga enam minggu, tapi berarti ikan memasuki sistem yang benar-benar siap menerima mereka.",
+                "Tambahkan ikan perlahan-lahan. Satu atau dua dalam satu waktu, bukan stocking penuh di hari pertama. Setiap penambahan meningkatkan beban biologis; menambahkan secara bertahap memberi koloni waktu beradaptasi tanpa kelebihan beban.",
+                "Diamkan kantong sebelum dilepas. Biarkan mengapung di permukaan selama 15 hingga 20 menit agar suhu menyamakan, lalu tambahkan sedikit air tank ke dalam kantong secara bertahap sebelum melepaskan ikan. Ini mengurangi kejutan suhu dan kimia.",
+                "Uji air secara rutin dalam enam minggu pertama — bukan untuk panik, tapi untuk mengetahui trennya. Bacaan amonia dan nitrit memberi Anda informasi sebelum ikan menunjukkan tanda stres yang terlihat.",
+                "Pertahankan pemberian makan minimal di minggu-minggu awal. Makanan yang tidak dimakan mendorong amonia naik cepat di sistem yang belum memiliki kapasitas biologis untuk memprosesnya."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Perspektif ARA",
+            "hintText": [
+                "ARA tidak bertanya 'apa yang Anda lakukan salah?' Ia bertanya 'apa yang sistem belum siap dukung?' Pergeseran itu penting — bukan hanya secara emosional, tapi secara praktis. Ini menunjuk pada apa yang bisa dilakukan berbeda kali berikutnya, dibandingkan rasa malu tentang kali ini."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang datang selanjutnya",
+            "hintLabel4": "ARA · Keeper Rhythm",
+            "hintText4": [
+                "Sebagian besar dari kita memasuki hobi ini dengan kepedulian lebih dari yang kita ketahui. Kehilangan ikan di awal — terutama ketika Anda sudah berusaha sebaik mungkin — memang berat, dan rasa bersalahnya pun terasa berat. Jika Anda membaca ini setelah kehilangan: fakta bahwa Anda mencoba memahami apa yang terjadi itu sendiri adalah attunement penjaga dalam bentuk awalnya. Itu lebih penting dari apa yang terjadi di minggu pertama."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Apa yang datang selanjutnya",
+            "titleHtml": "Tank tidak berakhir.<br><em>Ini masih awal.</em>",
+            "body": [
+                "Jika ikan mati tapi tank masih berjalan, siklus mungkin masih berlangsung. Uji air. Jika amonia atau nitrit masih tinggi, sistem belum siap — tunggu, dan beri makan sangat sedikit atau tidak sama sekali. Ganti air sedang 20 hingga 25% bisa membantu jika amonia tinggi, tapi jangan lakukan reset penuh. Ganti air lengkap membuang kemajuan bakteri yang sudah dibangun di media filter dan permukaan. Kemajuan itu nyata, meski tidak lagi terlihat.",
+                "Jika Anda berpikir untuk mulai dari awal — atau tentang apa yang harus dilakukan selanjutnya — pertimbangkan fishless cycling terlebih dahulu. Tambahkan sedikit amonia murni ke tank kosong dan pantau setiap hari. Ketika amonia turun ke nol dalam 24 jam dan nitrit ikut, siklus selesai. Ikan yang dimasukkan ke sistem itu memasuki air yang secara biologis disiapkan untuk menerima mereka.",
+                "Sistem memiliki kapasitas untuk pulih. Bakteri yang sudah ada di sana — di media filter, di kaca, di permukaan apapun yang sudah berada di air — sedang bekerja. Mereka tidak tidak ada. Tank yang sudah berjalan beberapa minggu, bahkan melalui kehilangan, memiliki lebih banyak fondasi biologis dari tank di hari pertama.",
+                "Ini bukan tank yang gagal. Ini adalah tank yang masih dalam proses menjadi sesuatu."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Ecological forgiveness",
+            "hintText": [
+                "Artikel New Tank Syndrome menjelaskan biologi lengkap periode ini — apa yang amonia, nitrit, dan nitrat masing-masing berarti, dan apa yang sedang dibangun sistem menuju itu. Jika ini yang sedang Anda alami sekarang, artikel itu adalah bacaan berikutnya yang baik."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Pemula",
-    "metaLevel": "~7 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Apa yang Anda alami",
-      "titleHtml": "Ini terjadi pada hampir semua orang.<br><em>Ia terjadi pada Anda lebih dulu.</em>",
-      "body": [
-        "Ikan yang mati dalam hari atau minggu pertama tank baru bukan hal yang jarang. Ini mungkin pengalaman paling umum yang membuat frustrasi dalam hobi ini. Kebanyakan pemelihara yang mengalaminya menyalahkan diri sendiri. Biologi menunjukkan mereka tidak perlu begitu.",
-        "Tank baru belum membangun koloni bakterinya. Air menampung amonia — dari kotoran ikan, dari makanan yang tidak dimakan, dari ikan itu sendiri — tapi belum ada apapun untuk mengubahnya. Sistem yang akan membuat air aman bagi ikan masih dalam proses menjadi sesuatu.",
-        "Pada saat yang sama, ikan yang baru diangkut dari toko sudah dalam kondisi stres. Mereka dibag, dipindahkan, ditangani, mungkin dicampur dengan ikan lain dalam kondisi asing. Tank baru meminta mereka beradaptasi dengan kimia air baru sementara sistem imun mereka sudah berjalan lemah. Itu beban biologis yang signifikan — satu yang tidak ada hubungannya dengan seberapa teliti Anda menyiapkan tank."
-      ],
-      "pullQuote": "Ikan yang mati di minggu pertama bukan hilang karena Anda melakukan sesuatu yang salah. Ia hilang sebelum sistem yang seharusnya mendukungnya siap.",
-      "hintLabel": "ARA · Early Phase",
-      "hintText": [
-        "Dalam Aquatic Rhythm Alignment, ini adalah Early Phase — periode di mana ekosistem sedang membangun fondasi biologisnya. Ikan yang dimasukkan sebelum fondasi itu terbentuk tidak memasuki sistem yang stabil. Mereka memasuki sistem yang masih dalam proses menjadi sesuatu."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Kenapa ini sangat sulit"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Apa yang sistem sedang lakukan",
-      "titleHtml": "Bakteri yang melindungi ikan<br><em>belum ada.</em>",
-      "body": [
-        "Setiap akuarium berjalan pada proses biologis yang disebut siklus nitrogen. Ini bukan daftar periksa — ini adalah urutan kehidupan yang membutuhkan empat hingga delapan minggu untuk terbentuk, dan tidak bisa dipaksakan.",
-        "Ketika ikan ada di tank, mereka menghasilkan amonia. Amonia itu beracun. Di tank yang sudah matang, koloni bakteri mengubahnya terlebih dahulu menjadi nitrit — yang juga beracun — lalu koloni bakteri kedua mengubah nitrit itu menjadi nitrat, yang jauh lebih tidak berbahaya dan bisa dikelola dengan ganti air rutin. Tapi koloni bakteri itu perlu tumbuh dari hampir tidak ada. Mereka membutuhkan beberapa minggu untuk membangun kepadatan yang diperlukan untuk menyeimbangkan limbah yang dihasilkan tank.",
-        "Sampai kedua koloni matang, ikan hidup dalam kondisi yang drift antara stres dan berbahaya — sering secara diam-diam. Amonia dan nitrit tidak berwarna, tidak berbau, dan tidak memberi peringatan sebelum mencapai tingkat yang berbahaya bagi ikan. Air bisa terlihat jernih sempurna sambil diam-diam melewati ambang yang merusak ikan.",
-        "Suhu adalah faktor lain yang jarang disebutkan. Bahkan perbedaan 2°C antara air dalam kantong pengangkutan dan air di tank sudah cukup menyebabkan stres fisiologis pada ikan. Banyak pemelihara tidak tahu ini. Banyak toko hewan tidak menyebutkannya. Ikan tiba dengan stres transportasi yang ada, dan ketidakcocokan suhu menambah satu lapisan lagi sebelum mereka sempat beristirahat.",
-        "Stres adaptasi melipatgandakan segalanya. Ikan yang sudah berjalan dengan daya tahan rendah memiliki fungsi imun yang lemah. Drift amonia kecil yang mungkin diserap oleh ikan yang benar-benar sudah settle menjadi masalah yang jauh lebih besar bagi ikan yang tiba dalam kondisi stres. Stres-stres ini tidak saling menambah — mereka saling mengalikan."
-      ],
-      "pullQuote": "Air tampak oke. Tank sedang berjalan. Tapi biologi yang akan membuatnya aman bagi ikan masih beberapa minggu dari siap.",
-      "hintLabel": "ARA · Kapasitas sebelum Ambisi",
-      "hintText": [
-        "Prinsip keselarasan ketiga ARA adalah Kapasitas sebelum Ambisi: infrastruktur biologis akuarium baru — koloni bakteri yang memproses amonia dan nitrit — harus dibiarkan berkembang sebelum ikan bisa hidup dengan stabil. Akuarium baru belum memiliki kapasitas itu. Menambah ikan sebelum kapasitas itu ada berarti ikan hidup di sistem yang belum bisa menopang mereka. Prinsip ini bukan tentang bergerak lambat demi kelambatan itu sendiri. Ini tentang mengenali bahwa kapasitas yang membuat pemeliharaan ikan berhasil perlu dibangun sebelum bisa digunakan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang milik Anda dan apa yang tidak"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Catatan yang jujur",
-      "titleHtml": "Sebagian memang akan selalu sulit.<br><em>Tidak semuanya tanggung jawab Anda.</em>",
-      "body": [
-        "Apa yang tidak ada dalam kendali Anda:",
-        "Siklus nitrogen tidak mengumumkan dirinya. Anda tidak bisa melihat atau merasakannya. Kebanyakan panduan menyebutnya sekali lalu melanjutkan. Sedikit yang menjelaskan bahwa ini berarti minggu-minggu awal benar-benar berbahaya bagi ikan — bahkan ketika Anda melakukan segalanya dengan benar. Kesenjangan pengetahuan yang umum itu bersifat struktural, bukan personal.",
-        "Stres adaptasi itu nyata dan datang bersama ikan. Stres yang mereka bawa dari transportasi — pembagan, penanganan, perubahan cahaya dan suhu — bukan sesuatu yang Anda ciptakan. Itu datang bersama mereka.",
-        "Kesenjangan biologis juga bersifat struktural. Tank tidak bisa melompati Early Phase. Koloni bakteri yang membuat air aman bagi ikan harus dibangun dari awal, dan proses itu memakan waktu yang dibutuhkannya. Tidak ada jalan pintas yang menghilangkannya.",
-        "Apa yang bisa dilakukan berbeda:",
-        "Siklus tank sebelum memasukkan ikan. Ini disebut fishless cycling — Anda menambahkan sumber amonia ke tank kosong dan membiarkan koloni bakteri terbentuk sepenuhnya sebelum ikan masuk. Membutuhkan empat hingga enam minggu, tapi berarti ikan memasuki sistem yang benar-benar siap menerima mereka.",
-        "Tambahkan ikan perlahan-lahan. Satu atau dua dalam satu waktu, bukan stocking penuh di hari pertama. Setiap penambahan meningkatkan beban biologis; menambahkan secara bertahap memberi koloni waktu beradaptasi tanpa kelebihan beban.",
-        "Diamkan kantong sebelum dilepas. Biarkan mengapung di permukaan selama 15 hingga 20 menit agar suhu menyamakan, lalu tambahkan sedikit air tank ke dalam kantong secara bertahap sebelum melepaskan ikan. Ini mengurangi kejutan suhu dan kimia.",
-        "Uji air secara rutin dalam enam minggu pertama — bukan untuk panik, tapi untuk mengetahui trennya. Bacaan amonia dan nitrit memberi Anda informasi sebelum ikan menunjukkan tanda stres yang terlihat.",
-        "Pertahankan pemberian makan minimal di minggu-minggu awal. Makanan yang tidak dimakan mendorong amonia naik cepat di sistem yang belum memiliki kapasitas biologis untuk memprosesnya."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Perspektif ARA",
-      "hintText": [
-        "ARA tidak bertanya 'apa yang Anda lakukan salah?' Ia bertanya 'apa yang sistem belum siap dukung?' Pergeseran itu penting — bukan hanya secara emosional, tapi secara praktis. Ini menunjuk pada apa yang bisa dilakukan berbeda kali berikutnya, dibandingkan rasa malu tentang kali ini."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang datang selanjutnya"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Apa yang datang selanjutnya",
-      "titleHtml": "Tank tidak berakhir.<br><em>Ini masih awal.</em>",
-      "body": [
-        "Jika ikan mati tapi tank masih berjalan, siklus mungkin masih berlangsung. Uji air. Jika amonia atau nitrit masih tinggi, sistem belum siap — tunggu, dan beri makan sangat sedikit atau tidak sama sekali. Ganti air sedang 20 hingga 25% bisa membantu jika amonia tinggi, tapi jangan lakukan reset penuh. Ganti air lengkap membuang kemajuan bakteri yang sudah dibangun di media filter dan permukaan. Kemajuan itu nyata, meski tidak lagi terlihat.",
-        "Jika Anda berpikir untuk mulai dari awal — atau tentang apa yang harus dilakukan selanjutnya — pertimbangkan fishless cycling terlebih dahulu. Tambahkan sedikit amonia murni ke tank kosong dan pantau setiap hari. Ketika amonia turun ke nol dalam 24 jam dan nitrit ikut, siklus selesai. Ikan yang dimasukkan ke sistem itu memasuki air yang secara biologis disiapkan untuk menerima mereka.",
-        "Sistem memiliki kapasitas untuk pulih. Bakteri yang sudah ada di sana — di media filter, di kaca, di permukaan apapun yang sudah berada di air — sedang bekerja. Mereka tidak tidak ada. Tank yang sudah berjalan beberapa minggu, bahkan melalui kehilangan, memiliki lebih banyak fondasi biologis dari tank di hari pertama.",
-        "Ini bukan tank yang gagal. Ini adalah tank yang masih dalam proses menjadi sesuatu."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Ecological forgiveness",
-      "hintText": [
-        "Artikel New Tank Syndrome menjelaskan biologi lengkap periode ini — apa yang amonia, nitrit, dan nitrat masing-masing berarti, dan apa yang sedang dibangun sistem menuju itu. Jika ini yang sedang Anda alami sekarang, artikel itu adalah bacaan berikutnya yang baik."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

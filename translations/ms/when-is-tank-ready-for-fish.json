@@ -1,125 +1,129 @@
 {
-  "_meta": {
-    "slug": "when-is-tank-ready-for-fish",
-    "lang": "ms",
-    "sourceFile": "articles/when-is-tank-ready-for-fish.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Bila Tank Dah Sedia untuk Ikan? — Aquatic Rhythm",
-    "description": "Test kit tunjuk ammonia sifar, nitrite sifar. Setiap panduan kata itu bermakna tank sudah sedia. Panduan ini menerangkan apa 'matang' sebenarnya bermakna dalam bahasa biologi.",
-    "ogTitle": "Bila Tank Dah Sedia untuk Ikan?",
-    "ogDescription": "Ammonia sifar tidak semestinya bermakna sedia. Ketahui cara baca peralihan fasa dan ikan apa yang sesuai."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Early Phase",
-    "titleHtml": "Bila Tank<br><em>Dah Sedia untuk Ikan?</em>",
-    "subtitle": "Ammonia sifar adalah minimum. Bukan tanda bahawa sistem sudah sepenuhnya bersedia.",
-    "texts": [
-      "Test kit tunjuk ammonia sifar, nitrite sifar. Setiap panduan kata itu bermakna tank sudah 'matang' dan anda boleh masukkan ikan. Tapi ikan masih mati, atau tank tidak stabil, atau sesuatu tidak kena walaupun nombor ok.",
-      "Panduan ini menerangkan apa yang 'matang' sebenarnya bermakna dalam bahasa biologi, cara membaca peralihan kepada fasa Developing, ikan apa yang sesuai untuk tank yang baru selesai cycle, dan satu semakan jujur sebelum anda tambah ikan pertama."
+    "_meta": {
+        "slug": "when-is-tank-ready-for-fish",
+        "lang": "ms",
+        "sourceFile": "articles/when-is-tank-ready-for-fish.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Bila Tank Dah Sedia untuk Ikan? — Aquatic Rhythm",
+        "description": "Test kit tunjuk ammonia sifar, nitrite sifar. Setiap panduan kata itu bermakna tank sudah sedia. Panduan ini menerangkan apa 'matang' sebenarnya bermakna dalam bahasa biologi.",
+        "ogTitle": "Bila Tank Dah Sedia untuk Ikan?",
+        "ogDescription": "Ammonia sifar tidak semestinya bermakna sedia. Ketahui cara baca peralihan fasa dan ikan apa yang sesuai."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Early Phase",
+        "titleHtml": "Bila Tank<br><em>Dah Sedia untuk Ikan?</em>",
+        "subtitle": "Ammonia sifar adalah minimum. Bukan tanda bahawa sistem sudah sepenuhnya bersedia.",
+        "texts": [
+            "Test kit tunjuk ammonia sifar, nitrite sifar. Setiap panduan kata itu bermakna tank sudah 'matang' dan anda boleh masukkan ikan. Tapi ikan masih mati, atau tank tidak stabil, atau sesuatu tidak kena walaupun nombor ok.",
+            "Panduan ini menerangkan apa yang 'matang' sebenarnya bermakna dalam bahasa biologi, cara membaca peralihan kepada fasa Developing, ikan apa yang sesuai untuk tank yang baru selesai cycle, dan satu semakan jujur sebelum anda tambah ikan pertama."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Pemula",
+        "metaLevel": "~7 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Apa yang 'matang' sebenarnya bermakna",
+            "titleHtml": "Matang adalah minimum.<br><em>Bukan sedia sepenuhnya.</em>",
+            "body": [
+                "Nitrogen cycle menubuhkan koloni bakteria yang menukar ammonia — dari sisa ikan dan bahan organik yang terurai — kepada nitrite, dan nitrite kepada nitrate. Bila tank 'matang,' kedua-dua ammonia dan nitrite secara konsisten baca sifar kerana koloni bakteria cukup besar untuk memproses apa yang tank hasilkan. Ini adalah minimum biologi untuk ikan untuk terus hidup.",
+                "Tapi 'matang' adalah perkara binari. Ia bermakna proses berjalan, bukan bahawa ia stabil, bukan bahawa ia mempunyai kapasiti berlebihan untuk menampung stres tambahan, dan bukan bahawa tank sudah bersedia untuk semua ikan di bawah semua keadaan. Tank yang baru matang mempunyai koloni bakteria yang cukup untuk memproses beban yang digunakan semasa cycling — dan tidak banyak lebih.",
+                "Kerangka ARA menyebut ini sebagai fasa Developing — tempoh selepas cycle selesai di mana sistem sedang membina kestabilan dan kapasiti berlebihan. Fasa ini berbeza dari fasa Mature di mana biologi sudah kukuh, kapasiti penimbal sudah wujud, dan sistem boleh menampung beban yang berubah tanpa gejolak yang ketara.",
+                "Memahami perbezaan ini mengubah soalan dari 'adakah tank sudah matang?' kepada 'fasa apa tank ini sekarang, dan ikan apa yang sesuai untuk fasa itu?'"
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Biological Rhythm",
+            "hintText": [
+                "Dalam ARA, Biological Rhythm adalah keadaan dan trajektori biologi hidup dalam tank — bukan sekadar nitrogen cycle tetapi keseluruhan komuniti mikrob dan tumbuhan. Tank yang mempunyai nitrogen cycle yang stabil tetapi tiada filem berfaedah pada cermin, tiada mikrofauna, tiada biologi substrat yang ditubuhkan — adalah matang tetapi belum Developing. Komuniti sekunder ini mengambil masa lebih lama untuk ditubuhkan berbanding nitrogen cycle, dan ia penting."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Membaca peralihan"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Membaca peralihan",
+            "titleHtml": "Membaca peralihan<br><em>kepada fasa Developing.</em>",
+            "body": [
+                "Tank dalam fasa Developing menunjukkan tanda-tanda spesifik melebihi ammonia dan nitrite sifar. Ini adalah isyarat yang ARA gunakan untuk membaca peralihan fasa:",
+                "<strong>Parameter stabil selama 1–2 minggu, bukan hanya satu ujian.</strong> Satu bacaan ammonia dan nitrite sifar boleh menjadi hari yang baik, atau ia boleh mencerminkan pemprosesan bakteria yang tepat. Kestabilan selama 7–14 hari — terutamanya selepas menambah sumber ammonia kecil tambahan — mengesahkan koloni sedang berfungsi secara konsisten.",
+                "<strong>Pengumpulan nitrate yang boleh diukur.</strong> Nitrate yang naik perlahan-lahan (5–10 ppm seminggu dengan stocking minimal) mengesahkan kitaran nitrogen sedang berjalan lengkap. Kalau ammonia dan nitrite sifar tetapi nitrate tidak bergerak langsung, sistem mungkin sedang mendapat bacaan yang mengelirukan.",
+                "<strong>Filem nipis pada permukaan filter media dan hiasan.</strong> Biofilm nipis yang kelihatan pada substrat, dekorasi, dan media filter adalah tanda ekosistem biologi yang sedang membina. Ini adalah tanda positif, bukan tanda kotor.",
+                "<strong>Amonia kecil yang diproses dalam 24 jam.</strong> Ini adalah semakan yang paling berguna: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Kalau tank memprosesnya kembali ke sifar, koloni berfungsi dengan kapasiti berlebihan.",
+                "<strong>Bacaan pH yang stabil.</strong> pH yang stabil sepanjang hari menunjukkan kimia air yang diseimbangkan. pH yang berayun ketara menunjukkan sistem penimbal yang lemah — tanda tank yang masih awal dalam pembangunannya."
+            ],
+            "pullQuote": "Tank yang baca ammonia sifar, nitrite sifar selama sepuluh hari berturut-turut, tunjuk pengumpulan nitrate, dan ada filem biologi nipis yang sedang membentuk — sedang memberitahu anda ia telah memasuki fasa Developing.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Ikan untuk tank fasa Developing"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Ikan untuk tank fasa Developing",
+            "titleHtml": "Tidak semua ikan sesuai<br><em>untuk tank yang baru matang.</em>",
+            "body": [
+                "Tidak semua ikan sesuai untuk tank yang baru memasuki fasa Developing. Ikan pertama yang anda tambah bukan sekadar penghuni — mereka melengkapkan gelung biologi. Sisa mereka memberi makan bakteria, tingkah laku mereka menguji kestabilan sistem, dan respons mereka memberi anda bacaan Livestock Rhythm pertama.",
+                "Ikan yang sesuai untuk tank fasa Developing awal berkongsi ciri-ciri tertentu: toleran kepada swing parameter kecil (yang akan berlaku semasa sistem menstabilkan dirinya), lasak secara biologi dalam erti kata tidak memerlukan keadaan yang sangat tepat untuk berkembang, tidak besar dalam erti kata beban biologi per ikan adalah boleh diuruskan untuk sistem yang baru ditubuhkan.",
+                "<strong>Ikan yang bagus untuk tank yang baru matang:</strong> danio (zebra danio, pearl danio), tetra yang lebih lasak (ember tetra, black skirt tetra, cardinal tetra bila parameter stabil), rasbora (harlequin rasbora, chili rasbora), corydoras untuk lapisan bawah, dan banyak killifish. Ini adalah ikan yang boleh menampung variasi kecil tanpa menunjukkan tekanan yang ketara.",
+                "<strong>Ikan yang tidak sesuai untuk tank yang baru matang:</strong> discus dan ikan air Amazon yang memerlukan parameter yang sangat tepat, banyak cichlid yang menghasilkan sisa banyak, scaleless fish seperti clown loach yang lebih sensitif kepada kualiti air, dan ikan yang memerlukan GH dan KH yang sangat spesifik sebelum sistem menstabilkan kimia airnya.",
+                "Tambah perlahan-lahan: satu atau dua ikan pada satu masa, tunggu dua minggu, uji parameter, dan hanya tambah lagi bila sistem tunjuk ia boleh menampung tambahan itu. Setiap penambahan meningkatkan beban biologi; menambah secara beransur memberi koloni masa untuk menyesuaikan diri.",
+                "Ikan pertama dalam tank baru bukan sekadar penghuni — mereka adalah ujian pertama sistem. Pilih mereka dengan sedar."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Early Phase ke Developing",
+            "hintText": [
+                "Dalam ARA, menambah ikan bukan matlamat cycling — ia adalah peralihan antara fasa. Early Phase adalah tentang nitrogen cycle. Fasa Developing bermula apabila ikan pertama ditambah dan komuniti biologi penuh mula berkumpul di sekeliling mereka. Menambah terlalu banyak ikan terlalu cepat, atau ikan yang salah, boleh menolak tank fasa Developing kembali ke arah keadaan Early — satu bentuk ketidakselarasan yang beransur-ansur dan sering tidak kelihatan sehingga parameter menunjukkannya."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Satu semakan jujur"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Satu semakan jujur",
+            "titleHtml": "Satu semakan jujur<br><em>sebelum anda tambah ikan pertama.</em>",
+            "body": [
+                "Sebelum menambah ikan pertama ke tank yang baru matang, satu amalan mengurangkan kebanyakan ketidakpastian: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Secubit makanan ikan, dibiarkan untuk terurai, akan menghasilkan lonjakan ammonia kecil. Kalau tank memprosesnya kembali ke sifar dalam 24 jam — ammonia naik sebentar kemudian kembali ke sifar, nitrite tidak naik — koloni bakteria mempunyai kapasiti berlebihan. Itu adalah tanda sistem bersedia.",
+                "Kalau ammonia tidak turun dalam 24 jam, atau kalau nitrite naik dan kekal, sistem belum mempunyai kapasiti yang diperlukan. Tunggu lagi seminggu dan ulang semakan.",
+                "Tiga soalan terakhir untuk dijawab dengan jujur sebelum menambah ikan: Adakah heater stabil — pernahkah anda ukur suhu pada waktu pagi dan malam untuk mengesahkan ia tidak berayun lebih dari 1°C? Adakah filter media berfungsi — adakah ada aliran yang kuat dan konsisten? Dan yang paling penting: adakah anda bersedia untuk uji air setiap hari selama dua minggu pertama selepas penambahan?",
+                "Ujian harian dalam dua minggu pertama bukan tanda kerisauan yang berlebihan — ia adalah pemerhatian. Ammonia dan nitrite yang naik secara perlahan-lahan semasa sistem menyesuaikan diri dengan beban baru boleh ditangani dengan water change kecil kalau ditangkap awal. Yang sama yang ditangkap lewat boleh kehilangan ikan. Ujian adalah pemerhatian awal — satu-satunya alat yang memberitahu anda apa yang berlaku sebelum ikan tunjukkan tanda tekanan."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Kapasiti sebelum Ambisi",
+            "hintText": [
+                "Prinsip penjajaran ketiga ARA ialah Kapasiti sebelum Ambisi: tank perlu distok mengikut apa yang biologinya boleh tanggung pada masa ini — bukan apa yang ia akhirnya akan mampu tanggung. Menambah ikan sebelum koloni mempunyai kapasiti untuk memproses sisa mereka mewujudkan tekanan kronik. Menambah kumpulan pertama, menunggu untuk mengesahkan sistem bertahan, dan berkembang dari sana bukan berhati-hati — ia adalah membaca kapasiti sebenar sistem berbanding yang dimaksudkan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel3": "ARA · Kapasiti sebelum Ambisi",
+            "hintText3": [
+                "Prinsip penjajaran ketiga ARA adalah Capacity before Ambition: tangki harus distok sebanding dengan apa yang biologi semasanya boleh tanggung — bukan apa yang akhirnya akan mampu ditanggungnya. Menambah ikan sebelum koloni mempunyai kapasiti untuk memproses sisa mereka mewujudkan tekanan kronik. Menambah kumpulan pertama, menunggu untuk mengesahkan sistem bertahan, dan mengembangkan dari situ bukan kehati-hatian — ia adalah membaca kapasiti sebenar sistem berbanding yang dimaksudkan."
+            ]
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Pemula",
-    "metaLevel": "~7 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Apa yang 'matang' sebenarnya bermakna",
-      "titleHtml": "Matang adalah minimum.<br><em>Bukan sedia sepenuhnya.</em>",
-      "body": [
-        "Nitrogen cycle menubuhkan koloni bakteria yang menukar ammonia — dari sisa ikan dan bahan organik yang terurai — kepada nitrite, dan nitrite kepada nitrate. Bila tank 'matang,' kedua-dua ammonia dan nitrite secara konsisten baca sifar kerana koloni bakteria cukup besar untuk memproses apa yang tank hasilkan. Ini adalah minimum biologi untuk ikan untuk terus hidup.",
-        "Tapi 'matang' adalah perkara binari. Ia bermakna proses berjalan, bukan bahawa ia stabil, bukan bahawa ia mempunyai kapasiti berlebihan untuk menampung stres tambahan, dan bukan bahawa tank sudah bersedia untuk semua ikan di bawah semua keadaan. Tank yang baru matang mempunyai koloni bakteria yang cukup untuk memproses beban yang digunakan semasa cycling — dan tidak banyak lebih.",
-        "Kerangka ARA menyebut ini sebagai fasa Developing — tempoh selepas cycle selesai di mana sistem sedang membina kestabilan dan kapasiti berlebihan. Fasa ini berbeza dari fasa Mature di mana biologi sudah kukuh, kapasiti penimbal sudah wujud, dan sistem boleh menampung beban yang berubah tanpa gejolak yang ketara.",
-        "Memahami perbezaan ini mengubah soalan dari 'adakah tank sudah matang?' kepada 'fasa apa tank ini sekarang, dan ikan apa yang sesuai untuk fasa itu?'"
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Biological Rhythm",
-      "hintText": [
-        "Dalam ARA, Biological Rhythm adalah keadaan dan trajektori biologi hidup dalam tank — bukan sekadar nitrogen cycle tetapi keseluruhan komuniti mikrob dan tumbuhan. Tank yang mempunyai nitrogen cycle yang stabil tetapi tiada filem berfaedah pada cermin, tiada mikrofauna, tiada biologi substrat yang ditubuhkan — adalah matang tetapi belum Developing. Komuniti sekunder ini mengambil masa lebih lama untuk ditubuhkan berbanding nitrogen cycle, dan ia penting."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Membaca peralihan"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Membaca peralihan",
-      "titleHtml": "Membaca peralihan<br><em>kepada fasa Developing.</em>",
-      "body": [
-        "Tank dalam fasa Developing menunjukkan tanda-tanda spesifik melebihi ammonia dan nitrite sifar. Ini adalah isyarat yang ARA gunakan untuk membaca peralihan fasa:",
-        "<strong>Parameter stabil selama 1–2 minggu, bukan hanya satu ujian.</strong> Satu bacaan ammonia dan nitrite sifar boleh menjadi hari yang baik, atau ia boleh mencerminkan pemprosesan bakteria yang tepat. Kestabilan selama 7–14 hari — terutamanya selepas menambah sumber ammonia kecil tambahan — mengesahkan koloni sedang berfungsi secara konsisten.",
-        "<strong>Pengumpulan nitrate yang boleh diukur.</strong> Nitrate yang naik perlahan-lahan (5–10 ppm seminggu dengan stocking minimal) mengesahkan kitaran nitrogen sedang berjalan lengkap. Kalau ammonia dan nitrite sifar tetapi nitrate tidak bergerak langsung, sistem mungkin sedang mendapat bacaan yang mengelirukan.",
-        "<strong>Filem nipis pada permukaan filter media dan hiasan.</strong> Biofilm nipis yang kelihatan pada substrat, dekorasi, dan media filter adalah tanda ekosistem biologi yang sedang membina. Ini adalah tanda positif, bukan tanda kotor.",
-        "<strong>Amonia kecil yang diproses dalam 24 jam.</strong> Ini adalah semakan yang paling berguna: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Kalau tank memprosesnya kembali ke sifar, koloni berfungsi dengan kapasiti berlebihan.",
-        "<strong>Bacaan pH yang stabil.</strong> pH yang stabil sepanjang hari menunjukkan kimia air yang diseimbangkan. pH yang berayun ketara menunjukkan sistem penimbal yang lemah — tanda tank yang masih awal dalam pembangunannya."
-      ],
-      "pullQuote": "Tank yang baca ammonia sifar, nitrite sifar selama sepuluh hari berturut-turut, tunjuk pengumpulan nitrate, dan ada filem biologi nipis yang sedang membentuk — sedang memberitahu anda ia telah memasuki fasa Developing.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Ikan untuk tank fasa Developing"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Ikan untuk tank fasa Developing",
-      "titleHtml": "Tidak semua ikan sesuai<br><em>untuk tank yang baru matang.</em>",
-      "body": [
-        "Tidak semua ikan sesuai untuk tank yang baru memasuki fasa Developing. Ikan pertama yang anda tambah bukan sekadar penghuni — mereka melengkapkan gelung biologi. Sisa mereka memberi makan bakteria, tingkah laku mereka menguji kestabilan sistem, dan respons mereka memberi anda bacaan Livestock Rhythm pertama.",
-        "Ikan yang sesuai untuk tank fasa Developing awal berkongsi ciri-ciri tertentu: toleran kepada swing parameter kecil (yang akan berlaku semasa sistem menstabilkan dirinya), lasak secara biologi dalam erti kata tidak memerlukan keadaan yang sangat tepat untuk berkembang, tidak besar dalam erti kata beban biologi per ikan adalah boleh diuruskan untuk sistem yang baru ditubuhkan.",
-        "<strong>Ikan yang bagus untuk tank yang baru matang:</strong> danio (zebra danio, pearl danio), tetra yang lebih lasak (ember tetra, black skirt tetra, cardinal tetra bila parameter stabil), rasbora (harlequin rasbora, chili rasbora), corydoras untuk lapisan bawah, dan banyak killifish. Ini adalah ikan yang boleh menampung variasi kecil tanpa menunjukkan tekanan yang ketara.",
-        "<strong>Ikan yang tidak sesuai untuk tank yang baru matang:</strong> discus dan ikan air Amazon yang memerlukan parameter yang sangat tepat, banyak cichlid yang menghasilkan sisa banyak, scaleless fish seperti clown loach yang lebih sensitif kepada kualiti air, dan ikan yang memerlukan GH dan KH yang sangat spesifik sebelum sistem menstabilkan kimia airnya.",
-        "Tambah perlahan-lahan: satu atau dua ikan pada satu masa, tunggu dua minggu, uji parameter, dan hanya tambah lagi bila sistem tunjuk ia boleh menampung tambahan itu. Setiap penambahan meningkatkan beban biologi; menambah secara beransur memberi koloni masa untuk menyesuaikan diri.",
-        "Ikan pertama dalam tank baru bukan sekadar penghuni — mereka adalah ujian pertama sistem. Pilih mereka dengan sedar."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Early Phase ke Developing",
-      "hintText": [
-        "Dalam ARA, menambah ikan bukan matlamat cycling — ia adalah peralihan antara fasa. Early Phase adalah tentang nitrogen cycle. Fasa Developing bermula apabila ikan pertama ditambah dan komuniti biologi penuh mula berkumpul di sekeliling mereka. Menambah terlalu banyak ikan terlalu cepat, atau ikan yang salah, boleh menolak tank fasa Developing kembali ke arah keadaan Early — satu bentuk ketidakselarasan yang beransur-ansur dan sering tidak kelihatan sehingga parameter menunjukkannya."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Satu semakan jujur"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Satu semakan jujur",
-      "titleHtml": "Satu semakan jujur<br><em>sebelum anda tambah ikan pertama.</em>",
-      "body": [
-        "Sebelum menambah ikan pertama ke tank yang baru matang, satu amalan mengurangkan kebanyakan ketidakpastian: tambah sumber ammonia kecil yang terkawal dan perhatikan apa yang berlaku dalam 24 jam. Secubit makanan ikan, dibiarkan untuk terurai, akan menghasilkan lonjakan ammonia kecil. Kalau tank memprosesnya kembali ke sifar dalam 24 jam — ammonia naik sebentar kemudian kembali ke sifar, nitrite tidak naik — koloni bakteria mempunyai kapasiti berlebihan. Itu adalah tanda sistem bersedia.",
-        "Kalau ammonia tidak turun dalam 24 jam, atau kalau nitrite naik dan kekal, sistem belum mempunyai kapasiti yang diperlukan. Tunggu lagi seminggu dan ulang semakan.",
-        "Tiga soalan terakhir untuk dijawab dengan jujur sebelum menambah ikan: Adakah heater stabil — pernahkah anda ukur suhu pada waktu pagi dan malam untuk mengesahkan ia tidak berayun lebih dari 1°C? Adakah filter media berfungsi — adakah ada aliran yang kuat dan konsisten? Dan yang paling penting: adakah anda bersedia untuk uji air setiap hari selama dua minggu pertama selepas penambahan?",
-        "Ujian harian dalam dua minggu pertama bukan tanda kerisauan yang berlebihan — ia adalah pemerhatian. Ammonia dan nitrite yang naik secara perlahan-lahan semasa sistem menyesuaikan diri dengan beban baru boleh ditangani dengan water change kecil kalau ditangkap awal. Yang sama yang ditangkap lewat boleh kehilangan ikan. Ujian adalah pemerhatian awal — satu-satunya alat yang memberitahu anda apa yang berlaku sebelum ikan tunjukkan tanda tekanan."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Kapasiti sebelum Ambisi",
-      "hintText": [
-        "Prinsip penjajaran ketiga ARA ialah Kapasiti sebelum Ambisi: tank perlu distok mengikut apa yang biologinya boleh tanggung pada masa ini — bukan apa yang ia akhirnya akan mampu tanggung. Menambah ikan sebelum koloni mempunyai kapasiti untuk memproses sisa mereka mewujudkan tekanan kronik. Menambah kumpulan pertama, menunggu untuk mengesahkan sistem bertahan, dan berkembang dari sana bukan berhati-hati — ia adalah membaca kapasiti sebenar sistem berbanding yang dimaksudkan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/articles/fish-keep-dying-new-tank",
+            "text": "Kenapa ikan terus mati dalam tank baru? →"
+        },
+        {
+            "href": "/articles/adding-new-fish",
+            "text": "Menambah ikan baru →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/articles/fish-keep-dying-new-tank",
-      "text": "Kenapa ikan terus mati dalam tank baru? →"
-    },
-    {
-      "href": "/articles/adding-new-fish",
-      "text": "Menambah ikan baru →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

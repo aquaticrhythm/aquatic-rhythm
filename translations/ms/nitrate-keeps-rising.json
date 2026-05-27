@@ -1,117 +1,121 @@
 {
-  "_meta": {
-    "slug": "nitrate-keeps-rising",
-    "lang": "ms",
-    "sourceFile": "articles/nitrate-keeps-rising.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Kenapa Nitrate Terus Naik? — Aquatic Rhythm",
-    "description": "Cycle sudah selesai. Ammonia sifar. Nitrite sifar. Tapi nitrate terus naik setiap minggu. Panduan ini menerangkan apa yang sedang berlaku dan cara membaca kenaikannya sebagai maklumat.",
-    "ogTitle": "Kenapa Nitrate Terus Naik?",
-    "ogDescription": "Cycle selesai tapi nitrate terus membina. Ketahui apa yang sedang berlaku dan cara response yang selari."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Chemical Rhythm",
-    "titleHtml": "Kenapa Nitrate<br><em>Terus Naik?</em>",
-    "subtitle": "Nitrogen cycle berjalan dengan baik. Tapi nitrate terus membina — dan kelajuannya adalah maklumat.",
-    "texts": [
-      "Cycle sudah selesai. Ammonia sifar. Nitrite sifar. Tapi setiap kali anda uji, nitrate lebih tinggi dari minggu lepas. Anda buat water change, ia turun, kemudian naik balik. Kitaran ini berterusan.",
-      "Panduan ini menerangkan apa itu nitrate sebenarnya, kenapa ia terkumpul walaupun dalam tank yang diuruskan dengan baik, cara membaca kelajuan kenaikannya sebagai maklumat tentang sistem anda, dan response yang menangani punca bukan hanya nombor."
+    "_meta": {
+        "slug": "nitrate-keeps-rising",
+        "lang": "ms",
+        "sourceFile": "articles/nitrate-keeps-rising.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Kenapa Nitrate Terus Naik? — Aquatic Rhythm",
+        "description": "Cycle sudah selesai. Ammonia sifar. Nitrite sifar. Tapi nitrate terus naik setiap minggu. Panduan ini menerangkan apa yang sedang berlaku dan cara membaca kenaikannya sebagai maklumat.",
+        "ogTitle": "Kenapa Nitrate Terus Naik?",
+        "ogDescription": "Cycle selesai tapi nitrate terus membina. Ketahui apa yang sedang berlaku dan cara response yang selari."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Chemical Rhythm",
+        "titleHtml": "Kenapa Nitrate<br><em>Terus Naik?</em>",
+        "subtitle": "Nitrogen cycle berjalan dengan baik. Tapi nitrate terus membina — dan kelajuannya adalah maklumat.",
+        "texts": [
+            "Cycle sudah selesai. Ammonia sifar. Nitrite sifar. Tapi setiap kali anda uji, nitrate lebih tinggi dari minggu lepas. Anda buat water change, ia turun, kemudian naik balik. Kitaran ini berterusan.",
+            "Panduan ini menerangkan apa itu nitrate sebenarnya, kenapa ia terkumpul walaupun dalam tank yang diuruskan dengan baik, cara membaca kelajuan kenaikannya sebagai maklumat tentang sistem anda, dan response yang menangani punca bukan hanya nombor."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Pemula & Pertengahan",
+        "metaLevel": "~7 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Apa itu nitrate dan dari mana datangnya",
+            "titleHtml": "Nitrate adalah produk akhir<br><em>nitrogen cycle.</em>",
+            "body": [
+                "Nitrate (NO₃) adalah produk akhir nitrogen cycle — bakteria menukar ammonia kepada nitrite, kemudian nitrite kepada nitrate, tetapi berhenti di situ. Tidak seperti ammonia dan nitrite, nitrate tidak melonjak tiba-tiba; ia terkumpul perlahan dan konsisten selagi tank mempunyai beban biologi.",
+                "Sisa ikan, makanan yang tidak dimakan, dan bahan tumbuhan yang reput semua memberi makan kepada rantaian ammonia → nitrite → nitrate secara berterusan. Lebih banyak ikan, lebih banyak pemberian makan, lebih banyak bahan organik — lebih cepat nitrate terkumpul.",
+                "Inilah sebabnya nitrate tidak pernah berhenti naik dalam akuarium yang didiami — ia adalah output semula jadi daripada mana-mana sistem yang berfungsi. Soalannya bukan 'kenapa nitrate naik?' Soalannya adalah 'adakah ia naik lebih cepat dari yang dijangka, dan kenapa?'"
+            ],
+            "pullQuote": "Nitrate tidak isyarat masalah seperti ammonia. Ia isyarat apa yang telah terkumpul — perlahan-lahan, berterusan — sejak kali terakhir anda tukar air.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Intro",
+            "nextBtn": "Tahap yang sebenarnya penting"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Tahap yang sebenarnya penting",
+            "titleHtml": "Ambang nitrate bergantung<br><em>kepada apa yang anda pelihara.</em>",
+            "body": [
+                "Kebanyakan nasihat peliharaan ikan kata 'kekalkan nitrate di bawah 20–40 ppm.' Julat itu adalah nyata, tapi ia penting secara berbeza bergantung kepada apa yang anda pelihara. Ikan air lembut seperti discus, kardinal tetra, dan banyak spesies Apistogramma boleh menunjukkan penekan kronik pada tahap yang nampak boleh diterima untuk ikan yang lebih lasak.",
+                "Udang, khususnya Neocaridina dan Caridina, sensitif kepada trend nitrate dan boleh merosot perlahan-lahan walaupun bacaan secara individu nampak boleh diterima. Bagi udang, kestabilan dan trend lebih penting dari nombor mutlak — nitrate yang stabil pada 20 ppm lebih baik dari nitrate yang berfluktuasi antara 10 dan 30 ppm.",
+                "Ikan yang lebih lasak — banyak cichlid Afrika, ikan mas, banyak spesies yang boleh ditemui dalam kepelbagaian keadaan air semula jadi — biasanya boleh menampung tahap lebih tinggi dengan kesihatan yang tidak terjejas secara nampak. Tapi 'menampung' adalah berbeza dari 'berkembang maju.' Mengetahui keperluan spesifik apa yang anda pelihara adalah permulaan, bukan andaian bahawa 40 ppm adalah universal selamat."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Chemical Rhythm",
+            "hintText": [
+                "Dalam ARA, nitrate yang sentiasa tinggi atau terus naik adalah bacaan Chemical Rhythm — ia mencerminkan hubungan antara beban biologi, penyerapan tumbuhan, dan keeper rhythm. Nombor pada test kit adalah outputnya. Isyaratnya adalah apa yang menghasilkannya."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca kenaikan sebagai maklumat"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Membaca kenaikan sebagai maklumat",
+            "titleHtml": "Kelajuan kenaikan<br><em>adalah maklumat.</em>",
+            "body": [
+                "Bila nitrate naik lebih cepat dari yang dijangka, soalan yang berguna adalah: apa yang berubah? Empat perkara mendorong pengumpulan lebih cepat: lebih banyak ikan atau ikan yang lebih besar menghasilkan lebih banyak sisa, kadar pemberian makan yang lebih tinggi, ketumpatan tumbuhan yang berkurang (tumbuhan dibuang, layu, atau tidak berkembang), dan kekerapan water change yang dikurangkan.",
+                "Kalau tiada satu pun daripada ini berubah dan nitrate masih naik lebih cepat, filter mungkin perlu diservis — filter yang tersumbat tidak memproses ammonia dengan cekap, dan lebih banyak ammonia yang diproses lebih perlahan bermakna lebih banyak nitrate yang terkumpul.",
+                "Bacaan nitrate yang paling bermaklumat bukan yang diambil sejurus selepas water change — ia yang diambil pada bilangan hari yang sama selepas setiap water change, selama empat minggu berturut-turut. Bacaan empat minggu itu tunjukkan sama ada trend anda stabil, membaik, atau merosot. Satu bacaan hanya tunjukkan nombor. Empat bacaan tunjukkan arah."
+            ],
+            "pullQuote": "Ujian nitrate yang diambil sejurus selepas water change memberitahu anda hampir tiada apa-apa. Ujian yang diambil pada bilangan hari yang sama selepas setiap perubahan, selama empat minggu, memberitahu anda sama ada ritma anda sepadan.",
+            "hintLabel": "ARA · Asal sebelum Ekspresi",
+            "hintText": [
+                "Nitrate yang naik adalah ekspresi. Drift beransur dalam ketumpatan stocking, kadar suapan, atau liputan tumbuhan yang menghasilkannya adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: bacaan pada test kit memberitahu anda sesuatu sedang beroperasi dalam sistem — bukan apa yang perlu dibuat, tetapi di mana perlu dicari. Surih balik dari nombor kepada apa yang menghasilkannya."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Response yang selari kepada nitrate yang naik",
+            "hintLabel3": "ARA · Asal sebelum Ekspresi",
+            "hintText3": [
+                "Nitrat yang meningkat adalah ekspresi. Hanyutan beransur-beransur dalam ketumpatan stok, kadar pemberian makan, atau liputan tumbuhan yang menghasilkannya adalah asal. Prinsip penjajaran kelima ARA adalah Origin before Expression: bacaan pada kit ujian memberitahu anda bahawa sesuatu sedang beroperasi dalam sistem — bukan apa yang perlu dilakukan, tetapi di mana hendak melihat. Kesan kembali dari angka kepada apa yang menghasilkannya."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Response yang selari",
+            "titleHtml": "Response yang selari<br><em>kepada nitrate yang naik.</em>",
+            "body": [
+                "Response yang selari kepada nitrate yang naik bukan sekadar water change yang lebih kerap — walaupun itu mungkin sebahagiannya. Response penuh membaca punca. Kalau ketumpatan stocking merangkak naik, response yang selari adalah penilaian jujur kapasiti beban. Kalau pemberian makan meningkat, percubaan dua minggu pemberian makan yang dikurangkan selalunya menghasilkan penurunan ketara dalam kadar kenaikan nitrate. Kalau tumbuhan telah reput, menggantikan atau menanam semula tangani penyerapan nitrate secara langsung.",
+                "Planted tank adalah kes khas: tumbuhan menggunakan nitrate dan phosphate secara langsung sebagai nutrien. Tank yang ditanam dengan baik dengan tumbuhan yang berkembang aktif boleh menampung beban organik yang jauh lebih tinggi berbanding tank kosong dengan stocking yang sama, dan nitrate mungkin sangat perlahan naik atau stabil sepenuhnya jika tumbuhan sihat dan pencahayaan mencukupi.",
+                "Satu perkara yang tidak perlu dipusatkan terlalu banyak: nombor nitrate mutlak semasa krisis. Penjaga sering menyaksikan nitrate 40 ppm dan berasa panik. Nitrate pada 40 ppm yang stabil, dengan ikan yang makan dan berkelakuan normal, adalah situasi berbeza dari nitrate pada 20 ppm yang naik 10 ppm setiap tiga hari. Arah dan trend lebih penting dari nombor pada mana-mana hari."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Pengampunan Ekologi",
+            "hintText": [
+                "Tank dengan nitrate tinggi secara kronik boleh pulih. Mengurangkan beban, meningkatkan liputan tumbuhan, dan memulihkan ritma water change yang konsisten semua mengubah Chemical Rhythm dalam tempoh minggu. Pengumpulan masa lalu bukan keadaan kekal — ia adalah hasil penjajaran sebelumnya. Ubah penjajaran, dan bacaan berubah."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Pemula & Pertengahan",
-    "metaLevel": "~7 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Apa itu nitrate dan dari mana datangnya",
-      "titleHtml": "Nitrate adalah produk akhir<br><em>nitrogen cycle.</em>",
-      "body": [
-        "Nitrate (NO₃) adalah produk akhir nitrogen cycle — bakteria menukar ammonia kepada nitrite, kemudian nitrite kepada nitrate, tetapi berhenti di situ. Tidak seperti ammonia dan nitrite, nitrate tidak melonjak tiba-tiba; ia terkumpul perlahan dan konsisten selagi tank mempunyai beban biologi.",
-        "Sisa ikan, makanan yang tidak dimakan, dan bahan tumbuhan yang reput semua memberi makan kepada rantaian ammonia → nitrite → nitrate secara berterusan. Lebih banyak ikan, lebih banyak pemberian makan, lebih banyak bahan organik — lebih cepat nitrate terkumpul.",
-        "Inilah sebabnya nitrate tidak pernah berhenti naik dalam akuarium yang didiami — ia adalah output semula jadi daripada mana-mana sistem yang berfungsi. Soalannya bukan 'kenapa nitrate naik?' Soalannya adalah 'adakah ia naik lebih cepat dari yang dijangka, dan kenapa?'"
-      ],
-      "pullQuote": "Nitrate tidak isyarat masalah seperti ammonia. Ia isyarat apa yang telah terkumpul — perlahan-lahan, berterusan — sejak kali terakhir anda tukar air.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Tahap yang sebenarnya penting"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Tahap yang sebenarnya penting",
-      "titleHtml": "Ambang nitrate bergantung<br><em>kepada apa yang anda pelihara.</em>",
-      "body": [
-        "Kebanyakan nasihat peliharaan ikan kata 'kekalkan nitrate di bawah 20–40 ppm.' Julat itu adalah nyata, tapi ia penting secara berbeza bergantung kepada apa yang anda pelihara. Ikan air lembut seperti discus, kardinal tetra, dan banyak spesies Apistogramma boleh menunjukkan penekan kronik pada tahap yang nampak boleh diterima untuk ikan yang lebih lasak.",
-        "Udang, khususnya Neocaridina dan Caridina, sensitif kepada trend nitrate dan boleh merosot perlahan-lahan walaupun bacaan secara individu nampak boleh diterima. Bagi udang, kestabilan dan trend lebih penting dari nombor mutlak — nitrate yang stabil pada 20 ppm lebih baik dari nitrate yang berfluktuasi antara 10 dan 30 ppm.",
-        "Ikan yang lebih lasak — banyak cichlid Afrika, ikan mas, banyak spesies yang boleh ditemui dalam kepelbagaian keadaan air semula jadi — biasanya boleh menampung tahap lebih tinggi dengan kesihatan yang tidak terjejas secara nampak. Tapi 'menampung' adalah berbeza dari 'berkembang maju.' Mengetahui keperluan spesifik apa yang anda pelihara adalah permulaan, bukan andaian bahawa 40 ppm adalah universal selamat."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Chemical Rhythm",
-      "hintText": [
-        "Dalam ARA, nitrate yang sentiasa tinggi atau terus naik adalah bacaan Chemical Rhythm — ia mencerminkan hubungan antara beban biologi, penyerapan tumbuhan, dan keeper rhythm. Nombor pada test kit adalah outputnya. Isyaratnya adalah apa yang menghasilkannya."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca kenaikan sebagai maklumat"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Membaca kenaikan sebagai maklumat",
-      "titleHtml": "Kelajuan kenaikan<br><em>adalah maklumat.</em>",
-      "body": [
-        "Bila nitrate naik lebih cepat dari yang dijangka, soalan yang berguna adalah: apa yang berubah? Empat perkara mendorong pengumpulan lebih cepat: lebih banyak ikan atau ikan yang lebih besar menghasilkan lebih banyak sisa, kadar pemberian makan yang lebih tinggi, ketumpatan tumbuhan yang berkurang (tumbuhan dibuang, layu, atau tidak berkembang), dan kekerapan water change yang dikurangkan.",
-        "Kalau tiada satu pun daripada ini berubah dan nitrate masih naik lebih cepat, filter mungkin perlu diservis — filter yang tersumbat tidak memproses ammonia dengan cekap, dan lebih banyak ammonia yang diproses lebih perlahan bermakna lebih banyak nitrate yang terkumpul.",
-        "Bacaan nitrate yang paling bermaklumat bukan yang diambil sejurus selepas water change — ia yang diambil pada bilangan hari yang sama selepas setiap water change, selama empat minggu berturut-turut. Bacaan empat minggu itu tunjukkan sama ada trend anda stabil, membaik, atau merosot. Satu bacaan hanya tunjukkan nombor. Empat bacaan tunjukkan arah."
-      ],
-      "pullQuote": "Ujian nitrate yang diambil sejurus selepas water change memberitahu anda hampir tiada apa-apa. Ujian yang diambil pada bilangan hari yang sama selepas setiap perubahan, selama empat minggu, memberitahu anda sama ada ritma anda sepadan.",
-      "hintLabel": "ARA · Asal sebelum Ekspresi",
-      "hintText": [
-        "Nitrate yang naik adalah ekspresi. Drift beransur dalam ketumpatan stocking, kadar suapan, atau liputan tumbuhan yang menghasilkannya adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: bacaan pada test kit memberitahu anda sesuatu sedang beroperasi dalam sistem — bukan apa yang perlu dibuat, tetapi di mana perlu dicari. Surih balik dari nombor kepada apa yang menghasilkannya."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Response yang selari kepada nitrate yang naik"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Response yang selari",
-      "titleHtml": "Response yang selari<br><em>kepada nitrate yang naik.</em>",
-      "body": [
-        "Response yang selari kepada nitrate yang naik bukan sekadar water change yang lebih kerap — walaupun itu mungkin sebahagiannya. Response penuh membaca punca. Kalau ketumpatan stocking merangkak naik, response yang selari adalah penilaian jujur kapasiti beban. Kalau pemberian makan meningkat, percubaan dua minggu pemberian makan yang dikurangkan selalunya menghasilkan penurunan ketara dalam kadar kenaikan nitrate. Kalau tumbuhan telah reput, menggantikan atau menanam semula tangani penyerapan nitrate secara langsung.",
-        "Planted tank adalah kes khas: tumbuhan menggunakan nitrate dan phosphate secara langsung sebagai nutrien. Tank yang ditanam dengan baik dengan tumbuhan yang berkembang aktif boleh menampung beban organik yang jauh lebih tinggi berbanding tank kosong dengan stocking yang sama, dan nitrate mungkin sangat perlahan naik atau stabil sepenuhnya jika tumbuhan sihat dan pencahayaan mencukupi.",
-        "Satu perkara yang tidak perlu dipusatkan terlalu banyak: nombor nitrate mutlak semasa krisis. Penjaga sering menyaksikan nitrate 40 ppm dan berasa panik. Nitrate pada 40 ppm yang stabil, dengan ikan yang makan dan berkelakuan normal, adalah situasi berbeza dari nitrate pada 20 ppm yang naik 10 ppm setiap tiga hari. Arah dan trend lebih penting dari nombor pada mana-mana hari."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Pengampunan Ekologi",
-      "hintText": [
-        "Tank dengan nitrate tinggi secara kronik boleh pulih. Mengurangkan beban, meningkatkan liputan tumbuhan, dan memulihkan ritma water change yang konsisten semua mengubah Chemical Rhythm dalam tempoh minggu. Pengumpulan masa lalu bukan keadaan kekal — ia adalah hasil penjajaran sebelumnya. Ubah penjajaran, dan bacaan berubah."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/overfeeding-aquarium",
+            "text": "Memberi makan berlebihan →"
+        },
+        {
+            "href": "/articles/aquarium-filter-maintenance",
+            "text": "Filter anda bukan apa yang anda fikir →"
+        },
+        {
+            "href": "/articles/cycled-tank-problems",
+            "text": "Tank yang dah matang →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/overfeeding-aquarium",
-      "text": "Memberi makan berlebihan →"
-    },
-    {
-      "href": "/articles/aquarium-filter-maintenance",
-      "text": "Filter anda bukan apa yang anda fikir →"
-    },
-    {
-      "href": "/articles/cycled-tank-problems",
-      "text": "Tank yang dah matang →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

@@ -1,137 +1,153 @@
 {
-  "_meta": {
-    "slug": "caring-without-guilt",
-    "lang": "id",
-    "sourceFile": "articles/caring-without-guilt.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Merawat Tanpa Rasa Bersalah — Aquatic Rhythm",
-    "description": "Masalah akuarium bukan bukti kegagalan moral. Cara Anda sebenarnya merawat adalah informasi yang berguna. Panduan ini menjelaskan cara membaca ritme Anda sendiri sebagai penjaga — dan cara keluar dari lingkaran reaksi yang merusak tank yang stabil.",
-    "ogTitle": "Merawat Tanpa Rasa Bersalah",
-    "ogDescription": "Cara Anda merawat akuarium adalah informasi, bukan penilaian. Pelajari cara membaca ritme Anda sendiri dan merespons dengan lebih selaras."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Semua Tingkat",
-    "titleHtml": "Merawat<br><em>Tanpa Rasa Bersalah</em>",
-    "subtitle": "Masalah dalam sistem tertutup bukan berawal dari kegagalan moral.",
-    "texts": [
-      "Ikan mati dan respons pertama adalah rasa bersalah. Atau parameter bergeser dan penjaga menghabiskan lebih banyak waktu menyalahkan diri sendiri dari waktu yang digunakan untuk memahami apa yang terjadi. Atau perawatan terlewat satu minggu dan itu sudah cukup untuk memicu spiral kecemasan tentang apakah ia penjaga yang cukup baik.",
-      "Panduan ini bukan tentang membuat penjaga merasa lebih baik. Ini tentang menggantikan rasa bersalah — yang tidak menghasilkan informasi berguna — dengan observasi, yang menghasilkan.",
-      "Cara Anda merawat adalah data. Bukan penilaian tentang karakter Anda."
+    "_meta": {
+        "slug": "caring-without-guilt",
+        "lang": "id",
+        "sourceFile": "articles/caring-without-guilt.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Merawat Tanpa Rasa Bersalah — Aquatic Rhythm",
+        "description": "Masalah akuarium bukan bukti kegagalan moral. Cara Anda sebenarnya merawat adalah informasi yang berguna. Panduan ini menjelaskan cara membaca ritme Anda sendiri sebagai penjaga — dan cara keluar dari lingkaran reaksi yang merusak tank yang stabil.",
+        "ogTitle": "Merawat Tanpa Rasa Bersalah",
+        "ogDescription": "Cara Anda merawat akuarium adalah informasi, bukan penilaian. Pelajari cara membaca ritme Anda sendiri dan merespons dengan lebih selaras."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Semua Tingkat",
+        "titleHtml": "Merawat<br><em>Tanpa Rasa Bersalah</em>",
+        "subtitle": "Masalah dalam sistem tertutup bukan berawal dari kegagalan moral.",
+        "texts": [
+            "Ikan mati dan respons pertama adalah rasa bersalah. Atau parameter bergeser dan penjaga menghabiskan lebih banyak waktu menyalahkan diri sendiri dari waktu yang digunakan untuk memahami apa yang terjadi. Atau perawatan terlewat satu minggu dan itu sudah cukup untuk memicu spiral kecemasan tentang apakah ia penjaga yang cukup baik.",
+            "Panduan ini bukan tentang membuat penjaga merasa lebih baik. Ini tentang menggantikan rasa bersalah — yang tidak menghasilkan informasi berguna — dengan observasi, yang menghasilkan.",
+            "Cara Anda merawat adalah data. Bukan penilaian tentang karakter Anda."
+        ],
+        "metaModules": "5 modul",
+        "metaTime": "Semua tingkat",
+        "metaLevel": "~8 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Jebakan rasa bersalah",
+            "titleHtml": "Masalah dalam sistem tertutup<br><em>bukan bermula dari kegagalan moral.</em>",
+            "body": [
+                "Akuarium adalah sistem tertutup yang kompleks. Bakteri mati karena kondisi yang berubah, bukan karena penjaganya tidak peduli. Ikan bisa sakit karena patogen yang ada di sistem sebelum penjaga menyadarinya, bukan karena penjaganya lalai. Parameter bergeser karena bioload berubah, musim berganti, atau peralatan berubah secara halus dari waktu ke waktu.",
+                "Rasa bersalah menyederhanakan kerumitan itu menjadi satu pertanyaan: apakah saya cukup baik? Pertanyaan itu tidak berguna karena jawabannya tidak bisa menjelaskan apa yang sebenarnya terjadi di dalam air.",
+                "Yang berguna adalah pertanyaan yang berbeda: apa yang sedang sistem ini katakan? Apa yang terjadi yang mungkin belum saya perhatikan? Apa yang bisa saya pelajari dari kejadian ini?",
+                "Mengganti rasa bersalah dengan pertanyaan-pertanyaan itu bukan tentang menghilangkan tanggung jawab. Ini tentang mengubah energi dari self-judgment — yang tidak bisa mengubah apa yang sudah terjadi — ke pemahaman, yang bisa mencegah yang berikutnya."
+            ],
+            "pullQuote": "Rasa bersalah menyederhanakan sistem yang kompleks menjadi satu pertanyaan: apakah saya cukup baik? Pertanyaan itu tidak menghasilkan informasi yang berguna.",
+            "hintLabel": "Dari ARA",
+            "hintText": [
+                "Rasa malu mengurangi pembelajaran. Ketakutan mempercepat reaksi berlebihan. Panduan — termasuk panduan yang Anda berikan kepada diri sendiri — harus menjaga martabat, rasa ingin tahu, dan kepercayaan diri. Tanpa hal-hal itu, perawatan yang berkelanjutan cenderung runtuh."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Keeper Rhythm sebagai data"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Keeper Rhythm sebagai data",
+            "titleHtml": "Cara Anda sebenarnya merawat<br><em>adalah informasi yang berguna.</em>",
+            "body": [
+                "Dalam ARA, Keeper Rhythm adalah salah satu dari lima ritme yang membentuk keselarasan akuarium. Ritme ini bukan tentang seberapa sering Anda 'seharusnya' merawat — ini tentang pola perawatan Anda yang sebenarnya. Dan pola itu adalah data.",
+                "Ada empat tipe Keeper Rhythm yang umum:",
+                "<strong>Episodik</strong> — merawat dengan intensitas tinggi beberapa kali dalam sebulan, jarang di antaranya. Parameter mungkin berfluktuasi lebih, tapi koloni bakteri sering bisa menangani ketidakkonsistenan jika setup sudah disesuaikan untuk tipe ini.",
+                "<strong>Konsisten</strong> — perawatan rutin kecil beberapa kali seminggu. Tipe yang paling mudah dikelola untuk kebanyakan sistem karena perubahan kecil terdeteksi lebih awal.",
+                "<strong>Intensif</strong> — perhatian detail setiap hari atau hampir setiap hari. Bisa bekerja baik, tapi juga bisa berubah menjadi over-intervention jika setiap observasi memicu respons.",
+                "<strong>Minimal</strong> — hanya perawatan dasar: makan, cek visual sesekali, ganti air jarang. Bisa berhasil jika sistem dirancang untuk kemandirian (setup low-tech, bioload rendah, filtrasi berlebih).",
+                "Tidak ada satu tipe yang 'benar.' Yang bermasalah adalah ketika setup dibangun untuk tipe tertentu tapi penjaga sebenarnya menjalani tipe yang lain — atau ketika penjaga menetapkan standar perawatan yang tidak pernah bisa ia penuhi secara konsisten, lalu merasa bersalah ketika standar itu terlewat."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Keeper Rhythm",
+            "hintText": [
+                "Keeper Rhythm dalam ARA bukan standar yang harus dicapai — ini adalah deskripsi jujur tentang pola yang sebenarnya bisa Anda pertahankan. Setup yang selaras adalah setup yang bisa bertahan dengan ritme yang Anda benar-benar miliki. Itu adalah titik awal. Arah yang ARA tunjuk — tanpa tekanan, tanpa rasa malu — adalah menuju perawatan yang lebih konsisten dan bertahap, karena itulah yang paling bisa diterima oleh sistem hidup."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Lingkaran reaksi",
+            "hintLabel2": "ARA · Protokol Perubahan Hidup",
+            "hintText2": [
+                "ARA mengakui bahwa ritme perawatan berubah ketika kehidupan berubah — pekerjaan baru, penyakit, pindahan, musim yang sulit. Ini dinamai secara eksplisit sebagai protokol perubahan hidup: ketika kapasitas penjaga yang tersedia turun secara signifikan, pertanyaannya bukan bagaimana mempertahankan standar perawatan sebelumnya dengan waktu lebih sedikit. Ini adalah bagaimana mempertahankan perawatan minimum yang efektif — ambang batas di bawahnya stabilitas sistem berisiko — sementara kehidupan penjaga menyusun ulang. Ini adalah pertanyaan kerangka kerja, bukan pertanyaan moral. Sistem yang dirancang untuk ritme penjaga yang realistis bertahan melalui periode sulit. Sistem yang dirancang untuk yang ideal sering tidak."
+            ]
+        },
+        {
+            "id": "mod-3",
+            "tag": "Lingkaran reaksi",
+            "titleHtml": "Lingkaran reaksi<br><em>dan cara ia merusak tank yang stabil.</em>",
+            "body": [
+                "Salah satu pola yang paling umum dan paling merusak dalam hobi ini adalah lingkaran reaksi: sesuatu terlihat tidak beres, penjaga bereaksi dengan intervensi, intervensi itu mengganggu sesuatu yang lain, ketidakstabilan baru memicu rasa bersalah, rasa bersalah mendorong lebih banyak intervensi.",
+                "Lingkaran ini sering dimulai dari tempat yang baik — perhatian dan kepedulian terhadap penghuni. Tapi intervensi yang dipicu oleh kecemasan daripada observasi cenderung melakukan terlalu banyak terlalu cepat. Ganti air besar karena parameter sedikit naik. Ganti filter karena khawatir tidak cukup bersih. Tambah obat karena satu ikan terlihat kurang aktif. Setiap tindakan itu mungkin tidak diperlukan — dan gabungannya bisa lebih merusak dari masalah aslinya.",
+                "Tank yang stabil memiliki kapasitas buffer yang cukup besar. Satu nitrat yang sedikit naik, satu ganti air yang terlewat, satu hari makan yang tidak teratur — sistem yang sehat bisa menangani semua itu tanpa intervensi darurat. Yang tidak bisa ia tangani dengan baik adalah serangkaian intervensi cepat yang dilakukan dari kecemasan.",
+                "Respons yang paling selaras terhadap sesuatu yang tampak tidak beres sering kali adalah: amati lebih lama, tes parameter, tunggu 24–48 jam sebelum melakukan apapun kecuali ada tanda bahaya yang jelas. Melakukan lebih sedikit adalah keputusan aktif, bukan kelalaian."
+            ],
+            "pullQuote": "Intervensi yang dipicu oleh kecemasan cenderung melakukan terlalu banyak terlalu cepat. Tank yang sehat bisa menangani variasi kecil — yang lebih sulit ditanganinya adalah serangkaian perubahan mendadak.",
+            "hintLabel": "Dari ARA",
+            "hintText": [
+                "Kelebihan kognitif meningkatkan risiko reaksi berlebihan. Kelelahan sering mendahului intervensi yang drastis atau tidak perlu. Sistem yang dirancang tanpa toleransi untuk realitas ini menjadi rapuh."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Kesinambungan yang koheren"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Kesinambungan yang koheren",
+            "titleHtml": "Sistem hidup merespons lebih baik<br><em>terhadap kesinambungan yang koheren.</em>",
+            "body": [
+                "Ada pola yang konsisten dalam akuarium yang sehat jangka panjang: penjaganya tidak selalu melakukan banyak, tapi apa yang ia lakukan, ia lakukan secara konsisten. Ini yang disebut kesinambungan yang koheren — bukan intensitas, tapi keteraturan yang bisa diandalkan sistem.",
+                "Dalam praktik: ganti air 15% setiap minggu secara konsisten menghasilkan kualitas air yang lebih stabil dari ganti air 50% setiap bulan dengan minggu-minggu tidak diperhatikan di antaranya. Filter yang dibersihkan dengan benar sekali sebulan lebih baik dari filter yang dibersihkan terlalu agresif beberapa kali seminggu karena penjaga khawatir. Makan dua kali sehari dalam jumlah yang tepat lebih baik dari makan tidak teratur dengan jumlah yang bervariasi.",
+                "Kesinambungan mengijinkan bakteri menstabilkan koloninya. Ia mengijinkan ikan membangun pola yang bisa diprediksi. Ia mengijinkan tanaman berfotosintesis dalam siklus yang konsisten. Sistem hidup menghargai prediktabilitas — karena proses biologis yang menopang mereka beroperasi pada siklus yang teratur.",
+                "Implikasinya bagi penjaga yang merasa bersalah karena tidak merawat 'cukup': ukuran yang lebih berguna dari kualitas perawatan bukan intensitasnya, tapi konsistensinya. Apakah sistem bisa bergantung pada Anda untuk melakukan hal-hal dasar secara teratur? Jawaban itu lebih bermakna dari seberapa sering Anda mengintervensi."
+            ],
+            "pullQuote": "Ganti air 15% setiap minggu menghasilkan kualitas air yang lebih stabil dari ganti air 50% setiap bulan. Sistem hidup menghargai prediktabilitas.",
+            "hintLabel": "ARA · Protokol Perubahan Hidup",
+            "hintText": [
+                "ARA mengakui bahwa ritme perawatan berubah ketika kehidupan berubah — pekerjaan baru, penyakit, pindahan, musim yang sulit. Ini dinamai secara eksplisit sebagai protokol perubahan hidup: ketika kapasitas penjaga yang tersedia turun secara signifikan, pertanyaannya bukan bagaimana mempertahankan standar perawatan sebelumnya dengan waktu lebih sedikit. Ini adalah bagaimana mempertahankan perawatan minimum yang efektif — ambang batas di bawahnya stabilitas sistem berisiko — sementara kehidupan penjaga menyusun ulang. Ini adalah pertanyaan kerangka kerja, bukan pertanyaan moral."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Observasi sebagai alat diagnostik",
+            "hintLabel3": "Dalam praktik",
+            "hintText3": [
+                "Kematangan dalam sistem datang dari waktu dan kesinambungan, bukan kesempurnaan. Tangki yang dirawat dengan tenang — meskipun tidak sempurna — selama dua tahun sering memiliki ketahanan jauh lebih besar dari yang dikelola secara intensif selama enam bulan."
+            ]
+        },
+        {
+            "id": "mod-5",
+            "tag": "Observasi sebagai alat diagnostik",
+            "titleHtml": "Observasi<br><em>adalah alat diagnostik yang utama.</em>",
+            "body": [
+                "Keterampilan yang paling berguna yang bisa dikembangkan penjaga bukan keterampilan teknis — bukan pengetahuan kimia air atau pemahaman siklus nitrogen. Keterampilan yang paling berguna adalah kemampuan untuk mengamati tanpa segera bereaksi.",
+                "Duduk di depan tank selama beberapa menit dan perhatikan: apakah ikan makan dengan cara biasanya? Apakah ada yang bersembunyi di tempat yang tidak biasa? Apakah air jernih? Apakah aliran filter normal? Pertanyaan-pertanyaan sederhana itu, dijawab secara rutin, memberikan baseline yang membuat perubahan mudah dideteksi.",
+                "Penjaga yang mengembangkan kemampuan observasi yang baik mendeteksi masalah lebih awal — sebelum mereka menjadi krisis — dan bisa membuat keputusan yang lebih tepat karena mereka punya konteks, bukan hanya respons terhadap kepanikan sesaat.",
+                "Rasa bersalah menjauhkan perhatian dari sistem dan memindahkannya ke penilaian diri. Observasi membalik itu: perhatian kembali ke sistem, ke apa yang sebenarnya terjadi, ke sinyal yang mungkin sudah ada dan belum terbaca. Itu — bukan menjadi penjaga yang 'lebih baik' dalam arti abstrak — adalah langkah yang paling berguna yang bisa Anda ambil setelah sesuatu salah."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Penutup",
+            "hintText": [
+                "Anda tidak berangkat untuk gagal. Anda berangkat untuk merawat sesuatu yang hidup. Niat itu tetap valid — bahkan pada hari-hari ketika tangki terlihat lebih buruk dari yang Anda harapkan, bahkan pada minggu-minggu ketika Anda tidak melakukan semua yang Anda rencanakan. Ketidakselarasan adalah informasi, bukan vonis. Di situlah perawatan yang jujur dimulai."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "5 modul",
-    "metaTime": "Semua tingkat",
-    "metaLevel": "~8 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Jebakan rasa bersalah",
-      "titleHtml": "Masalah dalam sistem tertutup<br><em>bukan bermula dari kegagalan moral.</em>",
-      "body": [
-        "Akuarium adalah sistem tertutup yang kompleks. Bakteri mati karena kondisi yang berubah, bukan karena penjaganya tidak peduli. Ikan bisa sakit karena patogen yang ada di sistem sebelum penjaga menyadarinya, bukan karena penjaganya lalai. Parameter bergeser karena bioload berubah, musim berganti, atau peralatan berubah secara halus dari waktu ke waktu.",
-        "Rasa bersalah menyederhanakan kerumitan itu menjadi satu pertanyaan: apakah saya cukup baik? Pertanyaan itu tidak berguna karena jawabannya tidak bisa menjelaskan apa yang sebenarnya terjadi di dalam air.",
-        "Yang berguna adalah pertanyaan yang berbeda: apa yang sedang sistem ini katakan? Apa yang terjadi yang mungkin belum saya perhatikan? Apa yang bisa saya pelajari dari kejadian ini?",
-        "Mengganti rasa bersalah dengan pertanyaan-pertanyaan itu bukan tentang menghilangkan tanggung jawab. Ini tentang mengubah energi dari self-judgment — yang tidak bisa mengubah apa yang sudah terjadi — ke pemahaman, yang bisa mencegah yang berikutnya."
-      ],
-      "pullQuote": "Rasa bersalah menyederhanakan sistem yang kompleks menjadi satu pertanyaan: apakah saya cukup baik? Pertanyaan itu tidak menghasilkan informasi yang berguna.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Keeper Rhythm sebagai data"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Keeper Rhythm sebagai data",
-      "titleHtml": "Cara Anda sebenarnya merawat<br><em>adalah informasi yang berguna.</em>",
-      "body": [
-        "Dalam ARA, Keeper Rhythm adalah salah satu dari lima ritme yang membentuk keselarasan akuarium. Ritme ini bukan tentang seberapa sering Anda 'seharusnya' merawat — ini tentang pola perawatan Anda yang sebenarnya. Dan pola itu adalah data.",
-        "Ada empat tipe Keeper Rhythm yang umum:",
-        "<strong>Episodik</strong> — merawat dengan intensitas tinggi beberapa kali dalam sebulan, jarang di antaranya. Parameter mungkin berfluktuasi lebih, tapi koloni bakteri sering bisa menangani ketidakkonsistenan jika setup sudah disesuaikan untuk tipe ini.",
-        "<strong>Konsisten</strong> — perawatan rutin kecil beberapa kali seminggu. Tipe yang paling mudah dikelola untuk kebanyakan sistem karena perubahan kecil terdeteksi lebih awal.",
-        "<strong>Intensif</strong> — perhatian detail setiap hari atau hampir setiap hari. Bisa bekerja baik, tapi juga bisa berubah menjadi over-intervention jika setiap observasi memicu respons.",
-        "<strong>Minimal</strong> — hanya perawatan dasar: makan, cek visual sesekali, ganti air jarang. Bisa berhasil jika sistem dirancang untuk kemandirian (setup low-tech, bioload rendah, filtrasi berlebih).",
-        "Tidak ada satu tipe yang 'benar.' Yang bermasalah adalah ketika setup dibangun untuk tipe tertentu tapi penjaga sebenarnya menjalani tipe yang lain — atau ketika penjaga menetapkan standar perawatan yang tidak pernah bisa ia penuhi secara konsisten, lalu merasa bersalah ketika standar itu terlewat."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Keeper Rhythm",
-      "hintText": [
-        "Keeper Rhythm dalam ARA bukan standar yang harus dicapai — ini adalah deskripsi jujur tentang pola yang sebenarnya bisa Anda pertahankan. Setup yang selaras adalah setup yang bisa bertahan dengan ritme yang Anda benar-benar miliki. Itu adalah titik awal. Arah yang ARA tunjuk — tanpa tekanan, tanpa rasa malu — adalah menuju perawatan yang lebih konsisten dan bertahap, karena itulah yang paling bisa diterima oleh sistem hidup."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Lingkaran reaksi"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Lingkaran reaksi",
-      "titleHtml": "Lingkaran reaksi<br><em>dan cara ia merusak tank yang stabil.</em>",
-      "body": [
-        "Salah satu pola yang paling umum dan paling merusak dalam hobi ini adalah lingkaran reaksi: sesuatu terlihat tidak beres, penjaga bereaksi dengan intervensi, intervensi itu mengganggu sesuatu yang lain, ketidakstabilan baru memicu rasa bersalah, rasa bersalah mendorong lebih banyak intervensi.",
-        "Lingkaran ini sering dimulai dari tempat yang baik — perhatian dan kepedulian terhadap penghuni. Tapi intervensi yang dipicu oleh kecemasan daripada observasi cenderung melakukan terlalu banyak terlalu cepat. Ganti air besar karena parameter sedikit naik. Ganti filter karena khawatir tidak cukup bersih. Tambah obat karena satu ikan terlihat kurang aktif. Setiap tindakan itu mungkin tidak diperlukan — dan gabungannya bisa lebih merusak dari masalah aslinya.",
-        "Tank yang stabil memiliki kapasitas buffer yang cukup besar. Satu nitrat yang sedikit naik, satu ganti air yang terlewat, satu hari makan yang tidak teratur — sistem yang sehat bisa menangani semua itu tanpa intervensi darurat. Yang tidak bisa ia tangani dengan baik adalah serangkaian intervensi cepat yang dilakukan dari kecemasan.",
-        "Respons yang paling selaras terhadap sesuatu yang tampak tidak beres sering kali adalah: amati lebih lama, tes parameter, tunggu 24–48 jam sebelum melakukan apapun kecuali ada tanda bahaya yang jelas. Melakukan lebih sedikit adalah keputusan aktif, bukan kelalaian."
-      ],
-      "pullQuote": "Intervensi yang dipicu oleh kecemasan cenderung melakukan terlalu banyak terlalu cepat. Tank yang sehat bisa menangani variasi kecil — yang lebih sulit ditanganinya adalah serangkaian perubahan mendadak.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Kesinambungan yang koheren"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Kesinambungan yang koheren",
-      "titleHtml": "Sistem hidup merespons lebih baik<br><em>terhadap kesinambungan yang koheren.</em>",
-      "body": [
-        "Ada pola yang konsisten dalam akuarium yang sehat jangka panjang: penjaganya tidak selalu melakukan banyak, tapi apa yang ia lakukan, ia lakukan secara konsisten. Ini yang disebut kesinambungan yang koheren — bukan intensitas, tapi keteraturan yang bisa diandalkan sistem.",
-        "Dalam praktik: ganti air 15% setiap minggu secara konsisten menghasilkan kualitas air yang lebih stabil dari ganti air 50% setiap bulan dengan minggu-minggu tidak diperhatikan di antaranya. Filter yang dibersihkan dengan benar sekali sebulan lebih baik dari filter yang dibersihkan terlalu agresif beberapa kali seminggu karena penjaga khawatir. Makan dua kali sehari dalam jumlah yang tepat lebih baik dari makan tidak teratur dengan jumlah yang bervariasi.",
-        "Kesinambungan mengijinkan bakteri menstabilkan koloninya. Ia mengijinkan ikan membangun pola yang bisa diprediksi. Ia mengijinkan tanaman berfotosintesis dalam siklus yang konsisten. Sistem hidup menghargai prediktabilitas — karena proses biologis yang menopang mereka beroperasi pada siklus yang teratur.",
-        "Implikasinya bagi penjaga yang merasa bersalah karena tidak merawat 'cukup': ukuran yang lebih berguna dari kualitas perawatan bukan intensitasnya, tapi konsistensinya. Apakah sistem bisa bergantung pada Anda untuk melakukan hal-hal dasar secara teratur? Jawaban itu lebih bermakna dari seberapa sering Anda mengintervensi."
-      ],
-      "pullQuote": "Ganti air 15% setiap minggu menghasilkan kualitas air yang lebih stabil dari ganti air 50% setiap bulan. Sistem hidup menghargai prediktabilitas.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Observasi sebagai alat diagnostik"
-    },
-    {
-      "id": "mod-5",
-      "tag": "Observasi sebagai alat diagnostik",
-      "titleHtml": "Observasi<br><em>adalah alat diagnostik yang utama.</em>",
-      "body": [
-        "Keterampilan yang paling berguna yang bisa dikembangkan penjaga bukan keterampilan teknis — bukan pengetahuan kimia air atau pemahaman siklus nitrogen. Keterampilan yang paling berguna adalah kemampuan untuk mengamati tanpa segera bereaksi.",
-        "Duduk di depan tank selama beberapa menit dan perhatikan: apakah ikan makan dengan cara biasanya? Apakah ada yang bersembunyi di tempat yang tidak biasa? Apakah air jernih? Apakah aliran filter normal? Pertanyaan-pertanyaan sederhana itu, dijawab secara rutin, memberikan baseline yang membuat perubahan mudah dideteksi.",
-        "Penjaga yang mengembangkan kemampuan observasi yang baik mendeteksi masalah lebih awal — sebelum mereka menjadi krisis — dan bisa membuat keputusan yang lebih tepat karena mereka punya konteks, bukan hanya respons terhadap kepanikan sesaat.",
-        "Rasa bersalah menjauhkan perhatian dari sistem dan memindahkannya ke penilaian diri. Observasi membalik itu: perhatian kembali ke sistem, ke apa yang sebenarnya terjadi, ke sinyal yang mungkin sudah ada dan belum terbaca. Itu — bukan menjadi penjaga yang 'lebih baik' dalam arti abstrak — adalah langkah yang paling berguna yang bisa Anda ambil setelah sesuatu salah."
-      ],
-      "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/aquarium-not-a-project",
+            "text": "Akuarium bukan proyek →"
+        },
+        {
+            "href": "/articles/aquarium-maintenance-routine",
+            "text": "Rutinitas perawatan yang berhasil →"
+        },
+        {
+            "href": "/articles/when-hobby-stops-feeling-good",
+            "text": "Ketika hobi berhenti terasa menyenangkan →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Aquatic Rhythm Alignment →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/aquarium-not-a-project",
-      "text": "Akuarium bukan proyek →"
-    },
-    {
-      "href": "/articles/aquarium-maintenance-routine",
-      "text": "Rutinitas perawatan yang berhasil →"
-    },
-    {
-      "href": "/articles/when-hobby-stops-feeling-good",
-      "text": "Ketika hobi berhenti terasa menyenangkan →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Aquatic Rhythm Alignment →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

@@ -1,114 +1,118 @@
 {
-  "_meta": {
-    "slug": "how-often-water-changes",
-    "lang": "id",
-    "sourceFile": "articles/how-often-water-changes.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Seberapa Sering Harus Ganti Air? — Aquatic Rhythm",
-    "description": "Tidak ada satu jawaban yang benar — dan itu bukan masalah yang Anda kira. ARA dimulai dengan keeper rhythm Anda terlebih dahulu, lalu bertanya apa konsistensi yang sistem Anda benar-benar butuhkan.",
-    "ogTitle": "Seberapa Sering Harus Ganti Air?",
-    "ogDescription": "Tidak ada satu jawaban yang benar — dan itu bukan masalah yang Anda kira. ARA dimulai dengan keeper rhythm Anda dulu."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Keeper & Ritme",
-    "titleHtml": "Seberapa Sering Harus<br><em>Ganti Air?</em>",
-    "subtitle": "Tidak ada satu jawaban yang benar. Dan itu bukan masalah yang Anda kira.",
-    "texts": [
-      "25% seminggu. 50% sebulan. Ketika nitrat sudah sampai angka tertentu. Saran yang ada terlalu beragam sampai terasa seperti semua orang menebak — dan Anda yang salah.",
-      "Mungkin pertanyaan itu sendiri yang jadi masalahnya. ARA tidak dimulai dengan frekuensi. Ia dimulai dengan keeper rhythm Anda — pola perawatan nyata yang bisa Anda pertahankan — dan bekerja dari sana."
+    "_meta": {
+        "slug": "how-often-water-changes",
+        "lang": "id",
+        "sourceFile": "articles/how-often-water-changes.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Seberapa Sering Harus Ganti Air? — Aquatic Rhythm",
+        "description": "Tidak ada satu jawaban yang benar — dan itu bukan masalah yang Anda kira. ARA dimulai dengan keeper rhythm Anda terlebih dahulu, lalu bertanya apa konsistensi yang sistem Anda benar-benar butuhkan.",
+        "ogTitle": "Seberapa Sering Harus Ganti Air?",
+        "ogDescription": "Tidak ada satu jawaban yang benar — dan itu bukan masalah yang Anda kira. ARA dimulai dengan keeper rhythm Anda dulu."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Keeper & Ritme",
+        "titleHtml": "Seberapa Sering Harus<br><em>Ganti Air?</em>",
+        "subtitle": "Tidak ada satu jawaban yang benar. Dan itu bukan masalah yang Anda kira.",
+        "texts": [
+            "25% seminggu. 50% sebulan. Ketika nitrat sudah sampai angka tertentu. Saran yang ada terlalu beragam sampai terasa seperti semua orang menebak — dan Anda yang salah.",
+            "Mungkin pertanyaan itu sendiri yang jadi masalahnya. ARA tidak dimulai dengan frekuensi. Ia dimulai dengan keeper rhythm Anda — pola perawatan nyata yang bisa Anda pertahankan — dan bekerja dari sana."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua tingkat",
+        "metaLevel": "~7 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Pertanyaan di balik pertanyaan",
+            "titleHtml": "Tanya sepuluh penghobi,<br><em>dapat sepuluh jawaban berbeda.</em>",
+            "body": [
+                "Tanya sepuluh penghobi berpengalaman dan Anda akan mendapat sepuluh jawaban berbeda. Setiap minggu. Dua minggu sekali. Sebulan sekali. 10%. 30%. 50%. Berdasarkan nitrat. Berdasarkan kalender. Berdasarkan kondisi akuarium.",
+                "Perbedaan itu bukan karena sebagian dari mereka salah. Ini karena frekuensi ganti air memang bergantung pada banyak hal yang berbeda untuk setiap akuarium dan setiap penghobi: beban biologis, banyaknya tanaman, kapasitas filter, fase akuarium, dan — bagian yang sering diabaikan dalam sebagian besar saran — pola perawatan yang penghobi itu sebenarnya mampu pertahankan.",
+                "Kabar baiknya adalah dalam rentang yang cukup luas, <em>konsistensi</em> ganti air Anda lebih penting dari frekuensi atau jumlah yang tepat. Akuarium yang mendapat ganti air kecil secara teratur hampir selalu lebih baik dari yang mendapat ganti air besar secara tidak menentu — meskipun total volume yang diganti per bulan sama."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Catatan Aquatic Rhythm",
+            "hintText": [
+                "ARA tidak memberikan jadwal ganti air universal karena memang tidak ada yang tepat untuk semua situasi. Yang ia lakukan adalah mengajukan dua pertanyaan terlebih dahulu: apa yang sistem Anda sebenarnya butuhkan, dan ritme apa yang benar-benar bisa Anda pertahankan? Jawaban atas pertanyaan kedua membentuk jawaban atas pertanyaan pertama."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Apa yang ganti air sebenarnya lakukan"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Apa yang sebenarnya terjadi",
+            "titleHtml": "Ganti air bukan<br><em>tentang membuang hal buruk.</em>",
+            "body": [
+                "Anggapan umum adalah ganti air membuang racun dan limbah. Itu sebagian benar. Tapi di akuarium yang berfungsi dengan baik, filter biologis yang mengelola sebagian besar beban toksik itu. Yang terutama dilakukan ganti air adalah sesuatu yang lebih halus: ia mengencerkan senyawa yang menumpuk yang tidak bisa diurai secara biologis — nitrat, bahan organik terlarut, mineral jejak yang habis — dan ia memperbarui Water Rhythm akuarium.",
+                "Water Rhythm, dalam istilah ARA, adalah pola pergerakan dan pembaruan dalam sistem. Ketika ritme itu menjadi terlalu tidak menentu — terlalu lama di antara ganti air, atau terlalu besar saat dilakukan — sistem harus menyerap perubahan mendadak. Biologi tidak merespons dengan baik terhadap perubahan mendadak.",
+                "Frekuensi yang tepat juga bergantung pada di mana akuarium Anda berada dalam fase ekologisnya. Akuarium <strong>Fase Awal</strong> — baru, atau baru saja di-restart — lebih banyak mendapat manfaat dari ganti air yang lebih sering dan lebih kecil. Biologi masih rapuh dan kimia bisa berubah cepat. Akuarium <strong>Fase Matang</strong> sudah membangun penyangga. Ia bisa menangani ganti air yang lebih jarang dengan lebih tenang, terutama jika ada tanaman dan beban biologis yang sedang. Sistem sudah membangun apa yang ARA sebut sebagai pengampunan ekologis — kapasitas untuk menyerap variasi penghobi tanpa terganggu."
+            ],
+            "pullQuote": "Ganti air bukan reset. Ia pembaruan — momen ketika beban kumulatif sistem dikurangi perlahan, dan kimia yang diandalkan makhluk hidup dikembalikan ke kisaran yang sehat. Pembaruan bekerja paling baik ketika ia bagian dari ritme, bukan respons terhadap krisis.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Ritme sebelum frekuensi"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Pendekatan ARA",
+            "titleHtml": "Ritme sebelum frekuensi.<br><em>Konsistensi yang koheren di atas segalanya.</em>",
+            "body": [
+                "Jawaban ARA untuk 'seberapa sering?' adalah: mulailah dengan apa yang benar-benar bisa Anda pertahankan. Bukan apa yang ingin Anda lakukan ketika hidup tidak rumit. Apa yang akan Anda lakukan ketika Anda lelah, ketika pekerjaan menumpuk, ketika Anda bepergian seminggu. Itulah keeper rhythm Anda yang sesungguhnya.",
+                "Penghobi yang konsisten melakukan 15% setiap dua minggu menciptakan kondisi jangka panjang yang lebih baik dari seseorang yang berencana 40% setiap minggu tapi melewatinya setiap kali ketiga atau keempat. Rencana itu terdengar lebih baik di atas kertas, tapi ketidakkonsistenan itu menciptakan fluktuasi yang lebih besar dari ritme kecil yang bisa diandalkan.",
+                "Ini bukan berarti jumlah tidak penting sama sekali. Jika nitrat selalu tinggi meskipun ganti air rutin, Anda perlu ganti air yang lebih besar atau beban biologis yang lebih sedikit. Tapi mulailah dengan ritme. Bangun kebiasaannya dulu. Kalibrasi dari sana.",
+                "Quiz Know Your Rhythm bisa membantu Anda mengidentifikasi jenis keeper rhythm yang sebenarnya Anda miliki — bukan yang Anda kira atau harapkan. Keeper rhythm yang berbeda sesuai dengan pendekatan perawatan air yang berbeda, dan membangun berdasarkan ritme Anda yang nyata versus yang dibayangkan adalah perbedaan antara perawatan yang bertahan lama dan yang rontok."
+            ],
+            "pullQuote": "Sistem hidup biasanya merespons lebih baik terhadap konsistensi yang koheren daripada ledakan intervensi. Lakukan sedikit, secara teratur, dengan perhatian yang jujur, menciptakan lebih banyak stabilitas daripada melakukan banyak sesekali. Ini berlaku untuk ganti air seperti halnya untuk bentuk perawatan lainnya.",
+            "hintLabel": "Prinsip ARA",
+            "hintText": [
+                "Capacity before ambition. Sistem tidak seharusnya dibangun di atas konsistensi yang dibayangkan. ARA membawa kehidupan nyata Anda ke dalam gambar — karena keberlanjutan bergantung pada apa yang benar-benar bisa dipertahankan, bukan apa yang terdengar benar secara teori."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Cara mengkalibrasi ritme Anda"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Bangun ritme yang bisa Anda pertahankan",
+            "titleHtml": "Mulailah dengan jujur.<br><em>Lalu kalibrasi.</em>",
+            "body": [
+                "Titik awal yang praktis untuk kebanyakan akuarium rumahan: pilih interval yang paling sering yang Anda tahu akan Anda pertahankan — setiap minggu, setiap sepuluh hari, dua minggu sekali — dan lakukan 15–25% setiap kali. Rentang itu cukup lembut untuk tidak mengejutkan sistem tapi cukup teratur untuk mencegah nitrat menumpuk secara signifikan di kebanyakan akuarium berisi sedang.",
+                "Lalu tes nitrat dua atau tiga minggu kemudian. Jika tetap di bawah 20 ppm di antara ganti air, ritme Anda bekerja. Jika selalu lebih tinggi, tambah jumlah sedikit, kurangi pemberian makan, atau tambahkan tanaman. Jika sangat rendah dengan tanaman hidup dan beban biologis ringan, Anda mungkin bisa memperpanjang interval tanpa dampak.",
+                "Yang terpenting adalah menghindari kebiasaan ganti air besar hanya saat keadaan darurat ketika sesuatu terlihat salah — lalu tidak ganti air sama sekali dalam waktu lama. Pola itu menciptakan fluktuasi terbesar, tekanan paling banyak pada ikan, dan kegelisahan terbesar bagi penghobi. Bangun ritme dulu. Meskipun tidak sempurna. Akuarium akan mencerminkannya."
+            ],
+            "pullQuote": "Ritme antara Anda dan akuarium adalah sesuatu yang nyata. Ketika perawatan koheren dan berkelanjutan — meskipun sederhana — sistem belajar untuk tetap dalam kisarannya. Itu bukan metafora. Itu ekologi.",
+            "hintLabel": "Catatan tentang fase akuarium",
+            "hintText": [
+                "Akuarium baru (Fase Awal) umumnya membutuhkan lebih banyak perhatian — ganti air yang lebih kecil tapi lebih sering, terutama selama cycling. Saat akuarium matang dan biologi stabil, Anda akan menemukan bahwa Anda bisa melakukan lebih sedikit dan sistem akan bertahan lebih lama. Pengampunan yang semakin meningkat itu adalah sesuatu yang Anda dapatkan melalui waktu dan perawatan yang konsisten — bukan sesuatu yang bisa dipotong jalan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel3": "ARA · Keeper Rhythm",
+            "hintText3": [
+                "Volume saran water change yang saling bertentangan — mingguan, dua mingguan, hanya ketika nitrat mencapai angka tertentu, tidak pernah tanpa pengujian — dapat menghasilkan kecemasan khusus penjaga: perasaan bahwa Anda selalu melakukan yang salah, bahwa jawaban yang benar ada dan Anda belum menemukannya. Kecemasan itu cenderung menghasilkan pola perawatan yang paling mengganggu: perubahan besar yang tidak teratur dilakukan secara reaktif ketika sesuatu terlihat tidak beres, diselingi dengan periode panjang tanpa tindakan. Ritme antara penjaga dan tangki lebih penting dari frekuensi yang tepat. 15% yang jujur setiap sepuluh hari, dilakukan secara konsisten, menghasilkan lebih sedikit ketidakstabilan dari 30% aspirasional mingguan yang sebenarnya terjadi sebulan sekali."
+            ]
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua tingkat",
-    "metaLevel": "~7 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Pertanyaan di balik pertanyaan",
-      "titleHtml": "Tanya sepuluh penghobi,<br><em>dapat sepuluh jawaban berbeda.</em>",
-      "body": [
-        "Tanya sepuluh penghobi berpengalaman dan Anda akan mendapat sepuluh jawaban berbeda. Setiap minggu. Dua minggu sekali. Sebulan sekali. 10%. 30%. 50%. Berdasarkan nitrat. Berdasarkan kalender. Berdasarkan kondisi akuarium.",
-        "Perbedaan itu bukan karena sebagian dari mereka salah. Ini karena frekuensi ganti air memang bergantung pada banyak hal yang berbeda untuk setiap akuarium dan setiap penghobi: beban biologis, banyaknya tanaman, kapasitas filter, fase akuarium, dan — bagian yang sering diabaikan dalam sebagian besar saran — pola perawatan yang penghobi itu sebenarnya mampu pertahankan.",
-        "Kabar baiknya adalah dalam rentang yang cukup luas, <em>konsistensi</em> ganti air Anda lebih penting dari frekuensi atau jumlah yang tepat. Akuarium yang mendapat ganti air kecil secara teratur hampir selalu lebih baik dari yang mendapat ganti air besar secara tidak menentu — meskipun total volume yang diganti per bulan sama."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Catatan Aquatic Rhythm",
-      "hintText": [
-        "ARA tidak memberikan jadwal ganti air universal karena memang tidak ada yang tepat untuk semua situasi. Yang ia lakukan adalah mengajukan dua pertanyaan terlebih dahulu: apa yang sistem Anda sebenarnya butuhkan, dan ritme apa yang benar-benar bisa Anda pertahankan? Jawaban atas pertanyaan kedua membentuk jawaban atas pertanyaan pertama."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Apa yang ganti air sebenarnya lakukan"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Apa yang sebenarnya terjadi",
-      "titleHtml": "Ganti air bukan<br><em>tentang membuang hal buruk.</em>",
-      "body": [
-        "Anggapan umum adalah ganti air membuang racun dan limbah. Itu sebagian benar. Tapi di akuarium yang berfungsi dengan baik, filter biologis yang mengelola sebagian besar beban toksik itu. Yang terutama dilakukan ganti air adalah sesuatu yang lebih halus: ia mengencerkan senyawa yang menumpuk yang tidak bisa diurai secara biologis — nitrat, bahan organik terlarut, mineral jejak yang habis — dan ia memperbarui Water Rhythm akuarium.",
-        "Water Rhythm, dalam istilah ARA, adalah pola pergerakan dan pembaruan dalam sistem. Ketika ritme itu menjadi terlalu tidak menentu — terlalu lama di antara ganti air, atau terlalu besar saat dilakukan — sistem harus menyerap perubahan mendadak. Biologi tidak merespons dengan baik terhadap perubahan mendadak.",
-        "Frekuensi yang tepat juga bergantung pada di mana akuarium Anda berada dalam fase ekologisnya. Akuarium <strong>Fase Awal</strong> — baru, atau baru saja di-restart — lebih banyak mendapat manfaat dari ganti air yang lebih sering dan lebih kecil. Biologi masih rapuh dan kimia bisa berubah cepat. Akuarium <strong>Fase Matang</strong> sudah membangun penyangga. Ia bisa menangani ganti air yang lebih jarang dengan lebih tenang, terutama jika ada tanaman dan beban biologis yang sedang. Sistem sudah membangun apa yang ARA sebut sebagai pengampunan ekologis — kapasitas untuk menyerap variasi penghobi tanpa terganggu."
-      ],
-      "pullQuote": "Ganti air bukan reset. Ia pembaruan — momen ketika beban kumulatif sistem dikurangi perlahan, dan kimia yang diandalkan makhluk hidup dikembalikan ke kisaran yang sehat. Pembaruan bekerja paling baik ketika ia bagian dari ritme, bukan respons terhadap krisis.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Ritme sebelum frekuensi"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Pendekatan ARA",
-      "titleHtml": "Ritme sebelum frekuensi.<br><em>Konsistensi yang koheren di atas segalanya.</em>",
-      "body": [
-        "Jawaban ARA untuk 'seberapa sering?' adalah: mulailah dengan apa yang benar-benar bisa Anda pertahankan. Bukan apa yang ingin Anda lakukan ketika hidup tidak rumit. Apa yang akan Anda lakukan ketika Anda lelah, ketika pekerjaan menumpuk, ketika Anda bepergian seminggu. Itulah keeper rhythm Anda yang sesungguhnya.",
-        "Penghobi yang konsisten melakukan 15% setiap dua minggu menciptakan kondisi jangka panjang yang lebih baik dari seseorang yang berencana 40% setiap minggu tapi melewatinya setiap kali ketiga atau keempat. Rencana itu terdengar lebih baik di atas kertas, tapi ketidakkonsistenan itu menciptakan fluktuasi yang lebih besar dari ritme kecil yang bisa diandalkan.",
-        "Ini bukan berarti jumlah tidak penting sama sekali. Jika nitrat selalu tinggi meskipun ganti air rutin, Anda perlu ganti air yang lebih besar atau beban biologis yang lebih sedikit. Tapi mulailah dengan ritme. Bangun kebiasaannya dulu. Kalibrasi dari sana.",
-        "Quiz Know Your Rhythm bisa membantu Anda mengidentifikasi jenis keeper rhythm yang sebenarnya Anda miliki — bukan yang Anda kira atau harapkan. Keeper rhythm yang berbeda sesuai dengan pendekatan perawatan air yang berbeda, dan membangun berdasarkan ritme Anda yang nyata versus yang dibayangkan adalah perbedaan antara perawatan yang bertahan lama dan yang rontok."
-      ],
-      "pullQuote": "Sistem hidup biasanya merespons lebih baik terhadap konsistensi yang koheren daripada ledakan intervensi. Lakukan sedikit, secara teratur, dengan perhatian yang jujur, menciptakan lebih banyak stabilitas daripada melakukan banyak sesekali. Ini berlaku untuk ganti air seperti halnya untuk bentuk perawatan lainnya.",
-      "hintLabel": "Prinsip ARA",
-      "hintText": [
-        "Capacity before ambition. Sistem tidak seharusnya dibangun di atas konsistensi yang dibayangkan. ARA membawa kehidupan nyata Anda ke dalam gambar — karena keberlanjutan bergantung pada apa yang benar-benar bisa dipertahankan, bukan apa yang terdengar benar secara teori."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Cara mengkalibrasi ritme Anda"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Bangun ritme yang bisa Anda pertahankan",
-      "titleHtml": "Mulailah dengan jujur.<br><em>Lalu kalibrasi.</em>",
-      "body": [
-        "Titik awal yang praktis untuk kebanyakan akuarium rumahan: pilih interval yang paling sering yang Anda tahu akan Anda pertahankan — setiap minggu, setiap sepuluh hari, dua minggu sekali — dan lakukan 15–25% setiap kali. Rentang itu cukup lembut untuk tidak mengejutkan sistem tapi cukup teratur untuk mencegah nitrat menumpuk secara signifikan di kebanyakan akuarium berisi sedang.",
-        "Lalu tes nitrat dua atau tiga minggu kemudian. Jika tetap di bawah 20 ppm di antara ganti air, ritme Anda bekerja. Jika selalu lebih tinggi, tambah jumlah sedikit, kurangi pemberian makan, atau tambahkan tanaman. Jika sangat rendah dengan tanaman hidup dan beban biologis ringan, Anda mungkin bisa memperpanjang interval tanpa dampak.",
-        "Yang terpenting adalah menghindari kebiasaan ganti air besar hanya saat keadaan darurat ketika sesuatu terlihat salah — lalu tidak ganti air sama sekali dalam waktu lama. Pola itu menciptakan fluktuasi terbesar, tekanan paling banyak pada ikan, dan kegelisahan terbesar bagi penghobi. Bangun ritme dulu. Meskipun tidak sempurna. Akuarium akan mencerminkannya."
-      ],
-      "pullQuote": "Ritme antara Anda dan akuarium adalah sesuatu yang nyata. Ketika perawatan koheren dan berkelanjutan — meskipun sederhana — sistem belajar untuk tetap dalam kisarannya. Itu bukan metafora. Itu ekologi.",
-      "hintLabel": "Catatan tentang fase akuarium",
-      "hintText": [
-        "Akuarium baru (Fase Awal) umumnya membutuhkan lebih banyak perhatian — ganti air yang lebih kecil tapi lebih sering, terutama selama cycling. Saat akuarium matang dan biologi stabil, Anda akan menemukan bahwa Anda bisa melakukan lebih sedikit dan sistem akan bertahan lebih lama. Pengampunan yang semakin meningkat itu adalah sesuatu yang Anda dapatkan melalui waktu dan perawatan yang konsisten — bukan sesuatu yang bisa dipotong jalan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/know-your-rhythm",
+            "text": "Kenali ritme Anda →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/know-your-rhythm",
-      "text": "Kenali ritme Anda →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

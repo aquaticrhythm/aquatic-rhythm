@@ -1,117 +1,122 @@
 {
-  "_meta": {
-    "slug": "shrimp-dying-aquarium",
-    "lang": "ms",
-    "sourceFile": "articles/shrimp-dying-aquarium.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Kenapa Shrimp Saya Mati? — Aquatic Rhythm",
-    "description": "Shrimp tidak gagal secara tiba-tiba. Mereka drift perlahan-lahan, sehingga berhenti. Panduan ini menerangkan apa yang mereka baca dalam air anda — dan bagaimana response yang tepat.",
-    "ogTitle": "Kenapa Shrimp Saya Mati?",
-    "ogDescription": "Shrimp tidak gagal secara tiba-tiba. Mereka drift perlahan-lahan, sehingga berhenti. Ketahui apa yang mereka baca dalam air anda."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Water Rhythm",
-    "titleHtml": "Kenapa Shrimp Saya<br><em>Mati?</em>",
-    "subtitle": "Shrimp tidak gagal secara tiba-tiba. Mereka drift perlahan-lahan, sehingga berhenti.",
-    "texts": [
-      "Shrimp mati dalam akuarium yang nampak baik di atas kertas. Parameter ok. Tank berjalan bersih. Ikan dalam air yang sama pun ok. Tapi shrimp makin kurang — satu atau dua pada satu masa, dalam tempoh beberapa minggu.",
-      "Mereka adalah pembaca Water Rhythm yang paling sensitif dalam hobi ini. Mereka isyaratkan drift jauh sebelum test kit anda tunjukkan. Panduan ini menerangkan apa yang mereka baca, dan bagaimana response yang selari kelihatan."
+    "_meta": {
+        "slug": "shrimp-dying-aquarium",
+        "lang": "ms",
+        "sourceFile": "articles/shrimp-dying-aquarium.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Kenapa Shrimp Saya Mati? — Aquatic Rhythm",
+        "description": "Shrimp tidak gagal secara tiba-tiba. Mereka drift perlahan-lahan, sehingga berhenti. Panduan ini menerangkan apa yang mereka baca dalam air anda — dan bagaimana response yang tepat.",
+        "ogTitle": "Kenapa Shrimp Saya Mati?",
+        "ogDescription": "Shrimp tidak gagal secara tiba-tiba. Mereka drift perlahan-lahan, sehingga berhenti. Ketahui apa yang mereka baca dalam air anda."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Water Rhythm",
+        "titleHtml": "Kenapa Shrimp Saya<br><em>Mati?</em>",
+        "subtitle": "Shrimp tidak gagal secara tiba-tiba. Mereka drift perlahan-lahan, sehingga berhenti.",
+        "texts": [
+            "Shrimp mati dalam akuarium yang nampak baik di atas kertas. Parameter ok. Tank berjalan bersih. Ikan dalam air yang sama pun ok. Tapi shrimp makin kurang — satu atau dua pada satu masa, dalam tempoh beberapa minggu.",
+            "Mereka adalah pembaca Water Rhythm yang paling sensitif dalam hobi ini. Mereka isyaratkan drift jauh sebelum test kit anda tunjukkan. Panduan ini menerangkan apa yang mereka baca, dan bagaimana response yang selari kelihatan."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~7 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Kenapa shrimp berbeza",
+            "titleHtml": "Kenapa shrimp berbeza<br><em>daripada ikan.</em>",
+            "body": [
+                "Shrimp adalah invertebrat — tiada sistem imun seperti yang ada pada ikan, tiada penampan cortisol tekanan, tiada adaptasi insang untuk perubahan parameter yang beransur. Mereka sangat sensitif kepada kimia air kerana mereka hidup <em>di dalam</em>nya, bukan sekadar bergerak melaluinya. Organ ekuivalen insang mereka sentiasa bersentuhan langsung dengan apa sahaja yang terlarut.",
+                "Ini bermakna mereka mendaftarkan drift Water Rhythm lebih awal daripada mana-mana ikan dalam tank yang sama. Mereka bukan rapuh — mereka tepat. Koloni shrimp yang stabil adalah isyarat kuat bahawa Water Rhythm selari. Koloni yang perlahan-lahan merosot sedang membaca sesuatu yang ujian anda mungkin belum tunjukkan lagi."
+            ],
+            "pullQuote": "Koloni shrimp yang mati bukan masalah shrimp yang rapuh. Ia adalah isyarat Water Rhythm.",
+            "hintLabel": "ARA · Water Rhythm",
+            "hintText": [
+                "Dalam ARA, Water Rhythm adalah kimia, kandungan mineral, suhu, dan gas terlarut air — bukan sekadar ammonia dan nitrite, tetapi total dissolved solids (TDS), GH (general hardness), KH (carbonate hardness), kestabilan pH dari masa ke masa, dan swing suhu. Shrimp membaca semua itu, berterusan. Test kit membaca satu saat. Perbezaan itu penting."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Apa yang sebenarnya membunuh shrimp"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Apa yang sebenarnya membunuh shrimp",
+            "titleHtml": "Apa yang sebenarnya<br><em>membunuh shrimp perlahan-lahan.</em>",
+            "body": [
+                "<strong>TDS creep.</strong> Total dissolved solids meningkat perlahan-lahan apabila air tersejat dan mineral tertumpu. Shrimp bertoleransi julat TDS yang spesifik. Bila ia drift keluar dari julat itu selama beberapa minggu, mereka menjadi tertekan, berhenti membiak, kemudian mula mati — satu atau dua pada satu masa.",
+                "<strong>Ketidakstabilan GH dan KH.</strong> Shrimp air lembut (neocaridina) vs shrimp air keras (caridina) perlukan profil mineral yang berbeza. Ketidakpadanan antara air tank dan julat semula jadi shrimp menyebabkan tekanan osmotik kronik. Mereka menghabiskan tenaga mengekalkan kimia dalaman yang sepatutnya tidak memerlukan usaha.",
+                "<strong>Kuprum.</strong> Tidak nampak dan mematikan kepada invertebrat. Hadir dalam sesetengah air paip, sesetengah baja, sesetengah ubat. Satu dos produk mengandungi kuprum dalam tank shrimp boleh menyebabkan keruntuhan koloni dalam beberapa hari.",
+                "<strong>Swing suhu.</strong> Bukan suhu itu sendiri — tapi swing. Tank yang mencapai 22°C pada waktu malam dan 28°C pada siang hari membunuh shrimp perlahan-lahan. Shrimp adalah ektotherm dengan toleransi yang sempit. Swing harian kecil terkumpul selama beberapa minggu.",
+                "<strong>Puncak ammonia dan nitrite.</strong> Shrimp menunjukkan tekanan ammonia lebih awal daripada ikan. Shrimp yang mula berenang panik berhampiran permukaan bertindak balas kepada ammonia atau kejutan pH, bukan mengekspresikan personaliti.",
+                "<strong>Masalah masa New Tank Syndrome.</strong> Memasukkan shrimp ke dalam tank yang belum atau baru sahaja selesai cycle adalah punca tunggal paling biasa kematian shrimp baru. Nitrogen cycle mesti benar-benar stabil sebelum shrimp ditambah — bukan sekadar 'ammonia baca sifar hari ini.'"
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Dominant Stressor",
+            "hintText": [
+                "Bila koloni shrimp merosot, naluri adalah nak uji semua benda dan tukar semua benda sekaligus. Dalam ARA, ini adalah response yang salah. Satu water change besar dengan air paip berbeza, satu baja baru, satu perubahan ubat — mana-mana daripada ini boleh menjadi dominant stressor. Cari apa yang berubah paling baru-baru ini sebelum kemerosotan bermula. Itulah biasanya jawapannya."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca trend air, bukan saat"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Membaca trend air",
+            "titleHtml": "Membaca trend air,<br><em>bukan saat.</em>",
+            "body": [
+                "Test kit memberi anda bacaan pada satu titik masa. Untuk ikan, itu selalunya mencukupi — ikan mempunyai sistem penampan yang melicinkan variasi jangka pendek. Untuk shrimp, yang penting bukan bacaan hari ini tetapi corak selama dua minggu.",
+                "Log TDS sekali seminggu dengan TDS meter yang murah. Log suhu tinggi/rendah kalau thermometer anda menyokongnya. Kalau TDS meningkat setiap minggu, sejatan sedang menumpu mineral — tambah air dengan RO atau air suling, bukan air paip. Kalau TDS stabil tapi shrimp masih merosot, soalan seterusnya adalah apa yang berubah dua hingga tiga minggu sebelum kemerosotan bermula — bukan dua hingga tiga hari sebelumnya.",
+                "Shrimp bertindak balas kepada stressor dengan lag. Mereka tidak mati serta-merta — mereka lemah selama beberapa minggu. Ini bermakna punca hampir selalu lebih awal daripada yang nampak. Keeper rhythm yang penting di sini adalah tabiat mencatat perubahan kecil sebelum ia menjadi nampak dalam koloni."
+            ],
+            "pullQuote": "Shrimp tidak bertindak balas kepada apa yang berlaku hari ini. Mereka bertindak balas kepada apa yang terkumpul selama dua minggu lepas.",
+            "hintLabel": "ARA · Asal sebelum Ekspresi",
+            "hintText": [
+                "Koloni yang merosot adalah ekspresi. Drift Water Rhythm yang terkumpul — TDS creep, swing suhu, sisa kuprum — yang menghasilkan kemerosotan itu adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: apa yang anda nampak berlaku dalam koloni adalah isyarat; apa yang terkumpul selama beberapa minggu sebelumnya itulah yang perlu ditangani."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Stabil lebih baik daripada sempurna"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Stabil lebih baik daripada sempurna",
+            "titleHtml": "Stabil lebih baik<br><em>daripada sempurna.</em>",
+            "body": [
+                "Nasihat paling biasa untuk shrimp adalah mengejar parameter yang sempurna. TDS yang spesifik. Nisbah GH dan KH yang tepat. pH kepada dua tempat perpuluhan. Dalam praktik, nasihat ini menyebabkan lebih banyak kematian shrimp daripada yang ia cegah — kerana mengejar kesempurnaan bermakna menukar sesuatu secara berterusan, dan perubahan berterusan adalah kebalikan daripada apa yang shrimp perlukan.",
+                "Dalam ARA, prinsip untuk shrimp adalah <em>stabil lebih baik daripada sempurna</em>. Tank dengan GH sedikit di luar julat yang disyorkan, tetapi konsisten selama enam bulan, lebih selamat untuk shrimp daripada tank yang mencapai GH sempurna minggu ini selepas intervensi remineralisasi besar. Shrimp menyesuaikan diri dengan persekitaran yang stabil. Mereka tidak boleh menyesuaikan diri dengan persekitaran yang berubah.",
+                "Bila shrimp anda dah membiak dan aktif, response yang selari adalah tukar sesedikit yang mungkin. Tambah air yang sama. Buat water change kecil yang kerap berbanding yang besar secara berkala. Gunakan baja yang sama pada dos yang sama. Pantau TDS setiap minggu. Kalau sesuatu berfungsi, response yang selari adalah jangan laraskan."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Ecological Forgiveness",
+            "hintText": [
+                "Koloni shrimp pulih bila dominant stressor dibuang dan persekitaran stabil. Kalau koloni anda telah merosot tetapi yang masih ada masih aktif, tank mempunyai ecological forgiveness yang tinggal. Buang dominant stressor, stabilkan air, dan tunggu enam hingga lapan minggu sebelum membuat kesimpulan bahawa tank tidak sesuai. Pembiakan kembali sebelum semua tanda lain kesihatan koloni."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel4": "ARA · Kemaafan Ekologi",
+            "hintText4": [
+                "Koloni udang pulih apabila penyebab tekanan utama dibuang dan persekitaran stabil. Jika koloni anda telah merosot tetapi yang terselamat masih aktif, tangki masih mempunyai ecological forgiveness yang tinggal. Buang penyebab tekanan utama, stabilkan air, dan tunggu enam hingga lapan minggu sebelum membuat kesimpulan bahawa tangki tidak sesuai.",
+                "Pembiakan kembali berlaku sebelum semua tanda-tanda lain kesihatan koloni."
+            ]
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~7 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Kenapa shrimp berbeza",
-      "titleHtml": "Kenapa shrimp berbeza<br><em>daripada ikan.</em>",
-      "body": [
-        "Shrimp adalah invertebrat — tiada sistem imun seperti yang ada pada ikan, tiada penampan cortisol tekanan, tiada adaptasi insang untuk perubahan parameter yang beransur. Mereka sangat sensitif kepada kimia air kerana mereka hidup <em>di dalam</em>nya, bukan sekadar bergerak melaluinya. Organ ekuivalen insang mereka sentiasa bersentuhan langsung dengan apa sahaja yang terlarut.",
-        "Ini bermakna mereka mendaftarkan drift Water Rhythm lebih awal daripada mana-mana ikan dalam tank yang sama. Mereka bukan rapuh — mereka tepat. Koloni shrimp yang stabil adalah isyarat kuat bahawa Water Rhythm selari. Koloni yang perlahan-lahan merosot sedang membaca sesuatu yang ujian anda mungkin belum tunjukkan lagi."
-      ],
-      "pullQuote": "Koloni shrimp yang mati bukan masalah shrimp yang rapuh. Ia adalah isyarat Water Rhythm.",
-      "hintLabel": "ARA · Water Rhythm",
-      "hintText": [
-        "Dalam ARA, Water Rhythm adalah kimia, kandungan mineral, suhu, dan gas terlarut air — bukan sekadar ammonia dan nitrite, tetapi total dissolved solids (TDS), GH (general hardness), KH (carbonate hardness), kestabilan pH dari masa ke masa, dan swing suhu. Shrimp membaca semua itu, berterusan. Test kit membaca satu saat. Perbezaan itu penting."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Apa yang sebenarnya membunuh shrimp"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Apa yang sebenarnya membunuh shrimp",
-      "titleHtml": "Apa yang sebenarnya<br><em>membunuh shrimp perlahan-lahan.</em>",
-      "body": [
-        "<strong>TDS creep.</strong> Total dissolved solids meningkat perlahan-lahan apabila air tersejat dan mineral tertumpu. Shrimp bertoleransi julat TDS yang spesifik. Bila ia drift keluar dari julat itu selama beberapa minggu, mereka menjadi tertekan, berhenti membiak, kemudian mula mati — satu atau dua pada satu masa.",
-        "<strong>Ketidakstabilan GH dan KH.</strong> Shrimp air lembut (neocaridina) vs shrimp air keras (caridina) perlukan profil mineral yang berbeza. Ketidakpadanan antara air tank dan julat semula jadi shrimp menyebabkan tekanan osmotik kronik. Mereka menghabiskan tenaga mengekalkan kimia dalaman yang sepatutnya tidak memerlukan usaha.",
-        "<strong>Kuprum.</strong> Tidak nampak dan mematikan kepada invertebrat. Hadir dalam sesetengah air paip, sesetengah baja, sesetengah ubat. Satu dos produk mengandungi kuprum dalam tank shrimp boleh menyebabkan keruntuhan koloni dalam beberapa hari.",
-        "<strong>Swing suhu.</strong> Bukan suhu itu sendiri — tapi swing. Tank yang mencapai 22°C pada waktu malam dan 28°C pada siang hari membunuh shrimp perlahan-lahan. Shrimp adalah ektotherm dengan toleransi yang sempit. Swing harian kecil terkumpul selama beberapa minggu.",
-        "<strong>Puncak ammonia dan nitrite.</strong> Shrimp menunjukkan tekanan ammonia lebih awal daripada ikan. Shrimp yang mula berenang panik berhampiran permukaan bertindak balas kepada ammonia atau kejutan pH, bukan mengekspresikan personaliti.",
-        "<strong>Masalah masa New Tank Syndrome.</strong> Memasukkan shrimp ke dalam tank yang belum atau baru sahaja selesai cycle adalah punca tunggal paling biasa kematian shrimp baru. Nitrogen cycle mesti benar-benar stabil sebelum shrimp ditambah — bukan sekadar 'ammonia baca sifar hari ini.'"
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Dominant Stressor",
-      "hintText": [
-        "Bila koloni shrimp merosot, naluri adalah nak uji semua benda dan tukar semua benda sekaligus. Dalam ARA, ini adalah response yang salah. Satu water change besar dengan air paip berbeza, satu baja baru, satu perubahan ubat — mana-mana daripada ini boleh menjadi dominant stressor. Cari apa yang berubah paling baru-baru ini sebelum kemerosotan bermula. Itulah biasanya jawapannya."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca trend air, bukan saat"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Membaca trend air",
-      "titleHtml": "Membaca trend air,<br><em>bukan saat.</em>",
-      "body": [
-        "Test kit memberi anda bacaan pada satu titik masa. Untuk ikan, itu selalunya mencukupi — ikan mempunyai sistem penampan yang melicinkan variasi jangka pendek. Untuk shrimp, yang penting bukan bacaan hari ini tetapi corak selama dua minggu.",
-        "Log TDS sekali seminggu dengan TDS meter yang murah. Log suhu tinggi/rendah kalau thermometer anda menyokongnya. Kalau TDS meningkat setiap minggu, sejatan sedang menumpu mineral — tambah air dengan RO atau air suling, bukan air paip. Kalau TDS stabil tapi shrimp masih merosot, soalan seterusnya adalah apa yang berubah dua hingga tiga minggu sebelum kemerosotan bermula — bukan dua hingga tiga hari sebelumnya.",
-        "Shrimp bertindak balas kepada stressor dengan lag. Mereka tidak mati serta-merta — mereka lemah selama beberapa minggu. Ini bermakna punca hampir selalu lebih awal daripada yang nampak. Keeper rhythm yang penting di sini adalah tabiat mencatat perubahan kecil sebelum ia menjadi nampak dalam koloni."
-      ],
-      "pullQuote": "Shrimp tidak bertindak balas kepada apa yang berlaku hari ini. Mereka bertindak balas kepada apa yang terkumpul selama dua minggu lepas.",
-      "hintLabel": "ARA · Asal sebelum Ekspresi",
-      "hintText": [
-        "Koloni yang merosot adalah ekspresi. Drift Water Rhythm yang terkumpul — TDS creep, swing suhu, sisa kuprum — yang menghasilkan kemerosotan itu adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: apa yang anda nampak berlaku dalam koloni adalah isyarat; apa yang terkumpul selama beberapa minggu sebelumnya itulah yang perlu ditangani."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Stabil lebih baik daripada sempurna"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Stabil lebih baik daripada sempurna",
-      "titleHtml": "Stabil lebih baik<br><em>daripada sempurna.</em>",
-      "body": [
-        "Nasihat paling biasa untuk shrimp adalah mengejar parameter yang sempurna. TDS yang spesifik. Nisbah GH dan KH yang tepat. pH kepada dua tempat perpuluhan. Dalam praktik, nasihat ini menyebabkan lebih banyak kematian shrimp daripada yang ia cegah — kerana mengejar kesempurnaan bermakna menukar sesuatu secara berterusan, dan perubahan berterusan adalah kebalikan daripada apa yang shrimp perlukan.",
-        "Dalam ARA, prinsip untuk shrimp adalah <em>stabil lebih baik daripada sempurna</em>. Tank dengan GH sedikit di luar julat yang disyorkan, tetapi konsisten selama enam bulan, lebih selamat untuk shrimp daripada tank yang mencapai GH sempurna minggu ini selepas intervensi remineralisasi besar. Shrimp menyesuaikan diri dengan persekitaran yang stabil. Mereka tidak boleh menyesuaikan diri dengan persekitaran yang berubah.",
-        "Bila shrimp anda dah membiak dan aktif, response yang selari adalah tukar sesedikit yang mungkin. Tambah air yang sama. Buat water change kecil yang kerap berbanding yang besar secara berkala. Gunakan baja yang sama pada dos yang sama. Pantau TDS setiap minggu. Kalau sesuatu berfungsi, response yang selari adalah jangan laraskan."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Ecological Forgiveness",
-      "hintText": [
-        "Koloni shrimp pulih bila dominant stressor dibuang dan persekitaran stabil. Kalau koloni anda telah merosot tetapi yang masih ada masih aktif, tank mempunyai ecological forgiveness yang tinggal. Buang dominant stressor, stabilkan air, dan tunggu enam hingga lapan minggu sebelum membuat kesimpulan bahawa tank tidak sesuai. Pembiakan kembali sebelum semua tanda lain kesihatan koloni."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/perfect-parameters-fish-dying",
+            "text": "Parameter ok tapi ikan mati →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/perfect-parameters-fish-dying",
-      "text": "Parameter ok tapi ikan mati →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

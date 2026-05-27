@@ -1,179 +1,183 @@
 {
-  "_meta": {
-    "slug": "cycled-tank-problems",
-    "lang": "ms",
-    "sourceFile": "articles/cycled-tank-problems.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Tank Yang Dah Cycle Bukan Tank Yang Siap — Aquatic Rhythm",
-    "description": "Tank yang dah lama berjalan adalah sistem yang berbeza. Panduan ini menerangkan kenapa tank yang dah matang masih boleh bermasalah — dan apa yang ia cuba beritahu anda.",
-    "ogTitle": "Tank Yang Dah Cycle Bukan Tank Yang Siap",
-    "ogDescription": "Kenapa tank yang dah matang masih bermasalah — dan apa yang ia cuba beritahu anda."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Tank Yang Matang",
-    "titleHtml": "Tank Yang Dah Cycle<br><em>Bukan Tank Yang Siap.</em>",
-    "subtitle": "Kenapa tank yang dah lama berjalan masih bermasalah — dan apa yang ia cuba beritahu anda.",
-    "texts": [
-      "Cycle dah habis. Bakteria dah mantap, parameter dah stabil, dan tank dah berjalan berbulan-bulan lamanya. Kebanyakan panduan berhenti di sini.",
-      "Tapi di sinilah pula satu jenis kesukaran yang lebih senyap mula muncul. Ikan kelihatan sedikit lain. Ada sesuatu yang sentiasa datang balik. Parameter nampak OK — tapi ada yang tidak kena.",
-      "Tank yang dah matang adalah sistem yang berbeza dari tank yang masih cycling. Ia memerlukan sesuatu yang berbeza dari penjaganya — bukan tentang membina, tapi tentang membaca. Inilah tentang cara belajar melakukan itu."
-    ],
-    "metaModules": "6 modul",
-    "metaTime": "Pertengahan",
-    "metaLevel": "~10 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Jenis pembelajaran yang berbeza",
-      "titleHtml": "Cycle bukan<br><em>garisan penamat.</em>",
-      "body": [
-        "Tank yang dah berjalan selama enam bulan adalah sistem yang berbeza sepenuhnya dari satu yang baru sahaja habis cycle. Bakteria dah mantap, kimia air dah jumpa ritma, dan ikan dah selesa. Fasa yang genting dan tidak stabil itu dah selesai.",
-        "Tapi tank yang matang ada kesukaran tersendiri — lebih perlahan, lebih senyap, dan lebih mudah terlepas pandang. Masalah tidak melambung tiba-tiba. Ia melayang perlahan. Tekanan kecil berkumpul selama berminggu-minggu sehingga sesuatu akhirnya nampak, dan ketika itu, biasanya ia dah lama membina.",
-        "Tank yang matang ada kapasiti — kemampuan menyerap satu water change yang terlepas, sedikit makanan lebih, satu gangguan kecil — dan kembali kepada keseimbangan sendiri. Tapi kapasiti itu tak terbatas. Penjaga yang berjaya menjaga tank sihat bertahun-tahun bukan yang tidak pernah buat kesilapan. Mereka yang cukup kenal sistem untuk tangkap perubahan perlahan sebelum ia jadi masalah."
-      ],
-      "pullQuote": "Kestabilan bukan sesuatu yang anda capai. Ia sesuatu yang anda jaga — secara senyap, konsisten, walaupun tiada yang kelihatan salah.",
-      "hintLabel": "ARA · Developing Phase",
-      "hintText": [
-        "Dalam Aquatic Rhythm Alignment, tank yang matang telah masuk ke <strong>Developing Phase (Fasa Berkembang)</strong> — di mana ekosistem mengekalkan dirinya berbanding membina. Cabaran pada peringkat ini bukan kemahiran. Ia perhatian. Kebanyakan masalah dalam tank yang matang bukan kegagalan penjaga. Ia adalah perubahan perlahan — ketidakselarasan yang mana-mana penjaga boleh tangkap apabila mereka tahu apa yang perlu diperhati."
-      ],
-      "hintLabel2": "ARA · Tetapan Semula Fasa Bertujuan",
-      "hintText2": [
-        "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
-      ],
-      "hintLabel3": "Perspektif Aquatic Rhythm",
-      "hintText3": [
-        "Cycling dan maintaining adalah fasa yang berbeza — dan ia memerlukan perkara yang berbeza. Semasa cycling, sistem sedang membina. Semasa maintaining, ia mengekalkan. Apa yang membantu semasa satu fasa boleh jadi tidak perlu atau kontraproduktif semasa fasa lain. Belajar rasa fasa mana yang sedang berlaku, dan apa yang ia perlukan sebenarnya, mengubah bagaimana hobi ini terasa."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Lima perkara untuk dibaca"
+    "_meta": {
+        "slug": "cycled-tank-problems",
+        "lang": "ms",
+        "sourceFile": "articles/cycled-tank-problems.html",
+        "status": "ready"
     },
-    {
-      "id": "mod-2",
-      "tag": "Apa yang ARA lihat",
-      "titleHtml": "Lima perkara yang tank<br><em>sentiasa buat.</em>",
-      "body": [
-        "Aquatic Rhythm Alignment menyusun akuarium kepada lima ecological rhythms — lima lapisan sistem yang sentiasa aktif, sentiasa berubah, dan sentiasa bercakap. Masalah dalam tank yang matang hampir selalu boleh dikesan kepada perubahan dalam satu atau lebih rhythms ini.",
-        "Membaca semuanya bersama memberikan gambaran yang lebih lengkap daripada mana-mana ujian tunggal."
-      ],
-      "pullQuote": null,
-      "rhythmGrid": [
+    "head": {
+        "title": "Tank Yang Dah Cycle Bukan Tank Yang Siap — Aquatic Rhythm",
+        "description": "Tank yang dah lama berjalan adalah sistem yang berbeza. Panduan ini menerangkan kenapa tank yang dah matang masih boleh bermasalah — dan apa yang ia cuba beritahu anda.",
+        "ogTitle": "Tank Yang Dah Cycle Bukan Tank Yang Siap",
+        "ogDescription": "Kenapa tank yang dah matang masih bermasalah — dan apa yang ia cuba beritahu anda."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Tank Yang Matang",
+        "titleHtml": "Tank Yang Dah Cycle<br><em>Bukan Tank Yang Siap.</em>",
+        "subtitle": "Kenapa tank yang dah lama berjalan masih bermasalah — dan apa yang ia cuba beritahu anda.",
+        "texts": [
+            "Cycle dah habis. Bakteria dah mantap, parameter dah stabil, dan tank dah berjalan berbulan-bulan lamanya. Kebanyakan panduan berhenti di sini.",
+            "Tapi di sinilah pula satu jenis kesukaran yang lebih senyap mula muncul. Ikan kelihatan sedikit lain. Ada sesuatu yang sentiasa datang balik. Parameter nampak OK — tapi ada yang tidak kena.",
+            "Tank yang dah matang adalah sistem yang berbeza dari tank yang masih cycling. Ia memerlukan sesuatu yang berbeza dari penjaganya — bukan tentang membina, tapi tentang membaca. Inilah tentang cara belajar melakukan itu."
+        ],
+        "metaModules": "6 modul",
+        "metaTime": "Pertengahan",
+        "metaLevel": "~10 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
         {
-          "name": "Water Rhythm",
-          "desc": "Keseimbangan mineral, kestabilan pH, dan kekerapan penukaran. Apabila tidak selaras: parameter berubah perlahan sehingga ikan rasa ia sebelum ujian menunjukkannya."
+            "id": "mod-1",
+            "tag": "Jenis pembelajaran yang berbeza",
+            "titleHtml": "Cycle bukan<br><em>garisan penamat.</em>",
+            "body": [
+                "Tank yang dah berjalan selama enam bulan adalah sistem yang berbeza sepenuhnya dari satu yang baru sahaja habis cycle. Bakteria dah mantap, kimia air dah jumpa ritma, dan ikan dah selesa. Fasa yang genting dan tidak stabil itu dah selesai.",
+                "Tapi tank yang matang ada kesukaran tersendiri — lebih perlahan, lebih senyap, dan lebih mudah terlepas pandang. Masalah tidak melambung tiba-tiba. Ia melayang perlahan. Tekanan kecil berkumpul selama berminggu-minggu sehingga sesuatu akhirnya nampak, dan ketika itu, biasanya ia dah lama membina.",
+                "Tank yang matang ada kapasiti — kemampuan menyerap satu water change yang terlepas, sedikit makanan lebih, satu gangguan kecil — dan kembali kepada keseimbangan sendiri. Tapi kapasiti itu tak terbatas. Penjaga yang berjaya menjaga tank sihat bertahun-tahun bukan yang tidak pernah buat kesilapan. Mereka yang cukup kenal sistem untuk tangkap perubahan perlahan sebelum ia jadi masalah."
+            ],
+            "pullQuote": "Kestabilan bukan sesuatu yang anda capai. Ia sesuatu yang anda jaga — secara senyap, konsisten, walaupun tiada yang kelihatan salah.",
+            "hintLabel": "ARA · Developing Phase",
+            "hintText": [
+                "Dalam Aquatic Rhythm Alignment, tank yang matang telah masuk ke <strong>Developing Phase (Fasa Berkembang)</strong> — di mana ekosistem mengekalkan dirinya berbanding membina. Cabaran pada peringkat ini bukan kemahiran. Ia perhatian. Kebanyakan masalah dalam tank yang matang bukan kegagalan penjaga. Ia adalah perubahan perlahan — ketidakselarasan yang mana-mana penjaga boleh tangkap apabila mereka tahu apa yang perlu diperhati."
+            ],
+            "hintLabel2": "ARA · Tetapan Semula Fasa Bertujuan",
+            "hintText2": [
+                "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
+            ],
+            "hintLabel3": "Perspektif Aquatic Rhythm",
+            "hintText3": [
+                "Cycling dan maintaining adalah fasa yang berbeza — dan ia memerlukan perkara yang berbeza. Semasa cycling, sistem sedang membina. Semasa maintaining, ia mengekalkan. Apa yang membantu semasa satu fasa boleh jadi tidak perlu atau kontraproduktif semasa fasa lain. Belajar rasa fasa mana yang sedang berlaku, dan apa yang ia perlukan sebenarnya, mengubah bagaimana hobi ini terasa."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Lima perkara untuk dibaca"
         },
         {
-          "name": "Biological Rhythm",
-          "desc": "Koloni bakteria dalam filter dan substrat memproses sisa secara berterusan. Gangguan di sini tidak nampak sehingga ammonia atau nitrite muncul semula."
+            "id": "mod-2",
+            "tag": "Apa yang ARA lihat",
+            "titleHtml": "Lima perkara yang tank<br><em>sentiasa buat.</em>",
+            "body": [
+                "Aquatic Rhythm Alignment menyusun akuarium kepada lima ecological rhythms — lima lapisan sistem yang sentiasa aktif, sentiasa berubah, dan sentiasa bercakap. Masalah dalam tank yang matang hampir selalu boleh dikesan kepada perubahan dalam satu atau lebih rhythms ini.",
+                "Membaca semuanya bersama memberikan gambaran yang lebih lengkap daripada mana-mana ujian tunggal."
+            ],
+            "pullQuote": null,
+            "rhythmGrid": [
+                {
+                    "name": "Water Rhythm",
+                    "desc": "Keseimbangan mineral, kestabilan pH, dan kekerapan penukaran. Apabila tidak selaras: parameter berubah perlahan sehingga ikan rasa ia sebelum ujian menunjukkannya."
+                },
+                {
+                    "name": "Biological Rhythm",
+                    "desc": "Koloni bakteria dalam filter dan substrat memproses sisa secara berterusan. Gangguan di sini tidak nampak sehingga ammonia atau nitrite muncul semula."
+                },
+                {
+                    "name": "Environmental Rhythm",
+                    "desc": "Kitaran cahaya, kestabilan suhu, dan aliran air. Ketidakselarasan kronik pada paras rendah menekan fungsi imun dan mengurangkan daya tahan."
+                },
+                {
+                    "name": "Livestock Rhythm",
+                    "desc": "Tingkah laku ikan, selera makan, dan dinamik sosial. Alat ukur paling sensitif dalam tank — ikan menunjukkan ketidakselarasan sebelum mana-mana test kit melakukannya."
+                },
+                {
+                    "name": "Keeper Rhythm",
+                    "desc": "Perhatian, jadual, dan kapasiti penjaga sendiri. Ritma penjaga yang tidak teratur atau terlebih beban mewujudkan keadaan yang tidak menentu — walaupun setiap tindakan individu secara teknikalnya betul. Rhythm ini menghubungkan semua yang lain."
+                }
+            ],
+            "hintLabel": "Perspektif Aquatic Rhythm",
+            "hintText": [
+                "Kebanyakan masalah tank yang matang bukan peristiwa mendadak. Ia adalah pengumpulan ketidakselarasan kecil merentasi satu atau lebih rhythms ini. Membaca sistem dengan baik bermakna mengetahui rhythm mana yang sedang berubah — sebelum ia jadi masalah yang nampak. Modul-modul seterusnya melihat kepada titik perubahan yang paling biasa."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Di mana nak mula cari"
         },
         {
-          "name": "Environmental Rhythm",
-          "desc": "Kitaran cahaya, kestabilan suhu, dan aliran air. Ketidakselarasan kronik pada paras rendah menekan fungsi imun dan mengurangkan daya tahan."
+            "id": "mod-3",
+            "tag": "Mencari punca sebenar",
+            "titleHtml": "Kebanyakan masalah<br><em>ada satu punca.</em>",
+            "body": [
+                "Apabila tank bermasalah — ikan selalu sakit, alga datang balik, parameter yang tidak stabil — ia boleh terasa seperti semua benda salah sekaligus. Jarang sekali begitu. Hampir selalu ada satu perkara yang menjadi tekanan utama, dan semua yang lain sedang bertindak balas kepada itu.",
+                "Cuba selesaikan semua sekaligus adalah meletihkan dan biasanya tidak berkesan. Tapi mencari satu perkara yang sebenarnya mendorong yang lain — dan hadapinya sahaja — sering mengubah segala-galanya.",
+                "Empat punca yang paling biasa: nitrate yang dah lama berkumpul secara senyap, bilangan ikan yang melebihi kemampuan sistem, kimia air yang tidak sesuai untuk ikan spesifik dalam tank, dan rutin penyelenggaraan yang sudah terlalu tidak teratur untuk sistem pulih sepenuhnya antara setiap sesi.",
+                "Tiada satu pun daripada ini adalah kegagalan yang dramatik. Semuanya adalah perubahan perlahan — pergerakan kecil menjauhi keseimbangan yang berkumpul senyap sehingga ia nampak. Bahagian yang sukar ialah apabila anda menyedarinya, ia biasanya dah lama membina."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Perspektif Aquatic Rhythm",
+            "hintText": [
+                "ARA menamakan ini sebagai dominant stressor — satu tekanan tunggal yang memberikan beban paling besar kepada sistem pada mana-mana masa. Buang ia, dan masalah lain sering mula selesai sendiri. Kemahirannya adalah belajar mencari punca, bukan merawat setiap simptom secara berasingan. Peralihan itu — dari reaktif kepada ekologi — adalah salah satu perkara yang mengubah cara penjaga mengalami hobi ini."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang filter sebenarnya buat"
         },
         {
-          "name": "Livestock Rhythm",
-          "desc": "Tingkah laku ikan, selera makan, dan dinamik sosial. Alat ukur paling sensitif dalam tank — ikan menunjukkan ketidakselarasan sebelum mana-mana test kit melakukannya."
+            "id": "mod-4",
+            "tag": "Perkara yang kebanyakan panduan langkau",
+            "titleHtml": "Filter bukan mesin.<br><em>Ia habitat.</em>",
+            "body": [
+                "Ramai penjaga menganggap filter sebagai peranti mekanikal — ia menggerakkan air, menangkap kotoran, boleh dibersihkan apabila kelihatan kotor. Pemahaman itu tidak lengkap, dan ia membawa kepada salah satu kesilapan paling biasa dalam penjagaan tank yang matang.",
+                "Filter media — span, ceramic rings, bio-balls — adalah tempat majoriti koloni bakteria anda tinggal. Bukan dalam air. Bukan di atas gravel. Di permukaan-permukaan itu. Berbilion bakteria itulah yang menjadikan tank anda stabil. Merekalah cycle, berjalan secara berterusan, setiap jam setiap hari.",
+                "Ini bermakna cara anda membersihkan filter itu amat penting. Membilas media di bawah paip — walaupun sebentar — mendedahkan koloni kepada klorin, yang membunuh bakteria dengan cepat. Menggantikan semua media sekaligus membuang seluruh koloni dalam satu tindakan. Tank akan secara efektifnya perlu cycle semula, perlahan-lahan, semasa media baru membina. Anda tidak selalu sedar segera. Tapi selama beberapa minggu berikutnya, parameter akan berubah, ikan akan kelihatan sedikit tidak kena, dan punca itu tidak nampak.",
+                "Pendekatan yang betul adalah mudah apabila anda faham kenapa ia penting. Bersihkan filter media dalam air tank lama yang dikeluarkan semasa water change — bukan air paip. Jangan gantikan lebih daripada satu pertiga media pada satu masa, dan tunggu sekurang-kurangnya empat minggu sebelum gantikan mana-mana lagi. Ini mengekalkan koloni sambil mengekalkan fungsi mekanikal filter."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Tanda-tanda koloni filter mungkin terganggu",
+            "hintText": [
+                "Bacaan ammonia atau nitrite yang kecil dalam tank yang matang — walaupun 0.25 ppm — adalah isyarat. Begitu juga dengan tank yang tiba-tiba kelihatan kurang stabil, atau ikan yang pulih lebih perlahan daripada tekanan kecil berbanding biasanya. Ini tidak semestinya disebabkan oleh gangguan filter, tapi jika anda baru-baru ini membersihkan atau menggantikan media, itulah tempat pertama untuk dilihat."
+            ],
+            "hintLabel2": "Perspektif Aquatic Rhythm",
+            "hintText2": [
+                "Filter adalah peralatan paling penting dalam tank — bukan kerana apa yang ia buat secara mekanikal, tapi kerana apa yang tinggal di dalamnya. Melayan ia dengan berhati-hati, dan menggantikannya secara beransur, adalah salah satu cara paling mudah dan paling diabaikan untuk menjaga tank yang matang stabil selama bertahun-tahun berbanding berbulan-bulan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Masalah yang paling senyap sekali"
         },
         {
-          "name": "Keeper Rhythm",
-          "desc": "Perhatian, jadual, dan kapasiti penjaga sendiri. Ritma penjaga yang tidak teratur atau terlebih beban mewujudkan keadaan yang tidak menentu — walaupun setiap tindakan individu secara teknikalnya betul. Rhythm ini menghubungkan semua yang lain."
+            "id": "mod-5",
+            "tag": "Perkara yang membina tanpa nampak",
+            "titleHtml": "Nitrate.<br><em>Ia membina tanpa drama.</em>",
+            "body": [
+                "Selepas cycle, ammonia dan nitrite dah diproses. Bahagian itu berfungsi. Tapi nitrate — produk akhir keseluruhan proses itu — tiada ke mana untuk pergi. Ia tidak dipecah lagi. Ia cuma berkumpul, senyap, setiap hari, sehingga sesuatu membuangnya.",
+                "Pada paras rendah, tiada yang kelihatan salah. Parameter nampak baik. Ikan kelihatan normal. Tapi nitrate bukan tidak aktif. Apabila ia meningkat selama berminggu-minggu dan berbulan-bulan, ia memasuki tisu ikan melalui insang dan mengganggu cara darah membawa oksigen. Fungsi imun secara beransur ditekan. Hormon stres kekal sedikit tinggi. Ikan hidup, tapi ia berjalan dengan defisit — lebih mudah diserang penyakit, lebih perlahan pulih dari tekanan kecil, tidak pernah sewarna atau seaktif yang ia boleh jadi dalam air yang lebih bersih.",
+                "Cadangan paling biasa adalah menjaga nitrate di bawah 20 ppm untuk ikan sensitif, dan di bawah 40 ppm untuk spesies yang lebih tahan. Tapi angka itu kurang penting daripada tren. Tank pada 30 ppm yang stabil adalah lebih sihat daripada satu pada 25 ppm yang masih meningkat.",
+                "Water change separa secara berkala — 15 hingga 25 peratus, setiap minggu — adalah cara paling dipercayai untuk mengawal nitrate. Tumbuhan hidup membantu dengan ketara. Pemberian makan berlebihan adalah salah satu cara paling cepat untuk mempercepatkan pengumpulan."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Nota yang menggembirakan",
+            "hintText": [
+                "Jika anda syak nitrate dah lebih tinggi daripada yang sepatutnya untuk seketika — membawanya turun secara beransur selama beberapa minggu (melalui water change kecil yang kerap, bukan satu yang besar) sering akan menghasilkan perbezaan yang nampak. Ikan yang tadinya sedikit malap, sedikit berhati-hati, tiba-tiba kelihatan lebih hidup. Mereka bukan sakit. Mereka cuma akhirnya selesa."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Belajar nampak apa yang sebenarnya ada"
+        },
+        {
+            "id": "mod-6",
+            "tag": "Membaca, bukan sekadar memeriksa",
+            "titleHtml": "Ikan anda sentiasa<br><em>memberitahu sesuatu.</em>",
+            "body": [
+                "Test kit memberitahu anda apa yang air mengandungi pada saat anda menguji. Ikan anda memberitahu apa yang air telah lakukan kepada mereka — sepanjang hari, setiap hari, dalam masa nyata.",
+                "Kebanyakan penjaga belajar membaca nombor sebelum mereka belajar membaca ikan. Itu masuk akal — nombor terasa pasti, dan tingkah laku boleh kelihatan samar. Tapi ikan bertindak balas kepada perubahan dalam persekitaran mereka jauh sebelum test kit menunjukkan apa-apa. Menjelang bacaan tidak kena, ikan biasanya dah hidup dengannya untuk seketika.",
+                "Ini bukan tentang mendiagnosis penyakit. Ia tentang mengenali ikan anda cukup baik supaya perubahan kecil didaftar — seekor ikan yang sedikit kurang bersemangat semasa waktu makan, satu yang dah bergerak ke sudut yang biasanya tidak ia duduki, satu kumpulan yang dah susun semula dirinya secara senyap. Ini bukan isyarat yang dramatik. Tapi ia adalah isyarat yang nyata, dan ia datang lebih awal daripada apa yang mana-mana ujian akan tunjukkan.",
+                "Anda tidak perlu tahu apa ertinya perubahan itu pada saat anda sedar. Sedar sahaja sudah cukup untuk permulaan. Ia adalah permulaan hubungan berbeza dengan tank — satu yang berasaskan membaca berbanding bertindak balas."
+            ],
+            "pullQuote": "Anda tidak perlu tahu apa yang salah untuk tahu bahawa sesuatu telah berubah. Dan mengetahui sesuatu telah berubah — awal — itulah sebahagian besar daripada apa yang penjagaan tank yang baik sebenarnya.",
+            "hintLabel": "Perspektif Aquatic Rhythm",
+            "hintText": [
+                "ARA menamakan ini sebagai ecological attunement — kualiti perhatian yang berkembang dari masa ke masa, melalui kehadiran dan bukan kajian. Ia bukan sesuatu yang anda boleh baca ke dalamnya. Tapi ia tumbuh secara semula jadi apabila anda luangkan masa di depan tank bukan untuk mencari masalah — cuma melihat. Perhatikan bagaimana ikan bergerak dalam air. Sedar akan perubahan kecil yang anda tidak pernah perasan sebelum ini. Perbezaan antara memeriksa dan melihat.",
+                "Penjaga yang membina perhatian ini tidak menghabiskan lebih banyak masa pada tank mereka. Mereka menghabiskan lebih sedikit — kerana mereka menangkap sesuatu lebih awal, bertindak balas dengan lebih tenang, dan telah mendapat kepercayaan yang cukup dalam sistem untuk membiarkannya sendiri apabila ia berjalan dengan baik. Kepercayaan itu datang dari mengenali tank cukup baik untuk membacanya. Dan ia menjadikan hobi ini terasa sangat berbeza.",
+                "Dalam ARA, ecological rhythm kelima — <strong>Keeper Rhythm</strong> — adalah yang membentuk semua yang lain. Penjaga yang memerhati secara konsisten, menukar air dengan kesinambungan yang koheren, dan telah menentukan jadual mereka dengan jujur mengikut kapasiti sebenar mereka mewujudkan kestabilan yang tiada produk boleh tiru. Tank mencerminkan penjaganya. Dan penjaga yang selaras, dari masa ke masa, memerlukan lebih sedikit campur tangan — bukan lebih."
+            ],
+            "finalCtaText": "<strong>Tindakan terbaik seterusnya:</strong> Buat log 72 jam: catat 3 perkara setiap hari (tingkah laku ikan, suhu, dan bacaan nitrate). Selepas 3 hari, semak sama ada corak tekanan datang dari parameter, pemberian makan, atau aliran.",
+            "finalCtaBtn1": "Semak isyarat tingkah laku →",
+            "finalCtaBtn2": "← Kembali ke Reading",
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel2": "ARA · Keeper Rhythm",
+            "hintText2": [
+                "Jika anda telah sampai ke tahap dengan tangki anda di mana anda menghabiskan lebih sedikit masa tetapi keadaan semakin baik — anda telah membina sesuatu. Tidak setiap penjaga mencapai tahap itu pada kadar yang sama, dan jalannya sering melalui beberapa pusingan \"saya memeriksa segalanya dan masih tidak tahu apa yang berubah.\" Kekecewaan itu adalah sebahagian daripada proses, bukan bukti bahawa anda melakukan sesuatu yang salah. Attunement berkembang dari saat-saat tidak-tahu itu sama seperti dari saat-saat di mana segalanya jelas."
+            ]
         }
-      ],
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "Kebanyakan masalah tank yang matang bukan peristiwa mendadak. Ia adalah pengumpulan ketidakselarasan kecil merentasi satu atau lebih rhythms ini. Membaca sistem dengan baik bermakna mengetahui rhythm mana yang sedang berubah — sebelum ia jadi masalah yang nampak. Modul-modul seterusnya melihat kepada titik perubahan yang paling biasa."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Di mana nak mula cari"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Mencari punca sebenar",
-      "titleHtml": "Kebanyakan masalah<br><em>ada satu punca.</em>",
-      "body": [
-        "Apabila tank bermasalah — ikan selalu sakit, alga datang balik, parameter yang tidak stabil — ia boleh terasa seperti semua benda salah sekaligus. Jarang sekali begitu. Hampir selalu ada satu perkara yang menjadi tekanan utama, dan semua yang lain sedang bertindak balas kepada itu.",
-        "Cuba selesaikan semua sekaligus adalah meletihkan dan biasanya tidak berkesan. Tapi mencari satu perkara yang sebenarnya mendorong yang lain — dan hadapinya sahaja — sering mengubah segala-galanya.",
-        "Empat punca yang paling biasa: nitrate yang dah lama berkumpul secara senyap, bilangan ikan yang melebihi kemampuan sistem, kimia air yang tidak sesuai untuk ikan spesifik dalam tank, dan rutin penyelenggaraan yang sudah terlalu tidak teratur untuk sistem pulih sepenuhnya antara setiap sesi.",
-        "Tiada satu pun daripada ini adalah kegagalan yang dramatik. Semuanya adalah perubahan perlahan — pergerakan kecil menjauhi keseimbangan yang berkumpul senyap sehingga ia nampak. Bahagian yang sukar ialah apabila anda menyedarinya, ia biasanya dah lama membina."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "ARA menamakan ini sebagai dominant stressor — satu tekanan tunggal yang memberikan beban paling besar kepada sistem pada mana-mana masa. Buang ia, dan masalah lain sering mula selesai sendiri. Kemahirannya adalah belajar mencari punca, bukan merawat setiap simptom secara berasingan. Peralihan itu — dari reaktif kepada ekologi — adalah salah satu perkara yang mengubah cara penjaga mengalami hobi ini."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang filter sebenarnya buat"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Perkara yang kebanyakan panduan langkau",
-      "titleHtml": "Filter bukan mesin.<br><em>Ia habitat.</em>",
-      "body": [
-        "Ramai penjaga menganggap filter sebagai peranti mekanikal — ia menggerakkan air, menangkap kotoran, boleh dibersihkan apabila kelihatan kotor. Pemahaman itu tidak lengkap, dan ia membawa kepada salah satu kesilapan paling biasa dalam penjagaan tank yang matang.",
-        "Filter media — span, ceramic rings, bio-balls — adalah tempat majoriti koloni bakteria anda tinggal. Bukan dalam air. Bukan di atas gravel. Di permukaan-permukaan itu. Berbilion bakteria itulah yang menjadikan tank anda stabil. Merekalah cycle, berjalan secara berterusan, setiap jam setiap hari.",
-        "Ini bermakna cara anda membersihkan filter itu amat penting. Membilas media di bawah paip — walaupun sebentar — mendedahkan koloni kepada klorin, yang membunuh bakteria dengan cepat. Menggantikan semua media sekaligus membuang seluruh koloni dalam satu tindakan. Tank akan secara efektifnya perlu cycle semula, perlahan-lahan, semasa media baru membina. Anda tidak selalu sedar segera. Tapi selama beberapa minggu berikutnya, parameter akan berubah, ikan akan kelihatan sedikit tidak kena, dan punca itu tidak nampak.",
-        "Pendekatan yang betul adalah mudah apabila anda faham kenapa ia penting. Bersihkan filter media dalam air tank lama yang dikeluarkan semasa water change — bukan air paip. Jangan gantikan lebih daripada satu pertiga media pada satu masa, dan tunggu sekurang-kurangnya empat minggu sebelum gantikan mana-mana lagi. Ini mengekalkan koloni sambil mengekalkan fungsi mekanikal filter."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Tanda-tanda koloni filter mungkin terganggu",
-      "hintText": [
-        "Bacaan ammonia atau nitrite yang kecil dalam tank yang matang — walaupun 0.25 ppm — adalah isyarat. Begitu juga dengan tank yang tiba-tiba kelihatan kurang stabil, atau ikan yang pulih lebih perlahan daripada tekanan kecil berbanding biasanya. Ini tidak semestinya disebabkan oleh gangguan filter, tapi jika anda baru-baru ini membersihkan atau menggantikan media, itulah tempat pertama untuk dilihat."
-      ],
-      "hintLabel2": "Perspektif Aquatic Rhythm",
-      "hintText2": [
-        "Filter adalah peralatan paling penting dalam tank — bukan kerana apa yang ia buat secara mekanikal, tapi kerana apa yang tinggal di dalamnya. Melayan ia dengan berhati-hati, dan menggantikannya secara beransur, adalah salah satu cara paling mudah dan paling diabaikan untuk menjaga tank yang matang stabil selama bertahun-tahun berbanding berbulan-bulan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Masalah yang paling senyap sekali"
-    },
-    {
-      "id": "mod-5",
-      "tag": "Perkara yang membina tanpa nampak",
-      "titleHtml": "Nitrate.<br><em>Ia membina tanpa drama.</em>",
-      "body": [
-        "Selepas cycle, ammonia dan nitrite dah diproses. Bahagian itu berfungsi. Tapi nitrate — produk akhir keseluruhan proses itu — tiada ke mana untuk pergi. Ia tidak dipecah lagi. Ia cuma berkumpul, senyap, setiap hari, sehingga sesuatu membuangnya.",
-        "Pada paras rendah, tiada yang kelihatan salah. Parameter nampak baik. Ikan kelihatan normal. Tapi nitrate bukan tidak aktif. Apabila ia meningkat selama berminggu-minggu dan berbulan-bulan, ia memasuki tisu ikan melalui insang dan mengganggu cara darah membawa oksigen. Fungsi imun secara beransur ditekan. Hormon stres kekal sedikit tinggi. Ikan hidup, tapi ia berjalan dengan defisit — lebih mudah diserang penyakit, lebih perlahan pulih dari tekanan kecil, tidak pernah sewarna atau seaktif yang ia boleh jadi dalam air yang lebih bersih.",
-        "Cadangan paling biasa adalah menjaga nitrate di bawah 20 ppm untuk ikan sensitif, dan di bawah 40 ppm untuk spesies yang lebih tahan. Tapi angka itu kurang penting daripada tren. Tank pada 30 ppm yang stabil adalah lebih sihat daripada satu pada 25 ppm yang masih meningkat.",
-        "Water change separa secara berkala — 15 hingga 25 peratus, setiap minggu — adalah cara paling dipercayai untuk mengawal nitrate. Tumbuhan hidup membantu dengan ketara. Pemberian makan berlebihan adalah salah satu cara paling cepat untuk mempercepatkan pengumpulan."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Nota yang menggembirakan",
-      "hintText": [
-        "Jika anda syak nitrate dah lebih tinggi daripada yang sepatutnya untuk seketika — membawanya turun secara beransur selama beberapa minggu (melalui water change kecil yang kerap, bukan satu yang besar) sering akan menghasilkan perbezaan yang nampak. Ikan yang tadinya sedikit malap, sedikit berhati-hati, tiba-tiba kelihatan lebih hidup. Mereka bukan sakit. Mereka cuma akhirnya selesa."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Belajar nampak apa yang sebenarnya ada"
-    },
-    {
-      "id": "mod-6",
-      "tag": "Membaca, bukan sekadar memeriksa",
-      "titleHtml": "Ikan anda sentiasa<br><em>memberitahu sesuatu.</em>",
-      "body": [
-        "Test kit memberitahu anda apa yang air mengandungi pada saat anda menguji. Ikan anda memberitahu apa yang air telah lakukan kepada mereka — sepanjang hari, setiap hari, dalam masa nyata.",
-        "Kebanyakan penjaga belajar membaca nombor sebelum mereka belajar membaca ikan. Itu masuk akal — nombor terasa pasti, dan tingkah laku boleh kelihatan samar. Tapi ikan bertindak balas kepada perubahan dalam persekitaran mereka jauh sebelum test kit menunjukkan apa-apa. Menjelang bacaan tidak kena, ikan biasanya dah hidup dengannya untuk seketika.",
-        "Ini bukan tentang mendiagnosis penyakit. Ia tentang mengenali ikan anda cukup baik supaya perubahan kecil didaftar — seekor ikan yang sedikit kurang bersemangat semasa waktu makan, satu yang dah bergerak ke sudut yang biasanya tidak ia duduki, satu kumpulan yang dah susun semula dirinya secara senyap. Ini bukan isyarat yang dramatik. Tapi ia adalah isyarat yang nyata, dan ia datang lebih awal daripada apa yang mana-mana ujian akan tunjukkan.",
-        "Anda tidak perlu tahu apa ertinya perubahan itu pada saat anda sedar. Sedar sahaja sudah cukup untuk permulaan. Ia adalah permulaan hubungan berbeza dengan tank — satu yang berasaskan membaca berbanding bertindak balas."
-      ],
-      "pullQuote": "Anda tidak perlu tahu apa yang salah untuk tahu bahawa sesuatu telah berubah. Dan mengetahui sesuatu telah berubah — awal — itulah sebahagian besar daripada apa yang penjagaan tank yang baik sebenarnya.",
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "ARA menamakan ini sebagai ecological attunement — kualiti perhatian yang berkembang dari masa ke masa, melalui kehadiran dan bukan kajian. Ia bukan sesuatu yang anda boleh baca ke dalamnya. Tapi ia tumbuh secara semula jadi apabila anda luangkan masa di depan tank bukan untuk mencari masalah — cuma melihat. Perhatikan bagaimana ikan bergerak dalam air. Sedar akan perubahan kecil yang anda tidak pernah perasan sebelum ini. Perbezaan antara memeriksa dan melihat.",
-        "Penjaga yang membina perhatian ini tidak menghabiskan lebih banyak masa pada tank mereka. Mereka menghabiskan lebih sedikit — kerana mereka menangkap sesuatu lebih awal, bertindak balas dengan lebih tenang, dan telah mendapat kepercayaan yang cukup dalam sistem untuk membiarkannya sendiri apabila ia berjalan dengan baik. Kepercayaan itu datang dari mengenali tank cukup baik untuk membacanya. Dan ia menjadikan hobi ini terasa sangat berbeza.",
-        "Dalam ARA, ecological rhythm kelima — <strong>Keeper Rhythm</strong> — adalah yang membentuk semua yang lain. Penjaga yang memerhati secara konsisten, menukar air dengan kesinambungan yang koheren, dan telah menentukan jadual mereka dengan jujur mengikut kapasiti sebenar mereka mewujudkan kestabilan yang tiada produk boleh tiru. Tank mencerminkan penjaganya. Dan penjaga yang selaras, dari masa ke masa, memerlukan lebih sedikit campur tangan — bukan lebih."
-      ],
-      "finalCtaText": "<strong>Tindakan terbaik seterusnya:</strong> Buat log 72 jam: catat 3 perkara setiap hari (tingkah laku ikan, suhu, dan bacaan nitrate). Selepas 3 hari, semak sama ada corak tekanan datang dari parameter, pemberian makan, atau aliran.",
-      "finalCtaBtn1": "Semak isyarat tingkah laku →",
-      "finalCtaBtn2": "← Kembali ke Reading",
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    ],
+    "relatedLinks": [],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

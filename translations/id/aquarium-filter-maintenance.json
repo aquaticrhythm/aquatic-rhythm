@@ -1,132 +1,136 @@
 {
-  "_meta": {
-    "slug": "aquarium-filter-maintenance",
-    "lang": "id",
-    "sourceFile": "articles/aquarium-filter-maintenance.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Filter Anda Bukan Apa yang Anda Kira — Aquatic Rhythm",
-    "description": "Membersihkannya dengan cara yang salah lebih buruk dari tidak membersihkannya sama sekali. Panduan ini menjelaskan apa yang filter akuarium benar-benar lakukan dan cara merawatnya tanpa merusak biologi.",
-    "ogTitle": "Filter Anda Bukan Apa yang Anda Kira",
-    "ogDescription": "Membersihkannya dengan cara yang salah lebih buruk dari tidak membersihkannya sama sekali. Pelajari cara membaca dan merawat Biological Rhythm akuarium Anda."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Biological Rhythm",
-    "titleHtml": "Filter Anda Bukan<br><em>Apa yang Anda Kira</em>",
-    "subtitle": "Membersihkannya dengan cara yang salah lebih buruk dari tidak membersihkannya sama sekali.",
-    "texts": [
-      "Anda membersihkan filter karena terlihat kotor, atau sudah beberapa bulan, atau aliran sudah melambat. Tiga hari kemudian amonia naik dan Anda tidak mengerti kenapa. Akuarium terlihat baik-baik saja. Anda sudah melakukan semuanya dengan benar.",
-      "Panduan ini menjelaskan apa yang filter akuarium benar-benar lakukan, kenapa membersihkannya di waktu yang salah atau dengan cara yang salah bisa merusak akuarium yang sudah stabil, dan cara membaca kondisi filter sebagai bagian dari Biological Rhythm — bukan sekadar perawatan rutin yang perlu dicentang."
+    "_meta": {
+        "slug": "aquarium-filter-maintenance",
+        "lang": "id",
+        "sourceFile": "articles/aquarium-filter-maintenance.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Filter Anda Bukan Apa yang Anda Kira — Aquatic Rhythm",
+        "description": "Membersihkannya dengan cara yang salah lebih buruk dari tidak membersihkannya sama sekali. Panduan ini menjelaskan apa yang filter akuarium benar-benar lakukan dan cara merawatnya tanpa merusak biologi.",
+        "ogTitle": "Filter Anda Bukan Apa yang Anda Kira",
+        "ogDescription": "Membersihkannya dengan cara yang salah lebih buruk dari tidak membersihkannya sama sekali. Pelajari cara membaca dan merawat Biological Rhythm akuarium Anda."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Biological Rhythm",
+        "titleHtml": "Filter Anda Bukan<br><em>Apa yang Anda Kira</em>",
+        "subtitle": "Membersihkannya dengan cara yang salah lebih buruk dari tidak membersihkannya sama sekali.",
+        "texts": [
+            "Anda membersihkan filter karena terlihat kotor, atau sudah beberapa bulan, atau aliran sudah melambat. Tiga hari kemudian amonia naik dan Anda tidak mengerti kenapa. Akuarium terlihat baik-baik saja. Anda sudah melakukan semuanya dengan benar.",
+            "Panduan ini menjelaskan apa yang filter akuarium benar-benar lakukan, kenapa membersihkannya di waktu yang salah atau dengan cara yang salah bisa merusak akuarium yang sudah stabil, dan cara membaca kondisi filter sebagai bagian dari Biological Rhythm — bukan sekadar perawatan rutin yang perlu dicentang."
+        ],
+        "metaModules": "5 modul",
+        "metaTime": "Pemula & Menengah",
+        "metaLevel": "~10 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Apa filter sebenarnya",
+            "titleHtml": "Apa yang filter<br><em>sebenarnya.</em>",
+            "body": [
+                "Kebanyakan penghobi menganggap filter sebagai mesin pembersih — ia membuang kotoran dari air. Itu sebagian benar: filtrasi mekanis menjebak partikel. Tapi fungsi biologis filter jauh lebih penting dan jauh lebih rapuh dari fungsi mekanisnya.",
+                "Media filter — spons, cincin keramik, bio-ball, batu lava — adalah rumah utama bakteri nitrifikasi yang menjalankan siklus nitrogen. Bakteri ini mengubah amonia (limbah ikan) menjadi nitrit, lalu nitrit menjadi nitrat. Tanpa mereka, amonia dan nitrit menumpuk ke kadar toksik. Koloni yang melakukan kerja ini hidup di dalam filter. Memerlukan beberapa minggu untuk terbentuk selama cycling akuarium. Dipertahankan setiap hari oleh air yang mengalir melewatinya.",
+                "Memahami ini mengubah makna 'perawatan filter.' Anda bukan sekadar membersihkan mesin. Anda mengelola ekosistem hidup yang ada di dalam plastik dan keramik. Keputusan yang Anda buat tentang kapan dan bagaimana merawatnya akan menjaga ekosistem itu — atau mengganggunya."
+            ],
+            "pullQuote": "Filter bukan tempat air kotor pergi. Ia tempat bakteri hidup yang membuat akuarium bisa ditinggali.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Intro",
+            "nextBtn": "Kenapa air kran bisa merusak akuarium"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Kenapa air kran bisa merusak akuarium",
+            "titleHtml": "Kenapa air kran<br><em>bisa merusak akuarium.</em>",
+            "body": [
+                "Air kran mengandung klorin dan kloramin — senyawa yang ditambahkan oleh pengolahan air untuk membunuh bakteri. Sangat bagus untuk air minum, mematikan bagi media filter. Membilas spons filter di bawah keran yang mengalir, atau merendam media keramik dalam air kran, membunuh sebagian besar koloni bakteri yang memerlukan beberapa minggu untuk terbentuk.",
+                "Kerusakannya tidak selalu langsung terlihat. Jika sebagian koloni masih hidup, mungkin pulih dalam beberapa hari. Tapi selama masa pemulihan itu, kapasitas pemrosesan filter berkurang. Amonia dan nitrit naik, biasanya perlahan di awal, lalu lebih tajam saat bakteri yang tersisa terbebani oleh produksi limbah normal.",
+                "Penghobi yang mengalami masalah setelah membersihkan filter sering mengaitkannya dengan pembersihan yang dilakukan 'di waktu yang salah' atau dengan penyakit. Penyebab sebenarnya lebih sederhana: air yang digunakan untuk membersihkan telah menghancurkan biologi. Solusinya sama sederhananya: selalu bilas media filter dalam air yang diambil dari akuarium saat sesi ganti air. Air akuarium tidak mengandung klorin, suhu sesuai, dan sudah mengandung senyawa yang bakteri butuhkan. Bilasan lembut dalam ember air akuarium membuang kotoran yang terjebak tanpa mengganggu koloni."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Biological Rhythm",
+            "hintText": [
+                "Dalam ARA, Biological Rhythm mencakup koloni bakteri di filter Anda — ia sama-sama bagian hidup dari akuarium seperti ikan dan tanaman. Mengelola filter berarti membaca kondisi koloni itu: kapan ia terbentuk dan stabil, kapan perlu dirawat, dan jenis perawatan apa yang menjaga versus mengganggu ia."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Kapan perlu dibersihkan — dan kapan tidak"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Kapan perlu dibersihkan — dan kapan tidak",
+            "titleHtml": "Kapan perlu dibersihkan —<br><em>dan kapan tidak.</em>",
+            "body": [
+                "Waktu pembersihan filter sama pentingnya dengan caranya. Beberapa situasi membuat pembersihan filter lebih berisiko dari biasanya: tepat setelah menambah ikan baru (beban bakteri meningkat beberapa minggu sementara koloni menyesuaikan diri — membersihkan dalam jendela ini membuang kapasitas pemrosesan tepat saat lebih banyak dibutuhkan); selama atau tepat setelah pengobatan penyakit (banyak obat membunuh bakteri bersama patogen — menambah pembersihan yang membuang kapasitas koloni lebih lanjut menggandakan gangguan); selama ketidakstabilan suhu (laju pertumbuhan bakteri bergantung pada suhu — akuarium yang mengalami masalah heater atau perubahan suhu musiman mungkin sudah memiliki koloni yang tertekan).",
+                "Sinyal bahwa filter perlu dirawat adalah penurunan aliran (pompa bekerja melawan media yang tersumbat) dan pemampatan spons yang terlihat. Ini adalah sinyal mekanis, bukan biologis — koloni bakteri tidak mengumumkan kapan perlu dibersihkan. Tapi filter yang mengalirkan air dengan bebas dan telah terpasang kurang dari tiga bulan hampir pasti tidak perlu dibersihkan lagi.",
+                "Naluri untuk membersihkan karena waktu sudah berlalu jauh kurang berguna dari membaca kondisi filter yang sebenarnya."
+            ],
+            "pullQuote": "Filter yang berfungsi — mengalirkan air dengan bebas, di akuarium yang stabil — sedang melakukan pekerjaannya. Dorongan untuk membersihkannya karena 'sudah lama' adalah sinyal Keeper Rhythm, bukan sinyal akuarium.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Cara membersihkan tanpa merusak akuarium"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Cara membersihkan tanpa merusak akuarium",
+            "titleHtml": "Cara membersihkan<br><em>tanpa merusak akuarium.</em>",
+            "body": [
+                "Metode yang menjaga koloni bakteri sambil membuang kotoran mekanis: keluarkan media filter satu bagian sekaligus, bukan semuanya sekaligus; bilas setiap bagian dengan lembut dalam ember air yang diambil dari akuarium saat sesi ganti air; peras spons sekali atau dua kali untuk membuang kotoran yang terjebak, tidak berulang kali; jangan gosok media keramik atau bio-media — bilasan lembut sudah cukup; kembalikan media yang sudah dibersihkan sebelum beralih ke bagian berikutnya; jangan pernah mengganti semua media sekaligus.",
+                "Jika Anda mengganti media lama dengan yang baru (spons yang akhirnya hancur, keramik yang retak), jalankan media lama dan baru bersamaan selama empat hingga enam minggu sebelum membuang yang lama sepenuhnya. Media lama menginokulasi yang baru. Membuang media lama langsung meninggalkan yang baru kosong dan filter Anda dengan kapasitas yang jauh berkurang.",
+                "Inilah juga kenapa saran untuk 'ganti cartridge filter setiap bulan' — umum dalam instruksi filter hang-on bermerek — bisa mendestabilisasi akuarium yang sudah stabil. Cartridge itu adalah media biologis. Menggantinya setiap bulan adalah cara perlahan untuk berulang kali me-recycle sebagian akuarium."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Timing before Technique",
+            "hintText": [
+                "Prinsip ARA tentang Timing before Technique berlaku langsung pada perawatan filter. Filter yang dibersihkan di waktu yang salah dengan teknik yang benar masih bisa merusak akuarium. Filter yang dibersihkan di waktu yang benar dengan teknik yang benar menjaga Biological Rhythm. Baca waktunya dulu."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca kondisi filter"
+        },
+        {
+            "id": "mod-5",
+            "tag": "Membaca kondisi filter",
+            "titleHtml": "Membaca<br><em>kondisi filter.</em>",
+            "body": [
+                "Filter yang sudah terbentuk di akuarium yang stabil memiliki tampilan dan nuansa yang khas: spons berwarna coklat dari kolonisasi bakteri, media keramik mungkin memiliki lapisan biofilm tipis, aliran kuat dan konsisten. Tidak satu pun dari ini tanda filter kotor — itu tanda filter yang hidup. Warna coklat itu adalah bakteri. Biofilm itu adalah biologi. Filter yang terlihat seperti itu sedang berfungsi.",
+                "Situasi yang benar-benar memerlukan perhatian: aliran sudah berkurang secara signifikan dan spons memadat di bawah tekanan menjadi massa padat bukan bergerak; akuarium sudah diobati dengan obat yang membunuh bakteri (tes amonia 24–48 jam setelah pengobatan; kenaikan menunjukkan koloni terdampak); filter berjalan kering akibat listrik mati atau kerusakan pompa (menyalakan kembali filter yang berjalan kering mungkin memerlukan pembentukan ulang koloni — tes setiap hari selama seminggu).",
+                "Di luar ini, kebiasaan filter yang paling berguna bukan frekuensi pembersihan — itu adalah observasi. Perhatikan alirannya. Perhatikan bacaan akuarium setelah perawatan apa pun. Beri biologi ruang untuk bekerja. Biological Rhythm lebih stabil dari yang kebanyakan penghobi sadari, dan lebih rapuh dari yang kebanyakan kebiasaan pembersihan perhitungkan."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Infrastruktur Teknis",
+            "hintText": [
+                "ARA mengidentifikasi infrastruktur teknis sebagai dimensi kapasitas keempat: sejauh mana otomasi, sistem pemantauan, dan desain peralatan dapat menjalankan fungsi perawatan rutin secara andal. Peralatan yang dipahami dan dirawat dengan baik benar-benar memperluas kapasitas pemelihara. Namun, otomasi yang dipasang tanpa pemahaman sejati pemelihara menjadi sumber ketidakselarasan — ketika sistem gagal secara diam atau menyembunyikan sinyal, infrastruktur yang seharusnya mendukung sistem menghalangi pemelihara dari informasi yang mereka butuhkan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel3": "ARA · Infrastruktur Teknis",
+            "hintText3": [
+                "ARA mengidentifikasi infrastruktur teknis sebagai dimensi kapasitas keempat: sejauh mana otomasi, sistem pemantauan, dan desain peralatan dapat melakukan fungsi perawatan rutin secara andal. Peralatan yang dipahami dengan baik dan dirawat dengan benar memang memperluas kapasitas penjaga. Namun, otomasi yang dipasang tanpa pemahaman penjaga yang tulus menjadi sumber ketidakselarasan — ketika sistem gagal secara diam-diam atau menyembunyikan sinyal, infrastruktur yang seharusnya mendukung sistem justru menghalangi penjaga dari informasi yang mereka butuhkan."
+            ]
+        }
     ],
-    "metaModules": "5 modul",
-    "metaTime": "Pemula & Menengah",
-    "metaLevel": "~10 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Apa filter sebenarnya",
-      "titleHtml": "Apa yang filter<br><em>sebenarnya.</em>",
-      "body": [
-        "Kebanyakan penghobi menganggap filter sebagai mesin pembersih — ia membuang kotoran dari air. Itu sebagian benar: filtrasi mekanis menjebak partikel. Tapi fungsi biologis filter jauh lebih penting dan jauh lebih rapuh dari fungsi mekanisnya.",
-        "Media filter — spons, cincin keramik, bio-ball, batu lava — adalah rumah utama bakteri nitrifikasi yang menjalankan siklus nitrogen. Bakteri ini mengubah amonia (limbah ikan) menjadi nitrit, lalu nitrit menjadi nitrat. Tanpa mereka, amonia dan nitrit menumpuk ke kadar toksik. Koloni yang melakukan kerja ini hidup di dalam filter. Memerlukan beberapa minggu untuk terbentuk selama cycling akuarium. Dipertahankan setiap hari oleh air yang mengalir melewatinya.",
-        "Memahami ini mengubah makna 'perawatan filter.' Anda bukan sekadar membersihkan mesin. Anda mengelola ekosistem hidup yang ada di dalam plastik dan keramik. Keputusan yang Anda buat tentang kapan dan bagaimana merawatnya akan menjaga ekosistem itu — atau mengganggunya."
-      ],
-      "pullQuote": "Filter bukan tempat air kotor pergi. Ia tempat bakteri hidup yang membuat akuarium bisa ditinggali.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Kenapa air kran bisa merusak akuarium"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Kenapa air kran bisa merusak akuarium",
-      "titleHtml": "Kenapa air kran<br><em>bisa merusak akuarium.</em>",
-      "body": [
-        "Air kran mengandung klorin dan kloramin — senyawa yang ditambahkan oleh pengolahan air untuk membunuh bakteri. Sangat bagus untuk air minum, mematikan bagi media filter. Membilas spons filter di bawah keran yang mengalir, atau merendam media keramik dalam air kran, membunuh sebagian besar koloni bakteri yang memerlukan beberapa minggu untuk terbentuk.",
-        "Kerusakannya tidak selalu langsung terlihat. Jika sebagian koloni masih hidup, mungkin pulih dalam beberapa hari. Tapi selama masa pemulihan itu, kapasitas pemrosesan filter berkurang. Amonia dan nitrit naik, biasanya perlahan di awal, lalu lebih tajam saat bakteri yang tersisa terbebani oleh produksi limbah normal.",
-        "Penghobi yang mengalami masalah setelah membersihkan filter sering mengaitkannya dengan pembersihan yang dilakukan 'di waktu yang salah' atau dengan penyakit. Penyebab sebenarnya lebih sederhana: air yang digunakan untuk membersihkan telah menghancurkan biologi. Solusinya sama sederhananya: selalu bilas media filter dalam air yang diambil dari akuarium saat sesi ganti air. Air akuarium tidak mengandung klorin, suhu sesuai, dan sudah mengandung senyawa yang bakteri butuhkan. Bilasan lembut dalam ember air akuarium membuang kotoran yang terjebak tanpa mengganggu koloni."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Biological Rhythm",
-      "hintText": [
-        "Dalam ARA, Biological Rhythm mencakup koloni bakteri di filter Anda — ia sama-sama bagian hidup dari akuarium seperti ikan dan tanaman. Mengelola filter berarti membaca kondisi koloni itu: kapan ia terbentuk dan stabil, kapan perlu dirawat, dan jenis perawatan apa yang menjaga versus mengganggu ia."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Kapan perlu dibersihkan — dan kapan tidak"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Kapan perlu dibersihkan — dan kapan tidak",
-      "titleHtml": "Kapan perlu dibersihkan —<br><em>dan kapan tidak.</em>",
-      "body": [
-        "Waktu pembersihan filter sama pentingnya dengan caranya. Beberapa situasi membuat pembersihan filter lebih berisiko dari biasanya: tepat setelah menambah ikan baru (beban bakteri meningkat beberapa minggu sementara koloni menyesuaikan diri — membersihkan dalam jendela ini membuang kapasitas pemrosesan tepat saat lebih banyak dibutuhkan); selama atau tepat setelah pengobatan penyakit (banyak obat membunuh bakteri bersama patogen — menambah pembersihan yang membuang kapasitas koloni lebih lanjut menggandakan gangguan); selama ketidakstabilan suhu (laju pertumbuhan bakteri bergantung pada suhu — akuarium yang mengalami masalah heater atau perubahan suhu musiman mungkin sudah memiliki koloni yang tertekan).",
-        "Sinyal bahwa filter perlu dirawat adalah penurunan aliran (pompa bekerja melawan media yang tersumbat) dan pemampatan spons yang terlihat. Ini adalah sinyal mekanis, bukan biologis — koloni bakteri tidak mengumumkan kapan perlu dibersihkan. Tapi filter yang mengalirkan air dengan bebas dan telah terpasang kurang dari tiga bulan hampir pasti tidak perlu dibersihkan lagi.",
-        "Naluri untuk membersihkan karena waktu sudah berlalu jauh kurang berguna dari membaca kondisi filter yang sebenarnya."
-      ],
-      "pullQuote": "Filter yang berfungsi — mengalirkan air dengan bebas, di akuarium yang stabil — sedang melakukan pekerjaannya. Dorongan untuk membersihkannya karena 'sudah lama' adalah sinyal Keeper Rhythm, bukan sinyal akuarium.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Cara membersihkan tanpa merusak akuarium"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Cara membersihkan tanpa merusak akuarium",
-      "titleHtml": "Cara membersihkan<br><em>tanpa merusak akuarium.</em>",
-      "body": [
-        "Metode yang menjaga koloni bakteri sambil membuang kotoran mekanis: keluarkan media filter satu bagian sekaligus, bukan semuanya sekaligus; bilas setiap bagian dengan lembut dalam ember air yang diambil dari akuarium saat sesi ganti air; peras spons sekali atau dua kali untuk membuang kotoran yang terjebak, tidak berulang kali; jangan gosok media keramik atau bio-media — bilasan lembut sudah cukup; kembalikan media yang sudah dibersihkan sebelum beralih ke bagian berikutnya; jangan pernah mengganti semua media sekaligus.",
-        "Jika Anda mengganti media lama dengan yang baru (spons yang akhirnya hancur, keramik yang retak), jalankan media lama dan baru bersamaan selama empat hingga enam minggu sebelum membuang yang lama sepenuhnya. Media lama menginokulasi yang baru. Membuang media lama langsung meninggalkan yang baru kosong dan filter Anda dengan kapasitas yang jauh berkurang.",
-        "Inilah juga kenapa saran untuk 'ganti cartridge filter setiap bulan' — umum dalam instruksi filter hang-on bermerek — bisa mendestabilisasi akuarium yang sudah stabil. Cartridge itu adalah media biologis. Menggantinya setiap bulan adalah cara perlahan untuk berulang kali me-recycle sebagian akuarium."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Timing before Technique",
-      "hintText": [
-        "Prinsip ARA tentang Timing before Technique berlaku langsung pada perawatan filter. Filter yang dibersihkan di waktu yang salah dengan teknik yang benar masih bisa merusak akuarium. Filter yang dibersihkan di waktu yang benar dengan teknik yang benar menjaga Biological Rhythm. Baca waktunya dulu."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca kondisi filter"
-    },
-    {
-      "id": "mod-5",
-      "tag": "Membaca kondisi filter",
-      "titleHtml": "Membaca<br><em>kondisi filter.</em>",
-      "body": [
-        "Filter yang sudah terbentuk di akuarium yang stabil memiliki tampilan dan nuansa yang khas: spons berwarna coklat dari kolonisasi bakteri, media keramik mungkin memiliki lapisan biofilm tipis, aliran kuat dan konsisten. Tidak satu pun dari ini tanda filter kotor — itu tanda filter yang hidup. Warna coklat itu adalah bakteri. Biofilm itu adalah biologi. Filter yang terlihat seperti itu sedang berfungsi.",
-        "Situasi yang benar-benar memerlukan perhatian: aliran sudah berkurang secara signifikan dan spons memadat di bawah tekanan menjadi massa padat bukan bergerak; akuarium sudah diobati dengan obat yang membunuh bakteri (tes amonia 24–48 jam setelah pengobatan; kenaikan menunjukkan koloni terdampak); filter berjalan kering akibat listrik mati atau kerusakan pompa (menyalakan kembali filter yang berjalan kering mungkin memerlukan pembentukan ulang koloni — tes setiap hari selama seminggu).",
-        "Di luar ini, kebiasaan filter yang paling berguna bukan frekuensi pembersihan — itu adalah observasi. Perhatikan alirannya. Perhatikan bacaan akuarium setelah perawatan apa pun. Beri biologi ruang untuk bekerja. Biological Rhythm lebih stabil dari yang kebanyakan penghobi sadari, dan lebih rapuh dari yang kebanyakan kebiasaan pembersihan perhitungkan."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Infrastruktur Teknis",
-      "hintText": [
-        "ARA mengidentifikasi infrastruktur teknis sebagai dimensi kapasitas keempat: sejauh mana otomasi, sistem pemantauan, dan desain peralatan dapat menjalankan fungsi perawatan rutin secara andal. Peralatan yang dipahami dan dirawat dengan baik benar-benar memperluas kapasitas pemelihara. Namun, otomasi yang dipasang tanpa pemahaman sejati pemelihara menjadi sumber ketidakselarasan — ketika sistem gagal secara diam atau menyembunyikan sinyal, infrastruktur yang seharusnya mendukung sistem menghalangi pemelihara dari informasi yang mereka butuhkan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/articles/cycled-tank-problems",
+            "text": "Masalah di akuarium matang →"
+        },
+        {
+            "href": "/articles/nitrate-keeps-rising",
+            "text": "Kenapa nitrat terus naik? →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/articles/cycled-tank-problems",
-      "text": "Masalah di akuarium matang →"
-    },
-    {
-      "href": "/articles/nitrate-keeps-rising",
-      "text": "Kenapa nitrat terus naik? →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }
