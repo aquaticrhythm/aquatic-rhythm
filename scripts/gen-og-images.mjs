@@ -177,14 +177,16 @@ function buildLayout(data, fonts) {
 
   // Parse italic markers from lines
   function renderLine(line) {
+    // Adaptive title size: smaller when there are 2+ lines
+    const titleSize = lines.length > 1 ? 76 : 92;
     if (!line.includes('‹')) {
       return txt(line, {
         fontFamily: '"Cormorant Garamond"',
         fontWeight: 300,
         fontStyle: 'normal',
-        fontSize: 68,
+        fontSize: titleSize,
         color: C.text,
-        lineHeight: 1.08,
+        lineHeight: 1.1,
       });
     }
     // Mixed line with italic parts
@@ -197,8 +199,8 @@ function buildLayout(data, fonts) {
           flexDirection: 'row',
           flexWrap: 'wrap',
           alignItems: 'baseline',
-          fontSize: 68,
-          lineHeight: 1.08,
+          fontSize: titleSize,
+          lineHeight: 1.1,
         },
         children: parts.map(part => {
           const isItalic = part.startsWith('‹') && part.endsWith('›');
@@ -207,17 +209,17 @@ function buildLayout(data, fonts) {
             fontFamily: '"Cormorant Garamond"',
             fontWeight: isItalic ? 400 : 300,
             fontStyle: isItalic ? 'italic' : 'normal',
-            fontSize: 68,
+            fontSize: titleSize,
             color: isItalic ? C.titleEm : C.text,
-            lineHeight: 1.08,
+            lineHeight: 1.1,
           });
         }),
       },
     };
   }
 
-  // Truncate desc to ~120 chars
-  const shortDesc = desc.length > 130 ? desc.slice(0, 128).replace(/\s\S+$/, '') + '…' : desc;
+  // Shorter truncation since font is larger now
+  const shortDesc = desc.length > 90 ? desc.slice(0, 88).replace(/\s\S+$/, '') + '…' : desc;
 
   return {
     type: 'div',
@@ -228,7 +230,7 @@ function buildLayout(data, fonts) {
         width: 1200,
         height: 630,
         background: `linear-gradient(155deg, ${C.bg1} 0%, ${C.bg2} 30%, ${C.bg3} 65%, ${C.bg4} 100%)`,
-        padding: '64px 80px',
+        padding: '56px 80px',
         fontFamily: '"DM Sans"',
         position: 'relative',
       },
@@ -246,8 +248,8 @@ function buildLayout(data, fonts) {
             children: [
               txt('AQUATIC RHYTHM', {
                 fontFamily: '"DM Sans"',
-                fontWeight: 300,
-                fontSize: 13,
+                fontWeight: 400,
+                fontSize: 20,
                 letterSpacing: '0.22em',
                 color: C.accent,
                 textTransform: 'uppercase',
@@ -272,11 +274,11 @@ function buildLayout(data, fonts) {
                 ? txt(eyebrow.toUpperCase(), {
                     fontFamily: '"DM Sans"',
                     fontWeight: 500,
-                    fontSize: 11,
-                    letterSpacing: '0.24em',
+                    fontSize: 20,
+                    letterSpacing: '0.18em',
                     color: C.eyebrow,
                     textTransform: 'uppercase',
-                    marginBottom: 28,
+                    marginBottom: 24,
                   })
                 : null,
 
@@ -287,7 +289,7 @@ function buildLayout(data, fonts) {
                   style: {
                     display: 'flex',
                     flexDirection: 'column',
-                    marginBottom: 32,
+                    marginBottom: 28,
                   },
                   children: lines.map(renderLine),
                 },
@@ -299,10 +301,10 @@ function buildLayout(data, fonts) {
                     fontFamily: '"Cormorant Garamond"',
                     fontWeight: 300,
                     fontStyle: 'italic',
-                    fontSize: 22,
+                    fontSize: 30,
                     color: C.textDim,
-                    lineHeight: 1.6,
-                    maxWidth: 860,
+                    lineHeight: 1.5,
+                    maxWidth: 960,
                   })
                 : null,
             ].filter(Boolean),
@@ -318,13 +320,13 @@ function buildLayout(data, fonts) {
               flexDirection: 'row',
               alignItems: 'center',
               paddingTop: 20,
-              borderTop: `1px solid ${C.border}`,
+              borderTop: `2px solid ${C.border}`,
             },
             children: [
               txt('aquaticrhythm.com', {
                 fontFamily: '"DM Sans"',
                 fontWeight: 300,
-                fontSize: 13,
+                fontSize: 20,
                 letterSpacing: '0.1em',
                 color: C.textDim,
                 marginLeft: 'auto',
