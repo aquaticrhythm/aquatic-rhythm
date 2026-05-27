@@ -1,124 +1,128 @@
 {
-  "_meta": {
-    "slug": "community-fish-tank",
-    "lang": "ms",
-    "sourceFile": "articles/community-fish-tank.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Tank Komuniti — Lebih dari Carta Keserasian — Aquatic Rhythm",
-    "description": "Carta keserasian kata ia akan berjaya. Anda stock dengan teliti. Kini ada yang bersembunyi, ada yang nipis, dan dinamik tak kena. Panduan ini menerangkan apa yang carta tidak jawab.",
-    "ogTitle": "Tank Komuniti — Lebih dari Carta Keserasian",
-    "ogDescription": "Carta kata ok tapi tank komuniti tidak berfungsi. Ketahui cara baca ekologi sosial dan tekanan dominan."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Livestock Rhythm",
-    "titleHtml": "Tank Komuniti —<br><em>Lebih dari Carta Keserasian</em>",
-    "subtitle": "Carta keserasian menjawab soalan minimum. Masalah dalam tank komuniti selalunya bermula di luar had carta.",
-    "texts": [
-      "Carta keserasian kata ia akan berjaya. Anda stock dengan teliti — spesies yang berbeza, lapisan yang berbeza, tidak ada yang dikenal sebagai agresif. Tapi kini ada ikan yang bersembunyi sepanjang hari, satu spesies nampak semakin nipis, dan ada satu yang nampak memang menguasai semua.",
-      "Panduan ini menerangkan kenapa carta keserasian hanya menjawab soalan paling asas, apa yang Livestock Rhythm dalam tank komuniti kelihatan seperti bila ia berfungsi, cara mencari tekanan dominan dalam sistem sosial, dan pendekatan yang selari untuk menambah spesies kepada komuniti yang sudah ada."
+    "_meta": {
+        "slug": "community-fish-tank",
+        "lang": "ms",
+        "sourceFile": "articles/community-fish-tank.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Tank Komuniti — Lebih dari Carta Keserasian — Aquatic Rhythm",
+        "description": "Carta keserasian kata ia akan berjaya. Anda stock dengan teliti. Kini ada yang bersembunyi, ada yang nipis, dan dinamik tak kena. Panduan ini menerangkan apa yang carta tidak jawab.",
+        "ogTitle": "Tank Komuniti — Lebih dari Carta Keserasian",
+        "ogDescription": "Carta kata ok tapi tank komuniti tidak berfungsi. Ketahui cara baca ekologi sosial dan tekanan dominan."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Livestock Rhythm",
+        "titleHtml": "Tank Komuniti —<br><em>Lebih dari Carta Keserasian</em>",
+        "subtitle": "Carta keserasian menjawab soalan minimum. Masalah dalam tank komuniti selalunya bermula di luar had carta.",
+        "texts": [
+            "Carta keserasian kata ia akan berjaya. Anda stock dengan teliti — spesies yang berbeza, lapisan yang berbeza, tidak ada yang dikenal sebagai agresif. Tapi kini ada ikan yang bersembunyi sepanjang hari, satu spesies nampak semakin nipis, dan ada satu yang nampak memang menguasai semua.",
+            "Panduan ini menerangkan kenapa carta keserasian hanya menjawab soalan paling asas, apa yang Livestock Rhythm dalam tank komuniti kelihatan seperti bila ia berfungsi, cara mencari tekanan dominan dalam sistem sosial, dan pendekatan yang selari untuk menambah spesies kepada komuniti yang sudah ada."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~8 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Melebihi carta keserasian",
+            "titleHtml": "Carta keserasian<br><em>menjawab satu soalan sahaja.</em>",
+            "body": [
+                "Carta keserasian menjawab satu soalan: adakah ikan-ikan ini akan menyerang antara satu sama lain? Itu minimum yang berguna. Tapi kebanyakan masalah tank komuniti tidak datang dari aggression langsung — ia datang dari tekanan kronik, tahap rendah yang terkumpul bila ikan dengan keperluan ekologi yang berbeza berkongsi ruang.",
+                "Ikan dari sungai yang bergerak cepat dan kaya oksigen tidak serasi dengan ikan dari kolam yang perlahan dan ditanam lebat — walaupun carta kata kedua-duanya 'aman.' Ikan dari air yang berasid dan lembut mengalami tekanan kimia kronik dalam tank keras, walaupun tiada yang menyerang yang lain. Carta tidak menjawab ini.",
+                "Kebanyakan masalah tank komuniti adalah bukan tentang keserasian spesies — ia tentang ketidakpadanan antara keperluan ekologi spesies yang berbeza, dan sistem sosial yang muncul apabila banyak spesies dengan hierarki berbeza berkongsi had yang sama."
+            ],
+            "pullQuote": "Ikan yang perlahan-lahan merosot dalam tank komuniti anda bukan tidak serasi. Mereka sedang diteka kronik oleh sesuatu yang carta tidak sebut.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Intro",
+            "nextBtn": "Livestock Rhythm dan ekologi sosial"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Livestock Rhythm dan ekologi sosial",
+            "titleHtml": "Livestock Rhythm dalam tank komuniti<br><em>adalah corak merentasi kumpulan.</em>",
+            "body": [
+                "Dalam ARA, Livestock Rhythm dalam tank komuniti bukan keadaan mana-mana satu ikan — ia adalah corak merentasi keseluruhan kumpulan. Tank komuniti yang berfungsi kelihatan seperti ini: ikan menduduki zon yang dijangkakan, menunjukkan warna dan selera makan yang konsisten, tiada individu yang sentiasa bersembunyi atau dikejar, tingkah laku berkawan atau bercinta dalam ikan yang melakukannya, pertambahan berat secara beransur merentasi keseluruhan populasi.",
+                "Tank komuniti yang tidak berfungsi menunjukkan corak yang berbeza: satu atau lebih ikan yang sentiasa bersembunyi atau mengelak kawasan tertentu, warna yang redup berbanding apa yang kelihatan dalam gambar spesies, ikan yang nipis walaupun anda melihat mereka makan, masa makan yang tidak menentu di mana ikan tertentu tidak dapat mengakses makanan.",
+                "<strong>Bersembunyi berterusan.</strong> Satu ikan yang bersembunyi sepanjang masa bukan tanda spesies yang pemalu — ia adalah tanda ikan yang tidak selamat dalam persekitaran semasa. Spesies yang sama dalam persekitaran yang betul akan menunjukkan diri sepanjang hari.",
+                "<strong>Ketipisan dalam ikan yang kelihatan makan.</strong> Ini adalah tanda tekanan kronik yang paling tidak disedari. Ikan yang hadir semasa makan tapi tidak menambah berat sedang menggunakan kalori untuk mengatasi tekanan, bukan untuk pertumbuhan.",
+                "<strong>Penguasaan waktu makan.</strong> Satu ikan atau satu spesies yang mendominasi pemberian makan menghalang yang lain dari mendapat cukup makanan. Ini tidak kelihatan sebagai aggression — kelihatan seperti ikan yang aktif dan 'lapar' semasa makan.",
+                "<strong>Warna berbeza dari gambar spesies.</strong> Warna ikan mencerminkan keadaan fisiologinya. Spesies yang kelihatan lebih pucat atau kurang terang dari gambar referens selalunya sedang bertindak balas kepada keadaan yang tidak optimum.",
+                "<strong>Ikan yang sentiasa dekat permukaan atau sudut.</strong> Ikan yang mengelak ruang tengah tank dan kekal berhampiran permukaan atau sudut adalah ikan yang aktif mengelak tekanan di tempat lain dalam tank."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Livestock Rhythm",
+            "hintText": [
+                "Membaca Livestock Rhythm dalam tank komuniti bermakna memerhati kumpulan secara keseluruhan, bukan sekadar memeriksa sama ada tiada ikan yang kelihatan sakit. Komuniti di mana sesetengah individu berkembang maju sementara yang lain perlahan-lahan merosot adalah komuniti dengan tekanan dominan yang belum diselesaikan. Cari ikan yang berkembang maju dan yang merosot — corak itu biasanya akan menunjukkan apa yang tidak sejajar."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Tekanan dominan dalam sistem sosial"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Tekanan dominan",
+            "titleHtml": "Tekanan dominan<br><em>dalam sistem sosial.</em>",
+            "body": [
+                "Dalam tank komuniti, tekanan dominan biasanya adalah salah satu dari tiga perkara: ketidakpadanan spesies, masalah ketumpatan stocking, atau satu individu yang menyebabkan tekanan yang luar biasa. Mencarinya memerlukan pemerhatian dari masa ke masa, bukan satu gambar sekilas.",
+                "Pendekatan ARA: selama satu minggu, perhatikan tank pada masa yang sama setiap hari — sebaik-baiknya semasa waktu makan dan sekali pada waktu malam. Catat ikan mana yang makan aktif, ikan mana yang bersembunyi semasa makan, siapa yang berada di mana dalam tank, dan sama ada ada ikan yang sentiasa mengelak kawasan atau individu tertentu.",
+                "<strong>Ketidakpadanan spesies.</strong> Ikan yang memerlukan parameter air berbeza — pH, kesusahan, suhu — mengalami tekanan kronik walaupun semuanya 'hidup.' Semak keperluan ekologi setiap spesies dan bandingkan dengan parameter sebenar tank. Ketidakpadanan yang jelas selalunya menjelaskan kenapa satu spesies tidak berkembang walaupun yang lain berkembang.",
+                "<strong>Ketumpatan stocking.</strong> Tank yang terlalu padat menghasilkan tekanan yang tersebar secara luas — bukan dari aggression, tetapi dari persaingan berterusan untuk ruang, makanan, dan wilayah. Ikan dalam tank yang terlalu padat kerap membakar lebih banyak tenaga untuk navigasi sosial berbanding mencari keselesaan.",
+                "<strong>Satu individu yang dominan.</strong> Satu ikan yang secara konsisten mengejar, memblok, atau mendominasi waktu makan boleh meletakkan tekanan pada keseluruhan komuniti walaupun aggression nampak ringan. Ukuran kerosakan yang dilakukan bukan keterukan serangan tunggal — ia frekuensi dan siapa yang tidak dapat berehat atau makan dengan normal.",
+                "<strong>Masalah ketumpatan itu tidak selalu nampak.</strong> Tank yang ok pada bulan pertama boleh menjadi terlalu padat apabila ikan membesar, atau apabila anda menambah beberapa ikan 'kecil' yang tumbuh lebih dari yang dijangka. Ketumpatan stocking adalah dinamik, bukan keputusan sekali sahaja.",
+                "<strong>Cara mengesahkan tekanan dominan.</strong> Buang ikan yang disyaki sebagai penyebab tekanan ke quarantine tank selama dua minggu. Kalau tingkah laku bersembunyi berkurangan dan ikan lain mula muncul lebih kerap, anda telah mengenal pasti punca. Ini lebih tepat dari membuat andaian berdasarkan pemerhatian sahaja."
+            ],
+            "pullQuote": "Seminggu pemerhatian mendedahkan lebih banyak tentang tank komuniti dari carta keserasian dan ujian air digabungkan.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca sebelum menambah",
+            "hintLabel2": "ARA · Keeper Rhythm",
+            "hintText2": [
+                "Salah satu pengalaman yang paling tidak selesa dalam memelihara tangki komuniti adalah melihat ikan yang anda sayangi semakin kurus atau semakin menyendiri, dan berasa tidak pasti sama ada harus campur tangan atau menunggu. Minggu pemerhatian yang diterangkan di atas boleh terasa seperti tidak melakukan apa-apa — tetapi ia sebenarnya perkara yang paling efisien dari segi maklumat yang boleh anda lakukan. Apa yang anda lihat pada akhir minggu itu adalah sesuatu yang carta keserasian tidak pernah dapat berikan: bagaimana kumpulan khusus ini, dalam tangki khusus ini, sebenarnya berkelakuan bersama."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Membaca sebelum menambah",
+            "titleHtml": "Membaca komuniti anda<br><em>sebelum menambah kepadanya.</em>",
+            "body": [
+                "Prinsip paling penting untuk tank komuniti adalah satu yang hobi jarang nyatakan secara langsung: jangan tambah ikan ke komuniti yang bergelut untuk selesaikan masalah. Tank di mana ada ikan yang bersembunyi, di mana satu spesies nipis, di mana aggression hadir — ini adalah tank yang perlukan kurang, bukan lebih.",
+                "Pendekatan yang selari untuk menambah spesies baru adalah bermula dari komuniti yang stabil. Bila komuniti sedia ada menunjukkan warna yang baik, nafsu makan yang konsisten, dan tiada ikan yang sentiasa tertekan, tank itu berada dalam keadaan untuk menyambut pertambahan.",
+                "Sebelum menambah, jawab tiga soalan: apakah keperluan ekologi spesies baru dan adakah ia sepadan dengan parameter tank semasa? Adakah spesies baru akan bersaing untuk lapisan yang sama, sumber yang sama, atau wilayah yang sama dengan spesies yang sedia ada? Adakah tank mempunyai kapasiti biologi untuk stocking tambahan — atau adakah filter sudah berjalan pada kapasiti penuh?",
+                "Komuniti yang lalui penambahan baru dengan bersih — kembali ke baseline dalam dua minggu, tiada ikan sedia ada yang merosot — memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Komuniti yang tidak pulih dalam tiga minggu memberitahu anda sama ada pertambahan adalah ketidakpadanan, atau bahawa komuniti asas tidak mempunyai kapasiti untuk sebarang tambahan."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Capacity before Ambition",
+            "hintText": [
+                "Tank komuniti mempunyai kapasiti — bilangan ikan, kepadatan sosial, tahap kerumitan ekologi — yang boleh ia kekalkan dalam keselarasan. Melebihi kapasiti itu menghasilkan tekanan kronik merentasi sistem. Pendekatan yang selari adalah mencari komuniti yang berkembang maju dalam kapasiti sebenar tank, bukan mendorong ke had maksimum yang carta katakan adalah mungkin."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~8 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Melebihi carta keserasian",
-      "titleHtml": "Carta keserasian<br><em>menjawab satu soalan sahaja.</em>",
-      "body": [
-        "Carta keserasian menjawab satu soalan: adakah ikan-ikan ini akan menyerang antara satu sama lain? Itu minimum yang berguna. Tapi kebanyakan masalah tank komuniti tidak datang dari aggression langsung — ia datang dari tekanan kronik, tahap rendah yang terkumpul bila ikan dengan keperluan ekologi yang berbeza berkongsi ruang.",
-        "Ikan dari sungai yang bergerak cepat dan kaya oksigen tidak serasi dengan ikan dari kolam yang perlahan dan ditanam lebat — walaupun carta kata kedua-duanya 'aman.' Ikan dari air yang berasid dan lembut mengalami tekanan kimia kronik dalam tank keras, walaupun tiada yang menyerang yang lain. Carta tidak menjawab ini.",
-        "Kebanyakan masalah tank komuniti adalah bukan tentang keserasian spesies — ia tentang ketidakpadanan antara keperluan ekologi spesies yang berbeza, dan sistem sosial yang muncul apabila banyak spesies dengan hierarki berbeza berkongsi had yang sama."
-      ],
-      "pullQuote": "Ikan yang perlahan-lahan merosot dalam tank komuniti anda bukan tidak serasi. Mereka sedang diteka kronik oleh sesuatu yang carta tidak sebut.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Livestock Rhythm dan ekologi sosial"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Livestock Rhythm dan ekologi sosial",
-      "titleHtml": "Livestock Rhythm dalam tank komuniti<br><em>adalah corak merentasi kumpulan.</em>",
-      "body": [
-        "Dalam ARA, Livestock Rhythm dalam tank komuniti bukan keadaan mana-mana satu ikan — ia adalah corak merentasi keseluruhan kumpulan. Tank komuniti yang berfungsi kelihatan seperti ini: ikan menduduki zon yang dijangkakan, menunjukkan warna dan selera makan yang konsisten, tiada individu yang sentiasa bersembunyi atau dikejar, tingkah laku berkawan atau bercinta dalam ikan yang melakukannya, pertambahan berat secara beransur merentasi keseluruhan populasi.",
-        "Tank komuniti yang tidak berfungsi menunjukkan corak yang berbeza: satu atau lebih ikan yang sentiasa bersembunyi atau mengelak kawasan tertentu, warna yang redup berbanding apa yang kelihatan dalam gambar spesies, ikan yang nipis walaupun anda melihat mereka makan, masa makan yang tidak menentu di mana ikan tertentu tidak dapat mengakses makanan.",
-        "<strong>Bersembunyi berterusan.</strong> Satu ikan yang bersembunyi sepanjang masa bukan tanda spesies yang pemalu — ia adalah tanda ikan yang tidak selamat dalam persekitaran semasa. Spesies yang sama dalam persekitaran yang betul akan menunjukkan diri sepanjang hari.",
-        "<strong>Ketipisan dalam ikan yang kelihatan makan.</strong> Ini adalah tanda tekanan kronik yang paling tidak disedari. Ikan yang hadir semasa makan tapi tidak menambah berat sedang menggunakan kalori untuk mengatasi tekanan, bukan untuk pertumbuhan.",
-        "<strong>Penguasaan waktu makan.</strong> Satu ikan atau satu spesies yang mendominasi pemberian makan menghalang yang lain dari mendapat cukup makanan. Ini tidak kelihatan sebagai aggression — kelihatan seperti ikan yang aktif dan 'lapar' semasa makan.",
-        "<strong>Warna berbeza dari gambar spesies.</strong> Warna ikan mencerminkan keadaan fisiologinya. Spesies yang kelihatan lebih pucat atau kurang terang dari gambar referens selalunya sedang bertindak balas kepada keadaan yang tidak optimum.",
-        "<strong>Ikan yang sentiasa dekat permukaan atau sudut.</strong> Ikan yang mengelak ruang tengah tank dan kekal berhampiran permukaan atau sudut adalah ikan yang aktif mengelak tekanan di tempat lain dalam tank."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Livestock Rhythm",
-      "hintText": [
-        "Membaca Livestock Rhythm dalam tank komuniti bermakna memerhati kumpulan secara keseluruhan, bukan sekadar memeriksa sama ada tiada ikan yang kelihatan sakit. Komuniti di mana sesetengah individu berkembang maju sementara yang lain perlahan-lahan merosot adalah komuniti dengan tekanan dominan yang belum diselesaikan. Cari ikan yang berkembang maju dan yang merosot — corak itu biasanya akan menunjukkan apa yang tidak sejajar."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Tekanan dominan dalam sistem sosial"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Tekanan dominan",
-      "titleHtml": "Tekanan dominan<br><em>dalam sistem sosial.</em>",
-      "body": [
-        "Dalam tank komuniti, tekanan dominan biasanya adalah salah satu dari tiga perkara: ketidakpadanan spesies, masalah ketumpatan stocking, atau satu individu yang menyebabkan tekanan yang luar biasa. Mencarinya memerlukan pemerhatian dari masa ke masa, bukan satu gambar sekilas.",
-        "Pendekatan ARA: selama satu minggu, perhatikan tank pada masa yang sama setiap hari — sebaik-baiknya semasa waktu makan dan sekali pada waktu malam. Catat ikan mana yang makan aktif, ikan mana yang bersembunyi semasa makan, siapa yang berada di mana dalam tank, dan sama ada ada ikan yang sentiasa mengelak kawasan atau individu tertentu.",
-        "<strong>Ketidakpadanan spesies.</strong> Ikan yang memerlukan parameter air berbeza — pH, kesusahan, suhu — mengalami tekanan kronik walaupun semuanya 'hidup.' Semak keperluan ekologi setiap spesies dan bandingkan dengan parameter sebenar tank. Ketidakpadanan yang jelas selalunya menjelaskan kenapa satu spesies tidak berkembang walaupun yang lain berkembang.",
-        "<strong>Ketumpatan stocking.</strong> Tank yang terlalu padat menghasilkan tekanan yang tersebar secara luas — bukan dari aggression, tetapi dari persaingan berterusan untuk ruang, makanan, dan wilayah. Ikan dalam tank yang terlalu padat kerap membakar lebih banyak tenaga untuk navigasi sosial berbanding mencari keselesaan.",
-        "<strong>Satu individu yang dominan.</strong> Satu ikan yang secara konsisten mengejar, memblok, atau mendominasi waktu makan boleh meletakkan tekanan pada keseluruhan komuniti walaupun aggression nampak ringan. Ukuran kerosakan yang dilakukan bukan keterukan serangan tunggal — ia frekuensi dan siapa yang tidak dapat berehat atau makan dengan normal.",
-        "<strong>Masalah ketumpatan itu tidak selalu nampak.</strong> Tank yang ok pada bulan pertama boleh menjadi terlalu padat apabila ikan membesar, atau apabila anda menambah beberapa ikan 'kecil' yang tumbuh lebih dari yang dijangka. Ketumpatan stocking adalah dinamik, bukan keputusan sekali sahaja.",
-        "<strong>Cara mengesahkan tekanan dominan.</strong> Buang ikan yang disyaki sebagai penyebab tekanan ke quarantine tank selama dua minggu. Kalau tingkah laku bersembunyi berkurangan dan ikan lain mula muncul lebih kerap, anda telah mengenal pasti punca. Ini lebih tepat dari membuat andaian berdasarkan pemerhatian sahaja."
-      ],
-      "pullQuote": "Seminggu pemerhatian mendedahkan lebih banyak tentang tank komuniti dari carta keserasian dan ujian air digabungkan.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca sebelum menambah"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Membaca sebelum menambah",
-      "titleHtml": "Membaca komuniti anda<br><em>sebelum menambah kepadanya.</em>",
-      "body": [
-        "Prinsip paling penting untuk tank komuniti adalah satu yang hobi jarang nyatakan secara langsung: jangan tambah ikan ke komuniti yang bergelut untuk selesaikan masalah. Tank di mana ada ikan yang bersembunyi, di mana satu spesies nipis, di mana aggression hadir — ini adalah tank yang perlukan kurang, bukan lebih.",
-        "Pendekatan yang selari untuk menambah spesies baru adalah bermula dari komuniti yang stabil. Bila komuniti sedia ada menunjukkan warna yang baik, nafsu makan yang konsisten, dan tiada ikan yang sentiasa tertekan, tank itu berada dalam keadaan untuk menyambut pertambahan.",
-        "Sebelum menambah, jawab tiga soalan: apakah keperluan ekologi spesies baru dan adakah ia sepadan dengan parameter tank semasa? Adakah spesies baru akan bersaing untuk lapisan yang sama, sumber yang sama, atau wilayah yang sama dengan spesies yang sedia ada? Adakah tank mempunyai kapasiti biologi untuk stocking tambahan — atau adakah filter sudah berjalan pada kapasiti penuh?",
-        "Komuniti yang lalui penambahan baru dengan bersih — kembali ke baseline dalam dua minggu, tiada ikan sedia ada yang merosot — memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Komuniti yang tidak pulih dalam tiga minggu memberitahu anda sama ada pertambahan adalah ketidakpadanan, atau bahawa komuniti asas tidak mempunyai kapasiti untuk sebarang tambahan."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Capacity before Ambition",
-      "hintText": [
-        "Tank komuniti mempunyai kapasiti — bilangan ikan, kepadatan sosial, tahap kerumitan ekologi — yang boleh ia kekalkan dalam keselarasan. Melebihi kapasiti itu menghasilkan tekanan kronik merentasi sistem. Pendekatan yang selari adalah mencari komuniti yang berkembang maju dalam kapasiti sebenar tank, bukan mendorong ke had maksimum yang carta katakan adalah mungkin."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/adding-new-fish",
+            "text": "Menambah ikan baru →"
+        },
+        {
+            "href": "/articles/fish-hiding-what-does-it-mean",
+            "text": "Ikan saya bersembunyi →"
+        },
+        {
+            "href": "/articles/perfect-parameters-fish-dying",
+            "text": "Parameter ok tapi ikan mati →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/adding-new-fish",
-      "text": "Menambah ikan baru →"
-    },
-    {
-      "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "Ikan saya bersembunyi →"
-    },
-    {
-      "href": "/articles/perfect-parameters-fish-dying",
-      "text": "Parameter ok tapi ikan mati →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

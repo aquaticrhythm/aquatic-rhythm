@@ -1,180 +1,184 @@
 {
-  "_meta": {
-    "slug": "new-tank-syndrome",
-    "lang": "id",
-    "sourceFile": "articles/new-tank-syndrome.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "New Tank Syndrome — Apa yang Sebenarnya Terjadi — Aquatic Rhythm",
-    "description": "Air keruh, ikan stres, bacaan parameter naik-turun. Anda tidak melakukan kesalahan apa pun. Panduan ini menjelaskan apa yang sedang dibangun sistem, mengapa kesabaran adalah jawaban yang tepat, dan apa yang sebaiknya dilakukan.",
-    "ogTitle": "New Tank Syndrome — Apa yang Sebenarnya Terjadi",
-    "ogDescription": "Air keruh dan ikan stres di akuarium baru bukan tanda kegagalan. Ini adalah fase biologi yang harus dilalui setiap akuarium baru."
-  },
-  "intro": {
-    "eyebrow": "Artikel · New Tank Syndrome",
-    "titleHtml": "New Tank Syndrome —<br><em>Apa yang Sebenarnya Terjadi</em>",
-    "subtitle": "Apa yang sebenarnya terjadi — dan mengapa menunggu adalah jawaban yang tepat.",
-    "texts": [
-      "Akuarium sudah disiapkan. Air berubah keruh. Ikan terlihat stres. Anda menguji air, mengganti sebagian, menambahkan produk — dan masalahnya terus berulang.",
-      "Anda tidak melakukan kesalahan apa pun. Apa yang Anda saksikan adalah salah satu fase yang paling sering disalahpahami dalam hobi ini — dan hampir setiap pemelihara ikan pernah melewatinya.",
-      "Panduan ini menjelaskan apa yang sebenarnya sedang terjadi secara biologis, mengapa naluri untuk terus bertindak seringkali memperburuk keadaan, dan pendekatan seperti apa yang selaras dengan cara sistem ini bekerja."
+    "_meta": {
+        "slug": "new-tank-syndrome",
+        "lang": "id",
+        "sourceFile": "articles/new-tank-syndrome.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "New Tank Syndrome — Apa yang Sebenarnya Terjadi — Aquatic Rhythm",
+        "description": "Air keruh, ikan stres, bacaan parameter naik-turun. Anda tidak melakukan kesalahan apa pun. Panduan ini menjelaskan apa yang sedang dibangun sistem, mengapa kesabaran adalah jawaban yang tepat, dan apa yang sebaiknya dilakukan.",
+        "ogTitle": "New Tank Syndrome — Apa yang Sebenarnya Terjadi",
+        "ogDescription": "Air keruh dan ikan stres di akuarium baru bukan tanda kegagalan. Ini adalah fase biologi yang harus dilalui setiap akuarium baru."
+    },
+    "intro": {
+        "eyebrow": "Artikel · New Tank Syndrome",
+        "titleHtml": "New Tank Syndrome —<br><em>Apa yang Sebenarnya Terjadi</em>",
+        "subtitle": "Apa yang sebenarnya terjadi — dan mengapa menunggu adalah jawaban yang tepat.",
+        "texts": [
+            "Akuarium sudah disiapkan. Air berubah keruh. Ikan terlihat stres. Anda menguji air, mengganti sebagian, menambahkan produk — dan masalahnya terus berulang.",
+            "Anda tidak melakukan kesalahan apa pun. Apa yang Anda saksikan adalah salah satu fase yang paling sering disalahpahami dalam hobi ini — dan hampir setiap pemelihara ikan pernah melewatinya.",
+            "Panduan ini menjelaskan apa yang sebenarnya sedang terjadi secara biologis, mengapa naluri untuk terus bertindak seringkali memperburuk keadaan, dan pendekatan seperti apa yang selaras dengan cara sistem ini bekerja."
+        ],
+        "metaModules": "7 modul",
+        "metaTime": "Pemula & Menengah",
+        "metaLevel": "~14 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Anda tidak melakukan kesalahan",
+            "titleHtml": "Ini bukan kesalahan.<br><em>Ini adalah fase.</em>",
+            "body": [
+                "Hampir setiap pemelihara ikan melewati ini. Air menjadi keruh, ikan terlihat tidak nyaman, dan penyesuaian yang dilakukan tidak segera membantu. Setelah beberapa kali mencoba, rasanya seperti Anda sendiri yang menyebabkan masalah.",
+                "Yang Anda lihat adalah fase startup biologis — bukan keruntuhan sistem. New Tank Syndrome muncul di hampir setiap setup baru karena populasi bakteri inti belum terbentuk. Sistem ini hidup, tetapi belum matang.",
+                "Kurangi intervensi dan fokus pada konsistensi. Beri makan dengan hemat, pantau tren secara keseluruhan, dan hindari reset drastis. Air ini tidak rusak — belum siap saja."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Early Phase",
+            "hintText": [
+                "Dalam Aquatic Rhythm Alignment, ini adalah Early Phase — periode di mana ekosistem sedang membangun fondasi biologisnya. Ikan yang dimasukkan sebelum fondasi itu terbentuk tidak memasuki sistem yang stabil. Mereka memasuki sistem yang masih dalam proses menjadi satu."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Amonia — stresor pertama"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Amonia",
+            "titleHtml": "Bakteri adalah<br><em>satu-satunya jawaban.</em>",
+            "body": [
+                "Ikan bisa terlihat stres sangat cepat di akuarium baru. Sisa metabolisme dan sisa makanan terurai menjadi amonia — yang beracun bahkan pada konsentrasi rendah. Beban ini bisa naik sebelum pemelihara melihat lonjakan signifikan di test kit.",
+                "Akuarium yang sudah matang memproses amonia hampir seketika, tetapi akuarium baru belum memiliki kapasitas biologis itu. Sistem konversi masih dalam proses pembangunan. Sampai saat itu tiba, amonia menumpuk — dan ikan merasakan tekanannya lebih dulu, sebelum angka di test kit berubah.",
+                "Perlakukan perilaku ikan sebagai sinyal awal. Napas di permukaan, bersembunyi, sirip yang menempel ke tubuh, dan perubahan warna adalah petunjuk bermakna — bukan kejadian acak. Respons yang tepat adalah manajemen yang tenang dan konsisten, sambil membiarkan siklus berkembang."
+            ],
+            "pullQuote": "Kekeruhan air, ikan yang stres, bacaan yang tidak stabil — ini bukan tanda bahwa sesuatu telah salah. Ini adalah tanda bahwa sesuatu sedang berusaha untuk dimulai.",
+            "hintLabel": "Kesejahteraan ikan",
+            "hintText": [
+                "Inilah salah satu alasan mengapa fishless cycling semakin banyak dipilih — menggunakan sumber amonia (amonia murni atau makanan yang membusuk) untuk menumbuhkan bakteri sebelum ikan dimasukkan. Cycling dengan ikan di dalam akuarium membuat hewan hidup terpapar amonia dalam jangka panjang, yang menimbulkan stres fisiologis nyata. Jika Anda sudah memulai dengan ikan, ganti air kecil yang sering — bukan ganti air besar — bisa membantu menjaga kadar amonia tetap terkendali selama siklus berkembang."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Bakteri tidak hidup di dalam air"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Satu-satunya jawaban yang nyata",
+            "titleHtml": "Bakteri tidak hidup<br><em>di dalam air.</em>",
+            "body": [
+                "Banyak produk menjanjikan kestabilan yang cepat, tetapi akuarium tetap berfluktuasi. New Tank Syndrome tidak bisa diselesaikan dengan satu produk tambahan. Pemelihara sering melakukan over-correction karena mengharapkan pembalikan instan.",
+                "Bakteri nitrifikasi adalah koloni yang menempel pada permukaan nyata — media filter, substrat, dekorasi, dinding akuarium. Proses kolonisasi ini membutuhkan waktu berminggu-minggu dan mengikuti urutan yang tidak bisa dipaksakan. Begitu terbentuk, mereka memproses limbah secara terus-menerus dan tanpa suara.",
+                "Ikuti urutan, bukan angka sempurna setiap harinya. Amonia naik lebih dulu, nitrit menyusul, kemudian keduanya turun seiring koloni yang matang. Jika pola ini sedang berjalan di akuarium Anda, sistem sedang berkembang."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Perspektif Aquatic Rhythm",
+            "hintText": [
+                "Parameter yang terlihat kacau sebenarnya adalah sebuah urutan. Mengetahui hal itu tidak membuat penantian menjadi lebih mudah — tetapi mengubah apa yang sedang Anda tunggu."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Kesalahpahaman umum tentang ganti air"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Kesalahpahaman umum",
+            "titleHtml": "Ganti air tidak<br><em>menghancurkan bakteri Anda.</em>",
+            "body": [
+                "Banyak pemelihara khawatir bahwa ganti air akan membuang bakteri dan memulai ulang siklus. Kekhawatiran ini bisa menyebabkan penundaan perawatan yang sebenarnya diperlukan, dan mengalihkan perhatian dari inti biologis yang sebenarnya.",
+                "Bakteri adalah penghuni permukaan, bukan perenang bebas. Mereka membentuk lapisan hidup (biofilm) pada spons, cincin keramik, bio-ball, dan substrat seiring waktu. Ganti air tidak menyapu biofilm dari media filter — bakteri sudah menempel erat di sana.",
+                "Ganti air yang terlalu besar dan terlalu sering bisa memperlambat metabolisme bakteri melalui perubahan kimia yang tiba-tiba. Tetapi ganti air yang wajar dan terjadwal adalah bagian penting dari manajemen — bukan ancaman bagi koloni. Jika memungkinkan, tambahkan media filter dari akuarium yang sudah matang sebagai cara paling praktis untuk mempercepat proses."
+            ],
+            "pullQuote": "Mematikan filter — bahkan sebentar saja — lebih merusak bagi akuarium yang sedang cycling daripada hampir semua ganti air. Anda tidak sekadar menghentikan sirkulasi. Anda memutus oksigen yang menjadi kebutuhan hidup koloni.",
+            "hintLabel": "Beberapa hal yang perlu diingat",
+            "hintText": [
+                "Jangan bilas media filter di bawah air keran — klorin akan membunuh biofilm. Gunakan air lama dari akuarium, dan hanya jika benar-benar perlu. Jangan pernah mengganti semua media sekaligus. Jika Anda mengganti peralatan atau memindahkan akuarium, filter adalah hal terpenting yang harus dibawa serta."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Variabel yang mempengaruhi kecepatan"
+        },
+        {
+            "id": "mod-5",
+            "tag": "Variabel",
+            "titleHtml": "Tidak semua siklus<br><em>membutuhkan waktu yang sama.</em>",
+            "body": [
+                "Dua akuarium yang serupa bisa mengalami siklus dengan kecepatan yang sangat berbeda. Perbedaan ini sering membuat pemelihara berpikir bahwa salah satu setup-nya 'salah.' Padahal, variasi waktu adalah hal yang normal.",
+                "Suhu air mempengaruhi kecepatan aktivitas bakteri — air yang lebih dingin memperlambat pertumbuhan Nitrospira secara signifikan. Luas permukaan media filter menentukan seberapa besar koloni yang bisa terbentuk — media dengan luas permukaan yang lebih besar menghasilkan kapasitas biologis yang lebih tinggi. Seeding dari media filter akuarium yang sudah matang bisa memotong waktu siklus secara drastis. Pencahayaan yang terlalu intens di fase awal bisa mendorong pertumbuhan alga yang menambah ketidakstabilan.",
+                "Pertahankan suhu di kisaran yang mendukung (24–28°C untuk sebagian besar spesies tropis), hindari pembersihan media yang agresif, dan jadikan seeding dari media matang sebagai prioritas jika memungkinkan. Anggap produk bakteri botolan sebagai tambahan, bukan pengganti proses alami."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Perspektif Aquatic Rhythm",
+            "hintText": [
+                "Memahami variabel-variabel ini bukan tentang mengoptimalkan siklus seperti proses produksi. Ini tentang memahami mengapa akuarium Anda dan akuarium orang lain bisa berperilaku berbeda — meskipun Anda melakukan hal yang sama persis. Ruangan yang dingin, filter yang sudah tua, tidak ada seeding. Semua itu bukan berarti ada yang salah. Hanya berarti lebih lambat. Dan lebih lambat tidak apa-apa."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Ketika perawatan menjadi hambatan"
+        },
+        {
+            "id": "mod-6",
+            "tag": "Ketika perawatan menjadi hambatan",
+            "titleHtml": "Mengapa terlalu banyak intervensi<br><em>seringkali memperburuk keadaan.</em>",
+            "body": [
+                "Ketika ikan terlihat stres, sebagian besar pemelihara melakukan intervensi berulang kali. Respons ini datang dari kepedulian — tetapi perbaikan yang terlalu sering bisa mendestabilisasi akuarium yang sedang cycling. Waktu yang dibutuhkan sering kali bertambah karena sistem tidak bisa menetap.",
+                "Intervensi yang paling sering memperlambat siklus biasanya adalah hal-hal biasa dan berulang: memberi makan berlebihan meningkatkan beban amonia lebih cepat dari yang bisa diproses koloni awal; penggunaan rutin pengikat amonia bisa menyamarkan angka sekaligus membuat bakteri kelaparan; mengganti media filter menghancurkan permukaan koloni yang aktif; menambahkan banyak ikan sekaligus membanjiri kapasitas yang belum matang; ganti air besar yang terlalu sering bisa berulang kali mengganggu kimia air.",
+                "Jaga intervensi agar minimal dan disengaja. Beri makan dengan hemat, pertahankan media filter, masukkan ikan secara bertahap, dan simpan ganti air yang lebih besar untuk bacaan yang benar-benar tidak aman. Biarkan sistem membangun kapasitasnya di antara tindakan-tindakan Anda."
+            ],
+            "pullQuote": "Perangkap intervensi bukan tentang melakukan hal yang salah. Ini tentang melakukan hal yang benar terlalu sering, dalam sistem yang membutuhkan waktu lebih dari sekadar bantuan.",
+            "hintLabel": "Perspektif Aquatic Rhythm",
+            "hintText": [
+                "ARA menyebut ini sebagai perangkap intervensi — ketika kepedulian justru menjadi penghalang. Sebagian besar yang terjadi selama cycling masuk dalam satu kategori: hal-hal yang perlu disaksikan, bukan diperbaiki. Yang sulit adalah belajar membedakannya."
+            ],
+            "hintLabel2": "ARA · Timing sebelum Teknik",
+            "hintText2": [
+                "Prinsip keselarasan keempat ARA adalah Timing sebelum Teknik: di akuarium yang masih dalam proses siklus, arc biologis memiliki jadwalnya sendiri. Teknik yang benar secara prinsip — ganti air, dosis amonia, manajemen filter — menjadi kontraproduktif ketika diterapkan pada waktu yang salah. Akuarium yang sedang siklus tidak butuh lebih banyak intervensi. Ia butuh kondisi yang konsisten dan minim gangguan yang memungkinkan koloni bakteri berkembang pada kecepatannya sendiri. Mengenali waktu yang diperlukan suatu respons sering menjadi hal paling terampil yang bisa dilakukan pemelihara."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Akuarium menemukan ritmenya"
+        },
+        {
+            "id": "mod-7",
+            "tag": "Ketika sistem mulai menetap",
+            "titleHtml": "Akuarium menemukan<br><em>ritmenya sendiri.</em>",
+            "body": [
+                "Di awal, rasanya seperti akuarium tidak akan pernah stabil. Kemajuan berjalan lambat dan mudah terlewatkan hari demi hari. Ketidakpastian ini membuat banyak pemelihara meragukan prosesnya.",
+                "Antara minggu keempat dan kedelapan, fungsi koloni biasanya mulai stabil. Amonia bertahan mendekati nol, nitrit menghilang, dan perilaku ikan kembali normal. Sistem mendapatkan ketahanan dan mulai bisa pulih dari gangguan kecil.",
+                "Inilah saatnya beralih dari mode darurat ke perawatan berbasis ritme. Lanjutkan perawatan rutin, hindari gangguan besar, dan bangun konsistensi yang perlahan. Anda tidak mengejar kesempurnaan — Anda membangun sistem hidup yang bisa mengoreksi dirinya sendiri."
+            ],
+            "pullQuote": "ARA menyebut ini sebagai <strong>pengampunan ekologis</strong> — kemampuan sistem hidup untuk menyerap ketidakseimbangan kecil dan kembali ke keseimbangan tanpa intervensi dari pemelihara. Yang sedang dibangun akuarium baru selama Early Phase bukan hanya bakteri. Ini adalah pengampunan yang akan melindungi semua yang Anda tambahkan nantinya.",
+            "additionalPullQuotes": [
+                "Jika ingin melihat bagaimana ini berjalan dalam praktik — amonia yang naik, bakteri yang datang, kedua parameter yang turun — simulator di halaman reading memungkinkan Anda mengalaminya sendiri.",
+                "<strong>Langkah terbaik berikutnya:</strong> Buka Tank Cycle Simulator dan jalankan satu siklus <em>fishless</em> hingga <em>Stabil ✓</em> muncul. Fokus pada tren amonia/nitrit selama 3 hari berturut-turut, bukan pada satu bacaan saja."
+            ],
+            "simulatorLinkText": "Buka simulator →",
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel2": "Perspektif Aquatic Rhythm",
+            "hintText2": [
+                "New tank syndrome bukan hambatan dalam hobi ini. Ini adalah pelajaran pertama yang sesungguhnya — perbedaan antara sinyal yang membutuhkan respons dan sinyal yang hanya butuh ruang untuk selesai dengan sendirinya."
+            ],
+            "hintLabel": "ARA · Keeper Rhythm",
+            "hintText": [
+                "Melihat ikan berjuang atau mati selama fase cycling menghasilkan jenis tekanan tertentu — perasaan bahwa Anda melakukan sesuatu yang salah meskipun Anda mengikuti setiap saran yang bisa Anda temukan. Perasaan itu nyata, dan layak diakui. Yang bukan adalah umpan balik akurat tentang kompetensi Anda sebagai penjaga. New tank syndrome adalah fase biologis yang dilalui setiap tangki, bukan cerminan tentang siapa yang merawatnya. Dorongan untuk bertindak — menambahkan sesuatu, mengubah sesuatu, memperbaiki sesuatu — adalah wajar. Duduk dengan observasi ketika nalurinya adalah untuk berintervasi adalah salah satu keterampilan yang lebih sulit dalam hobi ini, dan fase inilah di mana sebagian besar penjaga pertama kali mempelajarinya."
+            ]
+        }
     ],
-    "metaModules": "7 modul",
-    "metaTime": "Pemula & Menengah",
-    "metaLevel": "~14 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Anda tidak melakukan kesalahan",
-      "titleHtml": "Ini bukan kesalahan.<br><em>Ini adalah fase.</em>",
-      "body": [
-        "Hampir setiap pemelihara ikan melewati ini. Air menjadi keruh, ikan terlihat tidak nyaman, dan penyesuaian yang dilakukan tidak segera membantu. Setelah beberapa kali mencoba, rasanya seperti Anda sendiri yang menyebabkan masalah.",
-        "Yang Anda lihat adalah fase startup biologis — bukan keruntuhan sistem. New Tank Syndrome muncul di hampir setiap setup baru karena populasi bakteri inti belum terbentuk. Sistem ini hidup, tetapi belum matang.",
-        "Kurangi intervensi dan fokus pada konsistensi. Beri makan dengan hemat, pantau tren secara keseluruhan, dan hindari reset drastis. Air ini tidak rusak — belum siap saja."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Early Phase",
-      "hintText": [
-        "Dalam Aquatic Rhythm Alignment, ini adalah Early Phase — periode di mana ekosistem sedang membangun fondasi biologisnya. Ikan yang dimasukkan sebelum fondasi itu terbentuk tidak memasuki sistem yang stabil. Mereka memasuki sistem yang masih dalam proses menjadi satu."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Amonia — stresor pertama"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Amonia",
-      "titleHtml": "Bakteri adalah<br><em>satu-satunya jawaban.</em>",
-      "body": [
-        "Ikan bisa terlihat stres sangat cepat di akuarium baru. Sisa metabolisme dan sisa makanan terurai menjadi amonia — yang beracun bahkan pada konsentrasi rendah. Beban ini bisa naik sebelum pemelihara melihat lonjakan signifikan di test kit.",
-        "Akuarium yang sudah matang memproses amonia hampir seketika, tetapi akuarium baru belum memiliki kapasitas biologis itu. Sistem konversi masih dalam proses pembangunan. Sampai saat itu tiba, amonia menumpuk — dan ikan merasakan tekanannya lebih dulu, sebelum angka di test kit berubah.",
-        "Perlakukan perilaku ikan sebagai sinyal awal. Napas di permukaan, bersembunyi, sirip yang menempel ke tubuh, dan perubahan warna adalah petunjuk bermakna — bukan kejadian acak. Respons yang tepat adalah manajemen yang tenang dan konsisten, sambil membiarkan siklus berkembang."
-      ],
-      "pullQuote": "Kekeruhan air, ikan yang stres, bacaan yang tidak stabil — ini bukan tanda bahwa sesuatu telah salah. Ini adalah tanda bahwa sesuatu sedang berusaha untuk dimulai.",
-      "hintLabel": "Kesejahteraan ikan",
-      "hintText": [
-        "Inilah salah satu alasan mengapa fishless cycling semakin banyak dipilih — menggunakan sumber amonia (amonia murni atau makanan yang membusuk) untuk menumbuhkan bakteri sebelum ikan dimasukkan. Cycling dengan ikan di dalam akuarium membuat hewan hidup terpapar amonia dalam jangka panjang, yang menimbulkan stres fisiologis nyata. Jika Anda sudah memulai dengan ikan, ganti air kecil yang sering — bukan ganti air besar — bisa membantu menjaga kadar amonia tetap terkendali selama siklus berkembang."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Bakteri tidak hidup di dalam air"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Satu-satunya jawaban yang nyata",
-      "titleHtml": "Bakteri tidak hidup<br><em>di dalam air.</em>",
-      "body": [
-        "Banyak produk menjanjikan kestabilan yang cepat, tetapi akuarium tetap berfluktuasi. New Tank Syndrome tidak bisa diselesaikan dengan satu produk tambahan. Pemelihara sering melakukan over-correction karena mengharapkan pembalikan instan.",
-        "Bakteri nitrifikasi adalah koloni yang menempel pada permukaan nyata — media filter, substrat, dekorasi, dinding akuarium. Proses kolonisasi ini membutuhkan waktu berminggu-minggu dan mengikuti urutan yang tidak bisa dipaksakan. Begitu terbentuk, mereka memproses limbah secara terus-menerus dan tanpa suara.",
-        "Ikuti urutan, bukan angka sempurna setiap harinya. Amonia naik lebih dulu, nitrit menyusul, kemudian keduanya turun seiring koloni yang matang. Jika pola ini sedang berjalan di akuarium Anda, sistem sedang berkembang."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "Parameter yang terlihat kacau sebenarnya adalah sebuah urutan. Mengetahui hal itu tidak membuat penantian menjadi lebih mudah — tetapi mengubah apa yang sedang Anda tunggu."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Kesalahpahaman umum tentang ganti air"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Kesalahpahaman umum",
-      "titleHtml": "Ganti air tidak<br><em>menghancurkan bakteri Anda.</em>",
-      "body": [
-        "Banyak pemelihara khawatir bahwa ganti air akan membuang bakteri dan memulai ulang siklus. Kekhawatiran ini bisa menyebabkan penundaan perawatan yang sebenarnya diperlukan, dan mengalihkan perhatian dari inti biologis yang sebenarnya.",
-        "Bakteri adalah penghuni permukaan, bukan perenang bebas. Mereka membentuk lapisan hidup (biofilm) pada spons, cincin keramik, bio-ball, dan substrat seiring waktu. Ganti air tidak menyapu biofilm dari media filter — bakteri sudah menempel erat di sana.",
-        "Ganti air yang terlalu besar dan terlalu sering bisa memperlambat metabolisme bakteri melalui perubahan kimia yang tiba-tiba. Tetapi ganti air yang wajar dan terjadwal adalah bagian penting dari manajemen — bukan ancaman bagi koloni. Jika memungkinkan, tambahkan media filter dari akuarium yang sudah matang sebagai cara paling praktis untuk mempercepat proses."
-      ],
-      "pullQuote": "Mematikan filter — bahkan sebentar saja — lebih merusak bagi akuarium yang sedang cycling daripada hampir semua ganti air. Anda tidak sekadar menghentikan sirkulasi. Anda memutus oksigen yang menjadi kebutuhan hidup koloni.",
-      "hintLabel": "Beberapa hal yang perlu diingat",
-      "hintText": [
-        "Jangan bilas media filter di bawah air keran — klorin akan membunuh biofilm. Gunakan air lama dari akuarium, dan hanya jika benar-benar perlu. Jangan pernah mengganti semua media sekaligus. Jika Anda mengganti peralatan atau memindahkan akuarium, filter adalah hal terpenting yang harus dibawa serta."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Variabel yang mempengaruhi kecepatan"
-    },
-    {
-      "id": "mod-5",
-      "tag": "Variabel",
-      "titleHtml": "Tidak semua siklus<br><em>membutuhkan waktu yang sama.</em>",
-      "body": [
-        "Dua akuarium yang serupa bisa mengalami siklus dengan kecepatan yang sangat berbeda. Perbedaan ini sering membuat pemelihara berpikir bahwa salah satu setup-nya 'salah.' Padahal, variasi waktu adalah hal yang normal.",
-        "Suhu air mempengaruhi kecepatan aktivitas bakteri — air yang lebih dingin memperlambat pertumbuhan Nitrospira secara signifikan. Luas permukaan media filter menentukan seberapa besar koloni yang bisa terbentuk — media dengan luas permukaan yang lebih besar menghasilkan kapasitas biologis yang lebih tinggi. Seeding dari media filter akuarium yang sudah matang bisa memotong waktu siklus secara drastis. Pencahayaan yang terlalu intens di fase awal bisa mendorong pertumbuhan alga yang menambah ketidakstabilan.",
-        "Pertahankan suhu di kisaran yang mendukung (24–28°C untuk sebagian besar spesies tropis), hindari pembersihan media yang agresif, dan jadikan seeding dari media matang sebagai prioritas jika memungkinkan. Anggap produk bakteri botolan sebagai tambahan, bukan pengganti proses alami."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "Memahami variabel-variabel ini bukan tentang mengoptimalkan siklus seperti proses produksi. Ini tentang memahami mengapa akuarium Anda dan akuarium orang lain bisa berperilaku berbeda — meskipun Anda melakukan hal yang sama persis. Ruangan yang dingin, filter yang sudah tua, tidak ada seeding. Semua itu bukan berarti ada yang salah. Hanya berarti lebih lambat. Dan lebih lambat tidak apa-apa."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Ketika perawatan menjadi hambatan"
-    },
-    {
-      "id": "mod-6",
-      "tag": "Ketika perawatan menjadi hambatan",
-      "titleHtml": "Mengapa terlalu banyak intervensi<br><em>seringkali memperburuk keadaan.</em>",
-      "body": [
-        "Ketika ikan terlihat stres, sebagian besar pemelihara melakukan intervensi berulang kali. Respons ini datang dari kepedulian — tetapi perbaikan yang terlalu sering bisa mendestabilisasi akuarium yang sedang cycling. Waktu yang dibutuhkan sering kali bertambah karena sistem tidak bisa menetap.",
-        "Intervensi yang paling sering memperlambat siklus biasanya adalah hal-hal biasa dan berulang: memberi makan berlebihan meningkatkan beban amonia lebih cepat dari yang bisa diproses koloni awal; penggunaan rutin pengikat amonia bisa menyamarkan angka sekaligus membuat bakteri kelaparan; mengganti media filter menghancurkan permukaan koloni yang aktif; menambahkan banyak ikan sekaligus membanjiri kapasitas yang belum matang; ganti air besar yang terlalu sering bisa berulang kali mengganggu kimia air.",
-        "Jaga intervensi agar minimal dan disengaja. Beri makan dengan hemat, pertahankan media filter, masukkan ikan secara bertahap, dan simpan ganti air yang lebih besar untuk bacaan yang benar-benar tidak aman. Biarkan sistem membangun kapasitasnya di antara tindakan-tindakan Anda."
-      ],
-      "pullQuote": "Perangkap intervensi bukan tentang melakukan hal yang salah. Ini tentang melakukan hal yang benar terlalu sering, dalam sistem yang membutuhkan waktu lebih dari sekadar bantuan.",
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "ARA menyebut ini sebagai perangkap intervensi — ketika kepedulian justru menjadi penghalang. Sebagian besar yang terjadi selama cycling masuk dalam satu kategori: hal-hal yang perlu disaksikan, bukan diperbaiki. Yang sulit adalah belajar membedakannya."
-      ],
-      "hintLabel2": "ARA · Timing sebelum Teknik",
-      "hintText2": [
-        "Prinsip keselarasan keempat ARA adalah Timing sebelum Teknik: di akuarium yang masih dalam proses siklus, arc biologis memiliki jadwalnya sendiri. Teknik yang benar secara prinsip — ganti air, dosis amonia, manajemen filter — menjadi kontraproduktif ketika diterapkan pada waktu yang salah. Akuarium yang sedang siklus tidak butuh lebih banyak intervensi. Ia butuh kondisi yang konsisten dan minim gangguan yang memungkinkan koloni bakteri berkembang pada kecepatannya sendiri. Mengenali waktu yang diperlukan suatu respons sering menjadi hal paling terampil yang bisa dilakukan pemelihara."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Akuarium menemukan ritmenya"
-    },
-    {
-      "id": "mod-7",
-      "tag": "Ketika sistem mulai menetap",
-      "titleHtml": "Akuarium menemukan<br><em>ritmenya sendiri.</em>",
-      "body": [
-        "Di awal, rasanya seperti akuarium tidak akan pernah stabil. Kemajuan berjalan lambat dan mudah terlewatkan hari demi hari. Ketidakpastian ini membuat banyak pemelihara meragukan prosesnya.",
-        "Antara minggu keempat dan kedelapan, fungsi koloni biasanya mulai stabil. Amonia bertahan mendekati nol, nitrit menghilang, dan perilaku ikan kembali normal. Sistem mendapatkan ketahanan dan mulai bisa pulih dari gangguan kecil.",
-        "Inilah saatnya beralih dari mode darurat ke perawatan berbasis ritme. Lanjutkan perawatan rutin, hindari gangguan besar, dan bangun konsistensi yang perlahan. Anda tidak mengejar kesempurnaan — Anda membangun sistem hidup yang bisa mengoreksi dirinya sendiri."
-      ],
-      "pullQuote": "ARA menyebut ini sebagai <strong>pengampunan ekologis</strong> — kemampuan sistem hidup untuk menyerap ketidakseimbangan kecil dan kembali ke keseimbangan tanpa intervensi dari pemelihara. Yang sedang dibangun akuarium baru selama Early Phase bukan hanya bakteri. Ini adalah pengampunan yang akan melindungi semua yang Anda tambahkan nantinya.",
-      "additionalPullQuotes": [
-        "Jika ingin melihat bagaimana ini berjalan dalam praktik — amonia yang naik, bakteri yang datang, kedua parameter yang turun — simulator di halaman reading memungkinkan Anda mengalaminya sendiri.",
-        "<strong>Langkah terbaik berikutnya:</strong> Buka Tank Cycle Simulator dan jalankan satu siklus <em>fishless</em> hingga <em>Stabil ✓</em> muncul. Fokus pada tren amonia/nitrit selama 3 hari berturut-turut, bukan pada satu bacaan saja."
-      ],
-      "simulatorLinkText": "Buka simulator →",
-      "hintLabel": "Perspektif Aquatic Rhythm",
-      "hintText": [
-        "New tank syndrome bukan hambatan dalam hobi ini. Ini adalah pelajaran pertama yang sesungguhnya — perbedaan antara sinyal yang membutuhkan respons dan sinyal yang hanya butuh ruang untuk selesai dengan sendirinya."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/fish-keep-dying-new-tank",
+            "text": "Kenapa ikan terus mati di akuarium baru? →"
+        },
+        {
+            "href": "/articles/cycled-tank-problems",
+            "text": "Masalah setelah akuarium matang →"
+        },
+        {
+            "href": "/articles/aquarium-filter-maintenance",
+            "text": "Filter Anda bukan yang Anda kira →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/fish-keep-dying-new-tank",
-      "text": "Kenapa ikan terus mati di akuarium baru? →"
-    },
-    {
-      "href": "/articles/cycled-tank-problems",
-      "text": "Masalah setelah akuarium matang →"
-    },
-    {
-      "href": "/articles/aquarium-filter-maintenance",
-      "text": "Filter Anda bukan yang Anda kira →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

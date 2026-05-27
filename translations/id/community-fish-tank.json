@@ -1,124 +1,128 @@
 {
-  "_meta": {
-    "slug": "community-fish-tank",
-    "lang": "id",
-    "sourceFile": "articles/community-fish-tank.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Akuarium Komunitas — Lebih dari Tabel Kompatibilitas — Aquatic Rhythm",
-    "description": "Tabel kompatibilitas bilang ini akan berhasil. Anda stocking dengan hati-hati. Sekarang ada yang bersembunyi, ada yang semakin kurus, dan dinamika tidak beres. Panduan ini menjelaskan apa yang tabel tidak jawab.",
-    "ogTitle": "Akuarium Komunitas — Lebih dari Tabel Kompatibilitas",
-    "ogDescription": "Tabel bilang oke tapi akuarium komunitas tidak berfungsi. Pelajari cara membaca ekologi sosial dan stresor dominan."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Livestock Rhythm",
-    "titleHtml": "Akuarium Komunitas —<br><em>Lebih dari Tabel Kompatibilitas</em>",
-    "subtitle": "Tabel kompatibilitas menjawab pertanyaan minimum. Masalah di akuarium komunitas sering dimulai di luar batas tabel.",
-    "texts": [
-      "Tabel kompatibilitas bilang ini akan berhasil. Anda stocking dengan hati-hati — spesies berbeda, lapisan berbeda, tidak ada yang dikenal agresif. Tapi sekarang ada ikan yang bersembunyi sepanjang hari, satu spesies terlihat semakin kurus, dan ada satu yang sepertinya menguasai semuanya.",
-      "Panduan ini menjelaskan kenapa tabel kompatibilitas hanya menjawab pertanyaan paling dasar, bagaimana Livestock Rhythm di akuarium komunitas terlihat ketika berfungsi, cara menemukan stresor dominan dalam sistem sosial, dan pendekatan yang tepat untuk menambahkan spesies ke komunitas yang sudah ada."
+    "_meta": {
+        "slug": "community-fish-tank",
+        "lang": "id",
+        "sourceFile": "articles/community-fish-tank.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Akuarium Komunitas — Lebih dari Tabel Kompatibilitas — Aquatic Rhythm",
+        "description": "Tabel kompatibilitas bilang ini akan berhasil. Anda stocking dengan hati-hati. Sekarang ada yang bersembunyi, ada yang semakin kurus, dan dinamika tidak beres. Panduan ini menjelaskan apa yang tabel tidak jawab.",
+        "ogTitle": "Akuarium Komunitas — Lebih dari Tabel Kompatibilitas",
+        "ogDescription": "Tabel bilang oke tapi akuarium komunitas tidak berfungsi. Pelajari cara membaca ekologi sosial dan stresor dominan."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Livestock Rhythm",
+        "titleHtml": "Akuarium Komunitas —<br><em>Lebih dari Tabel Kompatibilitas</em>",
+        "subtitle": "Tabel kompatibilitas menjawab pertanyaan minimum. Masalah di akuarium komunitas sering dimulai di luar batas tabel.",
+        "texts": [
+            "Tabel kompatibilitas bilang ini akan berhasil. Anda stocking dengan hati-hati — spesies berbeda, lapisan berbeda, tidak ada yang dikenal agresif. Tapi sekarang ada ikan yang bersembunyi sepanjang hari, satu spesies terlihat semakin kurus, dan ada satu yang sepertinya menguasai semuanya.",
+            "Panduan ini menjelaskan kenapa tabel kompatibilitas hanya menjawab pertanyaan paling dasar, bagaimana Livestock Rhythm di akuarium komunitas terlihat ketika berfungsi, cara menemukan stresor dominan dalam sistem sosial, dan pendekatan yang tepat untuk menambahkan spesies ke komunitas yang sudah ada."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua tingkat",
+        "metaLevel": "~8 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Melampaui tabel kompatibilitas",
+            "titleHtml": "Tabel kompatibilitas<br><em>menjawab satu pertanyaan saja.</em>",
+            "body": [
+                "Tabel kompatibilitas menjawab satu pertanyaan: apakah ikan-ikan ini akan menyerang satu sama lain? Itu minimum yang berguna. Tapi kebanyakan masalah akuarium komunitas tidak datang dari agresi langsung — datang dari stres kronis, level rendah yang menumpuk ketika ikan dengan kebutuhan ekologi berbeda berbagi ruang.",
+                "Ikan dari sungai yang bergerak cepat dan kaya oksigen tidak cocok dengan ikan dari kolam yang lambat dan banyak tanaman — meski tabel bilang keduanya 'damai.' Ikan dari air asam dan lunak mengalami stres kimia kronis di akuarium air keras, meski tidak ada yang menyerang yang lain. Tabel tidak menjawab ini.",
+                "Kebanyakan masalah akuarium komunitas bukan tentang kompatibilitas spesies — tapi tentang ketidakcocokan antara kebutuhan ekologi spesies yang berbeda, dan sistem sosial yang muncul ketika banyak spesies dengan hierarki berbeda berbagi batas yang sama."
+            ],
+            "pullQuote": "Ikan yang perlahan melemah di akuarium komunitas Anda bukan tidak kompatibel. Mereka sedang tertekan secara kronis oleh sesuatu yang tidak disebutkan tabel.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Intro",
+            "nextBtn": "Livestock Rhythm dan ekologi sosial"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Livestock Rhythm dan ekologi sosial",
+            "titleHtml": "Livestock Rhythm di akuarium komunitas<br><em>adalah pola di seluruh kelompok.</em>",
+            "body": [
+                "Dalam ARA, Livestock Rhythm di akuarium komunitas bukan kondisi ikan mana pun satu per satu — ini adalah pola di seluruh kelompok. Akuarium komunitas yang berfungsi terlihat seperti ini: ikan menempati zona yang diharapkan, menampilkan warna dan nafsu makan yang konsisten, tidak ada individu yang selalu bersembunyi atau dikejar, perilaku bergerombol atau kawin pada ikan yang melakukannya, penambahan berat secara bertahap di seluruh populasi.",
+                "Akuarium komunitas yang tidak berfungsi menunjukkan pola berbeda: satu atau lebih ikan yang selalu bersembunyi atau menghindari area tertentu, warna kusam dibanding yang terlihat di foto spesies, ikan yang kurus meski Anda melihat mereka makan, waktu makan yang tidak menentu di mana ikan tertentu tidak bisa mengakses makanan.",
+                "<strong>Bersembunyi terus-menerus.</strong> Satu ikan yang bersembunyi sepanjang waktu bukan tanda spesies yang pemalu — ini tanda ikan yang tidak aman di lingkungannya saat ini. Spesies yang sama di lingkungan yang tepat akan menampilkan diri sepanjang hari.",
+                "<strong>Kurus pada ikan yang terlihat makan.</strong> Ini adalah tanda stres kronis yang paling tidak disadari. Ikan yang hadir saat makan tapi tidak menambah berat sedang menggunakan kalori untuk mengatasi stres, bukan untuk pertumbuhan.",
+                "<strong>Dominasi waktu makan.</strong> Satu ikan atau satu spesies yang mendominasi pemberian makan menghalangi yang lain mendapatkan cukup makanan. Ini tidak terlihat seperti agresi — terlihat seperti ikan yang aktif dan 'lapar' saat makan.",
+                "<strong>Warna berbeda dari foto spesies.</strong> Warna ikan mencerminkan kondisi fisiologisnya. Spesies yang terlihat lebih pucat atau kurang cerah dari foto referensi sering merespons kondisi yang tidak optimal.",
+                "<strong>Ikan yang selalu di dekat permukaan atau sudut.</strong> Ikan yang menghindari ruang tengah akuarium dan tetap di dekat permukaan atau sudut adalah ikan yang secara aktif menghindari tekanan di tempat lain di akuarium."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Livestock Rhythm",
+            "hintText": [
+                "Membaca Livestock Rhythm di akuarium komunitas berarti mengamati kelompok secara keseluruhan, bukan sekadar memeriksa apakah tidak ada ikan yang terlihat sakit. Komunitas di mana sebagian individu berkembang sementara yang lain perlahan melemah adalah komunitas dengan stresor dominan yang belum diselesaikan. Cari ikan yang berkembang dan yang melemah — polanya biasanya akan menunjukkan apa yang tidak selaras."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Stresor dominan dalam sistem sosial"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Stresor dominan",
+            "titleHtml": "Stresor dominan<br><em>dalam sistem sosial.</em>",
+            "body": [
+                "Di akuarium komunitas, stresor dominan biasanya salah satu dari tiga hal: ketidakcocokan spesies, masalah kepadatan stocking, atau satu individu yang menyebabkan tekanan yang tidak proporsional. Menemukannya memerlukan observasi dari waktu ke waktu, bukan satu pandangan sekilas.",
+                "Pendekatan ARA: selama satu minggu, amati akuarium pada waktu yang sama setiap hari — idealnya saat waktu makan dan sekali di malam hari. Catat ikan mana yang makan aktif, ikan mana yang bersembunyi saat makan, siapa berada di mana di akuarium, dan apakah ada ikan yang selalu menghindari area atau individu tertentu.",
+                "<strong>Ketidakcocokan spesies.</strong> Ikan yang membutuhkan parameter air berbeda — pH, kekerasan, suhu — mengalami stres kronis meski semua 'hidup.' Periksa kebutuhan ekologi setiap spesies dan bandingkan dengan parameter akuarium sebenarnya. Ketidakcocokan yang jelas sering menjelaskan kenapa satu spesies tidak berkembang meski yang lain berkembang.",
+                "<strong>Kepadatan stocking.</strong> Akuarium yang terlalu padat menghasilkan stres yang tersebar luas — bukan dari agresi, tapi dari persaingan terus-menerus untuk ruang, makanan, dan wilayah. Ikan di akuarium yang terlalu padat sering membakar lebih banyak energi untuk navigasi sosial dibanding mencari kenyamanan.",
+                "<strong>Satu individu yang dominan.</strong> Satu ikan yang secara konsisten mengejar, memblokir, atau mendominasi waktu makan bisa memberikan tekanan pada seluruh komunitas meski agresi tampak ringan. Ukuran kerusakan yang dilakukan bukan keparahan serangan tunggal — tapi frekuensi dan siapa yang tidak bisa istirahat atau makan dengan normal.",
+                "<strong>Masalah kepadatan tidak selalu terlihat.</strong> Akuarium yang baik-baik saja di bulan pertama bisa menjadi terlalu padat ketika ikan tumbuh besar, atau ketika Anda menambah beberapa ikan 'kecil' yang tumbuh lebih dari yang diperkirakan. Kepadatan stocking adalah dinamis, bukan keputusan sekali saja.",
+                "<strong>Cara mengkonfirmasi stresor dominan.</strong> Pindahkan ikan yang dicurigai sebagai penyebab stres ke akuarium karantina selama dua minggu. Jika perilaku bersembunyi berkurang dan ikan lain mulai muncul lebih sering, Anda telah mengidentifikasi akar masalahnya. Ini lebih akurat dari membuat asumsi berdasarkan observasi saja."
+            ],
+            "pullQuote": "Seminggu observasi mengungkapkan lebih banyak tentang akuarium komunitas dari tabel kompatibilitas dan tes air digabungkan.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca sebelum menambah",
+            "hintLabel2": "ARA · Keeper Rhythm",
+            "hintText2": [
+                "Salah satu pengalaman yang paling tidak nyaman dalam memelihara tangki komunitas adalah melihat ikan yang Anda pedulikan semakin kurus atau semakin menarik diri, dan merasa tidak yakin apakah harus berintervasi atau menunggu. Minggu observasi yang dijelaskan di atas bisa terasa seperti tidak melakukan apa-apa — tapi sebenarnya itulah hal yang paling efisien secara informasi yang bisa Anda lakukan. Apa yang Anda lihat pada akhir minggu itu adalah sesuatu yang tidak pernah bisa diberikan oleh tabel kompatibilitas: bagaimana kelompok spesifik ini, di tangki spesifik ini, benar-benar berperilaku bersama."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Membaca sebelum menambah",
+            "titleHtml": "Membaca komunitas Anda<br><em>sebelum menambahkan ke dalamnya.</em>",
+            "body": [
+                "Prinsip terpenting untuk akuarium komunitas adalah satu yang hobi jarang nyatakan secara langsung: jangan tambahkan ikan ke komunitas yang sedang berjuang untuk menyelesaikan masalah. Akuarium di mana ada ikan yang bersembunyi, di mana satu spesies semakin kurus, di mana ada agresi — ini adalah akuarium yang membutuhkan lebih sedikit, bukan lebih banyak.",
+                "Pendekatan yang tepat untuk menambahkan spesies baru adalah mulai dari komunitas yang stabil. Ketika komunitas yang ada menunjukkan warna yang baik, nafsu makan yang konsisten, dan tidak ada ikan yang terus-menerus tertekan, akuarium itu dalam kondisi untuk menyambut penambahan.",
+                "Sebelum menambahkan, jawab tiga pertanyaan: apa kebutuhan ekologi spesies baru dan apakah sesuai dengan parameter akuarium saat ini? Apakah spesies baru akan bersaing untuk lapisan yang sama, sumber yang sama, atau wilayah yang sama dengan yang sudah ada? Apakah akuarium memiliki kapasitas biologis untuk stocking tambahan — atau filter sudah berjalan pada kapasitas penuh?",
+                "Komunitas yang melewati penambahan baru dengan mulus — kembali ke baseline dalam dua minggu, tidak ada yang sudah ada yang melemah — memberi tahu Anda sesuatu yang berguna tentang ketahanan mereka. Komunitas yang tidak pulih dalam tiga minggu memberi tahu Anda bahwa penambahan adalah ketidakcocokan, atau bahwa komunitas dasar tidak memiliki kapasitas untuk penambahan apa pun."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Capacity before Ambition",
+            "hintText": [
+                "Akuarium komunitas memiliki kapasitas — jumlah ikan, kepadatan sosial, tingkat kompleksitas ekologi — yang bisa ia pertahankan dalam keselarasan. Melampaui kapasitas itu menghasilkan stres kronis di seluruh sistem. Pendekatan yang tepat adalah mencari komunitas yang berkembang dalam kapasitas akuarium yang sebenarnya, bukan mendorong ke batas maksimum yang tabel katakan mungkin."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua tingkat",
-    "metaLevel": "~8 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Melampaui tabel kompatibilitas",
-      "titleHtml": "Tabel kompatibilitas<br><em>menjawab satu pertanyaan saja.</em>",
-      "body": [
-        "Tabel kompatibilitas menjawab satu pertanyaan: apakah ikan-ikan ini akan menyerang satu sama lain? Itu minimum yang berguna. Tapi kebanyakan masalah akuarium komunitas tidak datang dari agresi langsung — datang dari stres kronis, level rendah yang menumpuk ketika ikan dengan kebutuhan ekologi berbeda berbagi ruang.",
-        "Ikan dari sungai yang bergerak cepat dan kaya oksigen tidak cocok dengan ikan dari kolam yang lambat dan banyak tanaman — meski tabel bilang keduanya 'damai.' Ikan dari air asam dan lunak mengalami stres kimia kronis di akuarium air keras, meski tidak ada yang menyerang yang lain. Tabel tidak menjawab ini.",
-        "Kebanyakan masalah akuarium komunitas bukan tentang kompatibilitas spesies — tapi tentang ketidakcocokan antara kebutuhan ekologi spesies yang berbeda, dan sistem sosial yang muncul ketika banyak spesies dengan hierarki berbeda berbagi batas yang sama."
-      ],
-      "pullQuote": "Ikan yang perlahan melemah di akuarium komunitas Anda bukan tidak kompatibel. Mereka sedang tertekan secara kronis oleh sesuatu yang tidak disebutkan tabel.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Livestock Rhythm dan ekologi sosial"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Livestock Rhythm dan ekologi sosial",
-      "titleHtml": "Livestock Rhythm di akuarium komunitas<br><em>adalah pola di seluruh kelompok.</em>",
-      "body": [
-        "Dalam ARA, Livestock Rhythm di akuarium komunitas bukan kondisi ikan mana pun satu per satu — ini adalah pola di seluruh kelompok. Akuarium komunitas yang berfungsi terlihat seperti ini: ikan menempati zona yang diharapkan, menampilkan warna dan nafsu makan yang konsisten, tidak ada individu yang selalu bersembunyi atau dikejar, perilaku bergerombol atau kawin pada ikan yang melakukannya, penambahan berat secara bertahap di seluruh populasi.",
-        "Akuarium komunitas yang tidak berfungsi menunjukkan pola berbeda: satu atau lebih ikan yang selalu bersembunyi atau menghindari area tertentu, warna kusam dibanding yang terlihat di foto spesies, ikan yang kurus meski Anda melihat mereka makan, waktu makan yang tidak menentu di mana ikan tertentu tidak bisa mengakses makanan.",
-        "<strong>Bersembunyi terus-menerus.</strong> Satu ikan yang bersembunyi sepanjang waktu bukan tanda spesies yang pemalu — ini tanda ikan yang tidak aman di lingkungannya saat ini. Spesies yang sama di lingkungan yang tepat akan menampilkan diri sepanjang hari.",
-        "<strong>Kurus pada ikan yang terlihat makan.</strong> Ini adalah tanda stres kronis yang paling tidak disadari. Ikan yang hadir saat makan tapi tidak menambah berat sedang menggunakan kalori untuk mengatasi stres, bukan untuk pertumbuhan.",
-        "<strong>Dominasi waktu makan.</strong> Satu ikan atau satu spesies yang mendominasi pemberian makan menghalangi yang lain mendapatkan cukup makanan. Ini tidak terlihat seperti agresi — terlihat seperti ikan yang aktif dan 'lapar' saat makan.",
-        "<strong>Warna berbeda dari foto spesies.</strong> Warna ikan mencerminkan kondisi fisiologisnya. Spesies yang terlihat lebih pucat atau kurang cerah dari foto referensi sering merespons kondisi yang tidak optimal.",
-        "<strong>Ikan yang selalu di dekat permukaan atau sudut.</strong> Ikan yang menghindari ruang tengah akuarium dan tetap di dekat permukaan atau sudut adalah ikan yang secara aktif menghindari tekanan di tempat lain di akuarium."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Livestock Rhythm",
-      "hintText": [
-        "Membaca Livestock Rhythm di akuarium komunitas berarti mengamati kelompok secara keseluruhan, bukan sekadar memeriksa apakah tidak ada ikan yang terlihat sakit. Komunitas di mana sebagian individu berkembang sementara yang lain perlahan melemah adalah komunitas dengan stresor dominan yang belum diselesaikan. Cari ikan yang berkembang dan yang melemah — polanya biasanya akan menunjukkan apa yang tidak selaras."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Stresor dominan dalam sistem sosial"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Stresor dominan",
-      "titleHtml": "Stresor dominan<br><em>dalam sistem sosial.</em>",
-      "body": [
-        "Di akuarium komunitas, stresor dominan biasanya salah satu dari tiga hal: ketidakcocokan spesies, masalah kepadatan stocking, atau satu individu yang menyebabkan tekanan yang tidak proporsional. Menemukannya memerlukan observasi dari waktu ke waktu, bukan satu pandangan sekilas.",
-        "Pendekatan ARA: selama satu minggu, amati akuarium pada waktu yang sama setiap hari — idealnya saat waktu makan dan sekali di malam hari. Catat ikan mana yang makan aktif, ikan mana yang bersembunyi saat makan, siapa berada di mana di akuarium, dan apakah ada ikan yang selalu menghindari area atau individu tertentu.",
-        "<strong>Ketidakcocokan spesies.</strong> Ikan yang membutuhkan parameter air berbeda — pH, kekerasan, suhu — mengalami stres kronis meski semua 'hidup.' Periksa kebutuhan ekologi setiap spesies dan bandingkan dengan parameter akuarium sebenarnya. Ketidakcocokan yang jelas sering menjelaskan kenapa satu spesies tidak berkembang meski yang lain berkembang.",
-        "<strong>Kepadatan stocking.</strong> Akuarium yang terlalu padat menghasilkan stres yang tersebar luas — bukan dari agresi, tapi dari persaingan terus-menerus untuk ruang, makanan, dan wilayah. Ikan di akuarium yang terlalu padat sering membakar lebih banyak energi untuk navigasi sosial dibanding mencari kenyamanan.",
-        "<strong>Satu individu yang dominan.</strong> Satu ikan yang secara konsisten mengejar, memblokir, atau mendominasi waktu makan bisa memberikan tekanan pada seluruh komunitas meski agresi tampak ringan. Ukuran kerusakan yang dilakukan bukan keparahan serangan tunggal — tapi frekuensi dan siapa yang tidak bisa istirahat atau makan dengan normal.",
-        "<strong>Masalah kepadatan tidak selalu terlihat.</strong> Akuarium yang baik-baik saja di bulan pertama bisa menjadi terlalu padat ketika ikan tumbuh besar, atau ketika Anda menambah beberapa ikan 'kecil' yang tumbuh lebih dari yang diperkirakan. Kepadatan stocking adalah dinamis, bukan keputusan sekali saja.",
-        "<strong>Cara mengkonfirmasi stresor dominan.</strong> Pindahkan ikan yang dicurigai sebagai penyebab stres ke akuarium karantina selama dua minggu. Jika perilaku bersembunyi berkurang dan ikan lain mulai muncul lebih sering, Anda telah mengidentifikasi akar masalahnya. Ini lebih akurat dari membuat asumsi berdasarkan observasi saja."
-      ],
-      "pullQuote": "Seminggu observasi mengungkapkan lebih banyak tentang akuarium komunitas dari tabel kompatibilitas dan tes air digabungkan.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca sebelum menambah"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Membaca sebelum menambah",
-      "titleHtml": "Membaca komunitas Anda<br><em>sebelum menambahkan ke dalamnya.</em>",
-      "body": [
-        "Prinsip terpenting untuk akuarium komunitas adalah satu yang hobi jarang nyatakan secara langsung: jangan tambahkan ikan ke komunitas yang sedang berjuang untuk menyelesaikan masalah. Akuarium di mana ada ikan yang bersembunyi, di mana satu spesies semakin kurus, di mana ada agresi — ini adalah akuarium yang membutuhkan lebih sedikit, bukan lebih banyak.",
-        "Pendekatan yang tepat untuk menambahkan spesies baru adalah mulai dari komunitas yang stabil. Ketika komunitas yang ada menunjukkan warna yang baik, nafsu makan yang konsisten, dan tidak ada ikan yang terus-menerus tertekan, akuarium itu dalam kondisi untuk menyambut penambahan.",
-        "Sebelum menambahkan, jawab tiga pertanyaan: apa kebutuhan ekologi spesies baru dan apakah sesuai dengan parameter akuarium saat ini? Apakah spesies baru akan bersaing untuk lapisan yang sama, sumber yang sama, atau wilayah yang sama dengan yang sudah ada? Apakah akuarium memiliki kapasitas biologis untuk stocking tambahan — atau filter sudah berjalan pada kapasitas penuh?",
-        "Komunitas yang melewati penambahan baru dengan mulus — kembali ke baseline dalam dua minggu, tidak ada yang sudah ada yang melemah — memberi tahu Anda sesuatu yang berguna tentang ketahanan mereka. Komunitas yang tidak pulih dalam tiga minggu memberi tahu Anda bahwa penambahan adalah ketidakcocokan, atau bahwa komunitas dasar tidak memiliki kapasitas untuk penambahan apa pun."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Capacity before Ambition",
-      "hintText": [
-        "Akuarium komunitas memiliki kapasitas — jumlah ikan, kepadatan sosial, tingkat kompleksitas ekologi — yang bisa ia pertahankan dalam keselarasan. Melampaui kapasitas itu menghasilkan stres kronis di seluruh sistem. Pendekatan yang tepat adalah mencari komunitas yang berkembang dalam kapasitas akuarium yang sebenarnya, bukan mendorong ke batas maksimum yang tabel katakan mungkin."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/adding-new-fish",
+            "text": "Menambahkan ikan baru →"
+        },
+        {
+            "href": "/articles/fish-hiding-what-does-it-mean",
+            "text": "Ikan saya bersembunyi →"
+        },
+        {
+            "href": "/articles/perfect-parameters-fish-dying",
+            "text": "Parameter oke tapi ikan mati →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/adding-new-fish",
-      "text": "Menambahkan ikan baru →"
-    },
-    {
-      "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "Ikan saya bersembunyi →"
-    },
-    {
-      "href": "/articles/perfect-parameters-fish-dying",
-      "text": "Parameter oke tapi ikan mati →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

@@ -1,125 +1,129 @@
 {
-  "_meta": {
-    "slug": "when-is-tank-ready-for-fish",
-    "lang": "id",
-    "sourceFile": "articles/when-is-tank-ready-for-fish.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Kapan Akuarium Siap untuk Ikan? — Aquatic Rhythm",
-    "description": "Test kit menunjukkan amonia nol, nitrit nol. Setiap panduan bilang itu artinya akuarium sudah siap. Panduan ini menjelaskan apa 'matang' sebenarnya berarti dalam bahasa biologi.",
-    "ogTitle": "Kapan Akuarium Siap untuk Ikan?",
-    "ogDescription": "Amonia nol belum tentu artinya siap. Pelajari cara membaca transisi fase dan ikan apa yang sesuai."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Fase Awal",
-    "titleHtml": "Kapan Akuarium<br><em>Siap untuk Ikan?</em>",
-    "subtitle": "Amonia nol adalah minimum. Bukan tanda bahwa sistem sudah sepenuhnya siap.",
-    "texts": [
-      "Test kit menunjukkan amonia nol, nitrit nol. Setiap panduan bilang itu artinya akuarium sudah 'matang' dan Anda bisa memasukkan ikan. Tapi ikan masih mati, atau akuarium tidak stabil, atau ada yang tidak beres meskipun angkanya oke.",
-      "Panduan ini menjelaskan apa 'matang' sebenarnya berarti dalam bahasa biologi, cara membaca transisi ke fase Berkembang, ikan apa yang sesuai untuk akuarium yang baru selesai siklus, dan satu pemeriksaan jujur sebelum Anda menambahkan ikan pertama."
+    "_meta": {
+        "slug": "when-is-tank-ready-for-fish",
+        "lang": "id",
+        "sourceFile": "articles/when-is-tank-ready-for-fish.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Kapan Akuarium Siap untuk Ikan? — Aquatic Rhythm",
+        "description": "Test kit menunjukkan amonia nol, nitrit nol. Setiap panduan bilang itu artinya akuarium sudah siap. Panduan ini menjelaskan apa 'matang' sebenarnya berarti dalam bahasa biologi.",
+        "ogTitle": "Kapan Akuarium Siap untuk Ikan?",
+        "ogDescription": "Amonia nol belum tentu artinya siap. Pelajari cara membaca transisi fase dan ikan apa yang sesuai."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Fase Awal",
+        "titleHtml": "Kapan Akuarium<br><em>Siap untuk Ikan?</em>",
+        "subtitle": "Amonia nol adalah minimum. Bukan tanda bahwa sistem sudah sepenuhnya siap.",
+        "texts": [
+            "Test kit menunjukkan amonia nol, nitrit nol. Setiap panduan bilang itu artinya akuarium sudah 'matang' dan Anda bisa memasukkan ikan. Tapi ikan masih mati, atau akuarium tidak stabil, atau ada yang tidak beres meskipun angkanya oke.",
+            "Panduan ini menjelaskan apa 'matang' sebenarnya berarti dalam bahasa biologi, cara membaca transisi ke fase Berkembang, ikan apa yang sesuai untuk akuarium yang baru selesai siklus, dan satu pemeriksaan jujur sebelum Anda menambahkan ikan pertama."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Pemula",
+        "metaLevel": "~7 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Apa yang 'matang' sebenarnya berarti",
+            "titleHtml": "Matang adalah minimum.<br><em>Bukan sepenuhnya siap.</em>",
+            "body": [
+                "Siklus nitrogen membentuk koloni bakteri yang mengubah amonia — dari kotoran ikan dan bahan organik yang membusuk — menjadi nitrit, dan nitrit menjadi nitrat. Ketika akuarium 'matang,' amonia dan nitrit secara konsisten membaca nol karena koloni bakteri cukup besar untuk memproses apa yang diproduksi akuarium. Ini adalah minimum biologis agar ikan bisa bertahan hidup.",
+                "Tapi 'matang' adalah hal yang biner. Artinya prosesnya berjalan, bukan bahwa ia stabil, bukan bahwa ia memiliki kapasitas berlebih untuk menanggung stres tambahan, dan bukan bahwa akuarium siap untuk semua ikan di semua kondisi. Akuarium yang baru matang memiliki koloni bakteri yang cukup untuk memproses beban yang digunakan selama cycling — dan tidak banyak lebih.",
+                "Kerangka ARA menyebut ini sebagai fase Berkembang — periode setelah siklus selesai di mana sistem sedang membangun stabilitas dan kapasitas berlebih. Fase ini berbeda dari fase Matang di mana biologi sudah kukuh, kapasitas penyangga sudah ada, dan sistem bisa menanggung beban yang berubah tanpa gejolak yang signifikan.",
+                "Memahami perbedaan ini mengubah pertanyaan dari 'apakah akuarium sudah matang?' menjadi 'fase apa akuarium ini sekarang, dan ikan apa yang sesuai untuk fase itu?'"
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Biological Rhythm",
+            "hintText": [
+                "Dalam ARA, Biological Rhythm adalah kondisi dan lintasan biologi hidup dalam akuarium — bukan sekadar siklus nitrogen tapi seluruh komunitas mikroba dan tanaman. Akuarium dengan siklus nitrogen yang stabil tapi tidak ada biofilm bermanfaat di kaca, tidak ada mikrofauna, tidak ada biologi substrat yang terbentuk — adalah matang tapi belum Berkembang. Komunitas sekunder ini memerlukan waktu lebih lama untuk terbentuk dibanding siklus nitrogen, dan ia penting."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Membaca transisi"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Membaca transisi",
+            "titleHtml": "Membaca transisi<br><em>ke fase Berkembang.</em>",
+            "body": [
+                "Akuarium dalam fase Berkembang menunjukkan tanda-tanda spesifik di luar amonia dan nitrit nol. Ini adalah sinyal yang ARA gunakan untuk membaca transisi fase:",
+                "<strong>Parameter stabil selama 1–2 minggu, bukan hanya satu tes.</strong> Satu bacaan amonia dan nitrit nol bisa jadi hari yang baik, atau bisa mencerminkan pemrosesan bakteri yang tepat. Stabilitas selama 7–14 hari — terutama setelah menambahkan sumber amonia kecil tambahan — mengkonfirmasi koloni berfungsi secara konsisten.",
+                "<strong>Akumulasi nitrat yang terukur.</strong> Nitrat yang naik perlahan (5–10 ppm per minggu dengan stocking minimal) mengkonfirmasi siklus nitrogen berjalan lengkap. Jika amonia dan nitrit nol tapi nitrat tidak bergerak sama sekali, sistem mungkin memberikan bacaan yang menyesatkan.",
+                "<strong>Lapisan tipis di permukaan media filter dan dekorasi.</strong> Biofilm tipis yang terlihat di substrat, dekorasi, dan media filter adalah tanda ekosistem biologis yang sedang berkembang. Ini tanda positif, bukan tanda kotor.",
+                "<strong>Amonia kecil diproses dalam 24 jam.</strong> Ini adalah pemeriksaan paling berguna: tambahkan sumber amonia kecil yang terkontrol dan perhatikan apa yang terjadi dalam 24 jam. Jika akuarium memprosesnya kembali ke nol, koloni berfungsi dengan kapasitas berlebih. Itu tanda sistem siap.",
+                "<strong>Bacaan pH yang stabil.</strong> pH yang stabil sepanjang hari menunjukkan kimia air yang seimbang. pH yang berayun signifikan menunjukkan sistem buffer yang lemah — tanda akuarium yang masih awal dalam perkembangannya."
+            ],
+            "pullQuote": "Akuarium yang membaca amonia nol, nitrit nol selama sepuluh hari berturut-turut, menunjukkan akumulasi nitrat, dan ada biofilm tipis yang sedang terbentuk — sedang memberi tahu Anda bahwa ia telah memasuki fase Berkembang.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Ikan untuk akuarium fase Berkembang"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Ikan untuk akuarium fase Berkembang",
+            "titleHtml": "Tidak semua ikan sesuai<br><em>untuk akuarium yang baru matang.</em>",
+            "body": [
+                "Tidak semua ikan sesuai untuk akuarium yang baru memasuki fase Berkembang. Ikan pertama yang Anda tambahkan bukan sekadar penghuni — mereka melengkapi lingkaran biologis. Kotoran mereka memberi makan bakteri, perilaku mereka menguji stabilitas sistem, dan respons mereka memberi Anda bacaan Livestock Rhythm pertama.",
+                "Ikan yang sesuai untuk akuarium fase Berkembang awal memiliki karakteristik tertentu: toleran terhadap fluktuasi parameter kecil (yang akan terjadi saat sistem menstabilkan diri), tangguh secara biologis dalam arti tidak memerlukan kondisi yang sangat presisi untuk berkembang, tidak besar dalam arti beban biologis per ikan bisa dikelola untuk sistem yang baru terbentuk.",
+                "<strong>Ikan yang bagus untuk akuarium yang baru matang:</strong> danio (zebra danio, pearl danio), tetra yang lebih tahan (ember tetra, black skirt tetra, cardinal tetra ketika parameter sudah stabil), rasbora (harlequin rasbora, chili rasbora), corydoras untuk lapisan bawah, dan banyak killifish. Ini adalah ikan yang bisa menanggung variasi kecil tanpa menunjukkan stres yang signifikan.",
+                "<strong>Ikan yang tidak sesuai untuk akuarium yang baru matang:</strong> discus dan ikan air Amazon yang memerlukan parameter sangat presisi, banyak cichlid yang menghasilkan banyak limbah, ikan bersisik halus seperti clown loach yang lebih sensitif terhadap kualitas air, dan ikan yang memerlukan GH dan KH yang sangat spesifik sebelum sistem menstabilkan kimia airnya.",
+                "Tambahkan perlahan: satu atau dua ikan sekaligus, tunggu dua minggu, tes parameter, dan hanya tambah lagi ketika sistem menunjukkan bisa menanggung penambahan itu. Setiap penambahan meningkatkan beban biologis; menambah secara bertahap memberi koloni waktu untuk menyesuaikan diri.",
+                "Ikan pertama di akuarium baru bukan sekadar penghuni — mereka adalah ujian pertama sistem. Pilih mereka dengan sadar."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Fase Awal ke Berkembang",
+            "hintText": [
+                "Dalam ARA, menambahkan ikan bukan tujuan cycling — ini adalah transisi antar fase. Fase Awal adalah tentang siklus nitrogen. Fase Berkembang dimulai ketika ikan pertama ditambahkan dan komunitas biologis penuh mulai berkumpul di sekitar mereka. Menambahkan terlalu banyak ikan terlalu cepat, atau ikan yang salah, bisa mendorong akuarium fase Berkembang kembali ke arah kondisi Awal — suatu bentuk ketidakselarasan yang bertahap dan sering tidak terlihat sampai parameter menunjukkannya."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Satu pemeriksaan jujur"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Satu pemeriksaan jujur",
+            "titleHtml": "Satu pemeriksaan jujur<br><em>sebelum Anda menambah ikan pertama.</em>",
+            "body": [
+                "Sebelum menambahkan ikan pertama ke akuarium yang baru matang, satu praktik mengurangi sebagian besar ketidakpastian: tambahkan sumber amonia kecil yang terkontrol dan perhatikan apa yang terjadi dalam 24 jam. Sejumput makanan ikan, dibiarkan membusuk, akan menghasilkan lonjakan amonia kecil. Jika akuarium memprosesnya kembali ke nol dalam 24 jam — amonia naik sebentar lalu kembali ke nol, nitrit tidak naik — koloni bakteri memiliki kapasitas berlebih. Itu tanda sistem siap.",
+                "Jika amonia tidak turun dalam 24 jam, atau jika nitrit naik dan bertahan, sistem belum memiliki kapasitas yang dibutuhkan. Tunggu seminggu lagi dan ulangi pemeriksaan.",
+                "Tiga pertanyaan terakhir untuk dijawab dengan jujur sebelum menambahkan ikan: Apakah heater stabil — sudahkah Anda mengukur suhu pagi dan malam untuk mengkonfirmasi tidak berayun lebih dari 1°C? Apakah media filter berfungsi — apakah ada aliran yang kuat dan konsisten? Dan yang paling penting: apakah Anda siap mengetes air setiap hari selama dua minggu pertama setelah penambahan?",
+                "Tes harian di dua minggu pertama bukan tanda kekhawatiran berlebihan — itu observasi. Amonia dan nitrit yang naik perlahan saat sistem menyesuaikan diri dengan beban baru bisa ditangani dengan ganti air kecil jika ditangkap lebih awal. Hal yang sama yang ditangkap terlambat bisa membunuh ikan. Tes adalah observasi awal — satu-satunya alat yang memberi tahu Anda apa yang terjadi sebelum ikan menunjukkan tanda stres."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Kapasitas sebelum Ambisi",
+            "hintText": [
+                "Prinsip keselarasan ketiga ARA adalah Kapasitas sebelum Ambisi: akuarium harus didiami sesuai dengan apa yang biologinya saat ini bisa pertahankan — bukan apa yang pada akhirnya akan mampu ia pertahankan. Menambah ikan sebelum koloni memiliki kapasitas untuk memproses limbah mereka menciptakan stres kronis. Menambah kelompok pertama, menunggu untuk memastikan sistem bertahan, dan berkembang dari sana bukanlah kehati-hatian — ini adalah membaca kapasitas sistem yang sebenarnya versus yang dimaksudkan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel3": "ARA · Kapasitas sebelum Ambisi",
+            "hintText3": [
+                "Prinsip penyelarasan ketiga ARA adalah Capacity before Ambition: tangki harus diisi sebanding dengan apa yang biologinya saat ini dapat ditanggung — bukan apa yang pada akhirnya akan mampu ditanggungnya. Menambahkan ikan sebelum koloni memiliki kapasitas untuk memproses limbah mereka menciptakan stres kronis. Menambahkan kelompok pertama, menunggu untuk mengkonfirmasi sistem bertahan, dan memperluas dari sana bukan kehati-hatian — itu adalah membaca kapasitas sistem yang sebenarnya daripada yang dimaksudkan."
+            ]
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Pemula",
-    "metaLevel": "~7 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Apa yang 'matang' sebenarnya berarti",
-      "titleHtml": "Matang adalah minimum.<br><em>Bukan sepenuhnya siap.</em>",
-      "body": [
-        "Siklus nitrogen membentuk koloni bakteri yang mengubah amonia — dari kotoran ikan dan bahan organik yang membusuk — menjadi nitrit, dan nitrit menjadi nitrat. Ketika akuarium 'matang,' amonia dan nitrit secara konsisten membaca nol karena koloni bakteri cukup besar untuk memproses apa yang diproduksi akuarium. Ini adalah minimum biologis agar ikan bisa bertahan hidup.",
-        "Tapi 'matang' adalah hal yang biner. Artinya prosesnya berjalan, bukan bahwa ia stabil, bukan bahwa ia memiliki kapasitas berlebih untuk menanggung stres tambahan, dan bukan bahwa akuarium siap untuk semua ikan di semua kondisi. Akuarium yang baru matang memiliki koloni bakteri yang cukup untuk memproses beban yang digunakan selama cycling — dan tidak banyak lebih.",
-        "Kerangka ARA menyebut ini sebagai fase Berkembang — periode setelah siklus selesai di mana sistem sedang membangun stabilitas dan kapasitas berlebih. Fase ini berbeda dari fase Matang di mana biologi sudah kukuh, kapasitas penyangga sudah ada, dan sistem bisa menanggung beban yang berubah tanpa gejolak yang signifikan.",
-        "Memahami perbedaan ini mengubah pertanyaan dari 'apakah akuarium sudah matang?' menjadi 'fase apa akuarium ini sekarang, dan ikan apa yang sesuai untuk fase itu?'"
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Biological Rhythm",
-      "hintText": [
-        "Dalam ARA, Biological Rhythm adalah kondisi dan lintasan biologi hidup dalam akuarium — bukan sekadar siklus nitrogen tapi seluruh komunitas mikroba dan tanaman. Akuarium dengan siklus nitrogen yang stabil tapi tidak ada biofilm bermanfaat di kaca, tidak ada mikrofauna, tidak ada biologi substrat yang terbentuk — adalah matang tapi belum Berkembang. Komunitas sekunder ini memerlukan waktu lebih lama untuk terbentuk dibanding siklus nitrogen, dan ia penting."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Membaca transisi"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Membaca transisi",
-      "titleHtml": "Membaca transisi<br><em>ke fase Berkembang.</em>",
-      "body": [
-        "Akuarium dalam fase Berkembang menunjukkan tanda-tanda spesifik di luar amonia dan nitrit nol. Ini adalah sinyal yang ARA gunakan untuk membaca transisi fase:",
-        "<strong>Parameter stabil selama 1–2 minggu, bukan hanya satu tes.</strong> Satu bacaan amonia dan nitrit nol bisa jadi hari yang baik, atau bisa mencerminkan pemrosesan bakteri yang tepat. Stabilitas selama 7–14 hari — terutama setelah menambahkan sumber amonia kecil tambahan — mengkonfirmasi koloni berfungsi secara konsisten.",
-        "<strong>Akumulasi nitrat yang terukur.</strong> Nitrat yang naik perlahan (5–10 ppm per minggu dengan stocking minimal) mengkonfirmasi siklus nitrogen berjalan lengkap. Jika amonia dan nitrit nol tapi nitrat tidak bergerak sama sekali, sistem mungkin memberikan bacaan yang menyesatkan.",
-        "<strong>Lapisan tipis di permukaan media filter dan dekorasi.</strong> Biofilm tipis yang terlihat di substrat, dekorasi, dan media filter adalah tanda ekosistem biologis yang sedang berkembang. Ini tanda positif, bukan tanda kotor.",
-        "<strong>Amonia kecil diproses dalam 24 jam.</strong> Ini adalah pemeriksaan paling berguna: tambahkan sumber amonia kecil yang terkontrol dan perhatikan apa yang terjadi dalam 24 jam. Jika akuarium memprosesnya kembali ke nol, koloni berfungsi dengan kapasitas berlebih. Itu tanda sistem siap.",
-        "<strong>Bacaan pH yang stabil.</strong> pH yang stabil sepanjang hari menunjukkan kimia air yang seimbang. pH yang berayun signifikan menunjukkan sistem buffer yang lemah — tanda akuarium yang masih awal dalam perkembangannya."
-      ],
-      "pullQuote": "Akuarium yang membaca amonia nol, nitrit nol selama sepuluh hari berturut-turut, menunjukkan akumulasi nitrat, dan ada biofilm tipis yang sedang terbentuk — sedang memberi tahu Anda bahwa ia telah memasuki fase Berkembang.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Ikan untuk akuarium fase Berkembang"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Ikan untuk akuarium fase Berkembang",
-      "titleHtml": "Tidak semua ikan sesuai<br><em>untuk akuarium yang baru matang.</em>",
-      "body": [
-        "Tidak semua ikan sesuai untuk akuarium yang baru memasuki fase Berkembang. Ikan pertama yang Anda tambahkan bukan sekadar penghuni — mereka melengkapi lingkaran biologis. Kotoran mereka memberi makan bakteri, perilaku mereka menguji stabilitas sistem, dan respons mereka memberi Anda bacaan Livestock Rhythm pertama.",
-        "Ikan yang sesuai untuk akuarium fase Berkembang awal memiliki karakteristik tertentu: toleran terhadap fluktuasi parameter kecil (yang akan terjadi saat sistem menstabilkan diri), tangguh secara biologis dalam arti tidak memerlukan kondisi yang sangat presisi untuk berkembang, tidak besar dalam arti beban biologis per ikan bisa dikelola untuk sistem yang baru terbentuk.",
-        "<strong>Ikan yang bagus untuk akuarium yang baru matang:</strong> danio (zebra danio, pearl danio), tetra yang lebih tahan (ember tetra, black skirt tetra, cardinal tetra ketika parameter sudah stabil), rasbora (harlequin rasbora, chili rasbora), corydoras untuk lapisan bawah, dan banyak killifish. Ini adalah ikan yang bisa menanggung variasi kecil tanpa menunjukkan stres yang signifikan.",
-        "<strong>Ikan yang tidak sesuai untuk akuarium yang baru matang:</strong> discus dan ikan air Amazon yang memerlukan parameter sangat presisi, banyak cichlid yang menghasilkan banyak limbah, ikan bersisik halus seperti clown loach yang lebih sensitif terhadap kualitas air, dan ikan yang memerlukan GH dan KH yang sangat spesifik sebelum sistem menstabilkan kimia airnya.",
-        "Tambahkan perlahan: satu atau dua ikan sekaligus, tunggu dua minggu, tes parameter, dan hanya tambah lagi ketika sistem menunjukkan bisa menanggung penambahan itu. Setiap penambahan meningkatkan beban biologis; menambah secara bertahap memberi koloni waktu untuk menyesuaikan diri.",
-        "Ikan pertama di akuarium baru bukan sekadar penghuni — mereka adalah ujian pertama sistem. Pilih mereka dengan sadar."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Fase Awal ke Berkembang",
-      "hintText": [
-        "Dalam ARA, menambahkan ikan bukan tujuan cycling — ini adalah transisi antar fase. Fase Awal adalah tentang siklus nitrogen. Fase Berkembang dimulai ketika ikan pertama ditambahkan dan komunitas biologis penuh mulai berkumpul di sekitar mereka. Menambahkan terlalu banyak ikan terlalu cepat, atau ikan yang salah, bisa mendorong akuarium fase Berkembang kembali ke arah kondisi Awal — suatu bentuk ketidakselarasan yang bertahap dan sering tidak terlihat sampai parameter menunjukkannya."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Satu pemeriksaan jujur"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Satu pemeriksaan jujur",
-      "titleHtml": "Satu pemeriksaan jujur<br><em>sebelum Anda menambah ikan pertama.</em>",
-      "body": [
-        "Sebelum menambahkan ikan pertama ke akuarium yang baru matang, satu praktik mengurangi sebagian besar ketidakpastian: tambahkan sumber amonia kecil yang terkontrol dan perhatikan apa yang terjadi dalam 24 jam. Sejumput makanan ikan, dibiarkan membusuk, akan menghasilkan lonjakan amonia kecil. Jika akuarium memprosesnya kembali ke nol dalam 24 jam — amonia naik sebentar lalu kembali ke nol, nitrit tidak naik — koloni bakteri memiliki kapasitas berlebih. Itu tanda sistem siap.",
-        "Jika amonia tidak turun dalam 24 jam, atau jika nitrit naik dan bertahan, sistem belum memiliki kapasitas yang dibutuhkan. Tunggu seminggu lagi dan ulangi pemeriksaan.",
-        "Tiga pertanyaan terakhir untuk dijawab dengan jujur sebelum menambahkan ikan: Apakah heater stabil — sudahkah Anda mengukur suhu pagi dan malam untuk mengkonfirmasi tidak berayun lebih dari 1°C? Apakah media filter berfungsi — apakah ada aliran yang kuat dan konsisten? Dan yang paling penting: apakah Anda siap mengetes air setiap hari selama dua minggu pertama setelah penambahan?",
-        "Tes harian di dua minggu pertama bukan tanda kekhawatiran berlebihan — itu observasi. Amonia dan nitrit yang naik perlahan saat sistem menyesuaikan diri dengan beban baru bisa ditangani dengan ganti air kecil jika ditangkap lebih awal. Hal yang sama yang ditangkap terlambat bisa membunuh ikan. Tes adalah observasi awal — satu-satunya alat yang memberi tahu Anda apa yang terjadi sebelum ikan menunjukkan tanda stres."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Kapasitas sebelum Ambisi",
-      "hintText": [
-        "Prinsip keselarasan ketiga ARA adalah Kapasitas sebelum Ambisi: akuarium harus didiami sesuai dengan apa yang biologinya saat ini bisa pertahankan — bukan apa yang pada akhirnya akan mampu ia pertahankan. Menambah ikan sebelum koloni memiliki kapasitas untuk memproses limbah mereka menciptakan stres kronis. Menambah kelompok pertama, menunggu untuk memastikan sistem bertahan, dan berkembang dari sana bukanlah kehati-hatian — ini adalah membaca kapasitas sistem yang sebenarnya versus yang dimaksudkan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/articles/fish-keep-dying-new-tank",
+            "text": "Kenapa ikan terus mati di akuarium baru? →"
+        },
+        {
+            "href": "/articles/adding-new-fish",
+            "text": "Menambahkan ikan baru →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/articles/fish-keep-dying-new-tank",
-      "text": "Kenapa ikan terus mati di akuarium baru? →"
-    },
-    {
-      "href": "/articles/adding-new-fish",
-      "text": "Menambahkan ikan baru →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

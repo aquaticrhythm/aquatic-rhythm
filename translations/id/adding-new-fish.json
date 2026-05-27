@@ -1,115 +1,121 @@
 {
-  "_meta": {
-    "slug": "adding-new-fish",
-    "lang": "id",
-    "sourceFile": "articles/adding-new-fish.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Menambah Ikan Baru — Jendela Gangguan — Aquatic Rhythm",
-    "description": "Dua minggu pertama adalah gangguan. Itu normal. ARA menjelaskan mengapa menambah ikan baru selalu mengganggu tank yang stabil — dan cara membaca apa yang sedang terjadi.",
-    "ogTitle": "Menambah Ikan Baru — Jendela Gangguan",
-    "ogDescription": "Dua minggu pertama adalah gangguan. Itu normal. Pelajari cara membaca jendela gangguan dan kapan perlu bertindak."
-  },
-  "intro": {
-    "eyebrow": "Artikel · Livestock Rhythm",
-    "titleHtml": "Menambah Ikan Baru —<br><em>Jendela Gangguan</em>",
-    "subtitle": "Dua minggu pertama adalah gangguan. Itu normal.",
-    "texts": [
-      "Anda sudah memasukkan ikan baru dengan benar — aklimatisasi tetes, suhu disesuaikan, kantong mengapung 20 menit. Tapi tiga hari kemudian ikan yang sudah ada tampak stres, satu yang belum pernah bersembunyi tiba-tiba bersembunyi, dan ikan baru tidak mau makan. Anda sudah melakukan segalanya dengan benar. Gangguan tetap terjadi.",
-      "Panduan ini menjelaskan mengapa menambah ikan baru selalu mengganggu tank yang stabil, seperti apa jendela gangguan dua minggu melintas kelima ritme, dan cara membaca apa yang terjadi — daripada terburu-buru memperbaiki apa yang tidak perlu diperbaiki."
+    "_meta": {
+        "slug": "adding-new-fish",
+        "lang": "id",
+        "sourceFile": "articles/adding-new-fish.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Menambah Ikan Baru — Jendela Gangguan — Aquatic Rhythm",
+        "description": "Dua minggu pertama adalah gangguan. Itu normal. ARA menjelaskan mengapa menambah ikan baru selalu mengganggu tank yang stabil — dan cara membaca apa yang sedang terjadi.",
+        "ogTitle": "Menambah Ikan Baru — Jendela Gangguan",
+        "ogDescription": "Dua minggu pertama adalah gangguan. Itu normal. Pelajari cara membaca jendela gangguan dan kapan perlu bertindak."
+    },
+    "intro": {
+        "eyebrow": "Artikel · Livestock Rhythm",
+        "titleHtml": "Menambah Ikan Baru —<br><em>Jendela Gangguan</em>",
+        "subtitle": "Dua minggu pertama adalah gangguan. Itu normal.",
+        "texts": [
+            "Anda sudah memasukkan ikan baru dengan benar — aklimatisasi tetes, suhu disesuaikan, kantong mengapung 20 menit. Tapi tiga hari kemudian ikan yang sudah ada tampak stres, satu yang belum pernah bersembunyi tiba-tiba bersembunyi, dan ikan baru tidak mau makan. Anda sudah melakukan segalanya dengan benar. Gangguan tetap terjadi.",
+            "Panduan ini menjelaskan mengapa menambah ikan baru selalu mengganggu tank yang stabil, seperti apa jendela gangguan dua minggu melintas kelima ritme, dan cara membaca apa yang terjadi — daripada terburu-buru memperbaiki apa yang tidak perlu diperbaiki."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua level",
+        "metaLevel": "~7 menit",
+        "cta": "Mulai membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Kenapa setiap penambahan adalah gangguan",
+            "titleHtml": "Kenapa setiap penambahan<br><em>adalah gangguan.</em>",
+            "body": [
+                "Akuarium yang stabil adalah keseimbangan yang dinegosiasikan. Ikan telah membangun wilayah, hierarki makan, dan pola sosial. Koloni bakteri di filter berukuran untuk bioload saat ini. Kimia air mencerminkan keseimbangan antara apa yang dihasilkan tank dan apa yang dihilangkan ritme perawatan.",
+                "Ketika ikan baru tiba, semua ini terganggu sekaligus. Koloni bakteri menghadapi bioload yang lebih tinggi dari yang biasa — ikan baru menambah limbah sebelum bakteri bisa tumbuh untuk memprosesnya, artinya amonia dan nitrit mungkin naik sedikit selama beberapa hari atau minggu. Ikan yang sudah ada menganggap ikan baru sebagai penyusup, memicu respons wilayah dan sosial yang tampak seperti agresi, bersembunyi, atau perubahan warna. Ikan baru stres akibat transportasi, kimia air asing, dan hierarki sosial yang tidak dikenal — yang menekan respons imun mereka tepat ketika paling dibutuhkan.",
+                "Tidak ada satupun dari ini yang masalah. Ini gangguan — kondisi sementara yang dilewati tank sehat dengan keeper rhythm yang selaras. Jendela gangguan bukan sinyal untuk bertindak. Ini sinyal untuk mengamati."
+            ],
+            "pullQuote": "Gangguan bukan krisis. Ini tank yang mengatur ulang dirinya sesuai informasi baru. Respons yang selaras adalah pengamatan — bukan intervensi.",
+            "hintLabel": "ARA · Kelima Ritme",
+            "hintText": [
+                "Dalam ARA, menambahkan ikan baru mengganggu kelima ecological rhythms secara bersamaan: koloni bakteri menyesuaikan diri dengan bioload baru (Biological Rhythm), kimia air berubah (Water Rhythm), wilayah diatur ulang (Environmental Rhythm), ikan yang sudah ada merespons secara sosial (Livestock Rhythm), dan penjaga menavigasi ketidakpastian (Keeper Rhythm). Gangguan itu memang diharapkan — itulah cara sistem mengintegrasikan informasi baru. Respons yang selaras adalah observasi: tunggu tangki menyeimbangkan kembali keseimbangannya sendiri sebelum berintervasi."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Karantina: apa yang sebenarnya dilindunginya"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Karantina: apa yang sebenarnya dilindunginya",
+            "titleHtml": "Karantina:<br><em>apa yang sebenarnya dilindunginya.</em>",
+            "body": [
+                "Karantina sering digambarkan sebagai melindungi ikan yang sudah ada dari penyakit yang dibawa ikan baru. Itu benar, dan ini alasan praktis untuk mempertahankan tank karantina. Tapi karantina juga melindungi ikan baru. Ikan yang langsung dimasukkan ke tank komunitas yang sudah mapan harus menavigasi hierarki sosial baru, parameter air asing, dan kemungkinan agresi wilayah sambil stres akibat transportasi. Jika ikan itu membawa infeksi tingkat rendah — ich, infeksi bakteri, parasit internal — kombinasi stresor mungkin memicu wabah pada ikan baru lalu menular ke ikan lama yang fungsi imunnya tertekan oleh gangguan wilayah.",
+                "Karantina dua minggu melakukan tiga hal: memungkinkan ikan baru pulih dari stres transportasi di lingkungan yang tenang dan tidak terbebani; memberi waktu untuk penyakit yang dibawa menjadi nyata di mana bisa diobati tanpa mempengaruhi tank utama; dan memungkinkan pemelihara mengamati perilaku, nafsu makan, dan warna ikan baru pada baseline sebelum memperkenalkan mereka ke kompleksitas sosial tank utama.",
+                "Tank karantina tidak perlu rumit — tank kosong 20–40L dengan sponge filter yang sudah siklus, heater, dan tempat persembunyian sederhana sudah cukup."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Livestock Rhythm",
+            "hintText": [
+                "Dalam ARA, karantina bukan hanya pencegahan penyakit — ini adalah periode pembacaan Livestock Rhythm. Mengamati ikan baru makan, berenang, dan beristirahat di lingkungan yang tidak terbebani memberi tahu Anda seperti apa baseline mereka. Itulah baseline yang Anda bandingkan begitu mereka memasuki tank utama."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca jendela dua minggu"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Membaca jendela dua minggu",
+            "titleHtml": "Membaca<br><em>jendela dua minggu.</em>",
+            "body": [
+                "Dua minggu setelah pengenalan adalah jendela gangguan — periode di mana tank sedang mengatur ulang dirinya. Apa yang diharapkan dan cara membacanya: negosiasi wilayah tampak seperti saling mengejar, mengembangkan sirip, dan kadang-kadang gigitan ringan. Pada ikan komunitas tanpa wilayah khusus, ini biasanya selesai dalam beberapa hari. Pada cichlid atau betta, negosiasi lebih lama dan lebih fisik. Perhatikan pengejaran terus-menerus (satu ikan tidak bisa mengakses makan atau beristirahat), sirip terlipat yang tidak pulih, atau bersembunyi yang berlanjut lebih dari lima hingga tujuh hari — ini adalah tanda gangguan sosial yang tidak selesai sendiri.",
+                "Drift parameter selama jendela ini adalah hal yang diharapkan. Uji amonia dan nitrit selama sepuluh hari pertama setelah menambah ikan baru — bukan karena krisis mungkin terjadi, tapi karena koloni bakteri sedang menyesuaikan diri dengan beban baru. Bacaan amonia kecil (0,25 ppm) yang bersih dalam 24 jam adalah koloni yang mengejar. Bacaan di atas 0,5 ppm yang tidak turun dalam 24 jam adalah koloni yang kesulitan dan layak dilakukan ganti air.",
+                "Ikan baru yang tidak mau makan selama dua hingga tiga hari pertama adalah normal — mereka stres dan sedang berorientasi. Tidak mau makan lebih dari lima hingga tujuh hari perlu perhatian. Amati sebelum bertindak. Kebanyakan gangguan selesai tanpa intervensi jika keeper rhythm (pemberian makan, ganti air) tetap konsisten selama jendela."
+            ],
+            "pullQuote": "Jendela gangguan meminta satu hal dari pemelihara: konsistensi. Jangan ubah jadwal pemberian makan, pencahayaan, ritme ganti air. Biarkan biologi stabil sesuai apa yang sudah diketahuinya.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Setelah jendela",
+            "hintLabel2": "ARA · Keeper Rhythm",
+            "hintText2": [
+                "Bagian yang paling sulit selama jendela gangguan adalah melihat ikan bersembunyi atau tampak stres sambil menahan dorongan untuk melakukan sesuatu. Kita cenderung menyamakan masalah yang terlihat dengan kebutuhan tindakan yang terlihat. Tapi jendela dua minggu ini adalah ujian jenis pemeliharaan yang berbeda — bertahan ketika tangki terlihat tidak menentu. Pengendalian diri itu sendiri adalah keputusan aktif. Ini adalah salah satu hal yang paling kontra-intuitif yang diajarkan hobi ini."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Setelah jendela",
+            "titleHtml": "Setelah<br><em>jendela.</em>",
+            "body": [
+                "Menjelang akhir minggu kedua, tank yang sehat sebelum penambahan seharusnya kembali ke baselinenya. Agresi berkurang ketika wilayah ditetapkan atau diterima. Pemberian makan kembali ke pola normal. Amonia dan nitrit kembali ke nol. Ikan baru mulai menunjukkan warna istirahat mereka dibandingkan warna yang pudar akibat stres dalam beberapa hari pertama.",
+                "Jika tank belum kembali ke baseline menjelang tiga minggu, sesuatu dalam jendela gangguan bukan pengaturan ulang sementara — ini adalah kondisi yang berkelanjutan. Agresi yang berlanjut di tiga minggu menunjukkan ketidakcocokan yang waktu tidak akan selesaikan: konfigurasi populasi mungkin perlu dipertimbangkan ulang. Amonia yang berlanjut di tiga minggu menunjukkan koloni bakteri tidak bisa mempertahankan beban baru: tank mungkin terlalu padat, atau masalah filter perlu diperhatikan. Tidak mau makan yang berlanjut di tiga minggu adalah sinyal penyakit, bukan sinyal stres.",
+                "Jendela gangguan dua minggu adalah alat pembacaan. Ini memberi tahu Anda apa yang bisa diserap tank, bagaimana ikan yang sudah ada merespons perubahan, dan apakah ikan baru benar-benar cocok dengan lingkungan yang mereka masuki. Tank yang melewati jendela dengan bersih memberi tahu Anda sesuatu yang berguna tentang ketahanannya. Tank yang tidak selesai dalam tiga minggu memberi tahu Anda sesuatu yang sama bergunanya tentang batasnya."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Reset Fase Intentional",
+            "hintText": [
+                "Tidak semua transisi fase menunjukkan kegagalan. Pemelihara bisa sengaja mereset sistem — untuk menangani penyakit persisten, mengkonfigurasi ulang setup, atau memulai siklus baru setelah crash. ARA membedakan reset fase intentional dari regresi akibat gangguan: reset adalah keputusan pemelihara, bukan kegagalan sistem. Sistem melewati Fase Awal lagi, mengikuti trajektori perkembangan yang sama — tetapi pengetahuan yang terkumpul pemelihara membentuk cara siklus baru dikelola."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua level",
-    "metaLevel": "~7 menit",
-    "cta": "Mulai membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Kenapa setiap penambahan adalah gangguan",
-      "titleHtml": "Kenapa setiap penambahan<br><em>adalah gangguan.</em>",
-      "body": [
-        "Akuarium yang stabil adalah keseimbangan yang dinegosiasikan. Ikan telah membangun wilayah, hierarki makan, dan pola sosial. Koloni bakteri di filter berukuran untuk bioload saat ini. Kimia air mencerminkan keseimbangan antara apa yang dihasilkan tank dan apa yang dihilangkan ritme perawatan.",
-        "Ketika ikan baru tiba, semua ini terganggu sekaligus. Koloni bakteri menghadapi bioload yang lebih tinggi dari yang biasa — ikan baru menambah limbah sebelum bakteri bisa tumbuh untuk memprosesnya, artinya amonia dan nitrit mungkin naik sedikit selama beberapa hari atau minggu. Ikan yang sudah ada menganggap ikan baru sebagai penyusup, memicu respons wilayah dan sosial yang tampak seperti agresi, bersembunyi, atau perubahan warna. Ikan baru stres akibat transportasi, kimia air asing, dan hierarki sosial yang tidak dikenal — yang menekan respons imun mereka tepat ketika paling dibutuhkan.",
-        "Tidak ada satupun dari ini yang masalah. Ini gangguan — kondisi sementara yang dilewati tank sehat dengan keeper rhythm yang selaras. Jendela gangguan bukan sinyal untuk bertindak. Ini sinyal untuk mengamati."
-      ],
-      "pullQuote": "Gangguan bukan krisis. Ini tank yang mengatur ulang dirinya sesuai informasi baru. Respons yang selaras adalah pengamatan — bukan intervensi.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Karantina: apa yang sebenarnya dilindunginya"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Karantina: apa yang sebenarnya dilindunginya",
-      "titleHtml": "Karantina:<br><em>apa yang sebenarnya dilindunginya.</em>",
-      "body": [
-        "Karantina sering digambarkan sebagai melindungi ikan yang sudah ada dari penyakit yang dibawa ikan baru. Itu benar, dan ini alasan praktis untuk mempertahankan tank karantina. Tapi karantina juga melindungi ikan baru. Ikan yang langsung dimasukkan ke tank komunitas yang sudah mapan harus menavigasi hierarki sosial baru, parameter air asing, dan kemungkinan agresi wilayah sambil stres akibat transportasi. Jika ikan itu membawa infeksi tingkat rendah — ich, infeksi bakteri, parasit internal — kombinasi stresor mungkin memicu wabah pada ikan baru lalu menular ke ikan lama yang fungsi imunnya tertekan oleh gangguan wilayah.",
-        "Karantina dua minggu melakukan tiga hal: memungkinkan ikan baru pulih dari stres transportasi di lingkungan yang tenang dan tidak terbebani; memberi waktu untuk penyakit yang dibawa menjadi nyata di mana bisa diobati tanpa mempengaruhi tank utama; dan memungkinkan pemelihara mengamati perilaku, nafsu makan, dan warna ikan baru pada baseline sebelum memperkenalkan mereka ke kompleksitas sosial tank utama.",
-        "Tank karantina tidak perlu rumit — tank kosong 20–40L dengan sponge filter yang sudah siklus, heater, dan tempat persembunyian sederhana sudah cukup."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Livestock Rhythm",
-      "hintText": [
-        "Dalam ARA, karantina bukan hanya pencegahan penyakit — ini adalah periode pembacaan Livestock Rhythm. Mengamati ikan baru makan, berenang, dan beristirahat di lingkungan yang tidak terbebani memberi tahu Anda seperti apa baseline mereka. Itulah baseline yang Anda bandingkan begitu mereka memasuki tank utama."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca jendela dua minggu"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Membaca jendela dua minggu",
-      "titleHtml": "Membaca<br><em>jendela dua minggu.</em>",
-      "body": [
-        "Dua minggu setelah pengenalan adalah jendela gangguan — periode di mana tank sedang mengatur ulang dirinya. Apa yang diharapkan dan cara membacanya: negosiasi wilayah tampak seperti saling mengejar, mengembangkan sirip, dan kadang-kadang gigitan ringan. Pada ikan komunitas tanpa wilayah khusus, ini biasanya selesai dalam beberapa hari. Pada cichlid atau betta, negosiasi lebih lama dan lebih fisik. Perhatikan pengejaran terus-menerus (satu ikan tidak bisa mengakses makan atau beristirahat), sirip terlipat yang tidak pulih, atau bersembunyi yang berlanjut lebih dari lima hingga tujuh hari — ini adalah tanda gangguan sosial yang tidak selesai sendiri.",
-        "Drift parameter selama jendela ini adalah hal yang diharapkan. Uji amonia dan nitrit selama sepuluh hari pertama setelah menambah ikan baru — bukan karena krisis mungkin terjadi, tapi karena koloni bakteri sedang menyesuaikan diri dengan beban baru. Bacaan amonia kecil (0,25 ppm) yang bersih dalam 24 jam adalah koloni yang mengejar. Bacaan di atas 0,5 ppm yang tidak turun dalam 24 jam adalah koloni yang kesulitan dan layak dilakukan ganti air.",
-        "Ikan baru yang tidak mau makan selama dua hingga tiga hari pertama adalah normal — mereka stres dan sedang berorientasi. Tidak mau makan lebih dari lima hingga tujuh hari perlu perhatian. Amati sebelum bertindak. Kebanyakan gangguan selesai tanpa intervensi jika keeper rhythm (pemberian makan, ganti air) tetap konsisten selama jendela."
-      ],
-      "pullQuote": "Jendela gangguan meminta satu hal dari pemelihara: konsistensi. Jangan ubah jadwal pemberian makan, pencahayaan, ritme ganti air. Biarkan biologi stabil sesuai apa yang sudah diketahuinya.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Setelah jendela"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Setelah jendela",
-      "titleHtml": "Setelah<br><em>jendela.</em>",
-      "body": [
-        "Menjelang akhir minggu kedua, tank yang sehat sebelum penambahan seharusnya kembali ke baselinenya. Agresi berkurang ketika wilayah ditetapkan atau diterima. Pemberian makan kembali ke pola normal. Amonia dan nitrit kembali ke nol. Ikan baru mulai menunjukkan warna istirahat mereka dibandingkan warna yang pudar akibat stres dalam beberapa hari pertama.",
-        "Jika tank belum kembali ke baseline menjelang tiga minggu, sesuatu dalam jendela gangguan bukan pengaturan ulang sementara — ini adalah kondisi yang berkelanjutan. Agresi yang berlanjut di tiga minggu menunjukkan ketidakcocokan yang waktu tidak akan selesaikan: konfigurasi populasi mungkin perlu dipertimbangkan ulang. Amonia yang berlanjut di tiga minggu menunjukkan koloni bakteri tidak bisa mempertahankan beban baru: tank mungkin terlalu padat, atau masalah filter perlu diperhatikan. Tidak mau makan yang berlanjut di tiga minggu adalah sinyal penyakit, bukan sinyal stres.",
-        "Jendela gangguan dua minggu adalah alat pembacaan. Ini memberi tahu Anda apa yang bisa diserap tank, bagaimana ikan yang sudah ada merespons perubahan, dan apakah ikan baru benar-benar cocok dengan lingkungan yang mereka masuki. Tank yang melewati jendela dengan bersih memberi tahu Anda sesuatu yang berguna tentang ketahanannya. Tank yang tidak selesai dalam tiga minggu memberi tahu Anda sesuatu yang sama bergunanya tentang batasnya."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Reset Fase Intentional",
-      "hintText": [
-        "Tidak semua transisi fase menunjukkan kegagalan. Pemelihara bisa sengaja mereset sistem — untuk menangani penyakit persisten, mengkonfigurasi ulang setup, atau memulai siklus baru setelah crash. ARA membedakan reset fase intentional dari regresi akibat gangguan: reset adalah keputusan pemelihara, bukan kegagalan sistem. Sistem melewati Fase Awal lagi, mengikuti trajektori perkembangan yang sama — tetapi pengetahuan yang terkumpul pemelihara membentuk cara siklus baru dikelola."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/fish-hiding-what-does-it-mean",
+            "text": "Ikan saya bersembunyi →"
+        },
+        {
+            "href": "/articles/ich-keeps-coming-back",
+            "text": "Ich terus kembali →"
+        },
+        {
+            "href": "/articles/community-fish-tank",
+            "text": "Tank komunitas →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "Ikan saya bersembunyi →"
-    },
-    {
-      "href": "/articles/ich-keeps-coming-back",
-      "text": "Ich terus kembali →"
-    },
-    {
-      "href": "/articles/community-fish-tank",
-      "text": "Tank komunitas →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

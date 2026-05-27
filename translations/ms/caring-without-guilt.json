@@ -1,138 +1,146 @@
 {
-  "_meta": {
-    "slug": "caring-without-guilt",
-    "lang": "ms",
-    "sourceFile": "articles/caring-without-guilt.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Menjaga Tanpa Rasa Bersalah — Aquatic Rhythm",
-    "description": "Rasa bersalah bukan sekadar tidak selesa. Ia mengubah cara anda bertindak. Dan tindakan itu boleh merosakkan tank. Panduan ini menerangkan kenapa, dan seperti apa hubungan yang lebih jujur dengan penjagaan.",
-    "ogTitle": "Menjaga Tanpa Rasa Bersalah",
-    "ogDescription": "Rasa bersalah tidak hanya terasa buruk — ia secara ekologi memudaratkan. Ketahui kenapa, dan cara penjagaan yang lebih selari kelihatan."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Renungan Penjaga",
-    "titleHtml": "Menjaga<br><em>Tanpa Rasa Bersalah</em>",
-    "subtitle": "Rasa bersalah bukan sekadar tidak selesa. Ia mengubah cara anda bertindak pada tank. Dan tindakan itu boleh rosakkan ia.",
-    "texts": [
-      "Air keruh. Ikan yang berhenti makan. Alga yang terus kembali tidak kira apa yang anda buat. Bila perkara-perkara ini berlaku, fikiran pertama bagi ramai penjaga adalah beberapa versi perkara yang sama: 'saya patut buat sesuatu lebih awal.'",
-      "Perasaan itu boleh difahami. Tapi ia bernilai untuk diperiksa dengan teliti — kerana rasa bersalah tidak hanya terasa buruk. Ia mengubah cara anda bertindak balas. Dan tindakan yang didorong oleh rasa bersalah selalunya bukan tindakan yang paling berguna untuk tank.",
-      "Panduan ini menggunakan kerangka ARA untuk menerangkan kenapa, dan apa yang hubungan yang lebih jujur dengan penjagaan sebenarnya kelihatan seperti — satu yang mengambil kira ritma anda yang sebenar berbanding yang anda fikir anda patut ada."
+    "_meta": {
+        "slug": "caring-without-guilt",
+        "lang": "ms",
+        "sourceFile": "articles/caring-without-guilt.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Menjaga Tanpa Rasa Bersalah — Aquatic Rhythm",
+        "description": "Rasa bersalah bukan sekadar tidak selesa. Ia mengubah cara anda bertindak. Dan tindakan itu boleh merosakkan tank. Panduan ini menerangkan kenapa, dan seperti apa hubungan yang lebih jujur dengan penjagaan.",
+        "ogTitle": "Menjaga Tanpa Rasa Bersalah",
+        "ogDescription": "Rasa bersalah tidak hanya terasa buruk — ia secara ekologi memudaratkan. Ketahui kenapa, dan cara penjagaan yang lebih selari kelihatan."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Renungan Penjaga",
+        "titleHtml": "Menjaga<br><em>Tanpa Rasa Bersalah</em>",
+        "subtitle": "Rasa bersalah bukan sekadar tidak selesa. Ia mengubah cara anda bertindak pada tank. Dan tindakan itu boleh rosakkan ia.",
+        "texts": [
+            "Air keruh. Ikan yang berhenti makan. Alga yang terus kembali tidak kira apa yang anda buat. Bila perkara-perkara ini berlaku, fikiran pertama bagi ramai penjaga adalah beberapa versi perkara yang sama: 'saya patut buat sesuatu lebih awal.'",
+            "Perasaan itu boleh difahami. Tapi ia bernilai untuk diperiksa dengan teliti — kerana rasa bersalah tidak hanya terasa buruk. Ia mengubah cara anda bertindak balas. Dan tindakan yang didorong oleh rasa bersalah selalunya bukan tindakan yang paling berguna untuk tank.",
+            "Panduan ini menggunakan kerangka ARA untuk menerangkan kenapa, dan apa yang hubungan yang lebih jujur dengan penjagaan sebenarnya kelihatan seperti — satu yang mengambil kira ritma anda yang sebenar berbanding yang anda fikir anda patut ada."
+        ],
+        "metaModules": "5 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~9 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Perangkap rasa bersalah",
+            "titleHtml": "Masalah dalam sistem tertutup<br><em>bukan bermula dengan kegagalan moral.</em>",
+            "body": [
+                "Bila sesuatu berjalan salah dalam tank, naluri selalunya adalah menyalahkan diri sendiri. Tapi masalah dalam sistem tertutup tidak bermula dengan kegagalan moral. Ia bermula dengan ketidakselarasan ritma — beransur-ansur, berstruktur, selalunya tidak kelihatan sehingga ia kelihatan.",
+                "Alga yang terus kembali bukan tanda anda gagal sebagai penjaga. Ia adalah tanda bahawa sesuatu dalam keseimbangan sistem — cahaya, nitrat, beban organik — telah drift melebihi ambang toleransi. Itu adalah maklumat, bukan hukuman.",
+                "Rasa bersalah mengubah maklumat itu menjadi sesuatu yang berbeza. Ia menukarkan bacaan sistem ('nitrat tinggi menunjuk kepada beban organik berlebihan') kepada penilaian diri ('saya tidak memberi cukup perhatian'). Peralihan itu kelihatan kecil, tapi ia mengubah tindakan yang anda ambil seterusnya — dari respons yang terarah kepada reaksi yang meliputi semua aspek."
+            ],
+            "pullQuote": "Masalah dalam sistem tertutup tidak bermula dengan kegagalan moral. Ia bermula dengan ketidakselarasan ritma — beransur-ansur, berstruktur, selalunya tidak kelihatan sehingga ia kelihatan.",
+            "hintLabel": "Dari ARA",
+            "hintText": [
+                "Rasa malu mengurangkan pembelajaran. Ketakutan mempercepatkan tindak balas berlebihan. Bimbingan — termasuk bimbingan yang anda berikan kepada diri sendiri — mesti memelihara maruah, rasa ingin tahu, dan keyakinan. Tanpa itu, penjagaan yang boleh dikekalkan cenderung runtuh."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Ritma anda adalah maklumat nyata"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Ritma anda adalah maklumat nyata",
+            "titleHtml": "Cara anda sebenarnya menjaga<br><em>adalah maklumat yang berguna.</em>",
+            "body": [
+                "ARA mengenal pasti empat corak yang menerangkan cara orang sebenarnya berinteraksi dengan tank mereka — bukan cara mereka berharap, atau fikir mereka patut, tetapi cara mereka sebenarnya apabila kehidupan sedang berlaku di sekeliling mereka.",
+                "Ini bukan jenis personaliti. Ini bukan ukuran betapa anda mengambil berat. Ini adalah ritma penjagaan yang dibentuk oleh keadaan hidup — dan ia berubah dari satu fasa kehidupan ke fasa yang lain. Seseorang yang merupakan penjaga yang sangat konsisten semasa bekerja dari rumah mungkin menjadi penjaga yang lebih episodik semasa perubahan kerja.",
+                "Penjaga episodik yang menjaga tank yang memerlukan penjagaan harian bukan penjaga yang buruk — ia adalah penjaga yang sistemnya tidak sejajar dengan ritma yang ada. Mendesak diri untuk menjadi lebih konsisten daripada keadaan hidup membenarkan sering menghasilkan sesi catch-up yang mengganggu, bukan konsistensi yang sebenar.",
+                "Maklumat yang lebih berguna: Apakah ritma penjagaan saya yang sebenar? Dan sistem jenis apa yang berkembang dengan ritma itu? Soalan pertama memerlukan pemerhatian jujur tentang apa yang anda sebenarnya lakukan — bukan apa yang anda merancang. Soalan kedua mengarahkan ke arah reka bentuk sistem yang boleh menampung ritma itu dengan selesa."
+            ],
+            "pullQuote": "Kemampanan bermula dari keselarasan jujur antara apa yang anda boleh tawarkan dan apa yang sistem sebenarnya perlukan. Titik permulaan yang jujur itulah tempat ARA bekerja. Arah yang dituju ARA adalah penjagaan yang berperingkat dan konsisten — kerana itulah ritma yang sistem hidup paling bersedia untuk menerima.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Kos over-correction",
+            "hintLabel2": "ARA · Protokol Perubahan Hidup",
+            "hintText2": [
+                "ARA mengiktiraf bahawa ritma penjagaan berubah apabila kehidupan berubah — pekerjaan baru, sakit, berpindah, musim yang sukar. Ia menamakan ini secara eksplisit sebagai protokol perubahan hidup: apabila kapasiti penjaga yang tersedia menurun dengan ketara, soalannya bukan bagaimana mengekalkan standard penjagaan sebelumnya dengan masa yang lebih sedikit. Ia bagaimana mengekalkan penjagaan minimum yang berkesan — ambang yang di bawahnya kestabilan sistem berisiko — sementara kehidupan penjaga menyusun semula. Ini adalah soalan rangka kerja, bukan soalan moral. Sistem yang direka bentuk untuk ritma penjaga yang realistik bertahan melalui tempoh sukar. Sistem yang direka bentuk untuk yang ideal sering tidak."
+            ]
+        },
+        {
+            "id": "mod-3",
+            "tag": "Kos over-correction",
+            "titleHtml": "Gelung reaksi<br><em>dan cara ia merosakkan tank yang stabil.</em>",
+            "body": [
+                "Apabila penjaga berasa bertanggungjawab terhadap masalah, tindak balas semula jadi adalah melakukan sesuatu. Dengan cepat. Secara menyeluruh. Untuk membaiki semua sekaligus sebelum segalanya bertambah buruk.",
+                "ARA memanggil ini gelung reaksi — dan ia adalah salah satu punca paling biasa ketidakstabilan yang meningkat dalam sistem tertutup. Satu pembetulan mencetuskan ketidakseimbangan baru. Pembetulan lain mengikut. Sistem masuk ke dalam tempoh gangguan berterusan yang kerap lebih teruk dari apa yang mencetuskannya. Tank yang bereaksi kepada setiap pembacaan yang bimbang, yang menerima water change besar ketika tertekan, yang menerima rawatan berganda serentak — tank itu sedang diuruskan ke dalam ketidakstabilan, bukan keluar daripadanya.",
+                "Melakukan kurang, apabila sistem sedang dalam pemulihan, bukan kepasifan. Ia adalah respons yang paling selari yang ada. Sistem yang berehat selepas gangguan — dengan input yang konsisten dan minimal, bukan intervensi berganda — adalah sistem yang biasanya pulih lebih cepat."
+            ],
+            "pullQuote": "Melakukan kurang, apabila sistem sedang dalam pemulihan, bukan kepasifan. Ia adalah respons yang paling selari yang ada.",
+            "hintLabel": "Dari ARA",
+            "hintText": [
+                "Beban kognitif meningkatkan risiko tindak balas berlebihan. Keletihan sering mendahului campur tangan yang drastik atau tidak perlu. Sistem yang direka tanpa toleransi terhadap realiti ini menjadi rapuh."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang tank sebenarnya perlukan"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Apa yang tank sebenarnya perlukan",
+            "titleHtml": "Sistem hidup bertindak balas lebih baik<br><em>kepada kesinambungan yang padu.</em>",
+            "body": [
+                "Ada andaian biasa bahawa penjagaan akuarium 'yang lebih baik' bermakna penjagaan yang lebih kerap, parameter yang lebih tepat, lebih banyak peralatan, lebih banyak perhatian. ARA mencabar ini secara langsung.",
+                "Apa yang ekosistem tertutup paling boleh dipercayai bertindak balas adalah kesinambungan — bukan intensiti. Tindakan kecil yang konsisten mewujudkan kestabilan yang jauh lebih banyak dari intervensi dramatik, betapa pun teliti ia. Water change 15% setiap minggu lebih baik dari water change 50% sebulan sekali. Filter yang diperiksa setiap bulan lebih baik dari filter yang dibersihkan sepenuhnya setiap enam bulan. Pemberian makan yang diukur dua kali sehari lebih baik dari pemberian makan besar yang tidak menentu.",
+                "Ini bukan hanya tentang kualiti air — ia tentang kestabilan biologi. Koloni bakteria, ekologi sosial ikan, kitaran pokok, semua ini disesuaikan dengan corak yang boleh diramalkan. Apabila corak itu berubah secara mendadak — walaupun ke arah yang baik — sistem perlu menyesuaikan diri semula.",
+                "Kesinambungan yang jujur selalu mengatasi intensiti yang terputus-putus. Dan kesinambungan yang jujur bermakna mereka bentuk sistem sekitar apa yang anda sebenarnya boleh berikan — bukan sekitar ideal yang anda inginkan untuk berikan."
+            ],
+            "pullQuote": "Sistem hidup biasanya bertindak balas lebih baik kepada kesinambungan yang padu berbanding ledakan intervensi. Melakukan sedikit, secara kerap, dengan perhatian yang jujur, mewujudkan lebih banyak kestabilan dari melakukan banyak sekali-sekala.",
+            "hintLabel": "Dalam praktik",
+            "hintText": [
+                "Kematangan dalam sistem datang dari masa dan kesinambungan, bukan kesempurnaan. Tank yang dijaga dengan senyap — walaupun tidak sempurna — selama dua tahun sering mempunyai daya tahan yang jauh lebih besar daripada yang diuruskan secara intensif selama enam bulan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Ruang untuk bernafas",
+            "hintLabel3": "Dalam amalan",
+            "hintText3": [
+                "Kematangan dalam sistem datang dari masa dan kesinambungan, bukan kesempurnaan. Tangki yang dijaga dengan senyap — walaupun tidak sempurna — selama dua tahun sering mempunyai ketahanan yang jauh lebih besar daripada yang diuruskan secara intensif selama enam bulan."
+            ]
+        },
+        {
+            "id": "mod-5",
+            "tag": "Ruang untuk bernafas",
+            "titleHtml": "Pemerhatian<br><em>adalah alat diagnostik yang utama.</em>",
+            "body": [
+                "Ada sesuatu yang penternakan ikan tawarkan yang jarang dinamakan secara langsung: pengalaman menonton sesuatu hidup. Bukan mengurusnya. Bukan membetulkannya. Hanya berada berhampiran dengannya, menyedarinya, membiarkannya mendedahkan dirinya dengan perlahan dari masa ke masa.",
+                "Jenis perhatian ini — perlahan, hadir, tidak tergesa-gesa — adalah apa yang ARA huraikan sebagai alat diagnostik utama. Bukan test kit, bukan jadual penyelenggaraan, bukan senarai semak. Menonton apabila tiada apa yang perlu dibaiki. Mengetahui apa yang normal supaya perubahan kepada normal kelihatan.",
+                "Ini bukan perhatian yang produktif dalam erti kata yang konvensional. Ia bukan membuat sesuatu. Ia adalah jenis penglihatan yang mendahului dan menginformasikan semua tindakan lain — kerana anda tidak boleh bertindak balas kepada apa yang anda tidak nampak.",
+                "Dengan memerhati ritma, menghormati had, dan menyelaraskan tindakan dengan realiti — kedua-dua ekosistem dan manusia mendapat ruang untuk bernafas."
+            ],
+            "pullQuote": "Dengan memerhati ritma, menghormati had, dan menyelaraskan tindakan dengan realiti — kedua-dua ekosistem dan manusia mendapat ruang untuk bernafas.",
+            "hintLabel": "Kata penutup",
+            "hintText": [
+                "Anda tidak bermula untuk gagal. Anda bermula untuk menjaga sesuatu yang hidup. Niat itu masih sah — walaupun pada hari-hari apabila tank kelihatan lebih teruk dari yang anda harapkan, walaupun pada minggu-minggu apabila anda tidak melakukan semua yang anda rancang. Ketidakselarasan adalah maklumat, bukan vonis. Ia adalah tempat penjagaan yang jujur bermula."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "5 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~9 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Perangkap rasa bersalah",
-      "titleHtml": "Masalah dalam sistem tertutup<br><em>bukan bermula dengan kegagalan moral.</em>",
-      "body": [
-        "Bila sesuatu berjalan salah dalam tank, naluri selalunya adalah menyalahkan diri sendiri. Tapi masalah dalam sistem tertutup tidak bermula dengan kegagalan moral. Ia bermula dengan ketidakselarasan ritma — beransur-ansur, berstruktur, selalunya tidak kelihatan sehingga ia kelihatan.",
-        "Alga yang terus kembali bukan tanda anda gagal sebagai penjaga. Ia adalah tanda bahawa sesuatu dalam keseimbangan sistem — cahaya, nitrat, beban organik — telah drift melebihi ambang toleransi. Itu adalah maklumat, bukan hukuman.",
-        "Rasa bersalah mengubah maklumat itu menjadi sesuatu yang berbeza. Ia menukarkan bacaan sistem ('nitrat tinggi menunjuk kepada beban organik berlebihan') kepada penilaian diri ('saya tidak memberi cukup perhatian'). Peralihan itu kelihatan kecil, tapi ia mengubah tindakan yang anda ambil seterusnya — dari respons yang terarah kepada reaksi yang meliputi semua aspek."
-      ],
-      "pullQuote": "Masalah dalam sistem tertutup tidak bermula dengan kegagalan moral. Ia bermula dengan ketidakselarasan ritma — beransur-ansur, berstruktur, selalunya tidak kelihatan sehingga ia kelihatan.",
-      "hintLabel": "Dari ARA",
-      "hintText": [
-        "Rasa malu mengurangkan pembelajaran. Ketakutan mempercepatkan tindak balas berlebihan. Bimbingan — termasuk bimbingan yang anda berikan kepada diri sendiri — mesti memelihara maruah, rasa ingin tahu, dan keyakinan. Tanpa itu, penjagaan yang boleh dikekalkan cenderung runtuh."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Ritma anda adalah maklumat nyata"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Ritma anda adalah maklumat nyata",
-      "titleHtml": "Cara anda sebenarnya menjaga<br><em>adalah maklumat yang berguna.</em>",
-      "body": [
-        "ARA mengenal pasti empat corak yang menerangkan cara orang sebenarnya berinteraksi dengan tank mereka — bukan cara mereka berharap, atau fikir mereka patut, tetapi cara mereka sebenarnya apabila kehidupan sedang berlaku di sekeliling mereka.",
-        "Ini bukan jenis personaliti. Ini bukan ukuran betapa anda mengambil berat. Ini adalah ritma penjagaan yang dibentuk oleh keadaan hidup — dan ia berubah dari satu fasa kehidupan ke fasa yang lain. Seseorang yang merupakan penjaga yang sangat konsisten semasa bekerja dari rumah mungkin menjadi penjaga yang lebih episodik semasa perubahan kerja.",
-        "Penjaga episodik yang menjaga tank yang memerlukan penjagaan harian bukan penjaga yang buruk — ia adalah penjaga yang sistemnya tidak sejajar dengan ritma yang ada. Mendesak diri untuk menjadi lebih konsisten daripada keadaan hidup membenarkan sering menghasilkan sesi catch-up yang mengganggu, bukan konsistensi yang sebenar.",
-        "Maklumat yang lebih berguna: Apakah ritma penjagaan saya yang sebenar? Dan sistem jenis apa yang berkembang dengan ritma itu? Soalan pertama memerlukan pemerhatian jujur tentang apa yang anda sebenarnya lakukan — bukan apa yang anda merancang. Soalan kedua mengarahkan ke arah reka bentuk sistem yang boleh menampung ritma itu dengan selesa."
-      ],
-      "pullQuote": "Kemampanan bermula dari keselarasan jujur antara apa yang anda boleh tawarkan dan apa yang sistem sebenarnya perlukan. Titik permulaan yang jujur itulah tempat ARA bekerja. Arah yang dituju ARA adalah penjagaan yang berperingkat dan konsisten — kerana itulah ritma yang sistem hidup paling bersedia untuk menerima.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Kos over-correction"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Kos over-correction",
-      "titleHtml": "Gelung reaksi<br><em>dan cara ia merosakkan tank yang stabil.</em>",
-      "body": [
-        "Apabila penjaga berasa bertanggungjawab terhadap masalah, tindak balas semula jadi adalah melakukan sesuatu. Dengan cepat. Secara menyeluruh. Untuk membaiki semua sekaligus sebelum segalanya bertambah buruk.",
-        "ARA memanggil ini gelung reaksi — dan ia adalah salah satu punca paling biasa ketidakstabilan yang meningkat dalam sistem tertutup. Satu pembetulan mencetuskan ketidakseimbangan baru. Pembetulan lain mengikut. Sistem masuk ke dalam tempoh gangguan berterusan yang kerap lebih teruk dari apa yang mencetuskannya. Tank yang bereaksi kepada setiap pembacaan yang bimbang, yang menerima water change besar ketika tertekan, yang menerima rawatan berganda serentak — tank itu sedang diuruskan ke dalam ketidakstabilan, bukan keluar daripadanya.",
-        "Melakukan kurang, apabila sistem sedang dalam pemulihan, bukan kepasifan. Ia adalah respons yang paling selari yang ada. Sistem yang berehat selepas gangguan — dengan input yang konsisten dan minimal, bukan intervensi berganda — adalah sistem yang biasanya pulih lebih cepat."
-      ],
-      "pullQuote": "Melakukan kurang, apabila sistem sedang dalam pemulihan, bukan kepasifan. Ia adalah respons yang paling selari yang ada.",
-      "hintLabel": "Dari ARA",
-      "hintText": [
-        "Beban kognitif meningkatkan risiko tindak balas berlebihan. Keletihan sering mendahului campur tangan yang drastik atau tidak perlu. Sistem yang direka tanpa toleransi terhadap realiti ini menjadi rapuh."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang tank sebenarnya perlukan"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Apa yang tank sebenarnya perlukan",
-      "titleHtml": "Sistem hidup bertindak balas lebih baik<br><em>kepada kesinambungan yang padu.</em>",
-      "body": [
-        "Ada andaian biasa bahawa penjagaan akuarium 'yang lebih baik' bermakna penjagaan yang lebih kerap, parameter yang lebih tepat, lebih banyak peralatan, lebih banyak perhatian. ARA mencabar ini secara langsung.",
-        "Apa yang ekosistem tertutup paling boleh dipercayai bertindak balas adalah kesinambungan — bukan intensiti. Tindakan kecil yang konsisten mewujudkan kestabilan yang jauh lebih banyak dari intervensi dramatik, betapa pun teliti ia. Water change 15% setiap minggu lebih baik dari water change 50% sebulan sekali. Filter yang diperiksa setiap bulan lebih baik dari filter yang dibersihkan sepenuhnya setiap enam bulan. Pemberian makan yang diukur dua kali sehari lebih baik dari pemberian makan besar yang tidak menentu.",
-        "Ini bukan hanya tentang kualiti air — ia tentang kestabilan biologi. Koloni bakteria, ekologi sosial ikan, kitaran pokok, semua ini disesuaikan dengan corak yang boleh diramalkan. Apabila corak itu berubah secara mendadak — walaupun ke arah yang baik — sistem perlu menyesuaikan diri semula.",
-        "Kesinambungan yang jujur selalu mengatasi intensiti yang terputus-putus. Dan kesinambungan yang jujur bermakna mereka bentuk sistem sekitar apa yang anda sebenarnya boleh berikan — bukan sekitar ideal yang anda inginkan untuk berikan."
-      ],
-      "pullQuote": "Sistem hidup biasanya bertindak balas lebih baik kepada kesinambungan yang padu berbanding ledakan intervensi. Melakukan sedikit, secara kerap, dengan perhatian yang jujur, mewujudkan lebih banyak kestabilan dari melakukan banyak sekali-sekala.",
-      "hintLabel": "Dalam praktik",
-      "hintText": [
-        "Kematangan dalam sistem datang dari masa dan kesinambungan, bukan kesempurnaan. Tank yang dijaga dengan senyap — walaupun tidak sempurna — selama dua tahun sering mempunyai daya tahan yang jauh lebih besar daripada yang diuruskan secara intensif selama enam bulan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Ruang untuk bernafas"
-    },
-    {
-      "id": "mod-5",
-      "tag": "Ruang untuk bernafas",
-      "titleHtml": "Pemerhatian<br><em>adalah alat diagnostik yang utama.</em>",
-      "body": [
-        "Ada sesuatu yang penternakan ikan tawarkan yang jarang dinamakan secara langsung: pengalaman menonton sesuatu hidup. Bukan mengurusnya. Bukan membetulkannya. Hanya berada berhampiran dengannya, menyedarinya, membiarkannya mendedahkan dirinya dengan perlahan dari masa ke masa.",
-        "Jenis perhatian ini — perlahan, hadir, tidak tergesa-gesa — adalah apa yang ARA huraikan sebagai alat diagnostik utama. Bukan test kit, bukan jadual penyelenggaraan, bukan senarai semak. Menonton apabila tiada apa yang perlu dibaiki. Mengetahui apa yang normal supaya perubahan kepada normal kelihatan.",
-        "Ini bukan perhatian yang produktif dalam erti kata yang konvensional. Ia bukan membuat sesuatu. Ia adalah jenis penglihatan yang mendahului dan menginformasikan semua tindakan lain — kerana anda tidak boleh bertindak balas kepada apa yang anda tidak nampak.",
-        "Dengan memerhati ritma, menghormati had, dan menyelaraskan tindakan dengan realiti — kedua-dua ekosistem dan manusia mendapat ruang untuk bernafas."
-      ],
-      "pullQuote": "Dengan memerhati ritma, menghormati had, dan menyelaraskan tindakan dengan realiti — kedua-dua ekosistem dan manusia mendapat ruang untuk bernafas.",
-      "hintLabel": "Kata penutup",
-      "hintText": [
-        "Anda tidak bermula untuk gagal. Anda bermula untuk menjaga sesuatu yang hidup. Niat itu masih sah — walaupun pada hari-hari apabila tank kelihatan lebih teruk dari yang anda harapkan, walaupun pada minggu-minggu apabila anda tidak melakukan semua yang anda rancang. Ketidakselarasan adalah maklumat, bukan vonis. Ia adalah tempat penjagaan yang jujur bermula."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/aquarium-not-a-project",
+            "text": "Akuarium bukan projek →"
+        },
+        {
+            "href": "/articles/aquarium-maintenance-routine",
+            "text": "Rutin penyelenggaraan yang berfungsi →"
+        },
+        {
+            "href": "/articles/when-hobby-stops-feeling-good",
+            "text": "Bila hobi ini sudah tidak terasa seronok →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/aquarium-not-a-project",
-      "text": "Akuarium bukan projek →"
-    },
-    {
-      "href": "/articles/aquarium-maintenance-routine",
-      "text": "Rutin penyelenggaraan yang berfungsi →"
-    },
-    {
-      "href": "/articles/when-hobby-stops-feeling-good",
-      "text": "Bila hobi ini sudah tidak terasa seronok →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

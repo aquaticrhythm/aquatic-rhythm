@@ -1,141 +1,149 @@
 {
-  "_meta": {
-    "slug": "tank-crash-recovery",
-    "lang": "ms",
-    "sourceFile": "articles/tank-crash-recovery.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Pemulihan Tank Selepas Crash — Aquatic Rhythm",
-    "description": "Anda balik ke rumah dan ikan di permukaan. Atau air jadi keruh tiba-tiba. Panduan ini menerangkan apa yang perlu dibuat dalam 30 minit pertama, cara menilai sama ada tank boleh pulih, dan apa yang crash sedang beritahu anda.",
-    "ogTitle": "Pemulihan Tank Selepas Crash",
-    "ogDescription": "Tank crash adalah isyarat paling kuat yang tank bagi. Ketahui cara response dan cara baca apa yang ia sedang beritahu."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Tindak Balas Segera",
-    "titleHtml": "Pemulihan Tank<br><em>Selepas Crash</em>",
-    "subtitle": "Dalam crash, naluri adalah untuk bertindak. Response yang selari adalah membaca dahulu — kemudian bertindak atas apa yang bacaan kata.",
-    "texts": [
-      "Anda balik ke rumah dan ikan berada di permukaan. Atau anda bangun pagi dan air menjadi keruh atau bertukar warna tiba-tiba. Ada yang sudah mati. Ada yang masih ada tapi kelihatan teruk.",
-      "Panduan ini menerangkan apa yang perlu dibuat dalam tiga puluh minit pertama, cara menilai apa jenis crash yang berlaku, cara membaca sama ada tank boleh pulih, dan apa yang crash sedang beritahu anda tentang sistem yang menghasilkannya."
+    "_meta": {
+        "slug": "tank-crash-recovery",
+        "lang": "ms",
+        "sourceFile": "articles/tank-crash-recovery.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Pemulihan Tank Selepas Crash — Aquatic Rhythm",
+        "description": "Anda balik ke rumah dan ikan di permukaan. Atau air jadi keruh tiba-tiba. Panduan ini menerangkan apa yang perlu dibuat dalam 30 minit pertama, cara menilai sama ada tank boleh pulih, dan apa yang crash sedang beritahu anda.",
+        "ogTitle": "Pemulihan Tank Selepas Crash",
+        "ogDescription": "Tank crash adalah isyarat paling kuat yang tank bagi. Ketahui cara response dan cara baca apa yang ia sedang beritahu."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Tindak Balas Segera",
+        "titleHtml": "Pemulihan Tank<br><em>Selepas Crash</em>",
+        "subtitle": "Dalam crash, naluri adalah untuk bertindak. Response yang selari adalah membaca dahulu — kemudian bertindak atas apa yang bacaan kata.",
+        "texts": [
+            "Anda balik ke rumah dan ikan berada di permukaan. Atau anda bangun pagi dan air menjadi keruh atau bertukar warna tiba-tiba. Ada yang sudah mati. Ada yang masih ada tapi kelihatan teruk.",
+            "Panduan ini menerangkan apa yang perlu dibuat dalam tiga puluh minit pertama, cara menilai apa jenis crash yang berlaku, cara membaca sama ada tank boleh pulih, dan apa yang crash sedang beritahu anda tentang sistem yang menghasilkannya."
+        ],
+        "metaModules": "5 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~8 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Tiga puluh minit pertama",
+            "titleHtml": "Tiga puluh minit pertama:<br><em>stabil dahulu, baca kemudian.</em>",
+            "body": [
+                "Dalam tiga puluh minit pertama, dua perkara penting: stabilkan apa yang boleh diselamatkan, dan jangan tambah kepada gangguan. Uji ammonia, nitrite, dan kalau boleh pH. Tiga nombor ini memberitahu anda jenis crash apa ini. Ammonia tinggi (melebihi 2 ppm) atau nitrite yang boleh dikesan bermakna sistem biologi gagal — koloni bakteria terlampau beban atau tiada. pH rendah dengan CO2 tinggi adalah krisis berbeza dari kegagalan biologi.",
+                "Tingkatkan agitasi permukaan serta-merta — alihkan outlet filter untuk memecah permukaan, tambah airstone jika ada. Ini memberi masa tanpa mengira punca. Oksigen adalah yang paling segera dalam hampir semua crash.",
+                "Buat water change 25–30% dengan air yang disamakan suhu dan denyahklorinkan — ini mengurangkan kepekatan bahan toksik tanpa mengganggu koloni bakteria yang masih ada. Jangan buat water change penuh: ia membuang bacteria pada media filter dan permukaan, dan boleh menjejaskan kimia air secara mendadak. Water change separa adalah tindakan yang seimbang.",
+                "Kalau CO2 diinjeksi, hentikan injeksi serta-merta. Kalau anda mengesyaki racun kimia (detergen, racun serangga dari bilik sebelah, ubat yang didoskan berlebihan), water change yang lebih besar mungkin diperlukan — tapi lakukan secara berperingkat, bukan serentak."
+            ],
+            "pullQuote": "Dalam crash, naluri adalah untuk bertindak. Response yang selari adalah membaca — dan bertindak atas apa yang bacaan kata, bukan atas apa yang panik cadangkan.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Intro",
+            "nextBtn": "Apa yang menyebabkannya"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Apa yang menyebabkannya",
+            "titleHtml": "Crash mempunyai corak<br><em>yang boleh dikenali.</em>",
+            "body": [
+                "Crash mempunyai corak yang boleh dikenali. Mengetahui corak mana yang berlaku membimbing kedua-dua response segera dan pemulihan yang lebih panjang.",
+                "<strong>Lonjakan ammonia dari kegagalan filter atau pembersihan.</strong> Koloni bakteria terganggu — filter berjalan kering, dibersihkan dengan air paip, atau kuasa terputus lebih dari 24 jam. Ammonia naik dengan tajam dalam 24–48 jam. Tank mungkin kelihatan ok sehingga ia tidak. Response: water change segera 25–30%, uji setiap 12 jam, buat water change lagi kalau ammonia kekal melebihi 1 ppm.",
+                "<strong>Crash oksigen.</strong> Ammonia sifar atau rendah, tapi ikan tercungap-cungap di permukaan, air mungkin keruh atau berbau lain dari biasa. Ini berlaku apabila beberapa faktor bergabung — suhu tinggi, aliran filter perlahan, bloom alga atau bakteria yang menggunakan oksigen. Response: agitasi permukaan maksimum serta-merta, semak suhu, semak aliran filter.",
+                "<strong>Crash bahan kimia.</strong> Kematian tiba-tiba tanpa tanda air yang jelas — ikan kelihatan ok kemudian mati dalam beberapa jam. Boleh dari detergen pada tangan sebelum menyentuh air tank, racun serangga digunakan berhampiran, ubat yang didoskan dengan salah, atau bahan dari hiasan baru yang larut dalam air. Response: water change besar 40–50% dengan air bersih, buang hiasan baru, gantikan dengan karbon aktif dalam filter sementara.",
+                "<strong>Crash nitrogen — tank baru atau selepas rawatan ubat.</strong> Tank yang belum selesai cycle, atau tank yang bakteria dibunuh oleh ubat, mengalami pengumpulan ammonia yang progresif. Ikan merosot secara perlahan bukan tiba-tiba. Response: water change kerap (20% setiap hari kalau ammonia melebihi 1 ppm), kurangkan pemberian makan drastik, biarkan koloni pulih.",
+                "<strong>Crash penyakit.</strong> Ikan mati secara kluster dalam masa singkat, selalunya dengan gejala yang nampak — titik, lendir, luka. Kalau penyakit telah hadir dalam tank dan tidak dirawat, ia boleh mencetuskan kematian beramai-ramai bila ikan yang sedia ada tertekan atau imun turun. Response: asingkan ikan yang sakit, mulakan rawatan yang sesuai.",
+                "<strong>Kegagalan heater.</strong> Heater yang rosak boleh membekukan atau memasak ikan — kedua-duanya berlaku lebih perlahan dari crash kimia tetapi dengan akibat yang sama serius. Semak suhu jika ada kematian yang tidak dapat dijelaskan, terutamanya kalau ikan mati secara beransur dari satu hari ke hari lain."
+            ],
+            "pullQuote": null,
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Adakah ia boleh pulih"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Adakah ia boleh pulih",
+            "titleHtml": "Kebanyakan crash<br><em>boleh dipulihkan.</em>",
+            "body": [
+                "Kebanyakan crash boleh dipulihkan dengan masa dan response yang konsisten. Soalannya adalah sama ada biologi boleh ditubuhkan semula lebih cepat dari penghuni yang masih ada boleh menampung tekanan berterusan.",
+                "Faktor yang menyokong pemulihan: koloni bakteria terganggu sebahagian sahaja, bukan dihapuskan (filter masih berjalan sepanjang masa, walaupun terlampau beban); ikan yang masih ada tidak dalam kesusahan teruk (sedang makan, bergerak normal, tidak tercungap-cungap secara berterusan); penyebab crash dikenal pasti dan boleh ditangani; tank mempunyai sejarah kestabilan sebelum crash.",
+                "Faktor yang membuat pemulihan sukar: filter berjalan kering untuk tempoh yang panjang (koloni mati sepenuhnya, perlu cycle semula); ikan yang masih ada dalam keadaan teruk (tercungap-cungap berterusan, berbaring di substrat, tidak bertindak balas); penyebab crash tidak dapat dikenal pasti; tank adalah baru dan tidak pernah stabil sepenuhnya.",
+                "Kalau koloni bakteria perlu ditubuhkan semula, prosesnya mengambil masa seperti cycling baru — empat hingga lapan minggu. Dalam tempoh itu, ikan yang ada berada dalam bahaya kalau mereka kekal dalam sistem. Pilihan yang sukar: kekalkan ikan dalam tank yang sedang dipulihkan dengan pengurusan intensif (water change harian, pemberian makan minimum), atau pindahkan mereka sementara ke setup lain."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Pengampunan Ekologi",
+            "hintText": [
+                "Konsep pengampunan ekologi ARA terpakai secara langsung kepada crash. Tank yang telah crash boleh dibina semula. Keadaan masa lalu tidak menentukan keadaan masa depan. Crash adalah maklumat — ia mendedahkan apa yang penjajaran sebelumnya tidak dapat disokong. Pembinaan semula adalah peluang untuk mewujudkan penjajaran yang boleh dikekalkan."
+            ],
+            "hintLabel2": "ARA · Tetapan Semula Fasa Bertujuan",
+            "hintText2": [
+                "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang crash sedang beritahu",
+            "hintLabel3": "ARA · Tetapan Semula Fasa Bertujuan",
+            "hintText3": [
+                "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga mungkin sengaja mereset sistem — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa yang bertujuan daripada kemunduran yang didorong gangguan: tetapan semula adalah keputusan penjaga, bukan kerosakan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut lengkung perkembangan yang sama — tetapi pengetahuan terkumpul penjaga membentuk bagaimana kitaran baru diuruskan."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Apa yang crash sedang beritahu",
+            "titleHtml": "Crash jarang<br><em>berlaku tanpa amaran.</em>",
+            "body": [
+                "Crash jarang berlaku secara tiba-tiba. Dalam kebanyakan kes, melihat ke belakang mendedahkan siri isyarat yang tank telah beri yang tidak melepasi ambang krisis yang nampak sehingga crash berlaku. Parameter yang stabil tetapi meningkat. Ikan yang tidak berkembang tetapi tidak jelas gagal. Aliran filter yang beransur-ansur berkurang. Pemberian makan yang meningkat secara beransur. Penyakit yang dirawat sebahagian tetapi tidak sepenuhnya dibersihkan.",
+                "Ini bukan tentang menyalahkan diri sendiri — ia tentang memahami bahawa crash adalah hujung urutan, bukan permulaan satu. Isyarat-isyarat itu ada. Hobi ini tidak mengajar orang untuk membacanya, dan kebanyakan panduan hanya menerangkan apa yang perlu dibuat semasa krisis, bukan cara mengenali apabila sistem sedang menuju ke arahnya.",
+                "Selepas pemulihan, soalan yang paling berguna bukan 'apa yang saya buat salah?' Ia adalah 'isyarat apa yang hadir selama beberapa minggu atau bulan sebelum ini, dan mana satu saya boleh belajar untuk melihat lebih awal kali seterusnya?'",
+                "Crash yang dipelajari adalah crash yang membuat penjaga lebih selari — lebih sedar kepada aliran filter yang perlahan, kepada suhu yang merangkak naik, kepada ikan yang tidak cukup aktif pada waktu makan. Sistem mempunyai kapasiti untuk pulih. Begitu juga penjaganya."
+            ],
+            "pullQuote": "Crash adalah isyarat paling kuat yang tank bagi. Soalannya bukan cara meredakannya. Soalannya adalah apa yang ia cuba katakan.",
+            "hintLabel": "ARA · Asal sebelum Ekspresi",
+            "hintText": [
+                "Crash itu adalah ekspresi. Ketidakselarian yang terkumpul yang menghasilkannya — hanyutan beransur, isyarat yang terlepas, kemerosotan perlahan — adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: membaca crash bermakna mengesannya kembali kepada asalnya, bukan hanya menerangkan apa yang berlaku di hujungnya. Pengesanan itulah yang membezakan tank yang dibina semula dari yang mengalami crash."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Kehilangan"
+        },
+        {
+            "id": "mod-5",
+            "tag": "Kehilangan",
+            "titleHtml": "Kehilangan<br><em>adalah nyata.</em>",
+            "body": [
+                "Kehilangan ikan dalam crash adalah kesedihan yang selalunya tidak diakui kerana ikan tidak sentiasa dianggap sebagai haiwan yang layak mendapat kesedihan. Tapi penjaga yang telah menjaga tank selama berbulan-bulan atau bertahun-tahun telah melihat ikan tertentu membesar, membangun personaliti, menubuhkan hubungan dengan ikan lain. Kehilangan mereka dalam crash boleh menghasilkan kesedihan, rasa bersalah, dan persoalan sama ada nak teruskan. Perasaan-perasaan ini adalah nyata dan tidak perlu dirasionalkan.",
+                "Rasa bersalah adalah bahagian yang paling biasa dan paling tidak berguna dari pengalaman crash. Kebanyakan crash berlaku bukan kerana kecuaian tetapi kerana sistem mencapai had yang tidak nampak — had yang mana panduan tidak ajar penjaga untuk lihat. Menyalahkan diri sendiri tidak mengubah apa yang berlaku dan tidak mencegah crash yang akan datang. Memahami apa yang berlaku — dan apa yang akan berbeza — adalah apa yang berguna.",
+                "Kalau anda mempertimbangkan untuk berhenti dari hobi ini selepas crash yang teruk: ia adalah keputusan yang sah. Tapi jika anda teruskan, tank yang anda ada sekarang sudah mempunyai lebih banyak asas biologi dari yang dimilikinya pada hari pertama. Bakteria yang ada pada media filter, pada permukaan, pada substrat — ia tidak hilang sepenuhnya. Sistem mempunyai kapasiti untuk pulih. Dan anda kini memahami lebih banyak tentang bagaimana ia berfungsi dari yang anda tahu sebelum crash."
+            ],
+            "pullQuote": null,
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel3": "ARA · Keeper Rhythm",
+            "hintText3": [
+                "Jika anda membaca ini selepas crash: hakikat bahawa ia memberi kesan yang kuat bukan kelemahan. Ia adalah attunement yang sama yang menjadikan anda penjaga yang perasan perkara, peduli tentang haiwan, dan membina sesuatu selama berbulan-bulan. Attunement itu tidak hilang dalam crash — ia hanya menyakitkan sekarang. Apa pun keputusan anda tentang tangki seterusnya, anda sudah tahu lebih banyak tentang sistem akuatik berbanding sebelum ini. Pengetahuan itu kekal."
+            ]
+        }
     ],
-    "metaModules": "5 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~8 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Tiga puluh minit pertama",
-      "titleHtml": "Tiga puluh minit pertama:<br><em>stabil dahulu, baca kemudian.</em>",
-      "body": [
-        "Dalam tiga puluh minit pertama, dua perkara penting: stabilkan apa yang boleh diselamatkan, dan jangan tambah kepada gangguan. Uji ammonia, nitrite, dan kalau boleh pH. Tiga nombor ini memberitahu anda jenis crash apa ini. Ammonia tinggi (melebihi 2 ppm) atau nitrite yang boleh dikesan bermakna sistem biologi gagal — koloni bakteria terlampau beban atau tiada. pH rendah dengan CO2 tinggi adalah krisis berbeza dari kegagalan biologi.",
-        "Tingkatkan agitasi permukaan serta-merta — alihkan outlet filter untuk memecah permukaan, tambah airstone jika ada. Ini memberi masa tanpa mengira punca. Oksigen adalah yang paling segera dalam hampir semua crash.",
-        "Buat water change 25–30% dengan air yang disamakan suhu dan denyahklorinkan — ini mengurangkan kepekatan bahan toksik tanpa mengganggu koloni bakteria yang masih ada. Jangan buat water change penuh: ia membuang bacteria pada media filter dan permukaan, dan boleh menjejaskan kimia air secara mendadak. Water change separa adalah tindakan yang seimbang.",
-        "Kalau CO2 diinjeksi, hentikan injeksi serta-merta. Kalau anda mengesyaki racun kimia (detergen, racun serangga dari bilik sebelah, ubat yang didoskan berlebihan), water change yang lebih besar mungkin diperlukan — tapi lakukan secara berperingkat, bukan serentak."
-      ],
-      "pullQuote": "Dalam crash, naluri adalah untuk bertindak. Response yang selari adalah membaca — dan bertindak atas apa yang bacaan kata, bukan atas apa yang panik cadangkan.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Apa yang menyebabkannya"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Apa yang menyebabkannya",
-      "titleHtml": "Crash mempunyai corak<br><em>yang boleh dikenali.</em>",
-      "body": [
-        "Crash mempunyai corak yang boleh dikenali. Mengetahui corak mana yang berlaku membimbing kedua-dua response segera dan pemulihan yang lebih panjang.",
-        "<strong>Lonjakan ammonia dari kegagalan filter atau pembersihan.</strong> Koloni bakteria terganggu — filter berjalan kering, dibersihkan dengan air paip, atau kuasa terputus lebih dari 24 jam. Ammonia naik dengan tajam dalam 24–48 jam. Tank mungkin kelihatan ok sehingga ia tidak. Response: water change segera 25–30%, uji setiap 12 jam, buat water change lagi kalau ammonia kekal melebihi 1 ppm.",
-        "<strong>Crash oksigen.</strong> Ammonia sifar atau rendah, tapi ikan tercungap-cungap di permukaan, air mungkin keruh atau berbau lain dari biasa. Ini berlaku apabila beberapa faktor bergabung — suhu tinggi, aliran filter perlahan, bloom alga atau bakteria yang menggunakan oksigen. Response: agitasi permukaan maksimum serta-merta, semak suhu, semak aliran filter.",
-        "<strong>Crash bahan kimia.</strong> Kematian tiba-tiba tanpa tanda air yang jelas — ikan kelihatan ok kemudian mati dalam beberapa jam. Boleh dari detergen pada tangan sebelum menyentuh air tank, racun serangga digunakan berhampiran, ubat yang didoskan dengan salah, atau bahan dari hiasan baru yang larut dalam air. Response: water change besar 40–50% dengan air bersih, buang hiasan baru, gantikan dengan karbon aktif dalam filter sementara.",
-        "<strong>Crash nitrogen — tank baru atau selepas rawatan ubat.</strong> Tank yang belum selesai cycle, atau tank yang bakteria dibunuh oleh ubat, mengalami pengumpulan ammonia yang progresif. Ikan merosot secara perlahan bukan tiba-tiba. Response: water change kerap (20% setiap hari kalau ammonia melebihi 1 ppm), kurangkan pemberian makan drastik, biarkan koloni pulih.",
-        "<strong>Crash penyakit.</strong> Ikan mati secara kluster dalam masa singkat, selalunya dengan gejala yang nampak — titik, lendir, luka. Kalau penyakit telah hadir dalam tank dan tidak dirawat, ia boleh mencetuskan kematian beramai-ramai bila ikan yang sedia ada tertekan atau imun turun. Response: asingkan ikan yang sakit, mulakan rawatan yang sesuai.",
-        "<strong>Kegagalan heater.</strong> Heater yang rosak boleh membekukan atau memasak ikan — kedua-duanya berlaku lebih perlahan dari crash kimia tetapi dengan akibat yang sama serius. Semak suhu jika ada kematian yang tidak dapat dijelaskan, terutamanya kalau ikan mati secara beransur dari satu hari ke hari lain."
-      ],
-      "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Adakah ia boleh pulih"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Adakah ia boleh pulih",
-      "titleHtml": "Kebanyakan crash<br><em>boleh dipulihkan.</em>",
-      "body": [
-        "Kebanyakan crash boleh dipulihkan dengan masa dan response yang konsisten. Soalannya adalah sama ada biologi boleh ditubuhkan semula lebih cepat dari penghuni yang masih ada boleh menampung tekanan berterusan.",
-        "Faktor yang menyokong pemulihan: koloni bakteria terganggu sebahagian sahaja, bukan dihapuskan (filter masih berjalan sepanjang masa, walaupun terlampau beban); ikan yang masih ada tidak dalam kesusahan teruk (sedang makan, bergerak normal, tidak tercungap-cungap secara berterusan); penyebab crash dikenal pasti dan boleh ditangani; tank mempunyai sejarah kestabilan sebelum crash.",
-        "Faktor yang membuat pemulihan sukar: filter berjalan kering untuk tempoh yang panjang (koloni mati sepenuhnya, perlu cycle semula); ikan yang masih ada dalam keadaan teruk (tercungap-cungap berterusan, berbaring di substrat, tidak bertindak balas); penyebab crash tidak dapat dikenal pasti; tank adalah baru dan tidak pernah stabil sepenuhnya.",
-        "Kalau koloni bakteria perlu ditubuhkan semula, prosesnya mengambil masa seperti cycling baru — empat hingga lapan minggu. Dalam tempoh itu, ikan yang ada berada dalam bahaya kalau mereka kekal dalam sistem. Pilihan yang sukar: kekalkan ikan dalam tank yang sedang dipulihkan dengan pengurusan intensif (water change harian, pemberian makan minimum), atau pindahkan mereka sementara ke setup lain."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Pengampunan Ekologi",
-      "hintText": [
-        "Konsep pengampunan ekologi ARA terpakai secara langsung kepada crash. Tank yang telah crash boleh dibina semula. Keadaan masa lalu tidak menentukan keadaan masa depan. Crash adalah maklumat — ia mendedahkan apa yang penjajaran sebelumnya tidak dapat disokong. Pembinaan semula adalah peluang untuk mewujudkan penjajaran yang boleh dikekalkan."
-      ],
-      "hintLabel2": "ARA · Tetapan Semula Fasa Bertujuan",
-      "hintText2": [
-        "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang crash sedang beritahu"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Apa yang crash sedang beritahu",
-      "titleHtml": "Crash jarang<br><em>berlaku tanpa amaran.</em>",
-      "body": [
-        "Crash jarang berlaku secara tiba-tiba. Dalam kebanyakan kes, melihat ke belakang mendedahkan siri isyarat yang tank telah beri yang tidak melepasi ambang krisis yang nampak sehingga crash berlaku. Parameter yang stabil tetapi meningkat. Ikan yang tidak berkembang tetapi tidak jelas gagal. Aliran filter yang beransur-ansur berkurang. Pemberian makan yang meningkat secara beransur. Penyakit yang dirawat sebahagian tetapi tidak sepenuhnya dibersihkan.",
-        "Ini bukan tentang menyalahkan diri sendiri — ia tentang memahami bahawa crash adalah hujung urutan, bukan permulaan satu. Isyarat-isyarat itu ada. Hobi ini tidak mengajar orang untuk membacanya, dan kebanyakan panduan hanya menerangkan apa yang perlu dibuat semasa krisis, bukan cara mengenali apabila sistem sedang menuju ke arahnya.",
-        "Selepas pemulihan, soalan yang paling berguna bukan 'apa yang saya buat salah?' Ia adalah 'isyarat apa yang hadir selama beberapa minggu atau bulan sebelum ini, dan mana satu saya boleh belajar untuk melihat lebih awal kali seterusnya?'",
-        "Crash yang dipelajari adalah crash yang membuat penjaga lebih selari — lebih sedar kepada aliran filter yang perlahan, kepada suhu yang merangkak naik, kepada ikan yang tidak cukup aktif pada waktu makan. Sistem mempunyai kapasiti untuk pulih. Begitu juga penjaganya."
-      ],
-      "pullQuote": "Crash adalah isyarat paling kuat yang tank bagi. Soalannya bukan cara meredakannya. Soalannya adalah apa yang ia cuba katakan.",
-      "hintLabel": "ARA · Asal sebelum Ekspresi",
-      "hintText": [
-        "Crash itu adalah ekspresi. Ketidakselarian yang terkumpul yang menghasilkannya — hanyutan beransur, isyarat yang terlepas, kemerosotan perlahan — adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: membaca crash bermakna mengesannya kembali kepada asalnya, bukan hanya menerangkan apa yang berlaku di hujungnya. Pengesanan itulah yang membezakan tank yang dibina semula dari yang mengalami crash."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Kehilangan"
-    },
-    {
-      "id": "mod-5",
-      "tag": "Kehilangan",
-      "titleHtml": "Kehilangan<br><em>adalah nyata.</em>",
-      "body": [
-        "Kehilangan ikan dalam crash adalah kesedihan yang selalunya tidak diakui kerana ikan tidak sentiasa dianggap sebagai haiwan yang layak mendapat kesedihan. Tapi penjaga yang telah menjaga tank selama berbulan-bulan atau bertahun-tahun telah melihat ikan tertentu membesar, membangun personaliti, menubuhkan hubungan dengan ikan lain. Kehilangan mereka dalam crash boleh menghasilkan kesedihan, rasa bersalah, dan persoalan sama ada nak teruskan. Perasaan-perasaan ini adalah nyata dan tidak perlu dirasionalkan.",
-        "Rasa bersalah adalah bahagian yang paling biasa dan paling tidak berguna dari pengalaman crash. Kebanyakan crash berlaku bukan kerana kecuaian tetapi kerana sistem mencapai had yang tidak nampak — had yang mana panduan tidak ajar penjaga untuk lihat. Menyalahkan diri sendiri tidak mengubah apa yang berlaku dan tidak mencegah crash yang akan datang. Memahami apa yang berlaku — dan apa yang akan berbeza — adalah apa yang berguna.",
-        "Kalau anda mempertimbangkan untuk berhenti dari hobi ini selepas crash yang teruk: ia adalah keputusan yang sah. Tapi jika anda teruskan, tank yang anda ada sekarang sudah mempunyai lebih banyak asas biologi dari yang dimilikinya pada hari pertama. Bakteria yang ada pada media filter, pada permukaan, pada substrat — ia tidak hilang sepenuhnya. Sistem mempunyai kapasiti untuk pulih. Dan anda kini memahami lebih banyak tentang bagaimana ia berfungsi dari yang anda tahu sebelum crash."
-      ],
-      "pullQuote": null,
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/aquarium-filter-maintenance",
+            "text": "Filter anda bukan apa yang anda fikir →"
+        },
+        {
+            "href": "/articles/fish-gasping-surface",
+            "text": "Ikan tercungap-cungap di permukaan →"
+        },
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/aquarium-filter-maintenance",
-      "text": "Filter anda bukan apa yang anda fikir →"
-    },
-    {
-      "href": "/articles/fish-gasping-surface",
-      "text": "Ikan tercungap-cungap di permukaan →"
-    },
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

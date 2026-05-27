@@ -1,115 +1,121 @@
 {
-  "_meta": {
-    "slug": "adding-new-fish",
-    "lang": "ms",
-    "sourceFile": "articles/adding-new-fish.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Menambah Ikan Baru — Tingkap Gangguan — Aquatic Rhythm",
-    "description": "Dua minggu pertama adalah gangguan. Itu normal. ARA menerangkan kenapa menambah ikan baru sentiasa mengganggu tank yang stabil — dan cara membaca apa yang sedang berlaku.",
-    "ogTitle": "Menambah Ikan Baru — Tingkap Gangguan",
-    "ogDescription": "Dua minggu pertama adalah gangguan. Itu normal. Ketahui cara membaca tingkap gangguan dan bila perlu bertindak."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Livestock Rhythm",
-    "titleHtml": "Menambah Ikan Baru —<br><em>Tingkap Gangguan</em>",
-    "subtitle": "Dua minggu pertama adalah gangguan. Itu normal.",
-    "texts": [
-      "Anda dah masukkan ikan baru dengan betul — drip acclimation, suhu dipadankan, beg terapung 20 minit. Tapi tiga hari kemudian ikan yang sedia ada nampak tertekan, satu yang tak pernah bersembunyi tiba-tiba bersembunyi, dan ikan baru tidak makan. Anda dah buat semua dengan betul. Gangguan berlaku juga.",
-      "Panduan ini menerangkan kenapa menambah ikan baru sentiasa mengganggu tank yang stabil, apa tingkap gangguan dua minggu kelihatan seperti merentasi semua lima ritma, dan cara membaca apa yang berlaku — daripada tergesa nak betulkan apa yang tak perlu diperbaiki."
+    "_meta": {
+        "slug": "adding-new-fish",
+        "lang": "ms",
+        "sourceFile": "articles/adding-new-fish.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Menambah Ikan Baru — Tingkap Gangguan — Aquatic Rhythm",
+        "description": "Dua minggu pertama adalah gangguan. Itu normal. ARA menerangkan kenapa menambah ikan baru sentiasa mengganggu tank yang stabil — dan cara membaca apa yang sedang berlaku.",
+        "ogTitle": "Menambah Ikan Baru — Tingkap Gangguan",
+        "ogDescription": "Dua minggu pertama adalah gangguan. Itu normal. Ketahui cara membaca tingkap gangguan dan bila perlu bertindak."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Livestock Rhythm",
+        "titleHtml": "Menambah Ikan Baru —<br><em>Tingkap Gangguan</em>",
+        "subtitle": "Dua minggu pertama adalah gangguan. Itu normal.",
+        "texts": [
+            "Anda dah masukkan ikan baru dengan betul — drip acclimation, suhu dipadankan, beg terapung 20 minit. Tapi tiga hari kemudian ikan yang sedia ada nampak tertekan, satu yang tak pernah bersembunyi tiba-tiba bersembunyi, dan ikan baru tidak makan. Anda dah buat semua dengan betul. Gangguan berlaku juga.",
+            "Panduan ini menerangkan kenapa menambah ikan baru sentiasa mengganggu tank yang stabil, apa tingkap gangguan dua minggu kelihatan seperti merentasi semua lima ritma, dan cara membaca apa yang berlaku — daripada tergesa nak betulkan apa yang tak perlu diperbaiki."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~7 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Kenapa setiap pertambahan adalah gangguan",
+            "titleHtml": "Kenapa setiap pertambahan<br><em>adalah gangguan.</em>",
+            "body": [
+                "Akuarium yang stabil adalah keseimbangan yang dirundingkan. Ikan telah menubuhkan wilayah, hierarki suapan, dan corak sosial. Koloni bakteria dalam filter disaizkan untuk bioload semasa. Kimia air mencerminkan keseimbangan antara apa yang tank hasilkan dan apa yang ritma penyelenggaraan buang.",
+                "Bila ikan baru tiba, semua ini terganggu serentak. Koloni bakteria menghadapi bioload yang lebih tinggi daripada yang ia disaizkan — ikan baru menambah sisa sebelum bakteria boleh berkembang untuk memprosesnya, bermakna ammonia dan nitrite mungkin naik sedikit selama beberapa hari atau minggu. Ikan yang sedia ada menganggap ikan baru sebagai penceroboh, mencetuskan tindak balas wilayah dan sosial yang kelihatan seperti aggression, bersembunyi, atau perubahan warna. Ikan baru tertekan dari pengangkutan, kimia air yang asing, dan hierarki sosial yang asing — yang menekan tindak balas imun mereka tepat pada masa mereka paling memerlukannya.",
+                "Tiada satu pun daripada ini masalah. Ia adalah gangguan — keadaan sementara yang tank sihat dengan keeper rhythm yang selari lalui. Tingkap gangguan bukan isyarat untuk bertindak. Ia adalah isyarat untuk perhatikan."
+            ],
+            "pullQuote": "Gangguan bukan krisis. Ia adalah tank yang menyusun semula dirinya mengikut maklumat baru. Response yang selari adalah pemerhatian — bukan intervensi.",
+            "hintLabel": "ARA · Kelima-lima Ritma",
+            "hintText": [
+                "Dalam ARA, menambah ikan baru mengganggu kelima-lima ecological rhythms serentak: koloni bakteria menyesuaikan diri dengan bioload baru (Biological Rhythm), kimia air berubah (Water Rhythm), kawasan territory disusun semula (Environmental Rhythm), ikan sedia ada bertindak balas secara sosial (Livestock Rhythm), dan penjaga mengharungi ketidaktentuan (Keeper Rhythm). Gangguan itu dijangkakan — ia adalah cara sistem mengintegrasikan maklumat baru. Tindak balas yang selaras adalah pemerhatian: tunggu tangki menyemula kembali keseimbangan sendiri sebelum campur tangan."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Quarantine: apa yang sebenarnya ia lindungi"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Quarantine: apa yang sebenarnya ia lindungi",
+            "titleHtml": "Quarantine:<br><em>apa yang sebenarnya ia lindungi.</em>",
+            "body": [
+                "Quarantine selalunya digambarkan sebagai melindungi ikan yang sedia ada daripada penyakit yang dibawa oleh ikan baru. Itu betul, dan ia adalah sebab praktikal untuk mengekalkan tank quarantine. Tapi quarantine juga melindungi ikan baru. Ikan yang dimasukkan terus ke dalam tank komuniti yang telah mantap sedang mengemudi hierarki sosial baru, parameter air yang asing, dan kemungkinan aggression wilayah sambil tertekan dari pengangkutan. Kalau ikan itu membawa jangkitan tahap rendah — ich, jangkitan bakteria, parasit dalaman — kombinasi stressor mungkin mencetuskan wabak dalam ikan baru dan kemudian mendedahkan ikan yang sedia ada yang fungsi imunnya tertekan oleh gangguan wilayah.",
+                "Quarantine dua minggu melakukan tiga perkara: ia membenarkan ikan baru pulih dari tekanan pengangkutan dalam persekitaran yang tenang dan tidak dicabar; ia memberi masa untuk sebarang penyakit yang dibawa untuk nyata di mana ia boleh dirawat tanpa menjejaskan tank utama; dan ia membenarkan penjaga memerhatikan tingkah laku, selera makan, dan warna ikan baru pada baseline sebelum memperkenalkan mereka kepada kerumitan sosial tank utama.",
+                "Tank quarantine tidak perlu rumit — tank kosong 20–40L dengan sponge filter yang dah cycle, heater, dan tempat sembunyi ringkas adalah mencukupi."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Livestock Rhythm",
+            "hintText": [
+                "Dalam ARA, quarantine bukan sekadar pencegahan penyakit — ia adalah tempoh pembacaan Livestock Rhythm. Memerhatikan ikan baru makan, berenang, dan berehat dalam persekitaran yang tidak dicabar memberitahu anda bagaimana baseline mereka kelihatan. Itulah baseline yang anda bandingkan sebaik sahaja mereka memasuki tank utama."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Membaca tingkap dua minggu"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Membaca tingkap dua minggu",
+            "titleHtml": "Membaca<br><em>tingkap dua minggu.</em>",
+            "body": [
+                "Dua minggu selepas pengenalan adalah tingkap gangguan — tempoh di mana tank sedang menyusun semula dirinya. Apa yang dijangka dan cara membacanya: rundingan wilayah kelihatan seperti kejar-mengejar, perkembangan sirip, dan kadang-kadang gigitan ringan. Dalam ikan komuniti tanpa wilayah khusus, ini biasanya selesai dalam beberapa hari. Dalam cichlid atau betta, rundingan lebih lama dan lebih fizikal. Perhatikan kejar-mengejar yang berterusan (satu ikan tidak dapat mengakses makanan atau berehat), sirip terkatup yang tidak pulih, atau bersembunyi yang berterusan lebih dari lima hingga tujuh hari — ini adalah tanda gangguan sosial tidak selesai sendiri.",
+                "Drift parameter semasa tingkap ini dijangka. Uji ammonia dan nitrite untuk sepuluh hari pertama selepas menambah ikan baru — bukan kerana krisis mungkin berlaku, tetapi kerana koloni bakteria sedang menyesuaikan diri dengan beban baru. Bacaan ammonia kecil (0.25 ppm) yang bersih dalam 24 jam adalah koloni yang mengejar. Bacaan melebihi 0.5 ppm yang tidak turun dalam 24 jam adalah koloni yang bergelut dan wajar dilakukan water change.",
+                "Ikan baru yang tidak makan untuk dua hingga tiga hari pertama adalah normal — mereka tertekan dan sedang berorientasi. Tidak makan lebih dari lima hingga tujuh hari perlu perhatian. Perhatikan sebelum bertindak. Kebanyakan gangguan selesai tanpa intervensi kalau keeper rhythm (suapan, water change) kekal konsisten semasa tingkap."
+            ],
+            "pullQuote": "Tingkap gangguan meminta satu perkara daripada penjaga: konsistensi. Jangan tukar jadual suapan, pencahayaan, ritma water change. Biar biologi stabil mengikut apa yang ia dah tahu.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Kembali",
+            "nextBtn": "Selepas tingkap",
+            "hintLabel2": "ARA · Keeper Rhythm",
+            "hintText2": [
+                "Bahagian yang paling sukar semasa tetingkap gangguan ialah melihat ikan bersembunyi atau kelihatan tertekan, sambil menahan dorongan untuk melakukan sesuatu. Kita cenderung menyamakan masalah yang kelihatan dengan keperluan tindakan yang kelihatan. Tetapi tetingkap dua minggu ini adalah ujian satu jenis penjagaan yang berbeza — terus bertahan apabila tangki kelihatan tidak menentu. Menahan diri itu sendiri adalah keputusan aktif. Ia salah satu perkara yang paling kontra-intuitif yang hobi ini ajar."
+            ]
+        },
+        {
+            "id": "mod-4",
+            "tag": "Selepas tingkap",
+            "titleHtml": "Selepas<br><em>tingkap.</em>",
+            "body": [
+                "Menjelang akhir minggu kedua, tank yang sihat sebelum pertambahan sepatutnya kembali ke baseline-nya. Aggression berkurang apabila wilayah ditubuhkan atau diterima. Suapan kembali ke corak normal. Ammonia dan nitrite kembali ke sifar. Ikan baru mula menunjukkan warna rehat mereka berbanding warna yang redup kerana tekanan dalam beberapa hari pertama.",
+                "Kalau tank belum kembali ke baseline menjelang tiga minggu, sesuatu dalam tingkap gangguan bukan penyusunan semula sementara — ia adalah keadaan yang berterusan. Aggression yang berterusan pada tiga minggu menunjukkan ketidakserasian yang masa tidak akan selesaikan: konfigurasi stocking mungkin perlu dipertimbangkan semula. Ammonia yang berterusan pada tiga minggu menunjukkan koloni bakteria tidak dapat mengekalkan beban baru: sama ada tank overstocked, atau isu filter perlu diberi perhatian. Terus tidak makan pada tiga minggu adalah isyarat penyakit, bukan isyarat tekanan.",
+                "Tingkap gangguan dua minggu adalah alat pembacaan. Ia memberitahu anda apa yang tank boleh serap, bagaimana ikan yang sedia ada bertindak balas kepada perubahan, dan sama ada ikan baru benar-benar serasi dengan persekitaran yang mereka masuki. Tank yang lalui tingkap dengan bersih memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Tank yang tidak selesai dalam tiga minggu memberitahu anda sesuatu yang sama berguna tentang had mereka."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Tetapan Semula Fasa Bertujuan",
+            "hintText": [
+                "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~7 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Kenapa setiap pertambahan adalah gangguan",
-      "titleHtml": "Kenapa setiap pertambahan<br><em>adalah gangguan.</em>",
-      "body": [
-        "Akuarium yang stabil adalah keseimbangan yang dirundingkan. Ikan telah menubuhkan wilayah, hierarki suapan, dan corak sosial. Koloni bakteria dalam filter disaizkan untuk bioload semasa. Kimia air mencerminkan keseimbangan antara apa yang tank hasilkan dan apa yang ritma penyelenggaraan buang.",
-        "Bila ikan baru tiba, semua ini terganggu serentak. Koloni bakteria menghadapi bioload yang lebih tinggi daripada yang ia disaizkan — ikan baru menambah sisa sebelum bakteria boleh berkembang untuk memprosesnya, bermakna ammonia dan nitrite mungkin naik sedikit selama beberapa hari atau minggu. Ikan yang sedia ada menganggap ikan baru sebagai penceroboh, mencetuskan tindak balas wilayah dan sosial yang kelihatan seperti aggression, bersembunyi, atau perubahan warna. Ikan baru tertekan dari pengangkutan, kimia air yang asing, dan hierarki sosial yang asing — yang menekan tindak balas imun mereka tepat pada masa mereka paling memerlukannya.",
-        "Tiada satu pun daripada ini masalah. Ia adalah gangguan — keadaan sementara yang tank sihat dengan keeper rhythm yang selari lalui. Tingkap gangguan bukan isyarat untuk bertindak. Ia adalah isyarat untuk perhatikan."
-      ],
-      "pullQuote": "Gangguan bukan krisis. Ia adalah tank yang menyusun semula dirinya mengikut maklumat baru. Response yang selari adalah pemerhatian — bukan intervensi.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Quarantine: apa yang sebenarnya ia lindungi"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Quarantine: apa yang sebenarnya ia lindungi",
-      "titleHtml": "Quarantine:<br><em>apa yang sebenarnya ia lindungi.</em>",
-      "body": [
-        "Quarantine selalunya digambarkan sebagai melindungi ikan yang sedia ada daripada penyakit yang dibawa oleh ikan baru. Itu betul, dan ia adalah sebab praktikal untuk mengekalkan tank quarantine. Tapi quarantine juga melindungi ikan baru. Ikan yang dimasukkan terus ke dalam tank komuniti yang telah mantap sedang mengemudi hierarki sosial baru, parameter air yang asing, dan kemungkinan aggression wilayah sambil tertekan dari pengangkutan. Kalau ikan itu membawa jangkitan tahap rendah — ich, jangkitan bakteria, parasit dalaman — kombinasi stressor mungkin mencetuskan wabak dalam ikan baru dan kemudian mendedahkan ikan yang sedia ada yang fungsi imunnya tertekan oleh gangguan wilayah.",
-        "Quarantine dua minggu melakukan tiga perkara: ia membenarkan ikan baru pulih dari tekanan pengangkutan dalam persekitaran yang tenang dan tidak dicabar; ia memberi masa untuk sebarang penyakit yang dibawa untuk nyata di mana ia boleh dirawat tanpa menjejaskan tank utama; dan ia membenarkan penjaga memerhatikan tingkah laku, selera makan, dan warna ikan baru pada baseline sebelum memperkenalkan mereka kepada kerumitan sosial tank utama.",
-        "Tank quarantine tidak perlu rumit — tank kosong 20–40L dengan sponge filter yang dah cycle, heater, dan tempat sembunyi ringkas adalah mencukupi."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Livestock Rhythm",
-      "hintText": [
-        "Dalam ARA, quarantine bukan sekadar pencegahan penyakit — ia adalah tempoh pembacaan Livestock Rhythm. Memerhatikan ikan baru makan, berenang, dan berehat dalam persekitaran yang tidak dicabar memberitahu anda bagaimana baseline mereka kelihatan. Itulah baseline yang anda bandingkan sebaik sahaja mereka memasuki tank utama."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Membaca tingkap dua minggu"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Membaca tingkap dua minggu",
-      "titleHtml": "Membaca<br><em>tingkap dua minggu.</em>",
-      "body": [
-        "Dua minggu selepas pengenalan adalah tingkap gangguan — tempoh di mana tank sedang menyusun semula dirinya. Apa yang dijangka dan cara membacanya: rundingan wilayah kelihatan seperti kejar-mengejar, perkembangan sirip, dan kadang-kadang gigitan ringan. Dalam ikan komuniti tanpa wilayah khusus, ini biasanya selesai dalam beberapa hari. Dalam cichlid atau betta, rundingan lebih lama dan lebih fizikal. Perhatikan kejar-mengejar yang berterusan (satu ikan tidak dapat mengakses makanan atau berehat), sirip terkatup yang tidak pulih, atau bersembunyi yang berterusan lebih dari lima hingga tujuh hari — ini adalah tanda gangguan sosial tidak selesai sendiri.",
-        "Drift parameter semasa tingkap ini dijangka. Uji ammonia dan nitrite untuk sepuluh hari pertama selepas menambah ikan baru — bukan kerana krisis mungkin berlaku, tetapi kerana koloni bakteria sedang menyesuaikan diri dengan beban baru. Bacaan ammonia kecil (0.25 ppm) yang bersih dalam 24 jam adalah koloni yang mengejar. Bacaan melebihi 0.5 ppm yang tidak turun dalam 24 jam adalah koloni yang bergelut dan wajar dilakukan water change.",
-        "Ikan baru yang tidak makan untuk dua hingga tiga hari pertama adalah normal — mereka tertekan dan sedang berorientasi. Tidak makan lebih dari lima hingga tujuh hari perlu perhatian. Perhatikan sebelum bertindak. Kebanyakan gangguan selesai tanpa intervensi kalau keeper rhythm (suapan, water change) kekal konsisten semasa tingkap."
-      ],
-      "pullQuote": "Tingkap gangguan meminta satu perkara daripada penjaga: konsistensi. Jangan tukar jadual suapan, pencahayaan, ritma water change. Biar biologi stabil mengikut apa yang ia dah tahu.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Kembali",
-      "nextBtn": "Selepas tingkap"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Selepas tingkap",
-      "titleHtml": "Selepas<br><em>tingkap.</em>",
-      "body": [
-        "Menjelang akhir minggu kedua, tank yang sihat sebelum pertambahan sepatutnya kembali ke baseline-nya. Aggression berkurang apabila wilayah ditubuhkan atau diterima. Suapan kembali ke corak normal. Ammonia dan nitrite kembali ke sifar. Ikan baru mula menunjukkan warna rehat mereka berbanding warna yang redup kerana tekanan dalam beberapa hari pertama.",
-        "Kalau tank belum kembali ke baseline menjelang tiga minggu, sesuatu dalam tingkap gangguan bukan penyusunan semula sementara — ia adalah keadaan yang berterusan. Aggression yang berterusan pada tiga minggu menunjukkan ketidakserasian yang masa tidak akan selesaikan: konfigurasi stocking mungkin perlu dipertimbangkan semula. Ammonia yang berterusan pada tiga minggu menunjukkan koloni bakteria tidak dapat mengekalkan beban baru: sama ada tank overstocked, atau isu filter perlu diberi perhatian. Terus tidak makan pada tiga minggu adalah isyarat penyakit, bukan isyarat tekanan.",
-        "Tingkap gangguan dua minggu adalah alat pembacaan. Ia memberitahu anda apa yang tank boleh serap, bagaimana ikan yang sedia ada bertindak balas kepada perubahan, dan sama ada ikan baru benar-benar serasi dengan persekitaran yang mereka masuki. Tank yang lalui tingkap dengan bersih memberitahu anda sesuatu yang berguna tentang daya tahan mereka. Tank yang tidak selesai dalam tiga minggu memberitahu anda sesuatu yang sama berguna tentang had mereka."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Tetapan Semula Fasa Bertujuan",
-      "hintText": [
-        "Tidak semua peralihan fasa menggambarkan kegagalan. Penjaga boleh mereset sistem dengan sengaja — untuk merawat penyakit berterusan, mengkonfigurasi semula persediaan, atau memulakan kitaran baru selepas crash. ARA membezakan tetapan semula fasa bertujuan daripada kemunduran akibat gangguan: tetapan semula adalah keputusan penjaga, bukan kegagalan sistem. Sistem melalui Fasa Awal sekali lagi, mengikut trajektori pembangunan yang sama — tetapi pengetahuan terkumpul penjaga membentuk cara kitaran baru diuruskan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/fish-hiding-what-does-it-mean",
+            "text": "Ikan saya bersembunyi →"
+        },
+        {
+            "href": "/articles/ich-keeps-coming-back",
+            "text": "Ich terus kembali →"
+        },
+        {
+            "href": "/articles/community-fish-tank",
+            "text": "Tank komuniti →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/fish-hiding-what-does-it-mean",
-      "text": "Ikan saya bersembunyi →"
-    },
-    {
-      "href": "/articles/ich-keeps-coming-back",
-      "text": "Ich terus kembali →"
-    },
-    {
-      "href": "/articles/community-fish-tank",
-      "text": "Tank komuniti →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

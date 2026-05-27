@@ -1,100 +1,106 @@
 {
-  "_meta": {
-    "slug": "fish-gasping-surface",
-    "lang": "ms",
-    "sourceFile": "articles/fish-gasping-surface.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Ikan Tercungap-cungap di Permukaan — Aquatic Rhythm",
-    "description": "Tank sedang kehabisan sesuatu. Soalannya adalah apa. Panduan ini menerangkan punca paling biasa ikan tercungap-cungap di permukaan dan bagaimana response yang tepat untuk setiap satu.",
-    "ogTitle": "Ikan Tercungap-cungap di Permukaan",
-    "ogDescription": "Tank sedang kehabisan sesuatu. Soalannya adalah apa. Ketahui cara baca isyarat dan bertindak balas dengan tepat."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Tindak Balas Segera",
-    "titleHtml": "Ikan Tercungap-cungap<br><em>di Permukaan</em>",
-    "subtitle": "Tank sedang kehabisan sesuatu. Soalannya adalah apa.",
-    "texts": [
-      "Anda tengok tank dan ikan berada di permukaan, mulut bergerak-gerak. Ada yang terapung tepat di bawah garis air, hampir tidak bergerak. Ada yang berenang normal tapi terus kembali ke atas. Ia nampak mendesak, dan selalunya memang begitu — tapi response yang betul bergantung sepenuhnya kepada apa yang menyebabkannya.",
-      "Panduan ini menerangkan punca paling biasa ikan tercungap-cungap di permukaan, cara membezakan antara mereka menggunakan apa yang boleh anda perhatikan sekarang, dan bagaimana response yang selari kelihatan untuk setiap satu."
+    "_meta": {
+        "slug": "fish-gasping-surface",
+        "lang": "ms",
+        "sourceFile": "articles/fish-gasping-surface.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Ikan Tercungap-cungap di Permukaan — Aquatic Rhythm",
+        "description": "Tank sedang kehabisan sesuatu. Soalannya adalah apa. Panduan ini menerangkan punca paling biasa ikan tercungap-cungap di permukaan dan bagaimana response yang tepat untuk setiap satu.",
+        "ogTitle": "Ikan Tercungap-cungap di Permukaan",
+        "ogDescription": "Tank sedang kehabisan sesuatu. Soalannya adalah apa. Ketahui cara baca isyarat dan bertindak balas dengan tepat."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Tindak Balas Segera",
+        "titleHtml": "Ikan Tercungap-cungap<br><em>di Permukaan</em>",
+        "subtitle": "Tank sedang kehabisan sesuatu. Soalannya adalah apa.",
+        "texts": [
+            "Anda tengok tank dan ikan berada di permukaan, mulut bergerak-gerak. Ada yang terapung tepat di bawah garis air, hampir tidak bergerak. Ada yang berenang normal tapi terus kembali ke atas. Ia nampak mendesak, dan selalunya memang begitu — tapi response yang betul bergantung sepenuhnya kepada apa yang menyebabkannya.",
+            "Panduan ini menerangkan punca paling biasa ikan tercungap-cungap di permukaan, cara membezakan antara mereka menggunakan apa yang boleh anda perhatikan sekarang, dan bagaimana response yang selari kelihatan untuk setiap satu."
+        ],
+        "metaModules": "3 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~5 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Membaca isyarat",
+            "titleHtml": "Membaca<br><em>isyarat.</em>",
+            "body": [
+                "Ikan yang tercungap-cungap di permukaan adalah isyarat kesusahan — ikan sedang cuba mengakses lebih banyak oksigen daripada yang air sediakan sekarang, atau mereka tidak boleh menggunakan oksigen yang ada. Kuncinya adalah bahawa beberapa punca berbeza menghasilkan tingkah laku yang sama, dan merawat yang salah pada yang terbaik tidak membuat apa-apa dan pada yang terburuk mempercepatkan masalah.",
+                "Empat punca paling biasa adalah: oksigen terlarut rendah, karbon dioksida tinggi, keracunan ammonia atau nitrite, dan kerosakan insang (dari penyakit atau parasit). Daripada ini, oksigen terlarut rendah dan ketoksikan CO2 adalah yang paling biasa dalam akuarium rumah. Keracunan ammonia biasanya disertai gejala nampak lain dan pengesahan test kit. Kerosakan insang biasanya disertai tanda penyakit lain — flashing, tampalan putih, atau lendir di badan.",
+                "<strong>Oksigen terlarut rendah</strong> paling mungkin bila: semua spesies dalam tank tercungap-cungap serentak; tank panas (air yang lebih panas memegang kurang oksigen); agitasi permukaan minimum; aliran filter telah perlahan; ia berlaku semalaman atau awal pagi bila fotosintesis pokok berhenti dan pernafasan berterusan. Tindakan: tingkatkan agitasi permukaan serta-merta — alihkan outlet filter untuk pecah permukaan, tambah airstone, atau hidupkan powerhead berhampiran permukaan. Kalau tank pulih dalam 30 minit, pengurangan oksigen adalah punca.",
+                "<strong>CO2 tinggi</strong> paling mungkin bila: ia berlaku pada waktu siang dalam planted tank dengan injeksi CO2; pokok nampak sihat; pH diuji rendah; mematikan injeksi CO2 dan meningkatkan agitasi permukaan membawa penambahbaikan dalam sejam. CO2 yang diinjeksi pada waktu malam atau berlebihan mengasidkan air dan bersaing dengan oksigen di permukaan insang walaupun tahap oksigen secara teknikal mencukupi.",
+                "<strong>Keracunan ammonia/nitrite</strong> — uji serta-merta. Kalau ammonia melebihi 1 ppm atau nitrite boleh dikesan, ini adalah punca. Ikan juga akan menunjukkan insang yang merah atau meradang, pernafasan cepat walaupun berehat, dan mungkin dart atau flashing. Response: water change 25–30% serta-merta."
+            ],
+            "pullQuote": "Permukaan adalah jalan terakhir ikan. Menjelang masa tercungap-cungap nampak, tank telah memberi isyarat untuk beberapa lama dengan cara yang belum mencapai ambang keterlihatan.",
+            "hintLabel": null,
+            "hintText": null,
+            "prevBtn": "← Intro",
+            "nextBtn": "Oksigen, suhu, dan agitasi permukaan"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Oksigen, suhu, dan agitasi permukaan",
+            "titleHtml": "Oksigen, suhu,<br><em>dan agitasi permukaan.</em>",
+            "body": [
+                "Oksigen terlarut memasuki air akuarium hampir sepenuhnya melalui agitasi permukaan — pergerakan air di antara muka udara-air. Permukaan yang tenang dalam tank yang panas adalah tank yang terhad oksigen yang menunggu keadaan yang betul untuk menzahirkannya.",
+                "Beberapa faktor bergabung untuk mengurangkan oksigen terlarut serentak: kenaikan suhu bilik musim panas memanaskan air tank (kelarutan oksigen berkurang apabila suhu meningkat); bloom alga menggunakan oksigen pada waktu malam apabila pernafasan berterusan tanpa fotosintesis; bioload meningkat (lebih banyak ikan, ikan yang lebih besar, lebih banyak bahan organik yang terurai semuanya menggunakan oksigen); aliran filter perlahan akibat penyumbatan separa. Setiap faktor secara individu mungkin tidak menghasilkan tercungap-cungap. Digabungkan, mereka boleh mengurangkan oksigen terlarut di bawah ambang toleransi untuk semua spesies serentak — itulah sebabnya peristiwa tercungap-cungap selalunya kelihatan mengejut dan mengelirukan apabila faktor individu telah hadir selama beberapa minggu.",
+                "Response yang selari bermula sebelum tercungap-cungap: kekalkan pergerakan permukaan aktif, kekalkan filter bersih, elakkan overstocking relatif kepada musim (tank yang ok pada musim sejuk mungkin perlukan bioload yang dikurangkan pada musim panas), dan perhatikan aliran filter yang perlahan sebagai penunjuk awal."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Environmental Rhythm",
+            "hintText": [
+                "Dalam ARA, oksigen terlarut adalah sebahagian daripada Environmental Rhythm — keadaan fizikal berterusan yang tank kekalkan. Peristiwa pengurangan oksigen adalah bacaan: Environmental Rhythm telah drift melebihi toleransi Livestock Rhythm. Peristiwa itu tidak mengejut. Drift itulah yang mengejut."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Response yang selari dan pencegahan"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Response yang selari",
+            "titleHtml": "Response yang selari<br><em>dan pencegahan.</em>",
+            "body": [
+                "Response segera kepada sebarang peristiwa tercungap-cungap: pertama, tingkatkan agitasi permukaan sekarang — alihkan outlet filter, tambah airstone, wujudkan pergerakan air. Ini memberi masa tanpa mengira punca. Kedua, uji ammonia dan nitrite — kalau meningkat, buat water change 25–30% dengan air yang telah dinyahklorin dan sepadan suhu. Ketiga, kalau CO2 diinjeksi, kurangkan atau hentikan injeksi dan tingkatkan agitasi permukaan. Keempat, perhatikan selama 30–60 minit sambil mengekalkan pergerakan permukaan.",
+                "Kalau ikan kembali ke kedalaman dan tingkah laku normal, punca berkaitan oksigen dan anda mempunyai masa untuk menyiasat faktor yang menyumbang. Kalau mereka tidak bertambah baik, atau kalau anda perhatikan kemerahan insang, darting, atau lendir, syaki penyakit dan dapatkan pendapat pakar.",
+                "Pencegahan adalah tentang membaca sistem sebelum ia mencapai ambang tercungap-cungap. Semak aliran filter setiap minggu — filter yang tersumbat sebahagiannya adalah penyumbang senyap yang paling biasa. Pantau suhu tank semasa musim panas. Jangan biarkan agitasi permukaan perlahan tanpa menanganinya. Perhatikan tanda kelebihan CO2 (pH yang crash semalaman dalam tank yang diinjeksi, air yang menguning, ikan berhampiran permukaan khususnya pada waktu pagi sebelum lampu hidup). Peristiwa tercungap-cungap adalah hujung urutan. Penjaga yang selari membaca langkah-langkah lebih awal: aliran yang perlahan, air yang memanas, beban organik yang terkumpul — dan laras sebelum urutan selesai."
+            ],
+            "pullQuote": null,
+            "hintLabel": "ARA · Asal sebelum Ekspresi",
+            "hintText": [
+                "Tercungap-cungap itu adalah ekspresi. Filter yang perlahan, air yang memanas, beban organik yang terkumpul yang menghasilkannya adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: response yang selari bergerak ke belakang dari apa yang ditunjukkan tank kepada apa yang menghasilkannya. Agitasi permukaan membeli masa; mencari dan melaras asalnya mencegah berulangnya."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel2": "ARA · Asal sebelum Ekspresi",
+            "hintText2": [
+                "Gasping adalah ekspresi. Filter yang semakin perlahan, air yang semakin panas, beban organik yang terkumpul yang menghasilkannya adalah asal. Prinsip penjajaran kelima ARA adalah Origin before Expression: tindak balas yang selaras bekerja ke belakang dari apa yang tangki tunjukkan kepada apa yang menghasilkannya. Agitasi permukaan membeli masa; mencari dan melaraskan asal mencegah berulang."
+            ]
+        }
     ],
-    "metaModules": "3 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~5 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Membaca isyarat",
-      "titleHtml": "Membaca<br><em>isyarat.</em>",
-      "body": [
-        "Ikan yang tercungap-cungap di permukaan adalah isyarat kesusahan — ikan sedang cuba mengakses lebih banyak oksigen daripada yang air sediakan sekarang, atau mereka tidak boleh menggunakan oksigen yang ada. Kuncinya adalah bahawa beberapa punca berbeza menghasilkan tingkah laku yang sama, dan merawat yang salah pada yang terbaik tidak membuat apa-apa dan pada yang terburuk mempercepatkan masalah.",
-        "Empat punca paling biasa adalah: oksigen terlarut rendah, karbon dioksida tinggi, keracunan ammonia atau nitrite, dan kerosakan insang (dari penyakit atau parasit). Daripada ini, oksigen terlarut rendah dan ketoksikan CO2 adalah yang paling biasa dalam akuarium rumah. Keracunan ammonia biasanya disertai gejala nampak lain dan pengesahan test kit. Kerosakan insang biasanya disertai tanda penyakit lain — flashing, tampalan putih, atau lendir di badan.",
-        "<strong>Oksigen terlarut rendah</strong> paling mungkin bila: semua spesies dalam tank tercungap-cungap serentak; tank panas (air yang lebih panas memegang kurang oksigen); agitasi permukaan minimum; aliran filter telah perlahan; ia berlaku semalaman atau awal pagi bila fotosintesis pokok berhenti dan pernafasan berterusan. Tindakan: tingkatkan agitasi permukaan serta-merta — alihkan outlet filter untuk pecah permukaan, tambah airstone, atau hidupkan powerhead berhampiran permukaan. Kalau tank pulih dalam 30 minit, pengurangan oksigen adalah punca.",
-        "<strong>CO2 tinggi</strong> paling mungkin bila: ia berlaku pada waktu siang dalam planted tank dengan injeksi CO2; pokok nampak sihat; pH diuji rendah; mematikan injeksi CO2 dan meningkatkan agitasi permukaan membawa penambahbaikan dalam sejam. CO2 yang diinjeksi pada waktu malam atau berlebihan mengasidkan air dan bersaing dengan oksigen di permukaan insang walaupun tahap oksigen secara teknikal mencukupi.",
-        "<strong>Keracunan ammonia/nitrite</strong> — uji serta-merta. Kalau ammonia melebihi 1 ppm atau nitrite boleh dikesan, ini adalah punca. Ikan juga akan menunjukkan insang yang merah atau meradang, pernafasan cepat walaupun berehat, dan mungkin dart atau flashing. Response: water change 25–30% serta-merta."
-      ],
-      "pullQuote": "Permukaan adalah jalan terakhir ikan. Menjelang masa tercungap-cungap nampak, tank telah memberi isyarat untuk beberapa lama dengan cara yang belum mencapai ambang keterlihatan.",
-      "hintLabel": null,
-      "hintText": null,
-      "prevBtn": "← Intro",
-      "nextBtn": "Oksigen, suhu, dan agitasi permukaan"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Oksigen, suhu, dan agitasi permukaan",
-      "titleHtml": "Oksigen, suhu,<br><em>dan agitasi permukaan.</em>",
-      "body": [
-        "Oksigen terlarut memasuki air akuarium hampir sepenuhnya melalui agitasi permukaan — pergerakan air di antara muka udara-air. Permukaan yang tenang dalam tank yang panas adalah tank yang terhad oksigen yang menunggu keadaan yang betul untuk menzahirkannya.",
-        "Beberapa faktor bergabung untuk mengurangkan oksigen terlarut serentak: kenaikan suhu bilik musim panas memanaskan air tank (kelarutan oksigen berkurang apabila suhu meningkat); bloom alga menggunakan oksigen pada waktu malam apabila pernafasan berterusan tanpa fotosintesis; bioload meningkat (lebih banyak ikan, ikan yang lebih besar, lebih banyak bahan organik yang terurai semuanya menggunakan oksigen); aliran filter perlahan akibat penyumbatan separa. Setiap faktor secara individu mungkin tidak menghasilkan tercungap-cungap. Digabungkan, mereka boleh mengurangkan oksigen terlarut di bawah ambang toleransi untuk semua spesies serentak — itulah sebabnya peristiwa tercungap-cungap selalunya kelihatan mengejut dan mengelirukan apabila faktor individu telah hadir selama beberapa minggu.",
-        "Response yang selari bermula sebelum tercungap-cungap: kekalkan pergerakan permukaan aktif, kekalkan filter bersih, elakkan overstocking relatif kepada musim (tank yang ok pada musim sejuk mungkin perlukan bioload yang dikurangkan pada musim panas), dan perhatikan aliran filter yang perlahan sebagai penunjuk awal."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Environmental Rhythm",
-      "hintText": [
-        "Dalam ARA, oksigen terlarut adalah sebahagian daripada Environmental Rhythm — keadaan fizikal berterusan yang tank kekalkan. Peristiwa pengurangan oksigen adalah bacaan: Environmental Rhythm telah drift melebihi toleransi Livestock Rhythm. Peristiwa itu tidak mengejut. Drift itulah yang mengejut."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Response yang selari dan pencegahan"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Response yang selari",
-      "titleHtml": "Response yang selari<br><em>dan pencegahan.</em>",
-      "body": [
-        "Response segera kepada sebarang peristiwa tercungap-cungap: pertama, tingkatkan agitasi permukaan sekarang — alihkan outlet filter, tambah airstone, wujudkan pergerakan air. Ini memberi masa tanpa mengira punca. Kedua, uji ammonia dan nitrite — kalau meningkat, buat water change 25–30% dengan air yang telah dinyahklorin dan sepadan suhu. Ketiga, kalau CO2 diinjeksi, kurangkan atau hentikan injeksi dan tingkatkan agitasi permukaan. Keempat, perhatikan selama 30–60 minit sambil mengekalkan pergerakan permukaan.",
-        "Kalau ikan kembali ke kedalaman dan tingkah laku normal, punca berkaitan oksigen dan anda mempunyai masa untuk menyiasat faktor yang menyumbang. Kalau mereka tidak bertambah baik, atau kalau anda perhatikan kemerahan insang, darting, atau lendir, syaki penyakit dan dapatkan pendapat pakar.",
-        "Pencegahan adalah tentang membaca sistem sebelum ia mencapai ambang tercungap-cungap. Semak aliran filter setiap minggu — filter yang tersumbat sebahagiannya adalah penyumbang senyap yang paling biasa. Pantau suhu tank semasa musim panas. Jangan biarkan agitasi permukaan perlahan tanpa menanganinya. Perhatikan tanda kelebihan CO2 (pH yang crash semalaman dalam tank yang diinjeksi, air yang menguning, ikan berhampiran permukaan khususnya pada waktu pagi sebelum lampu hidup). Peristiwa tercungap-cungap adalah hujung urutan. Penjaga yang selari membaca langkah-langkah lebih awal: aliran yang perlahan, air yang memanas, beban organik yang terkumpul — dan laras sebelum urutan selesai."
-      ],
-      "pullQuote": null,
-      "hintLabel": "ARA · Asal sebelum Ekspresi",
-      "hintText": ["Tercungap-cungap itu adalah ekspresi. Filter yang perlahan, air yang memanas, beban organik yang terkumpul yang menghasilkannya adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: response yang selari bergerak ke belakang dari apa yang ditunjukkan tank kepada apa yang menghasilkannya. Agitasi permukaan membeli masa; mencari dan melaras asalnya mencegah berulangnya."],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/perfect-parameters-fish-dying",
+            "text": "Parameter ok tapi ikan mati →"
+        },
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/articles/aquarium-filter-maintenance",
+            "text": "Filter anda bukan apa yang anda fikir →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/perfect-parameters-fish-dying",
-      "text": "Parameter ok tapi ikan mati →"
-    },
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/articles/aquarium-filter-maintenance",
-      "text": "Filter anda bukan apa yang anda fikir →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }

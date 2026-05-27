@@ -1,124 +1,128 @@
 {
-  "_meta": {
-    "slug": "why-is-my-aquarium-water-cloudy",
-    "lang": "ms",
-    "sourceFile": "articles/why-is-my-aquarium-water-cloudy.html",
-    "status": "ready"
-  },
-  "head": {
-    "title": "Kenapa Air Akuarium Saya Keruh? — Aquatic Rhythm",
-    "description": "Air keruh dalam akuarium adalah salah satu perkara yang paling biasa dalam hobi ini — dan hampir tidak pernah bermakna sesuatu telah silap. Belajar baca apa yang tank anda sebenarnya sedang buat.",
-    "ogTitle": "Kenapa Air Akuarium Saya Keruh?",
-    "ogDescription": "Air keruh adalah salah satu perkara yang paling biasa dalam hobi ini — dan hampir tidak pernah bermakna sesuatu telah silap."
-  },
-  "intro": {
-    "eyebrow": "Bacaan · Air & Kejernihan",
-    "titleHtml": "Kenapa Air Akuarium<br><em>Saya Keruh?</em>",
-    "subtitle": "Ia salah satu perkara yang paling biasa nampak. Dan hampir tidak pernah apa yang ia kelihatan.",
-    "texts": [
-      "Air jadi putih, atau hijau, atau sedikit berkabut. Anda semak semua yang terfikir. Tiada yang kelihatan jelas salah — tapi tank tu nampak tidak kena.",
-      "Panduan ini menerangkan apa yang air keruh sebenarnya isyaratkan, kenapa jenis kekeruhan lebih penting daripada kekeruhan itu sendiri, dan apa response yang tepat apabila ia bukan satu kecemasan."
+    "_meta": {
+        "slug": "why-is-my-aquarium-water-cloudy",
+        "lang": "ms",
+        "sourceFile": "articles/why-is-my-aquarium-water-cloudy.html",
+        "status": "ready"
+    },
+    "head": {
+        "title": "Kenapa Air Akuarium Saya Keruh? — Aquatic Rhythm",
+        "description": "Air keruh dalam akuarium adalah salah satu perkara yang paling biasa dalam hobi ini — dan hampir tidak pernah bermakna sesuatu telah silap. Belajar baca apa yang tank anda sebenarnya sedang buat.",
+        "ogTitle": "Kenapa Air Akuarium Saya Keruh?",
+        "ogDescription": "Air keruh adalah salah satu perkara yang paling biasa dalam hobi ini — dan hampir tidak pernah bermakna sesuatu telah silap."
+    },
+    "intro": {
+        "eyebrow": "Bacaan · Air & Kejernihan",
+        "titleHtml": "Kenapa Air Akuarium<br><em>Saya Keruh?</em>",
+        "subtitle": "Ia salah satu perkara yang paling biasa nampak. Dan hampir tidak pernah apa yang ia kelihatan.",
+        "texts": [
+            "Air jadi putih, atau hijau, atau sedikit berkabut. Anda semak semua yang terfikir. Tiada yang kelihatan jelas salah — tapi tank tu nampak tidak kena.",
+            "Panduan ini menerangkan apa yang air keruh sebenarnya isyaratkan, kenapa jenis kekeruhan lebih penting daripada kekeruhan itu sendiri, dan apa response yang tepat apabila ia bukan satu kecemasan."
+        ],
+        "metaModules": "4 modul",
+        "metaTime": "Semua peringkat",
+        "metaLevel": "~7 minit",
+        "cta": "Mula membaca"
+    },
+    "modules": [
+        {
+            "id": "mod-1",
+            "tag": "Anda tidak bersendirian",
+            "titleHtml": "Air keruh adalah salah satu<br><em>perkara yang paling biasa nampak.</em>",
+            "body": [
+                "Hampir setiap penjaga pernah alami ini. Air berubah warna atau kehilangan kejernihan, selalunya tanpa sebab yang jelas. Ikan kelihatan ok, atau mungkin sedikit tidak kena. Tank tu nampak salah dengan cara yang susah nak cerita.",
+                "Naluri pertama ialah buat sesuatu — water change besar, rawatan, restart. Itu boleh faham. Tapi kekeruhan bukan hukuman. Ia maklumat. Dan soalan pertama bukan \"apa yang saya perlu buat?\" — ia adalah \"jenis keruh apa ini?\"",
+                "Ada tiga jenis kekeruhan utama dalam akuarium, masing-masing dengan punca berbeza dan response yang berbeza:",
+                "<strong>Putih atau susu</strong> — biasanya bacterial bloom. Jenis yang paling biasa dalam tank baru atau tank yang baru kena ganggu. <strong>Hijau</strong> — alga yang terapung dalam air, selalunya sebab terlalu banyak cahaya atau nutrien. <strong>Kuning atau perang</strong> — tannin yang keluar dari kayu hanyut atau daun kering, yang selamat dan semula jadi."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Nota Aquatic Rhythm",
+            "hintText": [
+                "Air keruh adalah salah satu situasi di mana jenis lebih penting daripada ada atau tidak ada. Kekeruhan putih dan kekeruhan hijau adalah dua peristiwa biologi yang berbeza sepenuhnya — dan memerlukan response yang berbeza. Kenal pasti jenis dulu adalah langkah paling penting."
+            ],
+            "prevBtn": "← Intro",
+            "nextBtn": "Apa yang sebenarnya berlaku"
+        },
+        {
+            "id": "mod-2",
+            "tag": "Tiga jenis keruh",
+            "titleHtml": "Air tu tidak kotor.<br><em>Ia sibuk.</em>",
+            "body": [
+                "<strong>Kekeruhan putih atau susu</strong> adalah hampir selalu bacterial bloom — pembiakan pesat bakteria yang terapung bebas. Ia berlaku paling kerap dalam tank baru, tapi juga selepas water change besar, membersihkan filter, menambah substrat baru, atau mana-mana gangguan besar kepada sistem. Bakteria ini tidak berbahaya. Mereka adalah sebahagian daripada biologi yang akhirnya akan menjadikan air jernih dan stabil. Tank sedang bekerja, bukan gagal.",
+                "Dalam istilah ARA, ini adalah isyarat Early Phase — sistem sedang membina dirinya, dan gangguan kecil boleh ada kesan yang nampak. Bacterial bloom biasanya selesai sendiri dalam satu hingga dua minggu jika penjagaan kekal stabil dan tiada tekanan baru ditambah.",
+                "<strong>Kekeruhan hijau</strong> adalah alga — khususnya alga satu sel yang terapung dalam kolom air dan bukan tumbuh di permukaan. Ini adalah isyarat dari Environmental Rhythm: terlalu banyak cahaya, terlalu banyak nutrien, atau kedua-duanya. Ia tidak berbahaya, tapi sistem sedang beritahu anda bahawa sesuatu dalam keadaan latar belakang dah bergerak keluar dari keseimbangan.",
+                "<strong>Kekeruhan kuning atau perang</strong> adalah tannin yang keluar dari kayu hanyut, daun kering, atau substrat tertentu. Ini selamat sepenuhnya. Banyak spesies ikan hidup subur dalam air yang kaya tannin secara semula jadi. Kalau warna tu mengganggu anda, activated carbon boleh buang ia — tapi tiada sebab ekologi untuk bertindak."
+            ],
+            "pullQuote": "Bakteria yang menjadikan air putih adalah biologi yang sama yang akhirnya akan menjaganya jernih. Mereka bukan masalah. Mereka adalah permulaan penyelesaian — nampak seketika sebelum menetap di biofilm tempat mereka sepatutnya berada.",
+            "hintLabel": "Nota Aquatic Rhythm",
+            "hintText": [
+                "Setiap jenis kekeruhan datang dari ecological rhythm yang berbeza yang sedang aktif. Putih adalah biological rhythm. Hijau adalah environmental rhythm. Perang adalah kimia dari bahan dalam tank. Membaca jenisnya adalah cara anda tentukan sama ada perlu bertindak, tunggu, atau cuma perhatikan."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang ARA cadangkan"
+        },
+        {
+            "id": "mod-3",
+            "tag": "Perhatikan dulu sebelum bertindak",
+            "titleHtml": "Baca jenis dulu<br><em>sebelum bertindak.</em>",
+            "body": [
+                "Response paling biasa kepada air keruh adalah water change besar yang segera. Ini terasa produktif — tapi untuk bacterial bloom, ia selalunya memanjangkan kekeruhan dengan membuang bakteria sebelum mereka sempat menetap dan membina. Sistem terganggu lagi, bloom mula semula, dan penjaga jadi lebih cemas.",
+                "ARA menamakan ini sebagai intervention trap: apabila penjagaan menjadi halangan. Naluri untuk bertindak bukan salah — ia adalah rasa prihatin. Tapi dalam kebanyakan situasi kekeruhan, response yang paling tepat adalah kenal pasti jenis dulu, buat satu pelarasan kecil sahaja, kemudian perhatikan selama beberapa hari sebelum buat apa-apa lagi.",
+                "Untuk <strong>kekeruhan putih</strong>: kekalkan pemberian makan sederhana, jangan tambah rawatan atau flocculant, jangan buat water change besar. Kalau anda perlu buat sesuatu, satu water change 15–20% sudah memadai. Kemudian tunggu. Bloom patut hilang dalam satu hingga dua minggu apabila bakteria menjajah permukaan dan berhenti terapung bebas.",
+                "Untuk <strong>kekeruhan hijau</strong>: kurangkan tempoh pencahayaan dua atau tiga jam. Kurangkan sedikit pemberian makan. Jika ada tumbuhan hidup, semak bahawa nutrien tidak berlebihan. Satu pelarasan kecil, kemudian perhatikan selama lima hingga tujuh hari.",
+                "Untuk <strong>kekeruhan kuning atau perang</strong>: tiada tindakan ekologi diperlukan. Activated carbon dalam filter akan buang ia dalam satu atau dua hari jika warnanya tidak dikehendaki. Kalau tak, biarkan sahaja — ia semula jadi."
+            ],
+            "pullQuote": null,
+            "hintLabel": "Prinsip ARA",
+            "hintText": [
+                "Observation before correction adalah salah satu daripada lima prinsip teras ARA. Tidak setiap perubahan yang nampak adalah isyarat untuk campur tangan. Sesetengah adalah peralihan, sesetengah adalah adaptasi, dan sesetengah perlu diperhati sebelum ia boleh dibaca dengan jujur. Air keruh biasanya termasuk dalam kategori ini."
+            ],
+            "hintLabel2": "ARA · Asal sebelum Ekspresi",
+            "hintText2": [
+                "Kekeruhan itu adalah ekspresi. Apa yang menghasilkannya — gangguan kepada biological rhythm, nutrien berlebihan, bahan yang larut — adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: membaca jenis kekeruhan adalah langkah pertama untuk mencari apa yang menghasilkannya. Response yang menangani asalnya mencegah ekspresi daripada berulang."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": "Apa yang perlu dibuat sekarang"
+        },
+        {
+            "id": "mod-4",
+            "tag": "Satu langkah pada satu masa",
+            "titleHtml": "Satu pelarasan kecil.<br><em>Kemudian perhatikan apa yang berlaku.</em>",
+            "body": [
+                "Perkara paling jelas yang ARA tawarkan di sini adalah ini: sebelum anda capai produk atau buat perubahan besar, luangkan satu hari cuma perhatikan. Perhatikan bila kekeruhan bertambah teruk dan bila ia sedikit jernih. Perhatikan bagaimana ikan berkelakuan. Semak parameter sekali — ammonia, nitrite, dan nitrate — untuk tolak kemungkinan masalah kualiti air di sebalik kekeruhan.",
+                "Jika parameter selamat dan ikan berkelakuan normal, anda hampir pasti sedang melihat sesuatu yang akan selesai sendiri. Kekeruhan terasa mendesak, tapi ia biasanya sistem melakukan sesuatu yang memang sentiasa akan ia lakukan.",
+                "Jika kekeruhan berterusan melebihi dua minggu, atau jika ia berlaku serentak dengan tekanan pada ikan atau parameter yang merosot, itu saat untuk lihat lebih teliti. Baca apa lagi yang berubah baru-baru ini — bukan cuma air, tapi ritma penjagaan anda. Adakah ada tempoh penyelenggaraan yang terlepas? Satu gangguan besar? Itulah tempat untuk dilihat.",
+                "Jika anda ingin bantuan membaca apa yang tank anda sedang buat, Rhyssa — AI companion Aquatic Rhythm — boleh bantu anda fikir-fikirkan tanpa tergesa kepada satu jawapan."
+            ],
+            "pullQuote": "Masalah dalam sistem tertutup tidak bermula dengan kesilapan besar. Ia bermula dengan ketidakselarasan rhythm — perlahan, berstruktur, selalunya tidak nampak sehingga ia nampak. Air keruh biasanya adalah sistem yang mengejar sesuatu yang perlahan-lahan bergerak — dan kini seketika menjadi kelihatan.",
+            "hintLabel": "Jika ini tank baru",
+            "hintText": [
+                "Kekeruhan putih dalam tank yang kurang daripada lapan minggu adalah hampir selalu bahagian biasa daripada fasa permulaan biologi. Panduan tentang New Tank Syndrome menerangkan dengan tepat apa yang sedang berlaku dan kenapa bersabar adalah response yang paling tepat dalam tempoh ini."
+            ],
+            "prevBtn": "← Kembali",
+            "nextBtn": null,
+            "hintLabel5": "Jika ini tangki baru",
+            "hintText5": [
+                "Kekeruhan putih dalam tangki yang berusia kurang dari lapan minggu adalah hampir selalu bahagian normal daripada fasa permulaan biologi. Panduan tentang New Tank Syndrome menerangkan dengan tepat apa yang berlaku dan kenapa kesabaran adalah tindak balas yang paling selaras semasa tempoh ini."
+            ]
+        }
     ],
-    "metaModules": "4 modul",
-    "metaTime": "Semua peringkat",
-    "metaLevel": "~7 minit",
-    "cta": "Mula membaca"
-  },
-  "modules": [
-    {
-      "id": "mod-1",
-      "tag": "Anda tidak bersendirian",
-      "titleHtml": "Air keruh adalah salah satu<br><em>perkara yang paling biasa nampak.</em>",
-      "body": [
-        "Hampir setiap penjaga pernah alami ini. Air berubah warna atau kehilangan kejernihan, selalunya tanpa sebab yang jelas. Ikan kelihatan ok, atau mungkin sedikit tidak kena. Tank tu nampak salah dengan cara yang susah nak cerita.",
-        "Naluri pertama ialah buat sesuatu — water change besar, rawatan, restart. Itu boleh faham. Tapi kekeruhan bukan hukuman. Ia maklumat. Dan soalan pertama bukan \"apa yang saya perlu buat?\" — ia adalah \"jenis keruh apa ini?\"",
-        "Ada tiga jenis kekeruhan utama dalam akuarium, masing-masing dengan punca berbeza dan response yang berbeza:",
-        "<strong>Putih atau susu</strong> — biasanya bacterial bloom. Jenis yang paling biasa dalam tank baru atau tank yang baru kena ganggu. <strong>Hijau</strong> — alga yang terapung dalam air, selalunya sebab terlalu banyak cahaya atau nutrien. <strong>Kuning atau perang</strong> — tannin yang keluar dari kayu hanyut atau daun kering, yang selamat dan semula jadi."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Nota Aquatic Rhythm",
-      "hintText": [
-        "Air keruh adalah salah satu situasi di mana jenis lebih penting daripada ada atau tidak ada. Kekeruhan putih dan kekeruhan hijau adalah dua peristiwa biologi yang berbeza sepenuhnya — dan memerlukan response yang berbeza. Kenal pasti jenis dulu adalah langkah paling penting."
-      ],
-      "prevBtn": "← Intro",
-      "nextBtn": "Apa yang sebenarnya berlaku"
-    },
-    {
-      "id": "mod-2",
-      "tag": "Tiga jenis keruh",
-      "titleHtml": "Air tu tidak kotor.<br><em>Ia sibuk.</em>",
-      "body": [
-        "<strong>Kekeruhan putih atau susu</strong> adalah hampir selalu bacterial bloom — pembiakan pesat bakteria yang terapung bebas. Ia berlaku paling kerap dalam tank baru, tapi juga selepas water change besar, membersihkan filter, menambah substrat baru, atau mana-mana gangguan besar kepada sistem. Bakteria ini tidak berbahaya. Mereka adalah sebahagian daripada biologi yang akhirnya akan menjadikan air jernih dan stabil. Tank sedang bekerja, bukan gagal.",
-        "Dalam istilah ARA, ini adalah isyarat Early Phase — sistem sedang membina dirinya, dan gangguan kecil boleh ada kesan yang nampak. Bacterial bloom biasanya selesai sendiri dalam satu hingga dua minggu jika penjagaan kekal stabil dan tiada tekanan baru ditambah.",
-        "<strong>Kekeruhan hijau</strong> adalah alga — khususnya alga satu sel yang terapung dalam kolom air dan bukan tumbuh di permukaan. Ini adalah isyarat dari Environmental Rhythm: terlalu banyak cahaya, terlalu banyak nutrien, atau kedua-duanya. Ia tidak berbahaya, tapi sistem sedang beritahu anda bahawa sesuatu dalam keadaan latar belakang dah bergerak keluar dari keseimbangan.",
-        "<strong>Kekeruhan kuning atau perang</strong> adalah tannin yang keluar dari kayu hanyut, daun kering, atau substrat tertentu. Ini selamat sepenuhnya. Banyak spesies ikan hidup subur dalam air yang kaya tannin secara semula jadi. Kalau warna tu mengganggu anda, activated carbon boleh buang ia — tapi tiada sebab ekologi untuk bertindak."
-      ],
-      "pullQuote": "Bakteria yang menjadikan air putih adalah biologi yang sama yang akhirnya akan menjaganya jernih. Mereka bukan masalah. Mereka adalah permulaan penyelesaian — nampak seketika sebelum menetap di biofilm tempat mereka sepatutnya berada.",
-      "hintLabel": "Nota Aquatic Rhythm",
-      "hintText": [
-        "Setiap jenis kekeruhan datang dari ecological rhythm yang berbeza yang sedang aktif. Putih adalah biological rhythm. Hijau adalah environmental rhythm. Perang adalah kimia dari bahan dalam tank. Membaca jenisnya adalah cara anda tentukan sama ada perlu bertindak, tunggu, atau cuma perhatikan."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang ARA cadangkan"
-    },
-    {
-      "id": "mod-3",
-      "tag": "Perhatikan dulu sebelum bertindak",
-      "titleHtml": "Baca jenis dulu<br><em>sebelum bertindak.</em>",
-      "body": [
-        "Response paling biasa kepada air keruh adalah water change besar yang segera. Ini terasa produktif — tapi untuk bacterial bloom, ia selalunya memanjangkan kekeruhan dengan membuang bakteria sebelum mereka sempat menetap dan membina. Sistem terganggu lagi, bloom mula semula, dan penjaga jadi lebih cemas.",
-        "ARA menamakan ini sebagai intervention trap: apabila penjagaan menjadi halangan. Naluri untuk bertindak bukan salah — ia adalah rasa prihatin. Tapi dalam kebanyakan situasi kekeruhan, response yang paling tepat adalah kenal pasti jenis dulu, buat satu pelarasan kecil sahaja, kemudian perhatikan selama beberapa hari sebelum buat apa-apa lagi.",
-        "Untuk <strong>kekeruhan putih</strong>: kekalkan pemberian makan sederhana, jangan tambah rawatan atau flocculant, jangan buat water change besar. Kalau anda perlu buat sesuatu, satu water change 15–20% sudah memadai. Kemudian tunggu. Bloom patut hilang dalam satu hingga dua minggu apabila bakteria menjajah permukaan dan berhenti terapung bebas.",
-        "Untuk <strong>kekeruhan hijau</strong>: kurangkan tempoh pencahayaan dua atau tiga jam. Kurangkan sedikit pemberian makan. Jika ada tumbuhan hidup, semak bahawa nutrien tidak berlebihan. Satu pelarasan kecil, kemudian perhatikan selama lima hingga tujuh hari.",
-        "Untuk <strong>kekeruhan kuning atau perang</strong>: tiada tindakan ekologi diperlukan. Activated carbon dalam filter akan buang ia dalam satu atau dua hari jika warnanya tidak dikehendaki. Kalau tak, biarkan sahaja — ia semula jadi."
-      ],
-      "pullQuote": null,
-      "hintLabel": "Prinsip ARA",
-      "hintText": [
-        "Observation before correction adalah salah satu daripada lima prinsip teras ARA. Tidak setiap perubahan yang nampak adalah isyarat untuk campur tangan. Sesetengah adalah peralihan, sesetengah adalah adaptasi, dan sesetengah perlu diperhati sebelum ia boleh dibaca dengan jujur. Air keruh biasanya termasuk dalam kategori ini."
-      ],
-      "hintLabel2": "ARA · Asal sebelum Ekspresi",
-      "hintText2": [
-        "Kekeruhan itu adalah ekspresi. Apa yang menghasilkannya — gangguan kepada biological rhythm, nutrien berlebihan, bahan yang larut — adalah asalnya. Prinsip penjajaran kelima ARA ialah Asal sebelum Ekspresi: membaca jenis kekeruhan adalah langkah pertama untuk mencari apa yang menghasilkannya. Response yang menangani asalnya mencegah ekspresi daripada berulang."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": "Apa yang perlu dibuat sekarang"
-    },
-    {
-      "id": "mod-4",
-      "tag": "Satu langkah pada satu masa",
-      "titleHtml": "Satu pelarasan kecil.<br><em>Kemudian perhatikan apa yang berlaku.</em>",
-      "body": [
-        "Perkara paling jelas yang ARA tawarkan di sini adalah ini: sebelum anda capai produk atau buat perubahan besar, luangkan satu hari cuma perhatikan. Perhatikan bila kekeruhan bertambah teruk dan bila ia sedikit jernih. Perhatikan bagaimana ikan berkelakuan. Semak parameter sekali — ammonia, nitrite, dan nitrate — untuk tolak kemungkinan masalah kualiti air di sebalik kekeruhan.",
-        "Jika parameter selamat dan ikan berkelakuan normal, anda hampir pasti sedang melihat sesuatu yang akan selesai sendiri. Kekeruhan terasa mendesak, tapi ia biasanya sistem melakukan sesuatu yang memang sentiasa akan ia lakukan.",
-        "Jika kekeruhan berterusan melebihi dua minggu, atau jika ia berlaku serentak dengan tekanan pada ikan atau parameter yang merosot, itu saat untuk lihat lebih teliti. Baca apa lagi yang berubah baru-baru ini — bukan cuma air, tapi ritma penjagaan anda. Adakah ada tempoh penyelenggaraan yang terlepas? Satu gangguan besar? Itulah tempat untuk dilihat.",
-        "Jika anda ingin bantuan membaca apa yang tank anda sedang buat, Rhyssa — AI companion Aquatic Rhythm — boleh bantu anda fikir-fikirkan tanpa tergesa kepada satu jawapan."
-      ],
-      "pullQuote": "Masalah dalam sistem tertutup tidak bermula dengan kesilapan besar. Ia bermula dengan ketidakselarasan rhythm — perlahan, berstruktur, selalunya tidak nampak sehingga ia nampak. Air keruh biasanya adalah sistem yang mengejar sesuatu yang perlahan-lahan bergerak — dan kini seketika menjadi kelihatan.",
-      "hintLabel": "Jika ini tank baru",
-      "hintText": [
-        "Kekeruhan putih dalam tank yang kurang daripada lapan minggu adalah hampir selalu bahagian biasa daripada fasa permulaan biologi. Panduan tentang New Tank Syndrome menerangkan dengan tepat apa yang sedang berlaku dan kenapa bersabar adalah response yang paling tepat dalam tempoh ini."
-      ],
-      "prevBtn": "← Kembali",
-      "nextBtn": null
+    "relatedLinks": [
+        {
+            "href": "/articles/new-tank-syndrome",
+            "text": "New Tank Syndrome →"
+        },
+        {
+            "href": "/articles/ara-full-framework",
+            "text": "Framework ARA →"
+        },
+        {
+            "href": "/rhyssa",
+            "text": "Tanya Rhyssa →"
+        }
+    ],
+    "footer": {
+        "allArticles": "← Semua artikel",
+        "araLink": "Aquatic Rhythm Alignment"
     }
-  ],
-  "relatedLinks": [
-    {
-      "href": "/articles/new-tank-syndrome",
-      "text": "New Tank Syndrome →"
-    },
-    {
-      "href": "/articles/ara-full-framework",
-      "text": "Framework ARA →"
-    },
-    {
-      "href": "/rhyssa",
-      "text": "Tanya Rhyssa →"
-    }
-  ],
-  "footer": {
-    "allArticles": "← Semua artikel",
-    "araLink": "Aquatic Rhythm Alignment"
-  }
 }
