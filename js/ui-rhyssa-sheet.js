@@ -493,7 +493,13 @@
     var pill = titleGroup.querySelector('.rh-ctx-pill');
     var ctx = getTankContext();
     if (!ctx) { if (pill) pill.remove(); return; }
-    if (!pill) { pill = document.createElement('span'); pill.className = 'rh-ctx-pill'; titleGroup.appendChild(pill); }
+    if (!pill) {
+      pill = document.createElement('span');
+      pill.className = 'rh-ctx-pill';
+      /* Inline styles ensure correct appearance even before CSS loads/caches */
+      pill.style.cssText = 'display:inline-flex;align-items:center;gap:4px;font-size:.48rem;padding:2px 7px;border-radius:20px;background:rgba(61,214,232,.08);border:1px solid rgba(61,214,232,.2);color:rgba(61,214,232,.62);font-family:var(--sans);letter-spacing:.02em;margin-top:.2rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap';
+      titleGroup.appendChild(pill);
+    }
     var parts = [];
     if (ctx.volume) parts.push(ctx.volume + (ctx.unit || 'L'));
     if (ctx.type) parts.push(ctx.type);
