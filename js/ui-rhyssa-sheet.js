@@ -20,13 +20,17 @@
   var inp        = document.getElementById('rh-sheet-inp');
   var sendBtn    = document.getElementById('rh-sheet-send');
   var clsBtn     = document.getElementById('rh-sheet-cls');
-  var clearBtn   = document.getElementById('rh-sheet-clear');
   var welcome    = document.getElementById('rh-sheet-welcome');
   var tabsList   = document.getElementById('rh-tabs-list');
   var tabsNewBtn = document.getElementById('rh-tabs-new');
   var tabsEl     = document.getElementById('rh-tabs');
 
   if (!fab || !sheet) return;
+
+  /* ── Tab strip inline styles (resilient to CSS cache) ── */
+  if (tabsEl) tabsEl.style.cssText = 'display:flex;align-items:center;gap:.4rem;padding:.3rem .85rem .28rem;border-bottom:1px solid rgba(255,255,255,.07);overflow-x:auto;scrollbar-width:none;flex-shrink:0';
+  if (tabsList) tabsList.style.cssText = 'display:flex;gap:.3rem;flex:1;min-width:0;overflow:hidden';
+  if (tabsNewBtn) tabsNewBtn.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;background:none;border:1px solid rgba(255,255,255,.13);border-radius:20px;color:rgba(255,255,255,.4);cursor:pointer;padding:.22rem .55rem;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent';
 
   /* ── Storage — multi-conversation ── */
   function genId() {
@@ -191,15 +195,21 @@
   function renderTabs() {
     if (!tabsList) return;
     var data = initConvs();
+    var isActive;
     tabsList.innerHTML = '';
+    var styleInactive = 'display:inline-flex;align-items:center;gap:.28rem;padding:.22rem .65rem;border-radius:20px;border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.4);cursor:pointer;font-size:.6rem;font-family:var(--sans);white-space:nowrap;max-width:140px;flex-shrink:0;-webkit-tap-highlight-color:transparent;background:rgba(255,255,255,.05)';
+    var styleActive = 'display:inline-flex;align-items:center;gap:.28rem;padding:.22rem .65rem;border-radius:20px;border:1px solid rgba(61,214,232,.28);color:rgba(61,214,232,.85);cursor:pointer;font-size:.6rem;font-family:var(--sans);white-space:nowrap;max-width:140px;flex-shrink:0;-webkit-tap-highlight-color:transparent;background:rgba(61,214,232,.1)';
     data.list.forEach(function (conv) {
+      isActive = conv.id === data.activeId;
       var tab = document.createElement('button');
-      tab.className = 'rh-tab' + (conv.id === data.activeId ? ' rh-tab-active' : '');
+      tab.className = 'rh-tab' + (isActive ? ' rh-tab-active' : '');
       tab.type = 'button';
       tab.setAttribute('role', 'tab');
-      tab.setAttribute('aria-selected', conv.id === data.activeId ? 'true' : 'false');
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      tab.style.cssText = isActive ? styleActive : styleInactive;
       var titleSpan = document.createElement('span');
       titleSpan.className = 'rh-tab-title';
+      titleSpan.style.cssText = 'overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:90px;display:block';
       titleSpan.textContent = conv.title || 'New chat';
       tab.appendChild(titleSpan);
       if (data.list.length > 1) {
@@ -207,6 +217,7 @@
         del.className = 'rh-tab-del';
         del.type = 'button';
         del.setAttribute('aria-label', 'Delete conversation');
+        del.style.cssText = 'background:none;border:none;color:rgba(255,255,255,.28);cursor:pointer;font-size:.85rem;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent';
         del.textContent = '×';
         ;(function (id) {
           del.addEventListener('click', function (e) {
@@ -224,7 +235,6 @@
       }(conv.id));
       tabsList.appendChild(tab);
     });
-    if (tabsEl) tabsEl.style.display = data.list.length > 1 ? '' : 'none';
   }
 
   function switchConv(id) {
@@ -564,20 +574,6 @@
   });
   backdrop.addEventListener('click', closeSheet);
   if (clsBtn) clsBtn.addEventListener('click', closeSheet);
-  if (clearBtn) clearBtn.addEventListener('click', function () {
-    var data = initConvs();
-    for (var i = 0; i < data.list.length; i++) {
-      if (data.list[i].id === data.activeId) {
-        data.list[i].messages = [];
-        data.list[i].title = '';
-        break;
-      }
-    }
-    saveConvs(data);
-    renderTabs();
-    renderThread();
-    if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
-  });
   if (tabsNewBtn) tabsNewBtn.addEventListener('click', newConv);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet();
