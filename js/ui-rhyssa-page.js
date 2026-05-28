@@ -46,14 +46,51 @@
   function cpMdToHTML(raw) {
     var s = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     s = s.replace(/\*\*([\s\S]*?)\*\*/g, '<strong>$1</strong>');
-    s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-    var paras = s.split(/\n{2,}/);
-    if (paras.length > 1) {
-      return paras.filter(function (p) { return p.trim(); }).map(function (p) {
-        return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
-      }).join('');
+    s = s.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+
+    var lines = s.split('\n');
+    var out = [];
+    var inUL = false, inOL = false, inP = false;
+
+    function closeAll() {
+      if (inUL) { out.push('</ul>'); inUL = false; }
+      if (inOL) { out.push('</ol>'); inOL = false; }
+      if (inP)  { out.push('</p>');  inP  = false; }
     }
-    return '<p>' + s.replace(/\n/g, '<br>') + '</p>';
+
+    for (var i = 0; i < lines.length; i++) {
+      var trimmed = lines[i].trim();
+      if (!trimmed) { closeAll(); continue; }
+      if (/^---+$/.test(trimmed)) { closeAll(); out.push('<hr>'); continue; }
+
+      var ulM = trimmed.match(/^[-*]\s+([\s\S]*)/);
+      if (ulM) {
+        if (inP) { out.push('</p>'); inP = false; }
+        if (inOL) { out.push('</ol>'); inOL = false; }
+        if (!inUL) { out.push('<ul>'); inUL = true; }
+        out.push('<li>' + ulM[1] + '</li>');
+        continue;
+      }
+
+      var olM = trimmed.match(/^\d+[.)]\s+([\s\S]*)/);
+      if (olM) {
+        if (inP) { out.push('</p>'); inP = false; }
+        if (inUL) { out.push('</ul>'); inUL = false; }
+        if (!inOL) { out.push('<ol>'); inOL = true; }
+        out.push('<li>' + olM[1] + '</li>');
+        continue;
+      }
+
+      if (inUL) { out.push('</ul>'); inUL = false; }
+      if (inOL) { out.push('</ol>'); inOL = false; }
+      if (!inP) { out.push('<p>'); inP = true; }
+      else { out.push('<br>'); }
+      out.push(trimmed);
+    }
+
+    closeAll();
+    var result = out.join('');
+    return result || '<p>' + s.replace(/\n/g, '<br>') + '</p>';
   }
 
   /* ── Thread rendering ── */
@@ -79,8 +116,43 @@
     }
     wrap.appendChild(who);
     wrap.appendChild(body);
+
+    if (role === 'assistant') {
+      var copyBtn = document.createElement('button');
+      copyBtn.className = 'rh-copy-btn' + (cpIsTouch ? ' rh-copy-visible' : '');
+      copyBtn.setAttribute('aria-label', 'Copy message');
+      copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><rect x="4.5" y="4.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.15"/><path d="M4.5 4.5V2.5A1 1 0 0 1 5.5 1.5h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H9.5" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/></svg>';
+      copyBtn.addEventListener('click', function () {
+        var msgText = (body.innerText || body.textContent || '').trim();
+        function markCopied() {
+          copyBtn.classList.add('copied');
+          copyBtn.setAttribute('aria-label', 'Copied!');
+          setTimeout(function () {
+            copyBtn.classList.remove('copied');
+            copyBtn.setAttribute('aria-label', 'Copy message');
+          }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(msgText).then(markCopied).catch(function () { cpFallbackCopy(msgText); markCopied(); });
+        } else {
+          cpFallbackCopy(msgText); markCopied();
+        }
+      });
+      wrap.appendChild(copyBtn);
+    }
+
     cpThread.appendChild(wrap);
     return body;
+  }
+
+  function cpFallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
   }
 
   function cpShowTyping() {
@@ -133,11 +205,12 @@
     cpStreaming = true;
 
     var msgHistory = s.messages.map(function (m) { return { role: m.role, content: m.content }; });
+    var tankCtx = typeof window.__rhGetTankCtx === 'function' ? window.__rhGetTankCtx() : null;
 
     fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: msgHistory }),
+      body: JSON.stringify({ messages: msgHistory, tankContext: tankCtx }),
     })
     .then(function (res) {
       cpHideTyping();
