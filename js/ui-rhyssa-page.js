@@ -49,6 +49,8 @@
       .replace(/\s*\[opt\][\s\S]*$/, '')
       .trim();
     var s = display.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    /* Markdown links — relative URLs only for security */
+    s = s.replace(/\[([^\]]+)\]\(\s*(\/[^)]*)\s*\)/g, '<a href="$2" style="color:rgba(61,214,232,.85);text-decoration:underline;text-underline-offset:2px">$1</a>');
     s = s.replace(/\*\*([\s\S]*?)\*\*/g, '<strong>$1</strong>');
     s = s.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
 

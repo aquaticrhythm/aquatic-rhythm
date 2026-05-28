@@ -380,7 +380,9 @@ ${ARA_PSYCHOLOGY}
 
 ═══════════════════════════════════════
 ARTICLE REFERENCE — Reading material to recommend to keepers
-Direct keepers with the URL /reading?id=SLUG when they would benefit from deeper reading.
+When an article would help, link it using Markdown format: [Article Title](/reading?id=SLUG)
+Example: [New Tank Syndrome](/reading?id=new-tank-syndrome)
+Use the article title as the link text — never the raw URL path. One or two articles per response maximum.
 ═══════════════════════════════════════
 ${articleRef}`;
 }
