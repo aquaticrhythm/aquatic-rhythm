@@ -7,30 +7,70 @@
 /* ── RHYSSA BOTTOM SHEET ── */
 (function () {
   var WORKER_URL = 'https://api.aquaticrhythm.com/chat';
-  var STORE_KEY  = 'rh_thread';
+  var STORE_KEY  = 'rh_thread';   /* legacy — migration source only */
+  var CONVS_KEY  = 'rh_convs';
   var isStreaming = false;
   var isTouch     = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
 
-  var fab      = document.getElementById('rh-fab');
-  var backdrop = document.getElementById('rh-backdrop');
-  var sheet    = document.getElementById('rh-sheet');
-  var thread   = document.getElementById('rh-sheet-thread');
-  var form     = document.getElementById('rh-sheet-form');
-  var inp      = document.getElementById('rh-sheet-inp');
-  var sendBtn  = document.getElementById('rh-sheet-send');
-  var clsBtn   = document.getElementById('rh-sheet-cls');
-  var clearBtn = document.getElementById('rh-sheet-clear');
-  var welcome  = document.getElementById('rh-sheet-welcome');
+  var fab        = document.getElementById('rh-fab');
+  var backdrop   = document.getElementById('rh-backdrop');
+  var sheet      = document.getElementById('rh-sheet');
+  var thread     = document.getElementById('rh-sheet-thread');
+  var form       = document.getElementById('rh-sheet-form');
+  var inp        = document.getElementById('rh-sheet-inp');
+  var sendBtn    = document.getElementById('rh-sheet-send');
+  var clsBtn     = document.getElementById('rh-sheet-cls');
+  var clearBtn   = document.getElementById('rh-sheet-clear');
+  var welcome    = document.getElementById('rh-sheet-welcome');
+  var tabsList   = document.getElementById('rh-tabs-list');
+  var tabsNewBtn = document.getElementById('rh-tabs-new');
+  var tabsEl     = document.getElementById('rh-tabs');
 
   if (!fab || !sheet) return;
 
-  /* ── Storage ── */
-  function getThread() {
-    try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null') || { messages: [] }; }
-    catch (e) { return { messages: [] }; }
+  /* ── Storage — multi-conversation ── */
+  function genId() {
+    return Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
   }
+
+  function getConvs() {
+    try { return JSON.parse(localStorage.getItem(CONVS_KEY) || 'null') || null; }
+    catch (e) { return null; }
+  }
+
+  function saveConvs(data) {
+    try { localStorage.setItem(CONVS_KEY, JSON.stringify(data)); } catch (e) {}
+  }
+
+  function initConvs() {
+    var data = getConvs();
+    if (data && data.list && data.list.length) return data;
+    /* Migrate from legacy rh_thread on first load */
+    var old = null;
+    try { old = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) {}
+    var id = genId();
+    data = { activeId: id, list: [{ id: id, title: '', messages: (old && old.messages) ? old.messages : [] }] };
+    saveConvs(data);
+    return data;
+  }
+
+  function getThread() {
+    var data = initConvs();
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === data.activeId) return data.list[i];
+    }
+    return data.list[0] || { id: '', title: '', messages: [] };
+  }
+
   function saveThread(s) {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch (e) {}
+    var data = initConvs();
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === data.activeId) {
+        data.list[i].messages = s.messages;
+        saveConvs(data);
+        return;
+      }
+    }
   }
 
   /* ── Date helpers ── */
@@ -47,20 +87,179 @@
 
   /* ── Markdown → HTML (safe) ── */
   function mdToHTML(raw) {
-    var s = raw
+    /* Strip [opt] blocks — options are rendered as interactive buttons */
+    var display = raw
+      .replace(/\[opt\][\s\S]*?\[\/opt\]/g, '')
+      .replace(/\s*\[opt\][\s\S]*$/, '')
+      .trim();
+    var s = display
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
-    /* Bold first: non-greedy so pairs match in order; allow * inside bold text */
     s = s.replace(/\*\*([\s\S]*?)\*\*/g, '<strong>$1</strong>');
-    s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-    var paras = s.split(/\n{2,}/);
-    if (paras.length > 1) {
-      return paras.filter(function (p) { return p.trim(); }).map(function (p) {
-        return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
-      }).join('');
+    s = s.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+
+    var lines = s.split('\n');
+    var out = [];
+    var inUL = false, inOL = false, inP = false;
+
+    function closeAll() {
+      if (inUL) { out.push('</ul>'); inUL = false; }
+      if (inOL) { out.push('</ol>'); inOL = false; }
+      if (inP)  { out.push('</p>');  inP  = false; }
     }
-    return '<p>' + s.replace(/\n/g, '<br>') + '</p>';
+
+    for (var i = 0; i < lines.length; i++) {
+      var trimmed = lines[i].trim();
+      if (!trimmed) { closeAll(); continue; }
+      if (/^---+$/.test(trimmed)) { closeAll(); out.push('<hr>'); continue; }
+
+      var ulM = trimmed.match(/^[-*]\s+([\s\S]*)/);
+      if (ulM) {
+        if (inP) { out.push('</p>'); inP = false; }
+        if (inOL) { out.push('</ol>'); inOL = false; }
+        if (!inUL) { out.push('<ul>'); inUL = true; }
+        out.push('<li>' + ulM[1] + '</li>');
+        continue;
+      }
+
+      var olM = trimmed.match(/^\d+[.)]\s+([\s\S]*)/);
+      if (olM) {
+        if (inP) { out.push('</p>'); inP = false; }
+        if (inUL) { out.push('</ul>'); inUL = false; }
+        if (!inOL) { out.push('<ol>'); inOL = true; }
+        out.push('<li>' + olM[1] + '</li>');
+        continue;
+      }
+
+      if (inUL) { out.push('</ul>'); inUL = false; }
+      if (inOL) { out.push('</ol>'); inOL = false; }
+      if (!inP) { out.push('<p>'); inP = true; }
+      else { out.push('<br>'); }
+      out.push(trimmed);
+    }
+
+    closeAll();
+    var result = out.join('');
+    return result || '<p>' + display.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') + '</p>';
+  }
+
+  /* ── Interactive option buttons ── */
+  function extractOptions(raw) {
+    var opts = [];
+    var re = /\[opt\]([\s\S]*?)\[\/opt\]/g;
+    var m;
+    while ((m = re.exec(raw)) !== null) {
+      var t = m[1].trim();
+      if (t) opts.push(t);
+    }
+    return opts.slice(0, 4);
+  }
+
+  function addOptionButtons(wrap, options, onPick) {
+    if (!options || !options.length) return;
+    var group = document.createElement('div');
+    group.className = 'rh-opt-group';
+    options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.className = 'rh-opt-btn';
+      btn.type = 'button';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () {
+        group.remove();
+        onPick(opt);
+      });
+      group.appendChild(btn);
+    });
+    var writeBtn = document.createElement('button');
+    writeBtn.className = 'rh-opt-btn rh-opt-write';
+    writeBtn.type = 'button';
+    writeBtn.textContent = 'Write my own…';
+    writeBtn.addEventListener('click', function () {
+      group.remove();
+      if (inp) inp.focus();
+    });
+    group.appendChild(writeBtn);
+    wrap.appendChild(group);
+  }
+
+  /* ── Tab management ── */
+  function renderTabs() {
+    if (!tabsList) return;
+    var data = initConvs();
+    tabsList.innerHTML = '';
+    data.list.forEach(function (conv) {
+      var tab = document.createElement('button');
+      tab.className = 'rh-tab' + (conv.id === data.activeId ? ' rh-tab-active' : '');
+      tab.type = 'button';
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', conv.id === data.activeId ? 'true' : 'false');
+      var titleSpan = document.createElement('span');
+      titleSpan.className = 'rh-tab-title';
+      titleSpan.textContent = conv.title || 'New chat';
+      tab.appendChild(titleSpan);
+      if (data.list.length > 1) {
+        var del = document.createElement('button');
+        del.className = 'rh-tab-del';
+        del.type = 'button';
+        del.setAttribute('aria-label', 'Delete conversation');
+        del.textContent = '×';
+        ;(function (id) {
+          del.addEventListener('click', function (e) {
+            e.stopPropagation();
+            deleteConv(id);
+          });
+        }(conv.id));
+        tab.appendChild(del);
+      }
+      ;(function (id) {
+        tab.addEventListener('click', function () {
+          var cur = getConvs();
+          if (cur && id !== cur.activeId) switchConv(id);
+        });
+      }(conv.id));
+      tabsList.appendChild(tab);
+    });
+    if (tabsEl) tabsEl.style.display = data.list.length > 1 ? '' : 'none';
+  }
+
+  function switchConv(id) {
+    var data = initConvs();
+    data.activeId = id;
+    saveConvs(data);
+    renderTabs();
+    renderThread();
+  }
+
+  function newConv() {
+    var data = initConvs();
+    var id = genId();
+    data.list.push({ id: id, title: '', messages: [] });
+    data.activeId = id;
+    saveConvs(data);
+    renderTabs();
+    renderThread();
+    if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
+  }
+
+  function deleteConv(id) {
+    var data = initConvs();
+    var idx = -1;
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === id) { idx = i; break; }
+    }
+    if (idx === -1) return;
+    data.list.splice(idx, 1);
+    if (!data.list.length) {
+      var newId = genId();
+      data.list.push({ id: newId, title: '', messages: [] });
+      data.activeId = newId;
+    } else if (data.activeId === id) {
+      data.activeId = data.list[Math.min(idx, data.list.length - 1)].id;
+    }
+    saveConvs(data);
+    renderTabs();
+    renderThread();
   }
 
   /* ── Render full thread from storage ── */
@@ -136,8 +335,43 @@
     }
     wrap.appendChild(who);
     wrap.appendChild(body);
+
+    if (role === 'assistant') {
+      var copyBtn = document.createElement('button');
+      copyBtn.className = 'rh-copy-btn' + (isTouch ? ' rh-copy-visible' : '');
+      copyBtn.setAttribute('aria-label', 'Copy message');
+      copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><rect x="4.5" y="4.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.15"/><path d="M4.5 4.5V2.5A1 1 0 0 1 5.5 1.5h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H9.5" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/></svg>';
+      copyBtn.addEventListener('click', function () {
+        var msgText = (body.innerText || body.textContent || '').trim();
+        function markCopied() {
+          copyBtn.classList.add('copied');
+          copyBtn.setAttribute('aria-label', 'Copied!');
+          setTimeout(function () {
+            copyBtn.classList.remove('copied');
+            copyBtn.setAttribute('aria-label', 'Copy message');
+          }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(msgText).then(markCopied).catch(function () { fallbackCopy(msgText); markCopied(); });
+        } else {
+          fallbackCopy(msgText); markCopied();
+        }
+      });
+      wrap.appendChild(copyBtn);
+    }
+
     thread.appendChild(wrap);
     return body;
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
   }
 
   function showTyping() {
@@ -244,11 +478,6 @@
   }
 
   /* ── Visual Viewport fit (Android Chrome address bar fix, mobile only) ── */
-  /* ── Visual Viewport fit — keeps sheet inside visible area on mobile ──
-     top:0 is correct — Chrome's layout viewport already starts below the
-     URL bar (innerHeight excludes it). We only need to fix height so the
-     sheet shrinks above the keyboard. bottom:auto releases the CSS
-     inset:0 bottom:0 constraint so the explicit height can take effect. */
   function fitSheet() {
     if (!window.visualViewport || window.innerWidth >= 721) return;
     sheet.style.top    = '0px';
@@ -258,6 +487,19 @@
   }
 
   /* ── Open / close ── */
+  function updateCtxPill() {
+    var titleGroup = document.querySelector('.rh-sheet-title-group');
+    if (!titleGroup) return;
+    var pill = titleGroup.querySelector('.rh-ctx-pill');
+    var ctx = getTankContext();
+    if (!ctx) { if (pill) pill.remove(); return; }
+    if (!pill) { pill = document.createElement('span'); pill.className = 'rh-ctx-pill'; titleGroup.appendChild(pill); }
+    var parts = [];
+    if (ctx.volume) parts.push(ctx.volume + (ctx.unit || 'L'));
+    if (ctx.type) parts.push(ctx.type);
+    pill.textContent = parts.join(' ') || 'Tank connected';
+  }
+
   function openSheet() {
     sheet.classList.add('open');
     sheet.removeAttribute('aria-hidden');
@@ -269,6 +511,8 @@
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', fitSheet);
     }
+    updateCtxPill();
+    renderTabs();
     renderThread();
     setTimeout(function () { if (inp) inp.focus(); }, 80);
   }
@@ -292,6 +536,7 @@
 
   window.__rhOpenSheet  = openSheet;
   window.__rhCloseSheet = closeSheet;
+  window.__rhGetTankCtx = getTankContext;
   window.__rhOpenWith   = function (msg) {
     openSheet();
     setTimeout(function () {
@@ -310,10 +555,20 @@
   backdrop.addEventListener('click', closeSheet);
   if (clsBtn) clsBtn.addEventListener('click', closeSheet);
   if (clearBtn) clearBtn.addEventListener('click', function () {
-    saveThread({ messages: [] });
+    var data = initConvs();
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === data.activeId) {
+        data.list[i].messages = [];
+        data.list[i].title = '';
+        break;
+      }
+    }
+    saveConvs(data);
+    renderTabs();
     renderThread();
     if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
   });
+  if (tabsNewBtn) tabsNewBtn.addEventListener('click', newConv);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet();
   });
@@ -354,7 +609,7 @@
   });
 
 
-  var _lastUserObs = ''; // stores observation text to offer logging after Rhyssa responds
+  var _lastUserObs = '';
 
   function isObservationLike(text) {
     if (!text || text.length < 20) return false;
@@ -483,6 +738,19 @@
     s.messages.push({ role: 'user', content: text, ts: now });
     saveThread(s);
 
+    /* Auto-title on first user message */
+    if (!prevLen) {
+      var convData = initConvs();
+      for (var ci = 0; ci < convData.list.length; ci++) {
+        if (convData.list[ci].id === convData.activeId && !convData.list[ci].title) {
+          convData.list[ci].title = text.slice(0, 28) + (text.length > 28 ? '…' : '');
+          saveConvs(convData);
+          renderTabs();
+          break;
+        }
+      }
+    }
+
     /* Date separator if day changed or first message */
     if (prevLen === 0 || dayKey((s.messages[prevLen - 1] || {}).ts || 0) !== dayKey(now)) {
       appendSep(now);
@@ -547,13 +815,20 @@
               responseText = 'Something went wrong — please try again in a moment.';
               p.innerHTML = mdToHTML(responseText);
             }
+            /* Strip [opt] markers before saving to history */
+            var cleanResponse = responseText.replace(/\[opt\][\s\S]*?\[\/opt\]/g, '').trim() || responseText;
             var s2 = getThread();
-            s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
+            s2.messages.push({ role: 'assistant', content: cleanResponse, ts: replyTs });
             saveThread(s2);
             /* Offer to log the user's observation if the message looks like one */
             if (_lastUserObs && getTankContext()) {
               showLogOffer(_lastUserObs, p.parentNode);
               _lastUserObs = '';
+            }
+            /* Render interactive option buttons if Rhyssa included choices */
+            var opts = extractOptions(responseText);
+            if (opts.length) {
+              addOptionButtons(p.parentNode, opts, function (chosen) { sendMsg(chosen); });
             }
             sendBtn.disabled = false;
             isStreaming = false;

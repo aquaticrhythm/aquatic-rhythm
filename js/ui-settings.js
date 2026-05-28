@@ -212,6 +212,7 @@
       if (!confirm('Clear Rhyssa conversation history?')) return;
       localStorage.removeItem('rh_thread');
       localStorage.removeItem('rh_thread_companion');
+      localStorage.removeItem('rh_convs');
     });
   }
 

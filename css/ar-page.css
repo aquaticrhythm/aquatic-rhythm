@@ -124,6 +124,33 @@ details.lang-sw[open]>summary::after{content:'▴'}
 .rh-bubble-body p+p{margin-top:.6rem}
 .rh-bubble-body strong{font-weight:600;color:rgba(255,255,255,.96)}
 .rh-bubble-body em{font-style:italic;opacity:.88}
+.rh-bubble-body ul,.rh-bubble-body ol{margin:.35rem 0 .35rem 1.1rem;padding:0}
+.rh-bubble-body li{font-size:.9rem;line-height:1.65;margin-bottom:.18rem;color:rgba(235,240,236,.88)}
+.rh-bubble-rh .rh-bubble-body li{color:rgba(235,240,236,.85)}
+.rh-bubble-body hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin:.55rem 0}
+.rh-copy-btn{display:none;background:none;border:none;padding:3px 6px;border-radius:6px;color:rgba(255,255,255,.28);cursor:pointer;font-size:.65rem;font-family:var(--sans);letter-spacing:.02em;align-items:center;gap:3px;transition:color .15s,background .15s;margin-top:.3rem;align-self:flex-start;-webkit-tap-highlight-color:transparent}
+.rh-copy-visible{display:inline-flex!important}
+.rh-bubble-rh:hover .rh-copy-btn{display:inline-flex}
+.rh-copy-btn:hover{color:rgba(61,214,232,.8);background:rgba(61,214,232,.1)}
+.rh-copy-btn.copied{color:rgba(61,214,232,.95)}
+.rh-ctx-pill{display:inline-flex;align-items:center;gap:4px;font-size:.48rem;padding:2px 7px;border-radius:20px;background:rgba(61,214,232,.08);border:1px solid rgba(61,214,232,.2);color:rgba(61,214,232,.62);font-family:var(--sans);letter-spacing:.02em;margin-top:.14rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rh-ctx-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:rgba(61,214,232,.55);flex-shrink:0}
+.rh-opt-group{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.rh-opt-btn{font-size:.65rem;padding:.32rem .75rem;background:rgba(61,214,232,.07);border:1px solid rgba(61,214,232,.22);border-radius:20px;color:rgba(235,240,236,.82);cursor:pointer;font-family:var(--sans);letter-spacing:.01em;transition:background .15s,border-color .15s,color .15s;-webkit-tap-highlight-color:transparent;text-align:left;line-height:1.4}
+.rh-opt-btn:hover{background:rgba(61,214,232,.14);border-color:rgba(61,214,232,.45);color:rgba(235,240,236,.95)}
+.rh-opt-write{background:none;border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.35);font-style:italic}
+.rh-opt-write:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.55)}
+.rh-tabs{display:flex;align-items:center;gap:.4rem;padding:.3rem .85rem .25rem;border-bottom:1px solid rgba(255,255,255,.07);overflow-x:auto;scrollbar-width:none;flex-shrink:0}
+.rh-tabs::-webkit-scrollbar{display:none}
+.rh-tabs-list{display:flex;gap:.3rem;flex:1;min-width:0}
+.rh-tab{display:inline-flex;align-items:center;gap:.28rem;padding:.22rem .65rem;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.4);cursor:pointer;font-size:.6rem;font-family:var(--sans);white-space:nowrap;max-width:140px;transition:background .15s,color .15s,border-color .15s;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.rh-tab:hover{background:rgba(255,255,255,.09);color:rgba(255,255,255,.7)}
+.rh-tab.rh-tab-active{background:rgba(61,214,232,.1);border-color:rgba(61,214,232,.28);color:rgba(61,214,232,.85)}
+.rh-tab-title{overflow:hidden;text-overflow:ellipsis;max-width:100px}
+.rh-tab-del{background:none;border:none;color:rgba(255,255,255,.28);cursor:pointer;font-size:.75rem;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent;transition:color .12s}
+.rh-tab-del:hover{color:rgba(220,80,80,.75)}
+.rh-tabs-new{display:inline-flex;align-items:center;justify-content:center;background:none;border:1px solid rgba(255,255,255,.11);border-radius:20px;color:rgba(255,255,255,.38);cursor:pointer;padding:.22rem .55rem;line-height:1;flex-shrink:0;transition:border-color .15s,color .15s;-webkit-tap-highlight-color:transparent}
+.rh-tabs-new:hover{border-color:rgba(61,214,232,.35);color:rgba(61,214,232,.72)}
 .rh-sheet-thread .rh-typing{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.65rem 1rem}
 .rh-typing{display:flex;gap:.32rem;align-items:center;padding:.35rem 0 .1rem .05rem}
 .rh-typing span{width:5px;height:5px;border-radius:50%;background:rgba(61,214,232,.45);animation:rh-pulse 1.2s ease-in-out infinite}
