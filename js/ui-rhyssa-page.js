@@ -44,7 +44,11 @@
 
   /* ── Markdown → HTML ── */
   function cpMdToHTML(raw) {
-    var s = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    var display = raw
+      .replace(/\[opt\][\s\S]*?\[\/opt\]/g, '')
+      .replace(/\s*\[opt\][\s\S]*$/, '')
+      .trim();
+    var s = display.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     s = s.replace(/\*\*([\s\S]*?)\*\*/g, '<strong>$1</strong>');
     s = s.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
 
@@ -90,7 +94,46 @@
 
     closeAll();
     var result = out.join('');
-    return result || '<p>' + s.replace(/\n/g, '<br>') + '</p>';
+    return result || '<p>' + display.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') + '</p>';
+  }
+
+  /* ── Interactive option buttons ── */
+  function cpExtractOptions(raw) {
+    var opts = [];
+    var re = /\[opt\]([\s\S]*?)\[\/opt\]/g;
+    var m;
+    while ((m = re.exec(raw)) !== null) {
+      var t = m[1].trim();
+      if (t) opts.push(t);
+    }
+    return opts.slice(0, 4);
+  }
+
+  function cpAddOptionButtons(wrap, options, onPick) {
+    if (!options || !options.length) return;
+    var group = document.createElement('div');
+    group.className = 'rh-opt-group';
+    options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.className = 'rh-opt-btn';
+      btn.type = 'button';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () {
+        group.remove();
+        onPick(opt);
+      });
+      group.appendChild(btn);
+    });
+    var writeBtn = document.createElement('button');
+    writeBtn.className = 'rh-opt-btn rh-opt-write';
+    writeBtn.type = 'button';
+    writeBtn.textContent = 'Write my own…';
+    writeBtn.addEventListener('click', function () {
+      group.remove();
+      if (cpInp) cpInp.focus();
+    });
+    group.appendChild(writeBtn);
+    wrap.appendChild(group);
   }
 
   /* ── Thread rendering ── */
@@ -249,9 +292,14 @@
               responseText = 'Something went wrong — please try again in a moment.';
               p.innerHTML = cpMdToHTML(responseText);
             }
+            var cleanResponse = responseText.replace(/\[opt\][\s\S]*?\[\/opt\]/g, '').trim() || responseText;
             var s2 = cpGetThread();
-            s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
+            s2.messages.push({ role: 'assistant', content: cleanResponse, ts: replyTs });
             cpSaveThread(s2);
+            var cpOpts = cpExtractOptions(responseText);
+            if (cpOpts.length) {
+              cpAddOptionButtons(p.parentNode, cpOpts, function (chosen) { cpSendMsg(chosen); });
+            }
             if (cpSendBtn) cpSendBtn.disabled = false;
             cpStreaming = false;
             if (cpInp) cpInp.focus();

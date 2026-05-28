@@ -7,30 +7,70 @@
 /* ── RHYSSA BOTTOM SHEET ── */
 (function () {
   var WORKER_URL = 'https://api.aquaticrhythm.com/chat';
-  var STORE_KEY  = 'rh_thread';
+  var STORE_KEY  = 'rh_thread';   /* legacy — migration source only */
+  var CONVS_KEY  = 'rh_convs';
   var isStreaming = false;
   var isTouch     = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
 
-  var fab      = document.getElementById('rh-fab');
-  var backdrop = document.getElementById('rh-backdrop');
-  var sheet    = document.getElementById('rh-sheet');
-  var thread   = document.getElementById('rh-sheet-thread');
-  var form     = document.getElementById('rh-sheet-form');
-  var inp      = document.getElementById('rh-sheet-inp');
-  var sendBtn  = document.getElementById('rh-sheet-send');
-  var clsBtn   = document.getElementById('rh-sheet-cls');
-  var clearBtn = document.getElementById('rh-sheet-clear');
-  var welcome  = document.getElementById('rh-sheet-welcome');
+  var fab        = document.getElementById('rh-fab');
+  var backdrop   = document.getElementById('rh-backdrop');
+  var sheet      = document.getElementById('rh-sheet');
+  var thread     = document.getElementById('rh-sheet-thread');
+  var form       = document.getElementById('rh-sheet-form');
+  var inp        = document.getElementById('rh-sheet-inp');
+  var sendBtn    = document.getElementById('rh-sheet-send');
+  var clsBtn     = document.getElementById('rh-sheet-cls');
+  var clearBtn   = document.getElementById('rh-sheet-clear');
+  var welcome    = document.getElementById('rh-sheet-welcome');
+  var tabsList   = document.getElementById('rh-tabs-list');
+  var tabsNewBtn = document.getElementById('rh-tabs-new');
+  var tabsEl     = document.getElementById('rh-tabs');
 
   if (!fab || !sheet) return;
 
-  /* ── Storage ── */
-  function getThread() {
-    try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null') || { messages: [] }; }
-    catch (e) { return { messages: [] }; }
+  /* ── Storage — multi-conversation ── */
+  function genId() {
+    return Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
   }
+
+  function getConvs() {
+    try { return JSON.parse(localStorage.getItem(CONVS_KEY) || 'null') || null; }
+    catch (e) { return null; }
+  }
+
+  function saveConvs(data) {
+    try { localStorage.setItem(CONVS_KEY, JSON.stringify(data)); } catch (e) {}
+  }
+
+  function initConvs() {
+    var data = getConvs();
+    if (data && data.list && data.list.length) return data;
+    /* Migrate from legacy rh_thread on first load */
+    var old = null;
+    try { old = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) {}
+    var id = genId();
+    data = { activeId: id, list: [{ id: id, title: '', messages: (old && old.messages) ? old.messages : [] }] };
+    saveConvs(data);
+    return data;
+  }
+
+  function getThread() {
+    var data = initConvs();
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === data.activeId) return data.list[i];
+    }
+    return data.list[0] || { id: '', title: '', messages: [] };
+  }
+
   function saveThread(s) {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch (e) {}
+    var data = initConvs();
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === data.activeId) {
+        data.list[i].messages = s.messages;
+        saveConvs(data);
+        return;
+      }
+    }
   }
 
   /* ── Date helpers ── */
@@ -47,7 +87,12 @@
 
   /* ── Markdown → HTML (safe) ── */
   function mdToHTML(raw) {
-    var s = raw
+    /* Strip [opt] blocks — options are rendered as interactive buttons */
+    var display = raw
+      .replace(/\[opt\][\s\S]*?\[\/opt\]/g, '')
+      .replace(/\s*\[opt\][\s\S]*$/, '')
+      .trim();
+    var s = display
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
@@ -96,7 +141,125 @@
 
     closeAll();
     var result = out.join('');
-    return result || '<p>' + s.replace(/\n/g, '<br>') + '</p>';
+    return result || '<p>' + display.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') + '</p>';
+  }
+
+  /* ── Interactive option buttons ── */
+  function extractOptions(raw) {
+    var opts = [];
+    var re = /\[opt\]([\s\S]*?)\[\/opt\]/g;
+    var m;
+    while ((m = re.exec(raw)) !== null) {
+      var t = m[1].trim();
+      if (t) opts.push(t);
+    }
+    return opts.slice(0, 4);
+  }
+
+  function addOptionButtons(wrap, options, onPick) {
+    if (!options || !options.length) return;
+    var group = document.createElement('div');
+    group.className = 'rh-opt-group';
+    options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.className = 'rh-opt-btn';
+      btn.type = 'button';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () {
+        group.remove();
+        onPick(opt);
+      });
+      group.appendChild(btn);
+    });
+    var writeBtn = document.createElement('button');
+    writeBtn.className = 'rh-opt-btn rh-opt-write';
+    writeBtn.type = 'button';
+    writeBtn.textContent = 'Write my own…';
+    writeBtn.addEventListener('click', function () {
+      group.remove();
+      if (inp) inp.focus();
+    });
+    group.appendChild(writeBtn);
+    wrap.appendChild(group);
+  }
+
+  /* ── Tab management ── */
+  function renderTabs() {
+    if (!tabsList) return;
+    var data = initConvs();
+    tabsList.innerHTML = '';
+    data.list.forEach(function (conv) {
+      var tab = document.createElement('button');
+      tab.className = 'rh-tab' + (conv.id === data.activeId ? ' rh-tab-active' : '');
+      tab.type = 'button';
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', conv.id === data.activeId ? 'true' : 'false');
+      var titleSpan = document.createElement('span');
+      titleSpan.className = 'rh-tab-title';
+      titleSpan.textContent = conv.title || 'New chat';
+      tab.appendChild(titleSpan);
+      if (data.list.length > 1) {
+        var del = document.createElement('button');
+        del.className = 'rh-tab-del';
+        del.type = 'button';
+        del.setAttribute('aria-label', 'Delete conversation');
+        del.textContent = '×';
+        ;(function (id) {
+          del.addEventListener('click', function (e) {
+            e.stopPropagation();
+            deleteConv(id);
+          });
+        }(conv.id));
+        tab.appendChild(del);
+      }
+      ;(function (id) {
+        tab.addEventListener('click', function () {
+          var cur = getConvs();
+          if (cur && id !== cur.activeId) switchConv(id);
+        });
+      }(conv.id));
+      tabsList.appendChild(tab);
+    });
+    if (tabsEl) tabsEl.style.display = data.list.length > 1 ? '' : 'none';
+  }
+
+  function switchConv(id) {
+    var data = initConvs();
+    data.activeId = id;
+    saveConvs(data);
+    renderTabs();
+    renderThread();
+  }
+
+  function newConv() {
+    var data = initConvs();
+    var id = genId();
+    data.list.push({ id: id, title: '', messages: [] });
+    data.activeId = id;
+    saveConvs(data);
+    renderTabs();
+    renderThread();
+    if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
+  }
+
+  function deleteConv(id) {
+    var data = initConvs();
+    var idx = -1;
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === id) { idx = i; break; }
+    }
+    if (idx === -1) return;
+    data.list.splice(idx, 1);
+    if (!data.list.length) {
+      var newId = genId();
+      data.list.push({ id: newId, title: '', messages: [] });
+      data.activeId = newId;
+    } else if (data.activeId === id) {
+      data.activeId = data.list[Math.min(idx, data.list.length - 1)].id;
+    }
+    saveConvs(data);
+    renderTabs();
+    renderThread();
   }
 
   /* ── Render full thread from storage ── */
@@ -315,11 +478,6 @@
   }
 
   /* ── Visual Viewport fit (Android Chrome address bar fix, mobile only) ── */
-  /* ── Visual Viewport fit — keeps sheet inside visible area on mobile ──
-     top:0 is correct — Chrome's layout viewport already starts below the
-     URL bar (innerHeight excludes it). We only need to fix height so the
-     sheet shrinks above the keyboard. bottom:auto releases the CSS
-     inset:0 bottom:0 constraint so the explicit height can take effect. */
   function fitSheet() {
     if (!window.visualViewport || window.innerWidth >= 721) return;
     sheet.style.top    = '0px';
@@ -354,6 +512,7 @@
       window.visualViewport.addEventListener('resize', fitSheet);
     }
     updateCtxPill();
+    renderTabs();
     renderThread();
     setTimeout(function () { if (inp) inp.focus(); }, 80);
   }
@@ -396,10 +555,20 @@
   backdrop.addEventListener('click', closeSheet);
   if (clsBtn) clsBtn.addEventListener('click', closeSheet);
   if (clearBtn) clearBtn.addEventListener('click', function () {
-    saveThread({ messages: [] });
+    var data = initConvs();
+    for (var i = 0; i < data.list.length; i++) {
+      if (data.list[i].id === data.activeId) {
+        data.list[i].messages = [];
+        data.list[i].title = '';
+        break;
+      }
+    }
+    saveConvs(data);
+    renderTabs();
     renderThread();
     if (inp) { inp.value = ''; inp.style.height = 'auto'; inp.focus(); }
   });
+  if (tabsNewBtn) tabsNewBtn.addEventListener('click', newConv);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet();
   });
@@ -440,7 +609,7 @@
   });
 
 
-  var _lastUserObs = ''; // stores observation text to offer logging after Rhyssa responds
+  var _lastUserObs = '';
 
   function isObservationLike(text) {
     if (!text || text.length < 20) return false;
@@ -569,6 +738,19 @@
     s.messages.push({ role: 'user', content: text, ts: now });
     saveThread(s);
 
+    /* Auto-title on first user message */
+    if (!prevLen) {
+      var convData = initConvs();
+      for (var ci = 0; ci < convData.list.length; ci++) {
+        if (convData.list[ci].id === convData.activeId && !convData.list[ci].title) {
+          convData.list[ci].title = text.slice(0, 28) + (text.length > 28 ? '…' : '');
+          saveConvs(convData);
+          renderTabs();
+          break;
+        }
+      }
+    }
+
     /* Date separator if day changed or first message */
     if (prevLen === 0 || dayKey((s.messages[prevLen - 1] || {}).ts || 0) !== dayKey(now)) {
       appendSep(now);
@@ -633,13 +815,20 @@
               responseText = 'Something went wrong — please try again in a moment.';
               p.innerHTML = mdToHTML(responseText);
             }
+            /* Strip [opt] markers before saving to history */
+            var cleanResponse = responseText.replace(/\[opt\][\s\S]*?\[\/opt\]/g, '').trim() || responseText;
             var s2 = getThread();
-            s2.messages.push({ role: 'assistant', content: responseText, ts: replyTs });
+            s2.messages.push({ role: 'assistant', content: cleanResponse, ts: replyTs });
             saveThread(s2);
             /* Offer to log the user's observation if the message looks like one */
             if (_lastUserObs && getTankContext()) {
               showLogOffer(_lastUserObs, p.parentNode);
               _lastUserObs = '';
+            }
+            /* Render interactive option buttons if Rhyssa included choices */
+            var opts = extractOptions(responseText);
+            if (opts.length) {
+              addOptionButtons(p.parentNode, opts, function (chosen) { sendMsg(chosen); });
             }
             sendBtn.disabled = false;
             isStreaming = false;
