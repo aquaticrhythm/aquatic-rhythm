@@ -73,7 +73,12 @@
     /* ── 1. IDLE EDGE-COLLAPSE ─────────────────────────────────────── */
     var idleTimer = null;
 
+    function isToolPage() {
+      return document.body.getAttribute('data-active-page') === 'tools';
+    }
+
     function armIdle() {
+      if (!isToolPage()) return;
       clearTimeout(idleTimer);
       idleTimer = setTimeout(function () {
         if (!fab.classList.contains('active') && !dragging) {
@@ -88,6 +93,11 @@
       fab.classList.remove('idle');
       fab.removeAttribute('data-side');
     }
+
+    /* Watch for SPA page changes — cancel idle when leaving tools page */
+    new MutationObserver(function () {
+      if (!isToolPage()) cancelIdle();
+    }).observe(document.body, { attributes: true, attributeFilter: ['data-active-page'] });
 
     fab.addEventListener('pointerenter', cancelIdle);
     fab.addEventListener('pointerleave', armIdle);
@@ -165,10 +175,11 @@
         if (saved && saved.side) {
           currentSide = saved.side;
           applyPos(saved.side, clamp(saved.bottom));
-          /* Restore idle state immediately — don't wait 4s after page load */
-          clearTimeout(idleTimer);
-          fab.dataset.side = currentSide;
-          fab.classList.add('idle');
+          if (isToolPage()) {
+            clearTimeout(idleTimer);
+            fab.dataset.side = currentSide;
+            fab.classList.add('idle');
+          }
         }
       } catch (e) {}
     }
