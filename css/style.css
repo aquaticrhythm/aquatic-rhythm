@@ -1200,9 +1200,11 @@ body.ar-reduce-motion #driftwood-layer{opacity:0!important;transition:opacity .5
 /* Typing indicator reuse */
 .rh-page-thread .rh-typing{align-self:flex-start;background:rgba(12,26,20,.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.65rem 1rem}
 
-/* Hide FAB when companion page is active (Rhyssa is already the page) */
+/* Hide FAB on companion page (Rhyssa is already the page) and tools/lab pages */
 body[data-active-page="companion"] #rh-fab,
-body[data-active-page="companion"] #rh-backdrop{display:none!important}
+body[data-active-page="companion"] #rh-backdrop,
+body[data-active-page="tools"] #rh-fab,
+body[data-active-page="tools"] #rh-backdrop{display:none!important}
 
 /* ── Rhyssa FAB ── */
 @keyframes rh-fab-breathe{0%,100%{opacity:.18}50%{opacity:.32}}
