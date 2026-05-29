@@ -74,7 +74,7 @@
     var idleTimer = null;
 
     function isToolPage() {
-      return document.body.getAttribute('data-active-page') === 'tools';
+      return /\/(tank-simulator|tank-builder|community-stress-lab)(\.html)?([?#].*)?$/.test(window.location.pathname);
     }
 
     function armIdle() {
@@ -93,11 +93,6 @@
       fab.classList.remove('idle');
       fab.removeAttribute('data-side');
     }
-
-    /* Watch for SPA page changes — cancel idle when leaving tools page */
-    new MutationObserver(function () {
-      if (!isToolPage()) cancelIdle();
-    }).observe(document.body, { attributes: true, attributeFilter: ['data-active-page'] });
 
     fab.addEventListener('pointerenter', cancelIdle);
     fab.addEventListener('pointerleave', armIdle);
